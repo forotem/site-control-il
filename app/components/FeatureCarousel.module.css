@@ -1,0 +1,424 @@
+.carouselSection {
+  margin-bottom: 64px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--card) 0%, rgba(15, 22, 34, 0.8) 100%);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.tilesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.tile {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideIn 0.6s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0, 194, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0.8;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Buttons */
+.navButtonPrev,
+.navButtonNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 194, 255, 0.15);
+  border: 2px solid rgba(0, 194, 255, 0.5);
+  color: var(--accent);
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navButtonPrev:hover,
+.navButtonNext:hover {
+  background: rgba(0, 194, 255, 0.3);
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButtonPrev {
+  left: 10px;
+}
+
+.navButtonNext {
+  right: 10px;
+}
+
+/* Counter */
+.counter {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(0, 194, 255, 0.2);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* Lightbox */
+.lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.lightboxImageWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.95) 0%, rgba(15, 22, 34, 0.95) 100%);
+  min-height: 400px;
+  max-height: 70vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 194, 255, 0.2);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.closeButton:hover {
+  background: rgba(0, 194, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.lightboxControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid var(--border);
+}
+
+.lightboxNavButton {
+  background: rgba(0, 194, 255, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lightboxNavButton:hover {
+  background: rgba(0, 194, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.lightboxCounter {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .carousel {
+    padding: 16px;
+  }
+
+  .tilesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tile {
+    min-height: 180px;
+    border-radius: 10px;
+  }
+
+  .navButtonPrev,
+  .navButtonNext {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .lightboxImageWrapper {
+    min-height: 350px;
+    max-height: 60vh;
+    padding: 16px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  .carousel {
+    padding: 12px;
+  }
+
+  .tilesContainer {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .tile {
+    min-height: 160px;
+    border-radius: 10px;
+  }
+
+  .navButtonPrev,
+  .navButtonNext {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .navButtonPrev {
+    left: 8px;
+  }
+
+  .navButtonNext {
+    right: 8px;
+  }
+
+  .counter {
+    top: 12px;
+    right: 16px;
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+  }
+
+  .lightboxOverlay {
+    padding: 16px;
+  }
+
+  .lightboxContent {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .lightboxImageWrapper {
+    min-height: 300px;
+    max-height: 65vh;
+    padding: 12px;
+  }
+
+  .lightboxControls {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .lightboxNavButton,
+  .closeButton {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .lightboxCounter {
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .carousel {
+    padding: 10px;
+  }
+
+  .tilesContainer {
+    gap: 8px;
+  }
+
+  .tile {
+    min-height: 140px;
+    border-radius: 8px;
+  }
+
+  .navButtonPrev,
+  .navButtonNext {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .navButtonPrev {
+    left: 6px;
+  }
+
+  .navButtonNext {
+    right: 6px;
+  }
+
+  .counter {
+    top: 10px;
+    right: 12px;
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .carouselSection {
+    margin-bottom: 48px;
+  }
+
+  .lightboxOverlay {
+    padding: 12px;
+  }
+
+  .lightboxContent {
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+
+  .lightboxImageWrapper {
+    min-height: 250px;
+    max-height: 70vh;
+    padding: 10px;
+  }
+
+  .lightboxControls {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .lightboxNavButton,
+  .closeButton {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .lightboxCounter {
+    font-size: 10px;
+  }
+}

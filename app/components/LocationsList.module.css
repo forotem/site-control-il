@@ -1,0 +1,110 @@
+.locationsSection {
+  margin: 3rem 0;
+}
+
+.locationsSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.regionGroup {
+  margin: 2rem 0;
+}
+
+.regionGroup h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.locationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.locationCard {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.locationCard:hover {
+  border-color: #007bff;
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.locationCard h4 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem 0;
+  color: #333;
+}
+
+.locationCard p {
+  color: #666;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.benefits li {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+  padding-right: 0.5rem;
+}
+
+.learnMore {
+  color: #007bff;
+  font-weight: bold;
+  margin-top: auto;
+  transition: color 0.3s;
+}
+
+.locationCard:hover .learnMore {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .locationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationsSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .regionGroup h3 {
+    font-size: 1.2rem;
+  }
+}

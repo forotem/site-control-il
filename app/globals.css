@@ -48,12 +48,13 @@ section { margin-bottom: 64px; }
 
 .tag {
   display: inline-block;
-  padding: 6px 10px;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(0, 194, 255, 0.18);
-  color: #e6f7ff;
-  border: 1px solid rgba(0, 194, 255, 0.4);
+  background: rgba(0, 194, 255, 0.25);
+  color: #ffffff;
+  border: 1px solid rgba(0, 194, 255, 0.6);
   font-size: 13px;
+  font-weight: 500;
 }
 
 h1,h2,h3,h4 { margin: 0 0 12px; }
@@ -79,14 +80,17 @@ p:hover, li:hover, span:hover {
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: linear-gradient(135deg, #00c2ff, #0091cc);
   color: #04121f;
-  padding: 12px 18px;
+  padding: 14px 22px;
   border-radius: 12px;
   font-weight: 700;
   border: none;
   cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
 }
 .button.secondary {
   background: rgba(255, 255, 255, 0.08);
@@ -115,35 +119,43 @@ p:hover, li:hover, span:hover {
 /* Navigation Responsive */
 @media (max-width: 768px) {
   nav {
-    padding: 0.5rem 0.5rem !important;
+    padding: 0.75rem 0.5rem !important;
   }
   
   nav a {
     font-size: 0.85rem !important;
-    padding: 0.5rem 0.6rem !important;
-    min-height: 44px;
-    min-width: 44px;
+    padding: 0.6rem 0.8rem !important;
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   nav a:last-child {
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.6rem 1rem !important;
+    min-height: 48px;
   }
 }
 
 @media (max-width: 600px) {
   nav {
-    padding: 0.5rem 0.25rem !important;
+    padding: 0.75rem 0.25rem !important;
   }
   
   nav a {
     font-size: 0.8rem !important;
-    padding: 0.45rem 0.5rem !important;
-    min-height: 44px;
-    min-width: 44px;
+    padding: 0.6rem 0.6rem !important;
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   nav a:last-child {
-    padding: 0.45rem 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
+    min-height: 48px;
   }
 }
 

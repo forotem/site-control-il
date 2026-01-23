@@ -92,6 +92,8 @@ export function ProductSchema({
         returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
         merchantReturnDays: '30',
         returnShippingFeeBusiness: 'FreeReturn',
+        returnFees: 'FreeReturn',
+        returnMethod: 'ReturnMailIn',
       },
       shippingDetails: {
         '@type': 'ShippingDeliveryTime',

@@ -7,7 +7,7 @@ import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 export const metadata: Metadata = {
   title: "עמידות IP66 למזג אוויר - מצלמות 4G Reolink לשטח",
   description:
-    "מצלמות אבטחה עברויה בדירוג IP66 - אטומה לגשם, אבק, חום קיצוני. עובדות בפני זרמי מים חזקים. שש שנים ארטיק.",
+    "מצלמות אבטחה עמידות בדירוג IP66 - אטומות לגשם, אבק וחום קיצוני. עובדות מול זרמי מים חזקים במשך שנים ארוכות.",
 };
 
 export default function WeatherproofPage() {

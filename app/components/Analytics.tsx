@@ -1,12 +1,17 @@
 import Script from 'next/script';
 
 export function Analytics() {
-  // Replace with your actual Google Analytics ID
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  // קריאת ה-Measurement ID מה-environment variables
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+  // אם אין ID, לא לטעון את ה-analytics (למשל בסביבת פיתוח)
+  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+    return null;
+  }
 
   return (
     <>
-      {/* Google Analytics */}
+      {/* Google Analytics (GA4) */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
@@ -16,16 +21,21 @@ export function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
+          
+          gtag('config', '${GA_MEASUREMENT_ID}', {
+            page_path: window.location.pathname,
+            send_page_view: true
+          });
         `}
       </Script>
     </>
   );
 }
 
-// Instructions:
-// 1. Go to https://analytics.google.com/
-// 2. Create a new property for your website
-// 3. Copy your Measurement ID (starts with G-)
-// 4. Replace 'G-XXXXXXXXXX' above with your actual ID
-// 5. Import and add <Analytics /> to your layout.tsx file
+// הוראות התקנה:
+// 1. כנס ל-https://analytics.google.com/
+// 2. צור נכס חדש (Property) לאתר שלך
+// 3. העתק את ה-Measurement ID (מתחיל ב-G-)
+// 4. הוסף לקובץ .env.local:
+//    NEXT_PUBLIC_GA_MEASUREMENT_ID=G-YOUR-ID
+// 5. הקומפוננט כבר מיובא ב-layout.tsx

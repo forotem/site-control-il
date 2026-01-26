@@ -3,8 +3,8 @@ import ContactFormContent from './ContactFormContent';
 import { Breadcrumb, BreadcrumbSchema } from '../components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: "צור קשר - ענט ברי Reolink המכדשדוד | Site-Control",
-  description: "צרו קשר - אבצור בדיפשטו, אנחנו מב כדי להצעיד פטרון בטחוני מושלאם. שננ אוטומטי עבודה סולאריה 4G.",
+  title: "צור קשר - מצלמות Reolink סולאריות 4G | Site-Control",
+  description: "צרו קשר עכשיו לקבלת הצעת מחיר על מצלמות אבטחה סולאריות 4G. אנחנו כאן כדי לספק פתרון בטחוני מושלם. שירות מהיר ומקצועי.",
 };
 
 export default function ContactPage() {

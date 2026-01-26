@@ -5,9 +5,9 @@ import { appShots } from "../../data/images";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "ניהול ראות מנוה גדולים עם מצלמות 4G | Reolink",
+  title: "ניהול אתרים מבודדים עם מצלמות 4G סולאריות | Reolink",
   description:
-    "צפייה חיה, שליטה מרחוק, טל מכל מקום. מצלמות 4G סולאריות פרי אתרים מרחוקים. AI דחורים, אחסון כפול, עדכון קלטטוט.",
+    "צפייה חיה, שליטה מרחוק מכל מקום בעולם. מצלמות 4G סולאריות לאתרים מרחוקים. זיהוי AI, אחסון כפול, עדכונים אוטומטיים.",
 };
 
 export default function RemoteUseCasePage() {
@@ -50,7 +50,7 @@ export default function RemoteUseCasePage() {
       
       <div style={{marginTop: '2rem', padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '8px'}}>
         <p style={{fontSize: '1.1rem', marginBottom: '1rem'}}>מוכנים להתחיל לפקח על האתר שלכם מרחוק?</p>
-        <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginLeft: '1rem'}}>צפו בחבילות</Link>
+        <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginRight: '1rem'}}>צפו בחבילות</Link>
         <Link href="/contact" style={{display: 'inline-block', padding: '12px 24px', background: 'transparent', color: 'var(--accent)', border: '2px solid var(--accent)', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold'}}>צרו קשר</Link>
       </div>
     </main>

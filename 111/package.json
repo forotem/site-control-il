@@ -1,0 +1,14 @@
+{
+  "name": "google-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for Google Search Console and Analytics",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "auth": "node auth.js"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

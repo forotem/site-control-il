@@ -8,3 +8,7 @@ dist/
 build/
 .vercel
 .git/
+
+# Google API credentials - DO NOT COMMIT!
+111/credentials.json
+111/token.json

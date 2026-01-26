@@ -35,7 +35,8 @@ export function ImageGallery({ images, columns = 3 }: ImageGalleryProps) {
   const handleSubmitForm = async (e: React.FormEvent) => {
     e.preventDefault();
     // כאן תוכל להוסיף קישור ל-API שלך לשמירת הפרטים
-    console.log('Form submitted:', formData);
+    // Form submission logic would go here
+    // console.log('Form submitted:', formData);
     alert('תודה! נחזור אליך בקרוב.');
     setShowContactForm(false);
     setFormData({ name: '', email: '', phone: '', message: '' });

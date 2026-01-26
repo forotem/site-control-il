@@ -6,9 +6,9 @@ import { ProductSchema } from "../../components/Schema";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "רעולינק PTZ Solar 4G - מצלמה מסתובבת | אאטרים",
+  title: "Reolink PTZ Solar 4G - מצלמה מסתובבת | Site-Control",
   description:
-  "מצלמת Reolink PTZ Solar עם זום אופטי 8x, סיבוב 360°, חיבור 4G, גיבוי ענן ורזולוציית 4K — פתרון אידיאלי לשטחים גדולים.",
+    "מצלמת Reolink PTZ Solar עם זום אופטי 8x, סיבוב 360°, חיבור 4G, גיבוי ענן ורזולוציית 4K — פתרון אידיאלי לשטחים גדולים.",
 };
 
 export default function PtzProductPage() {
@@ -65,7 +65,7 @@ export default function PtzProductPage() {
         
         <div style={{marginTop: '2rem', padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '8px'}}>
           <p style={{fontSize: '1.1rem', marginBottom: '1rem'}}>מחפשים פתרון מלא עם התקנה? צפו בחבילות שלנו או צרו קשר לייעוץ.</p>
-          <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginLeft: '1rem'}}>צפו בחבילות</Link>
+          <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginRight: '1rem'}}>צפו בחבילות</Link>
           <Link href="/contact" style={{display: 'inline-block', padding: '12px 24px', background: 'transparent', color: 'var(--accent)', border: '2px solid var(--accent)', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold'}}>צרו קשר</Link>
         </div>
         

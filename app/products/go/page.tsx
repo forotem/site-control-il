@@ -62,7 +62,7 @@ export default function GoProductPage() {
         
         <div style={{marginTop: '2rem', padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '8px'}}>
           <p style={{fontSize: '1.1rem', marginBottom: '1rem'}}>רוצים פתרון מלא עם התקנה? צפו בחבילות שלנו או צרו קשר לייעוץ.</p>
-          <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginLeft: '1rem'}}>צפו בחבילות</Link>
+          <Link href="/packages" style={{display: 'inline-block', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', marginRight: '1rem'}}>צפו בחבילות</Link>
           <Link href="/contact" style={{display: 'inline-block', padding: '12px 24px', background: 'transparent', color: 'var(--accent)', border: '2px solid var(--accent)', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold'}}>צרו קשר</Link>
         </div>
         

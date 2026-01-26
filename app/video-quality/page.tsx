@@ -5,10 +5,10 @@ import { proofImages } from "../data/images";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "איכות 4K במצלמות אבטחה | יום וילה צבעוניגגה",
+  title: "איכות וידאו 4K במצלמות אבטחה | ראיית לילה צבעונית",
   description:
-    "שטחטור הגר ב-4K עם Reolink לראיית יה צבעוניגגה. ראייה לילה בצבעים, IR מאויד. תמונות HDR אטוכר. משטיח לפטטי בנייה.",
-};;
+    "איכות צילום מעולה ב-4K עם Reolink לראיית לילה צבעונית. ראייה לילה בצבעים, IR מתקדם, תמונות HDR איכותיות. מושלם לאתרי בנייה.",
+};
 
 export default function VideoQualityPage() {
   const breadcrumbItems = [

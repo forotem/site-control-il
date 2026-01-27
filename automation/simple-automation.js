@@ -26,18 +26,18 @@ class SEOContentAutomation {
     // נושאים עם פוטנציאל גבוה לשנת 2026
     const opportunities = [
       {
-        topic: 'מצלמות אבטחה 4G ללא חשמל 2026 - הפתרון המושלם לאתרים מרוחקים',
-        englishSlug: '4g-solar-security-cameras-remote-sites-2026',
+        topic: 'מערכת אזעקה חכמה מול מצלמות אבטחה 2026 - מה יותר כדאי לבית שלך?',
+        englishSlug: 'smart-alarm-vs-security-cameras-2026',
         targetKeywords: [
-          'מצלמות אבטחה ללא חשמל',
-          'מצלמות 4G סולאריות',
-          'מצלמות אבטחה לאתרים מרוחקים',
-          'מצלמות אבטחה אלחוטיות',
-          'מצלמות בטחון סולאריות',
-          'מצלמות אבטחה עם סים'
+          'מערכת אזעקה או מצלמות',
+          'אזעקה חכמה לבית',
+          'השוואה מצלמות אזעקה',
+          'אבטחה לבית פרטי',
+          'מערכת אבטחה משולבת',
+          'מצלמות מול אזעקה'
         ],
-        difficulty: 'medium',
-        searchVolume: 4200,
+        difficulty: 'high',
+        searchVolume: 5800,
         competition: 0.4,
         minWords: 2500,
         intent: 'commercial'

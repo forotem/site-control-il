@@ -1,0 +1,60 @@
+name: Auto Blog Creation
+
+on:
+  # רץ כל יומיים בשעה 02:00 UTC (04:00 בישראל)
+  schedule:
+    - cron: '0 2 */2 * *'
+  
+  # אפשרות להריץ ידנית
+  workflow_dispatch:
+
+jobs:
+  create-blog:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # צריך כדי לעשות push
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: 📦 Install root dependencies
+        run: npm ci
+      
+      - name: 📦 Install automation dependencies
+        run: |
+          cd automation
+          npm install
+      
+      - name: 🔍 Configure Git
+        run: |
+          git config user.name "Auto Blog Bot"
+          git config user.email "bot@site-control-il.com"
+      
+      - name: 🤖 Run auto scheduler
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUTO_GENERATE_IMAGES: 'true'
+        run: |
+          cd automation
+          node auto-scheduler.js
+      
+      - name: 📤 Push changes
+        run: |
+          # בודק אם יש שינויים
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "אין שינויים לcommit"
+          else
+            echo "יש שינויים, עושה push..."
+            git push
+          fi

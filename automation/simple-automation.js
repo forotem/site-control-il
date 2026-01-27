@@ -24,24 +24,24 @@ class SEOContentAutomation {
     console.log('🔍 מנתח הזדמנויות תוכן לפי קריטריונים של Google...');
 
     // נושאים עם פוטנציאל גבוה לשנת 2026
+    
     const opportunities = [
       {
-        topic: 'מערכת אזעקה חכמה מול מצלמות אבטחה 2026 - מה יותר כדאי לבית שלך?',
-        englishSlug: 'smart-alarm-vs-security-cameras-2026',
+        topic: 'מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות',
+        englishSlug: 'cameras-security-with-detection-face-2026',
         targetKeywords: [
-          'מערכת אזעקה או מצלמות',
-          'אזעקה חכמה לבית',
-          'השוואה מצלמות אזעקה',
-          'אבטחה לבית פרטי',
-          'מערכת אבטחה משולבת',
-          'מצלמות מול אזעקה'
-        ],
-        difficulty: 'high',
-        searchVolume: 5800,
-        competition: 0.4,
-        minWords: 2500,
-        intent: 'commercial'
-      }
+                    "מצלמות אבטחה עם זיהוי פנים",
+                    "מצלמות אבטחה עם זיהוי פנים 2026",
+                    "מצלמות אבטחה עם זיהוי פנים למכירה",
+                    "מצלמות אבטחה עם זיהוי פנים מחיר",
+                    "מצלמות אבטחה עם זיהוי פנים המלצות",
+                    "מצלמות אבטחה עם זיהוי פנים ביקורות"
+          ],
+        difficulty: 'medium',
+        searchVolume: 3200,
+        competition: 'medium',
+        intent: 'informational'
+      },
     ];
 
     return opportunities.sort((a, b) =>

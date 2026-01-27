@@ -1,0 +1,59 @@
+Professional data-rich infographic: Solar Security Camera Energy Cycle 2026
+
+LAYOUT - CIRCULAR FLOW DIAGRAM:
+
+CENTER: 
+- Solar security camera illustration (realistic, detailed)
+- Battery indicator showing charge level (green bars)
+- Text: "מצלמת אבטחה סולארית"
+
+CLOCKWISE FLOW (4 STAGES):
+
+1. TOP - DAYTIME CHARGING (6:00-18:00):
+   - Bright sun icon with rays
+   - Solar panel absorbing sunlight (blue photovoltaic cells glowing)
+   - Arrow showing energy flow: Sun → Panel → Battery
+   - Stats: "4-6 שעות טעינה מלאה"
+   - Power meter: "5-10W קלט"
+   - Hebrew: "יום - טעינה אקטיבית"
+
+2. RIGHT - BATTERY STORAGE:
+   - Large battery icon (10,000-20,000 mAh)
+   - Charge percentage: 100%
+   - Energy management chip illustration
+   - Stats: "3-7 ימי גיבוי"
+   - Hebrew: "אגירת אנרגיה חכמה"
+
+3. BOTTOM - NIGHTTIME OPERATION (18:00-6:00):
+   - Moon and stars icon
+   - Camera actively recording (red LED indicator)
+   - IR night vision beams illustrated
+   - Stats: "פעילות 24/7"
+   - Power consumption: "2-5W שימוש"
+   - Hebrew: "לילה - פעולה מהסוללה"
+
+4. LEFT - SMART MANAGEMENT:
+   - AI chip icon with circuit patterns
+   - Efficiency meter showing optimization
+   - Auto-adjust power modes
+   - Stats: "95% יעילות אנרגטית"
+   - Hebrew: "ניהול אנרגיה חכם"
+
+ADDITIONAL INFO BOXES:
+- Weather resilience: "עובד גם בימים מעוננים"
+- Backup capacity: "ללא תלות ברשת החשמל"
+- Eco-friendly: "0% פליטת פחמן"
+- Cost savings: "₪200-500 חיסכון בשנה"
+
+DESIGN STYLE:
+- Blue (#0070f3) and green (#10b981) main colors
+- Yellow/orange (#fbbf24) for sun/energy
+- White background with subtle grid pattern
+- Modern, clean infographic style
+- All Hebrew labels and descriptions
+- Icons: flat design, professional
+- Clear arrows showing energy flow
+- High contrast for readability
+
+DIMENSIONS: 1200×800px
+FORMAT: Professional business infographic

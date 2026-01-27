@@ -1,0 +1,13 @@
+Professional data-rich infographic for מערכות אבטחה חכמות עם AI בישראל 2026:
+
+LEFT: Traditional system (2020) with basic sensors, 90% false alarms
+MIDDLE: Evolution timeline 2020→2026  
+RIGHT: Smart AI system (2026) with face recognition, <5% false alarms
+
+Statistics displayed:
+- Cost savings: 30% insurance discount
+- Energy savings: 25%
+- Response time: 2 seconds
+- Integration: 50+ smart devices
+
+Design: Blue (#0070f3) and white, Hebrew labels, professional

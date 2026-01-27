@@ -1,0 +1,16 @@
+Professional technical infographic for מנעולים חכמים ביומטריים 2026 - המדריך המלא לדלת הכניסה:
+
+Title: "שיטות פתיחה מתקדמות - 2026" (Advanced Unlocking Methods)
+Layout: 4-Quadrant Split with central lock icon.
+
+1. Top-Left: Fingerprint (Biometric) - Icon of fingerprint + "0.3s תגובה"
+2. Top-Right: Facial Recognition - Icon of face scan + "3D Secure"
+3. Bottom-Left: Smartphone App (NFC/Bluetooth) - Phone icon + "שליטה מרחוק"
+4. Bottom-Right: Mechanical Key (Backup) - Key icon + "גיבוי חירום"
+
+Style: 
+- Clean, flat vector design.
+- Color scheme: Navy Blue (#0f172a) and Emerald Green (#10b981).
+- White background.
+- Dimensions: 1200x800 (Aspect Ratio 3:2).
+- Clear typography and icons.

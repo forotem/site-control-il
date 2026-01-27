@@ -1,0 +1,16 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradienתמונות ו-prompts
+      const slug = this.generateSEOSlug(bestStrategy);
+      const imageDir = await this.generateImagePromptsAndPlaceholders(bestStrategy, slug);
+
+      // 5. יצירת דף מותאם SEO
+     ="0%" style="stop-color:#0070f3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad1)"/>
+  <text x="600" y="320" text-anchor="middle" font-size="48" fill="white" font-weight="bold" font-family="Arial">תמונת Hero</text>
+  <text x="600" y="380" text-anchor="middle" font-size="24" fill="white" font-family="Arial">צור תמונה ב-Nano Banana</text>
+  <text x="600" y="420" text-anchor="middle" font-size="18" fill="white" font-family="Arial">1200×675px</text>
+</svg>

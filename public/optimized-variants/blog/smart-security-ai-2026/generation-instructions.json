@@ -1,0 +1,17 @@
+{
+  "blog": "smart-security-ai-2026",
+  "generatedAt": "2026-01-26T13:54:08.955Z",
+  "geminiAPI": "https://ai.google.dev/gemini-api/docs/image-generation",
+  "instructions": [
+    "1. נא להשתמש בקבצי ה-JSON שנוצרו עבור הפרומפטים המפורטים",
+    "2. צור תמונות ב-Gemini API או כלי חלופי (Midjourney/DALL-E)",
+    "3. שמור תמונות בפורמט WebP איכות גבוהה",
+    "4. הרץ את מערכת האופטימיזציה אחרי יצירת התמונות",
+    "5. בדוק שהתמונות מוצגות נכון באתר"
+  ],
+  "nextSteps": [
+    "npx ts-node automation/image-optimizer.ts smart-security-ai-2026",
+    "עדכן את נתיבי התמונות ברכיב הדף",
+    "בדוק responsive design במכשירים שונים"
+  ]
+}

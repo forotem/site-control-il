@@ -1,0 +1,29 @@
+{
+  "originalPrompt": "Cinematic ultra-realistic hero image for smart security AI system 2026:\n    \n    MAIN ELEMENTS:\n    - Modern Israeli contemporary home interior, open living space with floor-to-ceiling windows\n    - 4K security camera with blue LED indicator actively monitoring, mounted elegantly on white wall\n    - Holographic AI display panel showing real-time analytics, facial recognition, threat detection\n    - Multiple security feeds on sleek glass control panel with blue UI, showing different rooms\n    - Smart lock on door illuminated with blue light, keyless entry system\n    - Wireless router with smart home integration\n    - Ambient lighting: cool blue and white LED accents throughout\n    \n    TECHNICAL DETAILS:\n    - Professional cinematic lighting, volumetric lighting effects\n    - Shallow depth of field, sharp focus on security system, blurred background\n    - HDR imaging, ultra-high resolution, 8K quality\n    - Modern minimalist Israeli tech aesthetic\n    - Clean, sophisticated, trustworthy atmosphere\n    - Hebrew text on displays (ניטור, אבטחה, AI)\n    - Corporate professional photography style\n    - High contrast, vibrant blues (#0070f3) and whites (#ffffff)",
+  "enhancedPrompt": "Cinematic ultra-realistic hero image for smart security AI system 2026:\n    \n    MAIN ELEMENTS:\n    - Modern Israeli contemporary home interior, open living space with floor-to-ceiling windows\n    - 4K security camera with blue LED indicator actively monitoring, mounted elegantly on white wall\n    - Holographic AI display panel showing real-time analytics, facial recognition, threat detection\n    - Multiple security feeds on sleek glass control panel with blue UI, showing different rooms\n    - Smart lock on door illuminated with blue light, keyless entry system\n    - Wireless router with smart home integration\n    - Ambient lighting: cool blue and white LED accents throughout\n    \n    TECHNICAL DETAILS:\n    - Professional cinematic lighting, volumetric lighting effects\n    - Shallow depth of field, sharp focus on security system, blurred background\n    - HDR imaging, ultra-high resolution, 8K quality\n    - Modern minimalist Israeli tech aesthetic\n    - Clean, sophisticated, trustworthy atmosphere\n    - Hebrew text on displays (ניטור, אבטחה, AI)\n    - Corporate professional photography style\n    - High contrast, vibrant blues (#0070f3) and whites (#ffffff), ultra-realistic, professional photography, 8K resolution, sharp details, modern Israeli home or office setting, clean, minimalist design aesthetic, Hebrew text elements where appropriate, blue and white color scheme representing Israeli technology, professional lighting with soft shadows, cinematic composition with depth of field, high-tech security cameras with LED indicators, smart control panels with digital displays, wireless technology elements, modern architectural background, subtle AI/technology visual elements",
+  "specifications": {
+    "width": 1200,
+    "height": 675,
+    "style": "photorealistic, professional, high-quality",
+    "elements": [
+      "security cameras",
+      "control panels",
+      "AI indicators",
+      "smart devices",
+      "modern home interior",
+      "Israeli flag colors",
+      "Hebrew text"
+    ],
+    "colors": "blue and white (Israeli tech colors)",
+    "lighting": "professional, clean lighting",
+    "composition": "centered, balanced composition"
+  },
+  "additionalInstructions": [
+    "Ensure all text in the image is in Hebrew when appropriate",
+    "Use professional, business-grade aesthetic",
+    "Include subtle Israeli tech industry references",
+    "Maintain consistency with site branding (blue/white)",
+    "Optimize for web display and mobile responsiveness",
+    "Include proper contrast for accessibility"
+  ]
+}

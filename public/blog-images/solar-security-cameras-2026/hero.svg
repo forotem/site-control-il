@@ -1,0 +1,110 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="panelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="4" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Sky -->
+  <rect width="1200" height="675" fill="url(#skyGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="950" cy="120" r="80" fill="url(#sunGradient)" opacity="0.9"/>
+  <circle cx="950" cy="120" r="90" fill="#fbbf24" opacity="0.3"/>
+  <circle cx="950" cy="120" r="100" fill="#fbbf24" opacity="0.1"/>
+  
+  <!-- Sun Rays -->
+  <line x1="950" y1="20" x2="950" y2="0" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  <line x1="1030" y1="40" x2="1050" y2="20" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  <line x1="1050" y1="120" x2="1070" y2="120" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  <line x1="1030" y1="200" x2="1050" y2="220" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  <line x1="870" y1="40" x2="850" y2="20" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  <line x1="850" y1="120" x2="830" y2="120" stroke="#fbbf24" stroke-width="3" opacity="0.6"/>
+  
+  <!-- House silhouette -->
+  <rect x="50" y="400" width="400" height="250" fill="#1e293b" opacity="0.8"/>
+  <polygon points="50,400 250,300 450,400" fill="#0f172a" opacity="0.8"/>
+  
+  <!-- Solar Panel (main focus) -->
+  <g filter="url(#shadow)">
+    <!-- Panel frame -->
+    <rect x="500" y="250" width="300" height="200" rx="8" fill="#334155" stroke="#64748b" stroke-width="3"/>
+    
+    <!-- Solar cells grid -->
+    <g opacity="0.9">
+      <!-- Row 1 -->
+      <rect x="515" y="265" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+      <rect x="608" y="265" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+      <rect x="701" y="265" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+      
+      <!-- Row 2 -->
+      <rect x="515" y="358" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+      <rect x="608" y="358" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+      <rect x="701" y="358" width="85" height="85" fill="url(#panelGradient)" stroke="#1e40af" stroke-width="2"/>
+    </g>
+    
+    <!-- Shine effect on panel -->
+    <rect x="520" y="270" width="70" height="70" fill="white" opacity="0.2"/>
+    <rect x="710" y="370" width="60" height="60" fill="white" opacity="0.15"/>
+  </g>
+  
+  <!-- Security Camera -->
+  <g transform="translate(850, 350)" filter="url(#shadow)">
+    <!-- Camera body -->
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <circle cx="40" cy="30" r="20" fill="#334155" stroke="#64748b" stroke-width="2"/>
+    <circle cx="40" cy="30" r="12" fill="#0ea5e9" opacity="0.8"/>
+    
+    <!-- LED indicator -->
+    <circle cx="70" cy="15" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Camera mount -->
+    <rect x="35" y="60" width="10" height="30" fill="#334155"/>
+  </g>
+  
+  <!-- Energy flow visualization -->
+  <g opacity="0.7">
+    <!-- Arrow from sun to panel -->
+    <path d="M 920 180 Q 800 200 700 280" stroke="#fbbf24" stroke-width="3" fill="none" stroke-dasharray="10,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <polygon points="700,280 710,275 705,285" fill="#fbbf24"/>
+    
+    <!-- Arrow from panel to camera -->
+    <path d="M 750 450 Q 800 420 850 380" stroke="#10b981" stroke-width="3" fill="none" stroke-dasharray="10,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-30" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <polygon points="850,380 845,390 855,385" fill="#10b981"/>
+  </g>
+  
+  <!-- Text overlay -->
+  <g>
+    <rect x="100" y="550" width="1000" height="100" fill="rgba(0, 0, 0, 0.6)" rx="8"/>
+    <text x="600" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="white" font-weight="bold">
+      מצלמות אבטחה סולאריות 2026
+    </text>
+    <text x="600" y="630" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#10b981">
+      אנרגיה ירוקה • אבטחה 24/7 • ללא תלות בחשמל
+    </text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="150" r="3" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="100" r="2" fill="white" opacity="0.5"/>
+  <circle cx="150" cy="200" r="2" fill="white" opacity="0.7"/>
+  <circle cx="400" cy="180" r="3" fill="white" opacity="0.4"/>
+</svg>

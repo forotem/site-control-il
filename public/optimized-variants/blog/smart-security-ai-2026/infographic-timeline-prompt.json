@@ -1,0 +1,31 @@
+{
+  "originalPrompt": "Professional data visualization infographic comparing traditional vs smart security (2020-2026):\n    \n    LEFT SIDE - TRADITIONAL SYSTEM (2020):\n    - Basic motion detection sensor icon\n    - Simple alarm bell\n    - Manual monitoring symbol (person watching)\n    - 90% false alarms statistic highlighted\n    - No AI capability symbol\n    - Limited smartphone access icon\n    - Text: \"זיהוי תנועה בסיסי | התראות לא מדויקות | ניטור ידני\"\n    \n    MIDDLE - EVOLUTION ARROWS:\n    - Progressive arrows showing 2021→2022→2023→2024→2025→2026\n    - Upward trending line showing technology advancement\n    \n    RIGHT SIDE - SMART AI SYSTEM (2026):\n    - Advanced AI chip icon with neural network visualization\n    - Multiple security features: face recognition, object detection, anomaly detection\n    - Smart integration icons: lights, locks, thermostats\n    - <5% false alarms statistic with green checkmark\n    - Real-time threat detection symbol with radar waves\n    - Advanced mobile app interface preview\n    - Text: \"זיהוי AI מתקדם | ניתוח בזמן אמת | אוטומציה חכמה\"\n    \n    STATISTICS DISPLAYED:\n    - Cost savings: -30% insurance, +25% energy savings\n    - Response time: 2 seconds vs manual hours\n    - Accuracy: 95% vs 10%\n    - Integration capability: 50+ smart devices\n    \n    DESIGN STYLE:\n    - Blue (#0070f3) and white main colors\n    - Green (#10b981) for improvements\n    - Red (#ef4444) for problems\n    - Professional financial infographic style\n    - Israeli tech company aesthetic\n    - All Hebrew labels and descriptions\n    - Clear hierarchy and visual flow\n    - High contrast, corporate modern design",
+  "enhancedPrompt": "Professional data visualization infographic comparing traditional vs smart security (2020-2026):\n    \n    LEFT SIDE - TRADITIONAL SYSTEM (2020):\n    - Basic motion detection sensor icon\n    - Simple alarm bell\n    - Manual monitoring symbol (person watching)\n    - 90% false alarms statistic highlighted\n    - No AI capability symbol\n    - Limited smartphone access icon\n    - Text: \"זיהוי תנועה בסיסי | התראות לא מדויקות | ניטור ידני\"\n    \n    MIDDLE - EVOLUTION ARROWS:\n    - Progressive arrows showing 2021→2022→2023→2024→2025→2026\n    - Upward trending line showing technology advancement\n    \n    RIGHT SIDE - SMART AI SYSTEM (2026):\n    - Advanced AI chip icon with neural network visualization\n    - Multiple security features: face recognition, object detection, anomaly detection\n    - Smart integration icons: lights, locks, thermostats\n    - <5% false alarms statistic with green checkmark\n    - Real-time threat detection symbol with radar waves\n    - Advanced mobile app interface preview\n    - Text: \"זיהוי AI מתקדם | ניתוח בזמן אמת | אוטומציה חכמה\"\n    \n    STATISTICS DISPLAYED:\n    - Cost savings: -30% insurance, +25% energy savings\n    - Response time: 2 seconds vs manual hours\n    - Accuracy: 95% vs 10%\n    - Integration capability: 50+ smart devices\n    \n    DESIGN STYLE:\n    - Blue (#0070f3) and white main colors\n    - Green (#10b981) for improvements\n    - Red (#ef4444) for problems\n    - Professional financial infographic style\n    - Israeli tech company aesthetic\n    - All Hebrew labels and descriptions\n    - Clear hierarchy and visual flow\n    - High contrast, corporate modern design, ultra-realistic, professional photography, 8K resolution, sharp details, modern Israeli home or office setting, clean, minimalist design aesthetic, Hebrew text elements where appropriate, blue and white color scheme representing Israeli technology, professional lighting with soft shadows, cinematic composition with depth of field, clean data visualization design, progressive timeline elements, modern chart and graph aesthetics, professional business infographic style, clear hierarchy and flow",
+  "specifications": {
+    "width": 1200,
+    "height": 800,
+    "style": "photorealistic, professional, high-quality",
+    "elements": [
+      "security cameras",
+      "control panels",
+      "AI indicators",
+      "smart devices",
+      "Israeli flag colors",
+      "Hebrew text",
+      "charts",
+      "graphs",
+      "timeline"
+    ],
+    "colors": "blue and white (Israeli tech colors)",
+    "lighting": "professional, clean lighting",
+    "composition": "centered, balanced composition"
+  },
+  "additionalInstructions": [
+    "Ensure all text in the image is in Hebrew when appropriate",
+    "Use professional, business-grade aesthetic",
+    "Include subtle Israeli tech industry references",
+    "Maintain consistency with site branding (blue/white)",
+    "Optimize for web display and mobile responsiveness",
+    "Include proper contrast for accessibility"
+  ]
+}

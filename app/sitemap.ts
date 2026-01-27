@@ -20,12 +20,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/blog", priority: 0.8, changefreq: "weekly" as const },
   ];
 
-  const blogPages = blogPosts.map((post) => ({
-    url: `/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changefreq: "monthly" as const,
-    priority: 0.7,
-  }));
+  const blogPages = blogPosts.map((post) => {
+    // Parse date safely
+    let lastModified = new Date();
+    try {
+      // Try different date formats
+      const dateStr = post.date;
+      if (dateStr && dateStr !== '') {
+        // Convert DD/MM/YYYY to YYYY-MM-DD
+        if (dateStr.includes('/')) {
+          const parts = dateStr.split('/');
+          if (parts.length === 3) {
+            lastModified = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+          }
+        } else {
+          lastModified = new Date(dateStr);
+        }
+      }
+      // If date is invalid, use current date
+      if (isNaN(lastModified.getTime())) {
+        lastModified = new Date();
+      }
+    } catch (e) {
+      lastModified = new Date();
+    }
+
+    return {
+      url: `/blog/${post.slug}`,
+      lastModified,
+      changefreq: "monthly" as const,
+      priority: 0.7,
+    };
+  });
 
   return [
     ...staticPages.map(page => ({

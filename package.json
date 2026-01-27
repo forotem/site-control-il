@@ -6,16 +6,29 @@
     "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "create-content": "npx ts-node automation/content-automation.ts",
+    "generate-images": "npx ts-node automation/image-generation/generate-blog-images.ts",
+    "check-images": "npx ts-node automation/image-generation/check-images.ts",
+    "replace-images": "npx ts-node automation/image-generation/replace-images.ts",
+    "dev-3003": "next dev -p 3003",
+    "auto-blog": "npx ts-node automation/full-blog-automation.ts",
+    "optimize-blog-images": "npx ts-node automation/image-optimizer.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@types/sharp": "^0.31.1",
     "critters": "^0.0.23",
+    "dotenv": "^17.2.3",
     "eslint-config-next": "^16.1.4",
     "googleapis": "^144.0.0",
     "next": "^14.2.3",
+    "puppeteer": "^24.36.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "resend": "^6.7.0"
+    "resend": "^6.7.0",
+    "sharp": "^0.34.5",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",

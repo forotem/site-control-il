@@ -1,21 +1,30 @@
 const fs = require('fs').promises;
 const path = require('path');
+const slugify = require('slugify');
 
 /**
  * מנתח נתונים מ-Google Search Console ומוצא הזדמנויות תוכן
+ * 
+ * הערה חשובה: מחלקה זו קוראת מקובץ סטטי מקומי (gsc_output.txt) 
+ * ואינה מתחברת ישירות ל-Google Search Console API.
+ * יש לעדכן את הקובץ ידנית או באמצעות סקריפט נפרד.
  */
 class GSCAnalyzer {
   constructor() {
-    this.gscDataPath = path.join(__dirname, '..', 'gsc_output.txt');
+    this.gscDataPath = path.join(__dirname, '..', 'gsc_output.json');
+    // חישוב דינמי של השנה הבאה לתוכן רלוונטי
+    this.nextYear = new Date().getFullYear() + 1;
   }
 
   /**
-   * קורא נתונים מקובץ GSC
+   * קורא נתונים מקובץ GSC (JSON)
    */
   async readGSCData() {
     try {
       const data = await fs.readFile(this.gscDataPath, 'utf8');
-      return this.parseGSCData(data);
+      const jsonData = JSON.parse(data);
+      console.log(`📅 נתונים מתאריך: ${jsonData.dateRange?.start} עד ${jsonData.dateRange?.end}`);
+      return jsonData.queries || [];
     } catch (error) {
       console.error('❌ לא הצלחתי לקרוא GSC data:', error.message);
       return [];
@@ -56,11 +65,18 @@ class GSCAnalyzer {
    * מנקה טקסט עברי מבעיות encoding
    */
   cleanHebrewText(text) {
-    // אם יש encoding issues, מנסה לתקן
-    if (text.includes('╫')) {
-      return text; // נשאיר כמו שזה - נטפל בזה אחר כך
-    }
-    return text;
+    if (!text) return '';
+    
+    // הסרת תווי encoding שבורים נפוצים
+    let cleaned = text
+      .replace(/[╫×]/g, '') // תווים שבורים מ-CP1252/UTF-8 mismatch
+      .replace(/[\x00-\x1F\x7F]/g, '') // control characters
+      .replace(/\uFFFD/g, '') // replacement character
+      .replace(/[─│┌┐└┘├┤┬┴┼]/g, '') // box drawing characters
+      .replace(/\s+/g, ' ') // normalize whitespace
+      .trim();
+    
+    return cleaned;
   }
 
   /**
@@ -78,11 +94,11 @@ class GSCAnalyzer {
     
     console.log(`✅ נמצאו ${queries.length} queries מ-GSC`);
     
-    // סינון הזדמנויות
+    // סינון הזדמנויות - סף נמוך לאתר חדש
     const opportunities = queries.filter(q => {
-      return q.impressions >= 100 &&    // יש נפח חיפוש סביר
+      return q.impressions >= 3 &&      // סף נמוך לאתר חדש
              q.clicks < 20 &&            // אבל אין clicks (פוטנציאל!)
-             q.position > 10;            // לא בעמוד ראשון
+             q.position > 8;             // יש מקום לשיפור
     });
     
     // מדרג לפי פוטנציאל
@@ -104,36 +120,36 @@ class GSCAnalyzer {
   }
 
   /**
-   * נושאים fallback אם GSC לא עובד
+   * נושאים fallback אם GSC לא עובד או שהנושאים מכוסים
    */
   getFallbackOpportunities() {
     return [
       {
-        query: 'מצלמות אבטחה עם זיהוי פנים',
+        query: 'מצלמות אבטחה לעסקים קטנים',
         impressions: 3200,
         clicks: 5,
         position: 15.2
       },
       {
-        query: 'התקנת מצלמות אבטחה לבית',
+        query: 'מצלמות אבטחה עם ראיית לילה',
         impressions: 2800,
         clicks: 8,
         position: 14.5
       },
       {
-        query: 'מצלמות אבטחה עם הקלטה ענן',
+        query: 'מצלמות אבטחה לחניון',
         impressions: 2400,
         clicks: 6,
         position: 16.8
       },
       {
-        query: 'מצלמות אבטחה חיצוניות עמידות במים',
+        query: 'מצלמות אבטחה למחסנים ומפעלים',
         impressions: 2100,
         clicks: 4,
         position: 18.3
       },
       {
-        query: 'מערכת אבטחה מלאה לבית',
+        query: 'מצלמות אבטחה לגני ילדים',
         impressions: 3500,
         clicks: 12,
         position: 13.1
@@ -143,14 +159,17 @@ class GSCAnalyzer {
 
   /**
    * ממיר query לנושא בלוג
+   * @param {string} query - שאילתת החיפוש
+   * @param {number} year - שנה (ברירת מחדל: שנה הבאה)
    */
-  convertToTopic(query, year = 2026) {
+  convertToTopic(query, year = null) {
+    const targetYear = year || this.nextYear;
     const templates = [
-      `${query} ${year} - המדריך המלא והמעודכן`,
-      `${query} ${year} - כל מה שצריך לדעת לפני הרכישה`,
-      `${query} - השוואה מקיפה והמלצות מקצועיות ${year}`,
-      `${query} ${year} - היתרונות, החסרונות ומה כדאי לקנות`,
-      `${query} - מדריך מקצועי ${year} עם טיפים וטריקים`
+      `${query} ${targetYear} - המדריך המלא והמעודכן`,
+      `${query} ${targetYear} - כל מה שצריך לדעת לפני הרכישה`,
+      `${query} - השוואה מקיפה והמלצות מקצועיות ${targetYear}`,
+      `${query} ${targetYear} - היתרונות, החסרונות ומה כדאי לקנות`,
+      `${query} - מדריך מקצועי ${targetYear} עם טיפים וטריקים`
     ];
     
     const randomTemplate = templates[Math.floor(Math.random() * templates.length)];
@@ -159,8 +178,10 @@ class GSCAnalyzer {
 
   /**
    * ממיר query ל-English slug
+   * משתמש במילון ידני להמרות ספציפיות, ואז slugify לניקוי סופי
    */
   convertToSlug(query) {
+    // מילון המרות ידניות - עדיפות על פני transliteration אוטומטית
     const transliterationMap = {
       'מצלמות': 'cameras',
       'מצלמה': 'camera',
@@ -198,25 +219,69 @@ class GSCAnalyzer {
       '4G': '4g',
       'עם': 'with',
       'ללא': 'without',
-      'חשמל': 'power'
+      'חשמל': 'power',
+      'מחיר': 'price',
+      'מחירים': 'prices',
+      'המלצות': 'recommendations',
+      'ביקורות': 'reviews',
+      'השוואה': 'comparison',
+      'מדריך': 'guide',
+      'טיפים': 'tips',
+      'לקנות': 'buy',
+      'רכישה': 'purchase',
+      'איכות': 'quality',
+      'מקצועי': 'professional',
+      'ביתי': 'residential',
+      'עסקי': 'commercial',
+      // נוספו מילים חדשות
+      'חקלאות': 'agriculture',
+      'לחקלאות': 'agriculture',
+      'חקלאי': 'agricultural',
+      'חקלאיים': 'agricultural',
+      'בנייה': 'construction',
+      'לבנייה': 'construction',
+      'אתרי': 'sites',
+      'לאתרי': 'sites',
+      'אתר': 'site',
+      'עסקים': 'business',
+      'לעסקים': 'business',
+      'קטנים': 'small',
+      'גדולים': 'large',
+      'ראיית': 'night-vision',
+      'לילה': 'night',
+      'חניון': 'parking',
+      'לחניון': 'parking',
+      'מחסנים': 'warehouses',
+      'למחסנים': 'warehouses',
+      'מפעלים': 'factories',
+      'גני': 'kindergarten',
+      'ילדים': 'children',
+      'שטחים': 'areas',
+      'לשטחים': 'areas'
     };
     
-    let slug = query;
+    let text = query;
     
-    // המרה לפי מילון
+    // שלב 1: המרה לפי מילון ידני
     for (const [heb, eng] of Object.entries(transliterationMap)) {
-      slug = slug.replace(new RegExp(heb, 'g'), eng);
+      text = text.replace(new RegExp(heb, 'g'), eng);
     }
     
-    // ניקוי
-    slug = slug
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim();
+    // שלב 2: שימוש ב-slugify לניקוי וטיפול בתווים שנותרו
+    let slug = slugify(text, {
+      lower: true,           // המרה ל-lowercase
+      strict: true,          // הסרת תווים מיוחדים
+      remove: /[*+~.()'"!:@]/g, // הסרת תווים ספציפיים
+      trim: true             // הסרת רווחים מההתחלה והסוף
+    });
     
-    return slug + '-2026';
+    // שלב 3: ניקוי סופי - הסרת מקפים כפולים וריקים
+    slug = slug
+      .replace(/-+/g, '-')   // מקפים כפולים
+      .replace(/^-|-$/g, '') // מקפים בהתחלה/סוף
+      || 'post';             // fallback אם הכל נמחק
+    
+    return `${slug}-${this.nextYear}`;
   }
 
   /**
@@ -225,9 +290,9 @@ class GSCAnalyzer {
   generateKeywords(query) {
     const baseKeywords = [query];
     
-    // מוסיף וריאציות
+    // מוסיף וריאציות עם שנה דינמית
     const variations = [
-      `${query} 2026`,
+      `${query} ${this.nextYear}`,
       `${query} למכירה`,
       `${query} מחיר`,
       `${query} המלצות`,

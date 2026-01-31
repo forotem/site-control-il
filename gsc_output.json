@@ -1,0 +1,64 @@
+{
+  "site": "sc-domain:site-control-il.com",
+  "dateRange": {
+    "start": "2025-11-02",
+    "end": "2026-01-31"
+  },
+  "fetchedAt": "2026-01-31T11:26:33.618Z",
+  "queries": [
+    {
+      "query": "מצלמות אבטחה לחקלאות",
+      "clicks": 0,
+      "impressions": 16,
+      "position": 14.7
+    },
+    {
+      "query": "מצלמות אבטחה לאתרי בנייה",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 57.5
+    },
+    {
+      "query": "מצלמות בנייה",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 34
+    },
+    {
+      "query": "אבטחת שטחים חקלאיים",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 17
+    },
+    {
+      "query": "חוק הגנת הפרטיות מצלמות אבטחה",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 62
+    },
+    {
+      "query": "טיימלאפס",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 45
+    },
+    {
+      "query": "צילום טיימלאפס",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 40
+    },
+    {
+      "query": "תיעוד בנייה",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 74
+    },
+    {
+      "query": "תיעוד דיגיטלי אתרי בנייה",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    }
+  ]
+}

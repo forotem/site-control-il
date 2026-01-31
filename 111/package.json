@@ -8,7 +8,7 @@
     "auth": "node auth.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.3",
-    "googleapis": "^144.0.0"
+    "googleapis": "^144.0.0",
+    "@modelcontextprotocol/sdk": "^1.0.0"
   }
 }

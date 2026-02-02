@@ -1,0 +1,23 @@
+Professional infographic in Hebrew about construction site documentation benefits.
+  
+  Layout (right to left, Hebrew):
+  - Title at top: "יתרונות תיעוד בנייה בטיימלאפס" (Benefits of Construction Timelapse Documentation)
+  - 4 main sections in a grid:
+    1. תיעוד משפטי (Legal Documentation) - scale of justice icon
+    2. שיווק ומכירות (Marketing & Sales) - graph trending up icon
+    3. בקרת איכות (Quality Control) - checklist icon
+    4. ניהול פרויקט (Project Management) - calendar icon
+  
+  - Each section has a percentage stat:
+    - 30% פחות מחלוקות (30% less disputes)
+    - 50% יותר פניות (50% more leads)
+    - 15% שיפור בלוחות זמנים (15% schedule improvement)
+    - 24/7 תיעוד רציף (24/7 continuous documentation)
+  
+  Style:
+  - Clean, modern infographic design
+  - Blue and orange color scheme (matching Site-Control brand)
+  - Professional icons (not cartoonish)
+  - White background with subtle gradient
+  - Hebrew text must be clear and readable
+  - Minimalist corporate style

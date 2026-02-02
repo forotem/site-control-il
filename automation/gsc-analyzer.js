@@ -12,8 +12,8 @@ const slugify = require('slugify');
 class GSCAnalyzer {
   constructor() {
     this.gscDataPath = path.join(__dirname, '..', 'gsc_output.json');
-    // חישוב דינמי של השנה הבאה לתוכן רלוונטי
-    this.nextYear = new Date().getFullYear() + 1;
+    // שנה נוכחית לתוכן רלוונטי
+    this.currentYear = new Date().getFullYear();
   }
 
   /**
@@ -159,17 +159,19 @@ class GSCAnalyzer {
 
   /**
    * ממיר query לנושא בלוג
-   * @param {string} query - שאילתת החיפוש
-   * @param {number} year - שנה (ברירת מחדל: שנה הבאה)
+   * לפעמים עם שנה, לפעמים בלי - לגיוון טבעי יותר
    */
-  convertToTopic(query, year = null) {
-    const targetYear = year || this.nextYear;
+  convertToTopic(query) {
+    const year = this.currentYear;
+    // חלק מהתבניות עם שנה, חלק בלי - לגיוון טבעי
     const templates = [
-      `${query} ${targetYear} - המדריך המלא והמעודכן`,
-      `${query} ${targetYear} - כל מה שצריך לדעת לפני הרכישה`,
-      `${query} - השוואה מקיפה והמלצות מקצועיות ${targetYear}`,
-      `${query} ${targetYear} - היתרונות, החסרונות ומה כדאי לקנות`,
-      `${query} - מדריך מקצועי ${targetYear} עם טיפים וטריקים`
+      `${query} - המדריך המלא והמעודכן`,
+      `${query} - כל מה שצריך לדעת לפני הרכישה`,
+      `${query} - השוואה מקיפה והמלצות מקצועיות`,
+      `${query} ${year} - היתרונות, החסרונות ומה כדאי לקנות`,
+      `${query} - מדריך מקצועי עם טיפים וטריקים`,
+      `${query} - המדריך המקצועי ${year}`,
+      `${query} בישראל - כל מה שצריך לדעת`
     ];
     
     const randomTemplate = templates[Math.floor(Math.random() * templates.length)];

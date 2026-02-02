@@ -21,6 +21,13 @@ class NanoBananaAutomation {
   }
 
   /**
+   * פונקציית המתנה (מחליפה waitForTimeout שהוסרה מ-Puppeteer)
+   */
+  async wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  /**
    * פתיחת דפדפן והתחברות
    */
   async initialize() {
@@ -95,7 +102,7 @@ class NanoBananaAutomation {
         
         // אם זה contenteditable div, נשתמש בשיטה מתאימה
         await promptField.click();
-        await this.page.waitForTimeout(500);
+        await this.wait(500);
         
         // מנקה את השדה קודם
         await this.page.keyboard.down('Control');
@@ -105,7 +112,7 @@ class NanoBananaAutomation {
         
         // מדביק את הטקסט
         await promptField.type(prompt, { delay: 20 });
-        await this.page.waitForTimeout(1000);
+        await this.wait(1000);
         console.log('✅ Prompt הודבק בהצלחה');
 
         // חפש כפתור "Generate" או כפתור שליחה

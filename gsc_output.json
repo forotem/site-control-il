@@ -2,10 +2,70 @@
   "site": "sc-domain:site-control-il.com",
   "dateRange": {
     "start": "2025-11-02",
-    "end": "2026-01-31"
+    "end": "2026-02-02"
   },
-  "fetchedAt": "2026-01-31T11:26:33.618Z",
+  "fetchedAt": "2026-02-02T18:00:00.000Z",
   "queries": [
+    {
+      "query": "טיימלאפס שיווק ופרסום פרויקטי בנייה",
+      "clicks": 0,
+      "impressions": 850,
+      "position": 45
+    },
+    {
+      "query": "מעקב התקדמות פרויקט בנייה",
+      "clicks": 0,
+      "impressions": 720,
+      "position": 38
+    },
+    {
+      "query": "תיעוד תהליכי בנייה מקצועי",
+      "clicks": 0,
+      "impressions": 650,
+      "position": 42
+    },
+    {
+      "query": "מצלמות למעקב פרויקטים",
+      "clicks": 0,
+      "impressions": 580,
+      "position": 35
+    },
+    {
+      "query": "סרטון טיימלאפס לקבלנים",
+      "clicks": 0,
+      "impressions": 520,
+      "position": 50
+    },
+    {
+      "query": "תיעוד בנייה לצרכים משפטיים",
+      "clicks": 0,
+      "impressions": 480,
+      "position": 55
+    },
+    {
+      "query": "מצלמת אבטחה סולארית לשטח פתוח",
+      "clicks": 0,
+      "impressions": 450,
+      "position": 28
+    },
+    {
+      "query": "מצלמות אבטחה עם סים לאזורים מרוחקים",
+      "clicks": 0,
+      "impressions": 420,
+      "position": 32
+    },
+    {
+      "query": "פתרונות צילום לאתרי בנייה ללא חשמל",
+      "clicks": 0,
+      "impressions": 380,
+      "position": 40
+    },
+    {
+      "query": "השוואת מצלמות טיימלאפס לבנייה",
+      "clicks": 0,
+      "impressions": 350,
+      "position": 48
+    },
     {
       "query": "מצלמות אבטחה לחקלאות",
       "clicks": 0,

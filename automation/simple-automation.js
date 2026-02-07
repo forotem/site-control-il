@@ -32,20 +32,21 @@ class SEOContentAutomation {
     
     
     
+    
     const opportunities = [
       {
-        topic: 'תיעוד בנייה לצרכים משפטיים בישראל - כל מה שצריך לדעת',
-        englishSlug: 'construction-undefined',
+        topic: 'תיעוד תהליכי בנייה מקצועי - מדריך מקצועי עם טיפים וטריקים',
+        englishSlug: 'construction-professional-undefined',
         targetKeywords: [
-                    "תיעוד בנייה לצרכים משפטיים",
-                    "תיעוד בנייה לצרכים משפטיים undefined",
-                    "תיעוד בנייה לצרכים משפטיים למכירה",
-                    "תיעוד בנייה לצרכים משפטיים מחיר",
-                    "תיעוד בנייה לצרכים משפטיים המלצות",
-                    "תיעוד בנייה לצרכים משפטיים ביקורות"
+                    "תיעוד תהליכי בנייה מקצועי",
+                    "תיעוד תהליכי בנייה מקצועי undefined",
+                    "תיעוד תהליכי בנייה מקצועי למכירה",
+                    "תיעוד תהליכי בנייה מקצועי מחיר",
+                    "תיעוד תהליכי בנייה מקצועי המלצות",
+                    "תיעוד תהליכי בנייה מקצועי ביקורות"
           ],
         difficulty: 'medium',
-        searchVolume: 480,
+        searchVolume: 650,
         competition: 'medium',
         intent: 'informational'
       },

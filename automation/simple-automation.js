@@ -33,20 +33,21 @@ class SEOContentAutomation {
     
     
     
+    
     const opportunities = [
       {
-        topic: 'תיעוד תהליכי בנייה מקצועי - מדריך מקצועי עם טיפים וטריקים',
-        englishSlug: 'construction-professional-undefined',
+        topic: 'סרטון טיימלאפס לקבלנים 2026 - היתרונות, החסרונות ומה כדאי לקנות',
+        englishSlug: 'complete-undefined',
         targetKeywords: [
-                    "תיעוד תהליכי בנייה מקצועי",
-                    "תיעוד תהליכי בנייה מקצועי undefined",
-                    "תיעוד תהליכי בנייה מקצועי למכירה",
-                    "תיעוד תהליכי בנייה מקצועי מחיר",
-                    "תיעוד תהליכי בנייה מקצועי המלצות",
-                    "תיעוד תהליכי בנייה מקצועי ביקורות"
+                    "סרטון טיימלאפס לקבלנים",
+                    "סרטון טיימלאפס לקבלנים undefined",
+                    "סרטון טיימלאפס לקבלנים למכירה",
+                    "סרטון טיימלאפס לקבלנים מחיר",
+                    "סרטון טיימלאפס לקבלנים המלצות",
+                    "סרטון טיימלאפס לקבלנים ביקורות"
           ],
         difficulty: 'medium',
-        searchVolume: 650,
+        searchVolume: 520,
         competition: 'medium',
         intent: 'informational'
       },

@@ -1,7 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
+
+const CheckCircle = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+);
 
 export default function TechnicalSection() {
   const specs = [
@@ -88,7 +91,7 @@ export default function TechnicalSection() {
               className="mt-12 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200"
             >
               <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                📦 תכולת הערכה
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> תכולת הערכה
               </h4>
               <div className="space-y-3">
                 {[
@@ -99,7 +102,7 @@ export default function TechnicalSection() {
                   'מדריך התקנה מלא',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <span className="text-blue-600 font-bold">✓</span>
+                    <span className="text-blue-600 font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline'}}><path d="M20 6 9 17l-5-5"/></svg></span>
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}

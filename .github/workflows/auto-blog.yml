@@ -28,6 +28,27 @@ jobs:
           node-version: '20'
           cache: 'npm'
       
+      - name: �️ Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libnspr4 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2 \
+            libpango-1.0-0 \
+            libcairo2 \
+            fonts-liberation
+      
       - name: 📦 Install root dependencies
         run: npm ci
       
@@ -45,16 +66,20 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AUTO_GENERATE_IMAGES: 'true'
+          CI: 'true'
         run: |
           cd automation
           node auto-scheduler.js
+        continue-on-error: false
       
-      - name: 📤 Push changes
+      - name: 📤 Commit and Push changes
         run: |
           # בודק אם יש שינויים
-          if git diff --quiet && git diff --staged --quiet; then
+          git add -A
+          if git diff --staged --quiet; then
             echo "אין שינויים לcommit"
           else
-            echo "יש שינויים, עושה push..."
+            echo "יש שינויים, עושה commit ו-push..."
+            git commit -m "🤖 Auto Blog: $(date +'%Y-%m-%d')"
             git push
           fi

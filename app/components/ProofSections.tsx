@@ -2,37 +2,47 @@ import Image from "next/image";
 import { proofImages, productImages, appShots, competitorImages } from "../data/images";
 import { useCases } from "../data/features";
 
+
 export function ProofSections() {
   return (
     <>
-      <section className="hero">
+      <section className="hero" style={{ padding: '40px 0' }}>
         <div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 16px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.08)', border: '1px solid rgba(0, 194, 255, 0.15)', fontSize: '0.8rem', color: '#00c2ff', fontWeight: 600, marginBottom: '16px', letterSpacing: '0.5px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg> גיבוי ענן</div>
           <h2>גיבוי ענן אוטומטי בזמן אמת - אבטחת הקלטות מלאה גם במקרה של גניבה או נזק למצלמה</h2>
           <p style={{fontSize: '1.05rem', lineHeight: '1.7'}}>
             <strong>מערכת גיבוי ענן חכמה</strong> - כל סרטון שהמצלמה מקליטה עולה באופן אוטומטי לענן תוך שניות. גם אם המצלמה נגנבת, ניזוקה או נפגעת - כל ההקלטות שמורות בענן באופן מאובטח. <strong>גישה מכל מקום</strong> - צפו בצילומים חיים או מהעבר מהמחשב, הטלפון או הטאבלט, מכל מקום בעולם עם חיבור לאינטרנט. <strong>אחסון גמיש</strong> - בחרו בין תוכניות אחסון של 7, 30 או 90 יום, בהתאם לצרכים שלכם.
           </p>
         </div>
-        <Image src={proofImages.cloud} alt={proofImages.cloudAlt} width={1440} height={867} sizes="(max-width: 768px) 100vw, 540px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        <div className="hero-img">
+          <Image src={proofImages.cloud} alt={proofImages.cloudAlt} width={1440} height={867} sizes="(max-width: 768px) 100vw, 540px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        </div>
       </section>
 
-      <section className="hero">
+      <section className="hero" style={{ padding: '40px 0' }}>
         <div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 16px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.08)', border: '1px solid rgba(0, 194, 255, 0.15)', fontSize: '0.8rem', color: '#00c2ff', fontWeight: 600, marginBottom: '16px', letterSpacing: '0.5px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> עמידות מקצועית</div>
           <h2>עמידות מקצועית לתנאי שטח קשים - IP66 עמידה למים, אבק, חום וקור קיצוניים</h2>
           <p style={{fontSize: '1.05rem', lineHeight: '1.7'}}>
             <strong>תקן IP66 מלא</strong> - המצלמות מוגנות לחלוטין מפני חדירת מים, גשם כבד, אבק, לכלוך ותנאי סביבה קשים. <strong>טווח טמפרטורות רחב</strong> - עובדת בטמפרטורות קיצון מ--10°C עד +55°C, מתאימה לקיץ חם ולחורף קר. <strong>קרוד מתכת חזק</strong> - בנייה עמידה מפני ונדליזם, מזג אוויר קשה ופגיעות מכניות. מתאימה במיוחד לאתרי בנייה, שטחים חקלאיים פתוחים, מחסנים חיצוניים ומקומות עבודה בשטח.
           </p>
         </div>
-        <Image src={proofImages.weather} alt={proofImages.weatherAlt} width={1440} height={864} sizes="(max-width: 768px) 100vw, 540px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        <div className="hero-img">
+          <Image src={proofImages.weather} alt={proofImages.weatherAlt} width={1440} height={864} sizes="(max-width: 768px) 100vw, 540px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        </div>
       </section>
 
-      <section className="hero">
+      <section className="hero" style={{ padding: '40px 0' }}>
         <div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 16px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.08)', border: '1px solid rgba(0, 194, 255, 0.15)', fontSize: '0.8rem', color: '#00c2ff', fontWeight: 600, marginBottom: '16px', letterSpacing: '0.5px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg> איכות 4K</div>
           <h2>איכות צילום 4K Ultra HD עם ראיית לילה צבעונית - רזולוציה של 3840×2160 פיקסלים</h2>
           <p style={{fontSize: '1.05rem', lineHeight: '1.7'}}>
             <strong>צילום 4K חד במיוחד</strong> - רזולוציה של 3840×2160 פיקסלים מספקת פירוט ברור של כל פרט באתר - זיהוי פנים, לוחיות רישוי רכב, ופרטים קטנים מרחוק. <strong>ראיית לילה צבעונית מתקדמת</strong> - בניגוד למצלמות רגילות בשחור-לבן, מצלמות אלו מציגות וידאו צבעוני גם בלילה המוחלט באמצעות טכנולוגיית Starlight וספוטלייט LED. <strong>שימוש מקצועי</strong> - מתאים לתיעוד משפטי, ביטוח, הצגת התקדמות פרויקט ללקוחות, מעקב אחר ציוד יקר ושמירה על נכסים. איכות הווידאו מאפשרת זום דיגיטלי מבלי לאבד בהירות.
           </p>
         </div>
-        <Image src={proofImages.quality} alt={proofImages.qualityAlt} width={1440} height={712} sizes="(max-width: 768px) 100vw, 640px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        <div className="hero-img">
+          <Image src={proofImages.quality} alt={proofImages.qualityAlt} width={1440} height={712} sizes="(max-width: 768px) 100vw, 640px" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+        </div>
       </section>
 
       <section>
@@ -141,11 +151,13 @@ export function ProofSections() {
           </p>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '40px' }}>
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
-                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                </svg>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '24px', height: '24px' }}>
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                </div>
                 <h3 style={{ margin: 0, color: 'var(--accent)' }}>צפייה חיה בזמן אמת</h3>
               </div>
               <p style={{ color: 'var(--muted)', lineHeight: '1.6', margin: 0 }}>
@@ -153,7 +165,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
@@ -165,7 +177,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
@@ -177,7 +189,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
@@ -189,7 +201,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -201,7 +213,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
@@ -213,7 +225,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
@@ -225,7 +237,7 @@ export function ProofSections() {
               </p>
             </div>
 
-            <div style={{ background: 'rgba(15, 22, 34, 0.95)', padding: '20px', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+            <div style={{ background: 'var(--glass)', backdropFilter: 'blur(20px)', padding: '24px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--glass-border)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>

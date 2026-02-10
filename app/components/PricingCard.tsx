@@ -52,7 +52,7 @@ export default function PricingCard({
       <ul className="space-y-3">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-center gap-2">
-            <span className={`text-lg ${highlighted ? 'text-blue-100' : 'text-green-500'}`}>✓</span>
+            <span className={`text-lg ${highlighted ? 'text-blue-100' : 'text-green-500'}`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline'}}><path d="M20 6 9 17l-5-5"/></svg></span>
             <span className={highlighted ? 'text-blue-50' : 'text-gray-700'}>{feature}</span>
           </li>
         ))}

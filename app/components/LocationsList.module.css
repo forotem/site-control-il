@@ -1,55 +1,76 @@
 .locationsSection {
-  margin: 3rem 0;
+  margin: 4rem 0;
 }
 
 .locationsSection h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--text-bright, #fff);
 }
 
 .subtitle {
   text-align: center;
-  color: #666;
-  margin-bottom: 2rem;
+  color: var(--muted, #8ba3bf);
+  margin-bottom: 2.5rem;
   font-size: 1.1rem;
 }
 
 .regionGroup {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .regionGroup h3 {
-  font-size: 1.5rem;
-  color: #007bff;
+  font-size: 1.4rem;
+  color: var(--accent, #00c2ff);
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 194, 255, 0.15);
+  padding-bottom: 0.75rem;
+  font-weight: 600;
 }
 
 .locationsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 20px;
 }
 
 .locationCard {
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1.5rem;
+  background: var(--glass, rgba(12, 18, 32, 0.7));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-lg, 24px);
+  padding: 24px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.locationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 194, 255, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .locationCard:hover {
-  border-color: #007bff;
-  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
+  border-color: rgba(0, 194, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
   transform: translateY(-4px);
+}
+
+.locationCard:hover::before {
+  opacity: 1;
 }
 
 .cardContent {
@@ -59,16 +80,18 @@
 }
 
 .locationCard h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin: 0 0 0.75rem 0;
-  color: #333;
+  color: var(--text-bright, #fff);
+  font-weight: 600;
 }
 
 .locationCard p {
-  color: #666;
+  color: var(--muted, #8ba3bf);
   margin: 0 0 1rem 0;
-  line-height: 1.5;
+  line-height: 1.6;
   flex-grow: 1;
+  font-size: 0.95rem;
 }
 
 .benefits {
@@ -79,20 +102,21 @@
 
 .benefits li {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--muted, #8ba3bf);
   margin: 0.5rem 0;
   padding-right: 0.5rem;
 }
 
 .learnMore {
-  color: #007bff;
-  font-weight: bold;
+  color: var(--accent, #00c2ff);
+  font-weight: 600;
   margin-top: auto;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .locationCard:hover .learnMore {
-  color: #0056b3;
+  color: #33d1ff;
 }
 
 @media (max-width: 768px) {

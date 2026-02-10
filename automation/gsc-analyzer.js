@@ -283,7 +283,9 @@ class GSCAnalyzer {
       .replace(/^-|-$/g, '') // מקפים בהתחלה/סוף
       || 'post';             // fallback אם הכל נמחק
     
-    return `${slug}-${this.nextYear}`;
+    // מוסיף שנה רק לפעמים - לא תמיד
+    const addYear = Math.random() > 0.5;
+    return addYear ? `${slug}-${this.currentYear}` : slug;
   }
 
   /**
@@ -294,7 +296,7 @@ class GSCAnalyzer {
     
     // מוסיף וריאציות עם שנה דינמית
     const variations = [
-      `${query} ${this.nextYear}`,
+      `${query} ${this.currentYear}`,
       `${query} למכירה`,
       `${query} מחיר`,
       `${query} המלצות`,

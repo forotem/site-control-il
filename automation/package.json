@@ -1,0 +1,21 @@
+{
+  "name": "site-control-automation",
+  "version": "1.0.0",
+  "description": "Blog automation scripts for site-control-il",
+  "private": true,
+  "scripts": {
+    "auto-schedule": "node auto-scheduler.js",
+    "simple": "node simple-automation.js",
+    "gsc-analyze": "node gsc-analyzer.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "slugify": "^1.6.6",
+    "@google/generative-ai": "^0.24.1",
+    "sharp": "^0.34.5",
+    "puppeteer": "^24.36.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

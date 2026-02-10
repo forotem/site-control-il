@@ -47,7 +47,7 @@ export function ImageGallery({ images, columns = 3 }: ImageGalleryProps) {
     return (
       <div className={styles.lightboxOverlay} onClick={() => setSelectedIndex(null)}>
         <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-          <button className={styles.closeButton} onClick={() => setSelectedIndex(null)}>✕</button>
+          <button className={styles.closeButton} onClick={() => setSelectedIndex(null)}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
           
           <div className={styles.imageContainer}>
             <Image

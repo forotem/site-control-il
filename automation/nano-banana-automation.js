@@ -18,6 +18,8 @@ class NanoBananaAutomation {
     this.imageGenUrl = 'https://gemini.google.com/app'; // ברירת מחדל: Gemini
     this.browser = null;
     this.page = null;
+    // זיהוי אם אנחנו רצים ב-CI/GitHub Actions
+    this.isCI = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
   }
 
   /**
@@ -33,11 +35,24 @@ class NanoBananaAutomation {
   async initialize() {
     console.log('🌐 פותח דפדפן אוטומטי...');
     
-    this.browser = await puppeteer.launch({
-      headless: false, // דפדפן גלוי כדי שתוכל לראות מה קורה
+    // ב-CI/GitHub Actions נשתמש ב-headless mode
+    const launchOptions = {
+      headless: this.isCI ? 'new' : false, // headless ב-CI, עם UI מקומית
       defaultViewport: { width: 1920, height: 1080 },
-      args: ['--start-maximized']
-    });
+      args: [
+        '--start-maximized',
+        '--no-sandbox', // נדרש ב-CI
+        '--disable-setuid-sandbox', // נדרש ב-CI
+        '--disable-dev-shm-usage', // מונע בעיות זיכרון ב-CI
+        '--disable-gpu' // מונע בעיות GPU ב-CI
+      ]
+    };
+    
+    if (this.isCI) {
+      console.log('🔧 מריץ במצב CI/headless');
+    }
+
+    this.browser = await puppeteer.launch(launchOptions);
 
     this.page = await this.browser.newPage();
     

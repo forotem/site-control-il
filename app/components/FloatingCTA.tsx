@@ -4,7 +4,7 @@ export function FloatingCTA() {
   return (
     <div className="floating-cta">
       <a 
-        href="https://wa.me/972501234567?text=שלום, אני מעוניין במצלמות אבטחה סולאריות" 
+        href="https://wa.me/972502256866?text=שלום, אני מעוניין במצלמות אבטחה סולאריות" 
         target="_blank" 
         rel="noopener noreferrer"
         className="floating-btn whatsapp animate-pulse-glow"

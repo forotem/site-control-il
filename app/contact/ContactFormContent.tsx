@@ -162,7 +162,7 @@ export default function ContactFormContent() {
           <div className={styles.infoBox}>
             <h3>📞 טלפון</h3>
             <p>
-              <a href="tel:+972-50-1234567">050-123-4567</a>
+              <a href="tel:+972-50-2256866">050-225-6866</a>
             </p>
           </div>
 

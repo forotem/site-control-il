@@ -2,7 +2,7 @@ export const packages = [
   {
     id: "diy",
     title: "קנה והתקן",
-    price: "1,280 ₪ חד פעמי",
+    price: "3,750 ₪ חד פעמי",
     monthly: "ללא",
     bullets: [
       "מצלמת 4G סולארית",
@@ -15,7 +15,7 @@ export const packages = [
   {
     id: "managed",
     title: "ראש שקט",
-    price: "3,230 ₪ הקמה",
+    price: "5,650 ₪ הקמה",
     monthly: "70 ₪ לחודש",
     bullets: [
       "סיור ותכנון (300 ₪)",

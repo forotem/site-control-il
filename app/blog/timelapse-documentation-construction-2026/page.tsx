@@ -437,7 +437,7 @@ export default function BlogPage() {
               }}>
                 קבלו הצעת מחיר
               </a>
-              <a href="tel:050-000-0000" style={{
+              <a href="tel:050-225-6866" style={{
                 backgroundColor: 'transparent',
                 color: 'white',
                 padding: '1rem 2.5rem',

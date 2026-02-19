@@ -165,7 +165,7 @@ export default function PricingSection() {
           <PricingCard
             title="קנה והתקן"
             subtitle="DIY - בניהול עצמי"
-            price="1,280 ₪"
+            price="3,750 ₪"
             description="עלות חד-פעמית"
             features={[
               '✓ מצלמה סולארית ReoLink Go',
@@ -181,7 +181,7 @@ export default function PricingSection() {
           <PricingCard
             title="שקט תעשייתי"
             subtitle="מומלץ - שירות מלא"
-            price="3,230 ₪"
+            price="5,650 ₪"
             monthly="70 ₪"
             description="התקנה, ניהול וניטור"
             features={[

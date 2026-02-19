@@ -40,7 +40,7 @@ export default function PricingPage() {
             <PricingCard
               title="ReoLink Go - בסיסי"
               description="מצלמה סולארית - אתה מתקין"
-              price="1,280 ₪"
+              price="3,750 ₪"
               features={[
                 '✓ ReoLink Go (סולארית)',
                 '✓ כרטיס זיכרון 64GB',
@@ -54,7 +54,7 @@ export default function PricingPage() {
             <PricingCard
               title="ReoLink Go - מקצועי"
               description="התקנה + ניהול + תמיכה"
-              price="3,230 ₪"
+              price="5,650 ₪"
               monthly="70 ₪"
               features={[
                 '✓ ReoLink Go עם סוללה גדולה',
@@ -149,8 +149,8 @@ export default function PricingPage() {
                 <tbody>
                   <tr className="border-b hover:bg-gray-50">
                     <td className="px-6 py-4 font-semibold">עלות הקמה</td>
-                    <td className="px-6 py-4 text-center">1,280 ₪</td>
-                    <td className="px-6 py-4 text-center bg-blue-50">3,230 ₪</td>
+                    <td className="px-6 py-4 text-center">3,750 ₪</td>
+                    <td className="px-6 py-4 text-center bg-blue-50">5,650 ₪</td>
                     <td className="px-6 py-4 text-center">8,420 ₪</td>
                   </tr>
                   <tr className="border-b hover:bg-gray-50">

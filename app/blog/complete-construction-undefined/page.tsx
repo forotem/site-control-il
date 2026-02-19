@@ -159,7 +159,7 @@ export default function Page() {
 
 <p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: var(--accent);">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
 
-<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-123-4567
+<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-225-6866
 <strong style="font-weight: bold; color: var(--accent);">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: var(--link-color); text-decoration: underline;">www.site-control-il.com/contact</a>
 
 <p style="margin: 1rem 0; font-style: italic; color: var(--muted);">---</p>

@@ -9,7 +9,7 @@ export default function JsonLd() {
     description:
       'מצלמות סולאריות 4G ללא תשתית, עם גיבוי ענן וביטוח מלא לאתרי בנייה ושטחים חקלאיים',
     url: 'https://sitecontrol.co.il',
-    telephone: '+972-50-XXXXXXX',
+    telephone: '+972-50-2256866',
     email: 'info@sitecontrol.co.il',
     address: {
       '@type': 'PostalAddress',

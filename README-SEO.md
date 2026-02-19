@@ -133,7 +133,7 @@ import { Analytics } from './components/Analytics';
 
 לשאלות או תמיכה טכנית:
 - Email: support@site-control.co.il
-- Tel: +972-50-0000000
+- Tel: +972-50-2256866
 
 ---
 

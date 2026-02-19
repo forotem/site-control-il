@@ -16,7 +16,7 @@ export function FloatingCTA() {
         </svg>
       </a>
       <a 
-        href="tel:+972501234567" 
+        href="tel:+972502256866" 
         className="floating-btn phone"
         aria-label="התקשר אלינו"
       >

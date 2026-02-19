@@ -15,7 +15,7 @@ export function LocalBusinessSchema() {
     name: 'Site-Control',
     description:
       'מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ושטחים מבודדים - גיבוי ענן אוטומטי, איכות 4K, ראיית לילה צבעונית ושליטה מרחוק 24/7',
-    telephone: '+972-50-0000000',
+    telephone: '+972-50-2256866',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
@@ -151,7 +151,7 @@ export function OrganizationSchema() {
     url: BASE_URL,
     logo: `${BASE_URL}/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif`,
     description: 'ספק מוביל של מצלמות אבטחה סולאריות 4G בישראל - פתרונות מעקב מתקדמים לאתרי בנייה, חקלאות ושטחים מבודדים',
-    telephone: '+972-50-0000000',
+    telephone: '+972-50-2256866',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
@@ -163,7 +163,7 @@ export function OrganizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+972-50-0000000',
+      telephone: '+972-50-2256866',
       contactType: 'customer service',
       availableLanguage: ['Hebrew', 'English'],
     },

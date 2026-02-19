@@ -45,7 +45,7 @@ export default function CTASection() {
         {/* Contact Methods */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <motion.a
-            href="tel:+972123456789"
+            href="tel:+972502256866"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0 }}

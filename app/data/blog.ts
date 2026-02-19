@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '26',
+    title: 'מעקב התקדמות פרויקט בנייה: כך מצלמות אבטחה חכמות משנות את כללי המשחק',
+    slug: 'monitoring-progress-project-construction-2026',
+    excerpt: 'גלו כיצד מצלמות אבטחה מתקדמות מבית Site-Control משפרות את ניהול, אבטחת ותיעוד פרויקטי בנייה בישראל. מדריך מקיף למעקב התקדמות פרויקטים....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-02-19',
+    category: 'פתרונות לעסקים',
+    image: '/blog-images/monitoring-progress-project-construction-2026/hero.svg',
+    seoTitle: 'מעקב התקדמות פרויקט בנייה: כך מצלמות אבטחה חכמות משנות את כללי המשחק | Site-Control',
+    seoDescription: 'גלו כיצד מצלמות אבטחה מתקדמות מבית Site-Control משפרות את ניהול, אבטחת ותיעוד פרויקטי בנייה בישראל. מדריך מקיף למעקב התקדמות פרויקטים.',
+    keywords: ["מעקב התקדמות פרויקט בנייה","מצלמות אבטחה לאתרי בנייה","אבטחה באתרי בנייה","ניטור בנייה","Time-Lapse בנייה","Site-Control","Hikvision לאתרי בנייה","Dahua לאתרי בנייה"]
+  },
+  {
     id: '25',
     title: 'סרטון טיימלאפס לקבלנים 2026 - היתרונות, החסרונות ומה כדאי לקנות',
     slug: 'timelapse-video-contractors-2026',

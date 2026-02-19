@@ -380,13 +380,53 @@ section > h2::after {
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-smooth);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .stat-card:hover {
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(0, 194, 255, 0.2), 0 0 80px rgba(0, 194, 255, 0.1);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.stat-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 194, 255, 0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover .stat-glow {
+  opacity: 1;
+}
+
+.stat-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--accent);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-icon-visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .stat-number {
@@ -404,6 +444,14 @@ section > h2::after {
   color: var(--muted);
   font-size: 1rem;
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.stat-label-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== FLOATING CONTACT BUTTON ===== */

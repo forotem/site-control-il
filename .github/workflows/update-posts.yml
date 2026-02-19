@@ -1,0 +1,57 @@
+name: Update Old Posts - שיפור פוסטים ישנים
+
+on:
+  # 1 בכל חודש בשעה 08:00 UTC (10:00 בישראל)
+  schedule:
+    - cron: '0 8 1 * *'
+  
+  # אפשרות להריץ ידנית
+  workflow_dispatch:
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: 📦 Install root dependencies
+        run: npm ci
+      
+      - name: 📦 Install automation dependencies
+        run: |
+          cd automation
+          npm install
+      
+      - name: 🔄 Update Old Posts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+        run: |
+          cd automation
+          node update-old-posts.js
+      
+      - name: 📤 Commit and Push
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "bot@site-control-il.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "אין שינויים"
+          else
+            git commit -m "🔄 שיפור פוסטים: $(date +'%Y-%m-%d')"
+            git push
+          fi

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '27',
+    title: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח',
+    slug: 'timelapse-marketing-advertising-projects-construction-2026',
+    excerpt: 'גלו איך טיימלאפס יכול לשדרג את שיווק פרויקטי הבנייה שלכם. מדריך מקיף מבית Site-Control עם המלצות ציוד, טיפים להתקנה ושאלות נפוצות....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-02-23',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.png',
+    seoTitle: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח | Site-Control',
+    seoDescription: 'גלו איך טיימלאפס יכול לשדרג את שיווק פרויקטי הבנייה שלכם. מדריך מקיף מבית Site-Control עם המלצות ציוד, טיפים להתקנה ושאלות נפוצות.',
+    keywords: ["טיימלאפס","שיווק פרויקטי בנייה","פרסום בנייה","מצלמות אבטחה בנייה","תיעוד בנייה","Site-Control","Hikvision","Dahua","Reolink"]
+  },
+  {
     id: '26',
     title: 'מעקב התקדמות פרויקט בנייה: כך מצלמות אבטחה חכמות משנות את כללי המשחק',
     slug: 'monitoring-progress-project-construction-2026',

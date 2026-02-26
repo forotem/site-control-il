@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '28',
+    title: 'מעקב פרויקטים חכם: איך מצלמות אבטחה מנתבות את הבנייה והפיתוח בישראל',
+    slug: 'cameras-projects-2026',
+    excerpt: 'גלו את כוחן של מצלמות למעקב פרויקטים! מדריך מקיף מבית Site-Control על בחירה, התקנה ותחזוקה של מצלמות אבטחה לאתרי בנייה, תשתיות ופרויקטים תעשייתיים ביש...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-02-26',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/cameras-projects-2026/hero.png',
+    seoTitle: 'מעקב פרויקטים חכם: איך מצלמות אבטחה מנתבות את הבנייה והפיתוח בישראל | Site-Control',
+    seoDescription: 'גלו את כוחן של מצלמות למעקב פרויקטים! מדריך מקיף מבית Site-Control על בחירה, התקנה ותחזוקה של מצלמות אבטחה לאתרי בנייה, תשתיות ופרויקטים תעשייתיים בישראל. עם המלצות ל-Reolink, Hikvision, Dahua ועוד.',
+    keywords: ["מצלמות למעקב פרויקטים","מצלמות אבטחה לאתרי בנייה","מעקב בנייה","מצלמות 4G סולאריות","Site-Control","Hikvision","Dahua","Reolink"]
+  },
+  {
     id: '27',
     title: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח',
     slug: 'timelapse-marketing-advertising-projects-construction-2026',

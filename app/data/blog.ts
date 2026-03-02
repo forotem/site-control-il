@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '29',
+    title: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח',
+    slug: 'security-solar-2026',
+    excerpt: 'מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-03-02',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/security-solar-2026/hero.png',
+    seoTitle: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח | Site-Control',
+    seoDescription: 'מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control.',
+    keywords: ["מצלמת אבטחה סולארית לשטח פתוח","אבטחה חקלאית","מצלמה סלולרית 4G","אבטחה לשטח מרוחק","פתרון אבטחה עצמאי","אנרגיה סולארית לאבטחה","מצלמות אבטחה ישראל","Site-Control"]
+  },
+  {
     id: '28',
     title: 'מעקב פרויקטים חכם: איך מצלמות אבטחה מנתבות את הבנייה והפיתוח בישראל',
     slug: 'cameras-projects-2026',

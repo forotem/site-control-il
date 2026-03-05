@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '30',
+    title: 'סרטון טיימלאפס לקבלנים: המדריך המלא ליצירת תיעוד בנייה עוצר נשימה',
+    slug: 'video-timelapse-contractors-2026',
+    excerpt: 'גלו כיצד סרטון טיימלאפס לקבלנים יכול לשדרג את ניהול הפרויקטים, השיווק והביטחון באתר הבנייה. מומחי Site-Control מסבירים הכל, עם המלצות מוצר וטיפים מעשי...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-03-05',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/video-timelapse-contractors-2026/hero.png',
+    seoTitle: 'סרטון טיימלאפס לקבלנים: המדריך המלא ליצירת תיעוד בנייה עוצר נשימה | Site-Control',
+    seoDescription: 'גלו כיצד סרטון טיימלאפס לקבלנים יכול לשדרג את ניהול הפרויקטים, השיווק והביטחון באתר הבנייה. מומחי Site-Control מסבירים הכל, עם המלצות מוצר וטיפים מעשיים.',
+    keywords: ["סרטון טיימלאפס לקבלנים","מצלמות אבטחה לאתר בנייה","תיעוד בנייה","ניהול פרויקטים","בקרה והתקדמות","Site-Control","מצלמות אבטחה 4K","טיימלאפס סולארי"]
+  },
+  {
     id: '29',
     title: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח',
     slug: 'security-solar-2026',

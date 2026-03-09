@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '31',
+    title: 'ללא חשמל, ללא דאגות: פתרונות צילום מתקדמים לאתרי בנייה מנותקים',
+    slug: 'photography-sites-construction-2026',
+    excerpt: 'מומחי Site-Control מציגים: פתרונות צילום ואבטחה לאתרי בנייה ללא חיבור לחשמל. מצלמות סולאריות, סוללה ו-4G מבית Reolink, Hikvision, Dahua. מדריך מקיף....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-03-09',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/photography-sites-construction-2026/hero.png',
+    seoTitle: 'ללא חשמל, ללא דאגות: פתרונות צילום מתקדמים לאתרי בנייה מנותקים | Site-Control',
+    seoDescription: 'מומחי Site-Control מציגים: פתרונות צילום ואבטחה לאתרי בנייה ללא חיבור לחשמל. מצלמות סולאריות, סוללה ו-4G מבית Reolink, Hikvision, Dahua. מדריך מקיף.',
+    keywords: ["פתרונות צילום לאתרי בנייה ללא חשמל","מצלמות סולאריות לאתר בנייה","אבטחת אתרי בנייה 4G","מצלמות סוללה לאתרי בנייה","מצלמות Hikvision סולאריות","מצלמות Reolink 4G","Site-Control אבטחה","מצלמות אבטחה ניידות"]
+  },
+  {
     id: '30',
     title: 'סרטון טיימלאפס לקבלנים: המדריך המלא ליצירת תיעוד בנייה עוצר נשימה',
     slug: 'video-timelapse-contractors-2026',

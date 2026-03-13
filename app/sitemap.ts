@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/pricing", priority: 0.7, changefreq: "weekly" as const },
     { url: "/locations", priority: 0.7, changefreq: "monthly" as const },
     { url: "/blog", priority: 0.8, changefreq: "weekly" as const },
+    { url: "/timelapse", priority: 0.8, changefreq: "monthly" as const },
   ];
 
   const blogPages = blogPosts.map((post) => {

@@ -284,7 +284,15 @@ async function generateBlogContent(topic) {
     { url: '/video-quality', anchor: 'איכות וידאו 4K', context: 'רזולוציה 4K' },
     { url: '/packages', anchor: 'חבילות אבטחה', context: 'מחיר וחבילות' },
     { url: '/contact', anchor: 'ייעוץ חינם', context: 'יצירת קשר' },
+    { url: '/timelapse', anchor: 'טיימלאפס לאתרי בנייה', context: 'תיעוד טיימלאפס בנייה' },
   ];
+
+  // Check if topic is timelapse-related for external link instruction
+  const isTimelapseTopic = /טיימלאפס|timelapse|תיעוד|סרטון|ויזואלי/.test(topic.query.toLowerCase());
+  const timelapseLinkInstruction = isTimelapseTopic
+    ? `\n## קישור חיצוני (חובה לכלול!):
+- כלול קישור לאתר השותף <a href="https://timelapseit.co.il" target="_blank" rel="noopener">timelapseit.co.il</a> — שלב כשמדברים על דוגמאות עבודות, עריכת סרטון, או שיתוף פעולה לצילום טיימלאפס. הצג אותו כשותף המקצועי שלנו לצילום ועריכת טיימלאפס.`
+    : '';
 
   const prompt = `אתה כותב תוכן SEO מומחה בישראל, מתמחה בתחום אבטחה ומצלמות סולאריות 4G, עובד בחברת Site-Control.
 Site-Control מתמחה אך ורק במצלמות אבטחה סולאריות 4G (Reolink GO Plus ו-PTZ Solar) לשוק B2B: קבלני בנייה, חקלאים, מנהלי אתרים מבודדים.
@@ -309,7 +317,7 @@ Site-Control מתמחה אך ורק במצלמות אבטחה סולאריות 4
 - סיים עם CTA חזק שמדגיש ייעוץ חינם מ-Site-Control
 
 ## קישורים פנימיים (כלול 4-6 קישורים בתוך הטקסט):
-${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדברים על: ${p.context}`).join('\n')}
+${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדברים על: ${p.context}`).join('\n')}${timelapseLinkInstruction}
 
 ## מבנה HTML נדרש:
 - כלול תוכן עניינים (table of contents) עם anchor links

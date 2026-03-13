@@ -6,9 +6,36 @@ import { ProductSchema } from "../../components/Schema";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Reolink PTZ Solar 4G - מצלמה מסתובבת | Site-Control",
+  title: "Reolink PTZ Solar 4G - מצלמה מסתובבת 360° | Site-Control",
   description:
-    "מצלמת Reolink PTZ Solar עם זום אופטי 8x, סיבוב 360°, חיבור 4G, גיבוי ענן ורזולוציית 4K — פתרון אידיאלי לשטחים גדולים.",
+    "מצלמת Reolink PTZ Solar עם זום אופטי 8x, סיבוב 360°, חיבור 4G LTE, גיבוי ענן אוטומטי ורזולוציית 4K. פתרון אידיאלי לאתרי בנייה ושטחים גדולים ללא חשמל.",
+  keywords: [
+    "Reolink PTZ Solar",
+    "מצלמה מסתובבת סולארית",
+    "PTZ 4G",
+    "מצלמה 360 מעלות",
+    "זום אופטי 8x",
+    "מצלמת אבטחה 4K",
+    "מצלמה לאתר בנייה",
+    "גיבוי ענן",
+  ],
+  alternates: {
+    canonical: "/products/ptz",
+  },
+  openGraph: {
+    title: "Reolink PTZ Solar 4G - מצלמה מסתובבת 360° | Site-Control",
+    description: "מצלמה מסתובבת סולארית עם זום 8x וחיבור 4G. פתרון אידיאלי לשטחים גדולים.",
+    type: "website",
+    locale: "he_IL",
+    images: [
+      {
+        url: "/optimized-variants/2 סוגי המצלמה/reolink-ptz-solar-security-camera-with-solar-panel.optimized-w1080.avif",
+        width: 1080,
+        height: 1080,
+        alt: "מצלמת Reolink PTZ Solar 4G סולארית מסתובבת",
+      },
+    ],
+  },
 };
 
 export default function PtzProductPage() {

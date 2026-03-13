@@ -143,6 +143,26 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
   return <JsonLd json={json} />;
 }
 
+export function WebSiteSchema() {
+  const json = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Site-Control',
+    url: BASE_URL,
+    description: 'מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ושטחים מבודדים בישראל',
+    inLanguage: 'he',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+  return <JsonLd json={json} />;
+}
+
 export function OrganizationSchema() {
   const json = {
     '@context': 'https://schema.org',

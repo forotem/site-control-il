@@ -9,11 +9,12 @@ import { LocationsList } from "./components/LocationsList";
 import { BlogList } from "./components/BlogList";
 import { StatsSection } from "./components/StatsSection";
 import { TrustBar } from "./components/TrustBar";
-import { LocalBusinessSchema, OrganizationSchema, ProductSchema } from "./components/Schema";
+import { LocalBusinessSchema, OrganizationSchema, ProductSchema, WebSiteSchema } from "./components/Schema";
 
 export default function Page() {
   return (
     <>
+      <WebSiteSchema />
       <LocalBusinessSchema />
       <OrganizationSchema />
       <ProductSchema

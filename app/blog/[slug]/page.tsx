@@ -19,6 +19,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     };
   }
 
+  const ogImage = post.image
+    ? `${BASE_URL}${post.image}`
+    : `${BASE_URL}/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif`;
+
   return {
     title: post.seoTitle || post.title,
     description: post.seoDescription || post.excerpt,
@@ -33,11 +37,20 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       locale: 'he_IL',
       siteName: 'Site-Control',
       url: `${BASE_URL}/blog/${params.slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
+      images: [ogImage],
     },
     alternates: {
       canonical: `${BASE_URL}/blog/${params.slug}`,
@@ -73,14 +86,20 @@ export default function BlogPostPage({ params }: { params: Params }) {
     (p) => p.category === post.category && p.id !== post.id
   );
 
+  const postImage = post.image
+    ? `${BASE_URL}${post.image}`
+    : `${BASE_URL}/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif`;
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
+    image: postImage,
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: post.author,
+      url: BASE_URL,
     },
     datePublished: post.date,
     dateModified: post.date,
@@ -98,6 +117,16 @@ export default function BlogPostPage({ params }: { params: Params }) {
     },
     keywords: post.keywords?.join(', ') || '',
     articleSection: post.category,
+    url: `${BASE_URL}/blog/${params.slug}`,
+    isPartOf: {
+      '@type': 'Blog',
+      '@id': `${BASE_URL}/blog`,
+      name: 'בלוג Site-Control',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Site-Control',
+      },
+    },
   };
 
   const breadcrumbItems = [

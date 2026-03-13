@@ -204,76 +204,101 @@ export default function TimelapsePage() {
             דוגמאות מעבודות שלנו
           </h2>
           <p style={{ textAlign: "center", color: "var(--muted)", marginBottom: "2.5rem" }}>
-            סרטוני הטיימלאפס הבאים צולמו עם מצלמות סולאריות 4G שלנו ועורכו על ידי{" "}
+            סרטוני הטיימלאפס צולמו עם מצלמות סולאריות 4G שלנו ועורכו על ידי{" "}
             <a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{ color: "#00c2ff" }}>
               timelapseit.co.il
             </a>
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "2rem" }}>
-            {/*
-              TODO: החלף את ה-VIDEO_ID_1, VIDEO_ID_2, VIDEO_ID_3
-              ב-IDs האמיתיים מ-YouTube/Vimeo שלך
-              לדוגמה YouTube: https://www.youtube.com/watch?v=VIDEO_ID_1
-              Vimeo: https://vimeo.com/VIDEO_ID_1
-            */}
-            {[
-              { id: "VIDEO_ID_1", title: "פרויקט בנייה - תל אביב" },
-              { id: "VIDEO_ID_2", title: "מגדל מגורים - ירושלים" },
-              { id: "VIDEO_ID_3", title: "מתחם מסחרי - חיפה" },
-            ].map((video, i) => (
-              <div key={i} style={{
-                background: "var(--glass)",
-                border: "1px solid var(--glass-border)",
-                borderRadius: "var(--radius-xl)",
-                overflow: "hidden",
-              }}>
-                {video.id === "VIDEO_ID_1" || video.id === "VIDEO_ID_2" || video.id === "VIDEO_ID_3" ? (
-                  /* Placeholder עד שתחליף עם ID אמיתי */
-                  <a
-                    href="https://timelapseit.co.il"
-                    target="_blank"
-                    rel="noopener"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      height: "220px",
-                      background: "linear-gradient(135deg, rgba(0,194,255,0.1) 0%, rgba(123,45,255,0.1) 100%)",
-                      textDecoration: "none",
-                      gap: "12px",
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="rgba(0,194,255,0.8)" stroke="none">
-                      <circle cx="12" cy="12" r="10" fill="rgba(0,194,255,0.15)" stroke="rgba(0,194,255,0.4)" strokeWidth="1.5"/>
-                      <polygon points="10 8 16 12 10 16 10 8" fill="#00c2ff"/>
-                    </svg>
-                    <span style={{ color: "#00c2ff", fontSize: "0.9rem" }}>צפה ב-timelapseit.co.il</span>
-                  </a>
-                ) : (
-                  <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-                    />
-                  </div>
-                )}
-                <div style={{ padding: "1rem 1.25rem" }}>
-                  <p style={{ margin: 0, fontWeight: 600, fontSize: "0.95rem" }}>{video.title}</p>
-                  <a
-                    href="https://timelapseit.co.il"
-                    target="_blank"
-                    rel="noopener"
-                    style={{ fontSize: "0.82rem", color: "#00c2ff", textDecoration: "none" }}
-                  >
-                    עריכה: timelapseit.co.il ↗
-                  </a>
-                </div>
+          {/* YouTube Channel CTA */}
+          <div style={{
+            background: "linear-gradient(135deg, rgba(255,0,0,0.08) 0%, rgba(0,0,0,0.3) 100%)",
+            border: "1px solid rgba(255,80,80,0.25)",
+            borderRadius: "20px",
+            padding: "3rem 2rem",
+            textAlign: "center",
+            marginBottom: "2rem",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            {/* Background decoration */}
+            <div style={{
+              position: "absolute", inset: 0, opacity: 0.04,
+              backgroundImage: "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)",
+              backgroundSize: "20px 20px",
+            }} />
+            <div style={{ position: "relative" }}>
+              {/* YouTube icon */}
+              <div style={{ marginBottom: "1.25rem" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24">
+                  <path fill="#FF0000" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.52 3.6 12 3.6 12 3.6s-7.52 0-9.38.45A3.02 3.02 0 0 0 .5 6.19C.06 8.07 0 12 0 12s.06 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.48 20.4 12 20.4 12 20.4s7.52 0 9.38-.45a3.02 3.02 0 0 0 2.12-2.14C23.94 15.93 24 12 24 12s-.06-3.93-.5-5.81z"/>
+                  <polygon fill="#FFFFFF" points="9.6,15.6 15.87,12 9.6,8.4"/>
+                </svg>
               </div>
+              <h3 style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>
+                צפו בסרטוני הטיימלאפס שלנו ב-YouTube
+              </h3>
+              <p style={{ color: "var(--muted)", marginBottom: "1.75rem", lineHeight: "1.7", maxWidth: "500px", margin: "0 auto 1.75rem" }}>
+                ערוץ ה-YouTube שלנו מכיל עשרות סרטוני טיימלאפס של פרויקטי בנייה ברחבי ישראל —
+                מגדלי מגורים, מתחמי תעשייה ועוד.
+              </p>
+              <a
+                href="https://youtube.com/@timelapseit912"
+                target="_blank"
+                rel="noopener"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  background: "#FF0000",
+                  color: "white",
+                  textDecoration: "none",
+                  padding: "14px 32px",
+                  borderRadius: "12px",
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  boxShadow: "0 4px 20px rgba(255,0,0,0.35)",
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path fill="white" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.52 3.6 12 3.6 12 3.6s-7.52 0-9.38.45A3.02 3.02 0 0 0 .5 6.19C.06 8.07 0 12 0 12s.06 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.48 20.4 12 20.4 12 20.4s7.52 0 9.38-.45a3.02 3.02 0 0 0 2.12-2.14C23.94 15.93 24 12 12s-.06-3.93-.5-5.81z"/>
+                  <polygon fill="red" points="9.6,15.6 15.87,12 9.6,8.4"/>
+                </svg>
+                צפה בערוץ @timelapseit912
+              </a>
+            </div>
+          </div>
+
+          {/* Project Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+            {[
+              { icon: "🏗️", title: "מגדלי מגורים", desc: "תיעוד מגדלי מגורים מהיסוד ועד הגג — כמה שנות בנייה בכמה דקות" },
+              { icon: "🏭", title: "מתחמי תעשייה ומסחר", desc: "מחסנים, מרכזים לוגיסטיים ופארקי עסקים מתועדים לאורך כל שלבי הבנייה" },
+              { icon: "🌾", title: "תשתיות ופרויקטים ציבוריים", desc: "כבישים, גשרים, ותשתיות ציבוריות — תיעוד ויזואלי לדו\"ח עבודה" },
+            ].map((card) => (
+              <a
+                key={card.title}
+                href="https://youtube.com/@timelapseit912"
+                target="_blank"
+                rel="noopener"
+                style={{
+                  display: "block",
+                  padding: "1.5rem",
+                  background: "var(--glass)",
+                  border: "1px solid var(--glass-border)",
+                  borderRadius: "var(--radius-xl)",
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "border-color 0.3s",
+                }}
+              >
+                <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{card.icon}</div>
+                <h3 style={{ fontSize: "1.05rem", marginBottom: "0.5rem" }}>{card.title}</h3>
+                <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: "1.7", margin: 0 }}>{card.desc}</p>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", color: "#FF0000", fontSize: "0.85rem", marginTop: "0.75rem", fontWeight: 600 }}>
+                  ▶ צפה ב-YouTube
+                </span>
+              </a>
             ))}
           </div>
 
@@ -293,7 +318,6 @@ export default function TimelapsePage() {
                 padding: "12px 28px",
                 border: "1px solid rgba(0,194,255,0.3)",
                 borderRadius: "12px",
-                transition: "all 0.3s",
               }}
             >
               לכל הדוגמאות באתר timelapseit.co.il ←

@@ -7,9 +7,36 @@ import { ImageGallery } from "../../components/ImageGallery";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "רעולינק GO Plus 4G מצלמת סולארית | אתרי בנייה",
+  title: "Reolink GO Plus 4G - מצלמת אבטחה סולארית ללא תשתיות | Site-Control",
   description:
-    "מצלמת Reolink GO Plus 4G - פתרון סולארי מעופציים. 4K, ראיית לילה צבעונית, חיבור 4G LTE, דירוג IP66. שיפור ידעוני למטי אבטחה אחדט.",
+    "מצלמת Reolink GO Plus 4G - פתרון סולארי מושלם לאתרי בנייה ושטחים מבודדים. איכות 4K, ראיית לילה צבעונית, חיבור 4G LTE, עמידות IP66, גיבוי ענן אוטומטי.",
+  keywords: [
+    "Reolink GO Plus",
+    "מצלמת אבטחה סולארית 4G",
+    "מצלמה ללא חשמל",
+    "מצלמה לאתר בנייה",
+    "מצלמה 4G LTE",
+    "IP66",
+    "גיבוי ענן",
+    "מצלמה סולארית 4K",
+  ],
+  alternates: {
+    canonical: "/products/go",
+  },
+  openGraph: {
+    title: "Reolink GO Plus 4G - מצלמת אבטחה סולארית | Site-Control",
+    description: "פתרון סולארי מושלם לאתרי בנייה ושטחים מבודדים. 4K, 4G LTE, IP66, גיבוי ענן.",
+    type: "website",
+    locale: "he_IL",
+    images: [
+      {
+        url: "/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.avif",
+        width: 1080,
+        height: 750,
+        alt: "מצלמת Reolink GO Plus 4G סולארית",
+      },
+    ],
+  },
 };
 
 const galleryImages = [

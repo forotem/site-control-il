@@ -2,8 +2,25 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'אודות Site-Control | בשיתוף Reolink',
-  description: 'Site-Control - ספק מוביל של מצלמות אבטחה סולאריות 4G בשיתוף Reolink. פתרונות מתקדמים לאתרי בנייה וחקלאות.',
+  title: 'אודות Site-Control | מפיץ מורשה Reolink בישראל',
+  description: 'Site-Control - ספק מוביל של מצלמות אבטחה סולאריות 4G ומפיץ מורשה Reolink בישראל. פתרונות אבטחה מתקדמים לאתרי בנייה, חקלאות ושטחים מבודדים עם תמיכה מקצועית בעברית.',
+  keywords: [
+    'Site-Control',
+    'מפיץ Reolink ישראל',
+    'מצלמות אבטחה סולאריות',
+    'אבטחה לאתרי בנייה',
+    'מצלמות 4G ישראל',
+    'תמיכה טכנית עברית',
+  ],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'אודות Site-Control | מפיץ מורשה Reolink בישראל',
+    description: 'ספק מוביל של מצלמות אבטחה סולאריות 4G בישראל. פתרונות מתקדמים לאתרי בנייה וחקלאות.',
+    type: 'website',
+    locale: 'he_IL',
+  },
 };
 
 export default function AboutPage() {

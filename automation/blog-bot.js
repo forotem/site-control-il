@@ -174,18 +174,37 @@ function readStaticGSC() {
 
 // ---------- FIND OPPORTUNITIES ----------
 
+// Keywords that signal B2B/commercial intent — boost their score
+const COMMERCIAL_INTENT_KEYWORDS = [
+  'לאתר בנייה', 'לקבלן', 'לחקלאות', 'לשדה', 'לכרם', 'מרוחק', 'מבודד',
+  'ללא חשמל', 'ללא אינטרנט', 'סולארי', 'סולארית', '4G', 'LTE',
+  'מחיר', 'עלות', 'כמה עולה', 'לקנות', 'השוואה', 'ביקורת',
+  'reolink', 'go plus', 'ptz', 'gיבוי ענן', 'גיבוי ענן',
+  'טיימלאפס', 'timelapse', 'תיעוד', 'ניטור', 'פיקוח',
+];
+
+function getCommercialScore(query) {
+  const lower = query.toLowerCase();
+  return COMMERCIAL_INTENT_KEYWORDS.filter(k => lower.includes(k)).length;
+}
+
 function findOpportunity(queries) {
   const existingSlugs = getExistingSlugs();
   console.log(`📝 בלוגים קיימים: ${existingSlugs.length}`);
 
-  // Filter: high impressions, low clicks, not in great position
+  // Filter: high impressions, low clicks, position 8-50 (sweet spot — off first page but indexable)
   const opportunities = queries
-    .filter(q => q.impressions >= 3 && q.clicks < 20 && q.position > 8)
-    .map(q => ({
-      ...q,
-      slug: hebrewToSlug(q.query),
-      score: q.impressions * (1 / Math.max(q.position, 1)),
-    }))
+    .filter(q => q.impressions >= 3 && q.clicks < 30 && q.position > 7 && q.position < 60)
+    .map(q => {
+      const commercialBonus = getCommercialScore(q.query) * 10;
+      // Position 11-20 (page 2) = highest priority — easiest to push to page 1
+      const positionBonus = (q.position >= 11 && q.position <= 20) ? 20 : 0;
+      return {
+        ...q,
+        slug: hebrewToSlug(q.query),
+        score: (q.impressions * (1 / Math.max(q.position, 1))) + commercialBonus + positionBonus,
+      };
+    })
     .sort((a, b) => b.score - a.score);
 
   // Find first opportunity that doesn't have a blog yet
@@ -201,18 +220,33 @@ function findOpportunity(queries) {
     }
   }
 
-  // Fallback topics if all GSC opportunities exhausted
+  // Fallback topics - focused on B2B target audience (construction, agriculture, remote sites)
   const fallbackTopics = [
-    'מצלמות אבטחה לבית חכם',
-    'מערכת אבטחה לעסק קטן',
-    'מצלמות אבטחה סולאריות אלחוטיות',
-    'מצלמות אבטחה עם ראיית לילה צבעונית',
-    'מערכת אזעקה חכמה לדירה',
-    'מצלמות אבטחה לחנות',
-    'התקנת מצלמות אבטחה חיצוניות',
-    'מצלמות אבטחה עם חיישן תנועה',
-    'מערכת אבטחה היקפית למפעל',
-    'מצלמות IP מקצועיות לעסקים',
+    // Construction site monitoring - high commercial intent
+    'מצלמות אבטחה לאתר בנייה ללא חשמל',
+    'ניטור אתר בנייה מרחוק 24/7',
+    'מצלמות מעקב לקבלן בנין',
+    'מניעת גניבות ציוד באתר בנייה',
+    'פיקוח על עובדים באתר בנייה מצלמות',
+    'תיעוד התקדמות בנייה מצלמות סולאריות',
+    // Agriculture - high commercial intent
+    'מצלמות אבטחה לשדה חקלאי ללא חשמל',
+    'ניטור ציוד חקלאי מרחוק 4G',
+    'אבטחת מחסן חקלאי מבודד',
+    'מצלמות לכרם ומטע ללא אינטרנט',
+    // Remote sites - core use case
+    'מצלמות אבטחה לאתר מבודד ללא חשמל',
+    'פתרון אבטחה ללא תשתיות חשמל ואינטרנט',
+    'מצלמות 4G סולאריות לאתרים מרוחקים',
+    // Timelapse - strong differentiator
+    'טיימלאפס לפרויקט בנייה',
+    'תיעוד ויזואלי של פרויקט בנייה ללקוחות',
+    'סרטון התקדמות בנייה ליזמים',
+    // Comparison / informational with buying intent
+    'השוואת מצלמות סולאריות 4G לאתרי בנייה',
+    'Reolink GO Plus ביקורת בעברית',
+    'מצלמת אבטחה סולארית עם גיבוי ענן',
+    'כמה עולה מצלמת אבטחה לאתר בנייה',
   ];
 
   for (const topic of fallbackTopics) {
@@ -238,30 +272,70 @@ async function generateBlogContent(topic) {
   const existingSlugs = getExistingSlugs();
   const internalLinks = existingSlugs.slice(0, 5).map(s => `/blog/${s}`);
 
-  const prompt = `אתה מומחה למצלמות אבטחה ומערכות ביטחון בישראל, עובד בחברת Site-Control.
+  // Smart internal links to relevant pages based on topic
+  const sitePages = [
+    { url: '/products/go', anchor: 'Reolink GO Plus 4G', context: 'מצלמה סולארית 4G' },
+    { url: '/products/ptz', anchor: 'Reolink PTZ Solar', context: 'מצלמה מסתובבת סולארית' },
+    { url: '/use-cases/construction', anchor: 'מצלמות לאתרי בנייה', context: 'אתרי בנייה' },
+    { url: '/use-cases/agriculture', anchor: 'מצלמות לחקלאות', context: 'חקלאות' },
+    { url: '/use-cases/remote', anchor: 'ניהול אתרים מבודדים', context: 'אתרים מרוחקים' },
+    { url: '/cloud-backup', anchor: 'גיבוי ענן אוטומטי', context: 'גיבוי ענן' },
+    { url: '/weatherproof', anchor: 'עמידות IP66', context: 'עמידות מזג אוויר' },
+    { url: '/video-quality', anchor: 'איכות וידאו 4K', context: 'רזולוציה 4K' },
+    { url: '/packages', anchor: 'חבילות אבטחה', context: 'מחיר וחבילות' },
+    { url: '/contact', anchor: 'ייעוץ חינם', context: 'יצירת קשר' },
+    { url: '/timelapse', anchor: 'טיימלאפס לאתרי בנייה', context: 'תיעוד טיימלאפס בנייה' },
+  ];
+
+  // Check if topic is timelapse-related for external link instruction
+  const isTimelapseTopic = /טיימלאפס|timelapse|תיעוד|סרטון|ויזואלי/.test(topic.query.toLowerCase());
+  const timelapseLinkInstruction = isTimelapseTopic
+    ? `\n## קישור חיצוני (חובה לכלול!):
+- כלול קישור לאתר השותף <a href="https://timelapseit.co.il" target="_blank" rel="noopener">timelapseit.co.il</a> — שלב כשמדברים על דוגמאות עבודות, עריכת סרטון, או שיתוף פעולה לצילום טיימלאפס. הצג אותו כשותף המקצועי שלנו לצילום ועריכת טיימלאפס.`
+    : '';
+
+  const prompt = `אתה כותב תוכן SEO מומחה בישראל, מתמחה בתחום אבטחה ומצלמות סולאריות 4G, עובד בחברת Site-Control.
+Site-Control מתמחה אך ורק במצלמות אבטחה סולאריות 4G (Reolink GO Plus ו-PTZ Solar) לשוק B2B: קבלני בנייה, חקלאים, מנהלי אתרים מבודדים.
+
 כתוב פוסט בלוג מקצועי ומקיף בעברית על הנושא: "${topic.query}"
 
-דרישות:
-- 1500-2000 מילים
-- כתוב תוכן ייחודי ומקצועי שמדגים ניסיון אמיתי בתחום
-- כלול המלצות מוצר ספציפיות (Reolink, Hikvision, Dahua)
-- כלול טיפים מעשיים להתקנה ותחזוקה
-- כלול מפרטים טכניים ספציפיים (רזולוציה, IP rating, POE, חיבוריות)
-- כלול סעיף שאלות נפוצות (FAQ) עם 4-5 שאלות
-- כלול קריאה לפעולה (CTA) בסוף - לפנות ל-Site-Control לייעוץ
+## קהל יעד מרכזי (כתוב עבורם!):
+- קבלני בנייה ומנהלי פרויקטים (שמחפשים לאבטח ציוד ולתעד התקדמות)
+- בעלי משקים חקלאיים (שמחפשים פתרון ללא חשמל ואינטרנט)
+- מנהלי אתרים מרוחקים (מחסנים, שדות, אתרים מבודדים)
+
+## דרישות תוכן:
+- 2500-3000 מילים (ארוך = סמכותי = גוגל)
+- פתח עם "כאב" אמיתי של הלקוח - הבעיה שהוא מנסה לפתור
+- כלול 3-5 דוגמאות/תרחישים ספציפיים מהמציאות הישראלית (קבלן שאיבד ציוד, חקלאי שהשרתו נכנסו לשדה וכו')
+- השווה גישות שונות (לפני/אחרי, עם/בלי מצלמה)
+- כלול מפרטים טכניים ספציפיים: רזולוציה 4K, IP66, סוללה 9000mAh, פאנל סולארי, 4G LTE, microSD 256GB
+- כלול המלצות ספציפיות לפי שימוש: Reolink GO Plus לאבטחה סטטית, Reolink PTZ Solar לשטחים גדולים
 - שלב מילות מפתח בצורה טבעית: "${topic.query}"
-- כתוב בסגנון מקצועי אבל נגיש
+- כלול נתונים/סטטיסטיקות רלוונטיות (עלות גניבת ציוד בנייה בישראל, אחוז אתרי בנייה עם מצלמות וכו')
+- כלול סעיף FAQ עם 5 שאלות שאנשים ממש שואלים בגוגל
+- סיים עם CTA חזק שמדגיש ייעוץ חינם מ-Site-Control
+
+## קישורים פנימיים (כלול 4-6 קישורים בתוך הטקסט):
+${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדברים על: ${p.context}`).join('\n')}${timelapseLinkInstruction}
+
+## מבנה HTML נדרש:
+- כלול תוכן עניינים (table of contents) עם anchor links
+- כותרות: h2 לסעיפים ראשיים, h3 לתתי-סעיפים
+- טבלת השוואה עם מפרטים טכניים אם רלוונטי
+- רשימות bullets לטיפים ומאפיינים
+- קרוב לוודאי תרצה לכלול: "יתרונות", "חסרונות", "למי מתאים", "מחיר ותמורה"
 
 מבנה הפלט - החזר JSON בדיוק בפורמט הזה:
 {
-  "title": "כותרת מושכת בעברית",
-  "metaDescription": "תיאור meta עד 160 תווים לגוגל",
-  "category": "קטגוריה מתאימה (מצלמות אבטחה / פתרונות לעסקים / מדריכים / תיעוד בנייה)",
-  "content": "תוכן המאמר המלא ב-HTML עם תגיות h2, h3, p, ul, li, strong, table. השתמש ב-inline styles תואמים לעיצוב האתר (direction: rtl, font-family: system-ui)",
+  "title": "כותרת מושכת עם מילת המפתח הראשית, עד 65 תווים",
+  "metaDescription": "תיאור meta עד 155 תווים שמכיל את מילת המפתח ופונה לקהל היעד",
+  "category": "קטגוריה מתאימה (מצלמות אבטחה / פתרונות B2B / מדריכים / תיעוד בנייה / חקלאות)",
+  "content": "תוכן המאמר המלא ב-HTML עם תגיות h2, h3, p, ul, li, strong, table, a. style: direction:rtl. קישורים פנימיים עם href מלא לדפי האתר.",
   "faqItems": [
-    {"question": "שאלה", "answer": "תשובה"}
+    {"question": "שאלה בדיוק כמו שאנשים מחפשים בגוגל", "answer": "תשובה מפורטת ומועילה"}
   ],
-  "keywords": ["מילת מפתח 1", "מילת מפתח 2", "...עד 8 מילות מפתח"]
+  "keywords": ["מילת מפתח 1 (ארוכה וספציפית)", "...עד 8 מילות מפתח ספציפיות, לא גנריות"]
 }
 
 חשוב: החזר רק JSON תקין, בלי markdown code blocks, בלי טקסט נוסף.`;
@@ -303,12 +377,26 @@ async function generateBlogImage(topic, slug) {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: IMAGE_MODEL });
 
-    const prompt = `Create a professional, modern hero image for a Hebrew blog post about "${topic.query}". 
-The image should show: high-tech security cameras, smart home technology, professional surveillance equipment.
-Style: clean, professional, modern tech aesthetic with blue and dark tones.
-Include subtle tech elements like circuit patterns or holographic displays.
-NO text in the image. Photorealistic quality.
-The image will be used as a wide banner on a professional security company website.`;
+    // Determine relevant visual context based on topic
+    const topicLower = topic.query.toLowerCase();
+    let sceneContext = 'a construction site with security cameras on poles';
+    if (topicLower.includes('חקלא') || topicLower.includes('שדה') || topicLower.includes('כרם')) {
+      sceneContext = 'an agricultural field or farm with solar-powered security cameras';
+    } else if (topicLower.includes('טיימלאפס') || topicLower.includes('timelapse') || topicLower.includes('תיעוד')) {
+      sceneContext = 'a construction site timelapse setup with cameras and solar panels';
+    } else if (topicLower.includes('מבודד') || topicLower.includes('מרוחק') || topicLower.includes('ללא חשמל')) {
+      sceneContext = 'a remote outdoor location with solar-powered 4G security cameras';
+    }
+
+    const prompt = `Create a professional, photorealistic hero image for a security camera company blog post about: "${topic.query}".
+
+Scene: ${sceneContext}
+Equipment visible: Reolink-style solar security camera with small solar panel attached, mounted on a pole or wall
+Environment: Israeli landscape, clear sky, professional B2B setting
+Style: wide 16:9 banner format, clean and professional, natural daylight
+Color palette: blues, whites, and earthy tones matching Israeli construction/agriculture
+Mood: trustworthy, professional, modern technology in real-world use
+NO text or logos in the image. Photorealistic, high quality.`;
 
     console.log('🎨 מייצר תמונת hero עם Gemini 3 Pro Image...');
 
@@ -426,27 +514,89 @@ function writeBlogPage(slug, blogData, topic) {
     }
   }
 
+  const today = new Date().toISOString().split('T')[0];
+  const articleSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: blogData.title,
+    description: blogData.metaDescription || '',
+    image: `https://site-control-il.com/blog-images/${slug}/hero.${imageExt}`,
+    datePublished: today,
+    dateModified: today,
+    author: {
+      '@type': 'Organization',
+      name: 'צוות Site-Control',
+      url: 'https://site-control-il.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://site-control-il.com/blog/${slug}`,
+    },
+    keywords: (blogData.keywords || []).join(', '),
+    articleSection: blogData.category || 'מצלמות אבטחה',
+    url: `https://site-control-il.com/blog/${slug}`,
+    isPartOf: {
+      '@type': 'Blog',
+      '@id': 'https://site-control-il.com/blog',
+      name: 'בלוג Site-Control',
+    },
+  });
+
   const pageContent = `import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '${blogData.title.replace(/'/g, "\\'")} | Site-Control',
   description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
-  keywords: '${(blogData.keywords || []).join(', ')}',
+  keywords: ${JSON.stringify(blogData.keywords || [])},
+  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
   openGraph: {
     title: '${blogData.title.replace(/'/g, "\\'")}',
     description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
     type: 'article',
+    publishedTime: '${today}',
     locale: 'he_IL',
     siteName: 'Site-Control',
+    url: 'https://site-control-il.com/blog/${slug}',
+    images: [
+      {
+        url: 'https://site-control-il.com/blog-images/${slug}/hero.${imageExt}',
+        width: 1200,
+        height: 630,
+        alt: '${blogData.title.replace(/'/g, "\\'")}',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '${blogData.title.replace(/'/g, "\\'")}',
+    description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
+    images: ['https://site-control-il.com/blog-images/${slug}/hero.${imageExt}'],
   },
   alternates: {
     canonical: 'https://site-control-il.com/blog/${slug}',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
 };
 
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: \`${articleSchema.replace(/`/g, '\\`')}\` }}
+      />
       ${faqSchema ? `<script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: \`${faqSchema.replace(/`/g, '\\`')}\` }}

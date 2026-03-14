@@ -4,9 +4,19 @@ import { LocalBusinessSchema } from "../components/Schema";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "חבילות אבטחה סולארי 4G לאתרי בנייה | Reolink",
+  title: "חבילות מצלמות אבטחה סולאריות 4G | Site-Control",
   description:
-    "חבילות מצלמות אבטחה סולאריות 4G: קנה והתקן, ראש שקט, אתר בבנייה. גיבוי ענן, אבטחה בזמן אמת, זיהוי AI. החיר סדרטם!",
+    "חבילות מצלמות אבטחה סולאריות 4G לאתרי בנייה וחקלאות: קנה והתקן (3,750 ₪), ראש שקט, אתר בבנייה ותוספת טיימלאפס. גיבוי ענן, 4K, Reolink.",
+  keywords: [
+    "חבילות מצלמות אבטחה",
+    "מצלמה סולארית 4G מחיר",
+    "חבילת אבטחה לאתר בנייה",
+    "טיימלאפס בנייה מחיר",
+    "Reolink GO Plus מחיר",
+  ],
+  alternates: {
+    canonical: "/packages",
+  },
 };
 
 export default function PackagesPage() {

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { BASE_URL } from '../config';
 
 export const metadata: Metadata = {
   title: 'אודות Site-Control | מפיץ מורשה Reolink בישראל',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     'תמיכה טכנית עברית',
   ],
   alternates: {
-    canonical: '/about',
+    canonical: `${BASE_URL}/about`,
   },
   openGraph: {
     title: 'אודות Site-Control | מפיץ מורשה Reolink בישראל',

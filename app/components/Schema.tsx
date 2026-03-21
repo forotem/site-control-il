@@ -96,19 +96,23 @@ export function ProductSchema({
         returnMethod: 'ReturnMailIn',
       },
       shippingDetails: {
-        '@type': 'ShippingDeliveryTime',
+        '@type': 'OfferShippingDetails',
         shippingRate: {
-          '@type': 'PriceSpecification',
-          priceCurrency: 'ILS',
-          price: '0',
+          '@type': 'MonetaryAmount',
+          currency: 'ILS',
+          value: '0',
         },
         shippingDestination: {
-          '@type': 'DeliveryAddress',
+          '@type': 'DefinedRegion',
           addressCountry: 'IL',
         },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
-          businessDays: '3-7',
+          businessDays: {
+            '@type': 'QuantitativeValue',
+            minValue: 3,
+            maxValue: 7,
+          },
         },
       },
     } : undefined,

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Packages } from "../components/Packages";
 import { LocalBusinessSchema } from "../components/Schema";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
+import { BASE_URL } from "../config";
 
 export const metadata: Metadata = {
   title: "חבילות מצלמות אבטחה סולאריות 4G | Site-Control",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     "Reolink GO Plus מחיר",
   ],
   alternates: {
-    canonical: "/packages",
+    canonical: `${BASE_URL}/packages`,
   },
 };
 

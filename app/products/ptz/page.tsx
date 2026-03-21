@@ -4,6 +4,7 @@ import Link from "next/link";
 import { productImages } from "../../data/images";
 import { ProductSchema } from "../../components/Schema";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
+import { BASE_URL } from "../../config";
 
 export const metadata: Metadata = {
   title: "Reolink PTZ Solar 4G - מצלמה מסתובבת 360° | Site-Control",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     "גיבוי ענן",
   ],
   alternates: {
-    canonical: "/products/ptz",
+    canonical: `${BASE_URL}/products/ptz`,
   },
   openGraph: {
     title: "Reolink PTZ Solar 4G - מצלמה מסתובבת 360° | Site-Control",
@@ -99,7 +100,7 @@ export default function PtzProductPage() {
         <p style={{marginTop: '2rem', fontSize: '1rem', color: 'var(--muted)'}}>מחפשים פתרון פשוט יותר? ראו את ה-<Link href="/products/go" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>Reolink GO Plus</Link> הקבועה.</p>
       </section>
 
-      <ProductSchema name="Reolink PTZ Solar" description="מצלמת PTZ סולארית 4G עם שליטה מרחוק" />
+      <ProductSchema name="Reolink PTZ Solar" description="מצלמת PTZ סולארית 4G עם שליטה מרחוק" price="3999" />
     </main>
   );
 }

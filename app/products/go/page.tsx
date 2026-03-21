@@ -5,6 +5,7 @@ import { productImages } from "../../data/images";
 import { ProductSchema } from "../../components/Schema";
 import { ImageGallery } from "../../components/ImageGallery";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
+import { BASE_URL } from "../../config";
 
 export const metadata: Metadata = {
   title: "Reolink GO Plus 4G - מצלמת אבטחה סולארית ללא תשתיות | Site-Control",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "מצלמה סולארית 4K",
   ],
   alternates: {
-    canonical: "/products/go",
+    canonical: `${BASE_URL}/products/go`,
   },
   openGraph: {
     title: "Reolink GO Plus 4G - מצלמת אבטחה סולארית | Site-Control",
@@ -96,7 +97,7 @@ export default function GoProductPage() {
         <p style={{marginTop: '2rem', fontSize: '1rem', color: 'var(--muted)'}}>מעוניינים במצלמה מסתובבת עם PTZ? ראו את ה-<Link href="/products/ptz" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>Reolink PTZ Solar</Link>.</p>
       </section>
 
-      <ProductSchema name="Reolink GO Plus" description="מצלמת אבטחה סולארית 4G לשטח" />
+      <ProductSchema name="Reolink GO Plus" description="מצלמת אבטחה סולארית 4G לשטח" price="2999" />
     </main>
   );
 }

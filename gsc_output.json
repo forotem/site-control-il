@@ -1,82 +1,112 @@
 {
   "site": "sc-domain:site-control-il.com",
   "dateRange": {
-    "start": "2025-11-02",
-    "end": "2026-02-02"
+    "start": "2025-12-22",
+    "end": "2026-03-22"
   },
-  "fetchedAt": "2026-02-02T18:00:00.000Z",
+  "fetchedAt": "2026-03-22T15:37:26.323Z",
   "queries": [
-    {
-      "query": "טיימלאפס שיווק ופרסום פרויקטי בנייה",
-      "clicks": 0,
-      "impressions": 850,
-      "position": 45
-    },
-    {
-      "query": "מעקב התקדמות פרויקט בנייה",
-      "clicks": 0,
-      "impressions": 720,
-      "position": 38
-    },
-    {
-      "query": "תיעוד תהליכי בנייה מקצועי",
-      "clicks": 0,
-      "impressions": 650,
-      "position": 42
-    },
-    {
-      "query": "מצלמות למעקב פרויקטים",
-      "clicks": 0,
-      "impressions": 580,
-      "position": 35
-    },
-    {
-      "query": "סרטון טיימלאפס לקבלנים",
-      "clicks": 0,
-      "impressions": 520,
-      "position": 50
-    },
-    {
-      "query": "תיעוד בנייה לצרכים משפטיים",
-      "clicks": 0,
-      "impressions": 480,
-      "position": 55
-    },
-    {
-      "query": "מצלמת אבטחה סולארית לשטח פתוח",
-      "clicks": 0,
-      "impressions": 450,
-      "position": 28
-    },
-    {
-      "query": "מצלמות אבטחה עם סים לאזורים מרוחקים",
-      "clicks": 0,
-      "impressions": 420,
-      "position": 32
-    },
-    {
-      "query": "פתרונות צילום לאתרי בנייה ללא חשמל",
-      "clicks": 0,
-      "impressions": 380,
-      "position": 40
-    },
-    {
-      "query": "השוואת מצלמות טיימלאפס לבנייה",
-      "clicks": 0,
-      "impressions": 350,
-      "position": 48
-    },
     {
       "query": "מצלמות אבטחה לחקלאות",
       "clicks": 0,
-      "impressions": 16,
-      "position": 14.7
+      "impressions": 54,
+      "position": 19
+    },
+    {
+      "query": "תיעוד דיגיטלי אתרי בנייה",
+      "clicks": 0,
+      "impressions": 34,
+      "position": 8.5
+    },
+    {
+      "query": "מצלמות אבטחה זיהוי פנים",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 54.8
+    },
+    {
+      "query": "צילום טיימלאפס עבור חברות בנייה",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 32.2
+    },
+    {
+      "query": "תיעוד בזמן אמת אתרי בנייה",
+      "clicks": 0,
+      "impressions": 17,
+      "position": 28.5
     },
     {
       "query": "מצלמות אבטחה לאתרי בנייה",
       "clicks": 0,
+      "impressions": 15,
+      "position": 53.9
+    },
+    {
+      "query": "טיימלאפס",
+      "clicks": 0,
+      "impressions": 12,
+      "position": 41.9
+    },
+    {
+      "query": "צילום טיימלאפס",
+      "clicks": 0,
+      "impressions": 12,
+      "position": 55.6
+    },
+    {
+      "query": "ניהול דיגיטלי של פרויקטי בנייה",
+      "clicks": 0,
+      "impressions": 9,
+      "position": 91.2
+    },
+    {
+      "query": "הפקת סרטוני טיימלאפס",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 56.4
+    },
+    {
+      "query": "תיעוד בנייה",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 67.3
+    },
+    {
+      "query": "חוק הגנת הפרטיות מצלמות אבטחה",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 67.8
+    },
+    {
+      "query": "תיעוד פרויקטים בנייה",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 40.2
+    },
+    {
+      "query": "צילום אתרי בניה",
+      "clicks": 0,
       "impressions": 4,
-      "position": 57.5
+      "position": 80.5
+    },
+    {
+      "query": "אבטחת שטחים חקלאיים",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 19
+    },
+    {
+      "query": "איזה מצלמות אבטחה לקנות",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 30.5
+    },
+    {
+      "query": "טיים לאפס בנייה",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 57
     },
     {
       "query": "מצלמות בנייה",
@@ -85,40 +115,46 @@
       "position": 34
     },
     {
-      "query": "אבטחת שטחים חקלאיים",
+      "query": "מצלמות לאתר בניה",
       "clicks": 0,
-      "impressions": 1,
-      "position": 17
+      "impressions": 2,
+      "position": 29.5
     },
     {
-      "query": "חוק הגנת הפרטיות מצלמות אבטחה",
+      "query": "חוק הגנת הפרטיות מצלמות",
       "clicks": 0,
       "impressions": 1,
-      "position": 62
+      "position": 54
     },
     {
-      "query": "טיימלאפס",
+      "query": "סרטוני תיעוד בנייה",
       "clicks": 0,
       "impressions": 1,
-      "position": 45
+      "position": 88
     },
     {
-      "query": "צילום טיימלאפס",
+      "query": "צילום פרויקטים בבניה",
       "clicks": 0,
       "impressions": 1,
-      "position": 40
+      "position": 82
     },
     {
-      "query": "תיעוד בנייה",
+      "query": "תיעוד בניה",
       "clicks": 0,
       "impressions": 1,
-      "position": 74
+      "position": 53
     },
     {
-      "query": "תיעוד דיגיטלי אתרי בנייה",
+      "query": "תיעוד ומעקב בניה",
       "clicks": 0,
       "impressions": 1,
-      "position": 9
+      "position": 31
+    },
+    {
+      "query": "תיקון 13 לחוק הגנת הפרטיות מצלמות אבטחה",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 27
     }
   ]
 }

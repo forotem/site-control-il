@@ -14,6 +14,16 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.site-control-il.com' }],
+        destination: 'https://site-control-il.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   headers: async () => {
     return [
       {

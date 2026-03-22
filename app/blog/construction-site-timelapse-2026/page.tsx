@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'צילום טיימלאפס לאתרי בנייה 2026 - לתעד את ההצלחה | Site-Control',
-  description: 'מדריך מקיף לצילום טיימלאפס באתרי בנייה: שיווק פרויקטים, בקרה הנדסית, ותיעוד משפטי. גלו איך מצלמות חכמות משפרות את ניהול האתר.',
-  keywords: 'צילום טיימלאפס, בנייה, ניהול פרויקטים, מצלמות אבטחה, שיווק נדלן, תיעוד בנייה',
+  title: 'צילום טיימלאפס לאתרי בנייה 2026 - המדריך המלא לקבלנים ויזמים | Site-Control',
+  description: 'מערכות צילום טיימלאפס מתקדמות לאתרי בנייה. תיעוד 4K, בקרה הנדסית, תיעוד משפטי, שיווק פרויקטים וגישה מרחוק. הפתרון המושלם ליזמים וקבלנים.',
+  keywords: 'צילום טיימלאפס, טיימלאפס, צילום טיימלאפס עבור חברות בנייה, טיים לאפס בנייה, הפקת סרטוני טיימלאפס, מצלמות טיימלאפס לבניין, מצלמות אבטחה לאתרי בנייה',
+  alternates: { canonical: 'https://site-control-il.com/blog/construction-site-timelapse-2026' },
   openGraph: {
-    title: 'צילום טיימלאפס לאתרי בנייה 2026',
-    description: 'המדריך המלא לתיעוד אתרי בנייה',
+    title: 'צילום טיימלאפס לאתרי בנייה 2026 - המדריך המלא',
+    description: 'צילום טיימלאפס לאתרי בנייה - שיווק, תיעוד משפטי, בקרה הנדסית',
     images: ['/blog-images/construction-site-timelapse-2026/hero.webp'],
   },
 };
@@ -151,6 +152,30 @@ export default function BlogPage() {
                 קבלו הצעה
               </a>
             </div>
+          </div>
+
+          {/* Timelapse Partner */}
+          <div style={{
+            marginTop: '3rem',
+            padding: '2rem',
+            background: '#f0f9ff',
+            borderRadius: '12px',
+            border: '1px solid #bae6fd',
+            textAlign: 'center'
+          }}>
+            <h3 style={{ color: '#0284c7', marginTop: 0 }}>מחפשים שירותי טיימלאפס מקצועיים?</h3>
+            <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
+              בשיתוף פעולה עם <a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{ color: '#0284c7', fontWeight: 'bold' }}>TimeLapseIt</a> אנחנו מספקים שירותי טיימלאפס מקצועיים לאתרי בנייה - כולל הפקת סרטונים, עריכה מקצועית ותמיכה מלאה.
+            </p>
+            <a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{
+              display: 'inline-block',
+              padding: '0.75rem 2rem',
+              background: '#0284c7',
+              color: 'white',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              fontWeight: 'bold'
+            }}>למידע נוסף על TimeLapseIt ←</a>
           </div>
 
         </div>

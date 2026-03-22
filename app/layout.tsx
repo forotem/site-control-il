@@ -39,6 +39,10 @@ export const metadata: Metadata = {
     "IP66",
     "מצלמות אבטחה לחקלאות",
     "מצלמות 4G LTE ישראל",
+    "מצלמות אבטחה לאתרי בנייה",
+    "צילום טיימלאפס",
+    "אבטחת שטחים חקלאיים",
+    "מצלמות בנייה",
     "טיימלאפס לאתר בנייה",
     "תיעוד בנייה טיימלאפס"
   ],
@@ -235,6 +239,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>שותפים</h4>
                 <p style={{ fontSize: '0.95rem', color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7' }}>אנחנו בשיתוף פעולה עם <strong style={{ color: '#00c2ff' }}>Reolink</strong> - יצרנית מובילה של מצלמות אבטחה מתקדמות ברמה עולמית.</p>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(139, 163, 191, 0.7)', lineHeight: '1.7', marginTop: '0.5rem' }}>שירותי טיימלאפס מקצועיים: <a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{ color: '#00c2ff', textDecoration: 'none' }}>TimeLapseIt</a></p>
                 <div style={{ marginTop: '1rem', padding: '16px', background: 'rgba(12, 18, 32, 0.7)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                     <span style={{ fontSize: '1.2rem', display: 'flex' }}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>

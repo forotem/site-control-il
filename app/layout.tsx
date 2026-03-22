@@ -82,9 +82,6 @@ export const metadata: Metadata = {
     description: "מצלמות אבטחה 4G עם סולאר וגיבוי ענן לאתרי בנייה וחקלאות. התקנה ללא חשמל.",
     images: ["/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif"],
   },
-  alternates: {
-    canonical: BASE_URL,
-  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },

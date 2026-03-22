@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "./components/Hero";
 import { FeatureGrid } from "./components/FeatureGrid";
@@ -10,6 +11,11 @@ import { BlogList } from "./components/BlogList";
 import { StatsSection } from "./components/StatsSection";
 import { TrustBar } from "./components/TrustBar";
 import { LocalBusinessSchema, OrganizationSchema, ProductSchema, WebSiteSchema } from "./components/Schema";
+import { BASE_URL } from "./config";
+
+export const metadata: Metadata = {
+  alternates: { canonical: BASE_URL },
+};
 
 export default function Page() {
   return (

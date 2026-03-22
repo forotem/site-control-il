@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "איכות וידאו 4K במצלמות אבטחה | ראיית לילה צבעונית",
   description:
     "איכות צילום מעולה ב-4K עם Reolink לראיית לילה צבעונית. ראייה לילה בצבעים, IR מתקדם, תמונות HDR איכותיות. מושלם לאתרי בנייה.",
+  alternates: { canonical: 'https://site-control-il.com/video-quality' },
 };
 
 export default function VideoQualityPage() {

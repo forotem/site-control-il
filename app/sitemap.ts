@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "./data/blog";
+import { locations } from "./data/locations";
 import { BASE_URL } from "./config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/blog", priority: 0.8, changefreq: "weekly" as const },
     { url: "/timelapse", priority: 0.8, changefreq: "monthly" as const },
   ];
+
+  const locationPages = locations.map((location) => ({
+    url: `/locations/${location.slug}`,
+    changefreq: "monthly" as const,
+    priority: 0.6,
+  }));
 
   const blogPages = blogPosts.map((post) => {
     // Parse date safely
@@ -59,6 +66,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages.map(page => ({
+      url: `${base}${page.url}`,
+      lastModified: new Date(),
+      changefreq: page.changefreq,
+      priority: page.priority,
+    })),
+    ...locationPages.map(page => ({
       url: `${base}${page.url}`,
       lastModified: new Date(),
       changefreq: page.changefreq,

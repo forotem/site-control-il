@@ -5,6 +5,7 @@ import { Breadcrumb, BreadcrumbSchema } from '../components/Breadcrumb';
 export const metadata: Metadata = {
   title: "צור קשר - מצלמות Reolink סולאריות 4G | Site-Control",
   description: "צרו קשר עכשיו לקבלת הצעת מחיר על מצלמות אבטחה סולאריות 4G. אנחנו כאן כדי לספק פתרון בטחוני מושלם. שירות מהיר ומקצועי.",
+  alternates: { canonical: 'https://site-control-il.com/contact' },
 };
 
 export default function ContactPage() {

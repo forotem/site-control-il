@@ -4,9 +4,10 @@ import { blogPosts } from '../data/blog';
 import styles from './BlogIndex.module.css';
 
 export const metadata: Metadata = {
-  title: 'בלוג - מצלמות סולאריות 4G',
-  description: 'בלוג עדכוני ובמודעות על מצלמות בטחון סולאריות, חקלאות חכמה ופתרונות ניטור מרחוק.',
+  title: 'בלוג - מצלמות סולאריות 4G | Site-Control',
+  description: 'בלוג עדכונים ומדריכים על מצלמות אבטחה סולאריות 4G, חקלאות חכמה, אבטחת אתרי בנייה ופתרונות ניטור מרחוק.',
   keywords: ['בלוג', 'מצלמות', 'סולארי', 'חקלאות', 'בנייה'],
+  alternates: { canonical: 'https://site-control-il.com/blog' },
 };
 
 export default function BlogPage() {

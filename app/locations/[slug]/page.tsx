@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { locations } from '../../data/locations';
 import { blogPosts } from '../../data/blog';
 import { notFound } from 'next/navigation';
+import { BASE_URL } from '../../config';
 import styles from './LocationPage.module.css';
 
 interface Params {
@@ -21,6 +22,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: location.seoTitle,
     description: location.seoDescription,
+    alternates: {
+      canonical: `${BASE_URL}/locations/${params.slug}`,
+    },
     openGraph: {
       title: location.name,
       description: location.description,

@@ -7,7 +7,8 @@ import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 export const metadata: Metadata = {
   title: "מצלמות אבטחה לאתרי בנייה סולארי 4G | ללא חשמל",
   description:
-    "מצלמות אבטחה סולאריות 4G לאתרי בנייה עם Reolink. הגנה מפני גניבה, תיעוד התקדמות, גיבוי ענן אוטומטי וסירט 24/7. פתרון מושלם לאתרים גדולים.",
+    "מצלמות אבטחה סולאריות 4G לאתרי בנייה עם Reolink. הגנה מפני גניבה, תיעוד התקדמות, גיבוי ענן אוטומטי וסריקה 24/7. פתרון מושלם לאתרים גדולים.",
+  alternates: { canonical: 'https://site-control-il.com/use-cases/construction' },
 };
 
 export default function ConstructionUseCasePage() {

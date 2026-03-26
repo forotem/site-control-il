@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '33',
+    title: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G',
+    slug: 'blog-post',
+    excerpt: 'אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-03-26',
+    category: 'פתרונות B2B',
+    image: '/blog-images/blog-post/hero.png',
+    seoTitle: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G | Site-Control',
+    seoDescription: 'אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל.',
+    keywords: ["אבטחת שטחים חקלאיים","מצלמות אבטחה סולאריות 4G","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאים","ניהול אתרים מרוחקים","מניעת גניבות ציוד","אבטחה ללא חשמל אינטרנט"]
+  },
+  {
     id: '32',
     title: 'השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים',
     slug: 'cameras-timelapse-2026',

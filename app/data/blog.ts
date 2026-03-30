@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '34',
+    title: 'תיעוד דיגיטלי אתרי בנייה: הפתרון המקיף מבית Site-Control',
+    slug: 'documentation-sites-construction-2026',
+    excerpt: 'אבטח ותעד אתרי בנייה, משקים חקלאיים ואתרים מבודדים עם מצלמות סולאריות 4G של Site-Control. מניעת גניבות, ניהול התקדמות, ופתרונות ללא חשמל/אינטרנט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-03-30',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/documentation-sites-construction-2026/hero.png',
+    seoTitle: 'תיעוד דיגיטלי אתרי בנייה: הפתרון המקיף מבית Site-Control | Site-Control',
+    seoDescription: 'אבטח ותעד אתרי בנייה, משקים חקלאיים ואתרים מבודדים עם מצלמות סולאריות 4G של Site-Control. מניעת גניבות, ניהול התקדמות, ופתרונות ללא חשמל/אינטרנט.',
+    keywords: ["תיעוד דיגיטלי אתרי בנייה","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","מצלמות לחקלאות","ניהול אתרים מבודדים","Reolink GO Plus","Reolink PTZ Solar","טיימלאפס בנייה","מניעת גניבות באתר בנייה"]
+  },
+  {
     id: '33',
     title: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G',
     slug: 'blog-post',

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '37',
+    title: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים',
+    slug: 'cameras-security-detection-face-2026',
+    excerpt: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-04-23',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/cameras-security-detection-face-2026/hero.png',
+    seoTitle: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים | Site-Control',
+    seoDescription: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.',
+    keywords: ["מצלמות אבטחה זיהוי פנים","מצלמות סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","זיהוי תנועה חכם"]
+  },
+  {
     id: '36',
     title: 'תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים',
     slug: 'documentation-projects-construction-2026',

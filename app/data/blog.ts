@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '38',
+    title: 'מצלמות אבטחה לאתר בנייה ללא חשמל: פתרונות סולאריים 4G',
+    slug: 'cameras-security-construction-2026',
+    excerpt: 'קבלנים, חקלאים ומנהלי אתרים מבודדים: אבטחו אתרים ללא חשמל ואינטרנט עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מניעת גניבות, תיעוד בנייה וראש שקט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-04-27',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/cameras-security-construction-2026/hero.png',
+    seoTitle: 'מצלמות אבטחה לאתר בנייה ללא חשמל: פתרונות סולאריים 4G | Site-Control',
+    seoDescription: 'קבלנים, חקלאים ומנהלי אתרים מבודדים: אבטחו אתרים ללא חשמל ואינטרנט עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מניעת גניבות, תיעוד בנייה וראש שקט.',
+    keywords: ["מצלמות אבטחה לאתר בנייה ללא חשמל","מצלמות סולאריות 4G","אבטחת אתרי בנייה B2B","מצלמות לחקלאות סולאריות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות אבטחה ניידות","פתרונות אבטחה ללא אינטרנט","מניעת גניבות באתר בנייה"]
+  },
+  {
     id: '37',
     title: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים',
     slug: 'cameras-security-detection-face-2026',

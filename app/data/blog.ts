@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '40',
+    title: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה',
+    slug: 'cameras-monitoring-2026',
+    excerpt: 'אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-05-04',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/cameras-monitoring-2026/hero.svg',
+    seoTitle: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה | Site-Control',
+    seoDescription: 'אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!',
+    keywords: ["מצלמות מעקב לקבלן בנין","מצלמות אבטחה סולאריות 4G","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","תיעוד התקדמות בנייה"]
+  },
+  {
     id: '39',
     title: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד',
     slug: 'site-construction-2026',

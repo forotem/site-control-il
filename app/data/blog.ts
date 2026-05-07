@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '41',
+    title: 'מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות',
+    slug: 'construction-2026',
+    excerpt: 'נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-05-07',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/construction-2026/hero.png',
+    seoTitle: 'מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות | Site-Control',
+    seoDescription: 'נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים.',
+    keywords: ["מניעת גניבות ציוד באתר בנייה","מצלמות אבטחה סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","פתרונות אבטחה B2B","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרים מבודדים"]
+  },
+  {
     id: '40',
     title: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה',
     slug: 'cameras-monitoring-2026',

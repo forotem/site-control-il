@@ -117,7 +117,7 @@ function transferLead() {
   const nextRow = findNextEmptyRow(noaSheet);
 
   // כתיבת הנתונים לגיליון נועה
-  noaSheet.getRange(nextRow, NOA_COL.TIMESTAMP).setValue(new Date());
+  noaSheet.getRange(nextRow, NOA_COL.TIMESTAMP).setValue(initialDate);
   noaSheet.getRange(nextRow, NOA_COL.CUSTOMER_NAME).setValue(customerName);
   noaSheet.getRange(nextRow, NOA_COL.COMPANY).setValue(company);
   noaSheet.getRange(nextRow, NOA_COL.EMAIL).setValue(email);

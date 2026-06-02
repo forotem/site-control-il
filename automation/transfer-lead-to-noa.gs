@@ -53,11 +53,93 @@ const NOA_COL = {
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('פעולות')
-    .addItem('⬆️ העבר ליד לנועה', 'transferLead')
+    .addItem('⬆️ העבר ליד לנועה (שורה נבחרת)', 'transferLead')
+    .addItem('🔟 העבר 10 לידים אחרונים לנועה', 'transferLast10Leads')
     .addItem('⬆️⬆️ העבר את כל הלידים לנועה', 'transferAllLeads')
     .addSeparator()
     .addItem('➕ הוסף כפתור "העבר" לגיליון', 'addTransferButton')
     .addToUi();
+}
+
+function transferLast10Leads() {
+  const ui = SpreadsheetApp.getUi();
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = spreadsheet.getSheetByName(ROTEM_SHEET_NAME)
+                || spreadsheet.getActiveSheet();
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) {
+    ui.alert('אין לידים בגיליון.', ui.ButtonSet.OK);
+    return;
+  }
+
+  // לוקח את כל הנתונים ומסנן שורות עם שם לקוח
+  const allData = sheet.getRange(2, 1, lastRow - 1, 12).getValues();
+  const withData = allData
+    .map((row, i) => ({ row, rowIndex: i + 2 }))
+    .filter(({ row }) => row[ROTEM_COL.CUSTOMER_NAME - 1].toString().trim() !== '');
+
+  // לוקח את 10 האחרונים (השורות הכי נמוכות בגיליון = הכי חדשות)
+  const last10 = withData.slice(-10);
+
+  const alreadyDone = last10.filter(({ row }) => row[ROTEM_COL.TRANSFERRED - 1].toString().trim() !== '');
+  const toTransfer  = last10.filter(({ row }) => row[ROTEM_COL.TRANSFERRED - 1].toString().trim() === '');
+
+  if (toTransfer.length === 0) {
+    ui.alert('כל 10 הלידים האחרונים כבר הועברו לנועה.', ui.ButtonSet.OK);
+    return;
+  }
+
+  const msg = alreadyDone.length > 0
+    ? `מתוך 10 הלידים האחרונים:\n✅ ${alreadyDone.length} כבר הועברו\n⏳ ${toTransfer.length} ממתינים להעברה\n\nהאם להעביר את ${toTransfer.length} הנותרים?`
+    : `נמצאו ${toTransfer.length} לידים אחרונים להעברה.\nהאם להמשיך?`;
+
+  const confirm = ui.alert('העברת 10 לידים אחרונים', msg, ui.ButtonSet.YES_NO);
+  if (confirm !== ui.Button.YES) return;
+
+  let noaSpreadsheet;
+  try {
+    noaSpreadsheet = SpreadsheetApp.openById(NOA_SPREADSHEET_ID);
+  } catch (e) {
+    ui.alert('שגיאה', 'לא ניתן לגשת לגיליון של נועה. ודא שיש הרשאות גישה.', ui.ButtonSet.OK);
+    return;
+  }
+
+  const noaSheet = noaSpreadsheet.getSheets()[0];
+  const transferDate = Utilities.formatDate(new Date(), 'Asia/Jerusalem', 'dd/MM/yy HH:mm');
+  let transferred = 0;
+
+  for (const { row, rowIndex } of toTransfer) {
+    const customerName  = row[ROTEM_COL.CUSTOMER_NAME - 1];
+    const company       = row[ROTEM_COL.COMPANY - 1];
+    const initialDate   = row[ROTEM_COL.INITIAL_DATE - 1];
+    const phone         = row[ROTEM_COL.PHONE - 1];
+    const email         = row[ROTEM_COL.EMAIL - 1];
+    const projectLength = row[ROTEM_COL.PROJECT_LENGTH - 1];
+    const location      = row[ROTEM_COL.LOCATION - 1];
+
+    const nextRow = findNextEmptyRow(noaSheet);
+
+    // בונה שורה מסודרת לפי עמודות גיליון נועה
+    const newRowValues = Array(14).fill('');
+    newRowValues[NOA_COL.TIMESTAMP - 1]     = initialDate;     // A - תאריך הגעת הליד
+    newRowValues[NOA_COL.CUSTOMER_NAME - 1] = customerName;    // B - שם לקוח
+    newRowValues[NOA_COL.COMPANY - 1]       = company;         // C - שם החברה
+    newRowValues[NOA_COL.EMAIL - 1]         = email;           // D - כתובת מייל
+    newRowValues[NOA_COL.PHONE - 1]         = phone;           // E - טלפון
+    newRowValues[NOA_COL.LOCATION - 1]      = location;        // F - מיקום האתר
+    // G (מחיר), H (כמות מצלמות), J (מחיר התקנה), K-L (תוספות/חריגה) — נועה ממלאת
+    newRowValues[NOA_COL.MONTHS - 1]        = projectLength;   // I - מספר חודשים
+
+    noaSheet.getRange(nextRow, 1, 1, 14).setValues([newRowValues]);
+
+    // סימון בגיליון רותם
+    sheet.getRange(rowIndex, ROTEM_COL.TRANSFERRED).setValue(`הועבר לנועה ${transferDate}`);
+    sheet.getRange(rowIndex, 1, 1, 12).setBackground('#c6efce');
+    transferred++;
+  }
+
+  ui.alert('✅ הסתיים!', `הועברו ${transferred} לידים בהצלחה לגיליון נועה.`, ui.ButtonSet.OK);
 }
 
 function transferAllLeads() {

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '49',
+    title: 'טיימלאפס לפרויקט בנייה: מהפכה בתיעוד ובאבטחה עם מצלמות סולאריות 4G',
+    slug: 'timelapse-construction-2026',
+    excerpt: 'גלו איך טיימלאפס לפרויקט בנייה עם מצלמות סולאריות 4G של Site-Control משנה את כללי המשחק. אבטחה, תיעוד, ניהול ותיעוד שיווקי לקבלנים, חקלאים ומנהלי אתרי...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-06-11',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/timelapse-construction-2026/hero.png',
+    seoTitle: 'טיימלאפס לפרויקט בנייה: מהפכה בתיעוד ובאבטחה עם מצלמות סולאריות 4G | Site-Control',
+    seoDescription: 'גלו איך טיימלאפס לפרויקט בנייה עם מצלמות סולאריות 4G של Site-Control משנה את כללי המשחק. אבטחה, תיעוד, ניהול ותיעוד שיווקי לקבלנים, חקלאים ומנהלי אתרים מבודדים.',
+    keywords: ["טיימלאפס לפרויקט בנייה","מצלמות סולאריות 4G","אבטחת אתרי בנייה","תיעוד התקדמות פרויקט","Reolink GO Plus","Reolink PTZ Solar","מצלמות לחקלאות","ניהול אתרים מבודדים","טיימלאפס בנייה"]
+  },
+  {
     id: '48',
     title: 'פתרון אבטחה ללא תשתיות חשמל ואינטרנט: המדריך המלא',
     slug: 'security-2026',

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '50',
+    title: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן',
+    slug: 'documentation-project-construction-2026',
+    excerpt: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתר...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-06-18',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/documentation-project-construction-2026/hero.png',
+    seoTitle: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן | Site-Control',
+    seoDescription: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.',
+    keywords: ["תיעוד ויזואלי של פרויקט בנייה ללקוחות","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","מצלמות לחקלאות","ניהול אתרים מבודדים","קבלני בנייה","פתרונות B2B למצלמות אבטחה","Reolink GO Plus","Reolink PTZ Solar"]
+  },
+  {
     id: '49',
     title: 'טיימלאפס לפרויקט בנייה: מהפכה בתיעוד ובאבטחה עם מצלמות סולאריות 4G',
     slug: 'timelapse-construction-2026',

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '51',
+    title: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control',
+    slug: 'video-progress-construction-developers-2026',
+    excerpt: 'גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-06-22',
+    category: 'תיעוד בנייה',
+    image: '/blog-images/video-progress-construction-developers-2026/hero.png',
+    seoTitle: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control | Site-Control',
+    seoDescription: 'גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.',
+    keywords: ["סרטון התקדמות בנייה ליזמים","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","תיעוד פרויקטים","מצלמות לחקלאות","ניהול אתרים מבודדים","טיימלאפס בנייה","מצלמות ללא חשמל","מצלמות ללא אינטרנט"]
+  },
+  {
     id: '50',
     title: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן',
     slug: 'documentation-project-construction-2026',

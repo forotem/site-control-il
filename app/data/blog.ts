@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '52',
+    title: 'השוואת מצלמות סולאריות 4G לאתרי בנייה: המדריך המקיף',
+    slug: 'cameras-sites-construction-2026',
+    excerpt: 'מומחי Site-Control משווים מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ואתרים מבודדים. מצא את הפתרון המושלם נגד גניבות ופגיעות עם Reolink GO Plus ו-PT...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-06-25',
+    category: 'מצלמות אבטחה / פתרונות B2B / מדריכים / תיעוד בנייה',
+    image: '/blog-images/cameras-sites-construction-2026/hero.png',
+    seoTitle: 'השוואת מצלמות סולאריות 4G לאתרי בנייה: המדריך המקיף | Site-Control',
+    seoDescription: 'מומחי Site-Control משווים מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ואתרים מבודדים. מצא את הפתרון המושלם נגד גניבות ופגיעות עם Reolink GO Plus ו-PTZ Solar.',
+    keywords: ["השוואת מצלמות סולאריות 4G לאתרי בנייה","מצלמות אבטחה סולאריות 4G","מצלמות אבטחה לאתרי בנייה","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת אתרים מבודדים","מצלמות אבטחה לחקלאות","טיימלאפס לאתרי בנייה","מערכות אבטחה ללא חשמל","פתרונות אבטחה B2B בישראל"]
+  },
+  {
     id: '51',
     title: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control',
     slug: 'video-progress-construction-developers-2026',

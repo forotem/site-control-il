@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '53',
+    title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B',
+    slug: 'reolink-go-plus',
+    excerpt: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו יי...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-06-29',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/reolink-go-plus/hero.png',
+    seoTitle: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B | Site-Control',
+    seoDescription: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.',
+    keywords: ["Reolink GO Plus ביקורת בעברית","מצלמת אבטחה סולארית 4G","Reolink GO Plus לאתרי בנייה","מצלמות אבטחה לחקלאים","אבטחת אתרים מבודדים","מצלמת סים Reolink","Reolink PTZ Solar B2B","פתרונות אבטחה ללא חשמל","מצלמות סולאריות B2B","אבטחה לשטחים מנותקים"]
+  },
+  {
     id: '52',
     title: 'השוואת מצלמות סולאריות 4G לאתרי בנייה: המדריך המקיף',
     slug: 'cameras-sites-construction-2026',

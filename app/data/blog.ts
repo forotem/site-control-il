@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '54',
+    title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
+    slug: 'security-solar-cloud-2026',
+    excerpt: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-07-02',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/security-solar-cloud-2026/hero.png',
+    seoTitle: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום | Site-Control',
+    seoDescription: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
+    keywords: ["מצלמת אבטחה סולארית עם גיבוי ענן","מצלמות 4G לאתרי בנייה","אבטחה סולארית לחקלאות","מצלמות לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת ציוד בנייה","מניעת גניבות חקלאיות"]
+  },
+  {
     id: '53',
     title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B',
     slug: 'reolink-go-plus',

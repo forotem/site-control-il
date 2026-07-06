@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '55',
+    title: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים',
+    slug: 'security-construction-2026',
+    excerpt: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-07-06',
+    category: 'מדריכים',
+    image: '/blog-images/security-construction-2026/hero.png',
+    seoTitle: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים | Site-Control',
+    seoDescription: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.',
+    keywords: ["כמה עולה מצלמת אבטחה לאתר בנייה","מצלמות סולאריות 4G","אבטחת אתר בנייה","מצלמות לחקלאות","מצלמות לאתרים מרוחקים","Reolink PTZ Solar","Reolink GO Plus","עלות אבטחה חקלאית","פתרונות אבטחה B2B"]
+  },
+  {
     id: '54',
     title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
     slug: 'security-solar-cloud-2026',

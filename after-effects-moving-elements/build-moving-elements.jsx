@@ -1,5 +1,5 @@
 // ============================================================
-//  TV Studio LED Screens - Moving Elements Project Builder
+//  TV Studio LED Screens - Broadcast Background Builder
 //  for Adobe After Effects
 // ------------------------------------------------------------
 //  HOW TO RUN (inside After Effects):
@@ -10,14 +10,18 @@
 //         BackWall_Main_3200x1200, BackWall_Side_2800x1200,
 //         Side_A_1600x1200, Side_B_1600x1200,
 //         Vertical_800x1600, Square_1600x1600, Ticker_2880x270
-//    02 - Elements       : 11 reusable animated shape elements
+//    02 - Elements       : reusable broadcast accents
+//         (dot grid, chevron trail, tech ring, hairlines, ticks)
 //
-//  All screens share ONE visual language (same palette, same
-//  element set, same motion) and every animation is expression
-//  driven so the 10 second comps loop seamlessly.
+//  DESIGN LANGUAGE (shared by every screen):
+//    dark broadcast wall + diagonal light beams + soft glows
+//    + dot-grid panel + neon floor line + drifting chevrons
+//    + a light sweep that crosses the screen once per loop.
+//  All motion is slow, subtle and expression driven, so every
+//  10 second comp loops seamlessly.
 // ============================================================
 
-(function buildMovingElementsProject() {
+(function buildStudioScreensProject() {
 
     app.beginUndoGroup("Build Studio Screens Project");
 
@@ -31,7 +35,6 @@
     var COLORS = {
         red:     [0.86, 0.10, 0.16],
         magenta: [0.93, 0.16, 0.45],
-        orange:  [1.00, 0.45, 0.15],
         gold:    [1.00, 0.72, 0.20],
         white:   [0.96, 0.96, 0.98],
         grey:    [0.55, 0.58, 0.66],
@@ -41,7 +44,7 @@
     // Drift a layer across the full comp width and wrap around.
     // Speed = one full crossing per comp duration -> seamless loop.
     var DRIFT_EXPR =
-        "m = 400;\n" +
+        "m = 500;\n" +
         "w = thisComp.width + m;\n" +
         "sp = w / " + DUR + ";\n" +
         "x = (value[0] + m/2 + time*sp) % w - m/2;\n" +
@@ -68,14 +71,6 @@
             if (spec.roundness) {
                 rc.property("ADBE Vector Rect Roundness").setValue(spec.roundness);
             }
-        } else if (spec.shape === "poly" || spec.shape === "star") {
-            var st = gc.addProperty("ADBE Vector Shape - Star");
-            st.property("ADBE Vector Star Type").setValue(spec.shape === "star" ? 1 : 2);
-            st.property("ADBE Vector Star Points").setValue(spec.points);
-            st.property("ADBE Vector Star Outer Radius").setValue(spec.outerRadius);
-            if (spec.shape === "star") {
-                st.property("ADBE Vector Star Inner Radius").setValue(spec.innerRadius);
-            }
         }
 
         if (spec.fill) {
@@ -88,7 +83,11 @@
         if (spec.strokeColor) {
             var stroke = gc.addProperty("ADBE Vector Graphic - Stroke");
             stroke.property("ADBE Vector Stroke Color").setValue([spec.strokeColor[0], spec.strokeColor[1], spec.strokeColor[2], 1]);
-            stroke.property("ADBE Vector Stroke Width").setValue(spec.strokeWidth || 8);
+            stroke.property("ADBE Vector Stroke Width").setValue(spec.strokeWidth || 6);
+            if (spec.dash) {
+                stroke.property("ADBE Vector Stroke Dashes")
+                      .addProperty("ADBE Vector Stroke Dash 1").setValue(spec.dash);
+            }
         }
 
         var gt = group.property("ADBE Vector Transform Group");
@@ -102,197 +101,284 @@
         return layer.property("ADBE Transform Group");
     }
 
-    // Loop-friendly expression presets (frequencies * DUR = integer)
-    function applyAnim(layer, anim) {
-        var t = transformOf(layer);
-        if (anim === "spin")       t.property("ADBE Rotate Z").expression = "time * 36";
-        if (anim === "spinFast")   t.property("ADBE Rotate Z").expression = "time * 72";
-        if (anim === "spinBack")   t.property("ADBE Rotate Z").expression = "time * -36";
-        if (anim === "pulse")      t.property("ADBE Scale").expression =
-            "amp = 12; freq = 0.3;\n" +
-            "s = Math.sin(time*" + TWO_PI + "*freq)*amp;\n" +
-            "[value[0]+s, value[1]+s]";
-        if (anim === "float")      t.property("ADBE Position").expression =
-            "ax = 25; ay = 45; fx = 0.2; fy = 0.3;\n" +
-            "value + [Math.sin(time*" + TWO_PI + "*fx)*ax, Math.cos(time*" + TWO_PI + "*fy)*ay]";
-        if (anim === "sway")       t.property("ADBE Position").expression =
-            "ax = 60; fx = 0.1;\n" +
-            "value + [Math.sin(time*" + TWO_PI + "*fx)*ax, 0]";
-        if (anim === "breatheOpacity") t.property("ADBE Opacity").expression =
-            "70 + Math.sin(time*" + TWO_PI + "*0.5)*30";
+    function addBlur(layer, amount) {
+        var fx = layer.property("ADBE Effect Parade").addProperty("ADBE Gaussian Blur 2");
+        fx.property("ADBE Gaussian Blur 2-0001").setValue(amount);
+        fx.property("ADBE Gaussian Blur 2-0002").setValue(1); // repeat edge pixels
     }
 
-    // Creates a transparent element comp with a single animated shape layer.
-    function makeElementComp(name, w, h, groups, anims) {
-        var comp = proj.items.addComp(name, w, h, 1, DUR, FPS);
-        comp.parentFolder = elementsFolder;
-        comp.bgColor = COLORS.dark;
-
-        var layer = comp.layers.addShape();
-        layer.name = name;
-        transformOf(layer).property("ADBE Position").setValue([w / 2, h / 2]);
-
-        var i;
-        for (i = 0; i < groups.length; i++) addShapeGroup(layer, groups[i]);
-        for (i = 0; i < anims.length; i++) applyAnim(layer, anims[i]);
-
-        return comp;
+    // Slow horizontal sway - phase keeps parallax between layers,
+    // freq * DUR is an integer so the loop stays seamless.
+    function applySway(layer, amp, phase) {
+        transformOf(layer).property("ADBE Position").expression =
+            "value + [Math.sin(time*" + TWO_PI + "*0.1 + " + phase + ")*" + amp + ", 0]";
     }
 
-    // ------------------------- elements -------------------------
+    function applyBreath(layer, base, amp, freq) {
+        transformOf(layer).property("ADBE Opacity").expression =
+            base + " + Math.sin(time*" + TWO_PI + "*" + freq + ")*" + amp;
+    }
+
+    // ---------------- reusable accent elements ------------------
     var elements = {};
 
-    elements.circleSmall = makeElementComp("Circle_Small_Pulse", 400, 400,
-        [{ shape: "ellipse", size: [180, 180], fill: COLORS.orange }],
-        ["pulse", "float"]);
+    // Dot-matrix panel (like the dotted texture on the studio wall)
+    (function () {
+        var w = 620, h = 400, gap = 55;
+        var comp = proj.items.addComp("DotGrid_Panel", w, h, 1, DUR, FPS);
+        comp.parentFolder = elementsFolder;
+        comp.bgColor = COLORS.dark;
+        var layer = comp.layers.addShape();
+        layer.name = "Dots";
+        transformOf(layer).property("ADBE Position").setValue([w / 2, h / 2]);
+        for (var r = 0; r < 7; r++) {
+            for (var c = 0; c < 10; c++) {
+                addShapeGroup(layer, {
+                    shape: "ellipse", size: [6, 6], fill: COLORS.white, fillOpacity: 70,
+                    groupPosition: [c * gap - 4.5 * gap, r * gap - 3 * gap]
+                });
+            }
+        }
+        applyBreath(layer, 60, 25, 0.3);   // gentle shimmer
+        elements.dotGrid = comp;
+    })();
 
-    elements.circleBig = makeElementComp("Circle_Big_Float", 600, 600,
-        [{ shape: "ellipse", size: [340, 340], fill: COLORS.red }],
-        ["float"]);
+    // Chevron trail ">>>" with running-light opacity
+    (function () {
+        var comp = proj.items.addComp("Chevron_Trail", 420, 200, 1, DUR, FPS);
+        comp.parentFolder = elementsFolder;
+        comp.bgColor = COLORS.dark;
+        for (var i = 0; i < 3; i++) {
+            var layer = comp.layers.addShape();
+            layer.name = "Chevron " + (i + 1);
+            addShapeGroup(layer, {
+                shape: "rect", size: [80, 14], roundness: 7, fill: COLORS.magenta,
+                groupRotation: 45, groupPosition: [0, -27]
+            });
+            addShapeGroup(layer, {
+                shape: "rect", size: [80, 14], roundness: 7, fill: COLORS.magenta,
+                groupRotation: -45, groupPosition: [0, 27]
+            });
+            transformOf(layer).property("ADBE Position").setValue([90 + i * 120, 100]);
+            transformOf(layer).property("ADBE Opacity").expression =
+                "ph = " + (i * 1.0) + ";\n" +
+                "(Math.sin(time*" + TWO_PI + "*0.5 - ph)+1)/2*70 + 25";
+        }
+        elements.chevrons = comp;
+    })();
 
-    elements.ring = makeElementComp("Ring_Pulse", 500, 500,
-        [{ shape: "ellipse", size: [280, 280], strokeColor: COLORS.magenta, strokeWidth: 24 }],
-        ["pulse", "breatheOpacity"]);
+    // Dashed "tech" ring, slow rotation
+    (function () {
+        var comp = proj.items.addComp("Ring_Tech_Dashed", 500, 500, 1, DUR, FPS);
+        comp.parentFolder = elementsFolder;
+        comp.bgColor = COLORS.dark;
+        var layer = comp.layers.addShape();
+        layer.name = "Ring";
+        addShapeGroup(layer, {
+            shape: "ellipse", size: [320, 320],
+            strokeColor: COLORS.grey, strokeWidth: 5, dash: 40
+        });
+        addShapeGroup(layer, {
+            shape: "ellipse", size: [250, 250],
+            strokeColor: COLORS.red, strokeWidth: 3, dash: 24
+        });
+        transformOf(layer).property("ADBE Position").setValue([250, 250]);
+        transformOf(layer).property("ADBE Rotate Z").expression = "time * 36";
+        applyBreath(layer, 55, 20, 0.2);
+        elements.ring = comp;
+    })();
 
-    elements.squareSmall = makeElementComp("Square_Small_Spin", 400, 400,
-        [{ shape: "rect", size: [150, 150], roundness: 16, fill: COLORS.magenta }],
-        ["spin", "float"]);
+    // Set of fine horizontal hairlines (like the mock-up rules)
+    (function () {
+        var comp = proj.items.addComp("Hairline_Set", 400, 120, 1, DUR, FPS);
+        comp.parentFolder = elementsFolder;
+        comp.bgColor = COLORS.dark;
+        var layer = comp.layers.addShape();
+        layer.name = "Hairlines";
+        var specs = [[300, 80], [200, 50], [120, 35]];
+        for (var i = 0; i < specs.length; i++) {
+            addShapeGroup(layer, {
+                shape: "rect", size: [specs[i][0], 3], fill: COLORS.white,
+                fillOpacity: specs[i][1],
+                groupPosition: [specs[i][0] / 2 - 150, (i - 1) * 16]
+            });
+        }
+        transformOf(layer).property("ADBE Position").setValue([200, 60]);
+        applySway(layer, 12, 0);
+        elements.hairlines = comp;
+    })();
 
-    elements.squareBig = makeElementComp("Square_Big_Rounded_Float", 600, 600,
-        [{ shape: "rect", size: [300, 300], roundness: 60, fill: COLORS.red }],
-        ["float", "spinBack"]);
+    // Small "+" registration tick, twinkling
+    (function () {
+        var comp = proj.items.addComp("Tick_Plus", 120, 120, 1, DUR, FPS);
+        comp.parentFolder = elementsFolder;
+        comp.bgColor = COLORS.dark;
+        var layer = comp.layers.addShape();
+        layer.name = "Tick";
+        addShapeGroup(layer, { shape: "rect", size: [28, 3], fill: COLORS.white });
+        addShapeGroup(layer, { shape: "rect", size: [3, 28], fill: COLORS.white });
+        transformOf(layer).property("ADBE Position").setValue([60, 60]);
+        applyBreath(layer, 55, 40, 0.5);
+        elements.tick = comp;
+    })();
 
-    elements.triangle = makeElementComp("Triangle_Spin", 500, 500,
-        [{ shape: "poly", points: 3, outerRadius: 150, fill: COLORS.gold }],
-        ["spin", "float"]);
+    // ---------------- per-screen building blocks ----------------
 
-    elements.hexagon = makeElementComp("Hexagon_Rotate", 600, 600,
-        [{ shape: "poly", points: 6, outerRadius: 200, strokeColor: COLORS.red, strokeWidth: 18 }],
-        ["spinBack", "pulse"]);
-
-    elements.star = makeElementComp("Star_Twinkle", 500, 500,
-        [{ shape: "star", points: 5, outerRadius: 160, innerRadius: 75, fill: COLORS.gold }],
-        ["spin", "pulse", "breatheOpacity"]);
-
-    elements.bar = makeElementComp("Bar_Sway", 700, 300,
-        [{ shape: "rect", size: [420, 70], roundness: 35, fill: COLORS.magenta }],
-        ["sway"]);
-
-    elements.cross = makeElementComp("Cross_Spin", 450, 450,
-        [
-            { shape: "rect", size: [240, 70], roundness: 35, fill: COLORS.white },
-            { shape: "rect", size: [70, 240], roundness: 35, fill: COLORS.white }
-        ],
-        ["spinFast", "float"]);
-
-    // Three bouncing dots with phase offsets (separate layers).
-    var dots = proj.items.addComp("Dots_Trio_Bounce", 520, 320, 1, DUR, FPS);
-    dots.parentFolder = elementsFolder;
-    dots.bgColor = COLORS.dark;
-    var dotColors = [COLORS.orange, COLORS.magenta, COLORS.gold];
-    for (var d = 0; d < 3; d++) {
-        var dotLayer = dots.layers.addShape();
-        dotLayer.name = "Dot " + (d + 1);
-        addShapeGroup(dotLayer, { shape: "ellipse", size: [80, 80], fill: dotColors[d] });
-        transformOf(dotLayer).property("ADBE Position").setValue([130 + d * 130, 210]);
-        transformOf(dotLayer).property("ADBE Position").expression =
-            "ph = " + (d * 0.25) + ";\n" +
-            "y = -Math.abs(Math.sin((time - ph)*Math.PI*1.0))*80;\n" +
-            "value + [0, y]";
+    // Big soft glow, breathing slowly (blurred disc)
+    function addGlow(comp, pos, size, color, opacity) {
+        var layer = comp.layers.addShape();
+        layer.name = "Glow";
+        addShapeGroup(layer, { shape: "ellipse", size: [size, size], fill: color });
+        transformOf(layer).property("ADBE Position").setValue(pos);
+        transformOf(layer).property("ADBE Opacity").setValue(opacity);
+        addBlur(layer, size * 0.35);
+        applyBreath(layer, opacity, opacity * 0.35, 0.2);
+        return layer;
     }
-    elements.dots = dots;
+
+    // Diagonal light beam (the signature studio slashes)
+    function addBeam(comp, x, rotation, width, color, opacity, blur, phase) {
+        var len = (comp.width + comp.height) * 1.6;
+        var layer = comp.layers.addShape();
+        layer.name = "Beam";
+        addShapeGroup(layer, { shape: "rect", size: [width, len], fill: color });
+        var t = transformOf(layer);
+        t.property("ADBE Position").setValue([x, comp.height / 2]);
+        t.property("ADBE Rotate Z").setValue(rotation);
+        t.property("ADBE Opacity").setValue(opacity);
+        if (blur) addBlur(layer, blur);
+        applySway(layer, 14 + blur * 0.1, phase);
+        return layer;
+    }
+
+    // Neon line near the floor: glow + white core + a bright runner
+    function addFloorLine(comp, yFrac) {
+        var w = comp.width, y = comp.height * yFrac;
+
+        var glow = comp.layers.addShape();
+        glow.name = "Floor Line Glow";
+        addShapeGroup(glow, { shape: "rect", size: [w * 1.1, 10], fill: COLORS.magenta });
+        transformOf(glow).property("ADBE Position").setValue([w / 2, y]);
+        addBlur(glow, 26);
+        applyBreath(glow, 55, 20, 0.2);
+
+        var core = comp.layers.addShape();
+        core.name = "Floor Line";
+        addShapeGroup(core, { shape: "rect", size: [w * 1.1, 4], fill: COLORS.white });
+        transformOf(core).property("ADBE Position").setValue([w / 2, y]);
+        transformOf(core).property("ADBE Opacity").setValue(85);
+
+        var runner = comp.layers.addShape();
+        runner.name = "Floor Runner";
+        addShapeGroup(runner, { shape: "rect", size: [comp.height * 0.35, 5], roundness: 3, fill: COLORS.white });
+        transformOf(runner).property("ADBE Position").setValue([0, y]);
+        addBlur(runner, 8);
+        transformOf(runner).property("ADBE Position").expression = DRIFT_EXPR;
+    }
+
+    // Soft light streak that sweeps across once per loop
+    function addSweep(comp) {
+        var layer = comp.layers.addShape();
+        layer.name = "Light Sweep";
+        var len = (comp.width + comp.height) * 1.6;
+        addShapeGroup(layer, { shape: "rect", size: [comp.height * 0.25, len], fill: COLORS.white });
+        var t = transformOf(layer);
+        t.property("ADBE Position").setValue([0, comp.height / 2]);
+        t.property("ADBE Rotate Z").setValue(14);
+        t.property("ADBE Opacity").setValue(10);
+        addBlur(layer, 90);
+        t.property("ADBE Position").expression =
+            "m = 700;\n" +
+            "p = (time % " + DUR + ") / " + DUR + ";\n" +
+            "[-m + p * (thisComp.width + 2*m), value[1]]";
+        layer.blendingMode = BlendingMode.ADD;
+    }
+
+    // Place a reusable element comp, scaled to the screen size
+    function place(comp, element, fx, fy, rel, opacity) {
+        var layer = comp.layers.add(element);
+        layer.collapseTransformation = true;
+        var sc = (Math.min(comp.width, comp.height) / 1080) * 100 * rel;
+        var t = transformOf(layer);
+        t.property("ADBE Position").setValue([comp.width * fx, comp.height * fy]);
+        t.property("ADBE Scale").setValue([sc, sc]);
+        if (opacity !== undefined) t.property("ADBE Opacity").setValue(opacity);
+        return layer;
+    }
 
     // ---------------------- studio screens ----------------------
-    // Layout as fractions of comp size so it fits every aspect ratio.
-    // [element, fracX, fracY, relativeScale, driftAcrossScreen]
-    var LAYOUT = [
-        [elements.circleBig,   0.16, 0.28, 1.00, false],
-        [elements.hexagon,     0.50, 0.42, 1.10, false],
-        [elements.squareSmall, 0.82, 0.22, 1.00, false],
-        [elements.triangle,    0.72, 0.72, 0.90, false],
-        [elements.star,        0.28, 0.74, 0.85, false],
-        [elements.ring,        0.88, 0.52, 0.75, false],
-        [elements.cross,       0.08, 0.62, 0.80, false],
-        [elements.squareBig,   0.38, 0.10, 0.60, false],
-        [elements.dots,        0.50, 0.88, 1.00, false],
-        [elements.circleSmall, 0.10, 0.90, 0.80, true ],
-        [elements.bar,         0.20, 0.08, 0.90, true ]
-    ];
-
-    // One comp per physical LED screen.
-    // variant shifts + mirrors the layout so same-size screens
-    // don't look identical while keeping the same visual language.
-    function makeScreenComp(name, w, h, variant) {
+    // One comp per physical LED screen. Mirrored variants keep
+    // same-size screens from looking identical while sharing the
+    // exact same visual language.
+    function makeScreenComp(name, w, h, mirrored) {
         var comp = proj.items.addComp(name, w, h, 1, DUR, FPS);
         comp.parentFolder = masterFolder;
         comp.bgColor = COLORS.dark;
 
+        function fx(f) { return mirrored ? 1 - f : f; }
+        var mn = Math.min(w, h);
+        var beamRot = mirrored ? -22 : 22;
+        var isTicker = (w / h) >= 4;
+
         var bg = comp.layers.addSolid(COLORS.dark, "Background", w, h, 1, DUR);
         bg.moveToEnd();
 
-        // Soft glow accents behind everything (shared look on all screens)
-        var accent = comp.layers.addShape();
-        accent.name = "Soft Accents";
-        var acSize = Math.min(w, h) * 1.4;
-        addShapeGroup(accent, {
-            shape: "ellipse", size: [acSize, acSize], fill: COLORS.red,
-            fillOpacity: 10, groupPosition: [-w * 0.30, -h * 0.25]
-        });
-        addShapeGroup(accent, {
-            shape: "ellipse", size: [acSize * 0.85, acSize * 0.85], fill: COLORS.magenta,
-            fillOpacity: 8, groupPosition: [w * 0.35, h * 0.30]
-        });
-        transformOf(accent).property("ADBE Position").setValue([w / 2, h / 2]);
-        applyAnim(accent, "float");
-
-        var i, layer, t, sc;
-        var isTicker = (w / h) >= 4;
+        // depth: two soft glows in opposite corners
+        addGlow(comp, [w * fx(0.82), h * 0.18], mn * 0.9, COLORS.red, 14);
+        addGlow(comp, [w * fx(0.12), h * 0.88], mn * 0.7, COLORS.magenta, 10);
 
         if (isTicker) {
-            // Ultra-wide strip: a row of small elements drifting across
-            var picks = [elements.star, elements.circleSmall, elements.triangle,
-                         elements.squareSmall, elements.cross, elements.ring,
-                         elements.dots, elements.hexagon];
-            var n = Math.max(4, Math.round(w / (h * 2.0)));
-            for (i = 0; i < n; i++) {
+            // Ultra-wide strip: drifting row of small accents + sweep
+            var picks = [elements.chevrons, elements.tick, elements.ring,
+                         elements.hairlines, elements.chevrons, elements.tick];
+            var n = Math.max(5, Math.round(w / (h * 2.2)));
+            for (var i = 0; i < n; i++) {
                 var el = picks[i % picks.length];
-                layer = comp.layers.add(el);
+                var layer = comp.layers.add(el);
                 layer.collapseTransformation = true;
-                t = transformOf(layer);
-                sc = (h * 0.85) / el.height * 100;
-                t.property("ADBE Position").setValue([w * (i + 0.5) / n, h * 0.52]);
+                var sc = (h * 0.72) / el.height * 100;
+                var t = transformOf(layer);
+                t.property("ADBE Position").setValue([w * (i + 0.5) / n, h * 0.5]);
                 t.property("ADBE Scale").setValue([sc, sc]);
                 t.property("ADBE Position").expression = DRIFT_EXPR;
             }
-        } else {
-            var scaleBase = (Math.min(w, h) / 1080) * 100;
-            var start = (variant || 0) * 3;
-            for (i = 0; i < LAYOUT.length; i++) {
-                var row = LAYOUT[(i + start) % LAYOUT.length];
-                var fx = row[1];
-                if ((variant || 0) % 2 === 1) fx = 1 - fx;
-                layer = comp.layers.add(row[0]);
-                layer.collapseTransformation = true;
-                t = transformOf(layer);
-                t.property("ADBE Position").setValue([w * fx, h * row[2]]);
-                t.property("ADBE Scale").setValue([scaleBase * row[3], scaleBase * row[3]]);
-                if (row[4]) t.property("ADBE Position").expression = DRIFT_EXPR;
-            }
+            addSweep(comp);
+            return comp;
         }
+
+        // --- signature diagonal beam cluster (right side, or left if mirrored)
+        addBeam(comp, w * fx(0.80), beamRot, mn * 0.30, COLORS.red,     30, 120, 0);    // wide soft wash
+        addBeam(comp, w * fx(0.79), beamRot, mn * 0.15, COLORS.red,     75, 0,   0.7);  // main slash
+        addBeam(comp, w * fx(0.88), beamRot, mn * 0.06, COLORS.magenta, 80, 0,   1.5);  // secondary
+        addBeam(comp, w * fx(0.94), beamRot, mn * 0.018, COLORS.white,  55, 0,   2.3);  // fine highlight
+        addBeam(comp, w * fx(0.10), beamRot, mn * 0.02, COLORS.magenta, 35, 6,   3.1);  // echo far side
+
+        // --- accents arranged like the reference mock-up
+        place(comp, elements.dotGrid,   fx(0.20), 0.24, 1.00, 80);
+        place(comp, elements.hairlines, fx(0.17), 0.48, 1.00, 70);
+        place(comp, elements.chevrons,  fx(0.27), 0.68, 0.90);
+        place(comp, elements.ring,      fx(0.55), 0.30, 0.90, 45);
+        place(comp, elements.tick,      fx(0.46), 0.12, 0.90);
+        place(comp, elements.tick,      fx(0.62), 0.78, 0.70);
+
+        // --- neon floor line + light sweep on top
+        addFloorLine(comp, 0.92);
+        addSweep(comp);
+
         return comp;
     }
 
     // Exact physical screen sizes from the studio plan
-    makeScreenComp("BackWall_Main_3200x1200", 3200, 1200, 0);
-    makeScreenComp("BackWall_Side_2800x1200", 2800, 1200, 1);
-    makeScreenComp("Side_A_1600x1200",        1600, 1200, 2);
-    makeScreenComp("Side_B_1600x1200",        1600, 1200, 3);
-    makeScreenComp("Vertical_800x1600",        800, 1600, 4);
-    makeScreenComp("Square_1600x1600",        1600, 1600, 5);
-    makeScreenComp("Ticker_2880x270",         2880,  270, 0);
+    makeScreenComp("BackWall_Main_3200x1200", 3200, 1200, false);
+    makeScreenComp("BackWall_Side_2800x1200", 2800, 1200, true);
+    makeScreenComp("Side_A_1600x1200",        1600, 1200, false);
+    makeScreenComp("Side_B_1600x1200",        1600, 1200, true);
+    makeScreenComp("Vertical_800x1600",        800, 1600, false);
+    makeScreenComp("Square_1600x1600",        1600, 1600, true);
+    makeScreenComp("Ticker_2880x270",         2880,  270, false);
 
     app.endUndoGroup();
 
-    alert("Done!\n\n7 studio screen comps + 11 animated elements were created.\n\nOpen '01 - Studio Screens' and press Space to preview.\nAll comps loop seamlessly every " + DUR + " seconds.\nRemember to save the project (Ctrl/Cmd+S).");
+    alert("Done!\n\n7 studio screen comps + 5 reusable accents were created.\n\nOpen '01 - Studio Screens' and press Space to preview.\nAll comps loop seamlessly every " + DUR + " seconds.\nRemember to save the project (Ctrl/Cmd+S).");
 
 })();

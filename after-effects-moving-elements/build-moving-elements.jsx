@@ -1,32 +1,36 @@
 // ============================================================
-//  TV Studio LED Screens - Broadcast Background Builder
+//  TV Studio LED Wall - Unified Broadcast Background Builder
 //  for Adobe After Effects
 // ------------------------------------------------------------
 //  HOW TO RUN (inside After Effects):
 //    File > Scripts > Run Script File...  -> pick this .jsx file
 //
-//  WHAT IT BUILDS:
-//    01 - Studio Screens : one comp per LED screen, exact sizes:
-//         BackWall_Main_3200x1200, BackWall_Side_2800x1200,
-//         Side_A_1600x1200, Side_B_1600x1200,
-//         Vertical_800x1600, Square_1600x1600, Ticker_2880x270
+//  ARCHITECTURE - ONE UNIFIED WALL:
+//    00 - Master Wall    : Studio_Master_11600x1600 - the whole
+//                          studio wall designed as ONE canvas.
+//                          Motion starts on the right-most screen,
+//                          travels across every screen and back.
+//    01 - Studio Screens : one comp per physical LED screen, each
+//                          is a window into the master at its real
+//                          position - render each at its exact size
+//                          and, played together, they form one
+//                          continuous picture with one direction.
 //    02 - Elements       : reusable broadcast accents
 //    03 - Textures       : auto-imported from a ./textures folder
 //                          next to this script (optional)
 //
-//  DESIGN LANGUAGE (matched to the studio reference frame):
-//    near-black graphite wall, layered dark diagonal panels with
-//    lit edges, one dominant magenta beam with a hot glowing core,
-//    fine dot-matrix panel, diagonal hatch-line block, neon edge
-//    frame, grey chevrons + plus ticks + hairlines, double neon
-//    floor line (cool white + magenta) with a running highlight,
-//    a thin circle on the floor, and a soft light sweep.
+//  Physical wall order (left to right, from the studio plan):
+//    Side_A 1600x1200 | Side_B 1600x1200 | Vertical 800x1600 |
+//    BackWall_Main 3200x1200 | BackWall_Side 2800x1200 |
+//    Square 1600x1600      (+ Ticker 2880x270 above the main wall)
+//  Change SCREENS below if the physical order differs.
+//
 //  All motion is slow and subtle; every 10s comp loops seamlessly.
 // ============================================================
 
-(function buildStudioScreensProject() {
+(function buildStudioWallProject() {
 
-    app.beginUndoGroup("Build Studio Screens Project");
+    app.beginUndoGroup("Build Unified Studio Wall Project");
 
     // ------------------------- settings -------------------------
     var FPS = 30;
@@ -34,7 +38,7 @@
     var TWO_PI = "Math.PI*2";
 
     // Palette sampled from the reference frame.
-    // Change these and re-run to restyle every screen at once.
+    // Change these and re-run to restyle the whole wall at once.
     var COLORS = {
         magenta: [0.95, 0.15, 0.50],   // dominant beam / floor line
         red:     [0.90, 0.08, 0.25],   // deep accents
@@ -43,19 +47,38 @@
         grey:    [0.58, 0.61, 0.68],   // chevrons, ticks, hairlines
         panelA:  [0.085, 0.095, 0.125],// dark slab
         panelB:  [0.115, 0.125, 0.160],// lighter slab
+        black:   [0, 0, 0],
         dark:    [0.035, 0.040, 0.055] // wall
     };
 
-    // Drift a layer across the full comp width and wrap around.
-    // Speed = one full crossing per comp duration -> seamless loop.
-    var DRIFT_EXPR =
-        "m = 500;\n" +
-        "w = thisComp.width + m;\n" +
-        "sp = w / " + DUR + ";\n" +
-        "x = (value[0] + m/2 + time*sp) % w - m/2;\n" +
-        "[x, value[1]]";
+    // Master wall canvas (sum of all screen widths x tallest screen)
+    var MW = 11600, MH = 1600;
+    var FLOOR_Y = MH * 0.92;
+    var ES = 1200 / 1080;              // element scale base for the wall
+
+    // Physical screens as windows into the master wall.
+    // rx, ry = top-left corner of the screen's region on the master
+    // (bottom-aligned: every screen stands on the same floor line).
+    var SCREENS = [
+        { name: "Side_A_1600x1200",        w: 1600, h: 1200, rx: 0,     ry: 400 },
+        { name: "Side_B_1600x1200",        w: 1600, h: 1200, rx: 1600,  ry: 400 },
+        { name: "Vertical_800x1600",       w: 800,  h: 1600, rx: 3200,  ry: 0   },
+        { name: "BackWall_Main_3200x1200", w: 3200, h: 1200, rx: 4000,  ry: 400 },
+        { name: "BackWall_Side_2800x1200", w: 2800, h: 1200, rx: 7200,  ry: 400 },
+        { name: "Square_1600x1600",        w: 1600, h: 1600, rx: 10000, ry: 0   },
+        { name: "Ticker_2880x270",         w: 2880, h: 270,  rx: 4200,  ry: 90  }
+    ];
+
+    // Ping-pong travel: starts at the RIGHT edge, crosses the whole
+    // wall to the left and comes back - once per loop, seamlessly.
+    function pingPongExpr(margin) {
+        return "m = " + margin + ";\n" +
+               "p = 0.5 + 0.5*Math.cos(time*" + TWO_PI + "/" + DUR + ");\n" +
+               "[-m + p*(thisComp.width + 2*m), value[1]]";
+    }
 
     var proj = app.project;
+    var wallFolder     = proj.items.addFolder("00 - Master Wall");
     var masterFolder   = proj.items.addFolder("01 - Studio Screens");
     var elementsFolder = proj.items.addFolder("02 - Elements");
 
@@ -169,7 +192,8 @@
         elements.hatch = comp;
     })();
 
-    // Thin grey chevron trail ">>>>>" with running-light opacity
+    // Thin grey chevron trail ">>>>>" with running-light opacity.
+    // The running light moves in the SAME direction on every screen.
     (function () {
         var comp = proj.items.addComp("Chevron_Trail", 330, 110, 1, DUR, FPS);
         comp.parentFolder = elementsFolder;
@@ -257,14 +281,15 @@
         elements.ring = comp;
     })();
 
-    // ---------------- per-screen building blocks ----------------
+    // ---------------- wall building blocks -----------------------
+    // All take absolute pixel positions on the master wall.
 
     // Big soft glow, breathing slowly (blurred disc)
-    function addGlow(comp, pos, size, color, opacity) {
+    function addGlow(comp, x, y, size, color, opacity) {
         var layer = comp.layers.addShape();
         layer.name = "Glow";
         addShapeGroup(layer, { shape: "ellipse", size: [size, size], fill: color });
-        transformOf(layer).property("ADBE Position").setValue(pos);
+        transformOf(layer).property("ADBE Position").setValue([x, y]);
         transformOf(layer).property("ADBE Opacity").setValue(opacity);
         addBlur(layer, size * 0.35);
         applyBreath(layer, opacity, opacity * 0.35, 0.2);
@@ -272,8 +297,8 @@
     }
 
     // Dark diagonal slab with a subtly lit right edge (set-piece panel)
-    function addPanel(comp, xFrac, rot, width, color, phase) {
-        var len = (comp.width + comp.height) * 1.6;
+    function addPanel(comp, x, rot, width, color, phase) {
+        var len = MH * 3.2;
         var layer = comp.layers.addShape();
         layer.name = "Panel";
         addShapeGroup(layer, { shape: "rect", size: [width, len], fill: color });
@@ -282,7 +307,7 @@
             groupPosition: [width / 2, 0]
         });
         var t = transformOf(layer);
-        t.property("ADBE Position").setValue([comp.width * xFrac, comp.height / 2]);
+        t.property("ADBE Position").setValue([x, MH / 2]);
         t.property("ADBE Rotate Z").setValue(rot);
         applySway(layer, 4, phase);                  // barely moving - set piece
         return layer;
@@ -290,27 +315,26 @@
 
     // Diagonal light beam; hot=true adds a glowing core near the top
     // (approximates the reference's bright-to-dark gradient beam)
-    function addBeam(comp, xFrac, rot, width, color, opacity, blur, phase, hot) {
-        var len = (comp.width + comp.height) * 1.6;
-        var x = comp.width * xFrac;
+    function addBeam(comp, x, rot, width, color, opacity, blur, phase, hot) {
+        var len = MH * 3.2;
         var layer = comp.layers.addShape();
         layer.name = "Beam";
         addShapeGroup(layer, { shape: "rect", size: [width, len], fill: color });
         var t = transformOf(layer);
-        t.property("ADBE Position").setValue([x, comp.height / 2]);
+        t.property("ADBE Position").setValue([x, MH / 2]);
         t.property("ADBE Rotate Z").setValue(rot);
         t.property("ADBE Opacity").setValue(opacity);
         if (blur) addBlur(layer, blur);
         applySway(layer, 10 + blur * 0.08, phase);
 
         if (hot) {
-            var d = comp.height * 0.32;              // offset up along the beam axis
+            var d = MH * 0.28;                       // offset up along the beam axis
             var rad = rot * Math.PI / 180;
             var core = comp.layers.addShape();
             core.name = "Beam Hot Core";
             addShapeGroup(core, { shape: "rect", size: [width * 0.55, len * 0.35], fill: COLORS.white });
             var ct = transformOf(core);
-            ct.property("ADBE Position").setValue([x + Math.sin(rad) * d, comp.height / 2 - Math.cos(rad) * d]);
+            ct.property("ADBE Position").setValue([x + Math.sin(rad) * d, MH / 2 - Math.cos(rad) * d]);
             ct.property("ADBE Rotate Z").setValue(rot);
             ct.property("ADBE Opacity").setValue(30);
             addBlur(core, 55);
@@ -320,68 +344,90 @@
         return layer;
     }
 
-    // Double neon floor line: magenta above, cool white core below,
-    // plus a bright runner sliding along it
-    function addFloorLines(comp, yFrac) {
-        var w = comp.width, y = comp.height * yFrac;
+    // Depth shading - what makes the wall read as 3D:
+    // dark falloff toward the ceiling, vignetted edges, floor glow
+    function addDepthShading(comp) {
+        var top = comp.layers.addShape();
+        top.name = "Shade Top";
+        addShapeGroup(top, { shape: "rect", size: [MW * 1.2, MH * 0.55], fill: COLORS.black });
+        transformOf(top).property("ADBE Position").setValue([MW / 2, MH * 0.10]);
+        transformOf(top).property("ADBE Opacity").setValue(55);
+        addBlur(top, 150);
 
+        var left = comp.layers.addShape();
+        left.name = "Shade Left";
+        addShapeGroup(left, { shape: "rect", size: [MW * 0.06, MH * 1.4], fill: COLORS.black });
+        transformOf(left).property("ADBE Position").setValue([0, MH / 2]);
+        transformOf(left).property("ADBE Opacity").setValue(45);
+        addBlur(left, 180);
+
+        var right = comp.layers.addShape();
+        right.name = "Shade Right";
+        addShapeGroup(right, { shape: "rect", size: [MW * 0.06, MH * 1.4], fill: COLORS.black });
+        transformOf(right).property("ADBE Position").setValue([MW, MH / 2]);
+        transformOf(right).property("ADBE Opacity").setValue(45);
+        addBlur(right, 180);
+    }
+
+    // Continuous double neon floor line across the WHOLE wall:
+    // magenta above, cool white core, and a bright runner that
+    // starts on the right-most screen, travels to the far left
+    // and returns - the motion that ties all screens together.
+    function addFloorLines(comp, y) {
         var mag = comp.layers.addShape();
         mag.name = "Floor Line Magenta";
-        addShapeGroup(mag, { shape: "rect", size: [w * 1.1, 4], fill: COLORS.magenta });
-        transformOf(mag).property("ADBE Position").setValue([w / 2, y - comp.height * 0.02]);
+        addShapeGroup(mag, { shape: "rect", size: [MW * 1.05, 4], fill: COLORS.magenta });
+        transformOf(mag).property("ADBE Position").setValue([MW / 2, y - MH * 0.02]);
         addBlur(mag, 8);
         applyBreath(mag, 70, 18, 0.2);
 
         var glow = comp.layers.addShape();
         glow.name = "Floor Line Glow";
-        addShapeGroup(glow, { shape: "rect", size: [w * 1.1, 9], fill: COLORS.blue });
-        transformOf(glow).property("ADBE Position").setValue([w / 2, y]);
+        addShapeGroup(glow, { shape: "rect", size: [MW * 1.05, 9], fill: COLORS.blue });
+        transformOf(glow).property("ADBE Position").setValue([MW / 2, y]);
         addBlur(glow, 22);
         applyBreath(glow, 50, 15, 0.3);
 
         var core = comp.layers.addShape();
         core.name = "Floor Line Core";
-        addShapeGroup(core, { shape: "rect", size: [w * 1.1, 3.5], fill: COLORS.white });
-        transformOf(core).property("ADBE Position").setValue([w / 2, y]);
+        addShapeGroup(core, { shape: "rect", size: [MW * 1.05, 3.5], fill: COLORS.white });
+        transformOf(core).property("ADBE Position").setValue([MW / 2, y]);
         transformOf(core).property("ADBE Opacity").setValue(88);
 
         var runner = comp.layers.addShape();
         runner.name = "Floor Runner";
-        addShapeGroup(runner, { shape: "rect", size: [comp.height * 0.30, 5], roundness: 3, fill: COLORS.white });
+        addShapeGroup(runner, { shape: "rect", size: [420, 5], roundness: 3, fill: COLORS.white });
         transformOf(runner).property("ADBE Position").setValue([0, y]);
         addBlur(runner, 8);
         runner.blendingMode = BlendingMode.ADD;
-        transformOf(runner).property("ADBE Position").expression = DRIFT_EXPR;
+        transformOf(runner).property("ADBE Position").expression = pingPongExpr(400);
     }
 
     // Thin circle lying on the floor (like the ring around the candle)
-    function addFloorEllipse(comp, xFrac, yFrac, size) {
+    function addFloorEllipse(comp, x, y, size) {
         var layer = comp.layers.addShape();
         layer.name = "Floor Circle";
         addShapeGroup(layer, {
             shape: "ellipse", size: [size, size * 0.28],
             strokeColor: COLORS.red, strokeWidth: 3
         });
-        transformOf(layer).property("ADBE Position").setValue([comp.width * xFrac, comp.height * yFrac]);
+        transformOf(layer).property("ADBE Position").setValue([x, y]);
         applyBreath(layer, 40, 14, 0.2);
         return layer;
     }
 
-    // Soft light streak that sweeps across once per loop
+    // Soft light streak that starts on the right-most screen,
+    // sweeps across the whole wall and returns - once per loop.
     function addSweep(comp) {
         var layer = comp.layers.addShape();
         layer.name = "Light Sweep";
-        var len = (comp.width + comp.height) * 1.6;
-        addShapeGroup(layer, { shape: "rect", size: [comp.height * 0.22, len], fill: COLORS.white });
+        addShapeGroup(layer, { shape: "rect", size: [MH * 0.22, MH * 3.2], fill: COLORS.white });
         var t = transformOf(layer);
-        t.property("ADBE Position").setValue([0, comp.height / 2]);
+        t.property("ADBE Position").setValue([0, MH / 2]);
         t.property("ADBE Rotate Z").setValue(14);
         t.property("ADBE Opacity").setValue(9);
         addBlur(layer, 90);
-        t.property("ADBE Position").expression =
-            "m = 700;\n" +
-            "p = (time % " + DUR + ") / " + DUR + ";\n" +
-            "[-m + p * (thisComp.width + 2*m), value[1]]";
+        t.property("ADBE Position").expression = pingPongExpr(900);
         layer.blendingMode = BlendingMode.ADD;
     }
 
@@ -395,105 +441,112 @@
         return adj;
     }
 
-    // Place a reusable element comp, scaled to the screen size
-    function place(comp, element, fx, fy, rel, opacity, rotation) {
+    // Place a reusable element comp at an absolute wall position
+    function place(comp, element, x, y, rel, opacity, rotation) {
         var layer = comp.layers.add(element);
         layer.collapseTransformation = true;
-        var sc = (Math.min(comp.width, comp.height) / 1080) * 100 * rel;
+        var sc = ES * 100 * rel;
         var t = transformOf(layer);
-        t.property("ADBE Position").setValue([comp.width * fx, comp.height * fy]);
+        t.property("ADBE Position").setValue([x, y]);
         t.property("ADBE Scale").setValue([sc, sc]);
         if (opacity !== undefined) t.property("ADBE Opacity").setValue(opacity);
         if (rotation) t.property("ADBE Rotate Z").setValue(rotation);
         return layer;
     }
 
-    // ---------------------- studio screens ----------------------
-    // One comp per physical LED screen. Mirrored variants keep
-    // same-size screens from looking identical while sharing the
-    // exact same visual language.
-    function makeScreenComp(name, w, h, mirrored) {
-        var comp = proj.items.addComp(name, w, h, 1, DUR, FPS);
+    // ---------------------- the master wall ----------------------
+    var master = proj.items.addComp("Studio_Master_" + MW + "x" + MH, MW, MH, 1, DUR, FPS);
+    master.parentFolder = wallFolder;
+    master.bgColor = COLORS.dark;
+
+    var ROT = 22;   // ONE beam direction for the whole wall
+
+    var bg = master.layers.addSolid(COLORS.dark, "Background", MW, MH, 1, DUR);
+    bg.moveToEnd();
+
+    // wall lights + warm floor reflections
+    addGlow(master, 1600, MH * 0.35, 1300, [0.16, 0.17, 0.21], 50);
+    addGlow(master, 5600, MH * 0.35, 1500, [0.16, 0.17, 0.21], 55);
+    addGlow(master, 9200, MH * 0.35, 1300, [0.16, 0.17, 0.21], 50);
+    addGlow(master, 6100, FLOOR_Y + 60, 700, COLORS.magenta, 12);
+    addGlow(master, 2900, FLOOR_Y + 60, 520, COLORS.magenta, 9);
+    addGlow(master, 9600, FLOOR_Y + 60, 520, COLORS.magenta, 9);
+
+    // --- neon edge frame on the far left (like the reference's corner)
+    addBeam(master, 350, ROT, 8, COLORS.magenta, 85, 3, 0.2, false);
+    addBeam(master, 720, ROT, 4, COLORS.blue,    50, 2, 0.9, false);
+
+    // --- cluster at the Side_B / Vertical junction
+    addPanel(master, 3060, ROT, 340, COLORS.panelB, 0.5);
+    addBeam(master, 2950, ROT, 95, COLORS.magenta, 72, 0, 1.0, false);
+    addBeam(master, 3270, ROT, 30, COLORS.red,     55, 0, 1.8, false);
+    addBeam(master, 2760, ROT, 4,  COLORS.white,   26, 0, 2.6, false);
+
+    // --- DOMINANT cluster in the middle of the main back wall
+    addBeam(master, 6000, ROT, 800, COLORS.black,  45, 160, 0.4, false);   // depth shadow
+    addPanel(master, 6150, ROT, 660, COLORS.panelA, 0.9);
+    addPanel(master, 5800, ROT, 400, COLORS.panelB, 1.6);
+    addPanel(master, 5480, ROT, 120, COLORS.panelA, 2.3);
+    addBeam(master, 5950, ROT, 310, COLORS.magenta, 16, 110, 0.6, false);  // soft wash
+    addBeam(master, 5950, ROT, 130, COLORS.magenta, 88, 0, 0.6, true);     // THE beam
+    addBeam(master, 6350, ROT, 34,  COLORS.red,     60, 0, 1.4, false);
+    addBeam(master, 5330, ROT, 5,   COLORS.white,   30, 0, 2.2, false);
+    addBeam(master, 6600, ROT, 5,   COLORS.white,   22, 0, 3.0, false);
+
+    // --- cluster on the secondary back wall
+    addPanel(master, 9350, ROT, 300, COLORS.panelB, 1.2);
+    addBeam(master, 9230, ROT, 70, COLORS.magenta, 58, 0, 2.0, false);
+    addBeam(master, 9040, ROT, 4,  COLORS.white,   24, 0, 2.8, false);
+
+    // --- faint echo on the square end screen
+    addBeam(master, 11150, ROT, 40, COLORS.red,   48, 0, 1.1, false);
+    addBeam(master, 11360, ROT, 3,  COLORS.white, 20, 0, 1.9, false);
+
+    // --- accents across the wall (chevrons all point the SAME way -
+    //     toward the travel direction of the sweep)
+    place(master, elements.dotGrid,   1250,  820, 1.55, 65);
+    place(master, elements.dotGrid,   4650,  560, 0.80, 35);
+    place(master, elements.dotGrid,   8350,  760, 1.20, 50);
+    place(master, elements.dotGrid,  10850,  620, 0.70, 30);
+    place(master, elements.hatch,     6120, 1050, 1.00, 60, ROT);
+    place(master, elements.hatch,     2870, 1100, 0.70, 45, ROT);
+    place(master, elements.hairlines, 4550,  700, 0.90, 65);
+    place(master, elements.hairlines, 7800,  640, 0.90, 60);
+    place(master, elements.hairlines,10650,  900, 0.80, 55);
+    place(master, elements.chevrons,   900,  900, 0.60, 75, 180);
+    place(master, elements.chevrons,  5150,  980, 0.50, 60, 180);
+    place(master, elements.chevrons,  8000, 1000, 0.50, 60, 180);
+    place(master, elements.chevrons, 10500,  880, 0.45, 55, 180);
+    place(master, elements.tick,       520, 1050, 0.80);
+    place(master, elements.tick,      3550,  980, 0.60);
+    place(master, elements.tick,      7050,  500, 0.70);
+    place(master, elements.tick,      9800,  560, 0.60);
+    place(master, elements.ring,      7500,  880, 0.50, 35);
+
+    // --- extra accents high up, visible only on the ticker strip
+    place(master, elements.chevrons,  4600,  230, 0.40, 60, 180);
+    place(master, elements.tick,      5300,  200, 0.50, 55);
+    place(master, elements.hairlines, 6600,  240, 0.60, 50);
+
+    // --- floor, depth, traveling light, grain
+    addFloorLines(master, FLOOR_Y);
+    addFloorEllipse(master, 6200, MH * 0.965, 500);
+    addDepthShading(master);
+    addSweep(master);
+    addGrain(master);
+
+    // ---------------------- screen windows -----------------------
+    // Each physical screen shows its region of the master wall.
+    // Render each comp at its exact size; played together on the
+    // set they reassemble into one continuous, unified picture.
+    for (var s = 0; s < SCREENS.length; s++) {
+        var scr = SCREENS[s];
+        var comp = proj.items.addComp(scr.name, scr.w, scr.h, 1, DUR, FPS);
         comp.parentFolder = masterFolder;
         comp.bgColor = COLORS.dark;
-
-        function fx(f) { return mirrored ? 1 - f : f; }
-        var mn = Math.min(w, h);
-        var rot = mirrored ? -22 : 22;
-        var isTicker = (w / h) >= 4;
-
-        var bg = comp.layers.addSolid(COLORS.dark, "Background", w, h, 1, DUR);
-        bg.moveToEnd();
-
-        // faint center light on the wall + warm corner reflection
-        addGlow(comp, [w * 0.5, h * 0.35], mn * 1.1, [0.16, 0.17, 0.21], 55);
-        addGlow(comp, [w * fx(0.85), h * 0.95], mn * 0.55, COLORS.magenta, 12);
-
-        if (isTicker) {
-            // Ultra-wide strip: drifting row of small accents + sweep
-            var picks = [elements.chevrons, elements.tick, elements.hairlines,
-                         elements.ring, elements.chevrons, elements.tick];
-            var n = Math.max(5, Math.round(w / (h * 2.2)));
-            for (var i = 0; i < n; i++) {
-                var el = picks[i % picks.length];
-                var layer = comp.layers.add(el);
-                layer.collapseTransformation = true;
-                var sc = (h * 0.72) / el.height * 100;
-                var t = transformOf(layer);
-                t.property("ADBE Position").setValue([w * (i + 0.5) / n, h * 0.5]);
-                t.property("ADBE Scale").setValue([sc, sc]);
-                t.property("ADBE Position").expression = DRIFT_EXPR;
-            }
-            addFloorLines(comp, 0.86);
-            addSweep(comp);
-            addGrain(comp);
-            return comp;
-        }
-
-        // --- layered dark slabs (set-piece depth, right side)
-        addPanel(comp, fx(0.99), rot, mn * 0.55, COLORS.panelA, 0.4);
-        addPanel(comp, fx(0.84), rot, mn * 0.34, COLORS.panelB, 1.1);
-        addPanel(comp, fx(0.70), rot, mn * 0.10, COLORS.panelA, 1.9);
-
-        // --- the dominant magenta beam with hot core + supporting lines
-        addBeam(comp, fx(0.80), rot, mn * 0.11, COLORS.magenta, 88, 0, 0.6, true);
-        addBeam(comp, fx(0.80), rot, mn * 0.26, COLORS.magenta, 16, 110, 0.6, false); // soft wash
-        addBeam(comp, fx(0.91), rot, mn * 0.028, COLORS.red,    60, 0, 1.4, false);
-        addBeam(comp, fx(0.735), rot, mn * 0.004, COLORS.white, 30, 0, 2.2, false);   // hairline edge
-        addBeam(comp, fx(0.965), rot, mn * 0.004, COLORS.white, 22, 0, 3.0, false);   // hairline edge
-
-        // --- neon edge frame on the opposite side (like top-left of reference)
-        addBeam(comp, fx(0.030), rot, mn * 0.006, COLORS.magenta, 85, 3, 0.2, false);
-        addBeam(comp, fx(0.065), rot, mn * 0.003, COLORS.blue,    50, 2, 0.9, false);
-
-        // --- accents arranged like the reference
-        place(comp, elements.dotGrid,   fx(0.235), 0.26, 1.55, 65);          // big fine dot panel
-        place(comp, elements.dotGrid,   fx(0.615), 0.13, 0.65, 35);          // faint secondary dots
-        place(comp, elements.hatch,     fx(0.775), 0.66, 1.00, 60, rot);     // striped patch under beam
-        place(comp, elements.hairlines, fx(0.615), 0.33, 0.90, 65);
-        place(comp, elements.chevrons,  fx(0.115), 0.42, 0.55, 75);
-        place(comp, elements.chevrons,  fx(0.665), 0.55, 0.45, 55);
-        place(comp, elements.tick,      fx(0.045), 0.58, 0.80);
-        place(comp, elements.tick,      fx(0.305), 0.64, 0.60);
-        place(comp, elements.tick,      fx(0.875), 0.16, 0.70);
-
-        // --- floor: double neon line, runner, thin circle, sweep on top
-        addFloorLines(comp, 0.90);
-        addFloorEllipse(comp, fx(0.78), 0.965, mn * 0.42);
-        addSweep(comp);
-        addGrain(comp);
-
-        return comp;
+        var win = comp.layers.add(master);
+        transformOf(win).property("ADBE Position").setValue([MW / 2 - scr.rx, MH / 2 - scr.ry]);
     }
-
-    // Exact physical screen sizes from the studio plan
-    makeScreenComp("BackWall_Main_3200x1200", 3200, 1200, false);
-    makeScreenComp("BackWall_Side_2800x1200", 2800, 1200, true);
-    makeScreenComp("Side_A_1600x1200",        1600, 1200, false);
-    makeScreenComp("Side_B_1600x1200",        1600, 1200, true);
-    makeScreenComp("Vertical_800x1600",        800, 1600, false);
-    makeScreenComp("Square_1600x1600",        1600, 1600, true);
-    makeScreenComp("Ticker_2880x270",         2880,  270, false);
 
     // ---------------- optional texture import -------------------
     // Drop AI-generated textures (PNG/JPG/MP4/MOV) into a folder
@@ -521,7 +574,11 @@
 
     app.endUndoGroup();
 
-    alert("Done!\n\n7 studio screen comps + 6 reusable accents were created." + texNote +
-          "\n\nOpen '01 - Studio Screens' and press Space to preview.\nAll comps loop seamlessly every " + DUR + " seconds.\nRemember to save the project (Ctrl/Cmd+S).");
+    alert("Done!\n\nOne unified master wall (" + MW + "x" + MH + ") + " + SCREENS.length +
+          " screen windows + 6 reusable accents were created." + texNote +
+          "\n\nOpen 'Studio_Master...' to see the whole wall at once,\n" +
+          "or any comp in '01 - Studio Screens' for a single screen.\n" +
+          "All comps loop seamlessly every " + DUR + " seconds.\n" +
+          "Remember to save the project (Ctrl/Cmd+S).");
 
 })();

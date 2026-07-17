@@ -261,6 +261,92 @@ function findOpportunity(queries) {
   return null;
 }
 
+// ---------- GEMINI TOPIC GENERATION (כשנגמרו הנושאים) ----------
+
+function getExistingTitles() {
+  try {
+    const content = fs.readFileSync(BLOG_DATA_PATH, 'utf-8');
+    const matches = content.match(/title:\s*'([^']+)'/g) || [];
+    return matches.map(m => m.match(/title:\s*'([^']+)'/)[1]);
+  } catch {
+    return [];
+  }
+}
+
+async function generateTopicWithGemini() {
+  const { GoogleGenerativeAI } = require('@google/generative-ai');
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: CONTENT_MODEL });
+
+  const existingSlugs = getExistingSlugs();
+  const existingTitles = getExistingTitles();
+
+  const prompt = `אתה אסטרטג SEO של Site-Control — חברה ישראלית שמוכרת אך ורק מצלמות אבטחה סולאריות 4G (Reolink GO Plus ו-PTZ Solar) לשוק B2B: קבלני בנייה, חקלאים ומנהלי אתרים מבודדים, כולל שירותי טיימלאפס ותיעוד בנייה.
+
+אלה כותרות הפוסטים שכבר קיימים בבלוג:
+${existingTitles.map(t => `- ${t}`).join('\n')}
+
+הצע נושא חדש אחד לפוסט בלוג שעדיין לא כוסה ברשימה. דרישות:
+1. הנושא חייב להיות שונה מהותית מכל הקיימים — לא ניסוח מחדש של נושא קיים.
+2. כוונת חיפוש מסחרית של קהל היעד B2B (קבלנים / חקלאים / מנהלי פרויקטים בישראל).
+3. רלוונטי למה שהחברה באמת מוכרת: מצלמות סולאריות 4G, טיימלאפס, תיעוד בנייה, אבטחת אתרים ללא חשמל/אינטרנט.
+4. ספק גם slug באנגלית: מילים באנגלית בלבד, מופרדות במקפים, ללא שנה (היא תתווסף אוטומטית).
+
+החזר JSON בלבד בפורמט:
+{"topic": "הנושא בעברית", "slug": "english-slug-words", "reason": "משפט אחד למה זה נושא טוב"}`;
+
+  console.log('🧠 מבקש נושא חדש מ-Gemini...');
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
+
+    let jsonStr = text;
+    const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (jsonMatch) jsonStr = jsonMatch[1];
+    jsonStr = jsonStr.trim();
+    if (!jsonStr.startsWith('{')) jsonStr = jsonStr.substring(jsonStr.indexOf('{'));
+    if (!jsonStr.endsWith('}')) jsonStr = jsonStr.substring(0, jsonStr.lastIndexOf('}') + 1);
+
+    let data;
+    try {
+      data = JSON.parse(jsonStr);
+    } catch {
+      console.warn(`⚠️ ניסיון ${attempt}: תשובה לא תקינה מ-Gemini`);
+      continue;
+    }
+
+    const cleanSlug = String(data.slug || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+
+    if (!data.topic || !cleanSlug) {
+      console.warn(`⚠️ ניסיון ${attempt}: חסר topic או slug בתשובה`);
+      continue;
+    }
+
+    const slug = `${cleanSlug}-${new Date().getFullYear()}`;
+    const slugBase = cleanSlug;
+    const alreadyExists = existingSlugs.some(s =>
+      s === slug || s.includes(slugBase) || slugBase.includes(s.replace(/-\d{4}$/, ''))
+    );
+
+    if (alreadyExists) {
+      console.warn(`⚠️ ניסיון ${attempt}: הנושא "${data.topic}" כבר קיים (${slug}), מנסה שוב`);
+      continue;
+    }
+
+    console.log(`🎯 נושא חדש מ-Gemini: "${data.topic}" (${slug})`);
+    if (data.reason) console.log(`   💡 ${data.reason}`);
+    return { query: data.topic, slug, impressions: 0, clicks: 0, position: 0, score: 0 };
+  }
+
+  console.log('❌ Gemini לא הצליח להציע נושא חדש אחרי 3 ניסיונות');
+  return null;
+}
+
 // ---------- GEMINI CONTENT GENERATION ----------
 
 async function generateBlogContent(topic) {
@@ -708,8 +794,11 @@ async function main() {
   // Step 1: Get GSC data
   const queries = await fetchGSCData();
 
-  // Step 2: Find opportunity
-  const opportunity = findOpportunity(queries);
+  // Step 2: Find opportunity (GSC / fallback list), or generate a fresh topic with Gemini
+  let opportunity = findOpportunity(queries);
+  if (!opportunity) {
+    opportunity = await generateTopicWithGemini();
+  }
   if (!opportunity) {
     console.log('✅ אין הזדמנויות חדשות כרגע. Blog Bot מסיים.');
     return;

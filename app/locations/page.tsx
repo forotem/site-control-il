@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'פתרונות לפי אזור - מצלמות סולאריות',
   description: 'בחר את האזור שלך וגלה פתרון בטחוני מותאם לצרכיך - בנייה, חקלאות, אתרים מרוחקים ועוד.',
   keywords: ['אזורים', 'פתרונות', 'מצלמות', 'בנייה', 'חקלאות'],
-  alternates: { canonical: 'https://site-control-il.com/locations' },
+  alternates: { canonical: 'https://www.site-control-il.com/locations' },
 };
 
 export default function LocationsPage() {

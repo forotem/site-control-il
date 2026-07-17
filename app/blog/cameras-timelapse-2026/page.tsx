@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים | Site-Control',
   description: 'מחפשים מצלמות טיימלאפס לאתר בנייה, חווה או שטח מבודד? מדריך מקיף זה משווה בין פתרונות, מפרטים טכניים ומציע המלצות עבור קבלנים, חקלאים ומנהלי אתרים בישראל.',
   keywords: ["השוואת מצלמות טיימלאפס לבנייה","מצלמת טיימלאפס סולארית 4G","מצלמות אבטחה לאתר בנייה","אבטחה לשטחים חקלאיים","מצלמות לאתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","תיעוד פרויקטים בבנייה","מצלמת אבטחה ללא חשמל ואינטרנט"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים',
     description: 'מחפשים מצלמות טיימלאפס לאתר בנייה, חווה או שטח מבודד? מדריך מקיף זה משווה בין פתרונות, מפרטים טכניים ומציע המלצות עבור קבלנים, חקלאים ומנהלי אתרים בישראל.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-03-19',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/cameras-timelapse-2026',
+    url: 'https://www.site-control-il.com/blog/cameras-timelapse-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/cameras-timelapse-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/cameras-timelapse-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים',
     description: 'מחפשים מצלמות טיימלאפס לאתר בנייה, חווה או שטח מבודד? מדריך מקיף זה משווה בין פתרונות, מפרטים טכניים ומציע המלצות עבור קבלנים, חקלאים ומנהלי אתרים בישראל.',
-    images: ['https://site-control-il.com/blog-images/cameras-timelapse-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/cameras-timelapse-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/cameras-timelapse-2026',
+    canonical: 'https://www.site-control-il.com/blog/cameras-timelapse-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים","description":"מחפשים מצלמות טיימלאפס לאתר בנייה, חווה או שטח מבודד? מדריך מקיף זה משווה בין פתרונות, מפרטים טכניים ומציע המלצות עבור קבלנים, חקלאים ומנהלי אתרים בישראל.","image":"https://site-control-il.com/blog-images/cameras-timelapse-2026/hero.png","datePublished":"2026-03-19","dateModified":"2026-03-19","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/cameras-timelapse-2026"},"keywords":"השוואת מצלמות טיימלאפס לבנייה, מצלמת טיימלאפס סולארית 4G, מצלמות אבטחה לאתר בנייה, אבטחה לשטחים חקלאיים, מצלמות לאתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, תיעוד פרויקטים בבנייה, מצלמת אבטחה ללא חשמל ואינטרנט","articleSection":"תיעוד בנייה","url":"https://site-control-il.com/blog/cameras-timelapse-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"השוואת מצלמות טיימלאפס לבנייה: פתרון B2B לאתרים מרוחקים","description":"מחפשים מצלמות טיימלאפס לאתר בנייה, חווה או שטח מבודד? מדריך מקיף זה משווה בין פתרונות, מפרטים טכניים ומציע המלצות עבור קבלנים, חקלאים ומנהלי אתרים בישראל.","image":"https://www.site-control-il.com/blog-images/cameras-timelapse-2026/hero.png","datePublished":"2026-03-19","dateModified":"2026-03-19","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-timelapse-2026"},"keywords":"השוואת מצלמות טיימלאפס לבנייה, מצלמת טיימלאפס סולארית 4G, מצלמות אבטחה לאתר בנייה, אבטחה לשטחים חקלאיים, מצלמות לאתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, תיעוד פרויקטים בבנייה, מצלמת אבטחה ללא חשמל ואינטרנט","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/cameras-timelapse-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

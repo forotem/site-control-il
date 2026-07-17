@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'מצלמות אבטחה עם זיהוי פנים 2026 - המדריך המלא לרכישה | Site-Control',
   description: 'מצלמות אבטחה עם זיהוי פנים: השוואת דגמים, יתרונות וחסרונות, מחירים והמלצות לבית ולעסק. גלו איך לבחור את המצלמה הנכונה עם טכנולוגיית AI.',
   keywords: 'מצלמות אבטחה זיהוי פנים, מצלמות אבטחה עם זיהוי פנים 2026, מצלמות זיהוי פנים מחיר, מצלמות AI',
-  alternates: { canonical: 'https://site-control-il.com/blog/cameras-security-with-detection-face-2026' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog/cameras-security-with-detection-face-2026' },
 };
 
 export default function Page() {

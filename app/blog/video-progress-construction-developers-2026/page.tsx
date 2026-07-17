@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control | Site-Control',
   description: 'גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.',
   keywords: ["סרטון התקדמות בנייה ליזמים","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","תיעוד פרויקטים","מצלמות לחקלאות","ניהול אתרים מבודדים","טיימלאפס בנייה","מצלמות ללא חשמל","מצלמות ללא אינטרנט"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control',
     description: 'גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-06-22',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/video-progress-construction-developers-2026',
+    url: 'https://www.site-control-il.com/blog/video-progress-construction-developers-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control',
     description: 'גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.',
-    images: ['https://site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/video-progress-construction-developers-2026',
+    canonical: 'https://www.site-control-il.com/blog/video-progress-construction-developers-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control","description":"גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.","image":"https://site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png","datePublished":"2026-06-22","dateModified":"2026-06-22","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/video-progress-construction-developers-2026"},"keywords":"סרטון התקדמות בנייה ליזמים, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, תיעוד פרויקטים, מצלמות לחקלאות, ניהול אתרים מבודדים, טיימלאפס בנייה, מצלמות ללא חשמל, מצלמות ללא אינטרנט","articleSection":"תיעוד בנייה","url":"https://site-control-il.com/blog/video-progress-construction-developers-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"סרטון התקדמות בנייה ליזמים: פתרון 4G סולארי מ-Site-Control","description":"גלה כיצד מצלמות אבטחה סולאריות 4G של Site-Control מספקות סרטוני התקדמות בנייה ליזמים, קבלנים וחקלאים. אבטחה ופיקוח ללא חשמל/אינטרנט.","image":"https://www.site-control-il.com/blog-images/video-progress-construction-developers-2026/hero.png","datePublished":"2026-06-22","dateModified":"2026-06-22","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/video-progress-construction-developers-2026"},"keywords":"סרטון התקדמות בנייה ליזמים, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, תיעוד פרויקטים, מצלמות לחקלאות, ניהול אתרים מבודדים, טיימלאפס בנייה, מצלמות ללא חשמל, מצלמות ללא אינטרנט","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/video-progress-construction-developers-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

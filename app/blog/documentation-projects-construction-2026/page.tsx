@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים | Site-Control',
   description: 'קבלנים, חקלאים ומנהלי אתרים? מדריך מקיף על תיעוד פרויקטים בנייה עם מצלמות סולאריות 4G לאבטחה ובקרה. פתרונות Site-Control לאתרי בניה, חקלאות ואתרים מרוחקים.',
   keywords: ["תיעוד פרויקטים בנייה","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","מצלמות לחקלאות","ניהול אתרים מרוחקים","מצלמת PTZ סולארית","Reolink GO Plus 4G","מניעת גניבות אתר בנייה"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים',
     description: 'קבלנים, חקלאים ומנהלי אתרים? מדריך מקיף על תיעוד פרויקטים בנייה עם מצלמות סולאריות 4G לאבטחה ובקרה. פתרונות Site-Control לאתרי בניה, חקלאות ואתרים מרוחקים.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-04-09',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/documentation-projects-construction-2026',
+    url: 'https://www.site-control-il.com/blog/documentation-projects-construction-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים',
     description: 'קבלנים, חקלאים ומנהלי אתרים? מדריך מקיף על תיעוד פרויקטים בנייה עם מצלמות סולאריות 4G לאבטחה ובקרה. פתרונות Site-Control לאתרי בניה, חקלאות ואתרים מרוחקים.',
-    images: ['https://site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/documentation-projects-construction-2026',
+    canonical: 'https://www.site-control-il.com/blog/documentation-projects-construction-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים","description":"קבלנים, חקלאים ומנהלי אתרים? מדריך מקיף על תיעוד פרויקטים בנייה עם מצלמות סולאריות 4G לאבטחה ובקרה. פתרונות Site-Control לאתרי בניה, חקלאות ואתרים מרוחקים.","image":"https://site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png","datePublished":"2026-04-09","dateModified":"2026-04-09","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/documentation-projects-construction-2026"},"keywords":"תיעוד פרויקטים בנייה, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, מצלמות לחקלאות, ניהול אתרים מרוחקים, מצלמת PTZ סולארית, Reolink GO Plus 4G, מניעת גניבות אתר בנייה","articleSection":"תיעוד בנייה","url":"https://site-control-il.com/blog/documentation-projects-construction-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד פרויקטים בנייה: המדריך המלא לקבלנים ואתרים מרוחקים","description":"קבלנים, חקלאים ומנהלי אתרים? מדריך מקיף על תיעוד פרויקטים בנייה עם מצלמות סולאריות 4G לאבטחה ובקרה. פתרונות Site-Control לאתרי בניה, חקלאות ואתרים מרוחקים.","image":"https://www.site-control-il.com/blog-images/documentation-projects-construction-2026/hero.png","datePublished":"2026-04-09","dateModified":"2026-04-09","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/documentation-projects-construction-2026"},"keywords":"תיעוד פרויקטים בנייה, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, מצלמות לחקלאות, ניהול אתרים מרוחקים, מצלמת PTZ סולארית, Reolink GO Plus 4G, מניעת גניבות אתר בנייה","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/documentation-projects-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

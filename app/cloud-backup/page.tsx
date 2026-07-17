@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "גיבוי ענן אוטומטי - מצלמות 4G Reolink | הגנה על צילומים",
   description:
     "גיבוי ענן אוטומטי למצלמות 4G של Reolink - כל הצילומים מגובים אוטומטית לענן. שמירה בטוחה, צפייה מכל מקום בעולם, הראיות נשמרות גם אם המצלמה נגנבת.",
-  alternates: { canonical: 'https://site-control-il.com/cloud-backup' },
+  alternates: { canonical: 'https://www.site-control-il.com/cloud-backup' },
 };
 
 export default function CloudBackupPage() {

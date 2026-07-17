@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים | Site-Control',
   description: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!',
   keywords: ["צילום טיימלאפס עבור חברות בנייה","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","תיעוד פרויקטים בבנייה","מצלמות ללא חשמל ואינטרנט","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות לחקלאות","ניהול אתרים מרוחקים"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים',
     description: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-04-02',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/photography-timelapse-construction-2026',
+    url: 'https://www.site-control-il.com/blog/photography-timelapse-construction-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים',
     description: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!',
-    images: ['https://site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/photography-timelapse-construction-2026',
+    canonical: 'https://www.site-control-il.com/blog/photography-timelapse-construction-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים","description":"חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!","image":"https://site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png","datePublished":"2026-04-02","dateModified":"2026-04-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/photography-timelapse-construction-2026"},"keywords":"צילום טיימלאפס עבור חברות בנייה, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, תיעוד פרויקטים בבנייה, מצלמות ללא חשמל ואינטרנט, Reolink GO Plus 4G, Reolink PTZ Solar, מצלמות לחקלאות, ניהול אתרים מרוחקים","articleSection":"תיעוד בנייה","url":"https://site-control-il.com/blog/photography-timelapse-construction-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים","description":"חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!","image":"https://www.site-control-il.com/blog-images/photography-timelapse-construction-2026/hero.png","datePublished":"2026-04-02","dateModified":"2026-04-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/photography-timelapse-construction-2026"},"keywords":"צילום טיימלאפס עבור חברות בנייה, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, תיעוד פרויקטים בבנייה, מצלמות ללא חשמל ואינטרנט, Reolink GO Plus 4G, Reolink PTZ Solar, מצלמות לחקלאות, ניהול אתרים מרוחקים","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/photography-timelapse-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

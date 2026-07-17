@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום | Site-Control',
   description: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
   keywords: ["מצלמת אבטחה סולארית עם גיבוי ענן","מצלמות 4G לאתרי בנייה","אבטחה סולארית לחקלאות","מצלמות לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת ציוד בנייה","מניעת גניבות חקלאיות"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
     description: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-07-02',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/security-solar-cloud-2026',
+    url: 'https://www.site-control-il.com/blog/security-solar-cloud-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/security-solar-cloud-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/security-solar-cloud-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
     description: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
-    images: ['https://site-control-il.com/blog-images/security-solar-cloud-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/security-solar-cloud-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/security-solar-cloud-2026',
+    canonical: 'https://www.site-control-il.com/blog/security-solar-cloud-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום","description":"אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.","image":"https://site-control-il.com/blog-images/security-solar-cloud-2026/hero.png","datePublished":"2026-07-02","dateModified":"2026-07-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/security-solar-cloud-2026"},"keywords":"מצלמת אבטחה סולארית עם גיבוי ענן, מצלמות 4G לאתרי בנייה, אבטחה סולארית לחקלאות, מצלמות לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת ציוד בנייה, מניעת גניבות חקלאיות","articleSection":"מצלמות אבטחה","url":"https://site-control-il.com/blog/security-solar-cloud-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום","description":"אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.","image":"https://www.site-control-il.com/blog-images/security-solar-cloud-2026/hero.png","datePublished":"2026-07-02","dateModified":"2026-07-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/security-solar-cloud-2026"},"keywords":"מצלמת אבטחה סולארית עם גיבוי ענן, מצלמות 4G לאתרי בנייה, אבטחה סולארית לחקלאות, מצלמות לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת ציוד בנייה, מניעת גניבות חקלאיות","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/security-solar-cloud-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'צילום טיימלאפס לאתרי בנייה 2026 - המדריך המלא לקבלנים ויזמים | Site-Control',
   description: 'מערכות צילום טיימלאפס מתקדמות לאתרי בנייה. תיעוד 4K, בקרה הנדסית, תיעוד משפטי, שיווק פרויקטים וגישה מרחוק. הפתרון המושלם ליזמים וקבלנים.',
   keywords: 'צילום טיימלאפס, טיימלאפס, צילום טיימלאפס עבור חברות בנייה, טיים לאפס בנייה, הפקת סרטוני טיימלאפס, מצלמות טיימלאפס לבניין, מצלמות אבטחה לאתרי בנייה',
-  alternates: { canonical: 'https://site-control-il.com/blog/construction-site-timelapse-2026' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog/construction-site-timelapse-2026' },
   openGraph: {
     title: 'צילום טיימלאפס לאתרי בנייה 2026 - המדריך המלא',
     description: 'צילום טיימלאפס לאתרי בנייה - שיווק, תיעוד משפטי, בקרה הנדסית',

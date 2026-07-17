@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'Site-Control',
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/video-timelapse-contractors-2026',
+    canonical: 'https://www.site-control-il.com/blog/video-timelapse-contractors-2026',
   },
 };
 

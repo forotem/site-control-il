@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'מצלמות 4G לחקלאות',
     'פיקוח שטחים חקלאיים',
   ],
-  alternates: { canonical: 'https://site-control-il.com/use-cases/agriculture' },
+  alternates: { canonical: 'https://www.site-control-il.com/use-cases/agriculture' },
 };
 
 export default function AgricultureUseCasePage() {

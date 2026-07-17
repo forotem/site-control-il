@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "ניהול אתרים מבודדים עם מצלמות 4G סולאריות | Reolink",
   description:
     "צפייה חיה, שליטה מרחוק מכל מקום בעולם. מצלמות 4G סולאריות לאתרים מרחוקים. זיהוי AI, אחסון כפול, עדכונים אוטומטיים.",
-  alternates: { canonical: 'https://site-control-il.com/use-cases/remote' },
+  alternates: { canonical: 'https://www.site-control-il.com/use-cases/remote' },
 };
 
 export default function RemoteUseCasePage() {

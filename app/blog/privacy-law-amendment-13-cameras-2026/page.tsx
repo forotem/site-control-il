@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'חוק הגנת הפרטיות מצלמות אבטחה 2026 (תיקון 13) - המדריך המלא | Site-Control',
   description: 'תיקון 13 לחוק הגנת הפרטיות: כל מה שצריך לדעת על מצלמות אבטחה בבניין משותף ובעסק. חובות חדשות, קנסות ואיך להימנע מהם.',
   keywords: 'חוק הגנת הפרטיות מצלמות אבטחה, תיקון 13 לחוק הגנת הפרטיות מצלמות אבטחה, חוק הגנת הפרטיות מצלמות, מצלמות אבטחה בבניין משותף',
-  alternates: { canonical: 'https://site-control-il.com/blog/privacy-law-amendment-13-cameras-2026' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog/privacy-law-amendment-13-cameras-2026' },
 };
 
 export default function Page() {

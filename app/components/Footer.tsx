@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-bold mb-4">צור קשר</h4>
-            <p className="text-gray-400">📧 info@sitecontrol.co.il</p>
+            <p className="text-gray-400">📧 info@site-control-il.com</p>
             <p className="text-gray-400">☎️ 050-XXXXXXX</p>
             <p className="text-gray-400">📍 ישראל</p>
           </div>

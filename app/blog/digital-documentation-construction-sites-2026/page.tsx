@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'תיעוד דיגיטלי אתרי בנייה 2026 - המדריך המקצועי למנהלי פרויקטים | Site-Control',
   description: 'מדריך מקצועי לתיעוד דיגיטלי באתרי בנייה: פיקוח מרחוק במצלמות חכמות, דוחות אוטומטיים, תיעוד בזמן אמת, מניעת סכסוכים ותיעוד משפטי. חיסכון בעלויות ושליטה מלאה בפרויקט.',
   keywords: 'תיעוד דיגיטלי אתרי בנייה, תיעוד בזמן אמת אתרי בנייה, תיעוד אתר בנייה דיגיטלי, פיקוח אתר בנייה מרחוק, ניהול דיגיטלי של פרויקטי בנייה, תיעוד פרויקטים בנייה, דוח בנייה דיגיטלי, תיעוד בנייה',
-  alternates: { canonical: 'https://site-control-il.com/blog/digital-documentation-construction-sites-2026' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog/digital-documentation-construction-sites-2026' },
 };
 
 export default function Page() {

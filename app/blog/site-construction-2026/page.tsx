@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד | Site-Control',
   description: 'אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.',
   keywords: ["ניטור אתר בנייה מרחוק 24/7","מצלמות אבטחה סולאריות 4G","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאות ללא חשמל","ניטור אתרים מבודדים","תיעוד התקדמות בנייה"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד',
     description: 'אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-04-30',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/site-construction-2026',
+    url: 'https://www.site-control-il.com/blog/site-construction-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/site-construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/site-construction-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד',
     description: 'אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.',
-    images: ['https://site-control-il.com/blog-images/site-construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/site-construction-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/site-construction-2026',
+    canonical: 'https://www.site-control-il.com/blog/site-construction-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד","description":"אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.","image":"https://site-control-il.com/blog-images/site-construction-2026/hero.png","datePublished":"2026-04-30","dateModified":"2026-04-30","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/site-construction-2026"},"keywords":"ניטור אתר בנייה מרחוק 24/7, מצלמות אבטחה סולאריות 4G, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאות ללא חשמל, ניטור אתרים מבודדים, תיעוד התקדמות בנייה","articleSection":"פתרונות B2B","url":"https://site-control-il.com/blog/site-construction-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד","description":"אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.","image":"https://www.site-control-il.com/blog-images/site-construction-2026/hero.png","datePublished":"2026-04-30","dateModified":"2026-04-30","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/site-construction-2026"},"keywords":"ניטור אתר בנייה מרחוק 24/7, מצלמות אבטחה סולאריות 4G, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאות ללא חשמל, ניטור אתרים מבודדים, תיעוד התקדמות בנייה","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/site-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

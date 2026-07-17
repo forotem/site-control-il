@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'התקנת מצלמות אבטחה לבית 2026 - המדריך המלא לפני הרכישה | Site-Control',
   description: 'מדריך מקיף להתקנת מצלמות אבטחה לבית: מיקום אופטימלי, בחירת מצלמה, עלויות, חיבור לאפליקציה וטיפים מקצועיים. כל מה שצריך לדעת ב-2026.',
   keywords: 'התקנת מצלמות אבטחה לבית, איזה מצלמות אבטחה לקנות, מצלמות אבטחה לבית מחיר, מצלמות אבטחה לבית המלצות',
-  alternates: { canonical: 'https://site-control-il.com/blog/installation-cameras-security-home-2026' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog/installation-cameras-security-home-2026' },
 };
 
 export default function Page() {

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'בלוג - מצלמות סולאריות 4G | Site-Control',
   description: 'בלוג עדכונים ומדריכים על מצלמות אבטחה סולאריות 4G, חקלאות חכמה, אבטחת אתרי בנייה ופתרונות ניטור מרחוק.',
   keywords: ['בלוג', 'מצלמות', 'סולארי', 'חקלאות', 'בנייה'],
-  alternates: { canonical: 'https://site-control-il.com/blog' },
+  alternates: { canonical: 'https://www.site-control-il.com/blog' },
 };
 
 export default function BlogPage() {

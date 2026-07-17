@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה | Site-Control',
   description: 'אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!',
   keywords: ["מצלמות מעקב לקבלן בנין","מצלמות אבטחה סולאריות 4G","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","תיעוד התקדמות בנייה"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה',
     description: 'אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-05-04',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/cameras-monitoring-2026',
+    url: 'https://www.site-control-il.com/blog/cameras-monitoring-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg',
+        url: 'https://www.site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg',
         width: 1200,
         height: 630,
         alt: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה',
     description: 'אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!',
-    images: ['https://site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg'],
+    images: ['https://www.site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/cameras-monitoring-2026',
+    canonical: 'https://www.site-control-il.com/blog/cameras-monitoring-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה","description":"אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!","image":"https://site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg","datePublished":"2026-05-04","dateModified":"2026-05-04","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/cameras-monitoring-2026"},"keywords":"מצלמות מעקב לקבלן בנין, מצלמות אבטחה סולאריות 4G, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, תיעוד התקדמות בנייה","articleSection":"מצלמות אבטחה","url":"https://site-control-il.com/blog/cameras-monitoring-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות מעקב לקבלן בנין: אבטחה סולארית 4G חכמה","description":"אבטח את אתר הבנייה שלך עם מצלמות סולאריות 4G של Site-Control. פתרונות אבטחה מתקדמים לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. ייעוץ חינם!","image":"https://www.site-control-il.com/blog-images/cameras-monitoring-2026/hero.svg","datePublished":"2026-05-04","dateModified":"2026-05-04","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-monitoring-2026"},"keywords":"מצלמות מעקב לקבלן בנין, מצלמות אבטחה סולאריות 4G, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, תיעוד התקדמות בנייה","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-monitoring-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

@@ -199,7 +199,7 @@ export default function SEODashboard() {
               <Table
                 headers={['עמוד', 'חשיפות', 'קליקים', 'CTR', 'מיקום']}
                 rows={data.pages.map(p => [
-                  <span key="page" style={{ fontSize: 13, wordBreak: 'break-all' }}>{p.page.replace('https://site-control-il.com', '').replace('https://www.site-control-il.com', '(www)')}</span>,
+                  <span key="page" style={{ fontSize: 13, wordBreak: 'break-all' }}>{p.page.replace('https://www.site-control-il.com', '').replace('https://www.site-control-il.com', '(www)')}</span>,
                   p.impressions,
                   p.clicks,
                   `${p.ctr}%`,

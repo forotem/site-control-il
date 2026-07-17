@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים | Site-Control',
   description: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.',
   keywords: ["כמה עולה מצלמת אבטחה לאתר בנייה","מצלמות סולאריות 4G","אבטחת אתר בנייה","מצלמות לחקלאות","מצלמות לאתרים מרוחקים","Reolink PTZ Solar","Reolink GO Plus","עלות אבטחה חקלאית","פתרונות אבטחה B2B"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים',
     description: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-07-06',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/security-construction-2026',
+    url: 'https://www.site-control-il.com/blog/security-construction-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/security-construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/security-construction-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים',
     description: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.',
-    images: ['https://site-control-il.com/blog-images/security-construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/security-construction-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/security-construction-2026',
+    canonical: 'https://www.site-control-il.com/blog/security-construction-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים","description":"כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.","image":"https://site-control-il.com/blog-images/security-construction-2026/hero.png","datePublished":"2026-07-06","dateModified":"2026-07-06","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/security-construction-2026"},"keywords":"כמה עולה מצלמת אבטחה לאתר בנייה, מצלמות סולאריות 4G, אבטחת אתר בנייה, מצלמות לחקלאות, מצלמות לאתרים מרוחקים, Reolink PTZ Solar, Reolink GO Plus, עלות אבטחה חקלאית, פתרונות אבטחה B2B","articleSection":"מדריכים","url":"https://site-control-il.com/blog/security-construction-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים","description":"כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.","image":"https://www.site-control-il.com/blog-images/security-construction-2026/hero.png","datePublished":"2026-07-06","dateModified":"2026-07-06","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/security-construction-2026"},"keywords":"כמה עולה מצלמת אבטחה לאתר בנייה, מצלמות סולאריות 4G, אבטחת אתר בנייה, מצלמות לחקלאות, מצלמות לאתרים מרוחקים, Reolink PTZ Solar, Reolink GO Plus, עלות אבטחה חקלאית, פתרונות אבטחה B2B","articleSection":"מדריכים","url":"https://www.site-control-il.com/blog/security-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

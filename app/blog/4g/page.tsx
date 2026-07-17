@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח | Site-Control',
   description: 'אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.',
   keywords: ["ניטור ציוד חקלאי מרחוק 4G","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה סולארית","מצלמות Reolink GO Plus","מצלמות Reolink PTZ Solar","אבטחה ללא חשמל אינטרנט","מצלמות לחקלאים","פתרונות אבטחה B2B ישראל"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח',
     description: 'אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-05-21',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/4g',
+    url: 'https://www.site-control-il.com/blog/4g',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/4g/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/4g/hero.png',
         width: 1200,
         height: 630,
         alt: 'ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח',
     description: 'אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.',
-    images: ['https://site-control-il.com/blog-images/4g/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/4g/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/4g',
+    canonical: 'https://www.site-control-il.com/blog/4g',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח","description":"אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.","image":"https://site-control-il.com/blog-images/4g/hero.png","datePublished":"2026-05-21","dateModified":"2026-05-21","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/4g"},"keywords":"ניטור ציוד חקלאי מרחוק 4G, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה סולארית, מצלמות Reolink GO Plus, מצלמות Reolink PTZ Solar, אבטחה ללא חשמל אינטרנט, מצלמות לחקלאים, פתרונות אבטחה B2B ישראל","articleSection":"מצלמות אבטחה","url":"https://site-control-il.com/blog/4g","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח","description":"אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.","image":"https://www.site-control-il.com/blog-images/4g/hero.png","datePublished":"2026-05-21","dateModified":"2026-05-21","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/4g"},"keywords":"ניטור ציוד חקלאי מרחוק 4G, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה סולארית, מצלמות Reolink GO Plus, מצלמות Reolink PTZ Solar, אבטחה ללא חשמל אינטרנט, מצלמות לחקלאים, פתרונות אבטחה B2B ישראל","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/4g","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

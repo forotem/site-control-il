@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים | Site-Control',
   description: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.',
   keywords: ["מצלמות אבטחה זיהוי פנים","מצלמות סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","זיהוי תנועה חכם"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים',
     description: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-04-23',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/cameras-security-detection-face-2026',
+    url: 'https://www.site-control-il.com/blog/cameras-security-detection-face-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים',
     description: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.',
-    images: ['https://site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/cameras-security-detection-face-2026',
+    canonical: 'https://www.site-control-il.com/blog/cameras-security-detection-face-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים","description":"גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.","image":"https://site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png","datePublished":"2026-04-23","dateModified":"2026-04-23","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/cameras-security-detection-face-2026"},"keywords":"מצלמות אבטחה זיהוי פנים, מצלמות סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, זיהוי תנועה חכם","articleSection":"מצלמות אבטחה","url":"https://site-control-il.com/blog/cameras-security-detection-face-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים","description":"גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.","image":"https://www.site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.png","datePublished":"2026-04-23","dateModified":"2026-04-23","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026"},"keywords":"מצלמות אבטחה זיהוי פנים, מצלמות סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, זיהוי תנועה חכם","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

@@ -59,12 +59,12 @@ export default function CTASection() {
               קראו לנו
             </h3>
             <p className="text-gray-300 text-center text-sm">
-              +972 (0)50 123-4567
+              050-225-6866
             </p>
           </motion.a>
 
           <motion.a
-            href="mailto:info@sitecontrol.co.il"
+            href="mailto:info@site-control-il.com"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -78,7 +78,7 @@ export default function CTASection() {
               שלחו דוא"ל
             </h3>
             <p className="text-gray-300 text-center text-sm">
-              info@sitecontrol.co.il
+              info@site-control-il.com
             </p>
           </motion.a>
 

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר | Site-Control',
   description: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: גלו איך מצלמות אבטחה סולאריות 4G מבית Site-Control מאפשרות תיעוד התקדמות בנייה, אבטחה חסרת פשרות וניהול יעיל. ייעוץ חינם!',
   keywords: ["תיעוד התקדמות בנייה מצלמות סולאריות","מצלמות אבטחה סולאריות 4G לאתרי בנייה","מצלמות אבטחה לחקלאות 4G","מצלמות אבטחה לאתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת ציוד בנייה","טיימלאפס בנייה","מצלמות סולאריות B2B","Site-Control"],
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר',
     description: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: גלו איך מצלמות אבטחה סולאריות 4G מבית Site-Control מאפשרות תיעוד התקדמות בנייה, אבטחה חסרת פשרות וניהול יעיל. ייעוץ חינם!',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     publishedTime: '2026-05-14',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/documentation-progress-construction-cameras-2026',
+    url: 'https://www.site-control-il.com/blog/documentation-progress-construction-cameras-2026',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png',
         width: 1200,
         height: 630,
         alt: 'תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר',
     description: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: גלו איך מצלמות אבטחה סולאריות 4G מבית Site-Control מאפשרות תיעוד התקדמות בנייה, אבטחה חסרת פשרות וניהול יעיל. ייעוץ חינם!',
-    images: ['https://site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/documentation-progress-construction-cameras-2026',
+    canonical: 'https://www.site-control-il.com/blog/documentation-progress-construction-cameras-2026',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר","description":"קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: גלו איך מצלמות אבטחה סולאריות 4G מבית Site-Control מאפשרות תיעוד התקדמות בנייה, אבטחה חסרת פשרות וניהול יעיל. ייעוץ חינם!","image":"https://site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://site-control-il.com/blog/documentation-progress-construction-cameras-2026"},"keywords":"תיעוד התקדמות בנייה מצלמות סולאריות, מצלמות אבטחה סולאריות 4G לאתרי בנייה, מצלמות אבטחה לחקלאות 4G, מצלמות אבטחה לאתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת ציוד בנייה, טיימלאפס בנייה, מצלמות סולאריות B2B, Site-Control","articleSection":"תיעוד בנייה","url":"https://site-control-il.com/blog/documentation-progress-construction-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד התקדמות בנייה: מצלמות סולאריות 4G – המהפכה באתר","description":"קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: גלו איך מצלמות אבטחה סולאריות 4G מבית Site-Control מאפשרות תיעוד התקדמות בנייה, אבטחה חסרת פשרות וניהול יעיל. ייעוץ חינם!","image":"https://www.site-control-il.com/blog-images/documentation-progress-construction-cameras-2026/hero.png","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/documentation-progress-construction-cameras-2026"},"keywords":"תיעוד התקדמות בנייה מצלמות סולאריות, מצלמות אבטחה סולאריות 4G לאתרי בנייה, מצלמות אבטחה לחקלאות 4G, מצלמות אבטחה לאתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, אבטחת ציוד בנייה, טיימלאפס בנייה, מצלמות סולאריות B2B, Site-Control","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/documentation-progress-construction-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

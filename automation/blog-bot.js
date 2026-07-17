@@ -22,7 +22,8 @@ const BLOG_DATA_PATH = path.join(PROJECT_ROOT, 'app', 'data', 'blog.ts');
 const BLOG_DIR = path.join(PROJECT_ROOT, 'app', 'blog');
 const IMAGES_DIR = path.join(PROJECT_ROOT, 'public', 'blog-images');
 const GSC_JSON_PATH = path.join(PROJECT_ROOT, 'gsc_output.json');
-const SITE_URL = 'sc-domain:site-control-il.com';
+// נכס URL-prefix ב-Search Console (הנכס הישן sc-domain כבר לא נגיש)
+const SITE_URL = 'https://www.site-control-il.com/';
 
 // Gemini models
 const CONTENT_MODEL = 'gemini-2.5-flash';

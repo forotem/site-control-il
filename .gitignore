@@ -22,3 +22,8 @@ backup-gsc-*/
 *.key
 *-api-key.txt
 secrets/
+
+# Generated outputs - do not commit
+*.tsbuildinfo
+gsc_output.*
+output.txt

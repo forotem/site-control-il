@@ -1,0 +1,140 @@
+<title>Geometric Parallax Loop — preview</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 32px 16px; font: 14px/1.6 ui-sans-serif, system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; gap: 18px;
+    background: #f6f5f2; color: #1c1b19;
+  }
+  @media (prefers-color-scheme: dark) { body { background: #14161a; color: #e8e6e1; } }
+  :root[data-theme="dark"] body { background: #14161a; color: #e8e6e1; }
+  :root[data-theme="light"] body { background: #f6f5f2; color: #1c1b19; }
+
+  #stage {
+    position: relative; width: 100%; max-width: 1280px; aspect-ratio: 16 / 9;
+    overflow: hidden; border-radius: 8px; background: #0E2A68;
+    box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  }
+  .plane { position: absolute; top: 0; left: 0; height: 100%; will-change: transform; }
+  .plane svg { display: block; height: 100%; width: auto; }
+
+  @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(var(--step), 0, 0); } }
+  @keyframes bob   { 0%,100% { transform: translateY(0); } 25% { transform: translateY(var(--amp)); } 75% { transform: translateY(calc(-1 * var(--amp))); } }
+
+  .wash {
+    position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light; opacity: .16;
+    background: linear-gradient(180deg, #FFA53A, #6A2E8A);
+  }
+  .vignette {
+    position: absolute; inset: 0; pointer-events: none;
+    box-shadow: inset 0 0 180px 60px rgba(0,0,0,.30);
+  }
+  figcaption, .note { max-width: 1280px; opacity: .75; }
+  code { font-family: ui-monospace, monospace; font-size: .92em; }
+</style>
+
+<div id="stage">
+  <div class="plane" id="p1"></div>
+  <div class="plane" id="p2"></div>
+  <div class="plane" id="p3"></div>
+  <div class="wash"></div>
+  <div class="vignette"></div>
+</div>
+
+<p class="note">
+  Preview of <code>geometric-parallax-loop.jsx</code> — same geometry, same palette, same
+  speeds (back 21&nbsp;px/s · mid 32&nbsp;px/s · front 51&nbsp;px/s at 4K), 60&nbsp;second seamless loop.
+</p>
+
+<script>
+const H = 2160;
+const P = {
+  navyDeep:"#0E2A68", navyBase:"#123170", navyLit:"#17398A", navyBlock:"#16357E", navyFloor:"#0B2359",
+  orangeTop:"#FFA015", orangeBot:"#F97C0B", orange2Top:"#FF9410", orange2Bot:"#ED5A79",
+  pinkMid:"#ED5A79", pinkTop:"#F0517E", pinkBot:"#A9357C", purpleTop:"#8B4093", purpleBot:"#5E307A",
+  redTop:"#E5495B", redBot:"#C4364A",
+  stone:"#EFE9DC", stoneLit:"#FDFBF6", stoneDim:"#D6CEBC", groove:"#B0A895", shade:"#8A8070"
+};
+
+let uid = 0;
+const grads = [];
+/** vertical gradient between two y values, in tile coordinates */
+function grad(a, b, y1, y2) {
+  const id = "g" + (uid++);
+  grads.push(`<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="${y1}" x2="0" y2="${y2}">
+    <stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`);
+  return `url(#${id})`;
+}
+function hgrad(a, b, x1, x2) {
+  const id = "g" + (uid++);
+  grads.push(`<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="${x1}" y1="0" x2="${x2}" y2="0">
+    <stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`);
+  return `url(#${id})`;
+}
+const sh = (d, s) => `filter="drop-shadow(${d}px ${d}px ${s}px rgba(7,23,63,.45))"`;
+const rect = (x, y, w, h, fill, extra = "") =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" ${extra}/>`;
+const poly = (pts, fill, extra = "") =>
+  `<polygon points="${pts.map(p => p.join(",")).join(" ")}" fill="${fill}" ${extra}/>`;
+
+/* ---- tiles, mirroring the .jsx geometry exactly ---- */
+function tileBack(W) {
+  return rect(0, 0, W, H, grad(P.navyLit, P.navyDeep, 0, H))
+    + rect(140, 0, 620, 1500, P.navyLit, `opacity=".92" ${sh(26, 40)}`)
+    + rect(860, 0, 320, 980, P.navyDeep, 'opacity=".85"')
+    + rect(0, 1880, W, H - 1880, P.navyFloor, 'opacity=".7"');
+}
+function tileMid(W) {
+  return rect(1440, 0, 420, 1240, P.navyLit, sh(30, 46))
+    + rect(300, 780, 680, H - 780, grad(P.pinkTop, P.pinkBot, 780, H))
+    + rect(1000, 1080, 380, H - 1080, grad(P.pinkMid, P.purpleBot, 1080, H))
+    + poly([[300,0],[980,0],[980,780],[700,1060],[300,1060]],
+        grad(P.orangeTop, P.orangeBot, 0, 1060), sh(34, 52))
+    + poly([[1000,220],[1140,0],[1380,0],[1380,1080],[1000,1080]],
+        grad(P.orange2Top, P.orange2Bot, 0, 1080), sh(30, 46))
+    + poly([[0,H],[620,H],[760,1520],[1200,1520],[1200,1760],[1560,1760],[1700,H],[W,H]],
+        grad(P.redTop, P.redBot, 1520, H), sh(26, 36))
+    + rect(1240, 1150, 260, 450, P.navyBlock, sh(24, 34))
+    + rect(1560, 0, 180, 1180, grad(P.orangeTop, P.pinkMid, 0, 1180), sh(26, 40))
+    + rect(1560, 1180, 180, H - 1180, grad(P.pinkMid, P.purpleBot, 1180, H));
+}
+function column(x, w, flutes) {
+  let s = rect(x, 0, w, H, grad(P.stoneLit, P.stoneDim, 0, H));
+  const fw = w / flutes;
+  for (let i = 0; i < flutes; i++) {
+    const fx = x + i * fw;
+    s += rect(fx, 0, fw, H, hgrad(P.stoneDim, P.stoneLit, fx, fx + fw * 0.78), 'opacity=".9"');
+    s += rect(fx - 2, 0, 4, H, P.groove, 'opacity=".34"');
+  }
+  s += rect(x, 0, w * 0.18, H, hgrad(P.shade, "#FFFFFF", x, x + w * 0.18),
+        'style="mix-blend-mode:multiply" opacity=".55"');
+  s += rect(x + w * 0.78, 0, w * 0.22, H, hgrad("#FFFFFF", P.shade, x + w * 0.78, x + w),
+        'style="mix-blend-mode:multiply" opacity=".72"');
+  return `<g ${sh(42, 52)}>${s}</g>`;
+}
+const tileFront = () => column(260, 210, 7) + column(1010, 140, 5);
+
+/* ---- planes: one tile repeated, drifting exactly one tile per cycle ---- */
+function plane(el, tile, build, seconds, copies, bobAmp) {
+  uid = 0; grads.length = 0;
+  const body = build(tile);
+  let out = "";
+  for (let i = 0; i < copies; i++) { out += `<g transform="translate(${i * tile},0)">${body}</g>`; }
+  const W = tile * copies;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}"><defs>${grads.join("")}</defs>${out}</svg>`;
+  // translateX(%) resolves against the element's own width, not the stage
+  el.style.setProperty("--step", (tile / W * 100) + "%");
+  el.style.width = (W / 3840 * 100) + "%";
+  el.style.marginLeft = (-tile / 3840 * 100) + "%";
+  el.style.animation = `drift ${seconds}s linear infinite`;
+  if (bobAmp) {
+    const inner = el.firstElementChild;
+    inner.style.setProperty("--amp", bobAmp + "%");
+    inner.style.animation = "bob 60s ease-in-out infinite";
+  }
+}
+
+plane(document.getElementById("p1"), 1280, tileBack,  60, 5, 0);
+plane(document.getElementById("p2"), 1920, tileMid,   60, 4, 0.28);
+plane(document.getElementById("p3"), 1536, tileFront, 30, 5, 0.5);
+</script>

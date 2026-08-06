@@ -1,0 +1,162 @@
+<title>Geometric Parallax Loop — preview</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 32px 16px; font: 14px/1.6 ui-sans-serif, system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; gap: 18px;
+    background: #f6f5f2; color: #1c1b19;
+  }
+  @media (prefers-color-scheme: dark) { body { background: #14161a; color: #e8e6e1; } }
+  :root[data-theme="dark"] body { background: #14161a; color: #e8e6e1; }
+  :root[data-theme="light"] body { background: #f6f5f2; color: #1c1b19; }
+
+  #stage {
+    position: relative; width: 100%; max-width: 1280px; aspect-ratio: 16 / 9;
+    overflow: hidden; border-radius: 8px; background: #0E2A68;
+    box-shadow: 0 18px 50px rgba(0,0,0,.35);
+  }
+  .plane { position: absolute; top: 0; left: 0; height: 100%; will-change: transform; }
+  .plane svg { display: block; height: 100%; width: auto; }
+
+  @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(var(--step), 0, 0); } }
+  @keyframes bob   { 0%,100% { transform: translateY(0); } 25% { transform: translateY(var(--amp)); } 75% { transform: translateY(calc(-1 * var(--amp))); } }
+
+  .overlay { position: absolute; inset: 0; pointer-events: none; }
+  .haze { background: linear-gradient(180deg, #16367E, #24509E); opacity: .12; }
+  .wash { mix-blend-mode: soft-light; opacity: .16; background: linear-gradient(180deg, #FFA53A, #6A2E8A); }
+  .vignette { box-shadow: inset 0 0 180px 60px rgba(0,0,0,.30); }
+
+  .note { max-width: 1280px; opacity: .75; }
+  code { font-family: ui-monospace, monospace; font-size: .92em; }
+</style>
+
+<div id="stage">
+  <div class="plane" id="p1"></div>
+  <div class="overlay haze"></div>
+  <div class="plane" id="p2"></div>
+  <div class="plane" id="p3"></div>
+  <div class="plane" id="p4"></div>
+  <div class="overlay wash"></div>
+  <div class="overlay vignette"></div>
+</div>
+
+<p class="note">
+  Preview of <code>geometric-parallax-loop.jsx</code> — same geometry, same palette, same
+  speeds (back 14 · mid-far 21 · mid-near 26 · front 34&nbsp;px/s at 4K), 60&nbsp;second seamless loop.
+</p>
+
+<script>
+const H = 2160;
+const P = {
+  navyDeep:"#0E2A68", navyBase:"#123170", navyLit:"#17398A", navyRim:"#2A54A8",
+  navyBlock:"#16357E", navyFloor:"#0B2359",
+  orangeTop:"#FFA015", orangeBot:"#F97C0B", orangeEdge:"#C9560A",
+  orange2Top:"#FF9410", orange2Bot:"#ED5A79", pinkMid:"#ED5A79",
+  pinkTop:"#F0517E", pinkBot:"#A9357C", purpleBot:"#5E307A",
+  redTop:"#E5495B", redBot:"#C4364A", redRim:"#F2687C",
+  stone:"#EFE9DC", stoneLit:"#FFFDF8", stoneDim:"#C8C0AE", groove:"#A79E8B", shade:"#8A8070"
+};
+
+let uid = 0;
+let ns = "";          // gradient ids are document-global — one namespace per plane
+const defs = [];
+function grad(a, b, y1, y2) {
+  const id = ns + (uid++);
+  defs.push(`<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="${y1}" x2="0" y2="${y2}">
+    <stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`);
+  return `url(#${id})`;
+}
+function hgrad(a, b, x1, x2) {
+  const id = ns + (uid++);
+  defs.push(`<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="${x1}" y1="0" x2="${x2}" y2="0">
+    <stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`);
+  return `url(#${id})`;
+}
+/* light sits upper-left, so every shadow falls to the lower right */
+const sh1 = (d, s, o) => `drop-shadow(${d}px ${d}px ${s}px rgba(7,23,63,${o}))`;
+const shPair = (c, a) => `filter="${sh1(...c)} ${sh1(...a)}"`;
+const sh = (d, s, o = .4) => `filter="${sh1(d, s, o)}"`;
+
+const rect = (x, y, w, h, fill, extra = "") =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" ${extra}/>`;
+const poly = (pts, fill, extra = "") =>
+  `<polygon points="${pts.map(p => p.join(",")).join(" ")}" fill="${fill}" ${extra}/>`;
+const shift = (pts, dx, dy) => pts.map(([x, y]) => [x + dx, y + dy]);
+
+/* ---- tiles, mirroring the .jsx geometry exactly ---- */
+function tileBack(W) {
+  return rect(0, 0, W, H, grad(P.navyLit, P.navyDeep, 0, H))
+    + rect(90, 0, 420, 1500, P.navyLit, `opacity=".92" ${sh(18, 30, .28)}`)
+    + rect(580, 0, 210, 980, P.navyDeep, `opacity=".85" ${sh(14, 25, .22)}`)
+    + rect(0, 1880, W, H - 1880, P.navyFloor, 'opacity=".7"');
+}
+
+function tileMidFar(W) {
+  const slab = [[160,0],[760,0],[760,780],[520,1060],[160,1060]];
+  const slab2 = [[790,220],[910,0],[1120,0],[1120,1080],[790,1080]];
+  return rect(0, 0, 130, 1400, P.navyLit, sh(22, 35, .33))
+    + rect(160, 780, 600, 820, grad(P.pinkTop, P.pinkBot, 780, 1600), shPair([12, 11, .42], [36, 48, .32]))
+    + rect(790, 1080, 330, H - 1080, grad(P.pinkMid, P.purpleBot, 1080, H))
+    + poly(shift(slab, 14, 14), P.orangeEdge)
+    + poly(slab, grad(P.orangeTop, P.orangeBot, 0, 1060), shPair([12, 12, .45], [40, 55, .35]))
+    + poly(shift(slab2, 12, 12), P.orangeEdge)
+    + poly(slab2, grad(P.orange2Top, P.orange2Bot, 0, 1080), shPair([10, 10, .43], [34, 48, .33]));
+}
+
+function tileMidNear(W) {
+  const pts = [[0,H],[420,H],[560,1520],[1000,1520],[1000,1760],[1260,1760],[1380,H],[W,H]];
+  return poly(shift(pts, 0, -9), P.redRim)
+    + poly(pts, grad(P.redTop, P.redBot, 1520, H), shPair([14, 13, .5], [46, 60, .4]))
+    + rect(1040, 1344, 200, 16, P.navyRim)
+    + rect(1040, 1350, 200, 410, P.navyBlock, shPair([10, 9, .48], [34, 45, .38]))
+    + rect(640, 1174, 180, 16, P.navyRim)
+    + rect(640, 1180, 180, 340, P.navyBlock, shPair([10, 9, .46], [30, 40, .36]));
+}
+
+function column(x, w, ribs) {
+  let s = rect(x, 0, w, H, P.stone);
+  const rw = w / ribs;
+  for (let i = 0; i < ribs; i++) {
+    const rx = x + i * rw;
+    s += rect(rx, 0, rw / 2, H, hgrad(P.stoneDim, P.stoneLit, rx, rx + rw / 2));
+    s += rect(rx + rw / 2, 0, rw / 2, H, hgrad(P.stoneLit, P.stoneDim, rx + rw / 2, rx + rw));
+    s += rect(rx - 1.5, 0, 3, H, P.groove, 'opacity=".45"');
+  }
+  s += rect(x, 0, w, H, grad("#FFFFFF", "#D8D0BE", 0, H),
+        'style="mix-blend-mode:multiply" opacity=".55"');
+  s += rect(x, 0, w * 0.16, H, hgrad(P.shade, "#FFFFFF", x, x + w * 0.16),
+        'style="mix-blend-mode:multiply" opacity=".5"');
+  s += rect(x + w * 0.76, 0, w * 0.24, H, hgrad("#FFFFFF", P.shade, x + w * 0.76, x + w),
+        'style="mix-blend-mode:multiply" opacity=".75"');
+  return s;
+}
+function tileFront() {
+  return `<g ${shPair([16, 20, .55], [72, 95, .42])}>${column(300, 210, 7)}</g>`
+       + `<g ${shPair([14, 17, .5], [60, 80, .4])}>${column(1250, 140, 5)}</g>`;
+}
+
+/* ---- planes: one tile repeated, drifting exactly one tile per cycle ---- */
+function plane(el, tile, build, seconds, copies, bobAmp) {
+  uid = 0; ns = el.id + "g"; defs.length = 0;
+  const body = build(tile);
+  let out = "";
+  for (let i = 0; i < copies; i++) { out += `<g transform="translate(${i * tile},0)">${body}</g>`; }
+  const W = tile * copies;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}"><defs>${defs.join("")}</defs>${out}</svg>`;
+  // translateX(%) resolves against the element's own width, not the stage
+  el.style.setProperty("--step", (tile / W * 100) + "%");
+  el.style.width = (W / 3840 * 100) + "%";
+  el.style.marginLeft = (-tile / 3840 * 100) + "%";
+  el.style.animation = `drift ${seconds}s linear infinite`;
+  if (bobAmp) {
+    const inner = el.firstElementChild;
+    inner.style.setProperty("--amp", bobAmp + "%");
+    inner.style.animation = "bob 60s ease-in-out infinite";
+  }
+}
+
+plane(document.getElementById("p1"),  864, tileBack,    60, 7, 0);
+plane(document.getElementById("p2"), 1280, tileMidFar,  60, 5, 0.23);
+plane(document.getElementById("p3"), 1536, tileMidNear, 60, 4, 0.32);
+plane(document.getElementById("p4"), 2048, tileFront,   60, 4, 0.46);
+</script>

@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '56',
+    title: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G',
+    slug: 'maximize-profitability-efficiency-remote-sites-2026',
+    excerpt: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, ת...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-10',
+    category: 'פתרונות אבטחה B2B',
+    image: '/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.png',
+    seoTitle: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G | Site-Control',
+    seoDescription: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, תיעוד התקדמות וחיסכון בעלויות.',
+    keywords: ["מקסום רווחיות באתרים מרוחקים","מצלמות אבטחה סולאריות 4G","אבטחה סולארית B2B ישראל","מצלמות לאתרי בנייה","מצלמות לחקלאות","Reolink GO Plus","Reolink PTZ Solar","תיעוד טיימלאפס בנייה","מניעת גניבות באתר מרוחק","פתרונות אבטחה ללא חשמל"]
+  },
+  {
     id: '55',
     title: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים',
     slug: 'security-construction-2026',

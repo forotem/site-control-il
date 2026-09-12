@@ -217,15 +217,41 @@ function isDuplicateSlug(candidateSlug, existingSlugs) {
   const candBase = stripSlugYear(candidateSlug);
   const candWords = slugWords(candidateSlug);
 
+  // A one-word topic ("timelapse", "cameras") is too generic to be a distinct
+  // post — it always cannibalizes an existing one. Require 2+ meaningful words.
+  if (candWords.size < 2) {
+    console.log(`   ↩️ "${candidateSlug}" נדחה: נושא של מילה אחת, גנרי מדי`);
+    return true;
+  }
+
+  // How many existing posts already use each candidate word. A candidate whose
+  // every word is already "saturated" (used by 3+ posts) is a rehash of core
+  // topics like timelapse/documentation/construction, not a new angle.
+  const wordUsage = {};
+  for (const w of candWords) wordUsage[w] = 0;
+  for (const existing of existingSlugs) {
+    for (const w of slugWords(existing)) if (w in wordUsage) wordUsage[w]++;
+  }
+  const hasFreshWord = [...candWords].some((w) => wordUsage[w] < 3);
+  if (!hasFreshWord) {
+    console.log(`   ↩️ "${candidateSlug}" נדחה: כל המילים כבר מכוסות ב-3+ פוסטים (${JSON.stringify(wordUsage)})`);
+    return true;
+  }
+
   for (const existing of existingSlugs) {
     const existingBase = stripSlugYear(existing);
     if (existingBase === candBase) return true;
 
     const existingWords = slugWords(existing);
-    if (candWords.size === 0 || existingWords.size === 0) continue;
+    if (existingWords.size === 0) continue;
 
     let overlap = 0;
     for (const w of candWords) if (existingWords.has(w)) overlap++;
+
+    // Candidate is a narrower version of an existing slug
+    // (all its words already appear in that slug) → covered.
+    if (overlap === candWords.size) return true;
+
     const union = new Set([...candWords, ...existingWords]).size;
 
     // 60%+ shared meaningful words = same topic (e.g. "video-timelapse-contractors"

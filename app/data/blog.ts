@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '57',
+    title: 'טיימלאפס מקצועי: תיעוד פרויקטים ואבטחה ללא גבולות',
+    slug: 'timelapse-2026',
+    excerpt: 'גלו איך טיימלאפס עם מצלמות סולאריות 4G של Site-Control משנה את האבטחה ותיעוד ההתקדמות בקבלנות, חקלאות ואתרים מבודדים. פתרון מקיף ללא חשמל או אינטרנט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-12',
+    category: 'פתרונות B2B',
+    image: '/blog-images/timelapse-2026/hero.webp',
+    seoTitle: 'טיימלאפס מקצועי: תיעוד פרויקטים ואבטחה ללא גבולות | Site-Control',
+    seoDescription: 'גלו איך טיימלאפס עם מצלמות סולאריות 4G של Site-Control משנה את האבטחה ותיעוד ההתקדמות בקבלנות, חקלאות ואתרים מבודדים. פתרון מקיף ללא חשמל או אינטרנט.',
+    keywords: ["טיימלאפס מקצועי","מצלמות סולאריות 4G","תיעוד אתרי בנייה","אבטחה לחקלאות","ניהול פרויקטים מרחוק","Reolink GO Plus","Reolink PTZ Solar","פתרונות אבטחה B2B"]
+  },
+  {
     id: '56',
     title: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G',
     slug: 'maximize-profitability-efficiency-remote-sites-2026',

@@ -85,13 +85,19 @@ function hebrewToSlug(hebrewText) {
 }
 
 function getExistingSlugs() {
+  let slugs = [];
   try {
     const content = fs.readFileSync(BLOG_DATA_PATH, 'utf-8');
     const slugMatches = content.match(/slug:\s*'([^']+)'/g) || [];
-    return slugMatches.map(m => m.match(/slug:\s*'([^']+)'/)[1]);
-  } catch {
-    return [];
-  }
+    slugs = slugMatches.map(m => m.match(/slug:\s*'([^']+)'/)[1]);
+  } catch {}
+  // Slugs that were merged into other posts (301) — treat as existing so the
+  // bot never regenerates the duplicates it took months to clean up.
+  try {
+    const retired = JSON.parse(fs.readFileSync(path.join(__dirname, 'retired-slugs.json'), 'utf-8')).retired || [];
+    slugs = slugs.concat(retired);
+  } catch {}
+  return slugs;
 }
 
 function getNextBlogId() {

@@ -632,7 +632,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '10',
-    title: 'חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך למצלמות אבטחה',
+    title: 'חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך המלא למצלמות אבטחה',
     slug: 'privacy-law-amendment-13-cameras-2026',
     excerpt: 'החל מאוגוסט 2025 כללי המשחק השתנו. תיקון 13 מחייב כל ועד בית ועסק לעמוד בסטנדרטים חדשים של אבטחת מידע ופרטיות. המדריך המלא למניעת קנסות.',
     content: '', // Content is successfully rendered in the page.tsx file

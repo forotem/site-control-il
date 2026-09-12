@@ -168,8 +168,19 @@ function readStaticGSC() {
     console.log(`📊 נקראו ${data.queries.length} שאילתות (עדכון: ${data.fetchedAt})`);
     return data.queries;
   } catch {
-    console.log('⚠️ אין קובץ GSC, משתמש בנושאים ברירת מחדל');
-    return [];
+    // gsc_output.json is git-ignored and only exists after a live GSC fetch.
+    // Fall back to the older snapshot checked into the repo rather than
+    // going straight to the fallback-topics list every single run.
+    try {
+      const legacyPath = path.join(PROJECT_ROOT, 'gsc_full_data.json');
+      const legacy = JSON.parse(fs.readFileSync(legacyPath, 'utf-8'));
+      const queries = legacy.queries || [];
+      console.log(`📊 נקראו ${queries.length} שאילתות מ-gsc_full_data.json (מיושן, עדכון: ${legacy.fetchedAt})`);
+      return queries;
+    } catch {
+      console.log('⚠️ אין קובץ GSC, משתמש בנושאים ברירת מחדל');
+      return [];
+    }
   }
 }
 
@@ -187,6 +198,42 @@ const COMMERCIAL_INTENT_KEYWORDS = [
 function getCommercialScore(query) {
   const lower = query.toLowerCase();
   return COMMERCIAL_INTENT_KEYWORDS.filter(k => lower.includes(k)).length;
+}
+
+// ---------- DUPLICATE-TOPIC DETECTION ----------
+// Word-overlap similarity instead of naive substring matching.
+// The old `s.includes(slugBase)` check flagged almost every new slug as a
+// duplicate of short existing slugs like "4g" or "cameras-2026", which is
+// why the bot kept "succeeding" without ever writing a new post.
+function stripSlugYear(slug) {
+  return slug.replace(/-(19|20)\d{2}$/, '');
+}
+
+function slugWords(slug) {
+  return new Set(stripSlugYear(slug).split('-').filter((w) => w.length > 2));
+}
+
+function isDuplicateSlug(candidateSlug, existingSlugs) {
+  const candBase = stripSlugYear(candidateSlug);
+  const candWords = slugWords(candidateSlug);
+
+  for (const existing of existingSlugs) {
+    const existingBase = stripSlugYear(existing);
+    if (existingBase === candBase) return true;
+
+    const existingWords = slugWords(existing);
+    if (candWords.size === 0 || existingWords.size === 0) continue;
+
+    let overlap = 0;
+    for (const w of candWords) if (existingWords.has(w)) overlap++;
+    const union = new Set([...candWords, ...existingWords]).size;
+
+    // 60%+ shared meaningful words = same topic (e.g. "video-timelapse-contractors"
+    // vs "timelapse-video-contractors-2026"), but two short/generic slugs sharing
+    // one common word (e.g. "4g" vs "solar-4g-cameras") won't false-positive.
+    if (overlap / union >= 0.6) return true;
+  }
+  return false;
 }
 
 function findOpportunity(queries) {
@@ -210,12 +257,7 @@ function findOpportunity(queries) {
 
   // Find first opportunity that doesn't have a blog yet
   for (const opp of opportunities) {
-    const slugBase = opp.slug.replace(/-\d{4}$/, ''); // Remove year for comparison
-    const alreadyExists = existingSlugs.some(s =>
-      s === opp.slug || s.includes(slugBase) || slugBase.includes(s.replace(/-\d{4}$/, ''))
-    );
-
-    if (!alreadyExists) {
+    if (!isDuplicateSlug(opp.slug, existingSlugs)) {
       console.log(`🎯 הזדמנות נמצאה: "${opp.query}" (${opp.impressions} impressions, position ${opp.position.toFixed(1)})`);
       return opp;
     }
@@ -252,7 +294,7 @@ function findOpportunity(queries) {
 
   for (const topic of fallbackTopics) {
     const slug = hebrewToSlug(topic);
-    if (!existingSlugs.includes(slug)) {
+    if (!isDuplicateSlug(slug, existingSlugs)) {
       console.log(`🎯 נושא מ-fallback: "${topic}"`);
       return { query: topic, slug, impressions: 0, clicks: 0, position: 0, score: 0 };
     }
@@ -292,6 +334,7 @@ ${existingTitles.map(t => `- ${t}`).join('\n')}
 2. כוונת חיפוש מסחרית של קהל היעד B2B (קבלנים / חקלאים / מנהלי פרויקטים בישראל).
 3. רלוונטי למה שהחברה באמת מוכרת: מצלמות סולאריות 4G, טיימלאפס, תיעוד בנייה, אבטחת אתרים ללא חשמל/אינטרנט.
 4. ספק גם slug באנגלית: מילים באנגלית בלבד, מופרדות במקפים, ללא שנה (היא תתווסף אוטומטית).
+5. חשוב: יש כבר עשרות פוסטים על "טיימלאפס" ו"תיעוד בנייה" — הימנע מנושא נוסף בכיוון הזה אלא אם הוא זווית ממש ספציפית וחדשה (למשל היבט משפטי/ביטוחי/טכני ספציפי, לא עוד "מדריך מקיף"). עדיף נושאים על: מחיר ועלות, השוואת דגמים, סיפורי מקרה ספציפיים, שאלות טכניות ממוקדות, תחזוקה, התקנה.
 
 החזר JSON בלבד בפורמט:
 {"topic": "הנושא בעברית", "slug": "english-slug-words", "reason": "משפט אחד למה זה נושא טוב"}`;
@@ -329,12 +372,8 @@ ${existingTitles.map(t => `- ${t}`).join('\n')}
     }
 
     const slug = `${cleanSlug}-${new Date().getFullYear()}`;
-    const slugBase = cleanSlug;
-    const alreadyExists = existingSlugs.some(s =>
-      s === slug || s.includes(slugBase) || slugBase.includes(s.replace(/-\d{4}$/, ''))
-    );
 
-    if (alreadyExists) {
+    if (isDuplicateSlug(slug, existingSlugs)) {
       console.warn(`⚠️ ניסיון ${attempt}: הנושא "${data.topic}" כבר קיים (${slug}), מנסה שוב`);
       continue;
     }
@@ -407,8 +446,9 @@ Site-Control מתמחה אך ורק במצלמות אבטחה סולאריות 4
 ${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדברים על: ${p.context}`).join('\n')}${timelapseLinkInstruction}
 
 ## מבנה HTML נדרש:
+- אסור לכלול תג <h1> בשום מקום — הכותרת הראשית כבר מוצגת בעמוד בנפרד. התוכן עצמו חייב להתחיל ישירות מ-<h2> (אחרי תוכן העניינים).
 - כלול תוכן עניינים (table of contents) עם anchor links
-- כותרות: h2 לסעיפים ראשיים, h3 לתתי-סעיפים
+- כותרות: h2 לסעיפים ראשיים, h3 לתתי-סעיפים בלבד
 - טבלת השוואה עם מפרטים טכניים אם רלוונטי
 - רשימות bullets לטיפים ומאפיינים
 - קרוב לוודאי תרצה לכלול: "יתרונות", "חסרונות", "למי מתאים", "מחיר ותמורה"
@@ -443,6 +483,13 @@ ${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדב
   if (!jsonStr.endsWith('}')) jsonStr = jsonStr.substring(0, jsonStr.lastIndexOf('}') + 1);
 
   const blogData = JSON.parse(jsonStr);
+
+  // Safety net: the page template already renders its own <h1>, so demote any
+  // stray <h1> Gemini included in the body content to <h2> to avoid duplicate H1s.
+  if (blogData.content) {
+    blogData.content = blogData.content.replace(/<h1(\s[^>]*)?>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
+  }
+
   console.log(`✅ תוכן נוצר: "${blogData.title}"`);
   return blogData;
 }
@@ -503,10 +550,7 @@ NO text or logos in the image. Photorealistic, high quality.`;
       for (const part of parts) {
         if (part.inlineData && part.inlineData.mimeType?.startsWith('image/')) {
           const imageBuffer = Buffer.from(part.inlineData.data, 'base64');
-          const ext = part.inlineData.mimeType === 'image/png' ? 'png' : 
-                      part.inlineData.mimeType === 'image/webp' ? 'webp' : 'png';
-          fs.writeFileSync(path.join(imageDir, `hero.${ext}`), imageBuffer);
-          console.log(`✅ תמונת hero נשמרה (${(imageBuffer.length / 1024).toFixed(0)}KB)`);
+          await saveCompressedHero(imageDir, imageBuffer);
           imageFound = true;
           break;
         }
@@ -519,19 +563,28 @@ NO text or logos in the image. Photorealistic, high quality.`;
     }
   } catch (err) {
     console.warn('⚠️ שגיאה ביצירת תמונה:', err.message);
-    
-    // Fallback: try with gemini-2.5-flash-image
-    try {
-      console.log('🔄 מנסה fallback עם gemini-2.5-flash-image...');
-      const { GoogleGenerativeAI } = require('@google/generative-ai');
-      const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      const fallbackModel = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-preview-native-audio-dialog' });
-      
-      // If fallback also doesn't work, use placeholder
-      createPlaceholderImage(imageDir, topic.query);
-    } catch {
-      createPlaceholderImage(imageDir, topic.query);
-    }
+    createPlaceholderImage(imageDir, topic.query);
+  }
+}
+
+// Compress a raw hero image (whatever format Gemini returned) down to a
+// single WebP file capped at 1200px wide. Bot-generated PNGs were coming in
+// around 800-900KB served via a plain <img>, which hurt page weight/LCP.
+async function saveCompressedHero(imageDir, imageBuffer) {
+  try {
+    const sharp = require('sharp');
+    const outPath = path.join(imageDir, 'hero.webp');
+    await sharp(imageBuffer)
+      .resize({ width: 1200, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toFile(outPath);
+    const { size } = fs.statSync(outPath);
+    console.log(`✅ תמונת hero נשמרה כ-WebP (${(size / 1024).toFixed(0)}KB)`);
+  } catch (err) {
+    // If sharp isn't available for some reason, fall back to the raw PNG
+    // rather than losing the image entirely.
+    console.warn('⚠️ כשל בדחיסת התמונה עם sharp, שומר PNG גולמי:', err.message);
+    fs.writeFileSync(path.join(imageDir, 'hero.png'), imageBuffer);
   }
 }
 
@@ -594,7 +647,7 @@ function writeBlogPage(slug, blogData, topic) {
   // Determine image extension
   const imageDir = path.join(IMAGES_DIR, slug);
   let imageExt = 'svg';
-  for (const ext of ['png', 'webp', 'jpg', 'jpeg', 'avif']) {
+  for (const ext of ['webp', 'png', 'jpg', 'jpeg', 'avif']) {
     if (fs.existsSync(path.join(imageDir, `hero.${ext}`))) {
       imageExt = ext;
       break;
@@ -607,32 +660,32 @@ function writeBlogPage(slug, blogData, topic) {
     '@type': 'Article',
     headline: blogData.title,
     description: blogData.metaDescription || '',
-    image: `https://site-control-il.com/blog-images/${slug}/hero.${imageExt}`,
+    image: `https://www.site-control-il.com/blog-images/${slug}/hero.${imageExt}`,
     datePublished: today,
     dateModified: today,
     author: {
       '@type': 'Organization',
       name: 'צוות Site-Control',
-      url: 'https://site-control-il.com',
+      url: 'https://www.site-control-il.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Site-Control',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif',
+        url: 'https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://site-control-il.com/blog/${slug}`,
+      '@id': `https://www.site-control-il.com/blog/${slug}`,
     },
     keywords: (blogData.keywords || []).join(', '),
     articleSection: blogData.category || 'מצלמות אבטחה',
-    url: `https://site-control-il.com/blog/${slug}`,
+    url: `https://www.site-control-il.com/blog/${slug}`,
     isPartOf: {
       '@type': 'Blog',
-      '@id': 'https://site-control-il.com/blog',
+      '@id': 'https://www.site-control-il.com/blog',
       name: 'בלוג Site-Control',
     },
   });
@@ -643,7 +696,7 @@ export const metadata: Metadata = {
   title: '${blogData.title.replace(/'/g, "\\'")} | Site-Control',
   description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
   keywords: ${JSON.stringify(blogData.keywords || [])},
-  authors: [{ name: 'צוות Site-Control', url: 'https://site-control-il.com' }],
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: '${blogData.title.replace(/'/g, "\\'")}',
     description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
@@ -651,10 +704,10 @@ export const metadata: Metadata = {
     publishedTime: '${today}',
     locale: 'he_IL',
     siteName: 'Site-Control',
-    url: 'https://site-control-il.com/blog/${slug}',
+    url: 'https://www.site-control-il.com/blog/${slug}',
     images: [
       {
-        url: 'https://site-control-il.com/blog-images/${slug}/hero.${imageExt}',
+        url: 'https://www.site-control-il.com/blog-images/${slug}/hero.${imageExt}',
         width: 1200,
         height: 630,
         alt: '${blogData.title.replace(/'/g, "\\'")}',
@@ -665,10 +718,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '${blogData.title.replace(/'/g, "\\'")}',
     description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
-    images: ['https://site-control-il.com/blog-images/${slug}/hero.${imageExt}'],
+    images: ['https://www.site-control-il.com/blog-images/${slug}/hero.${imageExt}'],
   },
   alternates: {
-    canonical: 'https://site-control-il.com/blog/${slug}',
+    canonical: 'https://www.site-control-il.com/blog/${slug}',
   },
   robots: {
     index: true,
@@ -739,7 +792,7 @@ function addBlogEntry(slug, blogData) {
   // Determine image extension
   const imageDir = path.join(IMAGES_DIR, slug);
   let imageExt = 'svg';
-  for (const ext of ['png', 'webp', 'jpg', 'jpeg', 'avif']) {
+  for (const ext of ['webp', 'png', 'jpg', 'jpeg', 'avif']) {
     if (fs.existsSync(path.join(imageDir, `hero.${ext}`))) {
       imageExt = ext;
       break;

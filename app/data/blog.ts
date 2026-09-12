@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '58',
+    title: 'התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים',
+    slug: 'solar-4g-security-camera-remote-site-installation-2026',
+    excerpt: 'מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים מבודדים על התקנה נכונה של מצלמות אבטחה סולאריות 4G. אבטח את השטח שלך עם Site-Control....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-12',
+    category: 'מדריכים ופתרונות B2B',
+    image: '/blog-images/solar-4g-security-camera-remote-site-installation-2026/hero.webp',
+    seoTitle: 'התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים | Site-Control',
+    seoDescription: 'מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים מבודדים על התקנה נכונה של מצלמות אבטחה סולאריות 4G. אבטח את השטח שלך עם Site-Control.',
+    keywords: ["מצלמות אבטחה סולאריות 4G","התקנת מצלמות אבטחה B2B","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","אבטחת משקים חקלאיים","מצלמות לאתרים מבודדים","ניטור מרחוק"]
+  },
+  {
     id: '57',
     title: 'טיימלאפס מקצועי: תיעוד פרויקטים ואבטחה ללא גבולות',
     slug: 'timelapse-2026',

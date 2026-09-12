@@ -51,8 +51,8 @@
 
 בלי זה אי אפשר לדעת אם האתר מביא לקוחות.
 
-1. **Google Analytics 4**: ליצור נכס (או להשתמש בקיים) ולהגדיר `NEXT_PUBLIC_GA_MEASUREMENT_ID` ב-Vercel. הקוד כבר קיים ב-`app/components/Analytics.tsx`.
-2. **אירועי המרה**: לחיצה על וואטסאפ, לחיצה על טלפון, שליחת טופס. להוסיף `gtag('event', ...)` בשלושת המקומות.
+1. ✅ בוצע 12.9.2026: נמצא נכס GA4 קיים "אתר מצלמות" (G-XFRTSXRJH5, stream www.site-control-il.com) שמעולם לא קיבל נתונים. המשתנה `NEXT_PUBLIC_GA_MEASUREMENT_ID` הוגדר ב-Vercel (Production).
+2. ✅ בוצע 12.9.2026: `app/lib/analytics.ts` + אירועים contact_whatsapp / contact_phone (עם location) / generate_lead בכפתורים הצפים, ב-CTASection ובטופס יצירת קשר. נותר: לסמן את generate_lead כ-Key event ב-GA4 (Admin → Events) אחרי שיגיעו אירועים ראשונים.
 3. **Vercel Web Analytics**: להפעיל בפרויקט (חינמי) ולהוסיף `@vercel/analytics` — נותן נתונים גם בלי GA.
 4. **Resend**: לאמת את הדומיין `site-control-il.com` ב-Resend ולשנות את השולח ל-`noreply@site-control-il.com`. כרגע עם דומיין הבדיקה Resend מאפשר שליחה רק לכתובת בעל החשבון, כך שהמייל האוטומטי ללקוח כנראה לא מגיע. לוודא שגם `RESEND_API_KEY` מוגדר ב-Vercel ולשלוח פנייה בדיקה.
 5. **GSC**: לחבר את חשבון השירות (סעיף 1.1) ולהוריד דוח עדכני. הנתונים האחרונים בריפו הם ממרץ 2026, ובהם דף הבית היה במיקום 29 עם 21 חשיפות בלבד ב-90 יום, כלומר עדיין כמעט אין תנועה אורגנית.

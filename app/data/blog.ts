@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '59',
+    title: 'תחזוקת מצלמות אבטחה סולאריות 4G: מדריך מקיף לאריכות ימים',
+    slug: 'solar-4g-camera-maintenance-guide-2026',
+    excerpt: 'מדריך מומחים מ-Site-Control לתחזוקת מצלמות אבטחה סולאריות 4G. האריכו חיי סוללה, מקסמו ביצועים וחסכו בעלויות לאתרי בנייה, חקלאות ואתרים מרוחקים. קבלו י...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-14',
+    category: 'מדריכים',
+    image: '/blog-images/solar-4g-camera-maintenance-guide-2026/hero.webp',
+    seoTitle: 'תחזוקת מצלמות אבטחה סולאריות 4G: מדריך מקיף לאריכות ימים | Site-Control',
+    seoDescription: 'מדריך מומחים מ-Site-Control לתחזוקת מצלמות אבטחה סולאריות 4G. האריכו חיי סוללה, מקסמו ביצועים וחסכו בעלויות לאתרי בנייה, חקלאות ואתרים מרוחקים. קבלו ייעוץ חינם.',
+    keywords: ["תחזוקת מצלמות אבטחה סולאריות 4G","הארכת חיי סוללה מצלמה סולארית","מצלמות אבטחה לאתרי בנייה","מצלמות אבטחה לחקלאות","פתרונות אבטחה B2B סולארי","Reolink GO Plus תחזוקה","Reolink PTZ Solar מדריך","מקסום ביצועי מצלמות אלחוטיות"]
+  },
+  {
     id: '58',
     title: 'התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים',
     slug: 'solar-4g-security-camera-remote-site-installation-2026',

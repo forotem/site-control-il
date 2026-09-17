@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '60',
+    title: 'צריכת נתונים במצלמות סולאריות 4G: חיסכון וניהול עלויות',
+    slug: '4g-solar-camera-data-consumption-cost-management-2026',
+    excerpt: 'קבלנים, חקלאים ומנהלי אתרים: למדו איך לנהל ולחסוך בצריכת נתונים של מצלמות אבטחה סולאריות 4G, להבטיח אבטחה מקסימלית ועלויות תפעול מינימליות. טיפים מ-Si...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-17',
+    category: 'מדריכים',
+    image: '/blog-images/4g-solar-camera-data-consumption-cost-management-2026/hero.webp',
+    seoTitle: 'צריכת נתונים במצלמות סולאריות 4G: חיסכון וניהול עלויות | Site-Control',
+    seoDescription: 'קבלנים, חקלאים ומנהלי אתרים: למדו איך לנהל ולחסוך בצריכת נתונים של מצלמות אבטחה סולאריות 4G, להבטיח אבטחה מקסימלית ועלויות תפעול מינימליות. טיפים מ-Site-Control.',
+    keywords: ["צריכת נתונים מצלמות 4G","חיסכון בגלישה מצלמות סולאריות","ניהול עלויות מצלמות אבטחה","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחה לאתרי בנייה","מצלמות אבטחה לחקלאות","מצלמות לאתרים מבודדים","טיפים למצלמות אבטחה סולאריות"]
+  },
+  {
     id: '59',
     title: 'תחזוקת מצלמות אבטחה סולאריות 4G: מדריך מקיף לאריכות ימים',
     slug: 'solar-4g-camera-maintenance-guide-2026',

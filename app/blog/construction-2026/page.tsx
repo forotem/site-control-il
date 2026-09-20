@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://www.site-control-il.com/blog/construction-2026',
     images: [
       {
-        url: 'https://www.site-control-il.com/blog-images/construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/construction-2026/hero.webp',
         width: 1200,
         height: 630,
         alt: 'מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות',
     description: 'נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים.',
-    images: ['https://www.site-control-il.com/blog-images/construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/construction-2026/hero.webp'],
   },
   alternates: {
     canonical: 'https://www.site-control-il.com/blog/construction-2026',
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות","description":"נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים.","image":"https://www.site-control-il.com/blog-images/construction-2026/hero.png","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/construction-2026"},"keywords":"מניעת גניבות ציוד באתר בנייה, מצלמות אבטחה סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, פתרונות אבטחה B2B, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרים מבודדים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות","description":"נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים.","image":"https://www.site-control-il.com/blog-images/construction-2026/hero.webp","datePublished":"2026-05-07","dateModified":"2026-05-07","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/construction-2026"},"keywords":"מניעת גניבות ציוד באתר בנייה, מצלמות אבטחה סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, פתרונות אבטחה B2B, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרים מבודדים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -63,7 +63,7 @@ export default function Page() {
           </h1>
           <picture>
             <img
-              src="/blog-images/construction-2026/hero.png"
+              src="/blog-images/construction-2026/hero.webp"
               alt="מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
               loading="lazy"

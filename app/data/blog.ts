@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-09-10',
     category: 'פתרונות אבטחה B2B',
-    image: '/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.png',
+    image: '/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp',
     seoTitle: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G | Site-Control',
     seoDescription: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, תיעוד התקדמות וחיסכון בעלויות.',
     keywords: ["מקסום רווחיות באתרים מרוחקים","מצלמות אבטחה סולאריות 4G","אבטחה סולארית B2B ישראל","מצלמות לאתרי בנייה","מצלמות לחקלאות","Reolink GO Plus","Reolink PTZ Solar","תיעוד טיימלאפס בנייה","מניעת גניבות באתר מרוחק","פתרונות אבטחה ללא חשמל"]
@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-07-06',
     category: 'מדריכים',
-    image: '/blog-images/security-construction-2026/hero.png',
+    image: '/blog-images/security-construction-2026/hero.webp',
     seoTitle: 'כמה עולה מצלמת אבטחה לאתר בנייה? המדריך המלא לקבלנים וחקלאים | Site-Control',
     seoDescription: 'כמה באמת עולה לאבטח אתר בנייה או משק חקלאי? גלו את העלויות והתמורה של מצלמות אבטחה סולאריות 4G של Site-Control, הפתרון המושלם ללא חשמל ואינטרנט.',
     keywords: ["כמה עולה מצלמת אבטחה לאתר בנייה","מצלמות סולאריות 4G","אבטחת אתר בנייה","מצלמות לחקלאות","מצלמות לאתרים מרוחקים","Reolink PTZ Solar","Reolink GO Plus","עלות אבטחה חקלאית","פתרונות אבטחה B2B"]
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-07-02',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/security-solar-cloud-2026/hero.png',
+    image: '/blog-images/security-solar-cloud-2026/hero.webp',
     seoTitle: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום | Site-Control',
     seoDescription: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
     keywords: ["מצלמת אבטחה סולארית עם גיבוי ענן","מצלמות 4G לאתרי בנייה","אבטחה סולארית לחקלאות","מצלמות לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת ציוד בנייה","מניעת גניבות חקלאיות"]
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-06-29',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/reolink-go-plus/hero.png',
+    image: '/blog-images/reolink-go-plus/hero.webp',
     seoTitle: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B | Site-Control',
     seoDescription: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.',
     keywords: ["Reolink GO Plus ביקורת בעברית","מצלמת אבטחה סולארית 4G","Reolink GO Plus לאתרי בנייה","מצלמות אבטחה לחקלאים","אבטחת אתרים מבודדים","מצלמת סים Reolink","Reolink PTZ Solar B2B","פתרונות אבטחה ללא חשמל","מצלמות סולאריות B2B","אבטחה לשטחים מנותקים"]
@@ -121,7 +121,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-06-25',
     category: 'מצלמות אבטחה / פתרונות B2B / מדריכים / תיעוד בנייה',
-    image: '/blog-images/cameras-sites-construction-2026/hero.png',
+    image: '/blog-images/cameras-sites-construction-2026/hero.webp',
     seoTitle: 'השוואת מצלמות סולאריות 4G לאתרי בנייה: המדריך המקיף | Site-Control',
     seoDescription: 'מומחי Site-Control משווים מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ואתרים מבודדים. מצא את הפתרון המושלם נגד גניבות ופגיעות עם Reolink GO Plus ו-PTZ Solar.',
     keywords: ["השוואת מצלמות סולאריות 4G לאתרי בנייה","מצלמות אבטחה סולאריות 4G","מצלמות אבטחה לאתרי בנייה","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת אתרים מבודדים","מצלמות אבטחה לחקלאות","טיימלאפס לאתרי בנייה","מערכות אבטחה ללא חשמל","פתרונות אבטחה B2B בישראל"]
@@ -135,7 +135,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-06-18',
     category: 'תיעוד בנייה',
-    image: '/blog-images/documentation-project-construction-2026/hero.png',
+    image: '/blog-images/documentation-project-construction-2026/hero.webp',
     seoTitle: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן | Site-Control',
     seoDescription: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.',
     keywords: ["תיעוד ויזואלי של פרויקט בנייה ללקוחות","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","מצלמות לחקלאות","ניהול אתרים מבודדים","קבלני בנייה","פתרונות B2B למצלמות אבטחה","Reolink GO Plus","Reolink PTZ Solar"]
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-06-04',
     category: 'פתרונות B2B',
-    image: '/blog-images/security-2026/hero.png',
+    image: '/blog-images/security-2026/hero.webp',
     seoTitle: 'פתרון אבטחה ללא תשתיות חשמל ואינטרנט: המדריך המלא | Site-Control',
     seoDescription: 'אבטח את אתר הבנייה, המשק החקלאי או האתר המרוחק שלך בקלות. מצלמות אבטחה סולאריות 4G מבית Site-Control מציעות פתרון מלא ללא תלות בחשמל או אינטרנט קווי. ייעוץ חינם לקבלנים, חקלאים ומנהלי אתרים.',
     keywords: ["פתרון אבטחה ללא תשתיות חשמל ואינטרנט","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה ללא חשמל","מצלמות לחקלאות סולאריות","אבטחה לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת B2B ישראל"]
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-28',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/cameras-2026/hero.png',
+    image: '/blog-images/cameras-2026/hero.webp',
     seoTitle: 'מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית | Site-Control',
     seoDescription: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים, חקלאים ומנהלי אתרים.',
     keywords: ["מצלמות לכרם ומטע ללא אינטרנט","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה ללא חשמל","מצלמות לחקלאות סולאריות","אבטחה לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות אבטחה B2B","תיעוד טיימלאפס בנייה"]
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-25',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/warehouse-2026/hero.png',
+    image: '/blog-images/warehouse-2026/hero.webp',
     seoTitle: 'אבטחת מחסן חקלאי מבודד: הפתרון הסולארי החכם 4G | Site-Control',
     seoDescription: 'אבטח את המחסן החקלאי המבודד או אתר הבנייה שלך עם מצלמות אבטחה סולאריות 4G של Site-Control. ללא חשמל, ללא אינטרנט – פתרון מושלם לחקלאים, קבלנים ומנהלי אתרים מרוחקים בישראל. קבל ייעוץ חינם!',
     keywords: ["אבטחת מחסן חקלאי מבודד","מצלמות אבטחה סולאריות 4G","מצלמות Reolink ישראל","אבטחה לאתרי בנייה מרוחקים","מצלמות לחקלאות ללא חשמל","פתרונות אבטחה B2B מבודדים","מניעת גניבות ציוד חקלאי","אבטחת ציוד בנייה"]
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-21',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/4g/hero.png',
+    image: '/blog-images/4g/hero.webp',
     seoTitle: 'ניטור ציוד חקלאי מרחוק 4G: אבטחה סולארית חכמה לשטח | Site-Control',
     seoDescription: 'אבטח את ציודך היקר בשטחים מרוחקים עם מצלמות אבטחה סולאריות 4G. פתרונות ניטור מתקדמים מבית Site-Control לחקלאים, קבלנים ומנהלי אתרים. קבל ייעוץ מומחה עוד היום.',
     keywords: ["ניטור ציוד חקלאי מרחוק 4G","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה סולארית","מצלמות Reolink GO Plus","מצלמות Reolink PTZ Solar","אבטחה ללא חשמל אינטרנט","מצלמות לחקלאים","פתרונות אבטחה B2B ישראל"]
@@ -205,7 +205,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-18',
     category: 'פתרונות B2B',
-    image: '/blog-images/cameras-security-2026/hero.png',
+    image: '/blog-images/cameras-security-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B | Site-Control',
     seoDescription: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים, חקלאים ומנהלי אתרים.',
     keywords: ["מצלמות אבטחה לשדה חקלאי ללא חשמל","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה ללא חשמל","מצלמות אבטחה לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","פתרונות אבטחה B2B בישראל","אבטחת משקים חקלאיים"]
@@ -219,7 +219,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-11',
     category: 'פתרונות B2B',
-    image: '/blog-images/construction-cameras-2026/hero.png',
+    image: '/blog-images/construction-cameras-2026/hero.webp',
     seoTitle: 'פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי | Site-Control',
     seoDescription: 'למד כיצד מצלמות אבטחה סולאריות 4G של Site-Control משפרות פיקוח על עובדים באתר בנייה, מונעות גניבות ומייעלות תיעוד. פתרונות B2B לקבלנים, חקלאים ומנהלי אתרים.',
     keywords: ["פיקוח על עובדים באתר בנייה מצלמות","מצלמות אבטחה סולאריות 4G לאתרי בנייה","מניעת גניבות ציוד בנייה","תיעוד התקדמות בנייה","מצלמות למשקים חקלאיים ללא חשמל","ניהול אתרים מרוחקים מצלמות","Reolink GO Plus 4G","Reolink PTZ Solar"]
@@ -233,7 +233,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-05-07',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/construction-2026/hero.png',
+    image: '/blog-images/construction-2026/hero.webp',
     seoTitle: 'מניעת גניבות ציוד באתר בנייה: הפתרון המקיף עם מצלמות 4G סולאריות | Site-Control',
     seoDescription: 'נלחמים בגניבות ציוד באתר בנייה? Site-Control מציעה מצלמות אבטחה סולאריות 4G ללא תלות בחשמל/אינטרנט. אבטחה חכמה לקבלנים, חקלאים ואתרים מרוחקים.',
     keywords: ["מניעת גניבות ציוד באתר בנייה","מצלמות אבטחה סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","פתרונות אבטחה B2B","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרים מבודדים"]
@@ -247,7 +247,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-04-30',
     category: 'פתרונות B2B',
-    image: '/blog-images/site-construction-2026/hero.png',
+    image: '/blog-images/site-construction-2026/hero.webp',
     seoTitle: 'ניטור אתר בנייה מרחוק 24/7: הפתרון המקיף לאבטחה ותיעוד | Site-Control',
     seoDescription: 'אבטח אתר בנייה, משק חקלאי או אתר מבודד עם מצלמות סולאריות 4G מבית Site-Control. ניטור 24/7, תיעוד התקדמות ומניעת גניבות. קבל ייעוץ חינם.',
     keywords: ["ניטור אתר בנייה מרחוק 24/7","מצלמות אבטחה סולאריות 4G","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאות ללא חשמל","ניטור אתרים מבודדים","תיעוד התקדמות בנייה"]
@@ -261,7 +261,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-04-27',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/cameras-security-construction-2026/hero.png',
+    image: '/blog-images/cameras-security-construction-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה לאתר בנייה ללא חשמל: פתרונות סולאריים 4G | Site-Control',
     seoDescription: 'קבלנים, חקלאים ומנהלי אתרים מבודדים: אבטחו אתרים ללא חשמל ואינטרנט עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מניעת גניבות, תיעוד בנייה וראש שקט.',
     keywords: ["מצלמות אבטחה לאתר בנייה ללא חשמל","מצלמות סולאריות 4G","אבטחת אתרי בנייה B2B","מצלמות לחקלאות סולאריות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות אבטחה ניידות","פתרונות אבטחה ללא אינטרנט","מניעת גניבות באתר בנייה"]
@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-04-23',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/cameras-security-detection-face-2026/hero.png',
+    image: '/blog-images/cameras-security-detection-face-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים | Site-Control',
     seoDescription: 'גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.',
     keywords: ["מצלמות אבטחה זיהוי פנים","מצלמות סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","זיהוי תנועה חכם"]
@@ -289,7 +289,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-04-02',
     category: 'תיעוד בנייה',
-    image: '/blog-images/photography-timelapse-construction-2026/hero.png',
+    image: '/blog-images/photography-timelapse-construction-2026/hero.webp',
     seoTitle: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים | Site-Control',
     seoDescription: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!',
     keywords: ["צילום טיימלאפס עבור חברות בנייה","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","תיעוד פרויקטים בבנייה","מצלמות ללא חשמל ואינטרנט","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות לחקלאות","ניהול אתרים מרוחקים"]
@@ -303,7 +303,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-03-26',
     category: 'פתרונות B2B',
-    image: '/blog-images/blog-post/hero.png',
+    image: '/blog-images/blog-post/hero.webp',
     seoTitle: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G | Site-Control',
     seoDescription: 'אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל.',
     keywords: ["אבטחת שטחים חקלאיים","מצלמות אבטחה סולאריות 4G","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאים","ניהול אתרים מרוחקים","מניעת גניבות ציוד","אבטחה ללא חשמל אינטרנט"]
@@ -317,7 +317,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-03-02',
     category: 'מצלמות אבטחה',
-    image: '/blog-images/security-solar-2026/hero.png',
+    image: '/blog-images/security-solar-2026/hero.webp',
     seoTitle: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח | Site-Control',
     seoDescription: 'מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control.',
     keywords: ["מצלמת אבטחה סולארית לשטח פתוח","אבטחה חקלאית","מצלמה סלולרית 4G","אבטחה לשטח מרוחק","פתרון אבטחה עצמאי","אנרגיה סולארית לאבטחה","מצלמות אבטחה ישראל","Site-Control"]
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-02-23',
     category: 'תיעוד בנייה',
-    image: '/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.png',
+    image: '/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.webp',
     seoTitle: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח | Site-Control',
     seoDescription: 'גלו איך טיימלאפס יכול לשדרג את שיווק פרויקטי הבנייה שלכם. מדריך מקיף מבית Site-Control עם המלצות ציוד, טיפים להתקנה ושאלות נפוצות.',
     keywords: ["טיימלאפס","שיווק פרויקטי בנייה","פרסום בנייה","מצלמות אבטחה בנייה","תיעוד בנייה","Site-Control","Hikvision","Dahua","Reolink"]
@@ -359,7 +359,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-02-05',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/documentation-progress-construction-cameras-2026/hero.png',
+    image: '/blog-images/documentation-progress-construction-cameras-2026/hero.webp',
     seoTitle: 'תיעוד בנייה לצרכים משפטיים בישראל - כל מה שצריך לדעת | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על תיעוד בנייה לצרכים משפטיים בישראל עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["תיעוד בנייה לצרכים משפטיים","תיעוד בנייה לצרכים משפטיים 2026","תיעוד בנייה לצרכים משפטיים למכירה","תיעוד בנייה לצרכים משפטיים מחיר","תיעוד בנייה לצרכים משפטיים המלצות","תיעוד בנייה לצרכים משפטיים ביקורות"]
@@ -373,7 +373,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-02-01',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/cameras-security-agriculture-2027/hero.png',
+    image: '/blog-images/cameras-security-agriculture-2027/hero.webp',
     seoTitle: 'מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות. מצלמות אבטחה לחקלאות, מצלמות אבטחה לחקלאות 2027, מצלמות אבטחה לחקלאות למכירה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מצלמות אבטחה לחקלאות","מצלמות אבטחה לחקלאות 2027","מצלמות אבטחה לחקלאות למכירה","מצלמות אבטחה לחקלאות מחיר","מצלמות אבטחה לחקלאות המלצות","מצלמות אבטחה לחקלאות ביקורות"]
@@ -387,7 +387,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-31',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/cameras-security-outdoor-weatherproof-water-2026/hero.png',
+    image: '/blog-images/cameras-security-outdoor-weatherproof-water-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה חיצוניות עמידות במים 2026 - היתרונות, החסרונות ומה כדאי לקנות | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מצלמות אבטחה חיצוניות עמידות במים 2026 - היתרונות, החסרונות ומה כדאי לקנות. מצלמות אבטחה חיצוניות עמידות במים, מצלמות אבטחה חיצוניות עמידות במים 2026, מצלמות אבטחה חיצוניות עמידות במים למכירה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מצלמות אבטחה חיצוניות עמידות במים","מצלמות אבטחה חיצוניות עמידות במים 2026","מצלמות אבטחה חיצוניות עמידות במים למכירה","מצלמות אבטחה חיצוניות עמידות במים מחיר","מצלמות אבטחה חיצוניות עמידות במים המלצות","מצלמות אבטחה חיצוניות עמידות במים ביקורות"]
@@ -401,7 +401,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-29',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/cameras-security-with-recording-cloud-2026/hero.png',
+    image: '/blog-images/cameras-security-with-recording-cloud-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026 | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026. מצלמות אבטחה עם הקלטה ענן, מצלמות אבטחה עם הקלטה ענן 2026, מצלמות אבטחה עם הקלטה ענן למכירה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מצלמות אבטחה עם הקלטה ענן","מצלמות אבטחה עם הקלטה ענן 2026","מצלמות אבטחה עם הקלטה ענן למכירה","מצלמות אבטחה עם הקלטה ענן מחיר","מצלמות אבטחה עם הקלטה ענן המלצות","מצלמות אבטחה עם הקלטה ענן ביקורות"]
@@ -415,7 +415,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/installation-cameras-security-home-2026/hero.png',
+    image: '/blog-images/installation-cameras-security-home-2026/hero.webp',
     seoTitle: 'התקנת מצלמות אבטחה לבית 2026 - כל מה שצריך לדעת לפני הרכישה | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על התקנת מצלמות אבטחה לבית 2026 - כל מה שצריך לדעת לפני הרכישה. התקנת מצלמות אבטחה לבית, התקנת מצלמות אבטחה לבית 2026, התקנת מצלמות אבטחה לבית למכירה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["התקנת מצלמות אבטחה לבית","התקנת מצלמות אבטחה לבית 2026","התקנת מצלמות אבטחה לבית למכירה","התקנת מצלמות אבטחה לבית מחיר","התקנת מצלמות אבטחה לבית המלצות","התקנת מצלמות אבטחה לבית ביקורות"]
@@ -429,7 +429,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/cameras-security-with-detection-face-2026/hero.png',
+    image: '/blog-images/cameras-security-with-detection-face-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות. מצלמות אבטחה עם זיהוי פנים, מצלמות אבטחה עם זיהוי פנים 2026, מצלמות אבטחה עם זיהוי פנים למכירה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מצלמות אבטחה עם זיהוי פנים","מצלמות אבטחה עם זיהוי פנים 2026","מצלמות אבטחה עם זיהוי פנים למכירה","מצלמות אבטחה עם זיהוי פנים מחיר","מצלמות אבטחה עם זיהוי פנים המלצות","מצלמות אבטחה עם זיהוי פנים ביקורות"]
@@ -443,7 +443,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/smart-alarm-vs-security-cameras-2026/hero.png',
+    image: '/blog-images/smart-alarm-vs-security-cameras-2026/hero.webp',
     seoTitle: 'מערכת אזעקה חכמה מול מצלמות אבטחה 2026 - מה יותר כדאי לבית שלך? | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מערכת אזעקה חכמה מול מצלמות אבטחה 2026 - מה יותר כדאי לבית שלך?. מערכת אזעקה או מצלמות, אזעקה חכמה לבית, השוואה מצלמות אזעקה עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מערכת אזעקה או מצלמות","אזעקה חכמה לבית","השוואה מצלמות אזעקה","אבטחה לבית פרטי","מערכת אבטחה משולבת","מצלמות מול אזעקה"]
@@ -457,7 +457,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'פתרונות לעסקים',
-    image: '/blog-images/4g-solar-security-cameras-remote-sites-2026/hero.png',
+    image: '/blog-images/4g-solar-security-cameras-remote-sites-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה 4G ללא חשמל 2026 - הפתרון המושלם לאתרים מרוחקים | Site-Control',
     seoDescription: 'מדריך מקצועי מקיף על מצלמות אבטחה 4G ללא חשמל 2026 - הפתרון המושלם לאתרים מרוחקים. מצלמות אבטחה ללא חשמל, מצלמות 4G סולאריות, מצלמות אבטחה לאתרים מרוחקים עם פתרונות מתקדמים והתקנה מקצועית.',
     keywords: ["מצלמות אבטחה ללא חשמל","מצלמות 4G סולאריות","מצלמות אבטחה לאתרים מרוחקים","מצלמות אבטחה אלחוטיות","מצלמות בטחון סולאריות","מצלמות אבטחה עם סים"]
@@ -471,7 +471,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'מדריכים משפטיים',
-    image: '/blog-images/privacy-law-amendment-13-cameras-2026/hero.png',
+    image: '/blog-images/privacy-law-amendment-13-cameras-2026/hero.webp',
     seoTitle: 'חוק הגנת הפרטיות החדש 2026 (תיקון 13) | Site-Control',
     seoDescription: 'המדריך המלא לתיקון 13 לחוק הגנת הפרטיות. כל מה שצריך לדעת על מצלמות אבטחה בבניין משותף ובעסק.',
     keywords: ['חוק הגנת הפרטיות מצלמות', 'תיקון 13', 'מצלמות בבניין משותף', 'אבטחת מידע', 'GDPR ישראל']
@@ -496,7 +496,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-26',
     category: 'טכנולוגיה וחדשנות',
-    image: '/blog-images/smart-security-ai-2026/hero.png',
+    image: '/blog-images/smart-security-ai-2026/hero.webp',
     seoTitle: 'מערכות אבטחה חכמות עם AI בישראל 2026 | Site-Control',
     seoDescription: 'מערכות אבטחה חכמות עם AI בישראל 2026 - מדריך מקיף ומעודכן. מערכות אבטחה חכמות, מצלמות אבטחה AI, בינה מלאכותית אבטחה.',
     keywords: ['מערכות אבטחה חכמות', 'מצלמות אבטחה AI', 'בינה מלאכותית אבטחה', 'מערכת אבטחה חכמה לבית', 'זיהוי פנים מצלמות אבטחה', 'אבטחה חכמה ישראל']
@@ -523,7 +523,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-27',
     category: 'מדריכים מקצועיים',
-    image: '/blog-images/smart-biometric-locks-2026/hero.png',
+    image: '/blog-images/smart-biometric-locks-2026/hero.webp',
     seoTitle: 'מנעולים חכמים ביומטריים 2026 - המדריך המלא | Site-Control',
     seoDescription: 'מדריך מקיף למנעולים חכמים ביומטריים 2026. כל מה שצריך לדעת על מנעולי טביעת אצבע, זיהוי פנים, ושליטה מרחוק.',
     keywords: ['מנעול חכם ביומטרי', 'מנעול טביעת אצבע לדלת', 'מנעול חכם לדלת כניסה', 'מנעול חכם עם מצלמה', 'התקנת מנעול חכם', 'אבטחת בית חכם']
@@ -549,7 +549,7 @@ export const blogPosts: BlogPost[] = [
     author: 'צוות Site-Control',
     date: '2026-01-26',
     category: 'מדריכים מקצועיים',
-    image: '/blog-images/solar-security-cameras-2026/hero.png',
+    image: '/blog-images/solar-security-cameras-2026/hero.webp',
     seoTitle: 'מצלמות אבטחה סולאריות לבית ולעסק 2026 - המדריך המלא | Site-Control',
     seoDescription: 'מדריך מקיף למצלמות אבטחה סולאריות 2026: יתרונות, התקנה, מחירים והמלצות. גלו איך מצלמות סולאריות חוסכות חשמל ומספקות אבטחה 24/7 ללא תלות ברשת החשמל.',
     keywords: ['מצלמות אבטחה סולאריות', 'מצלמות סולאריות לבית', 'מצלמות אבטחה ללא חשמל', 'מצלמות אבטחה עם פאנל סולארי', 'מצלמות אבטחה אלחוטיות סולאריות', 'התקנת מצלמות סולאריות']

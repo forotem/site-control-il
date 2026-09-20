@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://www.site-control-il.com/blog/construction-cameras-2026',
     images: [
       {
-        url: 'https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.webp',
         width: 1200,
         height: 630,
         alt: 'פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי',
     description: 'למד כיצד מצלמות אבטחה סולאריות 4G של Site-Control משפרות פיקוח על עובדים באתר בנייה, מונעות גניבות ומייעלות תיעוד. פתרונות B2B לקבלנים, חקלאים ומנהלי אתרים.',
-    images: ['https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.webp'],
   },
   alternates: {
     canonical: 'https://www.site-control-il.com/blog/construction-cameras-2026',
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי","description":"למד כיצד מצלמות אבטחה סולאריות 4G של Site-Control משפרות פיקוח על עובדים באתר בנייה, מונעות גניבות ומייעלות תיעוד. פתרונות B2B לקבלנים, חקלאים ומנהלי אתרים.","image":"https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.png","datePublished":"2026-05-11","dateModified":"2026-05-11","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/construction-cameras-2026"},"keywords":"פיקוח על עובדים באתר בנייה מצלמות, מצלמות אבטחה סולאריות 4G לאתרי בנייה, מניעת גניבות ציוד בנייה, תיעוד התקדמות בנייה, מצלמות למשקים חקלאיים ללא חשמל, ניהול אתרים מרוחקים מצלמות, Reolink GO Plus 4G, Reolink PTZ Solar","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/construction-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי","description":"למד כיצד מצלמות אבטחה סולאריות 4G של Site-Control משפרות פיקוח על עובדים באתר בנייה, מונעות גניבות ומייעלות תיעוד. פתרונות B2B לקבלנים, חקלאים ומנהלי אתרים.","image":"https://www.site-control-il.com/blog-images/construction-cameras-2026/hero.webp","datePublished":"2026-05-11","dateModified":"2026-05-11","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/construction-cameras-2026"},"keywords":"פיקוח על עובדים באתר בנייה מצלמות, מצלמות אבטחה סולאריות 4G לאתרי בנייה, מניעת גניבות ציוד בנייה, תיעוד התקדמות בנייה, מצלמות למשקים חקלאיים ללא חשמל, ניהול אתרים מרוחקים מצלמות, Reolink GO Plus 4G, Reolink PTZ Solar","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/construction-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -63,7 +63,7 @@ export default function Page() {
           </h1>
           <picture>
             <img
-              src="/blog-images/construction-cameras-2026/hero.png"
+              src="/blog-images/construction-cameras-2026/hero.webp"
               alt="פיקוח על עובדים באתר בנייה: מצלמות 4G סולאריות לניהול אפקטיבי"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
               loading="lazy"

@@ -37,7 +37,7 @@ export default function Page() {
           </h1>
           <picture>
             <img
-              src="/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.png"
+              src="/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.webp"
               alt="טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
               loading="lazy"

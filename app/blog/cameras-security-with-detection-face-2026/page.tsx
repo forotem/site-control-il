@@ -16,7 +16,7 @@ export default function Page() {
 <picture>
         <source srcset="/blog-images/cameras-security-with-detection-face-2026/hero.avif" type="image/avif" />
         <source srcset="/blog-images/cameras-security-with-detection-face-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-detection-face-2026/hero.png" alt="מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/blog-images/cameras-security-with-detection-face-2026/hero.webp" alt="מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
       </picture>
 
 <p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל27.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>

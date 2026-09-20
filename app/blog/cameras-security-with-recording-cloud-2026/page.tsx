@@ -15,7 +15,7 @@ export default function Page() {
 <picture>
         <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/hero.avif" type="image/avif" />
         <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-recording-cloud-2026/hero.png" alt="מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/blog-images/cameras-security-with-recording-cloud-2026/hero.webp" alt="מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
       </picture>
 
 <p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל29.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
@@ -26,7 +26,7 @@ export default function Page() {
 <picture>
         <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/infographic.avif" type="image/avif" />
         <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/infographic.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-recording-cloud-2026/infographic.png" alt="אינפוגרפיק - מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/blog-images/cameras-security-with-recording-cloud-2026/infographic.webp" alt="אינפוגרפיק - מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
       </picture>
 <p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
 <p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://www.site-control-il.com/blog/documentation-project-construction-2026',
     images: [
       {
-        url: 'https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.png',
+        url: 'https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.webp',
         width: 1200,
         height: 630,
         alt: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן',
     description: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.',
-    images: ['https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.png'],
+    images: ['https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.webp'],
   },
   alternates: {
     canonical: 'https://www.site-control-il.com/blog/documentation-project-construction-2026',
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן","description":"קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.","image":"https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.png","datePublished":"2026-06-18","dateModified":"2026-06-18","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/documentation-project-construction-2026"},"keywords":"תיעוד ויזואלי של פרויקט בנייה ללקוחות, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, מצלמות לחקלאות, ניהול אתרים מבודדים, קבלני בנייה, פתרונות B2B למצלמות אבטחה, Reolink GO Plus, Reolink PTZ Solar","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/documentation-project-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן","description":"קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.","image":"https://www.site-control-il.com/blog-images/documentation-project-construction-2026/hero.webp","datePublished":"2026-06-18","dateModified":"2026-06-18","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/documentation-project-construction-2026"},"keywords":"תיעוד ויזואלי של פרויקט בנייה ללקוחות, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה, מצלמות לחקלאות, ניהול אתרים מבודדים, קבלני בנייה, פתרונות B2B למצלמות אבטחה, Reolink GO Plus, Reolink PTZ Solar","articleSection":"תיעוד בנייה","url":"https://www.site-control-il.com/blog/documentation-project-construction-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -63,7 +63,7 @@ export default function Page() {
           </h1>
           <picture>
             <img
-              src="/blog-images/documentation-project-construction-2026/hero.png"
+              src="/blog-images/documentation-project-construction-2026/hero.webp"
               alt="תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
               loading="lazy"

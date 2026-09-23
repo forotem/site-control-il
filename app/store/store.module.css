@@ -74,10 +74,10 @@
 .recAlts { display: grid; gap: 0.5rem; }
 
 /* ---- category nav ---- */
-.catNav { position: sticky; top: 64px; z-index: 5; display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.6rem 0; margin-bottom: 1rem; scroll-margin-top: 70px;
+.catNav { position: sticky; top: 72px; z-index: 5; display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.6rem 0; margin-bottom: 1rem; scroll-margin-top: 70px;
   background: linear-gradient(180deg, var(--bg) 70%, transparent); scrollbar-width: none; }
 .catNav::-webkit-scrollbar { display: none; }
-.catNav a { white-space: nowrap; padding: 0.5rem 0.95rem; border-radius: 999px; border: 1px solid var(--glass-border); background: var(--glass); color: var(--text); font-size: 0.9rem; text-decoration: none; transition: var(--transition-fast); }
+.catNav a { flex: 0 0 auto; width: max-content; min-width: max-content; white-space: nowrap; padding: 0.5rem 0.95rem; border-radius: 999px; border: 1px solid var(--glass-border); background: var(--glass); color: var(--text); font-size: 0.9rem; text-decoration: none; transition: var(--transition-fast); }
 .catNav a small { color: var(--muted); margin-inline-start: 0.3rem; }
 .catNav a:hover { border-color: var(--border-accent); color: var(--text-bright); box-shadow: var(--shadow-glow); }
 

@@ -75,6 +75,8 @@ export function StoreChat() {
   }, [pathname]);
   useEffect(() => {
     if (open) { setNudge(null); setUnread(0); setTimeout(() => inputRef.current?.focus(), 50); }
+    document.body.classList.toggle("sc-chat-open", open);
+    return () => { document.body.classList.remove("sc-chat-open"); };
   }, [open]);
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });

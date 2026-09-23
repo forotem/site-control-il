@@ -49,10 +49,11 @@ export function CartDrawer() {
     return () => window.removeEventListener("sc-cart-open", onOpen);
   }, []);
   useEffect(() => {
+    document.body.classList.toggle("sc-cart-open", open);
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); document.body.classList.remove("sc-cart-open"); };
   }, [open]);
 
   const rows = useMemo(() => lines.map((l) => ({ ...l, p: bySlug(l.slug) })).filter((r) => r.p), [lines]);

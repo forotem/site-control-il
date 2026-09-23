@@ -637,3 +637,16 @@ section > h2::after {
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 
+
+/* ===== OVERLAYS (צ'אט / עגלה): מסתירים את הכפתורים הצפים כדי שלא יכסו את שדה הכתיבה ===== */
+body.sc-chat-open .floating-cta, body.sc-cart-open .floating-cta,
+body.sc-chat-open .scroll-top, body.sc-cart-open .scroll-top { display: none !important; }
+@media (max-width: 600px) { body.sc-chat-open, body.sc-cart-open { overflow: hidden; } }
+
+/* ===== NAV בטלפון: שורה אחת שנגללת לרוחב במקום שתי שורות שאוכלות חצי מסך ===== */
+@media (max-width: 700px) {
+  nav > div { flex-wrap: nowrap !important; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: flex-start !important; gap: 0.25rem !important; }
+  nav > div::-webkit-scrollbar { display: none; }
+  nav > div > a { flex: 0 0 auto; white-space: nowrap; }
+  nav > div > a:first-child span { display: none; } /* רק הלוגו, בלי הטקסט */
+}

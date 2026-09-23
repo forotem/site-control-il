@@ -1,0 +1,325 @@
+[
+  {
+    "model": "DS-7632NXI-K2(D)",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה NVR",
+    "title_he": "מערכת הקלטה Hikvision NVR ל-32 ערוצים AcuSense 4K, 2 דיסקים - DS-7632NXI-K2(D)",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "32 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
+      "רוחב פס נכנס 256Mbps / יוצא 160Mbps",
+      "2 כונני SATA עד 10TB כל אחד (ללא דיסק)",
+      "יציאות HDMI 4K (3840x2160) ו-VGA",
+      "AcuSense: זיהוי אדם/רכב (Motion Detection 2.0), הגנה היקפית וזיהוי פנים בערוצים נבחרים",
+      "H.265+/H.265/H.264+, שלדת 1U, ללא PoE"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2019/07/DS-7632NI-K2.jpeg",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/pl/firmware/DS-7632NXI-K2D_Datasheet_20250630_PL.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found. Foreign: HIKD (hikdistribution.com) $266 regular; Senetic UK GBP 176.37 ex-VAT; Amazon US listing (B0DS5V542Q) available.",
+    "notes": "Telran: not carried (Telran search returns no Hikvision Pro NVRs; Telran's HikVision brand page (175 items) holds only HiLook-branded NVR-1xx/2xxMH-C units, HiLook DVR-2xxQ/U-F1, 2-4MP cameras and accessories). Closest Telran item: none for 32ch. Image is of sibling DS-7632NI-K2 (same chassis) from zbm.co.il, whose page https://www.zbm.co.il/product/ds-7632ni-k2/ is price-on-request. zap.co.il 32-camera Hikvision filter currently returns no results."
+  },
+  {
+    "model": "DS-7616NXI-K2(D)",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה NVR",
+    "title_he": "מערכת הקלטה Hikvision NVR ל-16 ערוצים AcuSense 4K, 2 דיסקים - DS-7616NXI-K2(D)",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "16 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
+      "רוחב פס נכנס/יוצא 160Mbps",
+      "2 כונני SATA עד 10TB כל אחד",
+      "יציאות HDMI 4K ו-VGA, פענוח עד 2x12MP / 3x8MP / 6x4MP / 12x1080p",
+      "AcuSense: Motion Detection 2.0 (אדם/רכב) בכל הערוצים, זיהוי פנים 1 ערוץ / הגנה היקפית 2 ערוצים",
+      "H.265+/H.265/H.264+, שלדת 1U, ללא PoE"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2023/12/Hikvision-DS-7616NXI-K2-16-ch-1U-K-Series-AcuSense-4K-NVR.webp",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/pl/firmware/DS-7616NXI-K2D_Datasheet_20250721.pdf",
+    "market_prices": [
+      { "site": "technovision.co.il (DS-7616NXI-K2-1T, incl. 1TB HDD)", "price_ils": 1149, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-hikvision-ds-7616nxi-k2" },
+      { "site": "zbm.co.il (DS-7616NXI-K2(STD)-2T, incl. 2TB HDD, sale price)", "price_ils": 1560, "url": "https://zbm.co.il/product/hikvision-ds-7616nxi-k2-std-2t/" },
+      { "site": "zap.co.il (DS-7616NXI-K2(STD)-2T)", "price_ils": 1690, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700" }
+    ],
+    "market_low_ils": 1149,
+    "market_typical_ils": 1560,
+    "foreign_prices_note": "Getic from $158.82 (DS-7616NXI-K2(D) bare); HIKD $328 for /16P PoE variant.",
+    "notes": "Telran: not carried. Closest Telran item: HiLook NVR-116MH-C 16ch 1-SATA with 2TB (https://www.telran.co.il/product/4194/...) and NVR-216MH-C/16P 16ch 16PoE 2-SATA with 2TB (https://www.telran.co.il/product/4193/...), both price-on-request, not AcuSense. All Israeli listings include a pre-installed HDD; tactech.co.il lists DS-7616NXI-K2(D) bare but quote-only (https://tactech.co.il/product/ds-7616nxi-k2_d_/). zbm regular (non-sale) price for STD-2T is 2,713 ILS."
+  },
+  {
+    "model": "DS-7616NXI-K1(D)",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה NVR",
+    "title_he": "מערכת הקלטה Hikvision NVR ל-16 ערוצים AcuSense 4K, דיסק אחד - DS-7616NXI-K1(D)",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "16 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
+      "רוחב פס נכנס 80Mbps / יוצא 160Mbps",
+      "כונן SATA אחד עד 10TB",
+      "יציאות HDMI 4K ו-VGA",
+      "AcuSense: Motion Detection 2.0 (אדם/רכב), זיהוי פנים 1 ערוץ / הגנה היקפית 2 ערוצים",
+      "H.265+/H.265/H.264+, שלדת 1U, ללא PoE"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2023/12/Hikvision-DS-7616NXI-K2-16-ch-1U-K-Series-AcuSense-4K-NVR.webp",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/pl/firmware/DS-7616NXI-K1D_Datasheet_20250721.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found. Foreign: HIKD $171 regular; Amazon.in INR 13,999; eBay listings exist.",
+    "notes": "Telran: not carried (closest: HiLook NVR-116MH-C 16ch 1-SATA, Telran product 4194). Not found on zbm, technovision, tactech or zap (searched zbm site search and zap 16-camera Hikvision filter). Pricing proxy: the K2 (2-bay) variant sells in Israel for 1,149-1,690 ILS with HDD, so K1 bare should list slightly below. Image shown is the K2 sibling (identical chassis)."
+  },
+  {
+    "model": "DS-7608NXI-K1/8P(D)",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה NVR",
+    "title_he": "מערכת הקלטה Hikvision NVR ל-8 ערוצים עם 8 יציאות PoE, AcuSense 4K - DS-7608NXI-K1/8P(D)",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8 ערוצי IP + מתג PoE מובנה 8 יציאות (Plug & Play)",
+      "רזולוציית הקלטה עד 12MP לערוץ",
+      "רוחב פס נכנס 80Mbps / יוצא 160Mbps",
+      "כונן SATA אחד עד 10TB",
+      "יציאות HDMI 4K ו-VGA",
+      "AcuSense: Motion Detection 2.0 (אדם/רכב), זיהוי פנים 1 ערוץ / הגנה היקפית 2 ערוצים"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2023/12/Hikvision-DS-7608NXI-K2-8-ערוצים-1U-K-Series-AcuSense-4K-NVR-1.webp",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000007/S000000026/OFR000042/M000058878/Data_Sheet/Datasheet-of-DS-7608NXI-K1_8P_NVRB_V4.74.000_20230209.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found for the K1/8P. Foreign: HIKD $166.50-$221; Dipolnet PL; Amazon US (B0GGZJ16XP) $247.49.",
+    "notes": "Telran: not carried (closest: HiLook NVR-108MH-C/8P, Telran product 4043, price-on-request). Israeli proxies for the 2-bay sibling DS-7608NXI-K2/8P: zap.co.il lists DS-7608NXI-K2/8P-2T at 2,050 ILS and DS-7608NXI-K2-2T (no PoE) at 1,361 ILS (https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708); zbm (https://zbm.co.il/product/ds-7608nxi-k2-8p/) and tactech (https://tactech.co.il/product/ds-7608nxi-k2-8p/) are quote-only; technovision sells it only inside camera kits. Datasheet link is the (B) revision; (D) revision not indexed."
+  },
+  {
+    "model": "iDS-7232HQHI-M2/XT",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה DVR",
+    "title_he": "מערכת הקלטה Hikvision DVR היברידית ל-32 ערוצים AcuSense, 2 דיסקים - iDS-7232HQHI-M2/XT",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "32 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 8 ערוצי IP, סה\"כ עד 40 ערוצים",
+      "הקלטה 1080p בכל הערוצים, קלט IP עד 8MP",
+      "2 כונני SATA עד 10TB כל אחד",
+      "יציאות HDMI 4K ו-VGA, שמע דרך קואקס",
+      "AcuSense: Motion Detection 2.0 (אדם/רכב) בכל הערוצים האנלוגיים, זיהוי פנים והגנה היקפית מבוססי Deep Learning",
+      "דחיסת H.265 Pro+, שלדת 1U"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/210_160520241027311_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000120173/Datasheet-of-iDS-7232HQHI-M2_XT_V4.71.500_20240311.pdf",
+    "market_prices": [
+      { "site": "technovision.co.il (iDS-7232HQHI-M2/XT 4T, incl. 4TB HDD)", "price_ils": 3450, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7232hqhi-m2s" }
+    ],
+    "market_low_ils": 3450,
+    "market_typical_ils": 3450,
+    "foreign_prices_note": "sourcetechcomputer.com $490.56 (sale, from $588.69); casmarglobal $847.97; India INR 27,500.",
+    "notes": "Telran: not carried (closest: HiLook DVR-232 class not listed; Telran has 'DVR 32-ch XVR ... 4MP' product 5319, HiLook, non-AcuSense). Only one Israeli listing found and it bundles a 4TB HDD; bare unit would be lower. zap 32-camera Hikvision filter empty; zbm carries iDS-7332HUHI-M4/S (higher tier) instead."
+  },
+  {
+    "model": "iDS-7216HQHI-M1/XT",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה DVR",
+    "title_he": "מערכת הקלטה Hikvision DVR היברידית ל-16 ערוצים AcuSense - iDS-7216HQHI-M1/XT",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "16 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 8 ערוצי IP, סה\"כ עד 24 ערוצים",
+      "הקלטה עד 3K/5MP Lite @12fps, 1080p@15fps",
+      "כונן SATA אחד עד 10TB",
+      "יציאות HDMI 4K ו-VGA, שמע דרך קואקס",
+      "AcuSense: Motion Detection 2.0 בכל הערוצים, זיהוי פנים 4 ערוצים / הגנה היקפית 8 ערוצים, AcuSearch 8 ערוצים",
+      "דחיסת H.265 Pro+, שלדת 1U"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/207_160520241009551_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000120171/iDS-7216HQHI-M1_XT_Datasheet_20241018.pdf",
+    "market_prices": [
+      { "site": "technovision.co.il (iDS-7216HQHI-M1/XT 2T, incl. 2TB HDD)", "price_ils": 1890, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7216hqhi-m1s" },
+      { "site": "zap.co.il (iDS-7216HQHI-M1/XT-2T)", "price_ils": 2149, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700" },
+      { "site": "zap.co.il (iDS-7216HQHI-M1/XT)", "price_ils": 2150, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700" }
+    ],
+    "market_low_ils": 1890,
+    "market_typical_ils": 2100,
+    "foreign_prices_note": "eBay DE ~EUR 213; Cambodia $171; Mexico MXN 3,849.",
+    "notes": "Telran: not carried (closest: HiLook DVR-216U-F1 / 'Turbo HD DVR 16 Ch' product 4064, non-AcuSense). zbm lists the older iDS-7216HQHI-M1/S (1TB) quote-only (https://zbm.co.il/product/hikvision-ids-7216hqhi-m1-s/); zap shows M1/S at 1,659 ILS and M1/E at 999 ILS for reference."
+  },
+  {
+    "model": "iDS-7208HQHI-M1/XT",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה DVR",
+    "title_he": "מערכת הקלטה Hikvision DVR היברידית ל-8 ערוצים AcuSense - iDS-7208HQHI-M1/XT",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 4 ערוצי IP, סה\"כ עד 12 ערוצים",
+      "הקלטה עד 3K/5MP Lite, 1080p@15fps",
+      "כונן SATA אחד עד 10TB",
+      "יציאות HDMI 4K ו-VGA, שמע דרך קואקס",
+      "AcuSense: Motion Detection 2.0 בכל הערוצים, זיהוי פנים 2 ערוצים / הגנה היקפית 4 ערוצים",
+      "דחיסת H.265 Pro+, שלדת 1U"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2021/01/iDS-7208HQHI-M1_S.png.thumb_.1280.1280.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000128024/iDS-7208HQHI-M1_XT_Datasheet_20241018.pdf",
+    "market_prices": [
+      { "site": "zap.co.il (iDS-7208HQHI-M1/XT-2T, incl. 2TB HDD)", "price_ils": 1499, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708" },
+      { "site": "zap.co.il (iDS-7208HQHI-M1/S, older sibling)", "price_ils": 1300, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708" }
+    ],
+    "market_low_ils": 1300,
+    "market_typical_ils": 1499,
+    "foreign_prices_note": "US retailers ~$203.50 (M1/S); Dipolnet PL and Megateh EU list M1/XT (price on page).",
+    "notes": "Telran: not carried (closest: HiLook DVR-208U-F1 'Turbo HD DVR 8 Ch' product 4063, non-AcuSense). No dedicated zbm/technovision page for the M1/XT 8ch found; technovision sells the HUHI (5MP) sibling."
+  },
+  {
+    "model": "iDS-7204HQHI-M1/XT",
+    "brand": "Hikvision",
+    "category": "מערכות הקלטה DVR",
+    "title_he": "מערכת הקלטה Hikvision DVR היברידית ל-4 ערוצים AcuSense - iDS-7204HQHI-M1/XT",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "4 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 2 ערוצי IP, סה\"כ עד 6 ערוצים",
+      "הקלטה עד 3K/5MP Lite, 1080p@15fps",
+      "כונן SATA אחד עד 10TB",
+      "יציאות HDMI 4K ו-VGA, שמע דרך קואקס",
+      "AcuSense: Motion Detection 2.0 בכל הערוצים, זיהוי פנים 1 ערוץ / הגנה היקפית 2 ערוצים",
+      "דחיסת H.265 Pro+, שלדת 1U"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/iDS-7204HQHI-M1_14052024125427_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000128025/iDS-7204HQHI-M1_XT_Datasheet_20241018.pdf",
+    "market_prices": [
+      { "site": "zbm.co.il (iDS-7204HQHI-M1/XT-2T, incl. 2TB HDD, sale price)", "price_ils": 1134, "url": "https://zbm.co.il/product/ids-7204hqhi-m1-xt-2t/" },
+      { "site": "technovision.co.il (iDS-7204HQHI-M1/S, incl. 1TB HDD)", "price_ils": 1290, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7204hqhi-m1s" }
+    ],
+    "market_low_ils": 1134,
+    "market_typical_ils": 1200,
+    "foreign_prices_note": "Senetic UK GBP 70.97 ex-VAT; HIKD $123; casmarglobal $167.74.",
+    "notes": "Telran: not carried (closest: HiLook DVR-204U-F1 'Turbo HD DVR 4 Ch', https://www.telran.co.il/product/4062/turbo-hd-dvr-4-ch, SKU 204U-F1, non-AcuSense, price-on-request). zbm regular price 1,972 ILS before the sale."
+  },
+  {
+    "model": "DS-2CD2T87G2H-LISU/SL 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP",
+    "title_he": "מצלמת צינור Hikvision IP 8MP ColorVu Smart Hybrid Light עם סטרובוסקופ וסירנה, 2.8 מ\"מ - DS-2CD2T87G2H-LISU/SL",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "חיישן 1/1.8\" CMOS, 8MP (3840x2160), עדשה קבועה 2.8 מ\"מ F1.0",
+      "Smart Hybrid Light: אינפרא-אדום + אור לבן עד 60 מ', צבע 24/7 (ColorVu)",
+      "AcuSense: סיווג אדם/רכב, הגנה היקפית; הרתעה אקטיבית עם אור מהבהב וסירנה",
+      "מיקרופון ורמקול מובנים (שמע דו-כיווני), WDR 130dB",
+      "חריץ microSD עד 512GB, IP67, הזנה PoE / 12V DC",
+      "H.265+, ONVIF"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2024/11/筒机45pro-海外-右侧.webp",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR007893/M000078499/SM000058449/Data_Sheet/DS-2CD2T87G2H-LISU_SL_Datasheet_20230907.pdf",
+    "market_prices": [
+      { "site": "zbm.co.il (DS-2CD2T87G2H-LISU/SL2, sale price)", "price_ils": 1350, "url": "https://zbm.co.il/product/hikvision-ds-2cd2t87g2h-lisu-sl2-8-mp-smart-hybrid-light-with-colorvu-fixed-bullet-network-camera/" },
+      { "site": "zap.co.il - zbm listing", "price_ils": 1399, "url": "https://www.zap.co.il/model.aspx?modelid=1263020" },
+      { "site": "zap.co.il - AllTechStore", "price_ils": 1469, "url": "https://www.zap.co.il/model.aspx?modelid=1263020" }
+    ],
+    "market_low_ils": 1350,
+    "market_typical_ils": 1400,
+    "foreign_prices_note": "Amazon US listing B0DH2DMS4X; HIKD and EU retailers list it (price on page).",
+    "notes": "Telran: not carried (Telran's only ColorVu items are 2MP Turbo HD analog cameras, products 6922/6923). tactech.co.il lists it quote-only (https://tactech.co.il/product/ds-2cd2t87g2h-lisu-sl_28mm__ef_/). zbm regular (pre-sale) price 2,347 ILS. Hikvision Israel site has an official page: https://www.hikvision.com/il/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2t87g2h-lisu-sl/"
+  },
+  {
+    "model": "DS-2CD2087G2H-LIU/SL 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP",
+    "title_he": "מצלמת מיני-צינור Hikvision IP 8MP ColorVu Smart Hybrid Light עם שמע דו-כיווני והתראה, 2.8 מ\"מ - DS-2CD2087G2H-LIU/SL",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "חיישן 1/1.8\" CMOS, 8MP (3840x2160), עדשה קבועה 2.8 מ\"מ F1.0",
+      "Smart Hybrid Light: אינפרא-אדום + אור לבן עד 40 מ', צבע 24/7 (ColorVu)",
+      "AcuSense: סיווג אדם/רכב; אור מהבהב וסירנה להרתעה",
+      "מיקרופון ורמקול מובנים (שמע דו-כיווני), WDR 130dB",
+      "חריץ microSD עד 512GB, IP67, הזנה PoE / 12V DC",
+      "גוף מיני-צינור קומפקטי, H.265+"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2023/12/DS-2CD2087G2H-LIUSL.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000058455/DS-2CD2087G2H-LIU_SL-_Datasheet_20231116.pdf",
+    "market_prices": [
+      { "site": "technovision.co.il", "price_ils": 990, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-8-mp-colorvu-ds-2cd2087g2h-liusl" },
+      { "site": "zbm.co.il (sale price)", "price_ils": 1148, "url": "https://zbm.co.il/product/ds-2cd2087g2h-liu-sl/" }
+    ],
+    "market_low_ils": 990,
+    "market_typical_ils": 1070,
+    "foreign_prices_note": "Techinn $332.49; AliExpress listing 1005006641731137; HIKD (price on page).",
+    "notes": "Telran: not carried. zbm regular (pre-sale) price 1,926 ILS. technovision states 24-month warranty."
+  },
+  {
+    "model": "HWI-B180HA-LU 2.8mm",
+    "brand": "Hikvision HiWatch",
+    "category": "מצלמות IP - HiWatch",
+    "title_he": "מצלמת צינור HiWatch by Hikvision IP 8MP 4K Smart Hybrid Light עם מיקרופון, 2.8 מ\"מ - HWI-B180HA-LU",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8MP (3840x2160) 4K, עדשה קבועה 2.8 מ\"מ, זווית אופקית כ-113°",
+      "Smart Hybrid Light: אינפרא-אדום / אור לבן עד 30 מ'",
+      "Motion Detection 2.0 - סיווג אדם/רכב",
+      "מיקרופון מובנה, WDR 120dB, רגישות 0.01 Lux",
+      "IP67, הזנה PoE / 12V DC, ONVIF",
+      "H.265+/H.265, 8MP@12.5fps"
+    ],
+    "image_url": "https://www.orbitadigital.com/356042-large_default/hwi-b180ha-lu28mm.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/m000071373/HWI-B180HA-LU_Datasheet_20260409.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found. Foreign (EUR incl. VAT): orbitadigital.com ES EUR 124.01 (sale, from 190.78); Villatech/VPC Boost FR EUR 189.99; ipcenter.es and seguridadprofesional.es list it.",
+    "notes": "Telran: not carried (Telran search for HiWatch/HWI returns nothing). zbm.co.il has a HiWatch category but only older HWI-B121H/B140H-M 2-4MP models; zap has no listing. Approx. ILS equivalent of EUR 124-190 is ~500-770 ILS before import costs."
+  },
+  {
+    "model": "HWI-T280HA-LU 2.8mm",
+    "brand": "Hikvision HiWatch",
+    "category": "מצלמות IP - HiWatch",
+    "title_he": "מצלמת כיפה (Turret) HiWatch by Hikvision IP 8MP 4K Smart Hybrid Light עם מיקרופון, 2.8 מ\"מ - HWI-T280HA-LU",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8MP (3840x2160) 4K, עדשה קבועה 2.8 מ\"מ",
+      "Smart Hybrid Light: אינפרא-אדום / אור לבן עד 30 מ'",
+      "Motion Detection 2.0 - סיווג אדם/רכב",
+      "מיקרופון מובנה, WDR 120dB, רגישות 0.01 Lux",
+      "IP67, הזנה PoE / 12V DC, ONVIF, כוונון 3 צירים",
+      "H.265+/H.265, 8MP@12.5fps"
+    ],
+    "image_url": "https://www.orbitadigital.com/356054-large_default/hwi-t280ha-lu28mm.jpg",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000043/OFR010255/M000071376/Data_Sheet/HWI-T280HA-LU_Datasheet_20230808.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found. Foreign (EUR incl. VAT): orbitadigital.com ES EUR 124.01 (sale, from 190.78); Spanish retailer EUR 104.12 (from 109.60); framatek.com IT EUR 144.52.",
+    "notes": "Telran: not carried. Not found on zbm (HiWatch category holds only older 2-4MP models), zap, ksp or technovision. Alternate datasheet (2024): https://svtclti.com/manuales/DATASHEET/Hikvision/HWI-T280HA-LU_Datasheet_20240829.pdf"
+  }
+]

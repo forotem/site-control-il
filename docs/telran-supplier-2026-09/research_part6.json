@@ -1,0 +1,226 @@
+[
+  {
+    "model": "DS-2CD2T47G2H-LI 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP צינור (Bullet) - Pro Series ColorVu",
+    "title_he": "מצלמת צינור Hikvision DS-2CD2T47G2H-LI 4MP ColorVu Smart Hybrid Light עד 60 מ' עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520) חיישן 1/1.8\" Progressive Scan CMOS, צמצם F1.0",
+      "עדשה קבועה 2.8 מ\"מ (קיימות גם 4/6 מ\"מ)",
+      "Smart Hybrid Light: אור לבן ColorVu + IR, טווח תאורה עד 60 מ'",
+      "AcuSense - סיווג אדם/רכב, WDR 130dB, H.265+",
+      "ללא מיקרופון (גרסה LI); PoE 802.3af (עד 9W) או 12VDC; IP67; חריץ microSD עד 512GB"
+    ],
+    "image_url": "https://www.com4tech.co.il/wp-content/uploads/2023/12/7bf9248d-b096-4ed2-8bd1-dc2c931b944a.jpg",
+    "datasheet_url": "https://download.discomp.cz/hikvision/datasheets/DS-2CD2T47G2H-LI.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il", "price_ils": 931, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-ds-2cd2t47g2h-li-4mp-hikvision-vc/", "comparable": false},
+      {"site": "com4tech.co.il (DS-2CD2T47G2H-LISU/SL2 - גרסה עם מיקרופון/סטרובוסקופ)", "price_ils": 875, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-ds-2cd2t47g2h-lisu-sl-hikvision-smart-hybrid-light/", "comparable": true},
+      {"site": "technovision.co.il (DS-2CD2T47G2-L - דור קודם)", "price_ils": 999, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-acusense-4mp-ds-2cd2t47g2-l", "comparable": true}
+    ],
+    "market_low_ils": 875,
+    "market_typical_ils": 950,
+    "foreign_prices_note": "Getic (EU) €154 ללא מע\"מ (preorder); Amazon.it/דילרים ~$180 USD",
+    "notes": "מחיר ישראלי מאומת אחד בלבד למודל המדויק (com4tech ₪931). זאפ מציג את LISU/SL2 ב-₪1,064 כולל משלוח (קישור לא נשלף). דף hikvision.com נטען ריק (JS) - מפרט מהדאטהשיט/דילרים."
+  },
+  {
+    "model": "DS-2CD1743G2-LIZU 2.8-12mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה (Dome) וריפוקל ממונע - Value Series",
+    "title_he": "מצלמת כיפה Hikvision DS-2CD1743G2-LIZU 4MP וריפוקל ממונע 2.8-12 מ\"מ Smart Hybrid Light + מיקרופון",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS",
+      "עדשה וריפוקל ממונעת 2.8-12 מ\"מ (זום אופטי ~4x, מיקוד אוטומטי)",
+      "Smart Hybrid Light: IR 850nm + אור לבן, טווח עד 30 מ'",
+      "מיקרופון מובנה; Motion Detection 2.0 (סיווג אדם/רכב); WDR 120dB; H.265+",
+      "PoE 802.3af (עד 12W) או 12VDC; IP67, IK08; חריץ microSD"
+    ],
+    "image_url": "https://cdn.adarccomputer.com/media/products/product-attachments/DS-2CD1743G2-LIZU_image_1.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000047208/DS-2CD1743G2-LIZSU_Datasheet_20230816.pdf",
+    "market_prices": [
+      {"site": "senetic.co.il (רשום, אזל מהמלאי, ללא מחיר)", "price_ils": null, "url": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_", "comparable": false},
+      {"site": "zap.co.il (DS-2CD2743G2-IZS - Pro Series וריפוקל ממונע IR, ללא אור לבן)", "price_ils": 1164, "url": "https://www.zap.co.il/model.aspx?modelid=1195174", "comparable": true},
+      {"site": "zbm.co.il (DS-2CD1743G0-IZ - דור קודם וריפוקל IR בלבד)", "price_ils": null, "url": "https://zbm.co.il/product/hikvision-ds-2cd1743g0-iz/", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": 850,
+    "foreign_prices_note": "Techinn/Tradeinn $147.99; ANDI-BG €168; Adarc (UAE) AED 299 (~$81). מחיר ישראלי מוערך ₪750-950 לפי יחס מחירים לסדרת Value.",
+    "notes": "לא נמצא מחיר ישראלי מאומת למודל המדויק; הסיבלינג הקרוב במחיר (Pro 2743G2-IZS) יקר יותר (₪1,164-1,190). market_typical הוא אומדן."
+  },
+  {
+    "model": "DS-2CD1143G2-LIU 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה (Dome) - Value Series",
+    "title_he": "מצלמת כיפה Hikvision DS-2CD1143G2-LIU 4MP Smart Hybrid Light עד 30 מ' + מיקרופון עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS",
+      "עדשה קבועה 2.8 מ\"מ, שדה ראייה אופקי ~110°",
+      "Smart Hybrid Light: IR + אור לבן, טווח עד 30 מ'",
+      "מיקרופון מובנה; Motion Detection 2.0 (אדם/רכב); WDR 120dB; H.265+",
+      "PoE 802.3af (עד 7.5W) או 12VDC; IP67, IK10 (גרסת F: IK08)"
+    ],
+    "image_url": "https://www.getic.com/images/catalogue/5396/1-677f781282c3d-medium.jpg",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/pl/firmware/DS-2CD1143G2-LIU_Datasheet_20250526.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (LIUF)", "price_ils": 320, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-4mp-%D7%90%D7%95%D7%A8-%D7%9C%D7%91%D7%9F-2-8mm-ds-2cd1143g2-liuf-hikvision/", "comparable": false},
+      {"site": "technovision.co.il (LIUF)", "price_ils": 460, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-acusense-ds-2cd1143g2-liuf", "comparable": false},
+      {"site": "zap.co.il (סקיור גרופ ₪470 / AllTechStore ₪485 / ZBM ₪517 כולל משלוח)", "price_ils": 470, "url": "https://www.zap.co.il/model.aspx?modelid=1216153", "comparable": false}
+    ],
+    "market_low_ils": 320,
+    "market_typical_ils": 470,
+    "foreign_prices_note": "Getic €66 ללא מע\"מ; ICCTVZONE $76; Getic $85.60",
+    "notes": "בישראל נמכרת בעיקר גרסת LIUF (F = גוף פלסטיק IK08) - זהה פונקציונלית. זאפ: 4 חנויות ₪470-669."
+  },
+  {
+    "model": "DS-2CD1347G2-LUF 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה טורט (Turret) - Value Series ColorVu",
+    "title_he": "מצלמת טורט Hikvision DS-2CD1347G2-LUF 4MP ColorVu צבע 24/7 עד 30 מ' + מיקרופון עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS, צמצם F1.0",
+      "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
+      "ColorVu - אור לבן בלבד, תמונה צבעונית 24/7, טווח תאורה עד 30 מ'",
+      "מיקרופון מובנה; Motion Detection 2.0 (אדם/רכב); WDR 120dB; H.265+",
+      "PoE 802.3af או 12VDC; IP67; חריץ microSD עד 256GB"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/226_20052024174809_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000041034/DS-2CD1347G2-LUF_Datasheet_20240828.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (AllTechStore ₪419 / ZBM ₪580 כולל משלוח / סקיור גרופ ₪690 / א.א. סיגמה ₪769)", "price_ils": 419, "url": "https://www.zap.co.il/model.aspx?modelid=1227099", "comparable": false},
+      {"site": "technovision.co.il", "price_ils": 499, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-colorvu-ds-2cd1347g2-luf", "comparable": false},
+      {"site": "securegroup.co.il", "price_ils": 690, "url": "https://www.securegroup.co.il/product/ds-2cd1347g2-luf/", "comparable": false}
+    ],
+    "market_low_ils": 419,
+    "market_typical_ils": 499,
+    "foreign_prices_note": "Planet Security USA $104.49",
+    "notes": "מודל נפוץ מאוד בישראל; פיזור מחירים רחב ₪419-769."
+  },
+  {
+    "model": "DS-2CD2143G2-I 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה (Dome) - Pro Series AcuSense",
+    "title_he": "מצלמת כיפה Hikvision DS-2CD2143G2-I 4MP AcuSense IR עד 30 מ' IK10 עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520) חיישן 1/3\" Progressive Scan CMOS",
+      "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
+      "תאורת IR EXIR 2.0, טווח עד 30 מ' (ללא אור לבן)",
+      "AcuSense - סיווג אדם/רכב ומניעת התראות שווא; WDR 120dB; H.265+; ללא מיקרופון",
+      "PoE 802.3af (עד 7.5W) או 12VDC; IP67, IK10; חריץ microSD עד 256GB"
+    ],
+    "image_url": "https://planetsecurityusa.com/cdn/shop/products/DS-2CD2143G2-I_687ca0c9-a815-49e0-8d37-b9eea9137219_600x_crop_center.jpg",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/mena/support/sira/admcc-2023-oliver/DS-2CD2143G2-IS_Datasheet_V5.5.113_20230303.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il", "price_ils": 485, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-i-acusense/", "comparable": false},
+      {"site": "technovision.co.il", "price_ils": 549, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%AA%D7%99%D7%AA-hikvision-4mp-acusense-2cd2143g2-i", "comparable": false},
+      {"site": "zbm.co.il", "price_ils": 658, "url": "https://zbm.co.il/product/hikvision-ds-2cd2143g2-i/", "comparable": false}
+    ],
+    "market_low_ils": 485,
+    "market_typical_ils": 600,
+    "foreign_prices_note": "Planet Security USA $115.49 (sold out); zap.co.il I(S): ZBM/AllTechStore ₪729",
+    "notes": "מחיר zbm ₪658 (מבצע, מחיר מלא ₪889) נלקח מסניפט חיפוש - דף zbm לא נטען (timeout)."
+  },
+  {
+    "model": "DS-2CD2143G2-IU 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה (Dome) - Pro Series AcuSense",
+    "title_he": "מצלמת כיפה Hikvision DS-2CD2143G2-IU 4MP AcuSense IR עד 30 מ' + מיקרופון IK10 עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520) חיישן 1/3\" Progressive Scan CMOS",
+      "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
+      "תאורת IR EXIR 2.0, טווח עד 30 מ' (ללא אור לבן)",
+      "מיקרופון מובנה; AcuSense - סיווג אדם/רכב; WDR 120dB; H.265+",
+      "PoE 802.3af (עד 7.5W) או 12VDC; IP67, IK10; חריץ microSD עד 256GB"
+    ],
+    "image_url": "https://planetsecurityusa.com/cdn/shop/products/DS-2CD2143G2-I_687ca0c9-a815-49e0-8d37-b9eea9137219_600x_crop_center.jpg",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/usa/data-sheet/DS-2CD2143G2-IU-DataSheet.pdf",
+    "market_prices": [
+      {"site": "sivim.co.il", "price_ils": 659, "url": "https://sivim.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-4mp-6/", "comparable": false},
+      {"site": "com4tech.co.il (רשום, המחיר לא נשלף - שגיאת redirect)", "price_ils": null, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-iu-acusense-%D7%9E%D7%99%D7%A7%D7%A8%D7%95%D7%A4%D7%95%D7%9F-%D7%A2%D7%93-30-%D7%9E/", "comparable": false},
+      {"site": "com4tech.co.il (DS-2CD2143G2-I - ללא מיקרופון)", "price_ils": 485, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-i-acusense/", "comparable": true}
+    ],
+    "market_low_ils": 659,
+    "market_typical_ils": 700,
+    "foreign_prices_note": "A1 Security Cameras $134.90 (sale, list $216); surveillance-video $173.99; ipsecuritydepot $125",
+    "notes": "גרסת IU = I + מיקרופון; בישראל תוספת של כ-₪100-150 מעל ה-I. סניפט חיפוש הזכיר technovision ₪850 (URL לא אומת)."
+  },
+  {
+    "model": "DS-2CD2347G1-L 4mm (2021 stock)",
+    "brand": "Hikvision",
+    "category": "מצלמות IP כיפה טורט (Turret) - Pro Series ColorVu",
+    "title_he": "מצלמת טורט Hikvision DS-2CD2347G1-L 4MP ColorVu צבע 24/7 עד 30 מ' עדשה 4 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520 @30fps) חיישן 1/1.8\" Progressive Scan CMOS, צמצם F1.0",
+      "עדשה קבועה 4 מ\"מ, שדה ראייה אופקי ~94° (קיימות גם 2.8/6 מ\"מ)",
+      "ColorVu דור 1 - אור לבן בלבד, תמונה צבעונית 24/7, טווח עד 30 מ'; רגישות 0.0014 לוקס",
+      "ללא מיקרופון (גרסה L; LU = עם מיקרופון); WDR 120dB; H.265+; ללא AcuSense",
+      "PoE 802.3af Class 3 או 12VDC; IP67; חריץ microSD עד 256GB"
+    ],
+    "image_url": "https://networkcamerastore.com/cdn/shop/files/23x7g1-lu__48075.1604445173.1280.1280.png?v=1704243002&width=800",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR000043/M000007747/Data_Sheet/DS-2CD2347G1-LU_Datasheet_V5.5.82_20210409.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (DS-2CD2347G2H-LISU/SL - דור נוכחי, עם מיקרופון+סטרובוסקופ)", "price_ils": 836, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-hikvision-colorvu-4mp-colorvu-ds-2cd2347g2h-lisu-sl2/", "comparable": true},
+      {"site": "technovision.co.il (DS-2CD2347G2H-LISU/SL)", "price_ils": 890, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-%D7%98%D7%95%D7%A8%D7%98-hikvision-4mp-colorvu-ds-2cd2347g2-lu", "comparable": true},
+      {"site": "zap.co.il (DS-2CD2347G2-L(U) - לא זמין כרגע, היסטורית ₪869-920)", "price_ils": 869, "url": "https://www.zap.co.il/model.aspx?modelid=1134394", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": 850,
+    "foreign_prices_note": "Discontinued (הוחלף ב-G2/G2H). networkcamerastore $301 (מחיר רשימה ישן, לא זמין); B&H מפנה ל-DS-2CD2347G2-LU; eBay חדש ~$120-180.",
+    "notes": "מודל EOL משנת 2021 - אין מכירה ישראלית פעילה. לתמחר מתחת לדור הנוכחי (₪836-890), מומלץ ₪600-700 כמלאי ישן. market_typical מתייחס לסיבלינג הנוכחי."
+  },
+  {
+    "model": "DS-2CD1P47G2-LUF 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP צינור PT ממונעות - Value Series ColorVu",
+    "title_he": "מצלמת צינור ממונעת PT Hikvision DS-2CD1P47G2-LUF 4MP ColorVu עד 30 מ' + מיקרופון עדשה 2.8 מ\"מ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS, צמצם F1.0",
+      "עדשה קבועה 2.8 מ\"מ (~96° אופקי); מנוע Pan/Tilt: אופקי 0-355°, אנכי 0-90° (שליטה מרחוק)",
+      "ColorVu - אור לבן, תמונה צבעונית 24/7, טווח עד 30 מ'",
+      "מיקרופון מובנה; Motion Detection 2.0 (אדם/רכב); WDR 120dB; H.265+",
+      "PoE 802.3af או 12VDC; IP66; חריץ microSD עד 256GB"
+    ],
+    "image_url": "https://www.orbitadigital.com/361627-home_default/hikvision-value-ds-2cd1p47g2-luf28mm-bullet-ip-camera-pt-4mp-28mm-mic-white-light-30m-motion-detection-20-colorvu.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000040936/DS-2CD1P47G2-LUF_Datasheet_V5.7.1_20230220.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (רשום, מחיר ₪0/לפי פנייה - דף לא נטען)", "price_ils": null, "url": "https://zbm.co.il/product/ds-2cd1t47g2-luf/", "comparable": false},
+      {"site": "com4tech.co.il (רשום, המחיר לא נשלף)", "price_ils": null, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95hikvision-ds-2cd1p47g2-luf-4-mp-fixed-2-8mm-bullet-pt-network-camera/", "comparable": false},
+      {"site": "zap.co.il (DS-2CD1047G2-L(UF) - צינור קבוע ללא PT, מ-₪560)", "price_ils": 560, "url": "https://www.zap.co.il/model.aspx?modelid=1216139", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": 800,
+    "foreign_prices_note": "Orbita Digital €124.58-141.57; OfficeMoTo ₱6,570 (~$115). סניפט זאפ הזכיר ₪800 ל-DS-2CD1P47G2-L(UF) (URL לא אומת).",
+    "notes": "מודל נישה (צינור עם מנוע PT) - נמכר בישראל ע\"י zbm ו-com4tech אך ללא מחיר גלוי. market_typical ₪800 מבוסס על סניפט זאפ + פרמיית PT (~₪200) מעל DS-2CD1047G2-LUF."
+  }
+]

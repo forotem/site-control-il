@@ -1,0 +1,373 @@
+[
+  {
+    "model": "VisionNet K (K-Line) 560820",
+    "brand": "VisionNet",
+    "category": "access_control_keypad",
+    "title_he": "קודן בקרת גישה מתכתי VisionNet K משולב קורא קרבה 125kHz, אנטי-ונדל, IP68",
+    "telran_sku": "560820",
+    "telran_url": "https://www.telran.co.il/product/9482/aacess-control-k-line-keypad-with-rfid125-square-metal-housing-waterproof-ip6",
+    "telran_name": "Access control K-line keypad with RFID125 / square / metal housing / waterproof IP68 (black-housing variant 560820B: https://www.telran.co.il/product/9483/)",
+    "telran_price": null,
+    "specs": [
+      "Square metal anti-vandal housing, IP68 waterproof",
+      "Built-in 125 kHz EM proximity reader (card/tag)",
+      "Up to 2000 users; open by code, card, or card+code",
+      "Blue backlit keys, 12V DC operation",
+      "Relay lock output >=3A, adjustable door time 0-99s",
+      "Standalone controller, also available in black housing (560820B)"
+    ],
+    "image_url": "https://www.telran.co.il/images/560820.01.png",
+    "datasheet_url": "https://heb.telran.co.il/images/VisionNet_K_HEB_Spec_User_Manual_2025_560820.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (seller: Kav Israeli) - VisionNet K black waterproof", "price_ils": 270, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=472712", "comparable": false},
+      {"site": "kav-isr.com (VisionNet K elliptical IP68, same K-line)", "price_ils": 199, "url": "https://kav-isr.com/access-control/keypad/visionnet-k.html", "comparable": true},
+      {"site": "security-as.com (Boost K10EM-W metal IP68 2000 users)", "price_ils": 250, "url": "https://security-as.com/product/%D7%A7%D7%95%D7%93%D7%9F-%D7%91%D7%A7%D7%A8%D7%AA-%D7%9B%D7%A0%D7%99%D7%A1%D7%94-ip68-%D7%A9%D7%99%D7%9E%D7%95%D7%A9-%D7%97%D7%99%D7%A6%D7%95%D7%A0%D7%99/", "comparable": true},
+      {"site": "kav-isr.com (VisionNet K3 indoor plastic keypad)", "price_ils": 150, "url": "https://kav-isr.com/access-control/keypad/%D7%A7%D7%95%D7%93%D7%9F-%D7%91%D7%A7%D7%A8%D7%AA-%D7%92%D7%99%D7%A9%D7%94-%D7%9E%D7%A9%D7%95%D7%9C%D7%91-%D7%AA%D7%92%D7%99%D7%9D-k3-visionnet.html", "comparable": true}
+    ],
+    "market_low_ils": 199,
+    "market_typical_ils": 260,
+    "foreign_prices_note": "Generic metal IP68 EM keypads sell for USD 15-30 on AliExpress/Amazon; irrelevant for Israeli warranty-backed retail.",
+    "notes": "Supplier cost 80 ILS, installer price 150 ILS. Zap lists 'VisionNet K black waterproof' at 270 ILS (=560820B) and elliptical K at 229 (kav-isr direct 199). Retail sweet spot 229-269 ILS."
+  },
+  {
+    "model": "VisionNet KITCOM 2-wire villa kit 560789",
+    "brand": "VisionNet",
+    "category": "video_intercom_kit",
+    "title_he": "ערכת אינטרקום וידאו 2 גידים לבית פרטי VisionNet KITCOM - מסך 7\" + פנל מצלמה, Plug & Play",
+    "telran_sku": "560789",
+    "telran_url": "https://www.telran.co.il/product/7208/2wire-kitcom-intercom-villa-kit-plug-play",
+    "telran_name": "2wire KITCOM intercom villa kit plug & play",
+    "telran_price": null,
+    "specs": [
+      "7\" colour TFT monitor with touch-sensor buttons and intuitive menu",
+      "2-wire non-polarised connection between panel and monitor (plug & play)",
+      "Inner call / intercom between monitors supported",
+      "Picture memory function",
+      "Supports IP camera and call divert to mobile app via optional IPG module",
+      "Kit: monitor + outdoor camera door station + power supply"
+    ],
+    "image_url": "https://www.telran.co.il/images/560789.001.png",
+    "datasheet_url": null,
+    "market_prices": [
+      {"site": "kav-isr.com (VisionNet 2-wire kit: 7\" monitor + panel w/ keypad & camera)", "price_ils": 1399, "url": "https://kav-isr.com/access-control/intercom/%D7%A1%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%94%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%9C-%D7%A2%D7%9D-%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%95%D7%A7%D7%95%D7%93%D7%9F-%D7%9E%D7%A1%D7%9A-7-%D7%90%D7%99%D7%A0%D7%A5-visionnet.html", "comparable": true},
+      {"site": "zap.co.il (VisionNet intercom kit panel+camera+7\" screen)", "price_ils": 1429, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136", "comparable": true},
+      {"site": "smartimg.co.il (VisionNet kit camera+screen+keypad)", "price_ils": 1900, "url": "https://smartimg.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%91%D7%A7%D7%A8%D7%AA-%D7%9B%D7%A0%D7%99%D7%A1%D7%94/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%9C%D7%91%D7%99%D7%AA-%D7%A4%D7%A8%D7%98%D7%99/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%A7%D7%99%D7%98-%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9E%D7%A1%D7%9A-%D7%95%D7%A7%D7%95%D7%93%D7%9F-visionnet/", "comparable": true}
+    ],
+    "market_low_ils": 1399,
+    "market_typical_ils": 1450,
+    "foreign_prices_note": "Equivalent DT-series 2-wire 7\" kits (same OEM) sell for USD 120-180 abroad.",
+    "notes": "No listing found quoting SKU 560789 explicitly; Israeli VisionNet 2-wire 7\" villa kits cluster at 1,399-1,429 ILS (kav-isr / Zap), up to 1,900 at smaller shops."
+  },
+  {
+    "model": "VisionNet DH Hybrid KIT 560171",
+    "brand": "VisionNet",
+    "category": "video_intercom_kit",
+    "title_he": "ערכת אינטרקום היברידית 2 גידים + IP VisionNet DH - מסך מגע 7\" Wi-Fi עם אפליקציה + פנל S4 + ספק",
+    "telran_sku": "560171",
+    "telran_url": "https://www.telran.co.il/product/9450/intercom-visionnet-dh-kit-hybrid-2-wire-with-ip-panel-panel-door-station-s4-m",
+    "telran_name": "Intercom VisionNet DH KIT Hybrid 2 Wire with IP Panel - Panel Door Station S4 / Monitor 7inch / Combo Power Supply 2.1A 28V PC9D",
+    "telran_price": null,
+    "specs": [
+      "Hybrid system: 2-wire bus plus IP/Wi-Fi connectivity",
+      "7\" IPS touch monitor (1024x600), metal design, Wi-Fi with mobile app (remote view & door open)",
+      "S4 door station with HD wide-angle camera",
+      "Combo power supply 28V / 2.1A (PC9D)",
+      "Micro-SD recording up to 512GB, 2-wire run up to 100 m",
+      "Plug & play villa kit, Hebrew app support"
+    ],
+    "image_url": "https://www.telran.co.il/images/560171.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/560171-one page brochure-Telran.pdf",
+    "market_prices": [
+      {"site": "kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touch monitor + panel w/ keypad + electric lock)", "price_ils": 1599, "url": "https://kav-isr.com/access-control/intercom/kit-intercom-visionnet-wifi.html", "comparable": true},
+      {"site": "zap.co.il (VisionNet 2-wire modular kit)", "price_ils": 2020, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136", "comparable": true},
+      {"site": "com4tech.co.il (DT-128 7\" touchscreen 2-wire kit w/ camera)", "price_ils": 2980, "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/", "comparable": true}
+    ],
+    "market_low_ils": 1599,
+    "market_typical_ils": 1750,
+    "foreign_prices_note": "Same-OEM (DT/DX Wi-Fi) 2-wire app kits sell for USD 200-280 abroad.",
+    "notes": "kav-isr 1,599 kit matches DH monitor specs (7\" IPS 1024x600, Wi-Fi app, SD 512GB) and bundles a lock; treat as near-identical. Monitor user manual: https://www.telran.co.il/images/260975_User_Manual_DH-ENG-473-English.pdf"
+  },
+  {
+    "model": "VisionNet 2TL-17 560580",
+    "brand": "VisionNet",
+    "category": "intercom_monitor",
+    "title_he": "מסך אינטרקום 7\" 2 גידים VisionNet 2TL-17 לבית פרטי/בניין, לבן עם לחצני כסף",
+    "telran_sku": "560580",
+    "telran_url": "https://www.telran.co.il/product/8209/monitor-screen-7-for-2-wire-villa-building-intercom-system-2tl-17-white-silver",
+    "telran_name": "Monitor Screen 7\" for 2-Wire Villa/Building Intercom System 2TL-17, White/silver buttons - New elegant (Telran code 560580DF; older DT-17 version at /product/2530/)",
+    "telran_price": null,
+    "specs": [
+      "7\" digital colour LCD, 800x480",
+      "2-wire non-polarised bus, DC 20-28V",
+      "Standby 6.6 mA / working 240 mA",
+      "Video 1Vp-p 75 ohm CCIR",
+      "Slim design 140x220x17.5 mm, white with silver buttons",
+      "Compatible with VisionNet/DT 2-wire villa and building systems"
+    ],
+    "image_url": "https://www.telran.co.il/images/560580DF_1%20URBAN.png",
+    "datasheet_url": "https://www.telran.co.il/images/560580DF_URBAN_ENG_User%20Manual_2024.pdf",
+    "market_prices": [
+      {"site": "kav-isr.com", "price_ils": 649, "url": "https://kav-isr.com/access-control/monitor/visionnet-2tl-17.html", "comparable": false},
+      {"site": "zap.co.il (2TL-17, seller Kav Israeli)", "price_ils": 679, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163", "comparable": false},
+      {"site": "zbm.co.il (SKU 560580, DT-17 7\" 2-wire)", "price_ils": 1009, "url": "https://zbm.co.il/product/%D7%9E%D7%A1%D7%9A-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-7-%D7%90%D7%99%D7%A0%D7%A5-2-%D7%92%D7%99%D7%93%D7%99%D7%9D-visionnet/", "comparable": false}
+    ],
+    "market_low_ils": 649,
+    "market_typical_ils": 679,
+    "foreign_prices_note": "DT17/DT-17 OEM monitors ~USD 60-80 abroad.",
+    "notes": "Exact model found at 649-679 ILS (kav-isr / Zap); ZBM lists the same SKU 560580 at 1,009 ILS."
+  },
+  {
+    "model": "VisionNet DH Wi-Fi monitor 560975",
+    "brand": "VisionNet",
+    "category": "intercom_monitor",
+    "title_he": "מסך אינטרקום מגע 7\" VisionNet DH היברידי 2 גידים + IP, Wi-Fi עם אפליקציה, עיצוב מתכת",
+    "telran_sku": "560975",
+    "telran_url": "https://www.telran.co.il/product/9449/intercom-visionnet-dh-monitor-hybrid-2-wire-with-ip-7-inch-touch-exclusive-met",
+    "telran_name": "Intercom VisionNet DH Monitor Hybrid 2 Wire with IP / 7 Inch Touch / Exclusive Metal Design / Wi-Fi with App",
+    "telran_price": null,
+    "specs": [
+      "7\" IPS capacitive touch screen, 1024x600",
+      "Hybrid: 2-wire bus + Wi-Fi/IP, mobile app for remote view and door release",
+      "Exclusive metal-frame design, 131x225x18 mm",
+      "DC 20-28V, 2-wire distance up to 100 m",
+      "Micro-SD recording up to 512GB, call log with snapshots/video",
+      "Works with VisionNet DH/S4 door stations"
+    ],
+    "image_url": "https://www.telran.co.il/images/560975.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/560975-one page brochure-Telran.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (VisionNet 7\" 2-wire DH monitor, seller Kav Israeli)", "price_ils": 679, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163", "comparable": false},
+      {"site": "zap.co.il (VisionNet DX470 7\" Wi-Fi touch monitor)", "price_ils": 829, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163", "comparable": true},
+      {"site": "zbm.co.il (VisionNet 7\" touch w/ picture memory, SKU 560024)", "price_ils": 1411, "url": "https://zbm.co.il/product/%D7%9E%D7%A1%D7%9A-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%98%D7%90%D7%A5-7-%D7%90%D7%99%D7%A0%D7%A5-2-%D7%92%D7%99%D7%93%D7%99%D7%9D-%D7%A2%D7%9D-%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F/", "comparable": true}
+    ],
+    "market_low_ils": 679,
+    "market_typical_ils": 829,
+    "foreign_prices_note": "OEM DX/DH-series Wi-Fi 7\" monitors ~USD 90-130 abroad.",
+    "notes": "Zap 'DH 7\" 2-wire' at 679 is listed by Kav Israeli (may be the non-Wi-Fi DH variant); Wi-Fi touch VisionNet monitors are 829-1,411 ILS. Suggested retail 799-899 ILS. User manual: https://www.telran.co.il/images/260975_User_Manual_DH-ENG-473-English.pdf"
+  },
+  {
+    "model": "VisionNet 2TL-821 / T5 560892",
+    "brand": "VisionNet",
+    "category": "building_door_station",
+    "title_he": "פנל כניסה לבניין 2 גידים VisionNet T5/821 - מסך מגע 5\", קודן, קורא קרבה ורשימת שמות בעברית",
+    "telran_sku": "560892",
+    "telran_url": "https://www.telran.co.il/product/7296/t-5-821-lobby-panel-2-wires-module-touch-screen-keypad-proxy-name-list",
+    "telran_name": "T-5 /821 lobby panel 2 wires Module touch screen keypad /proxy /name list",
+    "telran_price": null,
+    "specs": [
+      "5\" TFT full-glass touch screen with customisable menu",
+      "2-wire building bus, module for 2TL-821 series",
+      "Hebrew/English name list, direct dial by apartment",
+      "Up to 32 apartments (expandable in system), code unlock per apartment",
+      "Built-in 125 kHz proximity reader",
+      "Flush or surface mounting"
+    ],
+    "image_url": "https://www.telran.co.il/images/560892.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/560892_ENG_DS_1_2022.pdf",
+    "market_prices": [
+      {"site": "sivim.co.il (VisionNet SKU 560408 digital 2-wire panel, 3.5\" name display, 32-128 apts)", "price_ils": 2114, "url": "https://sivim.co.il/product/%D7%A4%D7%90%D7%A0%D7%9C-%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99-%D7%A2%D7%9D-%D7%94%D7%A6%D7%92%D7%AA-%D7%A9%D7%9E%D7%95%D7%AA/", "comparable": true},
+      {"site": "com4tech.co.il (Akuvox MEGA CITY 50, 5\" IP touch panel w/ face recognition)", "price_ils": 3000, "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/", "comparable": true}
+    ],
+    "market_low_ils": 2114,
+    "market_typical_ils": 2400,
+    "foreign_prices_note": "DT821/T5 OEM touch modules ~USD 150-220 abroad (module only, no frame/power).",
+    "notes": "No Israeli listing of 560892 itself; nearest VisionNet building panel (560408) retails 2,114 ILS. User manual: https://www.telran.co.il/images/560892_User Manual_ENG_2022.pdf"
+  },
+  {
+    "model": "VisionNet 2TL-607FE/ID/S2 (DT607) 560075",
+    "brand": "VisionNet",
+    "category": "villa_door_station",
+    "title_he": "פנל חוץ אינטרקום 2 גידים VisionNet 2TL-607 - מצלמת עין דג 170°, קורא כרטיס, 2 לחצנים",
+    "telran_sku": "560075",
+    "telran_url": "https://www.telran.co.il/product/2314/2wire-system-color-outdoor-station-with-fisheye-camera",
+    "telran_name": "2wire system color outdoor station with fisheye camera (DT607, ID card, 2 buttons)",
+    "telran_price": null,
+    "specs": [
+      "1/2.7\" CMOS colour camera, 170° fisheye lens, auto night illumination",
+      "2 call buttons (up to 4 users), built-in ID card reader",
+      "2-wire non-polarised, DC 24V; standby 25 mA / working 160 mA",
+      "Lock output 12 VDC 300 mA",
+      "IP54, zinc alloy / stainless front, 179x94x42 mm",
+      "Operating -20 to +55 C"
+    ],
+    "image_url": "https://www.telran.co.il/images/560075.png",
+    "datasheet_url": "https://www.telran.co.il/images/DT-ENG-DT607-V1.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (VisionNet DH 2-wire camera panel, seller Kav Israeli)", "price_ils": 329, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136", "comparable": true},
+      {"site": "zap.co.il (VisionNet panel with app & proximity reader)", "price_ils": 629, "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136", "comparable": true},
+      {"site": "com4tech.co.il (280SD-R2 2-wire villa station)", "price_ils": 698, "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/", "comparable": true}
+    ],
+    "market_low_ils": 329,
+    "market_typical_ils": 550,
+    "foreign_prices_note": "DT607 OEM stations USD 45-70 abroad.",
+    "notes": "No Israeli listing of 560075 itself; VisionNet 2-wire villa camera panels sell 329-629 ILS. Suggested retail 450-550 ILS."
+  },
+  {
+    "model": "Rain roof for keypads 560878",
+    "brand": "VisionNet / Telran",
+    "category": "accessory",
+    "title_he": "גגון הגנה מגשם לקודן בקרת כניסה (מתאים לקודנים 560596/560597)",
+    "telran_sku": "560878",
+    "telran_url": "https://www.telran.co.il/product/7098/rain-roof-for-access-keypads",
+    "telran_name": "Rain roof for access keypads",
+    "telran_price": null,
+    "specs": [
+      "ABS plastic rain/sun shield for surface-mounted keypads",
+      "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
+      "Weight 250 g",
+      "Fits Telran keypads 560596 / 560597 and similar 118x78 mm units"
+    ],
+    "image_url": "https://www.telran.co.il/images/560878.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/560878_DS_ENG 2021.pdf",
+    "market_prices": [
+      {"site": "belshop.co.il (plastic rain/sun shield for keypad / photocell)", "price_ils": null, "url": "https://www.belshop.co.il/items/5511408-%D7%9E%D7%92%D7%9F-%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7-%D7%92%D7%A9%D7%9D-%D7%A9%D7%9E%D7%A9-%D7%9E%D7%AA%D7%90%D7%99%D7%9D-%D7%9C%D7%A7%D7%95%D7%93%D7%9F-%D7%A2%D7%99%D7%9F-%D7%A4%D7%95%D7%98%D7%95-%D7%9C%D7%A9%D7%A2%D7%A8-%D7%95%D7%9B%D7%95-", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "Generic keypad rain covers USD 5-12 on AliExpress/Amazon.",
+    "notes": "No Israeli listing with a visible price was retrievable (belshop page did not render). Suggested retail 59-89 ILS as a low-cost add-on; verify belshop price manually."
+  },
+  {
+    "model": "Reolink RLK8-820D4-A (NVS8-8MD4)",
+    "brand": "Reolink",
+    "category": "poe_nvr_kit",
+    "title_he": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-820A, קושחה בעברית",
+    "telran_sku": "RLK8-820D4-A (Telran catalog code; no 6-digit SKU shown)",
+    "telran_url": "https://www.telran.co.il/product/7075/8ch-4k-poe-nvr-4pcs-dome-camera-rlc-820a-reolink-rlk8-820d4-a",
+    "telran_name": "8CH 4K PoE NVR, 4pcs Dome camera RLC-820A -Reolink RLK8-820D4-A",
+    "telran_price": null,
+    "specs": [
+      "8-channel PoE NVR (8 x 802.3at ports) with 2TB SATA HDD, max 12TB",
+      "4 x RLC-820A 4K 8MP dome cameras, 1/2.49\" CMOS, 4.0 mm lens",
+      "H.265, 3840x2160 @ 25fps, 4-ch synchronous playback",
+      "IR night vision 30 m, IP66",
+      "Person/vehicle smart detection, Reolink app",
+      "Includes 4 x 18 m Cat5 cables, HDMI, mouse"
+    ],
+    "image_url": "https://www.telran.co.il/images/RLK8-820D4-A.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/RLK8-820D4-A_Reolink_ENG 2021.pdf",
+    "market_prices": [
+      {"site": "kav-isr.com (NVS8-8MD4, 2TB)", "price_ils": 2699, "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-820d4-a.html", "comparable": false},
+      {"site": "zap.co.il (NVS8-8MD4)", "price_ils": 2729, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002", "comparable": false},
+      {"site": "zap.co.il / zbm.co.il (8CH NVR + 4 x 4K cams, 2TB, cabling)", "price_ils": 2749, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002", "comparable": true}
+    ],
+    "market_low_ils": 2699,
+    "market_typical_ils": 2729,
+    "foreign_prices_note": "USD 499.99 (megatop.com), EUR ~603 after discount (homebrainz.shop).",
+    "notes": "NVS8-8MD4 is Reolink's current name for RLK8-820D4-A / 800D4. Telran also lists RLK8-800B4 and 810B4-A bullet equivalents."
+  },
+  {
+    "model": "Reolink RLK8-810B4-A / RLK8-800B4 (NVS8-8MB4)",
+    "brand": "Reolink",
+    "category": "poe_nvr_kit",
+    "title_he": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-810A, קושחה בעברית",
+    "telran_sku": "RLK8-810B4-A (product/7074) and RLK8-800B4 (product/7824)",
+    "telran_url": "https://www.telran.co.il/product/7074/8ch-4k-poe-nvr-4pcs-bullet-camera-rlc-810a-reolink-rlk8-810b4-a",
+    "telran_name": "8CH 4K PoE NVR, 4pcs Bullet camera RLC-810A -Reolink RLK8-810B4-A (also: KIT 8CH 4K Ultra HD, PoE NVR, Smart Detection, 4pcs Bullet camera RLC-810A, Hebrew Firmware - RLK8-800B4)",
+    "telran_price": null,
+    "specs": [
+      "8-channel PoE NVR (8 x 100 Mbps PoE ports) with 2TB HDD, max 12TB",
+      "4 x RLC-810A 4K 8MP bullet cameras, 4.0 mm, 87° HFOV",
+      "H.265/H.264, 3840x2160 @ 25fps",
+      "IR night vision 30 m (18 LEDs), IP66",
+      "Person/vehicle detection, Reolink app, Hebrew firmware",
+      "Working -10 to +45 C"
+    ],
+    "image_url": "https://www.telran.co.il/images/RLK8-810B4-A.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/RLK8-810B4-A_Reolink_ENG 2021.pdf",
+    "market_prices": [
+      {"site": "kav-isr.com (NVS8-8MB4, 2TB Seagate)", "price_ils": 2699, "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-800b4.html", "comparable": false},
+      {"site": "zap.co.il (NVS8-8MB4)", "price_ils": 2729, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002", "comparable": false}
+    ],
+    "market_low_ils": 2699,
+    "market_typical_ils": 2729,
+    "foreign_prices_note": "USD 509.80 (surveillance-video.com); EUR 673.75 list at homebrainz.shop.",
+    "notes": "Second Telran datasheet: https://www.telran.co.il/images/RLK8-800B4_Reolink_ENG_DS_2023_2.pdf ; image https://www.telran.co.il/images/RLK8-800B4.01.png"
+  },
+  {
+    "model": "Reolink RLK8-410B4-5MP (NVS8-5MB4)",
+    "brand": "Reolink",
+    "category": "poe_nvr_kit",
+    "title_he": "ערכת Reolink 5MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-510A, קושחה בעברית",
+    "telran_sku": "RLK8-410B4-5MP (Telran catalog code)",
+    "telran_url": "https://www.telran.co.il/product/7823/kit-8ch-4k-poe-nvr-4pcs-bullet-camera-rlc-510a-hebrew-firmware",
+    "telran_name": "KIT 8CH 4K PoE NVR, 4pcs Bullet camera RLC-510A, Hebrew Firmware",
+    "telran_price": null,
+    "specs": [
+      "8-channel 4K-capable PoE NVR (RLN8-410) with 2TB HDD",
+      "4 x RLC-510A 5MP (2560x1920) bullet cameras",
+      "IR night vision 30 m (18 LEDs), IP66",
+      "Person/vehicle/pet detection, built-in mic",
+      "Expandable to 8 cameras; 4 x 18 m cables included",
+      "Hebrew firmware, 1-year Telran warranty"
+    ],
+    "image_url": "https://www.telran.co.il/images/RLK8-410B4-5MP.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/RLK8-410B4-5MP_Reolink_ENG_DS_2023_2.pdf",
+    "market_prices": [
+      {"site": "kav-isr.com", "price_ils": 1999, "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-410b4-5mp.html", "comparable": false},
+      {"site": "satsigma.co.il (NVS8-5MB4)", "price_ils": 1999, "url": "https://www.satsigma.co.il/product/%d7%a7%d7%99%d7%98-4-%d7%9e%d7%a6%d7%9c%d7%9e%d7%95%d7%aa-reolink-rlk8-410b4-5mp/", "comparable": false},
+      {"site": "zap.co.il (NVS8-5MB4)", "price_ils": 2018, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002", "comparable": false}
+    ],
+    "market_low_ils": 1999,
+    "market_typical_ils": 1999,
+    "foreign_prices_note": "USD 349.99-459.99 (eBay/Walmart); EUR 468 (Germany).",
+    "notes": "Consistently 1,999-2,018 ILS in Israel; com4tech lists NVS8-5MD4 dome version at 1,900 without HDD."
+  },
+  {
+    "model": "Reolink RLK8-1200B4-A (NVS8-12MB4)",
+    "brand": "Reolink",
+    "category": "poe_nvr_kit",
+    "title_he": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-1212A עם זרקורים, קושחה בעברית",
+    "telran_sku": "RLK8-1200B4-A(2.8MM) (Telran catalog code)",
+    "telran_url": "https://www.telran.co.il/product/7825/kit-8ch-12mp-poe-smart-detection-spotlights-4pcs-bullet-camera-rlc-1212a-2-8",
+    "telran_name": "KIT 8CH 12MP PoE, Smart Detection & Spotlights, 4pcs Bullet camera RLC-1212A, 2.8mm, Hebrew Firmware",
+    "telran_price": null,
+    "specs": [
+      "8-channel PoE NVR with 2TB HDD",
+      "4 x RLC-1212A 12MP (4512x2512) bullet cameras, 2.8 mm lens",
+      "Built-in spotlights, colour night vision, two-way talk",
+      "Person/vehicle/pet smart detection",
+      "IP67, PoE single-cable install, 4 x 18 m cables",
+      "Hebrew firmware"
+    ],
+    "image_url": "https://www.telran.co.il/images/RLK8-1200B4-A(2.8MM).01.png",
+    "datasheet_url": "https://www.telran.co.il/images/RLK8-1200B4-A(2.8MM)_Reolink_ENG_DS_2023_1.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il (RLK8-1200B4-A 12MP kit, 2TB)", "price_ils": 3650, "url": "https://www.satsigma.co.il/product-category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-cctv-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA-ip-%D7%A0%D7%98%D7%A2%D7%A0%D7%95%D7%AA/reolink/", "comparable": false},
+      {"site": "com4tech.co.il (NVS8-12MB4, without HDD)", "price_ils": 2750, "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-reolink/", "comparable": true}
+    ],
+    "market_low_ils": 2750,
+    "market_typical_ils": 3650,
+    "foreign_prices_note": "USD ~646 (US review aggregate), Walmart/Newegg similar.",
+    "notes": "Fewer Israeli listings than the dome version; satsigma 3,650 with 2TB is the reference. com4tech price excludes HDD."
+  },
+  {
+    "model": "Reolink RLK8-1200D4-A (NVS8-12MD4)",
+    "brand": "Reolink",
+    "category": "poe_nvr_kit",
+    "title_he": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-1224A צבע מלא עם זרקורים, קושחה בעברית",
+    "telran_sku": "RLK8-1200D4-A(2.8MM) (Telran catalog code)",
+    "telran_url": "https://www.telran.co.il/product/7826/kit-8ch-12mp-poe-smart-detection-spotlights-4pcs-dome-2-8mm-full-color-rlc",
+    "telran_name": "KIT 8CH 12MP PoE, Smart Detection & Spotlights, 4pcs Dome, 2.8mm, Full Color RLC-1224A, Hebrew Firmware",
+    "telran_price": null,
+    "specs": [
+      "8-channel PoE NVR with 2TB HDD",
+      "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
+      "Full-colour night vision with spotlights + 30 m IR",
+      "Person/vehicle/pet detection, two-way audio",
+      "IP67, PoE, 4 x 18 m cables, HDMI, mouse",
+      "Hebrew firmware"
+    ],
+    "image_url": "https://www.telran.co.il/images/RLK8-1200D4-A(2.8MM).01.png",
+    "datasheet_url": "https://www.telran.co.il/images/RLK8-1200D4-A(2.8MM)_Reolink_ENG_DS_2023_2.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il (NVS8-12MD4, 2TB)", "price_ils": 3590, "url": "https://www.satsigma.co.il/product/%d7%a7%d7%99%d7%98-4-%d7%9e%d7%a6%d7%9c%d7%9e%d7%95%d7%aa-reolink-rlk8-1200d4-a-12mp/", "comparable": false},
+      {"site": "zap.co.il (NVS8-12MD4)", "price_ils": 3609, "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002", "comparable": false},
+      {"site": "zbm.co.il (NVS8 8-ch 12MP NVR only, 2TB - for reference)", "price_ils": 1349, "url": "https://zbm.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-nvr-%D7%9C-8-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-12mp-%D7%9B%D7%95%D7%9C%D7%9C-%D7%93%D7%99%D7%A1%D7%A7-2tb/", "comparable": true}
+    ],
+    "market_low_ils": 3590,
+    "market_typical_ils": 3600,
+    "foreign_prices_note": "USD 499.99-845.99 across US retailers (Walmart, Best Buy, Micro Center).",
+    "notes": "Telran's RLK8 search page lists 6 8CH kits: 1200D4-A, 1200B4-A, 800B4, 410B4-5MP, 820D4-A, 810B4-A. No Telran prices are public (login required)."
+  }
+]

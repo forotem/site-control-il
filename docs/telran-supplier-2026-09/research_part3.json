@@ -1,0 +1,387 @@
+[
+  {
+    "model": "IPC3628LE-ADF28K-WP",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת טורט (כיפה) 8MP ColorHunter",
+    "title_he": "מצלמת אבטחה IP טורט 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3628LE-ADF28K-WP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8MP (3840x2160) חיישן CMOS 1/1.8\" עם Wise-ISP, צבע מלא 24/7 (ColorHunter)",
+      "עדשה קבועה 2.8 מ\"מ F1.0, זווית אופקית 111°",
+      "תאורה לבנה חמה עד 30 מ', 120dB True WDR",
+      "מיקרופון מובנה, חריץ MicroSD עד 512GB",
+      "Smart Intrusion Prevention (Lite) - זיהוי אדם/רכב",
+      "IP67, PoE 802.3af / 12V DC, צריכה עד 3.9W"
+    ],
+    "image_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/img/eab3dc56-16da-4f24-80ec-eae35072da8e.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/2a16698f-6038-4e4b-9c74-f92582b7294b/875e6d2f-b8ec-4e4a-b7b9-e94bc4984fa2.pdf",
+    "market_prices": [
+      {"site": "senetic.co.il", "price_ils": 1221.59, "url": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP"}
+    ],
+    "market_low_ils": 1222,
+    "market_typical_ils": 1222,
+    "foreign_prices_note": "Poland: myehome.pl from 525 PLN (~USD 130); dealayo.com / dwg.us list without public price. Only one Israeli listing (Senetic IL, price incl. 18% VAT; 1,044.09 excl. VAT).",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Owlview_Series/Owlview/IPC3628LE-ADF28K-WP/ . Telran: not found - telran.co.il search returns 'No products found' for the full/short model and for 'Uniview'; Telran's public catalog carries Hikvision/HiLook/VisionNet/Shany/Reolink, no Uniview. Senetic image alternative: https://gfx3.senetic.com/akeneo-catalog/2/b/a/e/2bae7afa831a33813d6cb3a951db78f3c6d0f85d_1788272__custom_image1.jpg"
+  },
+  {
+    "model": "IPC2318LE-ADF28KM-WP",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת צינור (Bullet) 8MP ColorHunter",
+    "title_he": "מצלמת אבטחה IP צינור 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview IPC2318LE-ADF28KM-WP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8MP (3840x2160) @20fps, חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
+      "עדשה קבועה 2.8 מ\"מ F1.0, זווית 111°",
+      "תאורה לבנה חמה עד 30 מ', 0.0003 lux, 120dB WDR",
+      "מיקרופון מובנה, MicroSD עד 512GB",
+      "זיהוי חדירה/חציית קו חכם (אדם/רכב)",
+      "מתכת, IP67, טמפ' עבודה -30 עד 60°C, PoE 802.3af"
+    ],
+    "image_url": "https://www.uniview.com/res/202411/29/20241129_1920938_51296822-9993-4565-bfd1-3c1c07321491_1004313_651984_0.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/f91b2eef-2748-42cc-af3a-ef9538071e71/74e7ad22-e554-440c-8dae-66fd00fe10c6.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il", "price_ils": 540, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-8mp-uniview-2-8mm-ipc2318le-adf28km-wp/"},
+      {"site": "senetic.co.il", "price_ils": 1221.59, "url": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP"},
+      {"site": "zbm.co.il (price shown to logged-in dealers only)", "price_ils": null, "url": "https://zbm.co.il/product/ipc2318le-adf28km-wp/"}
+    ],
+    "market_low_ils": 540,
+    "market_typical_ils": 540,
+    "foreign_prices_note": "USD: uinview.com $175; kodicam.com $573.50; Alibaba bulk $80-90; Amazon US listing B0GGV88XDB (price varies).",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEII_Series/IPC2318LE-ADF28KM-WP/ . Telran: not found on telran.co.il. Large spread between Com4Tech (540) and Senetic (1,222) - Com4Tech is the realistic street price."
+  },
+  {
+    "model": "IPC3626LE-ADF28K-WP",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת טורט (כיפה) 6MP ColorHunter",
+    "title_he": "מצלמת אבטחה IP טורט 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3626LE-ADF28K-WP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "6MP (3072x2048) חיישן CMOS 1/1.8\" Wise-ISP, ColorHunter צבע מלא בלילה",
+      "עדשה קבועה 2.8 מ\"מ F1.0, זווית 110°",
+      "תאורה לבנה עד 30 מ', WDR",
+      "מיקרופון מובנה, MicroSD עד 512GB",
+      "Ultra Motion Detection - הבחנה בין אדם לרכב",
+      "IP67, PoE 802.3af, Ultra 265"
+    ],
+    "image_url": "https://gfx3.senetic.com/akeneo-catalog/7/0/5/4/7054cf193baaca9bbc64123bbc8a8e6ace789525_1788273__custom_image1.jpg",
+    "datasheet_url": null,
+    "market_prices": [
+      {"site": "senetic.co.il", "price_ils": 811.45, "url": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP"}
+    ],
+    "market_low_ils": 811,
+    "market_typical_ils": 811,
+    "foreign_prices_note": "Australia: spymonkey.com.au AUD 248 (sale AUD 190); shopdelta.eu (EUR, dealer). Only one Israeli listing found (Senetic IL, incl. VAT; 693.55 excl. VAT).",
+    "notes": "UNV global page returned 404 (URL patterns tried under Owlview_Series); specs taken from Senetic IL + Australian resellers. Telran: not found on telran.co.il."
+  },
+  {
+    "model": "IPC2316LE-ADF28KM-WP",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת צינור (Bullet) 6MP ColorHunter",
+    "title_he": "מצלמת אבטחה IP צינור 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview OwlView IPC2316LE-ADF28KM-WP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "6MP (3072x2048) חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
+      "עדשה קבועה 2.8 מ\"מ F1.0",
+      "תאורה לבנה עד 30 מ', WDR",
+      "מיקרופון מובנה (M), MicroSD",
+      "זיהוי תנועה חכם אדם/רכב",
+      "IP67, PoE 802.3af, Ultra 265"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://storage.googleapis.com/allegro-offer-attachments/2957973d4229734f9c5b795b10c35c6b79b1490e9a8880705a2f1da32787b61f",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found. Listed abroad by shopdelta.eu / sklep.delta.poznan.pl (PL), mdh-system.pl, apol.com.au, secunet.ma - no public price captured. Expect slightly below IPC2318LE (~450-500 ILS street est.).",
+    "notes": "UNV global page 404 under tried URL patterns; datasheet link is the '6MP ColorHunter with Wise-ISP Fixed Bullet' PDF surfaced by search. Telran: not found on telran.co.il."
+  },
+  {
+    "model": "IPC3614LB-AF28K-DL2",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת טורט 4MP Smart Dual Light (EasyBasic)",
+    "title_he": "מצלמת אבטחה IP טורט 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC3614LB-AF28K-DL2",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "4MP (2560x1440) @25fps, חיישן CMOS 1/3\"",
+      "עדשה קבועה 2.8 מ\"מ F1.6, זווית 93.2°",
+      "Smart Dual Light: IR ותאורה לבנה חמה עד 30 מ'",
+      "מיקרופון מובנה, MicroSD עד 512GB",
+      "Ultra Motion Detection (אדם/רכב), DWDR, Corridor mode",
+      "IP67, PoE 802.3af / 12V DC"
+    ],
+    "image_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/img/319d1ddb-11a2-47a1-8689-cbd9251c0000.png",
+    "datasheet_url": null,
+    "market_prices": [
+      {"site": "com4tech.co.il (related model IPC3614LB-ADF28(40)K-H, IR only)", "price_ils": 268, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-4mp-easybasic-2-8-%d7%9e%d7%9e-ipc3614lb-adf2840k-h/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found for the exact DL2 model. USA: ippowerhouse.com $244.42 / MSRP $259 (IPC3614LB-AF28K-DL); Amazon US B0G4S9X3RH. Israeli reference: sibling IR-only model sells for 268 ILS at Com4Tech.",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC3614LB-AF28K-DL2/ (datasheet 'UNV IPC3614LB-AF28K-DL2 4MP HD Smart Dual Light Fixed Turret Network Camera.pdf' downloadable from the page). Telran: not found on telran.co.il."
+  },
+  {
+    "model": "IPC2124LB-AF28K-DL2",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת צינור 4MP Smart Dual Light (EasyBasic)",
+    "title_he": "מצלמת אבטחה IP צינור 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC2124LB-AF28K-DL2",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "4MP (2560x1440) @25fps, חיישן CMOS 1/3\"",
+      "עדשה קבועה 2.8 מ\"מ F1.6, זווית 93.2°",
+      "Smart Dual Light: IR ותאורה לבנה חמה עד 30 מ'",
+      "מיקרופון מובנה, MicroSD",
+      "Ultra Motion Detection (אדם/רכב), DWDR",
+      "IP67, PoE 802.3af / 12V DC"
+    ],
+    "image_url": "https://www.uniview.com/res/202609/22/20260922_2609269_a1a51f99-28ae-4ef9-b915-58d5ddf22f7d_1025161_651984_0.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/b25ea374-ad2b-4339-9f1c-c0c7d56ff4ad/02917cce-7d40-4968-9fae-885039867a8c.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (related model IPC2124LB-ADF28(40)KM-H, IR only)", "price_ils": 268, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-4mp-easybasic-2-8-%d7%9e%d7%9e-ipc2124lb-adf2840km-h/"},
+      {"site": "satsigma.co.il (related model IPC2124LB-SF28KM-G, out of stock)", "price_ils": 350, "url": "https://www.satsigma.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-uniview-ipc2124lb-sf28km-g-4mp-2-8mm/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found for the exact DL2 model. Georgia allmarket.ge 185.63 GEL (~USD 68); USA ippowerhouse.com $244.42 (DL variant); Amazon US B0DWT19K9Q; morele.net (PL). Israeli sibling 4MP bullets sell 268-350 ILS.",
+    "notes": "Official UNV page: https://global.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC2124LB-AF28K-DL2/ . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "IPC3524LE-ADF28K-WP",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת כיפה אנטי-ונדלית 4MP ColorHunter IK10",
+    "title_he": "מצלמת אבטחה IP כיפה אנטי-ונדלית IK10 4MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3524LE-ADF28K-WP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "4MP (2688x1520) חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
+      "עדשה קבועה 2.8 מ\"מ F1.0, זווית רחבה 124.3°",
+      "תאורה לבנה חמה עד 30 מ', 120dB True WDR",
+      "מיקרופון מובנה, MicroSD",
+      "Smart Intrusion Prevention (Lite) - חדירה/חציית קו",
+      "IP67 + IK10 אנטי-ונדלי, PoE 802.3af, צריכה עד 4W"
+    ],
+    "image_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/img/f76d367b-1b36-4d8a-a2c4-2a18bf072db2.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/34e28b23-efeb-4cf6-a640-43d8d458120d/a12eaef2-05a0-4b53-a754-40a0fc3a607e.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (listed as IPC3524LE-ADF28(40)K-WP, in stock)", "price_ils": 345, "url": "https://www.com4tech.co.il/product/ipc3524le-adf2840k-wp/"}
+    ],
+    "market_low_ils": 345,
+    "market_typical_ils": 345,
+    "foreign_prices_note": "UK onlinesecurityproducts.co.uk, ES smartsecur.es / visiotech - dealer pricing not public.",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Owlview_Series/Owlview/IPC3524LE-ADF28K-WP/ . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "IPC3615LE-ADF28K-G",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות IP / מצלמת טורט 5MP IR (EasyStar)",
+    "title_he": "מצלמת אבטחה IP טורט 5MP עדשה 2.8 מ\"מ IR 30 מ' מיקרופון מובנה Uniview IPC3615LE-ADF28K-G",
+    "telran_sku": "090445 (label code supplied by user; NOT verified - telran.co.il search for 090445 returns nothing)",
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "5MP (2880x1620) חיישן CMOS 1/2.7\" Starlight",
+      "עדשה קבועה 2.8 מ\"מ",
+      "IR חכם עד 30 מ', 120dB WDR",
+      "מיקרופון מובנה, MicroSD",
+      "זיהוי תנועה, ROI, מסיכת פרטיות, ANR",
+      "IP67, PoE 802.3af (עד 6W)"
+    ],
+    "image_url": "https://d1x12lhh8s9nlj.cloudfront.net/images/productos/products/UV-IPC3615LE-ADF28K-G/UV-IPC3615LE-ADF28K-G.png",
+    "datasheet_url": null,
+    "market_prices": [
+      {"site": "zbm.co.il (listed; price shown to logged-in dealers only)", "price_ils": null, "url": "https://zbm.co.il/product/ipc3615le-adf28k-g/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "India: indiamart ~INR 5,000-5,400 (~USD 60-65); Poland en.ivel.pl (archived); Visiotech (ES) marks it discontinued. No public Israeli price; comparable 5MP UNV turrets sell ~300-400 ILS in Israel.",
+    "notes": "Older Easy-series model, discontinued at several EU distributors; UNV official page not found (404). Alt image: https://zbm.co.il/wp-content/uploads/2025/01/20191008_1735679_2_857119_140445_0.jpg . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "NVR302-32B-IQ",
+    "brand": "Uniview (UNV)",
+    "category": "מקליטים / NVR 32 ערוצים 2 דיסקים AI",
+    "title_he": "מערכת הקלטה NVR 32 ערוצים 4K עד 12MP 2 דיסקים קשיחים AI Uniview NVR302-32B-IQ",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "32 ערוצי IP, רזולוציה עד 12MP, Ultra 265/H.265/H.264",
+      "רוחב פס כניסה 160Mbps / יציאה 128Mbps",
+      "2 מפרצי SATA, עד 20TB (10TB לדיסק), ללא דיסק",
+      "יציאות HDMI (4K) + VGA",
+      "AI: זיהוי/השוואת פנים, זיהוי רכב, חדירה, מעקב אובייקט, מפת חום, חיפוש חכם",
+      "ONVIF, תמיכה במצלמות צד ג', NDAA"
+    ],
+    "image_url": "https://ellipsesecurity.com/wp-content/uploads/2025/07/NVR302-32B-IQ-1.png",
+    "datasheet_url": "https://www.uniview.com/res/202407/19/20240719_1905894_UNV%20NVR302-B-IQ%20Series%20Network%20Video%20Recorder_994567_168459_0.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il", "price_ils": 912, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-nvr-%d7%9c32-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-%d7%9c%d7%94%d7%a7%d7%9c%d7%98%d7%94-univiewnvr302-32b-iq/"},
+      {"site": "zbm.co.il (listed; dealer login for price)", "price_ils": null, "url": "https://zbm.co.il/product/nvr302-32b-iq/"}
+    ],
+    "market_low_ils": 912,
+    "market_typical_ils": 912,
+    "foreign_prices_note": "USA: networkcamerastore.com $609; cctvbestbuys.com $303.75 sale (reg. $759); Egypt 13,386 EGP.",
+    "notes": "Series page: https://global.uniview.com/th/Products/NVR/Easy/NVR302-B-IQ-Series/ . Alt image: https://zbm.co.il/wp-content/uploads/2026/03/20250828_2009470_760b467b-32e4-41c4-a880-c91e36d1b5dc_1001936_651984_0.webp . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "NVR301-08S3",
+    "brand": "Uniview (UNV)",
+    "category": "מקליטים / NVR 8 ערוצים דיסק אחד",
+    "title_he": "מערכת הקלטה NVR 8 ערוצים 4K עד 8MP דיסק קשיח אחד Uniview NVR301-08S3",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8 ערוצי IP, רזולוציה עד 8MP/4K, Ultra 265/H.265/H.264",
+      "רוחב פס כניסה 64Mbps / יציאה 48Mbps",
+      "מפרץ SATA אחד, עד 6-8TB, ללא דיסק",
+      "יציאות HDMI 4K + VGA במקביל",
+      "ONVIF, אפליקציית EZView, ללא PoE (גרסת P8 עם PoE נפרדת)",
+      "קומפקטי, 1U מיני"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2022/03/20201118_1780368_1_886645_140445_0.jpg",
+    "datasheet_url": "https://global.uniview.com/res/202307/07/20230707_1883736_UNV%E3%80%90Datasheet%E3%80%91NVR301-S3%20Series%20V1.07-EN_973318_168459_0.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (listed; dealer login for price)", "price_ils": null, "url": "https://zbm.co.il/product/nvr301-08s3/"},
+      {"site": "senetic.co.il (listed, out of stock, no price)", "price_ils": null, "url": "https://www.senetic.co.il/product/NVR301-08S3"},
+      {"site": "com4tech.co.il (related newer model NVR301-08B-IQ, 8ch AI)", "price_ils": 600, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-%d7%9c8-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-uniview-nvr301-08b-iq/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "USA: surveillance-video.com $179; networkcamerastore.com $196.90; Amazon US B0B8T2F42L. No public Israeli price for the exact model; successor NVR301-08B-IQ sells 600 ILS at Com4Tech.",
+    "notes": "Older S3 series (being replaced by B-IQ / X series). Alt image: https://www.surveillance-video.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/image/146462dbc6/uniview-nvr301-08s3-8-channels-1-sata-ultra-265-h-265-h-264-nvr-no-hdd-nvr301-08s3.jpg . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "UAC-B125-AF28LM",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות אנלוגיות (TVI/AHD/CVI) / מצלמת צינור 5MP",
+    "title_he": "מצלמת אבטחה אנלוגית צינור 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC-B125-AF28LM",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "5MP (2880x1620 @25fps / 2592x1944 @20fps), חיישן CMOS 1/2.7\" LightHunter",
+      "עדשה קבועה 2.8 מ\"מ, זווית 109.1°",
+      "2 מקרני IR עד 40 מ', 0.005 lux",
+      "מיקרופון מובנה - אודיו על גבי הקואקס",
+      "יציאה 4 ב-1: TVI / AHD / CVI / CVBS",
+      "IP67, מתכת, 12V DC"
+    ],
+    "image_url": "https://www.uniview.com/res/202609/22/20260922_2608959_e9b4deb1-c187-4801-ae8e-5db0002b463c_1001574_651984_0.png",
+    "datasheet_url": "https://cctv.rs/wp-content/uploads/2024/12/Uniview-UAC-B125-AF28LM.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (related model UAC-B125-AF28M-W, ColorHunter white light)", "price_ils": 110, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-%d7%90%d7%a0%d7%9c%d7%95%d7%92%d7%99%d7%aa-5mp-uac-b125-af28m-w-uniview/"},
+      {"site": "satsigma.co.il (related model UAC-B115-F28-W)", "price_ils": 190, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-uniview-5mp-2-8mm-color-hunter/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found for the exact LM (IR + mic) variant. Abroad: mtdistribuzione.it, visiotech (dealer), ellipsesecurity.com - no public price. Israeli sibling 5MP analog bullets sell 110-190 ILS.",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Analog_Cameras/Whale_Series/Whale_Series/UAC-B125-AF28LM/ . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "UAC-T125-AF28LM",
+    "brand": "Uniview (UNV)",
+    "category": "מצלמות אנלוגיות (TVI/AHD/CVI) / מצלמת טורט (כיפה) 5MP",
+    "title_he": "מצלמת אבטחה אנלוגית טורט 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC-T125-AF28LM",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "5MP (2880x1620 / 2592x1944), חיישן CMOS 1/2.7\" LightHunter",
+      "עדשה קבועה 2.8 מ\"מ, זווית 109.1°",
+      "2 מקרני IR עד 40 מ'",
+      "מיקרופון מובנה - אודיו על גבי הקואקס",
+      "יציאה 4 ב-1: TVI / AHD / CVI / CVBS",
+      "IP67, טמפ' עבודה -30 עד 60°C, 12V DC"
+    ],
+    "image_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/img/7b98c65e-5745-4dff-a9db-7c9fd343989d.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/10824b27-4fea-43bf-bb47-2cb9f4cab245/c139d1a3-a87c-46ea-8aab-d3459b248816.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (related model UAC-T125-AF28M-W, ColorHunter white light)", "price_ils": 140, "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%9b%d7%99%d7%a4%d7%94-%d7%90%d7%a0%d7%9c%d7%95%d7%92%d7%99%d7%aa-5mp-uac-t125-af28m-w-uniview/"},
+      {"site": "satsigma.co.il (related model UAC-T115-F28-W)", "price_ils": 190, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-uniview-5mp-2-8mm-color-hunter/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found for the exact LM variant. UK cucctv.co.uk / cctv-alarms.co.uk ('see price'), kimostore.net, B&H (AF28M-W variant). Israeli sibling 5MP analog turrets sell 140-190 ILS.",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Analog_Cameras/Whale_Series/Whale_Series/UAC-T125-AF28LM/ . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "XVR301-04G3",
+    "brand": "Uniview (UNV)",
+    "category": "מקליטים / XVR היברידי 4 ערוצים",
+    "title_he": "מערכת הקלטה XVR היברידית 4 ערוצים 5MP Lite + 2 IP דיסק אחד Uniview XVR301-04G3",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "4 ערוצי BNC אנלוגיים (TVI/AHD/CVI/CVBS) + 2 ערוצי IP (עד 6 בהמרה)",
+      "הקלטה עד 5MP Lite (AHD 5MP@20fps), IP עד 4MP",
+      "H.265 / H.264",
+      "מפרץ SATA אחד, עד 16TB (ללא דיסק)",
+      "יציאות HDMI + VGA (1920x1080)",
+      "אודיו, P2P / EZView, 1U קומפקטי"
+    ],
+    "image_url": "https://www.uniview.com/res/202609/22/20260922_2608633_ce6267d2-a621-4c33-a883-f19e6b8d6686_1003334_651984_0.png",
+    "datasheet_url": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/c19a0053-b9f1-4f4a-812a-0a55187e1560/2360dcff-5943-4cc8-b49b-2f6e5e8f40e4.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il (related model XVR301-04Q, bundled with 1TB HDD)", "price_ils": 700, "url": "https://www.satsigma.co.il/product/%d7%9e%d7%9b%d7%a9%d7%99%d7%a8-%d7%94%d7%a7%d7%9c%d7%98%d7%94-xvr-uniview-4ch-xvr301-04q-1tb/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "no Israeli listing found for the exact model. USA: networkcamerastore.com $159; ippowerhouse.com $174.90; surveillance-video.com. Israeli reference: XVR301-04Q + 1TB = 700 ILS (Satsigma).",
+    "notes": "Official UNV page: https://www.uniview.com/Products/Digital_Video_Recorders/Digital_Video_Recorders/1HDD/XVR301-04G3/ . Telran: not found on telran.co.il."
+  },
+  {
+    "model": "XVR301-08G3",
+    "brand": "Uniview (UNV)",
+    "category": "מקליטים / XVR היברידי 8 ערוצים",
+    "title_he": "מערכת הקלטה XVR היברידית 8 ערוצים 5MP Lite + 4 IP דיסק אחד Uniview XVR301-08G3",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "8 ערוצי BNC אנלוגיים (TVI/AHD/CVI/CVBS) + 4 ערוצי IP (עד 8 בהמרה)",
+      "הקלטה עד 5MP Lite אנלוגי, IP עד 4MP@30fps",
+      "H.265 / H.264, רוחב פס 32Mbps (עד 40Mbps)",
+      "מפרץ SATA אחד, עד 8-16TB (ללא דיסק)",
+      "יציאות HDMI + VGA (1920x1080)",
+      "אודיו, P2P / EZView, 1U קומפקטי"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2025/01/UV-XVR301-08G3.png",
+    "datasheet_url": "https://www.uniview.com/it/res/202403/26/20240326_1900620_UNV%20XVR301-G3%20Series%20Digital%20Video%20Recorder_958077_168459_0.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (listed; dealer login for price)", "price_ils": null, "url": "https://zbm.co.il/product/xvr301-08g3/"},
+      {"site": "satsigma.co.il (related model XVR301-08Q3, bundled with 1TB HDD)", "price_ils": 1100, "url": "https://www.satsigma.co.il/product/%d7%9e%d7%9b%d7%a9%d7%99%d7%a8-%d7%94%d7%a7%d7%9c%d7%98%d7%94-xvr-uniview-8ch-xvr301-08q3-1tb/"}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "USA: networkcamerastore.com $199; dwg.us $219 (MSRP $269); ippowerhouse.com $220.05; B&H; Newegg. No public Israeli price for the bare unit; ZBM lists it (dealer login); Satsigma XVR301-08Q3 + 1TB = 1,100 ILS.",
+    "notes": "Series page: https://www.uniview.com/arab/Products/DVR/XVR301-G3/ (model page 404). Com4Tech 'XVR301-G3 8CH' listing found in search now redirects to the category (removed). Telran: not found on telran.co.il."
+  }
+]

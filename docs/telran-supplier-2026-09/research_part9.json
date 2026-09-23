@@ -1,0 +1,146 @@
+[
+  {
+    "model": "CH9 (CH9-WCA V2.0)",
+    "brand": "Tenda",
+    "category": "מצלמות אבטחה > מצלמות Wi-Fi חיצוניות ממונעות (PTZ)",
+    "title_he": "מצלמת אבטחה חיצונית Tenda CH9 דו-עדשתית 6MP ממונעת Wi-Fi 6 עם ראיית לילה צבעונית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "6MP סה\"כ: שתי עדשות 3MP (2304x1296) – עדשה קבועה רחבה 4mm (79.8° אופקי) + עדשת PT טלה 6mm (49.6°), צמצם F1.6, חיישן CMOS 1/3\"",
+      "Pan/Tilt ממונע 0°–355° אופקי, 0°–90° אנכי; קישור חכם בין העדשות – העדשה הרחבה מזהה אדם/רכב והעדשה הממונעת ננעלת ועוקבת",
+      "ראיית לילה Full-Color עד 30 מ': 6 נורות IR (850nm) + 6 זרקורים, שלושה מצבים (IR שחור-לבן / צבע מלא / חכם)",
+      "אודיו דו-כיווני מלא (מיקרופון + רמקול 76dBA), אזעקת קול ואור; זיהוי AI: אדם, רכב, חציית קו, חדירה",
+      "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (90 יום ניסיון) / NVR-NAS דרך ONVIF; הזנה 12V DC 1A; IP65; 203x122x162 מ\"מ"
+    ],
+    "image_url": "https://static.tenda.com.cn/tdeweb/prodducts/RCH9/1.png",
+    "datasheet_url": "https://static.tenda.com.cn/tdeweb/download/CH9-WCA/CH9-WCA%20datasheet%20EN.pdf",
+    "product_url": "https://www.tendacn.com/product/ch9-wca-v20",
+    "spec_url": "https://www.tendacn.com/product/specification/CH9-WCA",
+    "market_prices": [
+      {
+        "site": "kav-isr.com (קו ישראלי) – Tenda CP3 Pro (מצלמת פנים, הדגם היחיד של Tenda שנמצא בשוק הישראלי)",
+        "price_ils": 199,
+        "url": "https://kav-isr.com/cameras/home-cameras/tenda-cp3-pro.html",
+        "comparable": true
+      }
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "לא נמצא מחיר ישראלי. חו\"ל: Al Fath Technology (מצרים) EGP 2,900 (~$60); RH9/CH9-WCA ב-eBay.de; אמזון אירופה בדרך כלל ~€60–80. הערכת מחיר מדף ישראלי כולל מע\"מ: ₪350–450.",
+    "notes": "לא מופיע ב-telran.co.il (No products found) ולא ב-KSP/Ivory/Bug/Zap/ZBM. שם מלא ביצרן: CH9-WCA 6MP Dual-Lens Linkage Outdoor Wi-Fi Pan/Tilt Camera (גרסה V2.0). קיים גם דגם RH9-WCA זהה טכנית. תומך Frigate/ONVIF דו-ערוצי."
+  },
+  {
+    "model": "CH10",
+    "brand": "Tenda",
+    "category": "מצלמות אבטחה > מצלמות Wi-Fi חיצוניות ממונעות (PTZ)",
+    "title_he": "מצלמת אבטחה חיצונית Tenda CH10 דו-עדשתית 10MP ממונעת Wi-Fi 6 עם ראיית לילה צבעונית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "10MP סה\"כ: שתי עדשות 5MP (2880x1620) – עדשה קבועה רחבה 4mm (83.2° אופקי) + עדשת PT טלה 6mm (51.4°), צמצם F1.6, חיישן CMOS 1/3\"",
+      "Pan/Tilt ממונע 0°–355° אופקי, 0°–90° אנכי (+ כיוון זרוע ידני 260°); קישור חכם דו-עדשתי – העדשה הממונעת ננעלת אוטומטית על אדם/רכב",
+      "ראיית לילה Full-Color עד 30 מ': 6 נורות IR + 6 זרקורים, מצב IR / צבע מלא / חכם",
+      "אודיו דו-כיווני מלא (מיקרופון + רמקול), אזעקת קול ואור; זיהוי AI: אדם, רכב, אופניים חשמליים, חציית קו, חדירה",
+      "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (90 יום ניסיון) / NVR-NAS ב-ONVIF דו-ערוצי; הזנה 12V DC 1A; IP65; 203x122x162 מ\"מ"
+    ],
+    "image_url": "https://static.tenda.com.cn/tdeweb/prodducts/RCH10/1.png",
+    "datasheet_url": "https://www.tendacn.com/material/show/722871613206597",
+    "product_url": "https://www.tendacn.com/product/CH10",
+    "spec_url": "https://www.tendacn.com/product/specification/CH10",
+    "market_prices": [
+      {
+        "site": "kav-isr.com (קו ישראלי) – Tenda CP3 Pro (מצלמת פנים, הדגם היחיד של Tenda שנמצא בשוק הישראלי)",
+        "price_ils": 199,
+        "url": "https://kav-isr.com/cameras/home-cameras/tenda-cp3-pro.html",
+        "comparable": true
+      }
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "לא נמצא מחיר ישראלי. חו\"ל: eBay $134.40 (ללא משלוח); Elryan (עיראק) 81,389 IQD (~$62). הערכת מחיר מדף ישראלי כולל מע\"מ: ₪450–600.",
+    "notes": "דגם חדש (דף מוצר ומפרט 2026). לא מופיע ב-telran.co.il ולא באתרי הקמעונאים הישראליים שנבדקו. Tenda מציגה אותו כדגם הדגל של סדרת ה-Dual-Lens Linkage."
+  },
+  {
+    "model": "CT3 (CT3-WCA)",
+    "brand": "Tenda",
+    "category": "מצלמות אבטחה > מצלמות Wi-Fi חיצוניות (Bullet)",
+    "title_he": "מצלמת אבטחה חיצונית Tenda CT3 צינור 1080P Wi-Fi עם ראיית לילה צבעונית ואודיו דו-כיווני",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 1080P Full HD (1920x1080), חיישן CMOS 1/2.9\", עדשה קבועה 4mm F1.6, זווית 85.6° אופקי / 93.1° אלכסוני – מצלמת צינור (Bullet), ללא Pan/Tilt",
+      "ראיית לילה Full-Color עד 30 מ': 2 נורות IR + 2 זרקורים, שלושה מצבים (חכם / צבע מלא / שחור-לבן)",
+      "אודיו דו-כיווני (מיקרופון + רמקול, סירנה 82dBA), אזעקת קול ואור; זיהוי תנועה ואדם מבוסס AI; תומך Amazon Alexa",
+      "Wi-Fi 802.11 b/g/n 2.4GHz עד 300Mbps עם שתי אנטנות חיצוניות (טווח משופר ב-50%)",
+      "אחסון microSD עד 256GB / ענן / NVR (ONVIF); הזנה 12V DC 1A; עמידות IP66; 72x72x175 מ\"מ"
+    ],
+    "image_url": "https://static.tenda.com.cn/tdeweb/pro_pictures/CT3/1-0.png",
+    "datasheet_url": "https://static.tenda.com.cn/tdeweb/download/CT3/CT3V1.0%20Datasheet.pdf",
+    "product_url": "https://www.tendacn.com/product/CT3",
+    "spec_url": "https://www.tendacn.com/product/specification/CT3",
+    "market_prices": [
+      {
+        "site": "kav-isr.com (קו ישראלי) – Tenda CP3 Pro (מצלמת פנים, הדגם היחיד של Tenda שנמצא בשוק הישראלי)",
+        "price_ils": 199,
+        "url": "https://kav-isr.com/cameras/home-cameras/tenda-cp3-pro.html",
+        "comparable": true
+      }
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "לא נמצא מחיר ישראלי. חו\"ל: נמכר ב-Amazon UK/DE/IT/FR (ASIN B09M2ZX96P / B09M335B7W), בדרך כלל ~£30–40 / €35–45. הערכת מחיר מדף ישראלי כולל מע\"מ: ₪180–250.",
+    "notes": "לא מופיע ב-telran.co.il ולא ב-KSP/Ivory/Bug/Zap/ZBM. דגם ותיק (2021) – Tenda כבר משווקת את היורש CT6 (2K). Wi-Fi 4 בלבד (לא Wi-Fi 6)."
+  },
+  {
+    "model": "CP3 Pro (CP3 Pro V1.1)",
+    "brand": "Tenda",
+    "category": "מצלמות אבטחה > מצלמות Wi-Fi פנימיות ממונעות / מוניטור לתינוק",
+    "title_he": "מצלמת אבטחה ביתית Tenda CP3 Pro 2K ממונעת 360° Wi-Fi 6 עם זיהוי בכי תינוק וחיות מחמד",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 2K / 3MP (2304x1296), חיישן CMOS 1/3\", עדשה 4mm F2.0, זווית 78° אופקי / 95° אלכסוני; קידוד H.265",
+      "Pan/Tilt ממונע 355° אופקי, 155° אנכי (‎-65° עד +90°) עם מעקב אוטומטי אחר אדם (Human Tracking)",
+      "ראיית לילה IR (2 נורות 850nm) עד 10 מ'; Smart Guardian: זיהוי תנועה, אדם, חיית מחמד, בכי תינוק וחבלה, אזעקת קול ואור, תריס פרטיות",
+      "אודיו דו-כיווני + כפתור שיחה בלחיצה אחת (One-touch Call); הצפנה משולשת AES",
+      "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (3 חודשי ניסיון) / NVR; הזנה 5V 1A USB Type-C; 103x88x88 מ\"מ"
+    ],
+    "image_url": "https://static.tenda.com.cn/tdcweb/products/CP3Pro/bg1-1920.jpg",
+    "datasheet_url": "https://www.tendacn.com/product/specification/CP3ProV11",
+    "product_url": "https://www.tendacn.com/product/CP3ProV11",
+    "spec_url": "https://www.tendacn.com/product/specification/CP3ProV11",
+    "market_prices": [
+      {
+        "site": "kav-isr.com (קו ישראלי – יבואן רשמי טלרן, אחריות שנה)",
+        "price_ils": 199,
+        "url": "https://kav-isr.com/cameras/home-cameras/tenda-cp3-pro.html",
+        "comparable": false
+      },
+      {
+        "site": "zap.co.il (רישום של קו ישראלי, ₪199 + ₪30 משלוח)",
+        "price_ils": 229,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1298284675&sog=g-hiddencam",
+        "comparable": false
+      },
+      {
+        "site": "smartimg.co.il (דמיון חכם) – מבצע ₪240 במקום ₪260",
+        "price_ils": 240,
+        "url": "https://smartimg.co.il/חנות/מצלמות-ומערכות-אבטחה/שמע/מצלמה-אלחוטית-tenda-cp3-pro/",
+        "comparable": false
+      }
+    ],
+    "market_low_ils": 199,
+    "market_typical_ils": 230,
+    "foreign_prices_note": "Amazon.com ASIN B0C4YLN1XK – מבצעים ישראליים (ZUZU Deals / SmartBuy) דיווחו על $17.90 (~₪55) לפני משלוח ומע\"מ; מחיר רגיל באמזון ~$30–40. דגם אח CP3 V3 נמכר ב-kstore.co.il ב-₪200.",
+    "notes": "לא מופיע ב-telran.co.il (No products found), אך דף kav-isr מציין במפורש שהיבואן הרשמי הוא טלרן. הדף הישראלי מציין IR עד 12 מ' ו-microSD עד 256GB (גרסה ישנה יותר) לעומת 10 מ' ו-512GB במפרט היצרן V1.1; מתח ההזנה בדף הישראלי 9V DC לעומת USB-C 5V אצל היצרן – כנראה גרסת חומרה שונה, לוודא עם טלרן."
+  }
+]

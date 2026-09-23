@@ -1,0 +1,364 @@
+[
+  {
+    "model": "DS-KIS607-S",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו IP - ערכות (קיטים) לוילה",
+    "title_he": "ערכת אינטרקום וידאו IP לוילה Hikvision DS-KIS607-S כולל מסך מגע 7\" ומתג PoE",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "ערכה מלאה: פנל דלת IP עם מצלמת 2MP (1080p, זווית אופקית 131°), מסך פנימי 7\" 1024x600 עם Wi-Fi, מתג PoE 4 פורטים, מודול ממסר, כרטיס מנהל, 5 תגים, כרטיס TF 32GB וספק",
+      "שליטה מלאה מאפליקציית Hik-Connect: שיחה, פתיחת דלת וצפייה חיה מרחוק",
+      "הזנה PoE סטנדרטית - התקנה בכבל רשת אחד",
+      "שמירת הודעות ותמונות מבקרים בכרטיס TF",
+      "תמיכה בעד 16 מסכים פנימיים במערכת"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000119433/DS-KIS607-S_Datasheet_20241012.pdf",
+    "market_prices": [
+      {
+        "site": "zbm.co.il (via zap.co.il)",
+        "price_ils": 1387,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1396903572&sog=h-intercom&indicator=20"
+      }
+    ],
+    "market_low_ils": 1387,
+    "market_typical_ils": 1387,
+    "foreign_prices_note": "Listed by EU distributors (visiotech, avantsec, srprosecure) but prices behind login; Israeli listing exists.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Only one Israeli listing found (ZBM 1,387 ILS incl. 50 ILS shipping, per zap). Hikvision product page: https://www.hikvision.com/en/products/Video-Intercom-Products/Kits/IP-Kits/ds-kis607-s/"
+  },
+  {
+    "model": "DS-KIS212",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו אנלוגי 4 גידים - ערכות לוילה",
+    "title_he": "ערכת אינטרקום וידאו אנלוגי 4 גידים Hikvision DS-KIS212 - פנל HD-TVI ומסך 7\"",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "ערכה 4 גידים Plug & Play: פנל חיצוני DS-KB2412T-IM עם מצלמת HD-TVI ומסך פנימי DS-KH2230T 7\" TFT עם לחצנים פיזיים",
+      "איכות וידאו HD-TVI (720p/1080p) - חיווט פשוט ללא רשת",
+      "לחיצה אחת לשיחה ולחיצה אחת לפתיחת דלת",
+      "תמיכה בעד 2 פנלי דלת ו-3 מסכים פנימיים במערכת",
+      "הזנה 12VDC, צריכה עד 5W, טמפ' עבודה -10 עד +55°C, התקנה על הטיח"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000110586/DS-KIS212_Four-Wire-HD-Video-Intercom-Kit_Datasheet_20240311.pdf",
+    "market_prices": [
+      {
+        "site": "connectvision.co.il",
+        "price_ils": 900,
+        "url": "https://connectvision.co.il/product/hikvision-intercom-kit-4-wire-hd-video/"
+      }
+    ],
+    "market_low_ils": 900,
+    "market_typical_ils": 900,
+    "foreign_prices_note": "IndiaMart ~INR 6,200 (~USD 75); EU distributors (orbitadigital, visiotech) list it without public price.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Only one Israeli listing (Connect Vision, 900 ILS, VAT status not stated). Not found on zbm/com4tech/zap/alltechstore. Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/Kits/4-wire-Kits/ds-kis212/"
+  },
+  {
+    "model": "DS-KV8213-WME1(C)",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו IP - פנלי דלת לוילה",
+    "title_he": "פנל אינטרקום IP לוילה Hikvision DS-KV8213-WME1(C) - 2 לחצנים, מצלמת 2MP, Wi-Fi/PoE, קורא כרטיסים",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מצלמת 2MP HD עם תאורת IR, זווית 124° אופקי / 75° אנכי",
+      "2 לחצני קריאה פיזיים - מתאים לבית דו-משפחתי / 2 יחידות דיור",
+      "קורא כרטיסי Mifare מובנה (13.56MHz), עד 10,000 משתמשים",
+      "חיבור Wi-Fi 802.11b/g/n או רשת קווית 10/100; הזנה PoE או 12VDC",
+      "גוף אלומיניום, אטימות IP65 ועמידות IK08, טמפ' -40 עד +53°C",
+      "מידות 174x91x29 מ\"מ, אפליקציית Hik-Connect"
+    ],
+    "image_url": "https://zbm.co.il/wp-content/uploads/2023/07/DS-KV8213-WME1C-2-Buttons-Metal-Villa-Door-Station.webp",
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "site": "com4tech.co.il",
+        "price_ils": 730,
+        "url": "https://www.com4tech.co.il/product/אינטרקום-וילה-hikvision-ip-2mp-camera-ir-שני-לחצנים-ds-kv8213-wme1c/"
+      },
+      {
+        "site": "zbm.co.il",
+        "price_ils": 797,
+        "url": "https://zbm.co.il/product/ds-kv8213-wme1c/"
+      },
+      {
+        "site": "AllTechStore (via zap.co.il)",
+        "price_ils": 879,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1141071068&sog=h-intercom&indicator=20"
+      }
+    ],
+    "market_low_ils": 730,
+    "market_typical_ils": 800,
+    "foreign_prices_note": "EU: ~EUR 231 ex VAT (andi-bg).",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Closest Telran item is the older 1.3MP model DS-KV8202-IM (Telran product 6415, https://www.telran.co.il/product/6415/, image https://www.telran.co.il/images/DS-KV8202-IM.001.png, price shown as 0/not public). ZBM: regular 1,357, sale 797 (675 ex VAT). Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kv8213-wme1-c-/"
+  },
+  {
+    "model": "DS-KV8413-WME1(C)",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו IP - פנלי דלת לוילה",
+    "title_he": "פנל אינטרקום IP לוילה Hikvision DS-KV8413-WME1(C) - 4 לחצנים, מצלמת 2MP, Wi-Fi/PoE, קורא כרטיסים",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מצלמת 2MP HD עם תאורת IR וזווית רחבה",
+      "4 לחצני קריאה - מתאים לבניין/כניסה עם עד 4 יחידות דיור",
+      "קורא כרטיסי Mifare מובנה, פתיחה מאפליקציית Hik-Connect",
+      "Wi-Fi או רשת קווית, הזנה PoE או 12VDC",
+      "גוף מתכת, IP65/IK08, התקנה על הטיח (גרסת Flush זמינה בנפרד)"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "site": "com4tech.co.il",
+        "price_ils": 895,
+        "url": "https://www.com4tech.co.il/product/אינטרקום-וילה-hikvision-ip-2mp-camera-ir-ארבעה-לחצנים-ds-kv8413-wme1c/"
+      },
+      {
+        "site": "zbm.co.il (via zap.co.il)",
+        "price_ils": 906,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1396903598&sog=h-intercom&indicator=20"
+      },
+      {
+        "site": "AllTechStore (via zap.co.il)",
+        "price_ils": 959,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1141071069&sog=h-intercom&indicator=20"
+      }
+    ],
+    "market_low_ils": 895,
+    "market_typical_ils": 910,
+    "foreign_prices_note": "EU: ~EUR 209 ex VAT (andi-bg); B&H lists it in the US.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Closest Telran item: older 1.3MP DS-KV8402-IM (Telran product 6416, https://www.telran.co.il/product/6416/, image https://www.telran.co.il/images/DS-KV8402-IM.001.png). Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kv8413-wme1-c-/"
+  },
+  {
+    "model": "DS-KV6124-WBE1",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו IP - פנלי דלת לוילה",
+    "title_he": "פנל אינטרקום IP לוילה Hikvision DS-KV6124-WBE1 - מצלמת 4MP 150°, קודן, כרטיס, Bluetooth, Wi-Fi 6/PoE",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מצלמת 4MP ברזולוציה גבוהה עם זווית צפייה רחבה 150°",
+      "לחצן קריאה אחד + לוח מקשים לקוד; פתיחה בכרטיס, קוד PIN, Bluetooth, אפליקציית Hik-Connect או מהמסך הפנימי",
+      "2 ממסרי נעילה - שליטה בשתי דלתות/שערים",
+      "Wi-Fi 6 או רשת קווית, הזנה PoE (IEEE802.3at) או 12VDC",
+      "הקלטת וידאו וצפייה בהקלטות דרך Hik-Connect / דפדפן",
+      "IP65, התקנה על הטיח"
+    ],
+    "image_url": "https://www.com4tech.co.il/wp-content/uploads/2026/07/6dfecb6f-d629-40e9-8939-2508e2f69ac3.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/m000168988/DS-KV6124-WBE1_Datasheet_20260603.pdf",
+    "market_prices": [
+      {
+        "site": "com4tech.co.il (variant DS-KV6124-E1, no Wi-Fi/BT)",
+        "price_ils": 795,
+        "url": "https://www.com4tech.co.il/product/אינטרקום-וילה-ds-kv6124-e1-מבית-hikvision-מביא-איתו-דרך-עבודה-פשוטה-חכמה-ויעילה-יותר/"
+      },
+      {
+        "site": "AllTechStore via zap.co.il (variant DS-KV6124-E1)",
+        "price_ils": 989,
+        "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2"
+      },
+      {
+        "site": "com4tech.co.il (kit DS-KIS612-P = DS-KV6124-WBE1 + DS-KH6350-WTE1)",
+        "price_ils": 900,
+        "url": "https://www.com4tech.co.il/product/קיט-אינטרקום-איכות-מצלמנה-4-מגה-hikvision-ds-kis612-p-ip-video/"
+      }
+    ],
+    "market_low_ils": 795,
+    "market_typical_ils": 900,
+    "foreign_prices_note": "No exact Israeli standalone listing for the -WBE1 variant. Abroad: AUD 319 incl. GST (cctvguru.com.au), Alibaba USD 100-350, AliExpress listings exist.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Israeli prices above are for the sibling DS-KV6124-E1 (wired-only) and for the DS-KIS612-P kit that contains the -WBE1 plus the DS-KH6350-WTE1 monitor (com4tech 900 ILS; ZBM 1,422 ILS via zap). A standalone -WBE1 should be priced ~850-1,000 ILS. Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kv6124-wbe1/"
+  },
+  {
+    "model": "DS-KH6350-WTE1",
+    "brand": "Hikvision",
+    "category": "אינטרקום וידאו IP - מסכים פנימיים",
+    "title_he": "מסך פנימי לאינטרקום IP Hikvision DS-KH6350-WTE1 - מסך מגע 7\" 1024x600, Wi-Fi, PoE, Hik-Connect",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מסך מגע קיבולי צבעוני 7\" TFT ברזולוציה 1024x600",
+      "חיבור Wi-Fi או רשת קווית; הזנה PoE סטנדרטית או 12VDC",
+      "מיקרופון ורמקול מובנים, וידאו H.265/H.264, אודיו G.711/Opus/AAC",
+      "חריץ MicroSD (עד 128/256GB) להודעות ותמונות מבקרים, 8 כניסות אזעקה",
+      "תמיכה ב-SIP והעברת שיחה לאפליקציית Hik-Connect; צריכה עד 5W",
+      "זמין בלבן / שחור; התקנה על הקיר"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000083/S000000129/S000000131/OFR000164/M000056209/Data_Sheet/DS-KH6350-WTE1-Video-Intercom-Network-Indoor-Station_Datasheet_20240403.pdf",
+    "market_prices": [
+      {
+        "site": "zbm.co.il (predecessor DS-KH6320-WTE1)",
+        "price_ils": 739,
+        "url": "https://www.zbm.co.il/product/ds-kh6320-wte1/"
+      },
+      {
+        "site": "Secure Group via zap.co.il (DS-KH6320-TE1, wired only)",
+        "price_ils": 650,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1352743051&sog=h-intercom&indicator=20"
+      },
+      {
+        "site": "com4tech.co.il (kit DS-KIS612-P incl. DS-KH6350-WTE1 + DS-KV6124-WBE1)",
+        "price_ils": 900,
+        "url": "https://www.com4tech.co.il/product/קיט-אינטרקום-איכות-מצלמנה-4-מגה-hikvision-ds-kis612-p-ip-video/"
+      }
+    ],
+    "market_low_ils": 650,
+    "market_typical_ils": 740,
+    "foreign_prices_note": "No exact Israeli standalone listing for DS-KH6350-WTE1. Abroad: from ~USD 155 (getic.com), noon.com UAE, megateh.eu, AliExpress.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Telran carries the predecessor DS-KH6320-WTE1/EU (Telran product 6529, https://www.telran.co.il/product/6529/, image https://www.telran.co.il/images/DS-KH6320-WTE1.01.png, datasheet https://www.telran.co.il/images/DS-KH6320-WTE1%20Spec-1-2.pdf, price not public). Israeli prices above are for the 6320 series; expect ~700-800 ILS for the 6350. Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kh6350-wte1/"
+  },
+  {
+    "model": "DS-K1T502DBFWX-C",
+    "brand": "Hikvision",
+    "category": "בקרת כניסה - מסופי טביעת אצבע / וידאו",
+    "title_he": "מסוף בקרת כניסה ואינטרקום Hikvision DS-K1T502DBFWX-C - טביעת אצבע, כרטיס Mifare/DESFire, קוד, QR, מצלמה ו-SIP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "אימות בטביעת אצבע, כרטיס Mifare / MF DESFire, קוד PIN וקוד QR",
+      "מצלמת 2MP מובנית - אינטרקום וידאו, צפייה חיה מרחוק ו-SIP",
+      "קיבולת 10,000 משתמשים ו-300,000 אירועים; כרטיס SD עד 256GB",
+      "רשת TCP/IP, Wi-Fi, RS-485, Wiegand; ממסר דלת, לחצן יציאה, אזעקת חבלה",
+      "IP65 - מתאים להתקנה חיצונית (מגן גשם DS-KAB502-S1 אופציונלי)"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "site": "com4tech.co.il",
+        "price_ils": 1100,
+        "url": "https://www.com4tech.co.il/product-category/בקרת-כניסה-hikvision/"
+      },
+      {
+        "site": "abq.co.il",
+        "price_ils": 1155,
+        "url": "https://abq.co.il/products/מסוף-כניסה-עם-טביעת-אצבע-כרטיס-ו-sip-דגם-ds-k1t502dbfwx-c"
+      }
+    ],
+    "market_low_ils": 1100,
+    "market_typical_ils": 1150,
+    "foreign_prices_note": "HIKD USD 281 (sale, list 422); Altek USD 337; orbitadigital shows EUR 55 (looks like a data error).",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Closest Telran item: older DS-K1T501SF video access terminal with fingerprint (Telran product 6527, https://www.telran.co.il/product/6527/, image https://www.telran.co.il/images/DS-K1T501SF.01.png). com4tech: regular 1,450, sale 1,100. The card-only sibling DS-K1T502DBWX sells for 700-742 ILS (com4tech/abq). Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/FingerPrint-Terminals/Pro-Series/ds-k1t502dbfwx-c/"
+  },
+  {
+    "model": "DS-K1T344EBFWX-E1",
+    "brand": "Hikvision",
+    "category": "בקרת כניסה - מסופי זיהוי פנים",
+    "title_he": "מסוף זיהוי פנים ונוכחות Hikvision DS-K1T344EBFWX-E1 - מסך 4.3\", פנים/טביעת אצבע/כרטיס EM/קוד, Wi-Fi",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "זיהוי פנים ב-Deep Learning, מהירות זיהוי כ-0.2 שניות, מרחק 0.3-1.5 מ'",
+      "עדשה כפולה 2MP רחבת זווית - עובד גם בתאורה חלשה/אפס",
+      "אימות: פנים, טביעת אצבע, כרטיס EM 125kHz, קוד PIN; קיבולת ~1,500 פנים / 3,000 כרטיסים / 3,000 טביעות",
+      "מסך מגע LCD 4.3\", ממשק TCP/IP, Wi-Fi, RS-485, Wiegand",
+      "פונקציות בקרת כניסה ונוכחות מלאות; IP65 - מתאים לחוץ עם מגן גשם DS-KAB673-S1"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000080/S000000103/S000000107/OFR000141/M000126769/Data_Sheet/DS-K1T344EBFWX-E1_Datasheet_20240522.pdf",
+    "market_prices": [
+      {
+        "site": "com4tech.co.il",
+        "price_ils": 1350,
+        "url": "https://www.com4tech.co.il/product/מסוף-זיהוי-פנים-ds-k1t344ebfwx-e1/"
+      },
+      {
+        "site": "abq.co.il (Mifare sibling DS-K1T344MBFWX-E1)",
+        "price_ils": 1398,
+        "url": "https://abq.co.il/products/מסוף-כניסה-ביומטרי-כולל-דגם-ds-k1t344mbfwx-e1"
+      },
+      {
+        "site": "AllTechStore via zap.co.il (Mifare sibling DS-K1T344MBFWX-E1)",
+        "price_ils": 1590,
+        "url": "https://www.zap.co.il/fs.aspx?pid=1141071057&sog=h-intercom&indicator=20"
+      }
+    ],
+    "market_low_ils": 1350,
+    "market_typical_ils": 1400,
+    "foreign_prices_note": "EU: ~EUR 336 ex VAT (orbitadigital); Bangladesh ~BDT 21,000.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Telran has only older face terminals (DS-K1T606MF, product 6398; DS-K1T8105E, product 6401). com4tech also lists DS-K1T344MBFWX-E1 at 1,395 and a 'DS-K1T344MBFWX-E1+' at 840. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Value-Series/ds-k1t344ebfwx-e1/"
+  },
+  {
+    "model": "DS-K1T323MBFWX-E1",
+    "brand": "Hikvision",
+    "category": "בקרת כניסה - מסופי זיהוי פנים",
+    "title_he": "מסוף זיהוי פנים קומפקטי Hikvision DS-K1T323MBFWX-E1 - מסך 2.4\", פנים/טביעת אצבע/כרטיס Mifare/קוד, Wi-Fi",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מסוף זיהוי פנים מסדרת Value במארז צר - מסך LCD 2.4\"",
+      "עדשה רחבת זווית 2MP, זיהוי פנים מהיר ומדויק (Deep Learning)",
+      "אימות: פנים, טביעת אצבע, כרטיס Mifare, קוד PIN; קיבולת ~1,000 פנים / 3,000 כרטיסים / 3,000 טביעות אצבע",
+      "TCP/IP, Wi-Fi, RS-485, Wiegand; ממסר דלת ולחצן יציאה",
+      "IP65, מיועד למשרדים, בנייני מגורים ומוסדות חינוך"
+    ],
+    "image_url": null,
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000156946/DS-K1T323MBFWX-E1_Datasheet_20250625.pdf",
+    "market_prices": [],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "foreign_prices_note": "No Israeli listing found. Abroad: Thailand THB 2,800 (sale, list 3,600, ~USD 80); EU distributors (orbitadigital, bkeesti.ee, megateh.eu, visiotech) list it; kimostore.net.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Not found on zbm, com4tech, abq, zap or alltechstore. Newer model (2025 datasheet). Suggested Israeli price band by analogy to DS-K1T344 (1,350-1,400 ILS): ~1,000-1,200 ILS. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Value-Series/ds-k1t323mbfwx-e1/"
+  },
+  {
+    "model": "DS-K1T671M",
+    "brand": "Hikvision",
+    "category": "בקרת כניסה - מסופי זיהוי פנים (Pro)",
+    "title_he": "מסוף זיהוי פנים Pro Hikvision DS-K1T671M - מסך מגע 7\", 6,000 פנים, כרטיס Mifare, IP65",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "מסך מגע LCD 7\" ועדשה כפולה 2MP רחבת זווית - זיהוי גם בתאורה חלשה",
+      "מרחק זיהוי פנים 0.3-3 מ', קיבולת 6,000 פנים ו-6,000 כרטיסי Mifare (גרסת MF מוסיפה 5,000 טביעות אצבע)",
+      "TCP/IP 10/100/1000, RS-485, Wiegand; הזנה 12VDC/2A",
+      "IP65, טמפ' -30 עד +60°C, מידות 290x116.5x33 מ\"מ",
+      "סדרת Pro - מתאים לארגונים, בנייני משרדים ומפעלים"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "site": "com4tech.co.il",
+        "price_ils": 2900,
+        "url": "https://www.com4tech.co.il/product/מסוף-זיהוי/"
+      },
+      {
+        "site": "com4tech.co.il (fingerprint variant DS-K1T671MF)",
+        "price_ils": 2450,
+        "url": "https://www.com4tech.co.il/product/מסוף-זיהוי-hikvision-ds-k1t671mf-face-fingerprint-terminal/"
+      },
+      {
+        "site": "zbm.co.il (DS-K1T671MF, price not captured)",
+        "price_ils": null,
+        "url": "https://zbm.co.il/product/hikvision-ds-k1t671mf/"
+      }
+    ],
+    "market_low_ils": 2450,
+    "market_typical_ils": 2900,
+    "foreign_prices_note": "US: USD 560 (surveillance-video), USD 838 discounted from 1,261 (123securityproducts); Amazon US listing exists.",
+    "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Low priority item. Closest Telran items: DS-K1T606M (product 6528) / DS-K1T606MF (product 6398), datasheet https://www.telran.co.il/images/DS-K1T606M(F)%20Series-1-2.pdf. Older Pro model. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Pro-Series/ds-k1t671m/"
+  }
+]

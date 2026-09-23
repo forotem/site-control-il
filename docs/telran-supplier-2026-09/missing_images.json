@@ -1,0 +1,92 @@
+[
+ {
+  "slug": "ds-kis607-s",
+  "brand": "Hikvision",
+  "model": "DS-KIS607-S"
+ },
+ {
+  "slug": "ds-kis212",
+  "brand": "Hikvision",
+  "model": "DS-KIS212"
+ },
+ {
+  "slug": "ds-kv8413-wme1",
+  "brand": "Hikvision",
+  "model": "DS-KV8413-WME1(C)"
+ },
+ {
+  "slug": "ds-kh6350-wte1",
+  "brand": "Hikvision",
+  "model": "DS-KH6350-WTE1"
+ },
+ {
+  "slug": "ds-k1t502dbfwx-c",
+  "brand": "Hikvision",
+  "model": "DS-K1T502DBFWX-C"
+ },
+ {
+  "slug": "ds-k1t344ebfwx-e1",
+  "brand": "Hikvision",
+  "model": "DS-K1T344EBFWX-E1"
+ },
+ {
+  "slug": "ds-k1t323mbfwx-e1",
+  "brand": "Hikvision",
+  "model": "DS-K1T323MBFWX-E1"
+ },
+ {
+  "slug": "ds-k1t671m",
+  "brand": "Hikvision",
+  "model": "DS-K1T671M"
+ },
+ {
+  "slug": "ds-7608nxi-k1-8p",
+  "brand": "Hikvision",
+  "model": "DS-7608NXI-K1/8P(D)"
+ },
+ {
+  "slug": "ids-7232hqhi-m2-xt",
+  "brand": "Hikvision",
+  "model": "iDS-7232HQHI-M2/XT"
+ },
+ {
+  "slug": "ids-7216hqhi-m1-xt",
+  "brand": "Hikvision",
+  "model": "iDS-7216HQHI-M1/XT"
+ },
+ {
+  "slug": "ids-7204hqhi-m1-xt",
+  "brand": "Hikvision",
+  "model": "iDS-7204HQHI-M1/XT"
+ },
+ {
+  "slug": "ds-2cd2t87g2h-lisu-sl-2-8mm",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T87G2H-LISU/SL 2.8mm"
+ },
+ {
+  "slug": "ipc3628le-adf28k-wp",
+  "brand": "Uniview",
+  "model": "IPC3628LE-ADF28K-WP"
+ },
+ {
+  "slug": "ipc2316le-adf28km-wp",
+  "brand": "Uniview",
+  "model": "IPC2316LE-ADF28KM-WP"
+ },
+ {
+  "slug": "ipc3614lb-af28k-dl2",
+  "brand": "Uniview",
+  "model": "IPC3614LB-AF28K-DL2"
+ },
+ {
+  "slug": "ipc3524le-adf28k-wp",
+  "brand": "Uniview",
+  "model": "IPC3524LE-ADF28K-WP"
+ },
+ {
+  "slug": "ds-2cd1643g2-lizu-2-8-12mm",
+  "brand": "Hikvision",
+  "model": "DS-2CD1643G2-LIZU 2.8-12mm"
+ }
+]

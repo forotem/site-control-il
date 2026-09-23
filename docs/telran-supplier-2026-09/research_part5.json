@@ -1,0 +1,226 @@
+[
+  {
+    "model": "DS-2CD1343G2-LIU 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - כיפה/טורט (Turret)",
+    "title_he": "מצלמת כיפה IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1343G2-LIU 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440), חיישן 1/3\" CMOS, H.265+",
+      "עדשה קבועה 2.8mm (זווית רחבה ~100°)",
+      "Smart Hybrid Light: תאורת IR + אור לבן עד 30 מ', צבע בלילה לפי אירוע",
+      "זיהוי אדם/רכב (Motion Detection 2.0), מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, חריץ microSD עד 512GB"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/468_110820251201391_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/sm000042442/DS-2CD1343G2-LIU_Datasheet_20260703.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (AllTechStore)", "price_ils": 349, "url": "https://www.zap.co.il/model.aspx?modelid=1263041", "comparable": false},
+      {"site": "technovision.co.il (LIUF)", "price_ils": 420, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-ds-2cd1343g2-liuf-28m-smart-hybrid-light--mic-4mp", "comparable": false},
+      {"site": "zbm.co.il (LIUF)", "price_ils": 487, "url": "https://zbm.co.il/product/ds-2cd1343g2-liuf-2-8m/", "comparable": false}
+    ],
+    "market_low_ils": 349,
+    "market_typical_ils": 430,
+    "foreign_prices_note": "US ~$104-130; EU ~90 EUR",
+    "notes": "com4tech מציג ₪431 (LIUF). zap: סקיור גרופ ₪470, א.א. סיגמה ₪619. LIU/LIUF זהות למעט גודל כרטיס SD."
+  },
+  {
+    "model": "DS-2CD1T47G2-LUF 4mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - צינור (Bullet) ColorVu",
+    "title_he": "מצלמת צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS-2CD1T47G2-LUF 4mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440), H.265+, זיהוי אדם/רכב",
+      "עדשה קבועה 4mm F1.0 (~75° אופקי)",
+      "ColorVu - תמונה צבעונית 24/7, אור לבן עד 30 מ', 0.001 Lux",
+      "מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 256GB"
+    ],
+    "image_url": "https://www.satsigma.co.il/wp-content/uploads/2023/12/hikvision-DS-2CD1T47G2-LUF-4mm.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000041031/DS-2CD1T47G2-LUF_Datasheet_V5.7.1_20221216.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il", "price_ils": 750, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-hikvision-4mp-colorvu-ds-2cd1t47g2-luf-4mm/", "comparable": false},
+      {"site": "zbm.co.il", "price_ils": null, "url": "https://zbm.co.il/product/ds-2cd1t47g2-luf/", "comparable": false},
+      {"site": "zap.co.il (DS-2CD1047G2-LUF, גרסת מיני-צינור)", "price_ils": 560, "url": "https://www.zap.co.il/model.aspx?modelid=1216139", "comparable": true}
+    ],
+    "market_low_ils": 750,
+    "market_typical_ils": 750,
+    "foreign_prices_note": "Turkey ~3,859 TL (~$95); US dealers ~$110-130",
+    "notes": "מחיר ישראלי יחיד מאומת (א.א. סיגמה, יקרן). דף zbm קיים אך לא נטען - מומלץ לתמחר בין המיני-צינור 1047G2-LUF (₪560-586) לסיגמה. גרסת T = גוף צינור גדול."
+  },
+  {
+    "model": "DS-2CD2043G2-IU 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - צינור (Bullet) AcuSense",
+    "title_he": "מצלמת צינור IP Hikvision 4MP AcuSense עם מיקרופון IR 40 מ' DS-2CD2043G2-IU 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520), חיישן 1/3\" CMOS, H.265+",
+      "עדשה קבועה 2.8mm (~103° אופקי)",
+      "תאורת IR (EXIR 2.0) עד 40 מ' - ראיית לילה שחור/לבן",
+      "AcuSense: סיווג אדם/רכב מבוסס Deep Learning, מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 256GB"
+    ],
+    "image_url": "https://img.zap.co.il/pics/0/2/0/3/74943020c.gif",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000058907/DS-2CD2043G2-IU_Datasheet_V5.5.113_20230303.pdf",
+    "market_prices": [
+      {"site": "technovision.co.il (רשימת קטגוריה)", "price_ils": 590, "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8", "comparable": false},
+      {"site": "zap.co.il (DS-2CD2043G2-I ללא מיקרופון, סקיור גרופ)", "price_ils": 649, "url": "https://www.zap.co.il/model.aspx?modelid=1134126", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CD2043G2-I)", "price_ils": null, "url": "https://www.com4tech.co.il/product/hikvision-camera-ds-2cd2043g2-i-4mp-mini-bullet-network-camera-4mm-2-8mm/", "comparable": true}
+    ],
+    "market_low_ils": 590,
+    "market_typical_ils": 660,
+    "foreign_prices_note": "US $148-216 (B&H, NetworkCameraStore)",
+    "notes": "בזאפ גרסת IU מופיעה כ-₪664-669; technovision ₪590-690. גרסת -I (ללא מיקרופון) נפוצה יותר בישראל."
+  },
+  {
+    "model": "DS-2CD2047G2H-LIU/SL 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - צינור (Bullet) ColorVu + הרתעה אקטיבית",
+    "title_he": "מצלמת צינור IP Hikvision 4MP ColorVu Hybrid Light עם סטרובוסקופ ורמקול DS-2CD2047G2H-LIU/SL 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520), חיישן גדול 1/1.8\" CMOS, H.265+",
+      "עדשה קבועה 2.8mm (~111° אופקי)",
+      "Smart Hybrid Light + ColorVu: IR ואור לבן עד 40 מ', צבע 24/7",
+      "AcuSense אדם/רכב, Live Guard: אור סטרובוסקופי + התרעה קולית, מיקרופון + רמקול (דו-כיווני)",
+      "PoE 802.3af / 12VDC, IP67, WDR 130dB, microSD עד 512GB"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/445_060720251908521_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/sm000058456/DS-2CD2047G2H-LIU_SL_Datasheet_20260105.pdf",
+    "market_prices": [
+      {"site": "technovision.co.il", "price_ils": 840, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-colorvu-ds-2cd2047g2h-liusl", "comparable": false},
+      {"site": "zap.co.il (DS-2CD2047G2H-LIU ללא SL, זד.בי.אם)", "price_ils": 856, "url": "https://www.zap.co.il/model.aspx?modelid=1262802", "comparable": true},
+      {"site": "zbm.co.il (DS-2CD2047G2H-LIU ללא SL)", "price_ils": null, "url": "https://zbm.co.il/product/hikvision-ds-2cd2047g2h-liu/", "comparable": true}
+    ],
+    "market_low_ils": 840,
+    "market_typical_ils": 860,
+    "foreign_prices_note": "EU dealer ~$358 (Casmar, out of stock)",
+    "notes": "בזאפ גרסת LIU (ללא סטרובוסקופ/רמקול) ₪856-880. גרסת /SL אצל technovision ₪840 - כלומר SL לא בהכרח יקרה יותר בישראל."
+  },
+  {
+    "model": "DS-2CD1047G2-LUF 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - מיני צינור (Bullet) ColorVu",
+    "title_he": "מצלמת מיני צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS-2CD1047G2-LUF 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440), H.265+, זיהוי אדם/רכב (MD 2.0)",
+      "עדשה קבועה 2.8mm F1.0 (~96° אופקי)",
+      "ColorVu - תמונה צבעונית 24/7, אור לבן עד 30 מ', 0.001 Lux",
+      "מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 256GB"
+    ],
+    "image_url": "https://www.satsigma.co.il/wp-content/uploads/2023/12/hikvision-DS-2CD1047G0-LUF-2.8mm.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/m000062026/DS-2CD1047G2-LUF_Datasheet_20260409.pdf",
+    "market_prices": [
+      {"site": "zap.co.il (סקיור גרופ)", "price_ils": 560, "url": "https://www.zap.co.il/model.aspx?modelid=1216139", "comparable": false},
+      {"site": "adtiny.com", "price_ils": 570, "url": "https://shop.adtiny.com/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-value-ds-2cd1047g2-l-uf/", "comparable": false},
+      {"site": "zbm.co.il (דרך zap, כולל משלוח)", "price_ils": 586, "url": "https://zbm.co.il/product/hikvision-ds-2cd1047g2-luf/", "comparable": false}
+    ],
+    "market_low_ils": 560,
+    "market_typical_ils": 580,
+    "foreign_prices_note": "Amazon US ~$90-110",
+    "notes": "עוד: AllTechStore ₪579, securegroup (LIUF) ₪680, satsigma ₪730, hviil.co.il (אתר לא נטען). מוצר נפוץ מאוד בישראל."
+  },
+  {
+    "model": "DS-2CD1043G2-LIU 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - מיני צינור (Bullet) Smart Hybrid Light",
+    "title_he": "מצלמת מיני צינור IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1043G2-LIU 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440), חיישן 1/3\" CMOS, H.265+",
+      "עדשה קבועה 2.8mm (~100° אופקי)",
+      "Smart Hybrid Light: IR + אור לבן עד 30 מ', 0.005 Lux צבע",
+      "זיהוי אדם/רכב (MD 2.0), מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 512GB"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/332_181020241628171_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000091779/DS-2CD1043G2-LIUF_Datasheet_20230914.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (מבצע, LIUF)", "price_ils": 353, "url": "https://zbm.co.il/product/hikvision-ds-2cd1043g2-liuf/", "comparable": false},
+      {"site": "technovision.co.il (LIUF, אזל)", "price_ils": 490, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-smart-hybrid-light-ds-2cd1043g2-liuf", "comparable": false},
+      {"site": "zap.co.il (זד.בי.אם כולל משלוח)", "price_ils": 536, "url": "https://www.zap.co.il/model.aspx?modelid=1236307", "comparable": false}
+    ],
+    "market_low_ils": 353,
+    "market_typical_ils": 450,
+    "foreign_prices_note": "EU ~94 EUR; Panama ~$67",
+    "notes": "com4tech ₪450 (רשימת קטגוריה). zbm ₪353 הוא מבצע (מחיר מלא ₪779); zap הציג 'החל מ-₪426'."
+  },
+  {
+    "model": "DS-2CD1643G2-LIZU 2.8-12mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - צינור ווריפוקל ממונע (Motorized Varifocal)",
+    "title_he": "מצלמת צינור IP Hikvision 4MP ווריפוקל ממונע 2.8-12mm Smart Hybrid Light עם מיקרופון DS-2CD1643G2-LIZU",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2560×1440), חיישן 1/3\" CMOS, H.265+",
+      "עדשה ווריפוקל ממונעת 2.8-12mm (זום x4, 96.7°-29.7°), פוקוס אוטומטי",
+      "Smart Hybrid Light: IR + אור לבן עד 50 מ'",
+      "זיהוי אדם/רכב (MD 2.0), מיקרופון מובנה",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 256GB"
+    ],
+    "image_url": "https://www.dipol.com.pl/img/thumbnails/k05031+.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000091783/DS-2CD1643G2-LIZSU_Datasheet_20231220.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (DS-2CD1643G0-IZ, IR בלבד ללא מיקרופון)", "price_ils": 834, "url": "https://www.zbm.co.il/product/ds-2cd1643g0-iz-%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-4-%D7%9E%D7%92%D7%94-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C-%D7%A8%D7%A9%D7%AA-ip-%D7%AA%D7%95/", "comparable": true},
+      {"site": "zap.co.il (DS-2CD1643G0-IZ)", "price_ils": 718, "url": "https://www.zap.co.il/model.aspx?modelid=1124302", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CD1643G0-IZ)", "price_ils": null, "url": "https://www.com4tech.co.il/product/hikvision-ds-2cd1643g0-iz-exir-bullet-camera-4mp-2-8-12mm-98-28-varifocal-lens-smart-features/", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": 850,
+    "foreign_prices_note": "EU ~129.60 EUR ex VAT (~150 EUR incl.); Amazon.ae listed; dipolnet PL marked discontinued",
+    "notes": "אין מחיר ישראלי לדגם המדויק. senetic.co.il מציג את הדגם אך המחיר לא נטען. הדגם הקודם G0-IZ (IR בלבד) נמכר ב-₪718-834; LIZU עם Hybrid Light+מיקרופון - מומלץ לתמחר ₪850-950."
+  },
+  {
+    "model": "DS-2CD2T43G2-4LI2U 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות IP - צינור (Bullet) AcuSense Hybrid Light לטווח ארוך",
+    "title_he": "מצלמת צינור IP Hikvision 4MP AcuSense Smart Hybrid Light IR 80 מ' אודיו דו-כיווני DS-2CD2T43G2-4LI2U 2.8mm",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4MP (2688×1520), חיישן 1/3\" CMOS, H.265+",
+      "עדשה קבועה 2.8mm (~103° אופקי)",
+      "Smart Hybrid Light: IR עד 80 מ' + אור לבן (4 מצבי תאורה), צבע לפי אירוע",
+      "AcuSense סיווג אדם/רכב, מיקרופון + רמקול מובנים (2U = אודיו דו-כיווני)",
+      "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 512GB"
+    ],
+    "image_url": "https://www.technovision.co.il/images/itempics/DS-2CD2T43G2-2I_21102024175709_large.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/sm000064851/DS-2CD2T43G2-2LI2U_4LI2U_Datasheet_20250208.pdf",
+    "market_prices": [
+      {"site": "technovision.co.il (DS-2CD2T43G2-2LI2U, IR 60 מ', רשימת קטגוריה)", "price_ils": 740, "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CD2T43G2-2LI2U, רשימת קטגוריה)", "price_ils": 700, "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/ip-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-ip-4mp-%D7%A9%D7%9C-hikvision/", "comparable": true},
+      {"site": "technovision.co.il (DS-2CD2T43G2-2I, IR בלבד ללא אודיו)", "price_ils": 649, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-acusense-4-mp-ds-2cd2t43g2-2i", "comparable": true}
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": 800,
+    "foreign_prices_note": "Portugal ~133.75 EUR (from 155.52); UAE listings (Terrabyt)",
+    "notes": "הדגם המדויק (4LI2U, IR 80 מ') לא נמצא בישראל; גרסת 2LI2U (IR 60 מ') ₪700-740, ו-2I (IR 60 מ' ללא Hybrid/אודיו) ₪627-649. מומלץ לתמחר ₪780-850. תמונה זמנית של דגם 2I - להחליף."
+  }
+]

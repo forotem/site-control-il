@@ -1,0 +1,224 @@
+[
+  {
+    "model": "DS-2CE10KF0T-LPFS 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור ColorVu 3K",
+    "title_he": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS-2CE10KF0T-LPFS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 3K (2960×1665) @20fps, חיישן CMOS, צמצם F1.0 לצבע 24/7",
+      "עדשה קבועה 2.8mm (זווית אופקית ~105°)",
+      "Smart Hybrid Light: אור לבן עד 20 מ' + IR עד 20 מ' (מצב חכם/IR/אור לבן)",
+      "מיקרופון מובנה עם שמע על גבי הקואקס (AoC), רדיוס קליטה ~5 מ'",
+      "IP67, DWDR, יציאה 4 ב-1 (TVI/AHD/CVI/CVBS), הזנה 12VDC עד 3.9W"
+    ],
+    "image_url": "https://cdn.adarccomputer.com/media/products/product-attachments/d/s/ds-2ce10kf0t-lpfs_image_2.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000104685/DS-2CE10KF0T-LPFS_Datasheet_20241205.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il (DS-2CE10KF0T-FS 3.6mm, אותו גוף ללא IR)", "price_ils": 250, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-hikvison-5mp-colorvu-3-6mm-20m/", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE12KF0T-LFS, אח גדול 40 מ')", "price_ils": 260, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-3k-colorvu-audio-ds-2ce12kf0t-lfs-%D7%9E%D7%99%D7%A7%D7%A8%D7%A4%D7%95%D7%9F-%D7%9E%D7%95%D7%91%D7%A0%D7%94/", "comparable": true},
+      {"site": "satsigma.co.il (DS-2CE16K0T-LFS, 3K hybrid light ללא ColorVu)", "price_ils": 220, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-hikvison-5mp-colorvu-3-6mm-20m/", "comparable": true}
+    ],
+    "market_low_ils": 220,
+    "market_typical_ils": 250,
+    "foreign_prices_note": "AED 115 incl. VAT (~$31) adarccomputer.com UAE; $35.93 panacompu.com Panama; 1,850 EGP Egypt.",
+    "notes": "הדגם המדויק לא נמצא אצל קמעונאים בישראל; המחירים הם דגמי אח (FS ללא IR / 12KF0T-LFS 40 מ'). מחיר מומלץ בטווח 250-280 ש\"ח כולל מע\"מ."
+  },
+  {
+    "model": "DS-2CE10KF0T-FS 3.6mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור ColorVu 3K",
+    "title_he": "מצלמת צינור Hikvision 3K ColorVu 3.6mm אור לבן 20 מ' מיקרופון מובנה DS-2CE10KF0T-FS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 3K (2960×1665) @20fps, צמצם F1.0, תמונה צבעונית 24/7 (ColorVu)",
+      "עדשה קבועה 3.6mm (אופקי 80°, אנכי 45°, אלכסוני 96°)",
+      "אור לבן עד 20 מ' (ללא IR), 0.001 Lux @F1.0 / 0 Lux עם אור לבן",
+      "מיקרופון מובנה, שמע על גבי הקואקס (AoC)",
+      "IP67, DWDR/3D DNR, יציאה 4 ב-1 (TVI/AHD/CVI/CVBS), 12VDC עד 3.5W"
+    ],
+    "image_url": "https://networkcamerastore.com/cdn/shop/files/2CE10KF0T-_73-_-mic.png.thumb.1280.1280.png?v=1716333029&width=800",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000132/S000000146/S000001395/OFR005226/M000043757/Data_Sheet/Datasheet-of-DS-2CE10KF0T-FS_20210510.pdf",
+    "market_prices": [
+      {"site": "satsigma.co.il", "price_ils": 250, "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-hikvison-5mp-colorvu-3-6mm-20m/", "comparable": false},
+      {"site": "technovision.co.il (DS-2CE12KF0T-FS, גוף גדול 40 מ')", "price_ils": 260, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp", "comparable": true},
+      {"site": "satsigma.co.il (DS-2CE12KF0T-FS 3.6mm)", "price_ils": 285, "url": "https://www.satsigma.co.il/product/ds-2ce56h0t-itpf-2-8mm/", "comparable": true}
+    ],
+    "market_low_ils": 250,
+    "market_typical_ils": 250,
+    "foreign_prices_note": "$76.80 (sale, was $96) networkcamerastore.com; $98.99 planetsecurityusa.com; B&H lists it too. Marked discontinued at some US dealers.",
+    "notes": "מלאי 2023. נמצא מחיר ישראלי מדויק אצל א.א סיגמה (250 ש\"ח כולל מע\"מ, במלאי). דגם ללא IR - אור לבן בלבד."
+  },
+  {
+    "model": "DS-2CE12KF0T-LFS 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור ColorVu 3K",
+    "title_he": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS-2CE12KF0T-LFS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 3K (2960×1665) @20fps, CMOS, צמצם F1.0, 0.001 Lux",
+      "עדשה קבועה 2.8mm (אופקי 105°, אנכי 60°, אלכסוני 143°)",
+      "Smart Hybrid Light: אור לבן עד 40 מ' + IR עד 40 מ'",
+      "מיקרופון מובנה, שמע על גבי הקואקס (TVI)",
+      "IP67, גוף מתכת, DWDR/BLC/HLC, 4 ב-1, 12VDC עד 5.2W, טווח טמפ' -40..60°C"
+    ],
+    "image_url": "https://www.com4tech.co.il/wp-content/uploads/2025/01/c6d64d30-c951-41b3-98fd-b2de4c83acb0.jpg",
+    "datasheet_url": "https://assets.hikvision.com/prd/normal/all/doc/m000104683/fr-fr/DS-2CE12KF0T-LFS_Datasheet_20250304.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il", "price_ils": 260, "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-3k-colorvu-audio-ds-2ce12kf0t-lfs-%D7%9E%D7%99%D7%A7%D7%A8%D7%A4%D7%95%D7%9F-%D7%9E%D7%95%D7%91%D7%A0%D7%94/", "comparable": false},
+      {"site": "technovision.co.il (DS-2CE12KF0T-FS, ללא IR)", "price_ils": 260, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp", "comparable": true},
+      {"site": "satsigma.co.il (DS-2CE12KF0T-FS 3.6mm)", "price_ils": 285, "url": "https://www.satsigma.co.il/product/ds-2ce56h0t-itpf-2-8mm/", "comparable": true}
+    ],
+    "market_low_ils": 260,
+    "market_typical_ils": 265,
+    "foreign_prices_note": "€73 ex-VAT orbitadigital.com (Spain); visiotechsecurity.com login-only pricing.",
+    "notes": "נמצא מחיר ישראלי מדויק ב-Com4Tech (260 ש\"ח כולל מע\"מ, במלאי). zbm מוכרת את גרסת FS (ללא IR). מחיר מומלץ 270-290 ש\"ח."
+  },
+  {
+    "model": "DS-2CE70KF0T-LPFS 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - כיפה/טורט ColorVu 3K",
+    "title_he": "מצלמת כיפה טורט Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS-2CE70KF0T-LPFS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 3K (2960×1665) @20fps, צמצם F1.0, 0.001 Lux, צבע 24/7",
+      "עדשה קבועה 2.8mm, גוף טורט קומפקטי (Ø85×81 מ\"מ) עם כיוון 3 צירים",
+      "Smart Hybrid Light: אור לבן עד 20 מ' + IR עד 20 מ'",
+      "מיקרופון מובנה (רדיוס ~5 מ'), שמע על גבי הקואקס",
+      "לשימוש פנימי (Indoor, ללא דירוג IP), DWDR, 4 ב-1, 12VDC עד 3.9W"
+    ],
+    "image_url": "https://cdn.adarccomputer.com/media/products/product-attachments/d/s/ds-2ce70kf0t-lpfs_image_1.png",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000104682/DS-2CE70KF0T-LPFS_Datasheet_20241211.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (DS-2CE76K0T-LMFS, טורט 3K hybrid light חיצוני)", "price_ils": 270, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE72KF0T-FS, טורט 3K ColorVu 40 מ')", "price_ils": 265, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE70DF0T-MFS, טורט 2MP ColorVu)", "price_ils": 210, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true}
+    ],
+    "market_low_ils": 210,
+    "market_typical_ils": 250,
+    "foreign_prices_note": "AED 109 incl. VAT (~$30) adarccomputer.com UAE; $89.83 (was $107.80) at another dealer; 2,500 EGP Egypt.",
+    "notes": "הדגם המדויק לא נמצא בישראל; דגם פנימי (Indoor) - חשוב לציין בעמוד המוצר. מחיר מומלץ 230-260 ש\"ח כולל מע\"מ לפי דגמי אח."
+  },
+  {
+    "model": "DS-2CE10DF0T-PFS 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור ColorVu 2MP",
+    "title_he": "מצלמת צינור Hikvision 2MP ColorVu 2.8mm אור לבן 20 מ' מיקרופון מובנה DS-2CE10DF0T-PFS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 2MP (1920×1080) @25/30fps, צמצם F1.0, 0.001 Lux, צבע 24/7",
+      "עדשה קבועה 2.8mm",
+      "אור לבן עד 20 מ' (ללא IR), 0 Lux עם אור לבן",
+      "מיקרופון מובנה, שמע על גבי הקואקס (AoC)",
+      "IP67, DWDR/3D DNR, 4 ב-1 (TVI/AHD/CVI/CVBS), 12VDC עד 2W, גוף פלסטיק (P)"
+    ],
+    "image_url": "https://i0.wp.com/elecshop.lk/wp-content/uploads/2023/08/1-72.webp",
+    "datasheet_url": "https://assets.hikvision.com/prd/public/all/doc/m000063557/Datasheet-of-DS-2CE10DF0T-PFS_20220728.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (DS-2CE10DF0T-FS, גוף מתכת)", "price_ils": 215, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE70DF0T-MFS, טורט 2MP ColorVu)", "price_ils": 210, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE12DF0T-LFS, צינור 2MP hybrid 40 מ')", "price_ils": 245, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true}
+    ],
+    "market_low_ils": 210,
+    "market_typical_ils": 215,
+    "foreign_prices_note": "$31.60 wholesale hikdistribution.com; INR 1,770-1,950 India; LKR 11,700 Sri Lanka.",
+    "notes": "הדגם המדויק (גוף פלסטיק PFS) לא נמצא בישראל; גרסת FS (מתכת) נמכרת ב-215 ש\"ח. מחיר מומלץ 190-215 ש\"ח כולל מע\"מ."
+  },
+  {
+    "model": "DS-2CE12UF3T-LS 2.8mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור ColorVu 4K/8MP",
+    "title_he": "מצלמת צינור Hikvision 4K 8MP ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS-2CE12UF3T-LS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 4K (3840×2160) @15fps, צמצם F1.0, 0.0005 Lux, צבע 24/7",
+      "עדשה קבועה 2.8mm (אופקי 105°, אנכי 60°)",
+      "Smart Hybrid Light: אור לבן עד 40 מ' + IR עד 40 מ'",
+      "מיקרופון מובנה, שמע על גבי הקואקס; 130dB True WDR, 3D DNR",
+      "IP67, 4 ב-1 (TVI/AHD/CVI/CVBS), 12VDC (גרסת LS ללא PoC; LSYE = גרסת PoC בריטית)"
+    ],
+    "image_url": "https://cdn11.bigcommerce.com/s-g932feltp6/images/stencil/1280x1280/products/15811/151446/SSR-5124-1__56186.1768901027.jpg?c=2",
+    "datasheet_url": "https://express-alarm.sk/storage/data_sheet/cctv/tvi/7364_00_ds-2ce12uf3t-ls_datasheet_20250622.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (DS-2CE12UF3T-E, 4K ColorVu PoC, יבוא מקביל)", "price_ils": 455, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE12UF3T-E, מחיר בקטגוריית יבוא)", "price_ils": 500, "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%99%D7%91%D7%95%D7%90-com4tech/", "comparable": true},
+      {"site": "com4tech.co.il / technovision.co.il (DS-2CE18U8T-IT3, 8MP EXIR 60 מ')", "price_ils": 700, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true}
+    ],
+    "market_low_ils": 455,
+    "market_typical_ils": 500,
+    "foreign_prices_note": "GBP 140.80 ex-VAT senetic.co.uk (LS 2.8mm); LSYE variant at UK dealers roughly GBP 150-180.",
+    "notes": "הדגם המדויק (LS) לא נמצא בישראל; הקרוב ביותר הוא DS-2CE12UF3T-E (4K ColorVu PoC, ללא IR היברידי/מיקרופון) ב-455-500 ש\"ח ב-Com4Tech. מחיר מומלץ 480-550 ש\"ח כולל מע\"מ."
+  },
+  {
+    "model": "DS-2CE16U1T-ITF 3.6mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - צינור 8MP/4K EXIR",
+    "title_he": "מצלמת צינור Hikvision 4K 8MP EXIR 30 מ' 3.6mm DS-2CE16U1T-ITF",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 8MP / 4K (3840×2160) @15fps (TVI), CMOS",
+      "עדשה קבועה 3.6mm, 0.01 Lux @F1.2 (AGC ON), 0 Lux עם IR",
+      "EXIR 2.0 - תאורת IR עד 30 מ' (ראיית לילה שחור-לבן)",
+      "ללא מיקרופון / ללא שמע על הקואקס",
+      "IP67, DWDR, 4 ב-1 (TVI/AHD/CVI/CVBS), 12VDC ±25%"
+    ],
+    "image_url": "https://networkcamerastore.com/cdn/shop/files/ds-2ce16u1t-itf__64855.1605061610.1280.1280.png?v=1704245924&width=800",
+    "datasheet_url": "https://www.hikvision.com/content/dam/hikvision/usa/data-sheet/value-analog-and-turbo/DS-2CE16U1T-ITF_Datasheet_20230807.pdf",
+    "market_prices": [
+      {"site": "com4tech.co.il (DS-2CE18U8T-IT3, 8MP Ultra-Low-Light 60 מ')", "price_ils": 700, "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA", "comparable": true},
+      {"site": "technovision.co.il (DS-2CE18U8T-IT3 8MP, מוצר קשור)", "price_ils": 699, "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp", "comparable": true},
+      {"site": "com4tech.co.il (DS-2CE16H0T-ITF, אותו גוף 5MP EXIR 20 מ')", "price_ils": 185, "url": "https://www.com4tech.co.il/product/hikvision-4v1-analog-bullet-camera-ds-2ce16h0t-itf3-6mm-5mp-lens-3-6mm/", "comparable": true}
+    ],
+    "market_low_ils": 185,
+    "market_typical_ils": 350,
+    "foreign_prices_note": "$103-104 (was $128) networkcamerastore.com / B&H (discontinued at US dealers); $93.49 for IT3F sibling.",
+    "notes": "לא נמצאה הצעה ישראלית לדגם 8MP Value זה; המחיר הטיפוסי הוא הערכה בין דגם 5MP באותו גוף (185 ש\"ח) לדגם 8MP הפרימיום (700 ש\"ח). מחיר מומלץ 300-380 ש\"ח כולל מע\"מ."
+  },
+  {
+    "model": "DS-2CC52H1T-FITS 1.1mm",
+    "brand": "Hikvision",
+    "category": "מצלמות אנלוגיות TVI - עין דג / פנורמית",
+    "title_he": "מצלמת עין דג פנורמית Hikvision 5MP TVI 180° 1.1mm IR מיקרופון מובנה DS-2CC52H1T-FITS",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "telran_price": null,
+    "specs": [
+      "רזולוציה 5MP, חיישן CMOS 5MP Progressive Scan",
+      "עדשת עין דג קבועה 1.1mm - שדה ראייה 180° (תצוגה פנורמית 360° בתקרה)",
+      "IR עד 20 מ', 0.01 Lux @F1.2, 0 Lux עם IR",
+      "מיקרופון מובנה + יציאת שמע 1 ערוץ, תפריט OSD על הקואקס (Up-the-Coax)",
+      "לשימוש פנימי בלבד, יציאת BNC (TVI/AHD), הספק עד 5.5W"
+    ],
+    "image_url": "https://www.surveillance-video.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/image/911255d20/hikvision-5-megapixel-hd-ahd-indoor-fisheye-dome-camera-1-1mm-lens-ds-2cc52h1t-fits-ds-2cc52h1t-fits.jpg",
+    "datasheet_url": "https://www.a1securitycameras.com/content/product_documents/19770/10900_DAnalogspecSpecialcameraDS2CC52H1TFITS-A1.pdf",
+    "market_prices": [
+      {"site": "zbm.co.il (DS-2CD2955FWD-I, עין דג IP 5MP - טכנולוגיה שונה)", "price_ils": 1375, "url": "https://zbm.co.il/product/hikvision-ds-2cd2955fwd-i/", "comparable": true}
+    ],
+    "market_low_ils": 700,
+    "market_typical_ils": 900,
+    "foreign_prices_note": "$210 surveillance-video.com; $304 (was $380) a1securitycameras.com, sold as-is/discontinued; EOL at polvision.eu.",
+    "notes": "דגם EOL (מלאי 2019) - אין אף קמעונאי ישראלי שמציע עין דג אנלוגית; הערכת מחיר 700-900 ש\"ח מבוססת על 210-304 דולר בחו\"ל ועל עין דג IP מקבילה ב-1,375 ש\"ח. לציין 'מלאי אחרון / ללא המשך ייצור'."
+  }
+]

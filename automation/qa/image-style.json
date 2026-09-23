@@ -1,20 +1,5 @@
 [
  {
-  "slug": "ds-kis212",
-  "image": "/store-images/ds-kis212.webp",
-  "brand": "Hikvision",
-  "model": "DS-KIS212",
-  "w": 900,
-  "h": 552,
-  "ratio": 0.61,
-  "colorful": 15.7,
-  "red": 4.4,
-  "white": 44.1,
-  "issues": [
-   "red badges/text"
-  ]
- },
- {
   "slug": "ds-kv8413-wme1",
   "image": "/store-images/ds-kv8413-wme1.webp",
   "brand": "Hikvision",
@@ -91,32 +76,17 @@
  },
  {
   "slug": "visionnet-dh-hybrid-kit-560171",
-  "image": "/store-images/visionnet-dh-hybrid-kit-560171.webp",
+  "image": "/store-images/visionnet-dh-hybrid-kit-560171-v2.webp",
   "brand": "VisionNet",
   "model": "VisionNet DH Hybrid KIT 560171",
   "w": 900,
   "h": 458,
   "ratio": 0.51,
-  "colorful": 14.4,
-  "red": 6.5,
-  "white": 41,
+  "colorful": 14.2,
+  "red": 6.2,
+  "white": 42.8,
   "issues": [
    "red badges/text"
-  ]
- },
- {
-  "slug": "visionnet-2tl-17-560580",
-  "image": "/store-images/visionnet-2tl-17-560580.webp",
-  "brand": "VisionNet",
-  "model": "VisionNet 2TL-17 560580",
-  "w": 900,
-  "h": 458,
-  "ratio": 0.51,
-  "colorful": 10.8,
-  "red": 0.8,
-  "white": 34.3,
-  "issues": [
-   "colorful collage"
   ]
  },
  {
@@ -130,21 +100,6 @@
   "colorful": 32,
   "red": 14.5,
   "white": 35.2,
-  "issues": [
-   "red badges/text"
-  ]
- },
- {
-  "slug": "ds-2ce12uf3t-ls-2-8mm",
-  "image": "/store-images/ds-2ce12uf3t-ls-2-8mm.webp",
-  "brand": "Hikvision",
-  "model": "DS-2CE12UF3T-LS 2.8mm",
-  "w": 900,
-  "h": 900,
-  "ratio": 1,
-  "colorful": 7.6,
-  "red": 7.2,
-  "white": 54.3,
   "issues": [
    "red badges/text"
   ]

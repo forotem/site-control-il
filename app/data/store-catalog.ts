@@ -96,7 +96,7 @@ export const storeProducts: StoreProduct[] = [
       "תמיכה בעד 2 פנלי דלת ו-3 מסכים פנימיים במערכת",
       "הזנה 12VDC, צריכה עד 5W, טמפ' עבודה -10 עד +55°C, התקנה על הטיח"
     ],
-    "image": "/store-images/ds-kis212.webp",
+    "image": "/store-images/ds-kis212-v2.webp",
     "datasheet": "https://assets.hikvision.com/prd/public/all/doc/m000110586/DS-KIS212_Four-Wire-HD-Video-Intercom-Kit_Datasheet_20240311.pdf",
     "highlights": [
       "ערכה 4 גידים Plug & Play: פנל חיצוני DS-KB2412T-IM עם מצלמת HD-TVI ומסך פנימי DS-KH2230T 7\" TFT עם לחצנים פיזיים",
@@ -1053,7 +1053,7 @@ export const storeProducts: StoreProduct[] = [
       "Micro-SD recording up to 512GB, 2-wire run up to 100 m",
       "Plug & play villa kit, Hebrew app support"
     ],
-    "image": "/store-images/visionnet-dh-hybrid-kit-560171.webp",
+    "image": "/store-images/visionnet-dh-hybrid-kit-560171-v2.webp",
     "datasheet": "https://www.telran.co.il/images/560171-one page brochure-Telran.pdf",
     "highlights": [
       "Hybrid system: 2-wire bus plus IP/Wi-Fi connectivity",
@@ -1079,7 +1079,7 @@ export const storeProducts: StoreProduct[] = [
       "Slim design 140x220x17.5 mm, white with silver buttons",
       "Compatible with VisionNet/DT 2-wire villa and building systems"
     ],
-    "image": "/store-images/visionnet-2tl-17-560580.webp",
+    "image": "/store-images/visionnet-2tl-17-560580-v2.webp",
     "datasheet": "https://www.telran.co.il/images/560580DF_URBAN_ENG_User%20Manual_2024.pdf",
     "highlights": [
       "7\" digital colour LCD, 800x480",
@@ -2043,7 +2043,7 @@ export const storeProducts: StoreProduct[] = [
       "מיקרופון מובנה, שמע על גבי הקואקס; 130dB True WDR, 3D DNR",
       "IP67, 4 ב-1 (TVI/AHD/CVI/CVBS), 12VDC (גרסת LS ללא PoC; LSYE = גרסת PoC בריטית)"
     ],
-    "image": "/store-images/ds-2ce12uf3t-ls-2-8mm.webp",
+    "image": "/store-images/ds-2ce12uf3t-ls-2-8mm-v2.webp",
     "datasheet": "https://express-alarm.sk/storage/data_sheet/cctv/tvi/7364_00_ds-2ce12uf3t-ls_datasheet_20250622.pdf",
     "highlights": [
       "רזולוציה 4K (3840×2160) @15fps, צמצם F1.0, 0.0005 Lux, צבע 24/7",

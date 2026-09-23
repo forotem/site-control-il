@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: `${p.title} | ${p.model} | Site-Control`,
     description: `${p.brand} ${p.model}. ${p.highlights.join(". ")}. ${WARRANTY_TEXT}. משלוח, איסוף או התקנה מקצועית.`,
     alternates: { canonical: `/store/${p.slug}` },
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
     openGraph: { title: `${p.title} | Site-Control`, description: p.highlights.join(" · "), type: "website", locale: "he_IL", images: p.image ? [{ url: p.image }] : undefined },
   };
 }

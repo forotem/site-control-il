@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description:
     "מצלמות IP של Hikvision ו-UNV, ערכות Reolink מוכנות, מקליטים, אינטרקום וקודנים. מלאי בישראל, אחריות שנה, משלוח או התקנה על ידי הצוות שלנו. שאלון קצר שמתאים לכם את המערכת.",
   alternates: { canonical: "/store" },
-  // טרום-השקה: החנות פתוחה לקישור ישיר בלבד עד לאישור מחירים סופיים
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   openGraph: { title: "חנות מצלמות אבטחה ובקרת כניסה | Site-Control", description: "מלאי בישראל, אחריות שנה, משלוח או התקנה מקצועית.", type: "website", locale: "he_IL" },
 };
 

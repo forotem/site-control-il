@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "איזו מצלמת אבטחה מתאימה לי? שאלון התאמה | Site-Control",
   description: "חמש שאלות קצרות ומקבלים המלצה מנומקת: מצלמות, מקליט או ערכה מוכנה, עם מחיר משוער וחלופות. בלי ז'רגון, כמו שמתקין היה מסביר.",
   alternates: { canonical: "/store/finder" },
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function FinderPage() {

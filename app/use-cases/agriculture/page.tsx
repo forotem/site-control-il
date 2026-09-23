@@ -75,7 +75,7 @@ export default function AgricultureUseCasePage() {
           </div>
           <div style={{padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '8px'}}>
             <h3>חממות ובתי צמיחה</h3>
-            <p>מעקב אחרי תנאי גידול, זיהוי חדירות ותיעוד שלבי צמיחה בטיימלאפס.</p>
+            <p>מעקב אחרי תנאי גידול, זיהוי חדירות והתראה בנייד על כל כניסה.</p>
           </div>
           <div style={{padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '8px'}}>
             <h3>ציוד חקלאי</h3>
@@ -91,8 +91,8 @@ export default function AgricultureUseCasePage() {
           <p>מצלמות סולאריות 4G מתחילות מ-2,999 ₪ כולל פאנל סולארי וגיבוי ענן. <Link href="/packages" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>ראו חבילות מחירים</Link>.</p>
           <h3>האם המצלמות עובדות בלילה?</h3>
           <p>כן, כל המצלמות שלנו מצוידות בראיית לילה צבעונית עד 10 מטר ואינפרא אדום עד 15 מטר.</p>
-          <h3>האם אפשר לתעד את השטח בטיימלאפס?</h3>
-          <p>בהחלט! המצלמות תומכות בצילום טיימלאפס אוטומטי לתיעוד שינויים עונתיים ושלבי גידול. למידע נוסף על שירותי טיימלאפס מקצועיים, בקרו ב-<a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>TimeLapseIt</a>.</p>
+          <h3>יש חשמל ואינטרנט בחלק מהשטח?</h3>
+          <p>אז שם משתלם יותר מצלמת IP קווית עם מקליט. <Link href="/store" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>ראו את החנות</Link>, ואת המצלמות הסולאריות משאירים לשטחים הרחוקים.</p>
         </div>
       </section>
     </main>

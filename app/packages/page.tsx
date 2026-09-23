@@ -6,12 +6,11 @@ import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 export const metadata: Metadata = {
   title: "חבילות מצלמות אבטחה סולאריות 4G | Site-Control",
   description:
-    "חבילות מצלמות אבטחה סולאריות 4G לאתרי בנייה וחקלאות: קנה והתקן (3,750 ₪), ראש שקט, אתר בבנייה ותוספת טיימלאפס. גיבוי ענן, 4K, Reolink.",
+    "חבילות מצלמות אבטחה סולאריות 4G לאתרי בנייה וחקלאות: קנה והתקן (3,750 ₪), ראש שקט ואתר בבנייה. גיבוי ענן, 4K, Reolink.",
   keywords: [
     "חבילות מצלמות אבטחה",
     "מצלמה סולארית 4G מחיר",
     "חבילת אבטחה לאתר בנייה",
-    "טיימלאפס בנייה מחיר",
     "Reolink GO Plus מחיר",
   ],
   alternates: {

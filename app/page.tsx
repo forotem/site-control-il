@@ -1,185 +1,210 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Hero } from "./components/Hero";
-import { FeatureGrid } from "./components/FeatureGrid";
-import { FeatureCarousel } from "./components/FeatureCarousel";
-import { Packages } from "./components/Packages";
-import { ProofSections } from "./components/ProofSections";
-import { FAQ } from "./components/FAQ";
-import { LocationsList } from "./components/LocationsList";
+import { storeProducts, storeCategories, WHATSAPP_NUMBER, WARRANTY_TEXT } from "./data/store-catalog";
+import { ProductCard } from "./store/ProductCard";
 import { BlogList } from "./components/BlogList";
-import { StatsSection } from "./components/StatsSection";
-import { TrustBar } from "./components/TrustBar";
-import { LocalBusinessSchema, OrganizationSchema, ProductSchema, WebSiteSchema } from "./components/Schema";
+import { LocalBusinessSchema, OrganizationSchema, WebSiteSchema } from "./components/Schema";
 import { BASE_URL } from "./config";
+import styles from "./home.module.css";
 
 export const metadata: Metadata = {
+  title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
+  description:
+    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. מצלמות IP, ערכות מוכנות, מקליטים, אינטרקום ובקרת כניסה, ומצלמות סולאריות 4G לאתרים בלי חשמל. אחריות שנה, זמינות מאושרת לפני חיוב.",
   alternates: { canonical: BASE_URL },
+  openGraph: {
+    title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
+    description: "חנות מצלמות אבטחה עם צוות שגם מתקין. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.",
+    type: "website",
+    locale: "he_IL",
+    siteName: "Site-Control",
+  },
 };
 
+const bySlug = (slug: string) => storeProducts.find((p) => p.slug === slug)!;
+
+// מוצר מייצג לכל קטגוריה, לתמונת האריח
+const catImage: Record<string, string> = {
+  ip: "ds-2cd2t47g2h-li-2-8mm",
+  kits: "reolink-rlk8-810b4-a-rlk8-800b4",
+  recorders: "ds-7616nxi-k2",
+  intercom: "ds-kis607-s",
+  wifi: "ch10",
+  analog: "ds-2ce12kf0t-lfs-2-8mm",
+};
+
+const shelf = ["ds-2cd2t47g2h-li-2-8mm", "reolink-rlk8-810b4-a-rlk8-800b4", "ds-kis607-s", "nvr301-08s3", "cp3-pro", "ds-k1t344ebfwx-e1"];
+const popular = ["ds-2cd1043g2-liu-2-8mm", "ipc2124lb-af28k-dl2", "ds-2cd2t47g2h-li-2-8mm", "reolink-rlk8-410b4-5mp", "nvr301-08s3", "ds-kis607-s", "cp3-pro", "ds-2ce10kf0t-lpfs-2-8mm"];
+
+const faq = [
+  { q: "אתם חנות או חברת התקנות?", a: "שניהם. הצוות שלנו מתקין מצלמות בבתים, בעסקים ובאתרי בנייה, ואת אותו ציוד אנחנו מוכרים גם באתר. אפשר לקנות לבד ולהתקין עם החשמלאי שלכם, או להזמין אותנו." },
+  { q: "המוצרים במלאי?", a: "המוצרים מגיעים מהמלאי של היבואן בישראל. לפני חיוב אנחנו מאשרים זמינות ומועד אספקה בווצאפ או בטלפון, כך שאף אחד לא משלם על מוצר שאין במלאי." },
+  { q: "איך אני יודע איזו מצלמה מתאימה לי?", a: "בחנות יש שאלון קצר של חמש שאלות שמצמצם את הבחירה לשניים-שלושה דגמים עם הסבר. יש גם עוזר AI שמכיר את כל המוצרים, ותמיד אפשר לכתוב לנו בווצאפ." },
+  { q: "מה עם אחריות ושירות?", a: `${WARRANTY_TEXT}. תקלה בתקופת האחריות מטופלת מולנו, לא מול היבואן. אחרי ההתקנה יש תמיכה טלפונית להגדרות האפליקציה.` },
+  { q: "יש הנחה לקבלנים ולכמויות?", a: "כן. מ-5 יחידות מאותו מוצר או הזמנה מעל 5,000 ₪ אנחנו מכינים הצעת מחיר עם הנחת כמות במקום המחיר באתר. אפשר להרכיב עגלה באתר ולסמן שזו הזמנה לקבלן." },
+  { q: "ומה עם אתר בנייה בלי חשמל?", a: "לזה יש לנו את המצלמות הסולאריות 4G של Reolink: מצלמה עם סוללה ופאנל סולארי, סים 4G והקלטה לענן. מתקינים על עמוד או פיגום ביום אחד." },
+];
+
 export default function Page() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, אשמח לייעוץ לגבי מצלמות אבטחה")}`;
+
   return (
     <>
       <WebSiteSchema />
       <LocalBusinessSchema />
       <OrganizationSchema />
-      <ProductSchema
-        name="Reolink GO Plus 4G"
-        description="מצלמת אבטחה סולארית 4G עם איכות 4K, ראיית לילה צבעונית, גיבוי ענן אוטומטי"
-        price="2999"
-        image="/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.avif"
-      />
-      <ProductSchema
-        name="Reolink PTZ Solar"
-        description="מצלמת אבטחה מסתובבת סולארית 4G עם זום 8x, ראיית לילה צבעונית, גיבוי ענן"
-        price="3999"
-        image="/optimized-variants/2 סוגי המצלמה/reolink-ptz-solar-security-camera-with-solar-panel.optimized-w1080.avif"
-      />
-      <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem 96px' }}>
-        {/* Hero Title */}
-        <div style={{ textAlign: 'center', paddingTop: '40px', marginBottom: '8px' }}>
-          <h1 style={{ marginBottom: 16, fontSize: '2.8rem', lineHeight: '1.15', maxWidth: '900px', margin: '0 auto 16px' }}>
-            מצלמות אבטחה 4G סולאריות לאתרי בנייה ושטחים פתוחים
-          </h1>
-          <p style={{ color: 'var(--muted)', maxWidth: '800px', margin: '0 auto 16px', fontSize: '1.15rem', lineHeight: '1.7' }}>
-            מערכות מעקב מתקדמות עם סוללה וסולאר, חיבור 4G LTE ללא צורך בחשמל או אינטרנט. 
-            איכות 4K, ראיית לילה צבעונית, גיבוי ענן אוטומטי והתראות בזמן אמת.
-          </p>
-        </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-        {/* Trust Bar */}
-        <TrustBar />
+      <main className={styles.wrap}>
+        <section className={styles.hero}>
+          <div className={styles.heroText}>
+            <span className={styles.kicker}>חנות מצלמות אבטחה עם צוות שגם מתקין</span>
+            <h1>מצלמות אבטחה, מקליטים ואינטרקום. במחיר של חנות אונליין, עם מי שיודע מה מתאים לכם.</h1>
+            <p>
+              Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. אותם מוצרים שאנחנו מתקינים בבתים, בעסקים ובאתרי בנייה,
+              עם הסבר פשוט למה לבחור דגם אחד ולא אחר. קונים לבד, או מזמינים אותנו להתקין.
+            </p>
+            <div className={styles.ctas}>
+              <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/store">לחנות</Link>
+              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/store/finder">עזרו לי לבחור, 5 שאלות</Link>
+            </div>
+            <div className={styles.trust}>
+              <span>{WARRANTY_TEXT}</span>
+              <span>זמינות מאושרת לפני חיוב</span>
+              <span>משלוח, איסוף עצמי או התקנה</span>
+            </div>
+          </div>
+          <div className={styles.shelf} aria-label="מוצרים נבחרים">
+            {shelf.map((s) => { const p = bySlug(s); return (
+              <Link key={s} href={`/store/${p.slug}`} prefetch={false}>
+                <span className={styles.tile}>{p.image && <img src={p.image} alt={p.title} loading="eager" />}</span>
+                <b>{p.brand}</b>
+                <small>{p.price ? `${p.price.toLocaleString("he-IL")} ₪` : "לפי פנייה"}</small>
+              </Link>
+            ); })}
+          </div>
+        </section>
 
-        {/* Hero Section */}
-        <Hero />
+        <section aria-labelledby="cats">
+          <div className={styles.sectionHead}>
+            <h2 id="cats">מה מחפשים?</h2>
+            <p>שש קטגוריות, ובכל אחת הסבר קצר איך בוחרים נכון והשוואה בין הדגמים.</p>
+          </div>
+          <div className={styles.cats}>
+            {storeCategories.map((c) => {
+              const n = storeProducts.filter((p) => p.category === c.id).length;
+              const img = bySlug(catImage[c.id])?.image;
+              return (
+                <Link key={c.id} href={`/store#${c.id}`} className={styles.cat}>
+                  <span className={styles.tile}>{img && <img src={img} alt="" loading="lazy" />}</span>
+                  <span>
+                    <b>{c.name}</b>
+                    <span>{c.blurb}</span>
+                    <small>{n} מוצרים</small>
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
 
-        {/* Stats Section */}
-        <StatsSection />
+        <section aria-labelledby="ways">
+          <div className={styles.sectionHead}>
+            <h2 id="ways">שלוש דרכים להגיע למוצר הנכון</h2>
+          </div>
+          <div className={styles.ways}>
+            <Link href="/store/finder" className={styles.way}>
+              <i>1</i>
+              <b>שאלון של חמש שאלות</b>
+              <p>מה מאבטחים, מה כבר קיים, כמה נקודות, מה חשוב ומה התקציב. בסוף המלצה עם הסבר, מחיר משוער וחלופות.</p>
+              <em>להתחיל</em>
+            </Link>
+            <Link href="/store" className={styles.way}>
+              <i>2</i>
+              <b>לעבור על הקטלוג לבד</b>
+              <p>כל מוצר עם שבבי מפרט שמבדילים אותו מהשכנים, שורת "מתאים ל", והשוואה מול הדגם הזול והיקר הבא.</p>
+              <em>לחנות</em>
+            </Link>
+            <a href={wa} className={styles.way} target="_blank" rel="noopener noreferrer">
+              <i>3</i>
+              <b>לדבר עם בן אדם</b>
+              <p>שולחים לנו בווצאפ תמונה של המקום או של המערכת הקיימת, ומקבלים המלצה ומחיר. בלי התחייבות.</p>
+              <em>ווצאפ</em>
+            </a>
+          </div>
+        </section>
 
-        {/* Features */}
-        <FeatureGrid />
+        <section aria-labelledby="popular">
+          <div className={styles.sectionHead}>
+            <h2 id="popular">הדגמים שאנחנו מתקינים הכי הרבה</h2>
+            <p>לא בהכרח היקרים ביותר. אלה שנותנים את התמורה הטובה ביותר לבית, לחנות ולמשרד.</p>
+          </div>
+          <div className={styles.grid}>{popular.map((s) => <ProductCard key={s} p={bySlug(s)} />)}</div>
+          <div className={styles.more}><Link className={`${styles.cta} ${styles.ctaGhost}`} href="/store">לכל {storeProducts.length} המוצרים</Link></div>
+        </section>
 
-        {/* Divider */}
-        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(0, 194, 255, 0.3) 50%, transparent 100%)', margin: '20px 0 80px', opacity: 0.5 }} />
+        <section className={styles.solar} aria-labelledby="solar">
+          <div className={styles.solarText}>
+            <h2 id="solar">אין חשמל ואינטרנט במקום? יש מצלמות סולאריות 4G.</h2>
+            <p>
+              אתרי בנייה, שטחים חקלאיים, מחסנים מרוחקים ומגרשים: מצלמת Reolink עם סוללה ופאנל סולארי, סים 4G והקלטה לענן.
+              מתקינים על עמוד או פיגום ביום אחד, ורואים הכל מהנייד.
+            </p>
+            <div className={styles.ctas}>
+              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/packages">חבילות ומחירים לאתרים</Link>
+              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/locations">לפי אזור בארץ</Link>
+            </div>
+          </div>
+          <div className={styles.solarCards}>
+            <Link href="/products/go" className={styles.solarCard}>
+              <span className={styles.tile}><img src="/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.webp" alt="Reolink GO Plus 4G" loading="lazy" /></span>
+              <b>Reolink GO Plus 4G</b>
+              <span>נקודה קבועה: כניסה לאתר, מכולה, ציוד. 4K, ראיית לילה צבעונית.</span>
+            </Link>
+            <Link href="/products/ptz" className={styles.solarCard}>
+              <span className={styles.tile}><img src="/optimized-variants/2 סוגי המצלמה/reolink-ptz-solar-security-camera-with-solar-panel.optimized-w1080.webp" alt="Reolink PTZ Solar 4G" loading="lazy" /></span>
+              <b>Reolink PTZ Solar 4G</b>
+              <span>שטח גדול: מצלמה מסתובבת עם זום וסריקה אוטומטית.</span>
+            </Link>
+          </div>
+        </section>
 
-        {/* Carousel */}
-        <FeatureCarousel />
+        <section aria-labelledby="why">
+          <div className={styles.sectionHead}>
+            <h2 id="why">למה לקנות אצל מתקינים ולא בחנות רגילה</h2>
+          </div>
+          <div className={styles.why}>
+            <div><b>אנחנו חיים עם המוצרים האלה</b><p>הדגמים באתר הם אלה שאנחנו מתקינים בפועל. כשמשהו לא עובד טוב בשטח, הוא לא נכנס לחנות.</p></div>
+            <div><b>אין "שילמת יותר כי לא ידעת"</b><p>שאלון התאמה, השוואות ומדריכי בחירה בכל קטגוריה, ועוזר AI שמכיר את כל המפרטים. גם לפני שדיברנו.</p></div>
+            <div><b>אחריות שמטופלת מולנו</b><p>{WARRANTY_TEXT}. תקלה? פונים אלינו, לא ליבואן. ואחרי ההתקנה יש למי להתקשר בהגדרות האפליקציה.</p></div>
+            <div><b>מלאי בישראל, בלי הפתעות</b><p>אישור זמינות לפני חיוב, משלוח או איסוף עצמי, ומחיר שמתחרה בכל חנות אונליין.</p></div>
+          </div>
+        </section>
 
-        {/* Packages */}
-        <Packages />
+        <section aria-labelledby="faq">
+          <div className={styles.sectionHead}><h2 id="faq">שאלות נפוצות</h2></div>
+          <div className={styles.faq}>
+            {faq.map((f) => (
+              <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
+            ))}
+          </div>
+        </section>
 
-        {/* Divider */}
-        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(0, 194, 255, 0.3) 50%, transparent 100%)', margin: '20px 0 80px', opacity: 0.5 }} />
-
-        {/* Proof Sections */}
-        <ProofSections />
-
-        {/* Locations */}
-        <LocationsList />
-
-        {/* Blog */}
         <BlogList />
 
-        {/* CTA Banner */}
-        <section style={{
-          position: 'relative',
-          padding: '64px 32px',
-          borderRadius: 'var(--radius-xl)',
-          overflow: 'hidden',
-          textAlign: 'center',
-          margin: '80px 0 40px'
-        }}>
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(0, 194, 255, 0.12) 0%, rgba(0, 102, 255, 0.08) 50%, rgba(123, 45, 255, 0.1) 100%)',
-            border: '1px solid rgba(0, 194, 255, 0.15)',
-            borderRadius: 'var(--radius-xl)'
-          }} />
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '400px',
-            height: '400px',
-            background: 'radial-gradient(circle, rgba(0, 194, 255, 0.1) 0%, transparent 70%)',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none'
-          }} />
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 style={{ fontSize: '2.2rem', marginBottom: '16px', color: 'white' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline', verticalAlign: 'middle', marginLeft: '8px' }}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              מוכנים להגן על האתר שלכם?
-            </h2>
-            <p style={{ color: 'var(--muted)', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem', lineHeight: '1.7' }}>
-              צרו קשר עוד היום לייעוץ חינם וסיור שטח מקצועי. אנחנו נתאים לכם את הפתרון המושלם.
-            </p>
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="button" style={{ fontSize: '1.1rem', padding: '18px 40px' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg> דברו איתנו עכשיו
-              </Link>
-              <Link href="/packages" className="button secondary" style={{ fontSize: '1.1rem', padding: '18px 40px' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> ראו חבילות
-              </Link>
-            </div>
+        <section className={styles.closing}>
+          <h2>לא בטוחים מאיפה להתחיל?</h2>
+          <p>שלחו לנו בווצאפ תמונה של הכניסה, החצר או המערכת הקיימת. נחזור עם המלצה ומחיר, בלי התחייבות.</p>
+          <div className={styles.ctas}>
+            <a className={`${styles.cta} ${styles.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
+            <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/contact">להשאיר פרטים</Link>
           </div>
         </section>
-
-        {/* Internal Links */}
-        <section style={{
-          margin: '48px 0 20px',
-          padding: '40px',
-          background: 'var(--glass)',
-          backdropFilter: 'blur(20px)',
-          borderRadius: 'var(--radius-xl)',
-          border: '1px solid var(--glass-border)'
-        }}>
-          <h2 style={{ marginBottom: '32px', fontSize: '1.6rem', textAlign: 'center' }}>גלה עוד על המצלמות שלנו</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
-            <div style={{ 
-              padding: '24px', 
-              background: 'rgba(0, 194, 255, 0.03)', 
-              borderRadius: 'var(--radius)', 
-              border: '1px solid rgba(0, 194, 255, 0.06)' 
-            }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '14px', color: 'var(--accent)' }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline', verticalAlign: 'middle', marginLeft: '6px' }}><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg> תחומי שימוש</h3>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li><Link href="/use-cases/construction" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>מצלמות לאתרי בנייה →</Link></li>
-                <li><Link href="/use-cases/agriculture" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>מצלמות לשטחים חקלאיים →</Link></li>
-                <li><Link href="/use-cases/remote" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>ניהול אתרים מבודדים →</Link></li>
-              </ul>
-            </div>
-            <div style={{ 
-              padding: '24px', 
-              background: 'rgba(0, 194, 255, 0.03)', 
-              borderRadius: 'var(--radius)', 
-              border: '1px solid rgba(0, 194, 255, 0.06)' 
-            }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '14px', color: 'var(--accent)' }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline', verticalAlign: 'middle', marginLeft: '6px' }}><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> תכונות מרכזיות</h3>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li><Link href="/video-quality" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>איכות וידאו 4K →</Link></li>
-                <li><Link href="/cloud-backup" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>גיבוי ענן בזמן אמת →</Link></li>
-                <li><Link href="/weatherproof" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>עמידות למזג אוויר →</Link></li>
-              </ul>
-            </div>
-            <div style={{ 
-              padding: '24px', 
-              background: 'rgba(0, 194, 255, 0.03)', 
-              borderRadius: 'var(--radius)', 
-              border: '1px solid rgba(0, 194, 255, 0.06)' 
-            }}>
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '14px', color: 'var(--accent)' }}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline', verticalAlign: 'middle', marginLeft: '6px' }}><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> המוצרים שלנו</h3>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li><Link href="/products/go" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>Reolink GO Plus 4G →</Link></li>
-                <li><Link href="/products/ptz" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>Reolink PTZ Solar →</Link></li>
-                <li><Link href="/packages" style={{ color: 'var(--muted)', fontSize: '0.95rem' }}>כל החבילות →</Link></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <FAQ />
       </main>
     </>
   );

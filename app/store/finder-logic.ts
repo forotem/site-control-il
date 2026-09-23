@@ -230,7 +230,7 @@ export function recommend(a: Answers): Recommendation {
       ext: [
         { href: "/products/go", label: "Reolink GO Plus 4G סולארית", why: "נקודה קבועה: כניסה לאתר, מכולה, ציוד. סוללה 9000mAh ופאנל סולארי" },
         { href: "/products/ptz", label: "Reolink PTZ Solar 4G", why: "שטח גדול: מצלמה מסתובבת עם זום, סריקה אוטומטית" },
-        { href: "/timelapse", label: "טיימלאפס לפרויקט", why: "אם רוצים גם תיעוד התקדמות הבנייה ללקוחות ולמשקיעים" },
+        { href: "https://timelapseit.co.il", label: "טיימלאפס לפרויקט (אתר האחות timelapseit.co.il)", why: "אם רוצים גם סרטון התקדמות של הבנייה ללקוחות ולמשקיעים" },
       ],
       notes: ["יש באתר חשמל ואינטרנט יציב? אז מערכת קווית זולה יותר לטווח ארוך. ראו את החלופה למטה."],
       alternatives: [{ title: "יש חשמל ואינטרנט באתר", items: wired, why: "מצלמות 4K עם הרתעה (אור וסירנה) ומקליט, מתאים למחסן ציוד קבוע או למשרד אתר" }],

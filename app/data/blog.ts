@@ -141,20 +141,6 @@ export const blogPosts: BlogPost[] = [
     keywords: ["השוואת מצלמות סולאריות 4G לאתרי בנייה","מצלמות אבטחה סולאריות 4G","מצלמות אבטחה לאתרי בנייה","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת אתרים מבודדים","מצלמות אבטחה לחקלאות","טיימלאפס לאתרי בנייה","מערכות אבטחה ללא חשמל","פתרונות אבטחה B2B בישראל"]
   },
   {
-    id: '50',
-    title: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן',
-    slug: 'documentation-project-construction-2026',
-    excerpt: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתר...',
-    content: '', // Content is rendered in page.tsx
-    author: 'צוות Site-Control',
-    date: '2026-06-18',
-    category: 'תיעוד בנייה',
-    image: '/blog-images/documentation-project-construction-2026/hero.webp',
-    seoTitle: 'תיעוד ויזואלי של פרויקט בנייה ללקוחות: המדריך המלא לקבלן | Site-Control',
-    seoDescription: 'קבלני בנייה, חקלאים ומנהלי אתרים מבודדים: למדו כיצד תיעוד ויזואלי של פרויקט בנייה באמצעות מצלמות 4G סולאריות משפר שקיפות, מונע גניבות ומקדם הצלחה. פתרונות Site-Control.',
-    keywords: ["תיעוד ויזואלי של פרויקט בנייה ללקוחות","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","מצלמות לחקלאות","ניהול אתרים מבודדים","קבלני בנייה","פתרונות B2B למצלמות אבטחה","Reolink GO Plus","Reolink PTZ Solar"]
-  },
-  {
     id: '48',
     title: 'פתרון אבטחה ללא תשתיות חשמל ואינטרנט: המדריך המלא',
     slug: 'security-2026',
@@ -295,20 +281,6 @@ export const blogPosts: BlogPost[] = [
     keywords: ["מצלמות אבטחה זיהוי פנים","מצלמות סולאריות 4G","אבטחה לאתרי בנייה","מצלמות לחקלאות","אבטחת אתרים מבודדים","Reolink GO Plus 4G","Reolink PTZ Solar","זיהוי תנועה חכם"]
   },
   {
-    id: '35',
-    title: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים',
-    slug: 'photography-timelapse-construction-2026',
-    excerpt: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטר...',
-    content: '', // Content is rendered in page.tsx
-    author: 'צוות Site-Control',
-    date: '2026-04-02',
-    category: 'תיעוד בנייה',
-    image: '/blog-images/photography-timelapse-construction-2026/hero.webp',
-    seoTitle: 'צילום טיימלאפס לבנייה: פתרונות אבטחה ותיעוד אולטימטיביים | Site-Control',
-    seoDescription: 'חברות בנייה וחקלאים: גלו איך מצלמות סולאריות 4G מבית Site-Control מאפשרות צילום טיימלאפס מקצועי, אבטחת אתרים ותיעוד התקדמות פרויקטים ללא חשמל או אינטרנט. קבלו ייעוץ חינם!',
-    keywords: ["צילום טיימלאפס עבור חברות בנייה","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה","תיעוד פרויקטים בבנייה","מצלמות ללא חשמל ואינטרנט","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות לחקלאות","ניהול אתרים מרוחקים"]
-  },
-  {
     id: '33',
     title: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G',
     slug: 'blog-post',
@@ -335,48 +307,6 @@ export const blogPosts: BlogPost[] = [
     seoTitle: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח | Site-Control',
     seoDescription: 'מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control.',
     keywords: ["מצלמת אבטחה סולארית לשטח פתוח","אבטחה חקלאית","מצלמה סלולרית 4G","אבטחה לשטח מרוחק","פתרון אבטחה עצמאי","אנרגיה סולארית לאבטחה","מצלמות אבטחה ישראל","Site-Control"]
-  },
-  {
-    id: '27',
-    title: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח',
-    slug: 'timelapse-marketing-advertising-projects-construction-2026',
-    excerpt: 'גלו איך טיימלאפס יכול לשדרג את שיווק פרויקטי הבנייה שלכם. מדריך מקיף מבית Site-Control עם המלצות ציוד, טיפים להתקנה ושאלות נפוצות....',
-    content: '', // Content is rendered in page.tsx
-    author: 'צוות Site-Control',
-    date: '2026-02-23',
-    category: 'תיעוד בנייה',
-    image: '/blog-images/timelapse-marketing-advertising-projects-construction-2026/hero.webp',
-    seoTitle: 'טיימלאפס שיווק ופרסום פרויקטי בנייה: המדריך המלא ליצירת סיפור ויזואלי מנצח | Site-Control',
-    seoDescription: 'גלו איך טיימלאפס יכול לשדרג את שיווק פרויקטי הבנייה שלכם. מדריך מקיף מבית Site-Control עם המלצות ציוד, טיפים להתקנה ושאלות נפוצות.',
-    keywords: ["טיימלאפס","שיווק פרויקטי בנייה","פרסום בנייה","מצלמות אבטחה בנייה","תיעוד בנייה","Site-Control","Hikvision","Dahua","Reolink"]
-  },
-  {
-    id: '26',
-    title: 'מעקב התקדמות פרויקט בנייה: כך מצלמות אבטחה חכמות משנות את כללי המשחק',
-    slug: 'monitoring-progress-project-construction-2026',
-    excerpt: 'גלו כיצד מצלמות אבטחה מתקדמות מבית Site-Control משפרות את ניהול, אבטחת ותיעוד פרויקטי בנייה בישראל. מדריך מקיף למעקב התקדמות פרויקטים....',
-    content: '', // Content is rendered in page.tsx
-    author: 'צוות Site-Control',
-    date: '2026-02-19',
-    category: 'פתרונות לעסקים',
-    image: '/blog-images/monitoring-progress-project-construction-2026/hero.svg',
-    seoTitle: 'מעקב התקדמות פרויקט בנייה: כך מצלמות אבטחה חכמות משנות את כללי המשחק | Site-Control',
-    seoDescription: 'גלו כיצד מצלמות אבטחה מתקדמות מבית Site-Control משפרות את ניהול, אבטחת ותיעוד פרויקטי בנייה בישראל. מדריך מקיף למעקב התקדמות פרויקטים.',
-    keywords: ["מעקב התקדמות פרויקט בנייה","מצלמות אבטחה לאתרי בנייה","אבטחה באתרי בנייה","ניטור בנייה","Time-Lapse בנייה","Site-Control","Hikvision לאתרי בנייה","Dahua לאתרי בנייה"]
-  },
-  {
-    id: '23',
-    title: 'תיעוד בנייה לצרכים משפטיים בישראל - כל מה שצריך לדעת',
-    slug: 'documentation-construction-legal-2026',
-    excerpt: 'מדריך מקצועי מקיף על תיעוד בנייה לצרכים משפטיים בישראל - כל מה שצריך לדעת.',
-    content: '', // Content is rendered in page.tsx
-    author: 'צוות Site-Control',
-    date: '2026-02-05',
-    category: 'פתרונות לעסקים',
-    image: '/blog-images/documentation-progress-construction-cameras-2026/hero.webp',
-    seoTitle: 'תיעוד בנייה לצרכים משפטיים בישראל - כל מה שצריך לדעת | Site-Control',
-    seoDescription: 'מדריך מקצועי מקיף על תיעוד בנייה לצרכים משפטיים בישראל עם פתרונות מתקדמים והתקנה מקצועית.',
-    keywords: ["תיעוד בנייה לצרכים משפטיים","תיעוד בנייה לצרכים משפטיים 2026","תיעוד בנייה לצרכים משפטיים למכירה","תיעוד בנייה לצרכים משפטיים מחיר","תיעוד בנייה לצרכים משפטיים המלצות","תיעוד בנייה לצרכים משפטיים ביקורות"]
   },
   {
     id: '19',

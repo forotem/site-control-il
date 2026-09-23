@@ -164,7 +164,7 @@ export const storeProducts: StoreProduct[] = [
       "הקלטת וידאו וצפייה בהקלטות דרך Hik-Connect / דפדפן",
       "IP65, התקנה על הטיח"
     ],
-    "image": "/store-images/ds-kv6124-wbe1.webp",
+    "image": "/store-images/ds-kv6124-wbe1-v2.webp",
     "datasheet": "https://assets.hikvision.com/prd/normal/all/doc/m000168988/DS-KV6124-WBE1_Datasheet_20260603.pdf",
     "highlights": [
       "מצלמת 4MP ברזולוציה גבוהה עם זווית צפייה רחבה 150°",
@@ -316,7 +316,7 @@ export const storeProducts: StoreProduct[] = [
       "AcuSense: זיהוי אדם/רכב (Motion Detection 2.0), הגנה היקפית וזיהוי פנים בערוצים נבחרים",
       "H.265+/H.265/H.264+, שלדת 1U, ללא PoE"
     ],
-    "image": "/store-images/ds-7632nxi-k2.webp",
+    "image": "/store-images/ds-7632nxi-k2-v2.webp",
     "datasheet": "https://www.hikvision.com/content/dam/hikvision/pl/firmware/DS-7632NXI-K2D_Datasheet_20250630_PL.pdf",
     "highlights": [
       "32 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
@@ -914,7 +914,7 @@ export const storeProducts: StoreProduct[] = [
       "יציאה 4 ב-1: TVI / AHD / CVI / CVBS",
       "IP67, טמפ' עבודה -30 עד 60°C, 12V DC"
     ],
-    "image": "/store-images/uac-t125-af28lm.webp",
+    "image": "/store-images/uac-t125-af28lm-v2.webp",
     "datasheet": "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/10824b27-4fea-43bf-bb47-2cb9f4cab245/c139d1a3-a87c-46ea-8aab-d3459b248816.pdf",
     "highlights": [
       "5MP (2880x1620 / 2592x1944), חיישן CMOS 1/2.7\" LightHunter",
@@ -1018,7 +1018,7 @@ export const storeProducts: StoreProduct[] = [
       "Supports IP camera and call divert to mobile app via optional IPG module",
       "Kit: monitor + outdoor camera door station + power supply"
     ],
-    "image": "/store-images/visionnet-kitcom-2-wire-villa-kit-560789.webp",
+    "image": "/store-images/visionnet-kitcom-2-wire-villa-kit-560789-v2.webp",
     "datasheet": null,
     "highlights": [
       "7\" colour TFT monitor with touch-sensor buttons and intuitive menu",
@@ -1148,7 +1148,7 @@ export const storeProducts: StoreProduct[] = [
       "IP54, zinc alloy / stainless front, 179x94x42 mm",
       "Operating -20 to +55 C"
     ],
-    "image": "/store-images/visionnet-2tl-607fe-id-s2-560075.webp",
+    "image": "/store-images/visionnet-2tl-607fe-id-s2-560075-v2.webp",
     "datasheet": "https://www.telran.co.il/images/DT-ENG-DT607-V1.pdf",
     "highlights": [
       "1/2.7\" CMOS colour camera, 170° fisheye lens, auto night illumination",
@@ -1702,7 +1702,7 @@ export const storeProducts: StoreProduct[] = [
       "מיקרופון מובנה; Motion Detection 2.0 (אדם/רכב); WDR 120dB; H.265+",
       "PoE 802.3af או 12VDC; IP66; חריץ microSD עד 256GB"
     ],
-    "image": "/store-images/ds-2cd1p47g2-luf-2-8mm.webp",
+    "image": "/store-images/ds-2cd1p47g2-luf-2-8mm-v2.webp",
     "datasheet": "https://assets.hikvision.com/prd/public/all/doc/sm000040936/DS-2CD1P47G2-LUF_Datasheet_V5.7.1_20230220.pdf",
     "highlights": [
       "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS, צמצם F1.0",
@@ -2109,7 +2109,7 @@ export const storeProducts: StoreProduct[] = [
       "אודיו דו-כיווני מלא (מיקרופון + רמקול 76dBA), אזעקת קול ואור; זיהוי AI: אדם, רכב, חציית קו, חדירה",
       "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (90 יום ניסיון) / NVR-NAS דרך ONVIF; הזנה 12V DC 1A; IP65; 203x122x162 מ\"מ"
     ],
-    "image": "/store-images/ch9.webp",
+    "image": "/store-images/ch9-v2.webp",
     "datasheet": "https://static.tenda.com.cn/tdeweb/download/CH9-WCA/CH9-WCA%20datasheet%20EN.pdf",
     "highlights": [
       "6MP סה\"כ: שתי עדשות 3MP (2304x1296) – עדשה קבועה רחבה 4mm (79.8° אופקי) + עדשת PT טלה 6mm (49.6°), צמצם F1.6, חיישן CMOS 1/3\"",
@@ -2134,7 +2134,7 @@ export const storeProducts: StoreProduct[] = [
       "אודיו דו-כיווני מלא (מיקרופון + רמקול), אזעקת קול ואור; זיהוי AI: אדם, רכב, אופניים חשמליים, חציית קו, חדירה",
       "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (90 יום ניסיון) / NVR-NAS ב-ONVIF דו-ערוצי; הזנה 12V DC 1A; IP65; 203x122x162 מ\"מ"
     ],
-    "image": "/store-images/ch10.webp",
+    "image": "/store-images/ch10-v2.webp",
     "datasheet": "https://www.tendacn.com/material/show/722871613206597",
     "highlights": [
       "10MP סה\"כ: שתי עדשות 5MP (2880x1620) – עדשה קבועה רחבה 4mm (83.2° אופקי) + עדשת PT טלה 6mm (51.4°), צמצם F1.6, חיישן CMOS 1/3\"",
@@ -2184,7 +2184,7 @@ export const storeProducts: StoreProduct[] = [
       "אודיו דו-כיווני + כפתור שיחה בלחיצה אחת (One-touch Call); הצפנה משולשת AES",
       "Wi-Fi 6 (802.11 b/g/n/ax) 2.4GHz עד 287Mbps; אחסון microSD עד 512GB / ענן (3 חודשי ניסיון) / NVR; הזנה 5V 1A USB Type-C; 103x88x88 מ\"מ"
     ],
-    "image": "/store-images/cp3-pro.webp",
+    "image": "/store-images/cp3-pro-v2.webp",
     "datasheet": "https://www.tendacn.com/product/specification/CP3ProV11",
     "highlights": [
       "רזולוציה 2K / 3MP (2304x1296), חיישן CMOS 1/3\", עדשה 4mm F2.0, זווית 78° אופקי / 95° אלכסוני; קידוד H.265",

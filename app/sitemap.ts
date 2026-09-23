@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const staticPages = [
     { url: "/", priority: 1.0, changefreq: "daily" as const },
-    { url: "/packages", priority: 0.9, changefreq: "weekly" as const },
     { url: "/products/go", priority: 0.9, changefreq: "weekly" as const },
     { url: "/products/ptz", priority: 0.9, changefreq: "weekly" as const },
     { url: "/use-cases/construction", priority: 0.8, changefreq: "weekly" as const },
@@ -19,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/video-quality", priority: 0.7, changefreq: "monthly" as const },
     { url: "/contact", priority: 0.6, changefreq: "monthly" as const },
     { url: "/about", priority: 0.6, changefreq: "monthly" as const },
-    { url: "/pricing", priority: 0.7, changefreq: "weekly" as const },
     { url: "/locations", priority: 0.7, changefreq: "monthly" as const },
     { url: "/blog", priority: 0.8, changefreq: "weekly" as const },
   ];

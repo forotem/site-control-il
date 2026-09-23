@@ -10,7 +10,7 @@ import styles from "./home.module.css";
 export const metadata: Metadata = {
   title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
   description:
-    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink ו-VisionNet מהמלאי של היבואן. מצלמות IP, מקליטים, אינטרקום וסולארי 4G. אחריות שנה.",
+    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink ו-VisionNet מהמלאי של היבואן בישראל. מצלמות IP, מקליטים, אינטרקום ובקרת כניסה. אחריות שנה.",
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
@@ -37,7 +37,7 @@ const catImage: Record<string, string> = {
 const brands = [
   { key: "hikvision", name: "Hikvision", line: "מצלמות IP, מקליטים ואינטרקום", href: "/store#ip" },
   { key: "uniview", name: "Uniview", line: "מצלמות IP ומקליטים במחיר חכם", href: "/store#ip" },
-  { key: "reolink", name: "Reolink", line: "ערכות מוכנות ומצלמות סולאריות 4G", href: "/store#kits" },
+  { key: "reolink", name: "Reolink", line: "ערכות מוכנות עם מקליט ודיסק", href: "/store#kits" },
   { key: "visionnet", name: "VisionNet", line: "אינטרקום 2 גידים וקודנים", href: "/store#intercom" },
   { key: "tenda", name: "Tenda", line: "מצלמות Wi-Fi לבית", href: "/store#wifi" },
   { key: "hiwatch", name: "HiWatch by Hikvision", line: "מצלמות 4K במחיר נגיש", href: "/store#ip" },
@@ -48,9 +48,9 @@ const faq = [
   { q: "אתם חנות או חברת התקנות?", a: "שניהם. הצוות שלנו מתקין מצלמות בבתים, בעסקים ובאתרי בנייה, ואת אותו ציוד אנחנו מוכרים גם באתר. אפשר לקנות לבד ולהתקין עם החשמלאי שלכם, או להזמין אותנו." },
   { q: "המוצרים במלאי?", a: "המוצרים מגיעים מהמלאי של היבואן בישראל. לפני חיוב אנחנו מאשרים זמינות ומועד אספקה בווצאפ או בטלפון, כך שאף אחד לא משלם על מוצר שאין במלאי." },
   { q: "איך אני יודע איזו מצלמה מתאימה לי?", a: "בחנות יש שאלון קצר של חמש שאלות שמצמצם את הבחירה לשניים-שלושה דגמים עם הסבר. יש גם עוזר AI שמכיר את כל המוצרים, ותמיד אפשר לכתוב לנו בווצאפ." },
-  { q: "מה עם אחריות ושירות?", a: `${WARRANTY_TEXT}. תקלה בתקופת האחריות מטופלת מולנו, לא מול היבואן. אחרי ההתקנה יש תמיכה טלפונית להגדרות האפליקציה.` },
+  { q: "מה עם אחריות ושירות?", a: `${WARRANTY_TEXT}, בשיתוף היבואן הראשי. אנחנו מכירים אותו ואת המוצרים מהשטח, אז כל שאלה או תקלה, מדברים איתנו ואנחנו מבררים בשבילכם. אחרי ההתקנה יש תמיכה טלפונית להגדרות האפליקציה.` },
   { q: "יש הנחה לקבלנים ולכמויות?", a: "כן. מ-5 יחידות מאותו מוצר או הזמנה מעל 5,000 ₪ אנחנו מכינים הצעת מחיר עם הנחת כמות במקום המחיר באתר. אפשר להרכיב עגלה באתר ולסמן שזו הזמנה לקבלן." },
-  { q: "ומה עם אתר בנייה בלי חשמל?", a: "לזה יש לנו את המצלמות הסולאריות 4G של Reolink: מצלמה עם סוללה ופאנל סולארי, סים 4G והקלטה לענן. מתקינים על עמוד או פיגום ביום אחד." },
+  { q: "ומה עם אתר בנייה בלי חשמל?", a: "לשם מתאימה מצלמה סולארית עם סים 4G והקלטה לענן. זה לא מוצר מדף בחנות אלא התקנה לפי הצעת מחיר לאתר. כתבו לנו מה יש במקום ונחזור עם פתרון." },
 ];
 
 export default function Page() {
@@ -158,27 +158,15 @@ export default function Page() {
 
         <section className={styles.solar} aria-labelledby="solar">
           <div className={styles.solarText}>
-            <h2 id="solar">אין חשמל ואינטרנט במקום? יש מצלמות סולאריות 4G.</h2>
+            <h2 id="solar">אתר בנייה, שטח או מחסן בלי חשמל ואינטרנט?</h2>
             <p>
-              אתרי בנייה, שטחים חקלאיים, מחסנים מרוחקים ומגרשים: מצלמת Reolink עם סוללה ופאנל סולארי, סים 4G והקלטה לענן.
-              מתקינים על עמוד או פיגום ביום אחד, ורואים הכל מהנייד.
+              לשם לא מתאימה מצלמה קווית. אנחנו מתקינים שם מצלמות סולאריות עם סים 4G והקלטה לענן, לפי הצעת מחיר לאתר.
+              ספרו לנו מה יש במקום ונחזור עם פתרון.
             </p>
             <div className={styles.ctas}>
-              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/packages">חבילות ומחירים לאתרים</Link>
-              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/locations">לפי אזור בארץ</Link>
+              <a className={`${styles.cta} ${styles.ctaWa}`} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, יש לי אתר בלי חשמל ואינטרנט ואני צריך מצלמות")}`} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
+              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/contact">להשאיר פרטים</Link>
             </div>
-          </div>
-          <div className={styles.solarCards}>
-            <Link href="/products/go" className={styles.solarCard}>
-              <span className={styles.tile}><img src="/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.webp" alt="Reolink GO Plus 4G" loading="lazy" /></span>
-              <b>Reolink GO Plus 4G</b>
-              <span>נקודה קבועה: כניסה לאתר, מכולה, ציוד. 4K, ראיית לילה צבעונית.</span>
-            </Link>
-            <Link href="/products/ptz" className={styles.solarCard}>
-              <span className={styles.tile}><img src="/optimized-variants/2 סוגי המצלמה/reolink-ptz-solar-security-camera-with-solar-panel.optimized-w1080.webp" alt="Reolink PTZ Solar 4G" loading="lazy" /></span>
-              <b>Reolink PTZ Solar 4G</b>
-              <span>שטח גדול: מצלמה מסתובבת עם זום וסריקה אוטומטית.</span>
-            </Link>
           </div>
         </section>
 
@@ -189,7 +177,7 @@ export default function Page() {
           <div className={styles.why}>
             <div><b>אנחנו חיים עם המוצרים האלה</b><p>הדגמים באתר הם אלה שאנחנו מתקינים בפועל. כשמשהו לא עובד טוב בשטח, הוא לא נכנס לחנות.</p></div>
             <div><b>אין "שילמת יותר כי לא ידעת"</b><p>שאלון התאמה, השוואות ומדריכי בחירה בכל קטגוריה, ועוזר AI שמכיר את כל המפרטים. גם לפני שדיברנו.</p></div>
-            <div><b>אחריות שמטופלת מולנו</b><p>{WARRANTY_TEXT}. תקלה? פונים אלינו, לא ליבואן. ואחרי ההתקנה יש למי להתקשר בהגדרות האפליקציה.</p></div>
+            <div><b>בשיתוף היבואן הראשי</b><p>{WARRANTY_TEXT}. אנחנו מכירים את היבואן ואת המוצרים מהשטח, ומתרגמים את השפה הטכנית לעברית פשוטה. שאלה? אנחנו מבררים בשבילכם.</p></div>
             <div><b>מלאי בישראל, בלי הפתעות</b><p>אישור זמינות לפני חיוב, משלוח או איסוף עצמי, ומחיר שמתחרה בכל חנות אונליין.</p></div>
           </div>
         </section>

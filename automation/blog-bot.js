@@ -445,7 +445,6 @@ async function generateBlogContent(topic) {
     { url: '/cloud-backup', anchor: 'גיבוי ענן אוטומטי', context: 'גיבוי ענן' },
     { url: '/weatherproof', anchor: 'עמידות IP66', context: 'עמידות מזג אוויר' },
     { url: '/video-quality', anchor: 'איכות וידאו 4K', context: 'רזולוציה 4K' },
-    { url: '/packages', anchor: 'חבילות אבטחה', context: 'מחיר וחבילות' },
     { url: '/contact', anchor: 'ייעוץ חינם', context: 'יצירת קשר' },
     { url: '/store', anchor: 'החנות שלנו', context: 'קניית מצלמות, מקליטים ואינטרקום' },
     { url: '/store/finder', anchor: 'שאלון: איזו מצלמה מתאימה לי', context: 'התלבטות בין דגמים' },

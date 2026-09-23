@@ -66,7 +66,7 @@
 .more { margin-top: 1rem; }
 
 /* סולארי */
-.solar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); background: linear-gradient(135deg, rgba(255, 122, 0, 0.07), rgba(12, 18, 32, 0.6)); }
+.solar { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: center; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); background: linear-gradient(135deg, rgba(255, 122, 0, 0.07), rgba(12, 18, 32, 0.6)); }
 @media (max-width: 860px) { .solar { grid-template-columns: 1fr; } }
 .solar h2 { font-size: 1.7rem; color: var(--text-bright); text-wrap: balance; }
 .solar p { color: var(--text); line-height: 1.7; }

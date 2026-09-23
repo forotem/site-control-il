@@ -87,7 +87,7 @@ export default function AgricultureUseCasePage() {
         <h2>שאלות נפוצות על מצלמות אבטחה לחקלאות</h2>
         <div style={{marginTop: '1rem'}}>
           <h3>כמה עולה מצלמת אבטחה סולארית לשטח חקלאי?</h3>
-          <p>מצלמות סולאריות 4G מתחילות מ-2,999 ₪ כולל פאנל סולארי וגיבוי ענן. <Link href="/packages" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>ראו חבילות מחירים</Link>.</p>
+          <p>המחיר תלוי במספר המצלמות, בגובה ההתקנה ובחבילת הסים והענן. <Link href="/contact" style={{color: 'var(--link-color)', textDecoration: 'underline'}}>השאירו פרטים</Link> ונחזור עם הצעה לשטח שלכם.</p>
           <h3>האם המצלמות עובדות בלילה?</h3>
           <p>כן, כל המצלמות שלנו מצוידות בראיית לילה צבעונית עד 10 מטר ואינפרא אדום עד 15 מטר.</p>
           <h3>יש חשמל ואינטרנט בחלק מהשטח?</h3>

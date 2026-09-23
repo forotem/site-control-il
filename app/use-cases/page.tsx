@@ -41,9 +41,9 @@ export default function UseCasesPage() {
       </section>
       <section className={styles.closing}>
         <h2>לא בטוחים איזה פתרון מתאים?</h2>
-        <p>חבילות ומחירים למצלמות הסולאריות, או שאלון קצר לכל השאר.</p>
+        <p>הצעת מחיר לאתר בלי חשמל, או שאלון קצר לכל השאר.</p>
         <div className={styles.ctas}>
-          <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/packages">חבילות סולאריות 4G</Link>
+          <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/contact">הצעת מחיר לאתר</Link>
           <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/store/finder">שאלון: מה מתאים לי</Link>
         </div>
       </section>

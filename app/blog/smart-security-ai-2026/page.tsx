@@ -289,7 +289,7 @@ export default function SmartSecurityAI2026Page() {
               }}>
                 צרו קשר לייעוץ חינם
               </a>
-              <a href="/packages" style={{
+              <a href="/store" style={{
                 backgroundColor: 'transparent',
                 color: 'white',
                 border: '2px solid white',

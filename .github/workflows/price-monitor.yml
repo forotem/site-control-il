@@ -1,0 +1,61 @@
+name: Price Monitor - סריקת מחירי מתחרים
+
+# אושר על ידי רותם 23/09/2026: "כן אני מאשר תבנה".
+on:
+  # ראשון ורביעי 04:00 UTC (07:00 בישראל)
+  schedule:
+    - cron: '0 4 * * 0,3'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'apply = להוזיל אוטומטית לפי הכללים; report = דוח בלבד'
+        required: false
+        default: 'apply'
+        type: choice
+        options: [apply, report]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: התקנת תלויות (typescript לבדיקת הנתונים)
+        run: npm ci
+
+      - name: סריקה
+        env:
+          GREEN_ID_INSTANCE: ${{ secrets.GREEN_ID_INSTANCE }}
+          GREEN_API_TOKEN: ${{ secrets.GREEN_API_TOKEN }}
+          GREEN_API_URL: ${{ secrets.GREEN_API_URL }}
+          STORE_ALERT_WHATSAPP: ${{ secrets.STORE_ALERT_WHATSAPP }}
+        run: |
+          if [ "${{ github.event.inputs.apply }}" = "report" ]; then
+            node automation/price-monitor/monitor.mjs
+          else
+            node automation/price-monitor/monitor.mjs --apply
+          fi
+
+      - name: בדיקת נתונים אחרי שינוי מחירים
+        run: node automation/qa/data.cjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "Price Monitor"
+          git config user.email "bot@site-control-il.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "price-monitor: סריקת מחירי מתחרים $(date -u +%Y-%m-%d)"
+            git push
+          fi

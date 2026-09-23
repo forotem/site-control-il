@@ -149,7 +149,20 @@ if (APPLY) {
     const re = new RegExp(`("slug": "${r.slug}",[\\s\\S]*?"price": )\\d+`);
     if (re.test(src)) { src = src.replace(re, `$1${r.target}`); applied++; }
   }
-  if (applied) fs.writeFileSync(catPath, src);
+  if (applied) {
+    fs.writeFileSync(catPath, src);
+    // מסנכרנים גם את טיוטת הקטלוג, אחרת data.cjs מדווח על פער בין החנות לטיוטה
+    const draftPath = path.join(root, "docs/telran-supplier-2026-09/catalog_draft_2026-09-23.json");
+    if (fs.existsSync(draftPath)) {
+      const draft = JSON.parse(fs.readFileSync(draftPath, "utf8")); const rows = Array.isArray(draft) ? draft : draft.rows;
+      for (const r of results.filter((x) => x.action === "applied")) {
+        const row = rows.find((x) => x.model === r.model); if (!row) continue;
+        row.recommended_price_ils = r.target; row.market_low_ils = r.low;
+        row.pricing_note = `${row.pricing_note ? row.pricing_note + " | " : ""}סורק מתחרים ${day}: הזול ${r.low} (${r.lowSeller}), הוזל ל-${r.target}`;
+      }
+      fs.writeFileSync(draftPath, JSON.stringify(draft, null, 2));
+    }
+  }
 }
 
 // דוחות

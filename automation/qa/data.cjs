@@ -55,4 +55,17 @@ for (const p of storeProducts) {
   if (p.price && !STORE_KNOWLEDGE.includes(`[${p.slug}] ${p.brand} ${p.model}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${p.price} ₪`)) issues.push(["knowledge", p.slug, "price line mismatch"]);
 }
 
-console.log(JSON.stringify({ products: storeProducts.length, draftRows: draftRows.length, finder: { combos, empty, errors, farOverBudget: overBudget }, knowledgeChars: STORE_KNOWLEDGE.length, issues }, null, 1));
+// 5) image content: an image that is mostly empty (logo/icon instead of a product photo) or tiny
+(async () => {
+  const sharp = require("sharp");
+  for (const p of storeProducts) {
+    if (!p.image || !fs.existsSync(W + "public" + p.image)) continue;
+    const img = sharp(W + "public" + p.image);
+    const m = await img.metadata();
+    let ratio = 1;
+    try { const t = await img.clone().trim({ threshold: 25 }).toBuffer({ resolveWithObject: true }); ratio = (t.info.width * t.info.height) / (m.width * m.height); } catch {}
+    if (ratio < 0.1) issues.push(["image-content", p.slug, `only ${Math.round(ratio * 100)}% of the image has content (icon/placeholder?)`]);
+    if (Math.max(m.width, m.height) < 220) issues.push(["image-size", p.slug, `${m.width}x${m.height} too small`]);
+  }
+  console.log(JSON.stringify({ products: storeProducts.length, draftRows: draftRows.length, finder: { combos, empty, errors, farOverBudget: overBudget }, knowledgeChars: STORE_KNOWLEDGE.length, issues }, null, 1));
+})();

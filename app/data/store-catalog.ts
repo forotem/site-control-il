@@ -257,7 +257,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסוף זיהוי פנים קומפקטי Hikvision DS-K1T323MBFWX-E1 - מסך 2.4\", פנים/טביעת אצבע/כרטיס Mifare/קוד, Wi",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": null,
+    "price": 949,
     "specs": [
       "מסוף זיהוי פנים מסדרת Value במארז צר - מסך LCD 2.4\"",
       "עדשה רחבת זווית 2MP, זיהוי פנים מהיר ומדויק (Deep Learning)",
@@ -307,7 +307,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-32 ערוצים AcuSense 4K, 2 דיסקים",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": null,
+    "price": 1349,
     "specs": [
       "32 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 256Mbps / יוצא 160Mbps",
@@ -359,7 +359,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-16 ערוצים AcuSense 4K, דיסק אחד",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": null,
+    "price": 899,
     "specs": [
       "16 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 80Mbps / יוצא 160Mbps",
@@ -385,7 +385,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-8 ערוצים עם 8 יציאות PoE, AcuSense 4K",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": null,
+    "price": 999,
     "specs": [
       "8 ערוצי IP + מתג PoE מובנה 8 יציאות (Plug & Play)",
       "רזולוציית הקלטה עד 12MP לערוץ",
@@ -567,7 +567,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור HiWatch by Hikvision IP 8MP 4K Smart Hybrid Light עם מיקרופון, 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": null,
+    "price": 449,
     "specs": [
       "8MP (3840x2160) 4K, עדשה קבועה 2.8 מ\"מ, זווית אופקית כ-113°",
       "Smart Hybrid Light: אינפרא-אדום / אור לבן עד 30 מ'",
@@ -593,7 +593,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה (Turret) HiWatch by Hikvision IP 8MP 4K Smart Hybrid Light עם מיקרופון, 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": null,
+    "price": 449,
     "specs": [
       "8MP (3840x2160) 4K, עדשה קבועה 2.8 מ\"מ",
       "Smart Hybrid Light: אינפרא-אדום / אור לבן עד 30 מ'",
@@ -697,7 +697,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP צינור 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview OwlView IPC2316LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": null,
+    "price": 599,
     "specs": [
       "6MP (3072x2048) חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
       "עדשה קבועה 2.8 מ\"מ F1.0",
@@ -801,7 +801,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP טורט 5MP עדשה 2.8 מ\"מ IR 30 מ' מיקרופון מובנה Uniview IPC3615LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": null,
+    "price": 329,
     "specs": [
       "5MP (2880x1620) חיישן CMOS 1/2.7\" Starlight",
       "עדשה קבועה 2.8 מ\"מ",
@@ -1165,7 +1165,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "גגון הגנה מגשם לקודן בקרת כניסה (מתאים לקודנים 560596/560597)",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": null,
+    "price": 49,
     "specs": [
       "ABS plastic rain/sun shield for surface-mounted keypads",
       "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
@@ -2101,7 +2101,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Tenda CH9 דו-עדשתית 6MP ממונעת Wi-Fi 6 עם ראיית לילה צבעונית",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": null,
+    "price": 299,
     "specs": [
       "6MP סה\"כ: שתי עדשות 3MP (2304x1296) – עדשה קבועה רחבה 4mm (79.8° אופקי) + עדשת PT טלה 6mm (49.6°), צמצם F1.6, חיישן CMOS 1/3\"",
       "Pan/Tilt ממונע 0°–355° אופקי, 0°–90° אנכי; קישור חכם בין העדשות – העדשה הרחבה מזהה אדם/רכב והעדשה הממונעת ננעלת ועוקבת",
@@ -2126,7 +2126,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Tenda CH10 דו-עדשתית 10MP ממונעת Wi-Fi 6 עם ראיית לילה צבעונית",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": null,
+    "price": 399,
     "specs": [
       "10MP סה\"כ: שתי עדשות 5MP (2880x1620) – עדשה קבועה רחבה 4mm (83.2° אופקי) + עדשת PT טלה 6mm (51.4°), צמצם F1.6, חיישן CMOS 1/3\"",
       "Pan/Tilt ממונע 0°–355° אופקי, 0°–90° אנכי (+ כיוון זרוע ידני 260°); קישור חכם דו-עדשתי – העדשה הממונעת ננעלת אוטומטית על אדם/רכב",
@@ -2151,7 +2151,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Tenda CT3 צינור 1080P Wi-Fi עם ראיית לילה צבעונית ואודיו דו-כיווני",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": null,
+    "price": 149,
     "specs": [
       "רזולוציה 1080P Full HD (1920x1080), חיישן CMOS 1/2.9\", עדשה קבועה 4mm F1.6, זווית 85.6° אופקי / 93.1° אלכסוני – מצלמת צינור (Bullet), ללא Pan/Tilt",
       "ראיית לילה Full-Color עד 30 מ': 2 נורות IR + 2 זרקורים, שלושה מצבים (חכם / צבע מלא / שחור-לבן)",

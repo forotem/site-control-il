@@ -1,6 +1,6 @@
 // בסיס הידע של עוזר המכירות: טקסט קומפקטי שנבנה פעם אחת מהקטלוג, מהמאפיינים ומהמדריכים.
 // נטען רק בצד השרת (API route). אין כאן מידע סודי.
-import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT } from "./store-catalog";
+import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT, productName } from "./store-catalog";
 import { attrsOf, fitLine, kindLabel, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
 import { storeGuides } from "./store-guides";
 
@@ -33,7 +33,7 @@ function productLine(p: (typeof storeProducts)[number]): string {
   }
   const price = p.price ? `${p.price} ₪` : "מחיר לפי פנייה";
   const hl = p.highlights.slice(0, 2).join("; ");
-  return `- [${p.slug}] ${p.brand} ${p.model}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${price} | ${p.title} | ${bits.join(", ")} | מתאים ל: ${fitLine(p)}${p.oldStock ? " | מלאי ישן במבצע חיסול" : ""} | ${hl}`;
+  return `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${price} | ${p.title} | ${bits.join(", ")} | מתאים ל: ${fitLine(p)}${p.oldStock ? " | מלאי ישן במבצע חיסול" : ""} | ${hl}`;
 }
 
 export function buildKnowledge(): string {
@@ -47,6 +47,7 @@ export function buildKnowledge(): string {
   });
   const policies = [
     `אחריות: ${WARRANTY_TEXT}.`,
+    "מדיניות מחיר: המטרה שלנו להיות הזולים בישראל לאותו דגם. אם לקוח אומר שמצא זול יותר באתר ישראלי, בקש קישור, אמור שנשווה את המחיר, וסמן escalate כדי שרותם יאשר. אל תבטיח בעצמך מחיר נמוך מזה שבקטלוג.",
     `אספקה: ${deliveryOptions.map((d) => `${d.title} (${d.desc})`).join("; ")}.`,
     "מלאי: המוצרים מגיעים מהמלאי של היבואן בישראל. לפני חיוב מאשרים זמינות ומועד אספקה בווצאפ, כך שאף אחד לא משלם על מוצר שאין במלאי.",
     "מחירים: כוללים מע\"מ, לא כוללים התקנה ולא כוללים דיסק קשיח למקליטים.",
@@ -57,7 +58,7 @@ export function buildKnowledge(): string {
   ].join("\n");
   const solar = [
     "מצלמות הסוללה של Reolink נמצאות בקטלוג בקטגוריה 'סולארי 4G ובסוללה' עם מחירים אמיתיים. שתי משפחות: 4G עם סים (Go Plus, Go Ultra, Go PT Plus, Go PT Ultra, Duo 2 LTE, TrackMix LTE, Go Ranger) לאתרים בלי אינטרנט, ו-Wi-Fi בסוללה (Argus) לבית.",
-    "חשוב לשאול לפני מחיר: עם פאנל סולארי או בלי? רוב הדגמים בלי פאנל (Solar Panel 2 נמכר בנפרד, 129 ₪); Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל. וגם: קבועה, ממונעת או פנורמית, וכמה נקודות.",
+    "חשוב לשאול לפני מחיר: עם פאנל סולארי או בלי? רוב הדגמים בלי פאנל (Solar Panel 2 נמכר בנפרד, 79 ₪); Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל. וגם: קבועה, ממונעת או פנורמית, וכמה נקודות.",
     "סים: הלקוח צריך סים עם חבילת גלישה (10 עד 30GB לחודש). אנחנו עוזרים לבחור ולהגדיר. התקנה על עמוד או פיגום באתר: לפי הצעת מחיר, לא כלולה במחיר המצלמה.",
     "טיימלאפס וסרטוני התקדמות בנייה אינם שירות של האתר הזה: מפנים לאתר האחות https://timelapseit.co.il.",
   ].join("\n");

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT } from "../../data/store-catalog";
+import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
 import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder } from "../../data/store-attrs";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { ProductCard, SpecChips } from "../ProductCard";
@@ -17,14 +17,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) return {};
   const a = attrsOf(p);
-  const shortTitle = `${p.brand} ${p.model} | ${kindLabel[a.kind]} | Site-Control`;
+  const shortTitle = `${productName(p)} | ${kindLabel[a.kind]} | Site-Control`;
   const desc = trim155(`${p.title}. ${p.highlights[0] || ""}. ${WARRANTY_TEXT}, משלוח או התקנה.`);
   return {
-    title: shortTitle.length <= 70 ? shortTitle : `${p.brand} ${p.model} | Site-Control`,
+    title: shortTitle.length <= 70 ? shortTitle : `${productName(p)} | Site-Control`,
     description: desc,
     alternates: { canonical: `/store/${p.slug}` },
     robots: { index: true, follow: true },
-    openGraph: { title: `${p.brand} ${p.model} | Site-Control`, description: p.highlights.join(" · "), type: "website", locale: "he_IL", images: p.image ? [{ url: p.image }] : undefined },
+    openGraph: { title: `${productName(p)} | Site-Control`, description: p.highlights.join(" · "), type: "website", locale: "he_IL", images: p.image ? [{ url: p.image }] : undefined },
   };
 }
 
@@ -87,7 +87,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const compareSlugs = neighbours(p);
   const summary = plainSummary(p);
   const waText = encodeURIComponent(
-    `היי, אני מתעניין ב-${p.title} (${p.brand} ${p.model}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
+    `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
   );
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
   const breadcrumbItems = [
@@ -145,6 +145,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <p className={styles.stockNote}>
               המלאי מתעדכן יומית אצל היבואן. לפני חיוב אנחנו מאשרים זמינות ומועד אספקה, כך שלא תשלם על מוצר שאין במלאי.
             </p>
+            {p.price ? (
+              <p className={styles.priceMatch}>
+                מצאתם את אותו דגם זול יותר באתר ישראלי?{" "}
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`היי, מצאתי את ${productName(p)} זול יותר. הקישור: `)}`} target="_blank" rel="noopener noreferrer">
+                  שלחו לנו קישור
+                </a>{" "}
+                ונשווה את המחיר.
+              </p>
+            ) : null}
             <AddToCart slug={p.slug} />
             <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">
               בדיקת זמינות והזמנה בווצאפ

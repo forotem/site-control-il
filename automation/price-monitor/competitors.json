@@ -1,0 +1,2405 @@
+{
+ "ds-kis607-s": {
+  "model": "DS-KIS607-S",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1063,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1396903572&sog=h-intercom&indicator=20",
+    "seller": "zbm.co.il (via zap.co.il)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/?p=280473",
+    "seller": "ZBM (zbm.co.il) via zap",
+    "note": ""
+   }
+  ]
+ },
+ "ds-kis212": {
+  "model": "DS-KIS212",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 685,
+  "urls": [
+   {
+    "url": "https://connectvision.co.il/product/hikvision-intercom-kit-4-wire-hd-video/",
+    "seller": "connectvision.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ds-kv8213-wme1": {
+  "model": "DS-KV8213-WME1(C)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 559,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-hikvision-ip-2mp-camera-ir-%D7%A9%D7%A0%D7%99-%D7%9C%D7%97%D7%A6%D7%A0%D7%99%D7%9D-ds-kv8213-wme1c/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/ds-kv8213-wme1c/",
+    "seller": "zbm.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1141071068&sog=h-intercom&indicator=20",
+    "seller": "AllTechStore (via zap.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-kv8413-wme1": {
+  "model": "DS-KV8413-WME1(C)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 685,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-hikvision-ip-2mp-camera-ir-%D7%90%D7%A8%D7%91%D7%A2%D7%94-%D7%9C%D7%97%D7%A6%D7%A0%D7%99%D7%9D-ds-kv8413-wme1c/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1396903598&sog=h-intercom&indicator=20",
+    "seller": "zbm.co.il (via zap.co.il)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1141071069&sog=h-intercom&indicator=20",
+    "seller": "AllTechStore (via zap.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-kv6124-wbe1": {
+  "model": "DS-KV6124-WBE1",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 606,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-ds-kv6124-e1-%D7%9E%D7%91%D7%99%D7%AA-hikvision-%D7%9E%D7%91%D7%99%D7%90-%D7%90%D7%99%D7%AA%D7%95-%D7%93%D7%A8%D7%9A-%D7%A2%D7%91%D7%95%D7%93%D7%94-%D7%A4%D7%A9%D7%95%D7%98%D7%94-%D7%97%D7%9B%D7%9E%D7%94-%D7%95%D7%99%D7%A2%D7%99%D7%9C%D7%94-%D7%99%D7%95%D7%AA%D7%A8/",
+    "seller": "com4tech.co.il (variant DS-KV6124-E1, no Wi-Fi/BT)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
+    "seller": "AllTechStore via zap.co.il (variant DS-KV6124-E1)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%9E%D7%A6%D7%9C%D7%9E%D7%A0%D7%94-4-%D7%9E%D7%92%D7%94-hikvision-ds-kis612-p-ip-video/",
+    "seller": "com4tech.co.il (kit DS-KIS612-P = DS-KV6124-WBE1 + DS-KH6350-WTE1)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-kh6350-wte1": {
+  "model": "DS-KH6350-WTE1",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 496,
+  "urls": [
+   {
+    "url": "https://www.zbm.co.il/product/ds-kh6320-wte1/",
+    "seller": "zbm.co.il (predecessor DS-KH6320-WTE1)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1352743051&sog=h-intercom&indicator=20",
+    "seller": "Secure Group via zap.co.il (DS-KH6320-TE1, wired only)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%9E%D7%A6%D7%9C%D7%9E%D7%A0%D7%94-4-%D7%9E%D7%92%D7%94-hikvision-ds-kis612-p-ip-video/",
+    "seller": "com4tech.co.il (kit DS-KIS612-P incl. DS-KH6350-WTE1 + DS-KV6124-WBE1)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-k1t502dbfwx-c": {
+  "model": "DS-K1T502DBFWX-C",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 842,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%91%D7%A7%D7%A8%D7%AA-%D7%9B%D7%A0%D7%99%D7%A1%D7%94-hikvision/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://abq.co.il/products/%D7%9E%D7%A1%D7%95%D7%A3-%D7%9B%D7%A0%D7%99%D7%A1%D7%94-%D7%A2%D7%9D-%D7%98%D7%91%D7%99%D7%A2%D7%AA-%D7%90%D7%A6%D7%91%D7%A2-%D7%9B%D7%A8%D7%98%D7%99%D7%A1-%D7%95-sip-%D7%93%D7%92%D7%9D-ds-k1t502dbfwx-c",
+    "seller": "abq.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ds-k1t344ebfwx-e1": {
+  "model": "DS-K1T344EBFWX-E1",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1031,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99-%D7%A4%D7%A0%D7%99%D7%9D-ds-k1t344ebfwx-e1/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://abq.co.il/products/%D7%9E%D7%A1%D7%95%D7%A3-%D7%9B%D7%A0%D7%99%D7%A1%D7%94-%D7%91%D7%99%D7%95%D7%9E%D7%98%D7%A8%D7%99-%D7%9B%D7%95%D7%9C%D7%9C-%D7%93%D7%92%D7%9D-ds-k1t344mbfwx-e1",
+    "seller": "abq.co.il (Mifare sibling DS-K1T344MBFWX-E1)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1141071057&sog=h-intercom&indicator=20",
+    "seller": "AllTechStore via zap.co.il (Mifare sibling DS-K1T344MBFWX-E1)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-k1t323mbfwx-e1": {
+  "model": "DS-K1T323MBFWX-E1",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 748,
+  "urls": [
+   {
+    "url": "https://zbm.co.il/product/ds-k1t344mbfwx-e1/",
+    "seller": "ZBM (K1T344MBFWX comparable)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-k1t671m": {
+  "model": "DS-K1T671M",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1873,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99-hikvision-ds-k1t671mf-face-fingerprint-terminal/",
+    "seller": "com4tech.co.il (fingerprint variant DS-K1T671MF)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-7632nxi-k2": {
+  "model": "DS-7632NXI-K2(D)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1063,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
+    "seller": "Com4Tech",
+    "note": ""
+   },
+   {
+    "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7632nxi-k2-32-ch-4k/",
+    "seller": "Connect Vision",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-7632NXI-K2",
+    "seller": "Senetic Israel",
+    "note": ""
+   }
+  ]
+ },
+ "ds-7616nxi-k2": {
+  "model": "DS-7616NXI-K2(D)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 874,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-hikvision-ds-7616nxi-k2",
+    "seller": "technovision.co.il (DS-7616NXI-K2-1T, incl. 1TB HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-7616nxi-k2-std-2t/",
+    "seller": "zbm.co.il (DS-7616NXI-K2(STD)-2T, incl. 2TB HDD, sale price)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
+    "seller": "zap.co.il (DS-7616NXI-K2(STD)-2T)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-7616nxi-k1": {
+  "model": "DS-7616NXI-K1(D)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 708,
+  "urls": [
+   {
+    "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
+    "seller": "Connect Vision",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-7616NXI-K1",
+    "seller": "Senetic Israel",
+    "note": ""
+   }
+  ]
+ },
+ "ds-7608nxi-k1-8p": {
+  "model": "DS-7608NXI-K1/8P(D)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 786,
+  "urls": [
+   {
+    "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
+    "seller": "Senetic Israel",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
+    "seller": "Senetic (senetic.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "ids-7232hqhi-m2-xt": {
+  "model": "iDS-7232HQHI-M2/XT",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 2638,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7232hqhi-m2s",
+    "seller": "technovision.co.il (iDS-7232HQHI-M2/XT 4T, incl. 4TB HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/search.aspx?keyword=iDS-7232HQHI",
+    "seller": "AllTechStore via zap",
+    "note": ""
+   }
+  ]
+ },
+ "ids-7216hqhi-m1-xt": {
+  "model": "iDS-7216HQHI-M1/XT",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1441,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7216hqhi-m1s",
+    "seller": "technovision.co.il (iDS-7216HQHI-M1/XT 2T, incl. 2TB HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
+    "seller": "zap.co.il (iDS-7216HQHI-M1/XT-2T)",
+    "note": ""
+   }
+  ]
+ },
+ "ids-7208hqhi-m1-xt": {
+  "model": "iDS-7208HQHI-M1/XT",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 991,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
+    "seller": "zap.co.il (iDS-7208HQHI-M1/XT-2T, incl. 2TB HDD)",
+    "note": ""
+   }
+  ]
+ },
+ "ids-7204hqhi-m1-xt": {
+  "model": "iDS-7204HQHI-M1/XT",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 865,
+  "urls": [
+   {
+    "url": "https://zbm.co.il/product/ids-7204hqhi-m1-xt-2t/",
+    "seller": "zbm.co.il (iDS-7204HQHI-M1/XT-2T, incl. 2TB HDD, sale price)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7204hqhi-m1s",
+    "seller": "technovision.co.il (iDS-7204HQHI-M1/S, incl. 1TB HDD)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2t87g2h-lisu-sl-2-8mm": {
+  "model": "DS-2CD2T87G2H-LISU/SL 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 1031,
+  "urls": [
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-2cd2t87g2h-lisu-sl2-8-mp-smart-hybrid-light-with-colorvu-fixed-bullet-network-camera/",
+    "seller": "zbm.co.il (DS-2CD2T87G2H-LISU/SL2, sale price)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1263020",
+    "seller": "zap.co.il - zbm listing",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2087g2h-liu-sl-2-8mm": {
+  "model": "DS-2CD2087G2H-LIU/SL 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 755,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-8-mp-colorvu-ds-2cd2087g2h-liusl",
+    "seller": "technovision.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/ds-2cd2087g2h-liu-sl/",
+    "seller": "zbm.co.il (sale price)",
+    "note": ""
+   }
+  ]
+ },
+ "hwi-b180ha-lu-2-8mm": {
+  "model": "HWI-B180HA-LU 2.8mm",
+  "brand": "HiWatch by Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 354,
+  "urls": []
+ },
+ "hwi-t280ha-lu-2-8mm": {
+  "model": "HWI-T280HA-LU 2.8mm",
+  "brand": "HiWatch by Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 354,
+  "urls": []
+ },
+ "ipc3628le-adf28k-wp": {
+  "model": "IPC3628LE-ADF28K-WP",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 937,
+  "urls": [
+   {
+    "url": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
+    "seller": "senetic.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.hitechcomputers.co.il/items/8609694",
+    "seller": "hitechcomputers.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.alltechstore.co.il/items/8817682",
+    "seller": "AllTechStore (alltechstore.co.il)",
+    "note": ""
+   },
+   {
+    "url": "https://www.beres.co.il/active-equipment/cctv/ip-cameras",
+    "seller": "G. Beres Marketing (beres.co.il, Uniview-listed Israel partner)",
+    "note": ""
+   }
+  ]
+ },
+ "ipc2318le-adf28km-wp": {
+  "model": "IPC2318LE-ADF28KM-WP",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 408,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-8mp-uniview-2-8mm-ipc2318le-adf28km-wp/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
+    "seller": "senetic.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ipc3626le-adf28k-wp": {
+  "model": "IPC3626LE-ADF28K-WP",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 622,
+  "urls": [
+   {
+    "url": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
+    "seller": "senetic.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ipc2316le-adf28km-wp": {
+  "model": "IPC2316LE-ADF28KM-WP",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 471,
+  "urls": []
+ },
+ "ipc3614lb-af28k-dl2": {
+  "model": "IPC3614LB-AF28K-DL2",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 204,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-4mp-easybasic-2-8-%d7%9e%d7%9e-ipc3614lb-adf2840k-h/",
+    "seller": "com4tech.co.il (related model IPC3614LB-ADF28(40)K-H, IR only)",
+    "note": ""
+   }
+  ]
+ },
+ "ipc2124lb-af28k-dl2": {
+  "model": "IPC2124LB-AF28K-DL2",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 204,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-4mp-easybasic-2-8-%d7%9e%d7%9e-ipc2124lb-adf2840km-h/",
+    "seller": "com4tech.co.il (related model IPC2124LB-ADF28(40)KM-H, IR only)",
+    "note": ""
+   },
+   {
+    "url": "https://www.satsigma.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-uniview-ipc2124lb-sf28km-g-4mp-2-8mm/",
+    "seller": "satsigma.co.il (related model IPC2124LB-SF28KM-G, out of stock)",
+    "note": ""
+   }
+  ]
+ },
+ "ipc3524le-adf28k-wp": {
+  "model": "IPC3524LE-ADF28K-WP",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 259,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/ipc3524le-adf2840k-wp/",
+    "seller": "com4tech.co.il (listed as IPC3524LE-ADF28(40)K-WP, in stock)",
+    "note": ""
+   },
+   {
+    "url": "https://www.hitechcomputers.co.il/items/8609687",
+    "seller": "hitechcomputers.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.alltechstore.co.il/items/8817691",
+    "seller": "AllTechStore",
+    "note": ""
+   },
+   {
+    "url": "https://www.beres.co.il/active-equipment/cctv/ip-cameras",
+    "seller": "G. Beres Marketing (distributor)",
+    "note": ""
+   }
+  ]
+ },
+ "ipc3615le-adf28k-g": {
+  "model": "IPC3615LE-ADF28K-G",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 259,
+  "urls": []
+ },
+ "nvr302-32b-iq": {
+  "model": "NVR302-32B-IQ",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 692,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-nvr-%d7%9c32-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-%d7%9c%d7%94%d7%a7%d7%9c%d7%98%d7%94-univiewnvr302-32b-iq/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-nvr-%D7%9C32-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-12-%D7%9E%D7%92%D7%94-%D7%9C%D7%94%D7%A7%D7%9C%D7%98%D7%94-univiewnvr302-32b-iq/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.alltechstore.co.il/256657-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-NVR?order=up_price",
+    "seller": "AllTechStore",
+    "note": ""
+   },
+   {
+    "url": "https://www.beres.co.il/active-equipment/cctv",
+    "seller": "G. Beres Marketing (distributor)",
+    "note": ""
+   }
+  ]
+ },
+ "nvr301-08s3": {
+  "model": "NVR301-08S3",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 456,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-%d7%9c8-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-uniview-nvr301-08b-iq/",
+    "seller": "com4tech.co.il (related newer model NVR301-08B-IQ, 8ch AI)",
+    "note": ""
+   },
+   {
+    "url": "https://www.hitechcomputers.co.il/items/8941472",
+    "seller": "hitechcomputers.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/uniview-ip-%D7%A8%D7%A9%D7%AA/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-%D7%9C8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-1tb-%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F-nvr301-08s3",
+    "seller": "vsale.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/NVR301-08S3",
+    "seller": "senetic.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "uac-b125-af28lm": {
+  "model": "UAC-B125-AF28LM",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 86,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-%d7%90%d7%a0%d7%9c%d7%95%d7%92%d7%99%d7%aa-5mp-uac-b125-af28m-w-uniview/",
+    "seller": "com4tech.co.il (related model UAC-B125-AF28M-W, ColorHunter white light)",
+    "note": ""
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-uniview-5mp-2-8mm-color-hunter/",
+    "seller": "satsigma.co.il (related model UAC-B115-F28-W)",
+    "note": ""
+   }
+  ]
+ },
+ "uac-t125-af28lm": {
+  "model": "UAC-T125-AF28LM",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 109,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%9b%d7%99%d7%a4%d7%94-%d7%90%d7%a0%d7%9c%d7%95%d7%92%d7%99%d7%aa-5mp-uac-t125-af28m-w-uniview/",
+    "seller": "com4tech.co.il (related model UAC-T125-AF28M-W, ColorHunter white light)",
+    "note": ""
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-uniview-5mp-2-8mm-color-hunter/",
+    "seller": "satsigma.co.il (related model UAC-T115-F28-W)",
+    "note": ""
+   }
+  ]
+ },
+ "xvr301-04g3": {
+  "model": "XVR301-04G3",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 534,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%d7%9e%d7%9b%d7%a9%d7%99%d7%a8-%d7%94%d7%a7%d7%9c%d7%98%d7%94-xvr-uniview-4ch-xvr301-04q-1tb/",
+    "seller": "satsigma.co.il (related model XVR301-04Q, bundled with 1TB HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://connectvision.co.il/product/uniview-xvr301-g3-series-1tb/",
+    "seller": "Connect Vision (connectvision.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "xvr301-08g3": {
+  "model": "XVR301-08G3",
+  "brand": "Uniview",
+  "policy": "undercut-with-floor",
+  "floor": 842,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%d7%9e%d7%9b%d7%a9%d7%99%d7%a8-%d7%94%d7%a7%d7%9c%d7%98%d7%94-xvr-uniview-8ch-xvr301-08q3-1tb/",
+    "seller": "satsigma.co.il (related model XVR301-08Q3, bundled with 1TB HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://connectvision.co.il/product/uniview-xvr301-g3-series-1tb/",
+    "seller": "Connect Vision (connectvision.co.il)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/xvr301-08g3/",
+    "seller": "ZBM (zbm.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-k-560820": {
+  "model": "VisionNet K (K-Line) 560820",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 149,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=472712",
+    "seller": "zap.co.il (seller: Kav Israeli) - VisionNet K black waterproof",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/access-control/keypad/visionnet-k.html",
+    "seller": "kav-isr.com (VisionNet K elliptical IP68, same K-line)",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/access-control/keypad/%D7%A7%D7%95%D7%93%D7%9F-%D7%91%D7%A7%D7%A8%D7%AA-%D7%92%D7%99%D7%A9%D7%94-%D7%9E%D7%A9%D7%95%D7%9C%D7%91-%D7%AA%D7%92%D7%99%D7%9D-k3-visionnet.html",
+    "seller": "kav-isr.com (VisionNet K3 indoor plastic keypad)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-kitcom-2-wire-villa-kit-560789": {
+  "model": "VisionNet KITCOM 2-wire villa kit 560789",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 1070,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/access-control/intercom/%D7%A1%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%94%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%9C-%D7%A2%D7%9D-%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%95%D7%A7%D7%95%D7%93%D7%9F-%D7%9E%D7%A1%D7%9A-7-%D7%90%D7%99%D7%A0%D7%A5-visionnet.html",
+    "seller": "kav-isr.com (VisionNet 2-wire kit: 7\" monitor + panel w/ keypad & camera)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
+    "seller": "zap.co.il (VisionNet intercom kit panel+camera+7\" screen)",
+    "note": ""
+   },
+   {
+    "url": "https://smartimg.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%91%D7%A7%D7%A8%D7%AA-%D7%9B%D7%A0%D7%99%D7%A1%D7%94/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%9C%D7%91%D7%99%D7%AA-%D7%A4%D7%A8%D7%98%D7%99/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%A7%D7%99%D7%98-%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9E%D7%A1%D7%9A-%D7%95%D7%A7%D7%95%D7%93%D7%9F-visionnet/",
+    "seller": "smartimg.co.il (VisionNet kit camera+screen+keypad)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-dh-hybrid-kit-560171": {
+  "model": "VisionNet DH Hybrid KIT 560171",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 1220,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/access-control/intercom/kit-intercom-visionnet-wifi.html",
+    "seller": "kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touch monitor + panel w/ keypad + electric lock)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
+    "seller": "zap.co.il (VisionNet 2-wire modular kit)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/",
+    "seller": "com4tech.co.il (DT-128 7\" touchscreen 2-wire kit w/ camera)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-2tl-17-560580": {
+  "model": "VisionNet 2TL-17 560580",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 496,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/access-control/monitor/visionnet-2tl-17.html",
+    "seller": "kav-isr.com",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
+    "seller": "zap.co.il (2TL-17, seller Kav Israeli)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/%D7%9E%D7%A1%D7%9A-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-7-%D7%90%D7%99%D7%A0%D7%A5-2-%D7%92%D7%99%D7%93%D7%99%D7%9D-visionnet/",
+    "seller": "zbm.co.il (SKU 560580, DT-17 7\" 2-wire)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-dh-wi-fi-monitor-560975": {
+  "model": "VisionNet DH Wi-Fi monitor 560975",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 519,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
+    "seller": "zap.co.il (VisionNet 7\" 2-wire DH monitor, seller Kav Israeli)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/%D7%9E%D7%A1%D7%9A-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%98%D7%90%D7%A5-7-%D7%90%D7%99%D7%A0%D7%A5-2-%D7%92%D7%99%D7%93%D7%99%D7%9D-%D7%A2%D7%9D-%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F/",
+    "seller": "zbm.co.il (VisionNet 7\" touch w/ picture memory, SKU 560024)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-2tl-821-t5-560892": {
+  "model": "VisionNet 2TL-821 / T5 560892",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 1614,
+  "urls": [
+   {
+    "url": "https://sivim.co.il/product/%D7%A4%D7%90%D7%A0%D7%9C-%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99-%D7%A2%D7%9D-%D7%94%D7%A6%D7%92%D7%AA-%D7%A9%D7%9E%D7%95%D7%AA/",
+    "seller": "sivim.co.il (VisionNet SKU 560408 digital 2-wire panel, 3.5\" name display, 32-128 apts)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/",
+    "seller": "com4tech.co.il (Akuvox MEGA CITY 50, 5\" IP touch panel w/ face recognition)",
+    "note": ""
+   }
+  ]
+ },
+ "visionnet-2tl-607fe-id-s2-560075": {
+  "model": "VisionNet 2TL-607FE/ID/S2 (DT607) 560075",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 251,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
+    "seller": "zap.co.il (VisionNet DH 2-wire camera panel, seller Kav Israeli)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D/",
+    "seller": "com4tech.co.il (280SD-R2 2-wire villa station)",
+    "note": ""
+   }
+  ]
+ },
+ "rain-roof-for-keypads-560878": {
+  "model": "Rain roof for keypads 560878",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 39,
+  "urls": [
+   {
+    "url": "https://www.alon-computers.co.il/items/7888026-waterproof-access-control-rfid-cover-black",
+    "seller": "Alon Computers",
+    "note": ""
+   },
+   {
+    "url": "https://www.belshop.co.il/items/5511408",
+    "seller": "Belshop",
+    "note": ""
+   }
+  ]
+ },
+ "reolink-rlk8-820d4-a": {
+  "model": "Reolink RLK8-820D4-A (NVS8-8MD4)",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-rlk8-810b4-a-rlk8-800b4": {
+  "model": "Reolink RLK8-810B4-A / RLK8-800B4 (NVS8-8MB4)",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-800b4.html",
+    "seller": "kav-isr.com (NVS8-8MB4, 2TB Seagate)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002",
+    "seller": "zap.co.il (NVS8-8MB4)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289044",
+    "seller": "zap.co.il (single store)",
+    "note": "NVS8-8MB4 4 barrel 8MP"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-4-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-8mp-colorvu-reolink/",
+    "seller": "com4tech.co.il",
+    "note": "NVS8-8MB4 WITHOUT HDD (2TB add-on +550 => 3040)"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-4-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-8mp-%D7%95%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr/",
+    "seller": "com4tech.co.il",
+    "note": "NVS8-8MB4 4mm lens, without HDD (listing page)"
+   }
+  ]
+ },
+ "reolink-rlk8-410b4-5mp": {
+  "model": "Reolink RLK8-410B4-5MP (NVS8-5MB4)",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-rlk8-1200b4-a": {
+  "model": "Reolink RLK8-1200B4-A (NVS8-12MB4)",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product-category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-cctv-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA-ip-%D7%A0%D7%98%D7%A2%D7%A0%D7%95%D7%AA/reolink/",
+    "seller": "satsigma.co.il (RLK8-1200B4-A 12MP kit, 2TB)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-reolink/",
+    "seller": "com4tech.co.il (NVS8-12MB4, without HDD)",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-1200b4-a2.8mm.html",
+    "seller": "kav-isr.com",
+    "note": "NVS8-12MB4, 2TB included, 4x 12MP bullets, +30 shipping"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-4-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-12mp-colorvu-reolink/",
+    "seller": "com4tech.co.il",
+    "note": "NVS8-12MB4 WITHOUT HDD (2TB +550 => 3800)"
+   }
+  ]
+ },
+ "reolink-rlk8-1200d4-a": {
+  "model": "Reolink RLK8-1200D4-A (NVS8-12MD4)",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%d7%a7%d7%99%d7%98-4-%d7%9e%d7%a6%d7%9c%d7%9e%d7%95%d7%aa-reolink-rlk8-1200d4-a-12mp/",
+    "seller": "satsigma.co.il (NVS8-12MD4, 2TB)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002",
+    "seller": "zap.co.il (NVS8-12MD4)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-nvr-%D7%9C-8-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-12mp-%D7%9B%D7%95%D7%9C%D7%9C-%D7%93%D7%99%D7%A1%D7%A7-2tb/",
+    "seller": "zbm.co.il (NVS8 8-ch 12MP NVR only, 2TB - for reference)",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-1200d4-a2.8mm.html",
+    "seller": "kav-isr.com",
+    "note": "NVS8-12MD4, 2TB included, 4x 12MP domes, +30 shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289043",
+    "seller": "zap.co.il (single store)",
+    "note": "NVS8-12MD4"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-4-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-12mp-%D7%95%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94/",
+    "seller": "com4tech.co.il",
+    "note": "RLK8-1200D4-A WITHOUT HDD (2TB +550 => 4000)"
+   }
+  ]
+ },
+ "ds-2cd1343g2-liu-2-8mm": {
+  "model": "DS-2CD1343G2-LIU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 267,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1263041",
+    "seller": "zap.co.il (AllTechStore)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-ds-2cd1343g2-liuf-28m-smart-hybrid-light--mic-4mp",
+    "seller": "technovision.co.il (LIUF)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/ds-2cd1343g2-liuf-2-8m/",
+    "seller": "zbm.co.il (LIUF)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1t47g2-luf-4mm": {
+  "model": "DS-2CD1T47G2-LUF 4mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 574,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-hikvision-4mp-colorvu-ds-2cd1t47g2-luf-4mm/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1216139",
+    "seller": "zap.co.il (DS-2CD1047G2-LUF, גרסת מיני-צינור)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2043g2-iu-2-8mm": {
+  "model": "DS-2CD2043G2-IU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 448,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8",
+    "seller": "technovision.co.il (רשימת קטגוריה)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1134126",
+    "seller": "zap.co.il (DS-2CD2043G2-I ללא מיקרופון, סקיור גרופ)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2047g2h-liu-sl-2-8mm": {
+  "model": "DS-2CD2047G2H-LIU/SL 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 637,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-colorvu-ds-2cd2047g2h-liusl",
+    "seller": "technovision.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262802",
+    "seller": "zap.co.il (DS-2CD2047G2H-LIU ללא SL, זד.בי.אם)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1047g2-luf-2-8mm": {
+  "model": "DS-2CD1047G2-LUF 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 424,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1216139",
+    "seller": "zap.co.il (סקיור גרופ)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-2cd1047g2-luf/",
+    "seller": "zbm.co.il (דרך zap, כולל משלוח)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1043g2-liu-2-8mm": {
+  "model": "DS-2CD1043G2-LIU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 267,
+  "urls": [
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-2cd1043g2-liuf/",
+    "seller": "zbm.co.il (מבצע, LIUF)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-smart-hybrid-light-ds-2cd1043g2-liuf",
+    "seller": "technovision.co.il (LIUF, אזל)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1236307",
+    "seller": "zap.co.il (זד.בי.אם כולל משלוח)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1643g2-lizu-2-8-12mm": {
+  "model": "DS-2CD1643G2-LIZU 2.8-12mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 550,
+  "urls": [
+   {
+    "url": "https://www.zbm.co.il/product/ds-2cd1643g0-iz-%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-4-%D7%9E%D7%92%D7%94-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C-%D7%A8%D7%A9%D7%AA-ip-%D7%AA%D7%95/",
+    "seller": "zbm.co.il (DS-2CD1643G0-IZ, IR בלבד ללא מיקרופון)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1124302",
+    "seller": "zap.co.il (DS-2CD1643G0-IZ)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2t43g2-4li2u-2-8mm": {
+  "model": "DS-2CD2T43G2-4LI2U 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 496,
+  "urls": [
+   {
+    "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8",
+    "seller": "technovision.co.il (DS-2CD2T43G2-2LI2U, IR 60 מ', רשימת קטגוריה)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/ip-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-ip-4mp-%D7%A9%D7%9C-hikvision/",
+    "seller": "com4tech.co.il (DS-2CD2T43G2-2LI2U, רשימת קטגוריה)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-acusense-4-mp-ds-2cd2t43g2-2i",
+    "seller": "technovision.co.il (DS-2CD2T43G2-2I, IR בלבד ללא אודיו)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2t47g2h-li-2-8mm": {
+  "model": "DS-2CD2T47G2H-LI 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 669,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-ds-2cd2t47g2h-li-4mp-hikvision-vc/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-ds-2cd2t47g2h-lisu-sl-hikvision-smart-hybrid-light/",
+    "seller": "com4tech.co.il (DS-2CD2T47G2H-LISU/SL2 - גרסה עם מיקרופון/סטרובוסקופ)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-acusense-4mp-ds-2cd2t47g2-l",
+    "seller": "technovision.co.il (DS-2CD2T47G2-L - דור קודם)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1743g2-lizu-2-8-12mm": {
+  "model": "DS-2CD1743G2-LIZU 2.8-12mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 889,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1195174",
+    "seller": "zap.co.il (DS-2CD2743G2-IZS - Pro Series וריפוקל ממונע IR, ללא אור לבן)",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
+    "seller": "Senetic (senetic.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1143g2-liu-2-8mm": {
+  "model": "DS-2CD1143G2-LIU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 244,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-4mp-%D7%90%D7%95%D7%A8-%D7%9C%D7%91%D7%9F-2-8mm-ds-2cd1143g2-liuf-hikvision/",
+    "seller": "com4tech.co.il (LIUF)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-acusense-ds-2cd1143g2-liuf",
+    "seller": "technovision.co.il (LIUF)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1216153",
+    "seller": "zap.co.il (סקיור גרופ ₪470 / AllTechStore ₪485 / ZBM ₪517 כולל משלוח)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1347g2-luf-2-8mm": {
+  "model": "DS-2CD1347G2-LUF 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 322,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1227099",
+    "seller": "zap.co.il (AllTechStore ₪419 / ZBM ₪580 כולל משלוח / סקיור גרופ ₪690 / א.א. סיגמה ₪769)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-colorvu-ds-2cd1347g2-luf",
+    "seller": "technovision.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.securegroup.co.il/product/ds-2cd1347g2-luf/",
+    "seller": "securegroup.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2143g2-i-2-8mm": {
+  "model": "DS-2CD2143G2-I 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 370,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-i-acusense/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%AA%D7%99%D7%AA-hikvision-4mp-acusense-2cd2143g2-i",
+    "seller": "technovision.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-2cd2143g2-i/",
+    "seller": "zbm.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2143g2-iu-2-8mm": {
+  "model": "DS-2CD2143G2-IU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 503,
+  "urls": [
+   {
+    "url": "https://sivim.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-4mp-6/",
+    "seller": "sivim.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-i-acusense/",
+    "seller": "com4tech.co.il (DS-2CD2143G2-I - ללא מיקרופון)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2347g1-l-4mm": {
+  "model": "DS-2CD2347G1-L 4mm (2021 stock)",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 637,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-hikvision-colorvu-4mp-colorvu-ds-2cd2347g2h-lisu-sl2/",
+    "seller": "com4tech.co.il (DS-2CD2347G2H-LISU/SL - דור נוכחי, עם מיקרופון+סטרובוסקופ)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-%D7%98%D7%95%D7%A8%D7%98-hikvision-4mp-colorvu-ds-2cd2347g2-lu",
+    "seller": "technovision.co.il (DS-2CD2347G2H-LISU/SL)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1134394",
+    "seller": "zap.co.il (DS-2CD2347G2-L(U) - לא זמין כרגע, היסטורית ₪869-920)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1p47g2-luf-2-8mm": {
+  "model": "DS-2CD1P47G2-LUF 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 424,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1216139",
+    "seller": "zap.co.il (DS-2CD1047G2-L(UF) - צינור קבוע ללא PT, מ-₪560)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/ds-2cd1t47g2-luf/",
+    "seller": "ZBM (zbm.co.il)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2183g2-iu-2-8mm": {
+  "model": "DS-2CD2183G2-IU 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 606,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%9b%d7%99%d7%a4%d7%94-8mp-ds-2cd2183g2-iu-%d7%a2%d7%93-30-%d7%9e-4k-hikvision/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-8mp-acusense-ds-2cd2183g2-iu",
+    "seller": "technovision.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.signal-tec.co.il/product/ds-2cd2183g2-iu/",
+    "seller": "signal-tec.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
+    "seller": "senetic.co.il (ex-VAT 709.28 + 18% VAT)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2t87g3-lis2uy-sl-2-8mm": {
+  "model": "DS-2CD2T87G3-LIS2UY/SL 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 912,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-hikvision-smart-hybrid-light-ds-2cd2t87g3-lis2uy-sr/",
+    "seller": "com4tech.co.il (DS-2CD2T87G3-LIS2UY/SR - same camera without strobe/Live-Guard)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-8-mp-colorvu-ds-2cd2t87g3-lis2uysr",
+    "seller": "technovision.co.il (DS-2CD2T87G3-LIS2UY/SR)",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
+    "seller": "senetic.co.il (DS-2CD2T87G3-LIS2UY/SRB 2.8mm, ex-VAT 1012.13 + 18% VAT)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1383g0-iuf-2-8mm": {
+  "model": "DS-2CD1383G0-IUF 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 314,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%91%d7%98%d7%97%d7%94-%d7%9b%d7%99%d7%a4%d7%94-ip-5mp-hikvision-2-8mm-ds-2cd1353g0-i/",
+    "seller": "com4tech.co.il (DS-2CD1353G0-I 5MP turret - smaller sibling)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a6%d7%99%d7%a0%d7%95%d7%a8-8mp-hikvision-lightsmart-ds-2cd2083g2-li2u/",
+    "seller": "com4tech.co.il (DS-2CD2083G2-LI2U 8MP mini bullet, Smart Hybrid Light + mic)",
+    "note": ""
+   },
+   {
+    "url": "https://www.securegroup.co.il/product/ds-2cd1083g0-i/",
+    "seller": "securegroup.co.il (DS-2CD1083G0-I 8MP value bullet)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2955g0-isu-1-05mm": {
+  "model": "DS-2CD2955G0-ISU 1.05mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 723,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A2%D7%99%D7%9F-%D7%93%D7%92-%D7%9E%D7%99%D7%A0%D7%99-hikvision-ds-2cd2955g0-isu-5mp/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
+    "seller": "senetic.co.il (ex-VAT 1084.11 + 18% VAT)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/hikvision-ds-2cd2955fwd-is-5mp-fisheye-network/",
+    "seller": "com4tech.co.il (DS-2CD2955FWD-IS - older sibling)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd1353g0-i-2-8mm": {
+  "model": "DS-2CD1353G0-I 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 314,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%91%d7%98%d7%97%d7%94-%d7%9b%d7%99%d7%a4%d7%94-ip-5mp-hikvision-2-8mm-ds-2cd1353g0-i/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zbm.co.il/product/ds-2cd1353g0-i-%D7%98%D7%95%D7%A8%D7%985mpip67120db-%D7%A2%D7%93-30-%D7%9E1-2-72-8-or-4%D7%A7%D7%91%D7%95%D7%A2%D7%94dc-12v-poe/",
+    "seller": "zbm.co.il (sale; list 679)",
+    "note": ""
+   },
+   {
+    "url": "https://uriel-system.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%98%D7%95%D7%A8%D7%98-5-%D7%9E%D7%92%D7%94-%D7%97%D7%91%D7%A8%D7%AA-hikvision-%D7%93%D7%92%D7%9Dds-2cd1353g0-i/",
+    "seller": "uriel-system.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cd2387g2h-lisu-sl-2-8mm": {
+  "model": "DS-2CD2387G2H-LISU/SL 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 865,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%9b%d7%99%d7%a4%d7%94-8mp-colorvu-%d7%9e%d7%99%d7%a7%d7%a8%d7%95%d7%a4%d7%95-%d7%9fds-2cd2387g2h-lisu-sl2/",
+    "seller": "com4tech.co.il (DS-2CD2387G2H-LISU/SL2 - current revision of same model)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%9E%D7%A9%D7%95%D7%9C%D7%91%D7%95%D7%AA-%D7%90%D7%95%D7%A8-%D7%9E%D7%94%D7%91%D7%94%D7%91/",
+    "seller": "zbm.co.il (DS-2CD2387G2H-LISU/SL2, sale; list 2,211) - from search snippet, strobe-camera category page",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-hikvision",
+    "seller": "technovision.co.il (DS-2CD2387G3-LIS2UY/SR - newer G3 sibling, Hikvision category page)",
+    "note": ""
+   }
+  ]
+ },
+ "ids-2cd7a46g2-p-izhsy-8-32mm": {
+  "model": "iDS-2CD7A46G2/P-IZHSY 8-32mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 2440,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/lpr-hikvision-4mp-ids-2cd7a46g2-p-izhsy8-32-100m/",
+    "seller": "com4tech.co.il (8-32mm)",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9C%D7%96%D7%99%D7%94%D7%95%D7%99-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%A8%D7%9B%D7%91--hikvision-lpr-anpr-2cd7a46g0p-izhs8-32",
+    "seller": "technovision.co.il (8-32mm variant)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a8%d7%99%d7%a9%d7%95%d7%99-lpr-hikvision-4mp-ids-2cd7a46g2-p-izhsy2-8-12/",
+    "seller": "com4tech.co.il (2.8-12mm variant)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce10kf0t-lpfs-2-8mm": {
+  "model": "DS-2CE10KF0T-LPFS 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 165,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-hikvison-5mp-colorvu-3-6mm-20m/",
+    "seller": "satsigma.co.il (DS-2CE10KF0T-FS 3.6mm, אותו גוף ללא IR)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-3k-colorvu-audio-ds-2ce12kf0t-lfs-%D7%9E%D7%99%D7%A7%D7%A8%D7%A4%D7%95%D7%9F-%D7%9E%D7%95%D7%91%D7%A0%D7%94/",
+    "seller": "com4tech.co.il (DS-2CE12KF0T-LFS, אח גדול 40 מ')",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce10kf0t-fs-3-6mm": {
+  "model": "DS-2CE10KF0T-FS 3.6mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 188,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-hikvison-5mp-colorvu-3-6mm-20m/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
+    "seller": "technovision.co.il (DS-2CE12KF0T-FS, גוף גדול 40 מ')",
+    "note": ""
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/ds-2ce56h0t-itpf-2-8mm/",
+    "seller": "satsigma.co.il (DS-2CE12KF0T-FS 3.6mm)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce12kf0t-lfs-2-8mm": {
+  "model": "DS-2CE12KF0T-LFS 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 196,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-3k-colorvu-audio-ds-2ce12kf0t-lfs-%D7%9E%D7%99%D7%A7%D7%A8%D7%A4%D7%95%D7%9F-%D7%9E%D7%95%D7%91%D7%A0%D7%94/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
+    "seller": "technovision.co.il (DS-2CE12KF0T-FS, ללא IR)",
+    "note": ""
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/ds-2ce56h0t-itpf-2-8mm/",
+    "seller": "satsigma.co.il (DS-2CE12KF0T-FS 3.6mm)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce70kf0t-lpfs-2-8mm": {
+  "model": "DS-2CE70KF0T-LPFS 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 156,
+  "urls": [
+   {
+    "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA",
+    "seller": "com4tech.co.il (DS-2CE76K0T-LMFS, טורט 3K hybrid light חיצוני)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce10df0t-pfs-2-8mm": {
+  "model": "DS-2CE10DF0T-PFS 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 156,
+  "urls": [
+   {
+    "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA",
+    "seller": "com4tech.co.il (DS-2CE10DF0T-FS, גוף מתכת)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce12uf3t-ls-2-8mm": {
+  "model": "DS-2CE12UF3T-LS 2.8mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 345,
+  "urls": [
+   {
+    "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA",
+    "seller": "com4tech.co.il (DS-2CE12UF3T-E, 4K ColorVu PoC, יבוא מקביל)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%99%D7%91%D7%95%D7%90-com4tech/",
+    "seller": "com4tech.co.il (DS-2CE12UF3T-E, מחיר בקטגוריית יבוא)",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2ce16u1t-itf-3-6mm": {
+  "model": "DS-2CE16U1T-ITF 3.6mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 141,
+  "urls": [
+   {
+    "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA",
+    "seller": "com4tech.co.il (DS-2CE18U8T-IT3, 8MP Ultra-Low-Light 60 מ')",
+    "note": ""
+   },
+   {
+    "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
+    "seller": "technovision.co.il (DS-2CE18U8T-IT3 8MP, מוצר קשור)",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/hikvision-4v1-analog-bullet-camera-ds-2ce16h0t-itf3-6mm-5mp-lens-3-6mm/",
+    "seller": "com4tech.co.il (DS-2CE16H0T-ITF, אותו גוף 5MP EXIR 20 מ')",
+    "note": ""
+   }
+  ]
+ },
+ "ds-2cc52h1t-fits-1-1mm": {
+  "model": "DS-2CC52H1T-FITS 1.1mm",
+  "brand": "Hikvision",
+  "policy": "undercut-with-floor",
+  "floor": 534,
+  "urls": [
+   {
+    "url": "https://zbm.co.il/product/hikvision-ds-2cd2955fwd-i/",
+    "seller": "zbm.co.il (DS-2CD2955FWD-I, עין דג IP 5MP - טכנולוגיה שונה)",
+    "note": ""
+   }
+  ]
+ },
+ "ch9": {
+  "model": "CH9 (CH9-WCA V2.0)",
+  "brand": "Tenda",
+  "policy": "undercut-with-floor",
+  "floor": 235,
+  "urls": []
+ },
+ "ch10": {
+  "model": "CH10",
+  "brand": "Tenda",
+  "policy": "undercut-with-floor",
+  "floor": 314,
+  "urls": []
+ },
+ "ct3": {
+  "model": "CT3 (CT3-WCA)",
+  "brand": "Tenda",
+  "policy": "undercut-with-floor",
+  "floor": 118,
+  "urls": []
+ },
+ "cp3-pro": {
+  "model": "CP3 Pro (CP3 Pro V1.1)",
+  "brand": "Tenda",
+  "policy": "undercut-with-floor",
+  "floor": 149,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/cameras/home-cameras/tenda-cp3-pro.html",
+    "seller": "kav-isr.com (קו ישראלי – יבואן רשמי טלרן, אחריות שנה)",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298284675&sog=g-hiddencam",
+    "seller": "zap.co.il (רישום של קו ישראלי, ₪199 + ₪30 משלוח)",
+    "note": ""
+   },
+   {
+    "url": "https://smartimg.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%95%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94/%D7%A9%D7%9E%D7%A2/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%AA-tenda-cp3-pro/",
+    "seller": "smartimg.co.il (דמיון חכם) – מבצע ₪240 במקום ₪260",
+    "note": ""
+   }
+  ]
+ },
+ "reolink-go-plus": {
+  "model": "Reolink Go PLUS / G-330c",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-go-ultra": {
+  "model": "Reolink Go Ultra / G340",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-go-pt-plus": {
+  "model": "Reolink Go PT Plus",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-go-pt-ultra": {
+  "model": "Reolink Go PT Ultra",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-duo-2-lte": {
+  "model": "Reolink Duo 2 LTE",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-trackmix-lte": {
+  "model": "Reolink TrackMix LTE",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-trackmix-lte-plus-solar": {
+  "model": "TrackMix LTE Plus + Solar Panel",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/trackmix-lte-plus-solar-panel/",
+    "seller": "com4tech.co.il",
+    "note": "TrackMix LTE Plus + 66W solar panel, 155Wh battery"
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1208953",
+    "seller": "LastPrice (via zap)",
+    "note": "with solar panel; +9 shipping"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp/",
+    "seller": "satsigma.co.il",
+    "note": "66W panel included"
+   },
+   {
+    "url": "https://zbm.co.il/product/reolink-trackmix-lte-plus-2/",
+    "seller": "zbm.co.il",
+    "note": "price hidden (call); bundle with Solar Panel 2"
+   }
+  ]
+ },
+ "reolink-go-ranger-pt": {
+  "model": "Go Ranger + Solar Panel 2",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-talon-pro": {
+  "model": "Talon Pro",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A9%D7%91%D7%99%D7%9C-reolink-camovue-talon-pro-4k-4g-8mp/",
+    "seller": "com4tech.co.il",
+    "note": "camera only, solar panel sold separately"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A9%D7%91%D7%99%D7%9C-reolink-camovue-talon-pro-4k-4g/",
+    "seller": "satsigma.co.il",
+    "note": "camera only"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1214174850",
+    "seller": "satsigma (via zap)",
+    "note": "incl. shipping"
+   }
+  ]
+ },
+ "reolink-solar-panel-2": {
+  "model": "Solar Panel 2-W",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-eco": {
+  "model": "Argus Eco / B320",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-eco-pro": {
+  "model": "Argus Eco PRO / B340",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-3e": {
+  "model": "Argus 3E",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-3-pro": {
+  "model": "Argus 3 Pro",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-3-ultra": {
+  "model": "Argus 3 Ultra",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-argus-track": {
+  "model": "Argus Track",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262564",
+    "seller": "zbm.co.il (via zap)",
+    "note": "zap says solar panel included; +50 shipping"
+   },
+   {
+    "url": "https://www.lastprice.co.il/p/100052928",
+    "seller": "LastPrice",
+    "note": "listed but page did not render price"
+   }
+  ]
+ },
+ "reolink-argus-pt-lite": {
+  "model": "Argus PT Lite",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-e1-pro": {
+  "model": "E1 Pro",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-e330": {
+  "model": "E330",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298284837",
+    "seller": "LastPrice (via zap)",
+    "note": "incl. shipping per zap"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1390449905",
+    "seller": "zap.co.il (E331 5MP variant)",
+    "note": "E Series E331 (5MP), single store"
+   }
+  ]
+ },
+ "reolink-e1-zoom": {
+  "model": "E1 Zoom",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://bconnect.co.il/product/reolink-e1-zoom-indoor-camera/",
+    "seller": "bconnect.co.il",
+    "note": "sale (reg 429)"
+   },
+   {
+    "url": "https://www.bug.co.il/brand/reolink/e1/zoom",
+    "seller": "bug.co.il",
+    "note": "sale (reg 429), E1 Zoom 5MP"
+   },
+   {
+    "url": "https://www.gamestorm.co.il/products/item/17184",
+    "seller": "gamestorm.co.il",
+    "note": "sale"
+   },
+   {
+    "url": "https://www.kravitz.co.il/collections/reolink",
+    "seller": "kravitz.co.il",
+    "note": "sale"
+   },
+   {
+    "url": "https://bconnect.co.il/product/reolink-e1-zoom-v2-indoor-camera/",
+    "seller": "bconnect.co.il",
+    "note": "E1 Zoom V2 (8MP) - newer variant"
+   }
+  ]
+ },
+ "reolink-lumus-e430": {
+  "model": "Lumus / E430",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://bconnect.co.il/product/reolink-lumus-2k-security-camera/",
+    "seller": "bconnect.co.il",
+    "note": "sale (reg 299)"
+   },
+   {
+    "url": "https://www.bug.co.il/brand/reolink/lumus/2k",
+    "seller": "bug.co.il",
+    "note": "sale"
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1093883",
+    "seller": "zap (Zap Shop/Bug/Hashmal Neto/GameStorm)",
+    "note": "4 stores at 179 free shipping"
+   }
+  ]
+ },
+ "reolink-trackmix-wifi": {
+  "model": "TrackMix WiFi",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-e1-outdoor-e540": {
+  "model": "E1 Outdoor / E540",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-e1-outdoor-pro-e560": {
+  "model": "E1 Outdoor Pro / E560",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-duo-2-wifi": {
+  "model": "Duo 2 WiFi",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-fe-w": {
+  "model": "FE-W",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298284839",
+    "seller": "LastPrice (via zap)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A4%D7%A0%D7%95%D7%A8%D7%9E%D7%99%D7%AA/",
+    "seller": "zbm.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A2%D7%99%D7%9F-%D7%94%D7%93%D7%92-wi-fi-%D7%A4%D7%A0%D7%95%D7%A8%D7%9E%D7%99%D7%AA-6mp-reolink-fe-w/",
+    "seller": "com4tech.co.il",
+    "note": "sale (reg 1104)"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298284673",
+    "seller": "zap.co.il (single stores)",
+    "note": "also 849 at pid 1398085125"
+   }
+  ]
+ },
+ "reolink-video-doorbell-wifi": {
+  "model": "Doorbell WiFi",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://bconnect.co.il/product/reolink-video-doorbell-wifi/",
+    "seller": "bconnect.co.il",
+    "note": "sale (reg 599)"
+   },
+   {
+    "url": "https://kav-isr.com/access-control/intercom/reolink-video-doorbell-wifi.html",
+    "seller": "kav-isr.com",
+    "note": "sale (reg 499), +30 shipping"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/reolink-video-doorbell-wifi-2k/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1188027572",
+    "seller": "Refaeli (via zap search)",
+    "note": "409 INCLUDING 30 shipping (=379 item); product page did not render"
+   },
+   {
+    "url": "https://www.alltechstore.co.il/items/8772620",
+    "seller": "alltechstore.co.il",
+    "note": "snippet: 449 -> 430"
+   }
+  ]
+ },
+ "reolink-cx410": {
+  "model": "CX410",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-cx410-4mp-full-color/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-%D7%9E%D7%91%D7%99%D7%AA-%D7%A8%D7%99%D7%95%D7%9C%D7%99%D7%A0%D7%99%D7%A7-4mp-reolink-cx410/",
+    "seller": "com4tech.co.il",
+    "note": "page shows 1350 - looks like a data error (listing page showed no price); ignore"
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1209389",
+    "seller": "zap.co.il",
+    "note": "no active offers"
+   }
+  ]
+ },
+ "reolink-duo-3-poe": {
+  "model": "Duo 3 PoE",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262569",
+    "seller": "kav-isr.com (via zap)",
+    "note": "+30 shipping"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-duo-3v-poe-16mp/",
+    "seller": "satsigma.co.il",
+    "note": "Duo 3V PoE (turret variant, IK10) - NOT the same SKU"
+   }
+  ]
+ },
+ "reolink-p327": {
+  "model": "P327",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/cameras/ip-security-cameras/reolink-p327.html",
+    "seller": "kav-isr.com",
+    "note": "+30 shipping"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-p327-5mp-poe/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262316",
+    "seller": "kav-isr (via zap)",
+    "note": "zap shows 425"
+   }
+  ]
+ },
+ "reolink-p330p": {
+  "model": "P330P",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262319",
+    "seller": "kav-isr.com (via zap)",
+    "note": "+30 shipping"
+   }
+  ]
+ },
+ "reolink-p330m": {
+  "model": "P330M",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262321",
+    "seller": "zbm.co.il (via zap)",
+    "note": "+50 shipping; only store on zap"
+   }
+  ]
+ },
+ "reolink-p337": {
+  "model": "P337",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-p337-8mp-ik10-poe/",
+    "seller": "satsigma.co.il",
+    "note": "from site search listing"
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262317",
+    "seller": "satsigma (via zap)",
+    "note": "+19 shipping"
+   }
+  ]
+ },
+ "reolink-p340": {
+  "model": "P340",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-reolink-p340-12mp-uhd-poe/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262322",
+    "seller": "kav-isr.com (via zap)",
+    "note": "+30 shipping"
+   }
+  ]
+ },
+ "reolink-p344": {
+  "model": "P344",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-p344-12mp-poe/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.zap.co.il/model.aspx?modelid=1262571",
+    "seller": "kav-isr.com (via zap)",
+    "note": "+30 shipping"
+   }
+  ]
+ },
+ "reolink-p430": {
+  "model": "P430",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/cameras/ip-security-cameras/reolink-rlc-811a.html",
+    "seller": "kav-isr.com",
+    "note": "+30 shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1092881010",
+    "seller": "zap.co.il (single store)",
+    "note": "redirects to kav-isr"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1398085131",
+    "seller": "zap.co.il (single store)",
+    "note": ""
+   },
+   {
+    "url": "https://zbm.co.il/%D7%9E%D7%95%D7%AA%D7%92/reolink/",
+    "seller": "zbm.co.il",
+    "note": "search-engine summary only; ZBM pages hide prices; unverified"
+   }
+  ]
+ },
+ "reolink-rln8-410": {
+  "model": "RLN8-410",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-rln16-410": {
+  "model": "RLN16-410",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94-reolink-rln16-410-8ch-poe-2tb/",
+    "seller": "satsigma.co.il",
+    "note": "RLN16 (N6MB01) WITHOUT HDD; 2TB +550 / 4TB +650"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1394616918",
+    "seller": "satsigma (via zap)",
+    "note": "incl. shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1398091353",
+    "seller": "zap.co.il (single store)",
+    "note": "RLN16-410 no disk"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-%D7%A2%D7%9D-16-poe-%D7%AA%D7%95%D7%9E%D7%9B%D7%AA-%D7%A2%D7%93-16-%D7%9E%D7%92%D7%94-reolink-rln16-410/",
+    "seller": "com4tech.co.il",
+    "note": "page says 2TB built-in (listing said without) - ambiguous"
+   }
+  ]
+ },
+ "reolink-nvs16": {
+  "model": "NVS16",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94-reolink-nvs16-16ch-poe-4tb/",
+    "seller": "satsigma.co.il",
+    "note": "4TB included"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1258501165",
+    "seller": "zap.co.il (single stores)",
+    "note": "also 1850 at pid 1398091355"
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk16-810b8-a.html",
+    "seller": "kav-isr.com",
+    "note": "4TB included, 8x 8MP bullets, +30 shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289040",
+    "seller": "zap.co.il",
+    "note": "= kav-isr incl. shipping"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%D7%AA-8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%91%D7%90%D7%99%D7%9B%D7%95%D7%AA-8mp-reolink-nvs16-1/",
+    "seller": "com4tech.co.il",
+    "note": "WITHOUT HDD; 4TB add-on +795 => 5145"
+   },
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%A7%D7%99%D7%98-8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-reolink-rlk16-820d8a-8mp/",
+    "seller": "satsigma.co.il",
+    "note": "4TB included"
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk16-820d8-a.html",
+    "seller": "kav-isr.com",
+    "note": "kits listing; HDD size not shown on listing (8MB8 sibling has 4TB)"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289041",
+    "seller": "zap.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-reolink/",
+    "seller": "com4tech.co.il",
+    "note": "WITHOUT HDD (listing)"
+   },
+   {
+    "url": "https://ksp.co.il/mob/item/344581",
+    "seller": "ksp.co.il",
+    "note": "KSP lists this kit (item 344581) but site blocks fetch (403); price unseen"
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200b8-a2.8mm.html",
+    "seller": "kav-isr.com",
+    "note": "kits listing; 4TB assumed as siblings; +30 shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289038",
+    "seller": "zap.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-12-%D7%9E%D7%92%D7%94-%D7%A2%D7%93%D7%A9%D7%94-4-%D7%9E%D7%9E/",
+    "seller": "com4tech.co.il",
+    "note": "המחיר ללא דיסק קשיח; 4TB add-on +795 => 5545 configured"
+   },
+   {
+    "url": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200d8-a2.8mm.html",
+    "seller": "kav-isr.com",
+    "note": "kits listing; +30 shipping"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1298289039",
+    "seller": "zap.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-12-%D7%9E%D7%92%D7%94-%D7%A2%D7%93%D7%A9%D7%94/",
+    "seller": "com4tech.co.il",
+    "note": "המחיר לא כולל דיסק קשיח; 4TB +795 => 5545"
+   }
+  ]
+ },
+ "reolink-nvs36": {
+  "model": "NVS36",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94-reolink-rln36-36-channel/",
+    "seller": "satsigma.co.il",
+    "note": "sold as RLN36 (N5MB01 = same hardware as NVS36), no HDD; coupon reo -60"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1214180294",
+    "seller": "satsigma (via zap)",
+    "note": "RLN36"
+   },
+   {
+    "url": "https://zbm.co.il/?p=262702",
+    "seller": "zbm.co.il",
+    "note": "NVS36 no HDD"
+   },
+   {
+    "url": "https://www.zap.co.il/fs.aspx?pid=1398091357",
+    "seller": "zap.co.il (single store)",
+    "note": "NVS36 no disk"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-%D7%A2%D7%9D-36-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-%D7%91%D7%A2%D7%93-12-%D7%9E%D7%92%D7%94-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C-reolink/",
+    "seller": "com4tech.co.il",
+    "note": "no HDD"
+   }
+  ]
+ },
+ "reolink-nvs12w": {
+  "model": "NVS12W",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/cameras/recording-systems/reolink-rln12w.html",
+    "seller": "kav-isr.com",
+    "note": "RLN12W, 2TB built-in; +30 shipping"
+   },
+   {
+    "url": "https://zbm.co.il/product/wifi-6-24-7-reolink-%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-21-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D/",
+    "seller": "zbm.co.il",
+    "note": "NVS12W, price hidden"
+   }
+  ]
+ },
+ "reolink-home-hub": {
+  "model": "Reolink Home Hub",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.netoneto.co.il/catalog/product/view/id/26946",
+    "seller": "Hashmal Neto (netoneto.co.il)",
+    "note": "incl. 64GB microSD"
+   },
+   {
+    "url": "https://bconnect.co.il/product/reolink-home-hub-storage/",
+    "seller": "bconnect.co.il",
+    "note": "sale (reg 579)"
+   },
+   {
+    "url": "https://www.bug.co.il/brand/reolink/home/hub",
+    "seller": "bug.co.il",
+    "note": "sale"
+   },
+   {
+    "url": "https://www.gamestorm.co.il/products/item/18002",
+    "seller": "gamestorm / kravitz",
+    "note": "sale"
+   },
+   {
+    "url": "https://www.com4tech.co.il/product/v/",
+    "seller": "com4tech.co.il",
+    "note": ""
+   }
+  ]
+ },
+ "reolink-nvs16-8mb8": {
+  "model": "NVS16-8MB8",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-nvs16-8md8": {
+  "model": "NVS16-8MD8",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-nvs16-12mb8": {
+  "model": "NVS16-12MB8",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-nvs16-12md8": {
+  "model": "NVS16-12MD8",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": []
+ },
+ "reolink-b10": {
+  "model": "B10",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%A7%D7%95%D7%A4%D7%A1%D7%AA-%D7%94%D7%92%D7%91%D7%94%D7%94-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-reolink-b10/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/cameras/ip-security-cameras/%D7%A7%D7%95%D7%A4%D7%A1%D7%AA-%D7%94%D7%92%D7%91%D7%94%D7%94-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-reolink-b10.html",
+    "seller": "kav-isr.com",
+    "note": "+30 shipping"
+   },
+   {
+    "url": "https://zbm.co.il/product/junction-box-b10/",
+    "seller": "zbm.co.il",
+    "note": "price hidden"
+   }
+  ]
+ },
+ "reolink-d20": {
+  "model": "D20",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%A7%D7%95%D7%A4%D7%A1%D7%AA-%D7%94%D7%92%D7%91%D7%94%D7%94-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-d20/",
+    "seller": "satsigma.co.il",
+    "note": ""
+   },
+   {
+    "url": "https://kav-isr.com/cameras/ip-security-cameras/%D7%A7%D7%95%D7%A4%D7%A1%D7%AA-%D7%94%D7%92%D7%91%D7%94%D7%94-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-d20.html",
+    "seller": "kav-isr.com",
+    "note": "+30 shipping"
+   }
+  ]
+ }
+}

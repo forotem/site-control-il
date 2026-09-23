@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { WHATSAPP_NUMBER } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, productName } from "../data/store-catalog";
 import { questions, recommend, totalOf, whatsappText, type Answers, type RecItem } from "./finder-logic";
 import styles from "./store.module.css";
 
@@ -17,7 +17,7 @@ function ItemRow({ it }: { it: RecItem }) {
       </Link>
       <div className={styles.recBody}>
         <span className={styles.recRole}>{it.role}{it.qty > 1 ? ` · ${it.qty} יחידות` : ""}</span>
-        <Link href={`/store/${p.slug}`} className={styles.recTitle} prefetch={false}>{p.brand} {p.model}</Link>
+        <Link href={`/store/${p.slug}`} className={styles.recTitle} prefetch={false}>{productName(p)}</Link>
         <p>{it.why}</p>
       </div>
       <div className={styles.recPrice}>

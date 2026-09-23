@@ -1,0 +1,158 @@
+ds-kis607-s: ours 1349 low 1337 -> lower 1309
+ds-kis212: ours 869 low 900 -> ok
+ds-kv8213-wme1: ours 709 low 730 -> ok
+ds-kv8413-wme1: ours 869 low 856 -> lower 839
+ds-kv6124-wbe1: ours 769 low - -> no_comparable
+ds-kh6350-wte1: ours 629 low - -> no_comparable
+ds-k1t502dbfwx-c: ours 1069 low 1155 -> ok
+ds-k1t344ebfwx-e1: ours 1309 low 1350 -> ok
+ds-k1t323mbfwx-e1: ours 949 low - -> no_comparable
+ds-k1t671m: ours 2379 low 1890 -> lower 1873
+ds-7632nxi-k2: ours 1349 low 632.32 -> lower 1063
+ds-7616nxi-k2: ours 1109 low 1149 -> ok
+ds-7616nxi-k1: ours 899 low 428.23 -> lower 708
+ds-7608nxi-k1-8p: ours 999 low 482.23 -> lower 786
+ids-7232hqhi-m2-xt: ours 3349 low 3219 -> lower 3159
+ids-7216hqhi-m1-xt: ours 1829 low 1350 -> lower 1441
+ids-7208hqhi-m1-xt: ours 1259 low 1300 -> ok
+ids-7204hqhi-m1-xt: ours 1099 low 1134 -> ok
+ds-2cd2t87g2h-lisu-sl-2-8mm: ours 1309 low 1350 -> ok
+ds-2cd2087g2h-liu-sl-2-8mm: ours 959 low 990 -> ok
+ipc3628le-adf28k-wp: ours 1189 low 1044.09 -> lower 1019
+ipc2318le-adf28km-wp: ours 519 low 540 -> ok
+ipc3626le-adf28k-wp: ours 789 low 693.55 -> lower 679
+ipc3614lb-af28k-dl2: ours 259 low - -> no_comparable
+ipc2124lb-af28k-dl2: ours 259 low - -> no_comparable
+ipc3524le-adf28k-wp: ours 329 low 345 -> ok
+nvr302-32b-iq: ours 879 low 912 -> ok
+nvr301-08s3: ours 579 low - -> no_comparable
+uac-b125-af28lm: ours 109 low - -> no_comparable
+uac-t125-af28lm: ours 139 low - -> no_comparable
+xvr301-04g3: ours 679 low - -> no_comparable
+xvr301-08g3: ours 1069 low - -> no_comparable
+visionnet-k-560820: ours 189 low 150 -> lower 149
+visionnet-kitcom-2-wire-villa-kit-560789: ours 1359 low 1399 -> ok
+visionnet-dh-hybrid-kit-560171: ours 1549 low 1599 -> ok
+visionnet-2tl-17-560580: ours 629 low 649 -> ok
+visionnet-dh-wi-fi-monitor-560975: ours 659 low - -> fetch_failed
+visionnet-2tl-821-t5-560892: ours 2049 low 2114 -> ok
+visionnet-2tl-607fe-id-s2-560075: ours 319 low - -> fetch_failed
+rain-roof-for-keypads-560878: ours 49 low 45 -> lower 39
+reolink-rlk8-810b4-a-rlk8-800b4: ours 2619 low 1169 -> review 1149
+reolink-rlk8-1200b4-a: ours 2669 low 3590 -> room_to_raise
+reolink-rlk8-1200d4-a: ours 3590 low 3590 -> lower 3519
+ds-2cd1343g2-liu-2-8mm: ours 339 low - -> fetch_failed
+ds-2cd1t47g2-luf-4mm: ours 729 low 750 -> ok
+ds-2cd2043g2-iu-2-8mm: ours 569 low - -> fetch_failed
+ds-2cd2047g2h-liu-sl-2-8mm: ours 809 low 840 -> ok
+ds-2cd1047g2-luf-2-8mm: ours 539 low - -> fetch_failed
+ds-2cd1043g2-liu-2-8mm: ours 339 low - -> fetch_failed
+ds-2cd1643g2-lizu-2-8-12mm: ours 699 low - -> fetch_failed
+ds-2cd2t43g2-4li2u-2-8mm: ours 629 low - -> fetch_failed
+ds-2cd2t47g2h-li-2-8mm: ours 849 low 875 -> ok
+ds-2cd1743g2-lizu-2-8-12mm: ours 1129 low 452.7 -> lower 889
+ds-2cd1143g2-liu-2-8mm: ours 309 low 320 -> ok
+ds-2cd1347g2-luf-2-8mm: ours 409 low 690 -> room_to_raise
+ds-2cd2143g2-i-2-8mm: ours 469 low 485 -> ok
+ds-2cd2143g2-iu-2-8mm: ours 639 low 485 -> lower 503
+ds-2cd2347g1-l-4mm: ours 809 low 836 -> ok
+ds-2cd1p47g2-luf-2-8mm: ours 539 low - -> fetch_failed
+ds-2cd2183g2-iu-2-8mm: ours 769 low 709.28 -> lower 699
+ds-2cd2t87g3-lis2uy-sl-2-8mm: ours 1159 low 1012.13 -> lower 989
+ds-2cd1383g0-iuf-2-8mm: ours 399 low 408 -> ok
+ds-2cd2955g0-isu-1-05mm: ours 919 low 945 -> ok
+ds-2cd1353g0-i-2-8mm: ours 399 low 408 -> ok
+ds-2cd2387g2h-lisu-sl-2-8mm: ours 1099 low 1131 -> ok
+ids-2cd7a46g2-p-izhsy-8-32mm: ours 3099 low 3200 -> ok
+ds-2ce10kf0t-lpfs-2-8mm: ours 209 low 250 -> room_to_raise
+ds-2ce10kf0t-fs-3-6mm: ours 239 low 250 -> ok
+ds-2ce12kf0t-lfs-2-8mm: ours 249 low 260 -> ok
+ds-2ce70kf0t-lpfs-2-8mm: ours 199 low - -> fetch_failed
+ds-2ce10df0t-pfs-2-8mm: ours 199 low - -> fetch_failed
+ds-2ce12uf3t-ls-2-8mm: ours 439 low - -> fetch_failed
+ds-2ce16u1t-itf-3-6mm: ours 179 low 185 -> ok
+ds-2cc52h1t-fits-1-1mm: ours 679 low - -> fetch_failed
+cp3-pro: ours 189 low 199 -> ok
+# סריקת מחירי מתחרים 2026-09-23
+
+נסרקו 75 מוצרים, 168 דפים. 
+
+## הוזלו אוטומטית (0)
+
+## יש להוזיל (17)
+- Hikvision DS-KIS607-S: אצלנו 1,349 -> 1,309 | הזול בשוק 1,337 (zbm.co.il (via zap.co.il))
+- Hikvision DS-KV8413-WME1(C): אצלנו 869 -> 839 | הזול בשוק 856 (zbm.co.il (via zap.co.il))
+- Hikvision DS-K1T671M: אצלנו 2,379 -> 1,873 | הזול בשוק 1,890 (com4tech.co.il)
+- Hikvision DS-7632NXI-K2(D): אצלנו 1,349 -> 1,063 | הזול בשוק 632.32 (Senetic Israel)
+- Hikvision DS-7616NXI-K1(D): אצלנו 899 -> 708 | הזול בשוק 428.23 (Senetic Israel)
+- Hikvision DS-7608NXI-K1/8P(D): אצלנו 999 -> 786 | הזול בשוק 482.23 (Senetic Israel)
+- Hikvision iDS-7232HQHI-M2/XT: אצלנו 3,349 -> 3,159 | הזול בשוק 3,219 (AllTechStore via zap)
+- Hikvision iDS-7216HQHI-M1/XT: אצלנו 1,829 -> 1,441 | הזול בשוק 1,350 (zap.co.il (iDS-7216HQHI-M1/XT-2T))
+- Uniview IPC3628LE-ADF28K-WP: אצלנו 1,189 -> 1,019 | הזול בשוק 1,044.09 (senetic.co.il)
+- Uniview IPC3626LE-ADF28K-WP: אצלנו 789 -> 679 | הזול בשוק 693.55 (senetic.co.il)
+- VisionNet VisionNet K (K-Line) 560820: אצלנו 189 -> 149 | הזול בשוק 150 (kav-isr.com (VisionNet K3 indoor plastic keypad))
+- VisionNet Rain roof for keypads 560878: אצלנו 49 -> 39 | הזול בשוק 45 (Belshop)
+- Reolink Reolink RLK8-1200D4-A (NVS8-12MD4): אצלנו 3,590 -> 3,519 | הזול בשוק 3,590 (satsigma.co.il (NVS8-12MD4, 2TB))
+- Hikvision DS-2CD1743G2-LIZU 2.8-12mm: אצלנו 1,129 -> 889 | הזול בשוק 452.7 (Senetic (senetic.co.il))
+- Hikvision DS-2CD2143G2-IU 2.8mm: אצלנו 639 -> 503 | הזול בשוק 485 (com4tech.co.il (DS-2CD2143G2-I - ללא מיקרופון))
+- Hikvision DS-2CD2183G2-IU 2.8mm: אצלנו 769 -> 699 | הזול בשוק 709.28 (senetic.co.il (ex-VAT 709.28 + 18% VAT))
+- Hikvision DS-2CD2T87G3-LIS2UY/SL 2.8mm: אצלנו 1,159 -> 989 | הזול בשוק 1,012.13 (senetic.co.il (DS-2CD2T87G3-LIS2UY/SRB 2.8mm, ex-VAT 1012.13 + 18% VAT))
+
+## לבדיקה ידנית (1)
+- Reolink Reolink RLK8-810B4-A / RLK8-800B4 (NVS8-8MB4): אצלנו 2,619 -> 1,149 | הזול בשוק 1,169 (zap.co.il (NVS8-8MB4)) | ירידה של 56% דורשת אישור
+
+## הרצפה חוסמת (0)
+
+## אנחנו הכי זולים, יש מרווח להעלות (3)
+- Reolink Reolink RLK8-1200B4-A (NVS8-12MB4): אצלנו 2,669 | הזול בשוק 3,590 (satsigma.co.il (RLK8-1200B4-A 12MP kit, 2TB))
+- Hikvision DS-2CD1347G2-LUF 2.8mm: אצלנו 409 | הזול בשוק 690 (securegroup.co.il)
+- Hikvision DS-2CE10KF0T-LPFS 2.8mm: אצלנו 209 | הזול בשוק 250 (satsigma.co.il (DS-2CE10KF0T-FS 3.6mm, אותו גוף ללא IR))
+
+## תקין, כבר מתחת לשוק (31)
+- Hikvision DS-KIS212: 869 מול 900 (connectvision.co.il)
+- Hikvision DS-KV8213-WME1(C): 709 מול 730 (com4tech.co.il)
+- Hikvision DS-K1T502DBFWX-C: 1,069 מול 1,155 (abq.co.il)
+- Hikvision DS-K1T344EBFWX-E1: 1,309 מול 1,350 (com4tech.co.il)
+- Hikvision DS-7616NXI-K2(D): 1,109 מול 1,149 (technovision.co.il (DS-7616NXI-K2-1T, incl. 1TB HDD))
+- Hikvision iDS-7208HQHI-M1/XT: 1,259 מול 1,300 (zap.co.il (iDS-7208HQHI-M1/XT-2T, incl. 2TB HDD))
+- Hikvision iDS-7204HQHI-M1/XT: 1,099 מול 1,134 (zbm.co.il (iDS-7204HQHI-M1/XT-2T, incl. 2TB HDD, sale price))
+- Hikvision DS-2CD2T87G2H-LISU/SL 2.8mm: 1,309 מול 1,350 (zbm.co.il (DS-2CD2T87G2H-LISU/SL2, sale price))
+- Hikvision DS-2CD2087G2H-LIU/SL 2.8mm: 959 מול 990 (technovision.co.il)
+- Uniview IPC2318LE-ADF28KM-WP: 519 מול 540 (com4tech.co.il)
+- Uniview IPC3524LE-ADF28K-WP: 329 מול 345 (com4tech.co.il (listed as IPC3524LE-ADF28(40)K-WP, in stock))
+- Uniview NVR302-32B-IQ: 879 מול 912 (com4tech.co.il)
+- VisionNet VisionNet KITCOM 2-wire villa kit 560789: 1,359 מול 1,399 (kav-isr.com (VisionNet 2-wire kit: 7" monitor + panel w/ keypad & camera))
+- VisionNet VisionNet DH Hybrid KIT 560171: 1,549 מול 1,599 (kav-isr.com (VisionNet Wi-Fi app kit: 7" IPS touch monitor + panel w/ keypad + electric lock))
+- VisionNet VisionNet 2TL-17 560580: 629 מול 649 (kav-isr.com)
+- VisionNet VisionNet 2TL-821 / T5 560892: 2,049 מול 2,114 (sivim.co.il (VisionNet SKU 560408 digital 2-wire panel, 3.5" name display, 32-128 apts))
+- Hikvision DS-2CD1T47G2-LUF 4mm: 729 מול 750 (satsigma.co.il)
+- Hikvision DS-2CD2047G2H-LIU/SL 2.8mm: 809 מול 840 (technovision.co.il)
+- Hikvision DS-2CD2T47G2H-LI 2.8mm: 849 מול 875 (com4tech.co.il (DS-2CD2T47G2H-LISU/SL2 - גרסה עם מיקרופון/סטרובוסקופ))
+- Hikvision DS-2CD1143G2-LIU 2.8mm: 309 מול 320 (com4tech.co.il (LIUF))
+- Hikvision DS-2CD2143G2-I 2.8mm: 469 מול 485 (com4tech.co.il)
+- Hikvision DS-2CD2347G1-L 4mm (2021 stock): 809 מול 836 (com4tech.co.il (DS-2CD2347G2H-LISU/SL - דור נוכחי, עם מיקרופון+סטרובוסקופ))
+- Hikvision DS-2CD1383G0-IUF 2.8mm: 399 מול 408 (com4tech.co.il (DS-2CD1353G0-I 5MP turret - smaller sibling))
+- Hikvision DS-2CD2955G0-ISU 1.05mm: 919 מול 945 (com4tech.co.il)
+- Hikvision DS-2CD1353G0-I 2.8mm: 399 מול 408 (com4tech.co.il)
+- Hikvision DS-2CD2387G2H-LISU/SL 2.8mm: 1,099 מול 1,131 (com4tech.co.il (DS-2CD2387G2H-LISU/SL2 - current revision of same model))
+- Hikvision iDS-2CD7A46G2/P-IZHSY 8-32mm: 3,099 מול 3,200 (com4tech.co.il (8-32mm))
+- Hikvision DS-2CE10KF0T-FS 3.6mm: 239 מול 250 (satsigma.co.il)
+- Hikvision DS-2CE12KF0T-LFS 2.8mm: 249 מול 260 (com4tech.co.il)
+- Hikvision DS-2CE16U1T-ITF 3.6mm: 179 מול 185 (com4tech.co.il (DS-2CE16H0T-ITF, אותו גוף 5MP EXIR 20 מ'))
+- Tenda CP3 Pro (CP3 Pro V1.1): 189 מול 199 (kav-isr.com (קו ישראלי – יבואן רשמי טלרן, אחריות שנה))
+
+## הסריקה נכשלה (13)
+- VisionNet VisionNet DH Wi-Fi monitor 560975: zap.co.il (VisionNet 7" 2-wire DH monitor, seller Kav Israeli) 200; zbm.co.il (VisionNet 7" touch w/ picture memory, SKU 560024) 200
+- VisionNet VisionNet 2TL-607FE/ID/S2 (DT607) 560075: zap.co.il (VisionNet DH 2-wire camera panel, seller Kav Israeli) 200; com4tech.co.il (280SD-R2 2-wire villa station) 200
+- Hikvision DS-2CD1343G2-LIU 2.8mm: zap.co.il (AllTechStore) 200; technovision.co.il (LIUF) 200; zbm.co.il (LIUF) 200
+- Hikvision DS-2CD2043G2-IU 2.8mm: technovision.co.il (רשימת קטגוריה) 200; zap.co.il (DS-2CD2043G2-I ללא מיקרופון, סקיור גרופ) 200
+- Hikvision DS-2CD1047G2-LUF 2.8mm: zap.co.il (סקיור גרופ) 200; zbm.co.il (דרך zap, כולל משלוח) 200
+- Hikvision DS-2CD1043G2-LIU 2.8mm: zbm.co.il (מבצע, LIUF) 200; technovision.co.il (LIUF, אזל) 200; zap.co.il (זד.בי.אם כולל משלוח) 200
+- Hikvision DS-2CD1643G2-LIZU 2.8-12mm: zbm.co.il (DS-2CD1643G0-IZ, IR בלבד ללא מיקרופון) 200; zap.co.il (DS-2CD1643G0-IZ) 200
+- Hikvision DS-2CD2T43G2-4LI2U 2.8mm: technovision.co.il (DS-2CD2T43G2-2LI2U, IR 60 מ', רשימת קטגוריה) 200; com4tech.co.il (DS-2CD2T43G2-2LI2U, רשימת קטגוריה) 200; technovision.co.il (DS-2CD2T43G2-2I, IR בלבד ללא אודיו) 200
+- Hikvision DS-2CD1P47G2-LUF 2.8mm: zap.co.il (DS-2CD1047G2-L(UF) - צינור קבוע ללא PT, מ-₪560) 200; ZBM (zbm.co.il) 200
+- Hikvision DS-2CE70KF0T-LPFS 2.8mm: com4tech.co.il (DS-2CE76K0T-LMFS, טורט 3K hybrid light חיצוני) 200
+- Hikvision DS-2CE10DF0T-PFS 2.8mm: com4tech.co.il (DS-2CE10DF0T-FS, גוף מתכת) 200
+- Hikvision DS-2CE12UF3T-LS 2.8mm: com4tech.co.il (DS-2CE12UF3T-E, 4K ColorVu PoC, יבוא מקביל) 200; com4tech.co.il (DS-2CE12UF3T-E, מחיר בקטגוריית יבוא) 200
+- Hikvision DS-2CC52H1T-FITS 1.1mm: zbm.co.il (DS-2CD2955FWD-I, עין דג IP 5MP - טכנולוגיה שונה) 200
+

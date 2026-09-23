@@ -52,7 +52,7 @@ for (const place of opts.place) for (const existing of opts.existing) for (const
 // 4) knowledge: every product and its price appears
 for (const p of storeProducts) {
   if (!STORE_KNOWLEDGE.includes(`[${p.slug}]`)) issues.push(["knowledge", p.slug, "missing from knowledge"]);
-  if (p.price && !STORE_KNOWLEDGE.includes(`[${p.slug}] ${p.brand} ${p.model}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${p.price} ₪`)) issues.push(["knowledge", p.slug, "price line mismatch"]);
+  if (p.price && !STORE_KNOWLEDGE.includes(`[${p.slug}] ${p.model.toLowerCase().startsWith(p.brand.toLowerCase()) ? p.model : `${p.brand} ${p.model}`}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${p.price} ₪`)) issues.push(["knowledge", p.slug, "price line mismatch"]);
 }
 
 // 5) image content: an image that is mostly empty (logo/icon instead of a product photo) or tiny

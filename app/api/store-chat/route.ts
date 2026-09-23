@@ -2,6 +2,7 @@
 // ומעביר לצוות (ווצאפ/מייל) שאלות שאין עליהן תשובה ולידים שהשאירו טלפון.
 import { NextRequest, NextResponse } from "next/server";
 import { STORE_KNOWLEDGE, productBySlug } from "../../data/store-knowledge";
+import { productName } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
 
 export const runtime = "nodejs";
@@ -105,7 +106,7 @@ export async function POST(req: NextRequest) {
   const ctx: string[] = [];
   if (body.page) {
     const p = productBySlug(body.page);
-    if (p) ctx.push(`הלקוח נמצא כרגע בדף המוצר ${p.brand} ${p.model} [${p.slug}].`);
+    if (p) ctx.push(`הלקוח נמצא כרגע בדף המוצר ${productName(p)} [${p.slug}].`);
     else if (body.page === "finder") ctx.push("הלקוח נמצא בדף שאלון ההתאמה.");
     else ctx.push("הלקוח נמצא בדף הראשי של החנות.");
   }

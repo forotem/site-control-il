@@ -25,15 +25,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 1387,
+    "market_low_ils": 1337,
     "market_typical_ils": 1387,
     "price_basis": "exact",
-    "recommended_price_ils": 1349,
+    "recommended_price_ils": 1309,
     "estimated_cost_ils": 1012,
     "estimated_margin_ils": 337,
     "foreign_prices_note": "Listed by EU distributors (visiotech, avantsec, srprosecure) but prices behind login; Israeli listing exists.",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Only one Israeli listing found (ZBM 1,387 ILS incl. 50 ILS shipping, per zap). Hikvision product page: https://www.hikvision.com/en/products/Video-Intercom-Products/Kits/IP-Kits/ds-kis607-s/",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 1337 (zbm.co.il (via zap.co.il)), הוזל ל-1309"
   },
   {
     "cost_source": "estimate",
@@ -158,15 +159,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 895,
+    "market_low_ils": 856,
     "market_typical_ils": 910,
     "price_basis": "exact",
-    "recommended_price_ils": 869,
+    "recommended_price_ils": 839,
     "estimated_cost_ils": 652,
     "estimated_margin_ils": 217,
     "foreign_prices_note": "EU: ~EUR 209 ex VAT (andi-bg); B&H lists it in the US.",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Closest Telran item: older 1.3MP DS-KV8402-IM (Telran product 6416, https://www.telran.co.il/product/6416/, image https://www.telran.co.il/images/DS-KV8402-IM.001.png). Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kv8413-wme1-c-/",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 856 (zbm.co.il (via zap.co.il)), הוזל ל-839"
   },
   {
     "cost_source": "estimate",
@@ -431,15 +433,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 2450,
+    "market_low_ils": 1890,
     "market_typical_ils": 2900,
     "price_basis": "exact",
-    "recommended_price_ils": 2379,
+    "recommended_price_ils": 1873,
     "estimated_cost_ils": 1784,
     "estimated_margin_ils": 595,
     "foreign_prices_note": "US: USD 560 (surveillance-video), USD 838 discounted from 1,261 (123securityproducts); Amazon US listing exists.",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Low priority item. Closest Telran items: DS-K1T606M (product 6528) / DS-K1T606MF (product 6398), datasheet https://www.telran.co.il/images/DS-K1T606M(F)%20Series-1-2.pdf. Older Pro model. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Pro-Series/ds-k1t671m/",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 1890 (com4tech.co.il), הוזל ל-1873 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -486,16 +489,16 @@
         "currency": "EUR"
       }
     ],
-    "market_low_ils": 1550,
+    "market_low_ils": 746,
     "market_typical_ils": null,
     "price_basis": "exact",
-    "recommended_price_ils": 1349,
+    "recommended_price_ils": 1063,
     "estimated_cost_ils": 1012,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found. Foreign: HIKD (hikdistribution.com) $266 regular; Senetic UK GBP 176.37 ex-VAT; Amazon US listing (B0DS5V542Q) available.",
     "notes": "Telran: not carried (Telran search returns no Hikvision Pro NVRs; Telran's HikVision brand page (175 items) holds only HiLook-branded NVR-1xx/2xxMH-C units, HiLook DVR-2xxQ/U-F1, 2-4MP cameras and accessories). Closest Telran item: none for 32ch. Image is of sibling DS-7632NI-K2 (same chassis) from zbm.co.il, whose page https://www.zbm.co.il/product/ds-7632ni-k2/ is price-on-request. zap.co.il 32-camera Hikvision filter currently returns no results.",
     "batch": 1,
-    "pricing_note": "ישראל: Com4Tech 1,550, Connect Vision 1,649 (Senetic 809 חריג, מלאי יבוא). חו\"ל: Amazon.de €256 = כ-1,010 ₪ לאחר מע\"מ ויבוא. תומחר 1,349: מעל NVR 16 ערוצים (1,109) ומעל UNV 32 ערוצים (879), מתחת לחנויות בארץ."
+    "pricing_note": "ישראל: Com4Tech 1,550, Connect Vision 1,649 (Senetic 809 חריג, מלאי יבוא). חו\"ל: Amazon.de €256 = כ-1,010 ₪ לאחר מע\"מ ויבוא. תומחר 1,349: מעל NVR 16 ערוצים (1,109) ומעל UNV 32 ערוצים (879), מתחת לחנויות בארץ. | סורק מתחרים 23/09: הזול 746 (Senetic Israel), הוזל ל-1063 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -591,16 +594,16 @@
         "currency": "GBP"
       }
     ],
-    "market_low_ils": 1099,
+    "market_low_ils": 505,
     "market_typical_ils": null,
     "price_basis": "exact",
-    "recommended_price_ils": 899,
+    "recommended_price_ils": 708,
     "estimated_cost_ils": 674,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found. Foreign: HIKD $171 regular; Amazon.in INR 13,999; eBay listings exist.",
     "notes": "Telran: not carried (closest: HiLook NVR-116MH-C 16ch 1-SATA, Telran product 4194). Not found on zbm, technovision, tactech or zap (searched zbm site search and zap 16-camera Hikvision filter). Pricing proxy: the K2 (2-bay) variant sells in Israel for 1,149-1,690 ILS with HDD, so K1 bare should list slightly below. Image shown is the K2 sibling (identical chassis).",
     "batch": 1,
-    "pricing_note": "ישראל: Connect Vision 1,099 (Senetic 550 חריג, דגם בסיום חיים). חו\"ל: eBay €205 = כ-810 ₪ לאחר מע\"מ ויבוא. תומחר 899: מתחת ל-K2 (1,109) ומתחת ל-Connect Vision."
+    "pricing_note": "ישראל: Connect Vision 1,099 (Senetic 550 חריג, דגם בסיום חיים). חו\"ל: eBay €205 = כ-810 ₪ לאחר מע\"מ ויבוא. תומחר 899: מתחת ל-K2 (1,109) ומתחת ל-Connect Vision. | סורק מתחרים 23/09: הזול 505 (Senetic Israel), הוזל ל-708 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -641,16 +644,16 @@
         "currency": "GBP"
       }
     ],
-    "market_low_ils": 823,
+    "market_low_ils": 569,
     "market_typical_ils": null,
     "price_basis": "comparable",
-    "recommended_price_ils": 999,
+    "recommended_price_ils": 786,
     "estimated_cost_ils": 749,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found for the K1/8P. Foreign: HIKD $166.50-$221; Dipolnet PL; Amazon US (B0GGZJ16XP) $247.49.",
     "notes": "Telran: not carried (closest: HiLook NVR-108MH-C/8P, Telran product 4043, price-on-request). Israeli proxies for the 2-bay sibling DS-7608NXI-K2/8P: zap.co.il lists DS-7608NXI-K2/8P-2T at 2,050 ILS and DS-7608NXI-K2-2T (no PoE) at 1,361 ILS (https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708); zbm (https://zbm.co.il/product/ds-7608nxi-k2-8p/) and tactech (https://tactech.co.il/product/ds-7608nxi-k2-8p/) are quote-only; technovision sells it only inside camera kits. Datasheet link is the (B) revision; (D) revision not indexed.",
     "batch": 1,
-    "pricing_note": "ישראל: רק Senetic 823 (מלאי יבוא); הדגם בלי PoE 849 ב-Connect Vision, K2/8P 1,695 ב-Com4Tech. חו\"ל: eBay €249 = כ-980 ₪ לאחר מע\"מ ויבוא. תומחר 999."
+    "pricing_note": "ישראל: רק Senetic 823 (מלאי יבוא); הדגם בלי PoE 849 ב-Connect Vision, K2/8P 1,695 ב-Com4Tech. חו\"ל: eBay €249 = כ-980 ₪ לאחר מע\"מ ויבוא. תומחר 999. | סורק מתחרים 23/09: הזול 569 (Senetic Israel), הוזל ל-786 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -679,15 +682,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 3450,
+    "market_low_ils": 3219,
     "market_typical_ils": 3450,
     "price_basis": "exact",
-    "recommended_price_ils": 3349,
+    "recommended_price_ils": 3159,
     "estimated_cost_ils": 2512,
     "estimated_margin_ils": 837,
     "foreign_prices_note": "sourcetechcomputer.com $490.56 (sale, from $588.69); casmarglobal $847.97; India INR 27,500.",
     "notes": "Telran: not carried (closest: HiLook DVR-232 class not listed; Telran has 'DVR 32-ch XVR ... 4MP' product 5319, HiLook, non-AcuSense). Only one Israeli listing found and it bundles a 4TB HDD; bare unit would be lower. zap 32-camera Hikvision filter empty; zbm carries iDS-7332HUHI-M4/S (higher tier) instead.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 3219 (AllTechStore via zap), הוזל ל-3159 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -1031,15 +1035,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 1222,
+    "market_low_ils": 605,
     "market_typical_ils": 1222,
     "price_basis": "exact",
-    "recommended_price_ils": 1189,
+    "recommended_price_ils": 937,
     "estimated_cost_ils": 892,
     "estimated_margin_ils": 297,
     "foreign_prices_note": "Poland: myehome.pl from 525 PLN (~USD 130); dealayo.com / dwg.us list without public price. Only one Israeli listing (Senetic IL, price incl. 18% VAT; 1,044.09 excl. VAT).",
     "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Owlview_Series/Owlview/IPC3628LE-ADF28K-WP/ . Telran: not found - telran.co.il search returns 'No products found' for the full/short model and for 'Uniview'; Telran's public catalog carries Hikvision/HiLook/VisionNet/Shany/Reolink, no Uniview. Senetic image alternative: https://gfx3.senetic.com/akeneo-catalog/2/b/a/e/2bae7afa831a33813d6cb3a951db78f3c6d0f85d_1788272__custom_image1.jpg",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 605 (hitechcomputers.co.il), הוזל ל-937 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -1384,15 +1389,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 600,
+    "market_low_ils": 306,
     "market_typical_ils": 600,
     "price_basis": "exact",
-    "recommended_price_ils": 579,
+    "recommended_price_ils": 456,
     "estimated_cost_ils": 434,
     "estimated_margin_ils": 145,
     "foreign_prices_note": "USA: surveillance-video.com $179; networkcamerastore.com $196.90; Amazon US B0B8T2F42L. No public Israeli price for the exact model; successor NVR301-08B-IQ sells 600 ILS at Com4Tech.",
     "notes": "Older S3 series (being replaced by B-IQ / X series). Alt image: https://www.surveillance-video.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/image/146462dbc6/uniview-nvr301-08s3-8-channels-1-sata-ultra-265-h-265-h-264-nvr-no-hdd-nvr301-08s3.jpg . Telran: not found on telran.co.il.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 23/09: הזול 306 (hitechcomputers.co.il), הוזל ל-456 (נעצר ברצפת העלות המשוערת)"
   },
   {
     "cost_source": "estimate",
@@ -1928,16 +1934,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 49,
+    "market_low_ils": 45,
     "market_typical_ils": null,
     "price_basis": "comparable",
-    "recommended_price_ils": 49,
+    "recommended_price_ils": 39,
     "estimated_cost_ils": 37,
     "estimated_margin_ils": null,
     "foreign_prices_note": "Generic keypad rain covers USD 5-12 on AliExpress/Amazon.",
     "notes": "No Israeli listing with a visible price was retrievable (belshop page did not render). Suggested retail 59-89 ILS as a low-cost add-on; verify belshop price manually.",
     "batch": 1,
-    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49."
+    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49. | סורק מתחרים 23/09: הזול 45 (Belshop), הוזל ל-39"
   },
   {
     "cost_source": "pricelist",
@@ -1968,13 +1974,14 @@
     "market_low_ils": 2649,
     "market_typical_ils": 2729,
     "price_basis": "exact",
-    "recommended_price_ils": 2699,
+    "recommended_price_ils": 2599,
     "estimated_cost_ils": 2618,
     "estimated_margin_ils": 1,
     "foreign_prices_note": "USD 499.99 (megatop.com), EUR ~603 after discount (homebrainz.shop).",
     "notes": "NVS8-8MD4 is Reolink's current name for RLK8-820D4-A / 800D4. Telran also lists RLK8-800B4 and 810B4-A bullet equivalents.",
     "batch": 1,
-    "pricing_note": "שוק ישראלי נמוך 2649 (סיגמה 2649 / kav-isr 2699 (כולל דיסק)); עלות טלרן 2618; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 2649 (סיגמה 2649 / kav-isr 2699 (כולל דיסק)); מחיר מתקין טלרן+מע\"מ 2618; מתחת לעלות מתקין (2618) ב-19 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 2618
   },
   {
     "cost_source": "estimate",
@@ -1997,16 +2004,9 @@
     "datasheet_url": "https://www.telran.co.il/images/RLK8-810B4-A_Reolink_ENG 2021.pdf",
     "market_prices": [
       {
-        "site": "kav-isr.com (NVS8-8MB4, 2TB Seagate)",
+        "source": "kav-isr 2699 (2TB)",
         "price": 2699,
-        "url": "https://kav-isr.com/cameras/kits/reolink-rlk8-800b4.html",
-        "comparable": false
-      },
-      {
-        "site": "zap.co.il (NVS8-8MB4)",
-        "price": 2729,
-        "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002",
-        "comparable": false
+        "currency": "ILS"
       }
     ],
     "market_low_ils": 2699,
@@ -2017,7 +2017,9 @@
     "estimated_margin_ils": 655,
     "foreign_prices_note": "USD 509.80 (surveillance-video.com); EUR 673.75 list at homebrainz.shop.",
     "notes": "Second Telran datasheet: https://www.telran.co.il/images/RLK8-800B4_Reolink_ENG_DS_2023_2.pdf ; image https://www.telran.co.il/images/RLK8-800B4.01.png",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 2699 (kav-isr 2699 (2TB)); מחיר מתקין טלרן+מע\"מ null; תחרותי",
+    "telran_installer_incl_vat": null
   },
   {
     "cost_source": "pricelist",
@@ -2048,13 +2050,14 @@
     "market_low_ils": 1999,
     "market_typical_ils": 1999,
     "price_basis": "exact",
-    "recommended_price_ils": 1999,
+    "recommended_price_ils": 1959,
     "estimated_cost_ils": 1934,
     "estimated_margin_ils": 5,
     "foreign_prices_note": "USD 349.99-459.99 (eBay/Walmart); EUR 468 (Germany).",
     "notes": "Consistently 1,999-2,018 ILS in Israel; com4tech lists NVS8-5MD4 dome version at 1,900 without HDD.",
     "batch": 1,
-    "pricing_note": "שוק ישראלי נמוך 1999 (kav-isr 1999 (כולל דיסק); com4tech 1780 בלי דיסק); עלות טלרן 1934; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1999 (kav-isr 1999 (כולל דיסק); com4tech 1780 בלי דיסק); מחיר מתקין טלרן+מע\"מ 1934; תחרותי",
+    "telran_installer_incl_vat": 1934
   },
   {
     "cost_source": "estimate",
@@ -2077,19 +2080,12 @@
     "datasheet_url": "https://www.telran.co.il/images/RLK8-1200B4-A(2.8MM)_Reolink_ENG_DS_2023_1.pdf",
     "market_prices": [
       {
-        "site": "satsigma.co.il (RLK8-1200B4-A 12MP kit, 2TB)",
-        "price": 3650,
-        "url": "https://www.satsigma.co.il/product-category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-cctv-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA-ip-%D7%A0%D7%98%D7%A2%D7%A0%D7%95%D7%AA/reolink/",
-        "comparable": false
-      },
-      {
-        "site": "com4tech.co.il (NVS8-12MB4, without HDD)",
-        "price": 2750,
-        "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-reolink/",
-        "comparable": true
+        "source": "kav-isr 3590",
+        "price": 3590,
+        "currency": "ILS"
       }
     ],
-    "market_low_ils": 2750,
+    "market_low_ils": 3590,
     "market_typical_ils": 3650,
     "price_basis": "exact",
     "recommended_price_ils": 2669,
@@ -2097,7 +2093,9 @@
     "estimated_margin_ils": 667,
     "foreign_prices_note": "USD ~646 (US review aggregate), Walmart/Newegg similar.",
     "notes": "Fewer Israeli listings than the dome version; satsigma 3,650 with 2TB is the reference. com4tech price excludes HDD.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 3590 (kav-isr 3590); מחיר מתקין טלרן+מע\"מ null; תחרותי",
+    "telran_installer_incl_vat": null
   },
   {
     "cost_source": "pricelist",
@@ -2120,34 +2118,22 @@
     "datasheet_url": "https://www.telran.co.il/images/RLK8-1200D4-A(2.8MM)_Reolink_ENG_DS_2023_2.pdf",
     "market_prices": [
       {
-        "site": "satsigma.co.il (NVS8-12MD4, 2TB)",
+        "source": "kav-isr 3590",
         "price": 3590,
-        "url": "https://www.satsigma.co.il/product/%d7%a7%d7%99%d7%98-4-%d7%9e%d7%a6%d7%9c%d7%9e%d7%95%d7%aa-reolink-rlk8-1200d4-a-12mp/",
-        "comparable": false
-      },
-      {
-        "site": "zap.co.il (NVS8-12MD4)",
-        "price": 3609,
-        "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=9502002",
-        "comparable": false
-      },
-      {
-        "site": "zbm.co.il (NVS8 8-ch 12MP NVR only, 2TB - for reference)",
-        "price": 1349,
-        "url": "https://zbm.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-nvr-%D7%9C-8-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-12mp-%D7%9B%D7%95%D7%9C%D7%9C-%D7%93%D7%99%D7%A1%D7%A7-2tb/",
-        "comparable": true
+        "currency": "ILS"
       }
     ],
     "market_low_ils": 3590,
     "market_typical_ils": 3600,
     "price_basis": "exact",
-    "recommended_price_ils": 3590,
+    "recommended_price_ils": 3519,
     "estimated_cost_ils": 3669,
     "estimated_margin_ils": -190,
     "foreign_prices_note": "USD 499.99-845.99 across US retailers (Walmart, Best Buy, Micro Center).",
     "notes": "Telran's RLK8 search page lists 6 8CH kits: 1200D4-A, 1200B4-A, 800B4, 410B4-5MP, 820D4-A, 810B4-A. No Telran prices are public (login required).",
     "batch": 1,
-    "pricing_note": "מחיר צרכן של טלרן כמו שהוא: מחיר מתקין+מע\"מ משאיר רק 3-5%; ממתינים להנחת מפיץ מעידן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 3590 (kav-isr 3590); מחיר מתקין טלרן+מע\"מ 3480; תחרותי",
+    "telran_installer_incl_vat": 3480
   },
   {
     "cost_source": "estimate",
@@ -3778,13 +3764,14 @@
     "market_low_ils": 1129,
     "market_typical_ils": 1189,
     "price_basis": "exact",
-    "recommended_price_ils": 1129,
+    "recommended_price_ils": 1109,
     "estimated_cost_ils": 944,
     "estimated_margin_ils": 245,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1189, מתקין לפני מע\"מ 800; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1129 (Ranger (עם פאנל) / LastPrice 1148 / סיגמה 1189); עלות טלרן 944; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1129 (Ranger (עם פאנל) / LastPrice 1148 / סיגמה 1189); מחיר מתקין טלרן+מע\"מ 944; תחרותי",
+    "telran_installer_incl_vat": 944
   },
   {
     "cost_source": "pricelist",
@@ -3815,13 +3802,14 @@
     "market_low_ils": 820,
     "market_typical_ils": 1279,
     "price_basis": "exact",
-    "recommended_price_ils": 1139,
+    "recommended_price_ils": 809,
     "estimated_cost_ils": 1073,
     "estimated_margin_ils": 206,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1279, מתקין לפני מע\"מ 909; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 820 (com4tech 820 / סיגמה 830 / BConnect 899); עלות טלרן 1073; השוק (820) מתחת לעלות טלרן (1073): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 820 (com4tech 820 / סיגמה 830 / BConnect 899); מחיר מתקין טלרן+מע\"מ 1073; מתחת לעלות מתקין (1073) ב-264 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 1073
   },
   {
     "cost_source": "pricelist",
@@ -3852,13 +3840,14 @@
     "market_low_ils": 1129,
     "market_typical_ils": 1279,
     "price_basis": "exact",
-    "recommended_price_ils": 1129,
+    "recommended_price_ils": 1109,
     "estimated_cost_ils": 1044,
     "estimated_margin_ils": 235,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1279, מתקין לפני מע\"מ 885; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1129 (Ranger 1129 / com4tech 1190 עם פאנל); עלות טלרן 1044; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1129 (Ranger 1129 / com4tech 1190 עם פאנל); מחיר מתקין טלרן+מע\"מ 1044; תחרותי",
+    "telran_installer_incl_vat": 1044
   },
   {
     "cost_source": "pricelist",
@@ -3889,13 +3878,14 @@
     "market_low_ils": 1099,
     "market_typical_ils": 1489,
     "price_basis": "exact",
-    "recommended_price_ils": 1349,
+    "recommended_price_ils": 1079,
     "estimated_cost_ils": 1274,
     "estimated_margin_ils": 215,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1489, מתקין לפני מע\"מ 1080; פאנל סולארי כלול",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1099 (BConnect/Bug 1099 / סיגמה 1150 עם פאנל); עלות טלרן 1274; השוק (1099) מתחת לעלות טלרן (1274): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1099 (BConnect/Bug 1099 / סיגמה 1150 עם פאנל); מחיר מתקין טלרן+מע\"מ 1274; מתחת לעלות מתקין (1274) ב-195 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 1274
   },
   {
     "cost_source": "pricelist",
@@ -3926,13 +3916,14 @@
     "market_low_ils": 1540,
     "market_typical_ils": 1599,
     "price_basis": "exact",
-    "recommended_price_ils": 1539,
+    "recommended_price_ils": 1509,
     "estimated_cost_ils": 1410,
     "estimated_margin_ils": 189,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1195; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1540 (securegroup 1540 / LastPrice 1558 / ZBM 1599); עלות טלרן 1410; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1540 (securegroup 1540 / LastPrice 1558 / ZBM 1599); מחיר מתקין טלרן+מע\"מ 1410; תחרותי",
+    "telran_installer_incl_vat": 1410
   },
   {
     "cost_source": "pricelist",
@@ -3963,13 +3954,14 @@
     "market_low_ils": 1330,
     "market_typical_ils": 1799,
     "price_basis": "exact",
-    "recommended_price_ils": 1619,
+    "recommended_price_ils": 1299,
     "estimated_cost_ils": 1528,
     "estimated_margin_ils": 271,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1799, מתקין לפני מע\"מ 1295; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1330 (com4tech 1330 / סיגמה 1550 עם פאנל); עלות טלרן 1528; השוק (1330) מתחת לעלות טלרן (1528): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1330 (com4tech 1330 / סיגמה 1550 עם פאנל); מחיר מתקין טלרן+מע\"מ 1528; מתחת לעלות מתקין (1528) ב-229 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 1528
   },
   {
     "cost_source": "pricelist",
@@ -3991,20 +3983,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 4199,
+        "source": "com4tech 3980 עם פאנל 66W",
+        "price": 3980,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 4199,
+    "market_low_ils": 3980,
     "market_typical_ils": 4199,
     "price_basis": "exact",
-    "recommended_price_ils": 4199,
+    "recommended_price_ils": 3899,
     "estimated_cost_ils": 3410,
     "estimated_margin_ils": 789,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 4199, מתקין לפני מע\"מ 2890; פאנל סולארי כלול",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 3980 (com4tech 3980 עם פאנל 66W); מחיר מתקין טלרן+מע\"מ 3410; תחרותי",
+    "telran_installer_incl_vat": 3410
   },
   {
     "cost_source": "pricelist",
@@ -4027,12 +4021,12 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1599,
+        "source": "satsigma 1700",
+        "price": 1700,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1599,
+    "market_low_ils": 1700,
     "market_typical_ils": 1599,
     "price_basis": "exact",
     "recommended_price_ils": 1599,
@@ -4040,7 +4034,9 @@
     "estimated_margin_ils": 242,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1150; פאנל סולארי כלול",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1700 (satsigma 1700); מחיר מתקין טלרן+מע\"מ 1357; תחרותי",
+    "telran_installer_incl_vat": 1357
   },
   {
     "cost_source": "pricelist",
@@ -4062,20 +4058,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1299,
+        "source": "com4tech 1220",
+        "price": 1220,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1299,
+    "market_low_ils": 1220,
     "market_typical_ils": 1299,
     "price_basis": "exact",
-    "recommended_price_ils": 1299,
+    "recommended_price_ils": 1199,
     "estimated_cost_ils": 1145,
     "estimated_margin_ils": 154,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1299, מתקין לפני מע\"מ 970; פאנל סולארי בנפרד",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1220 (com4tech 1220); מחיר מתקין טלרן+מע\"מ 1145; תחרותי",
+    "telran_installer_incl_vat": 1145
   },
   {
     "cost_source": "pricelist",
@@ -4104,13 +4102,14 @@
     "market_low_ils": 99,
     "market_typical_ils": 149,
     "price_basis": "exact",
-    "recommended_price_ils": 129,
+    "recommended_price_ils": 79,
     "estimated_cost_ils": 124,
     "estimated_margin_ils": 25,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 149, מתקין לפני מע\"מ 105",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 99 (BConnect/Bug 99 / Ranger 119); עלות טלרן 124; השוק (99) מתחת לעלות טלרן (124): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 99 (BConnect/Bug 99 / Ranger 119); מחיר מתקין טלרן+מע\"מ 124; מתחת לעלות מתקין (124) ב-45 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 124
   },
   {
     "cost_source": "pricelist",
@@ -4141,13 +4140,14 @@
     "market_low_ils": 278,
     "market_typical_ils": 389,
     "price_basis": "exact",
-    "recommended_price_ils": 379,
+    "recommended_price_ils": 259,
     "estimated_cost_ils": 360,
     "estimated_margin_ils": 29,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 389, מתקין לפני מע\"מ 305; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 278 (דיילי סייל 278 / BConnect 299); עלות טלרן 360; השוק (278) מתחת לעלות טלרן (360): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 278 (דיילי סייל 278 / BConnect 299); מחיר מתקין טלרן+מע\"מ 360; מתחת לעלות מתקין (360) ב-101 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 360
   },
   {
     "cost_source": "pricelist",
@@ -4178,13 +4178,14 @@
     "market_low_ils": 364,
     "market_typical_ils": 549,
     "price_basis": "exact",
-    "recommended_price_ils": 529,
+    "recommended_price_ils": 349,
     "estimated_cost_ils": 502,
     "estimated_margin_ils": 47,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 425; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 364 (Senetic ~364); עלות טלרן 502; השוק (364) מתחת לעלות טלרן (502): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 364 (Senetic ~364); מחיר מתקין טלרן+מע\"מ 502; מתחת לעלות מתקין (502) ב-153 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 502
   },
   {
     "cost_source": "pricelist",
@@ -4214,13 +4215,14 @@
     "market_low_ils": 299,
     "market_typical_ils": 409,
     "price_basis": "exact",
-    "recommended_price_ils": 389,
+    "recommended_price_ils": 289,
     "estimated_cost_ils": 365,
     "estimated_margin_ils": 44,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 409, מתקין לפני מע\"מ 309; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 299 (BConnect/Bug/Zap 299); עלות טלרן 365; השוק (299) מתחת לעלות טלרן (365): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 299 (BConnect/Bug/Zap 299); מחיר מתקין טלרן+מע\"מ 365; מתחת לעלות מתקין (365) ב-76 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 365
   },
   {
     "cost_source": "pricelist",
@@ -4251,13 +4253,14 @@
     "market_low_ils": 344,
     "market_typical_ils": 559,
     "price_basis": "exact",
-    "recommended_price_ils": 559,
+    "recommended_price_ils": 329,
     "estimated_cost_ils": 531,
     "estimated_margin_ils": 28,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 559, מתקין לפני מע\"מ 450; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 344 (דיילי סייל 344 / BConnect 349); עלות טלרן 531; השוק (344) מתחת לעלות טלרן (531): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 344 (דיילי סייל 344 / BConnect 349); מחיר מתקין טלרן+מע\"מ 531; מתחת לעלות מתקין (531) ב-202 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 531
   },
   {
     "cost_source": "pricelist",
@@ -4288,13 +4291,14 @@
     "market_low_ils": 499,
     "market_typical_ils": 689,
     "price_basis": "exact",
-    "recommended_price_ils": 659,
+    "recommended_price_ils": 489,
     "estimated_cost_ils": 620,
     "estimated_margin_ils": 69,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 689, מתקין לפני מע\"מ 525; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 499 (BConnect/Bug/Zap 499); עלות טלרן 620; השוק (499) מתחת לעלות טלרן (620): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 499 (BConnect/Bug/Zap 499); מחיר מתקין טלרן+מע\"מ 620; מתחת לעלות מתקין (620) ב-131 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 620
   },
   {
     "cost_source": "pricelist",
@@ -4316,20 +4320,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 899,
+        "source": "ZBM via zap 739",
+        "price": 739,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 899,
+    "market_low_ils": 739,
     "market_typical_ils": 899,
     "price_basis": "exact",
-    "recommended_price_ils": 899,
+    "recommended_price_ils": 729,
     "estimated_cost_ils": 825,
     "estimated_margin_ils": 74,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 899, מתקין לפני מע\"מ 699; פאנל סולארי בנפרד",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 739 (ZBM via zap 739); מחיר מתקין טלרן+מע\"מ 825; מתחת לעלות מתקין (825) ב-96 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 825
   },
   {
     "cost_source": "pricelist",
@@ -4359,13 +4365,14 @@
     "market_low_ils": 378,
     "market_typical_ils": 519,
     "price_basis": "exact",
-    "recommended_price_ils": 489,
+    "recommended_price_ils": 359,
     "estimated_cost_ils": 459,
     "estimated_margin_ils": 60,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 519, מתקין לפני מע\"מ 389; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 378 (דיילי סייל 378 / Bug 399); עלות טלרן 459; השוק (378) מתחת לעלות טלרן (459): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 378 (דיילי סייל 378 / Bug 399); מחיר מתקין טלרן+מע\"מ 459; מתחת לעלות מתקין (459) ב-100 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 459
   },
   {
     "cost_source": "pricelist",
@@ -4395,13 +4402,14 @@
     "market_low_ils": 199,
     "market_typical_ils": 270,
     "price_basis": "exact",
-    "recommended_price_ils": 259,
+    "recommended_price_ils": 179,
     "estimated_cost_ils": 242,
     "estimated_margin_ils": 28,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 270, מתקין לפני מע\"מ 205",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 199 (Bug/Zap/kav-isr 199); עלות טלרן 242; השוק (199) מתחת לעלות טלרן (242): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 199 (Bug/Zap/kav-isr 199); מחיר מתקין טלרן+מע\"מ 242; מתחת לעלות מתקין (242) ב-63 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 242
   },
   {
     "cost_source": "pricelist",
@@ -4423,20 +4431,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 299,
+        "source": "LastPrice via zap 308",
+        "price": 308,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 299,
+    "market_low_ils": 308,
     "market_typical_ils": 299,
     "price_basis": "exact",
-    "recommended_price_ils": 299,
+    "recommended_price_ils": 289,
     "estimated_cost_ils": 266,
     "estimated_margin_ils": 33,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 299, מתקין לפני מע\"מ 225",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 308 (LastPrice via zap 308); מחיר מתקין טלרן+מע\"מ 266; תחרותי",
+    "telran_installer_incl_vat": 266
   },
   {
     "cost_source": "pricelist",
@@ -4458,20 +4468,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 419,
+        "source": "bconnect/Bug 329",
+        "price": 329,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 419,
+    "market_low_ils": 329,
     "market_typical_ils": 419,
     "price_basis": "exact",
-    "recommended_price_ils": 419,
+    "recommended_price_ils": 319,
     "estimated_cost_ils": 378,
     "estimated_margin_ils": 41,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 419, מתקין לפני מע\"מ 320",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 329 (bconnect/Bug 329); מחיר מתקין טלרן+מע\"מ 378; מתחת לעלות מתקין (378) ב-59 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 378
   },
   {
     "cost_source": "pricelist",
@@ -4493,20 +4505,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 279,
+        "source": "bconnect/Bug/zap 179",
+        "price": 179,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 279,
+    "market_low_ils": 179,
     "market_typical_ils": 279,
     "price_basis": "exact",
-    "recommended_price_ils": 279,
+    "recommended_price_ils": 159,
     "estimated_cost_ils": 260,
     "estimated_margin_ils": 19,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 279, מתקין לפני מע\"מ 220",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 179 (bconnect/Bug/zap 179); מחיר מתקין טלרן+מע\"מ 260; מתחת לעלות מתקין (260) ב-101 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 260
   },
   {
     "cost_source": "pricelist",
@@ -4536,13 +4550,14 @@
     "market_low_ils": 1119,
     "market_typical_ils": 1190,
     "price_basis": "exact",
-    "recommended_price_ils": 1119,
+    "recommended_price_ils": 1099,
     "estimated_cost_ils": 1003,
     "estimated_margin_ils": 187,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1190, מתקין לפני מע\"מ 850",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 1119 (kav-isr 1119 / com4tech 1133); עלות טלרן 1003; תחרותי"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1119 (kav-isr 1119 / com4tech 1133); מחיר מתקין טלרן+מע\"מ 1003; תחרותי",
+    "telran_installer_incl_vat": 1003
   },
   {
     "cost_source": "pricelist",
@@ -4572,13 +4587,14 @@
     "market_low_ils": 439,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 569,
+    "recommended_price_ils": 429,
     "estimated_cost_ils": 537,
     "estimated_margin_ils": 52,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 455",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 439 (דיילי סייל 439 / Bug 449); עלות טלרן 537; השוק (439) מתחת לעלות טלרן (537): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 439 (דיילי סייל 439 / Bug 449); מחיר מתקין טלרן+מע\"מ 537; מתחת לעלות מתקין (537) ב-108 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 537
   },
   {
     "cost_source": "pricelist",
@@ -4608,13 +4624,14 @@
     "market_low_ils": 490,
     "market_typical_ils": 719,
     "price_basis": "exact",
-    "recommended_price_ils": 689,
+    "recommended_price_ils": 479,
     "estimated_cost_ils": 648,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 719, מתקין לפני מע\"מ 549",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 490 (BConnect/Bug 490-499); עלות טלרן 648; השוק (490) מתחת לעלות טלרן (648): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 490 (BConnect/Bug 490-499); מחיר מתקין טלרן+מע\"מ 648; מתחת לעלות מתקין (648) ב-169 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 648
   },
   {
     "cost_source": "pricelist",
@@ -4644,13 +4661,14 @@
     "market_low_ils": 859,
     "market_typical_ils": 999,
     "price_basis": "exact",
-    "recommended_price_ils": 939,
+    "recommended_price_ils": 839,
     "estimated_cost_ils": 885,
     "estimated_margin_ils": 114,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 999, מתקין לפני מע\"מ 750",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 859 (LastPrice 859 / com4tech 941); עלות טלרן 885; השוק (859) מתחת לעלות טלרן (885): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 859 (LastPrice 859 / com4tech 941); מחיר מתקין טלרן+מע\"מ 885; מתחת לעלות מתקין (885) ב-46 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 885
   },
   {
     "cost_source": "pricelist",
@@ -4672,20 +4690,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 799,
+        "source": "LastPrice via zap 758",
+        "price": 758,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 799,
+    "market_low_ils": 758,
     "market_typical_ils": 799,
     "price_basis": "exact",
-    "recommended_price_ils": 799,
+    "recommended_price_ils": 739,
     "estimated_cost_ils": 679,
     "estimated_margin_ils": 120,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 799, מתקין לפני מע\"מ 575",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 758 (LastPrice via zap 758); מחיר מתקין טלרן+מע\"מ 679; תחרותי",
+    "telran_installer_incl_vat": 679
   },
   {
     "cost_source": "pricelist",
@@ -4707,20 +4727,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 499,
+        "source": "bconnect/kav-isr/satsigma 399",
+        "price": 399,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 499,
+    "market_low_ils": 379,
     "market_typical_ils": 499,
     "price_basis": "exact",
-    "recommended_price_ils": 499,
+    "recommended_price_ils": 369,
     "estimated_cost_ils": 483,
     "estimated_margin_ils": 16,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 409",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 399 (bconnect/kav-isr/satsigma 399); מחיר מתקין טלרן+מע\"מ 483; מתחת לעלות מתקין (483) ב-94 ₪: עידן צריך להשלים | סורק מתחרים 23/09: הזול 379 (Refaeli (via zap search)), הוזל ל-369",
+    "telran_installer_incl_vat": 483
   },
   {
     "cost_source": "pricelist",
@@ -4742,20 +4764,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 549,
+        "source": "satsigma 449",
+        "price": 449,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 549,
+    "market_low_ils": 449,
     "market_typical_ils": 549,
     "price_basis": "exact",
-    "recommended_price_ils": 549,
+    "recommended_price_ils": 439,
     "estimated_cost_ils": 502,
     "estimated_margin_ils": 47,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 425",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 449 (satsigma 449); מחיר מתקין טלרן+מע\"מ 502; מתחת לעלות מתקין (502) ב-63 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 502
   },
   {
     "cost_source": "pricelist",
@@ -4777,12 +4801,12 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1059,
+        "source": "kav-isr 1089",
+        "price": 1089,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1059,
+    "market_low_ils": 1089,
     "market_typical_ils": 1059,
     "price_basis": "exact",
     "recommended_price_ils": 1059,
@@ -4790,7 +4814,9 @@
     "estimated_margin_ils": 81,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1059, מתקין לפני מע\"מ 829",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1089 (kav-isr 1089); מחיר מתקין טלרן+מע\"מ 978; תחרותי",
+    "telran_installer_incl_vat": 978
   },
   {
     "cost_source": "pricelist",
@@ -4812,7 +4838,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "kav-isr/satsigma 395",
         "price": 395,
         "currency": "ILS"
       }
@@ -4820,12 +4846,14 @@
     "market_low_ils": 395,
     "market_typical_ils": 395,
     "price_basis": "exact",
-    "recommended_price_ils": 395,
+    "recommended_price_ils": 379,
     "estimated_cost_ils": 353,
     "estimated_margin_ils": 42,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 395, מתקין לפני מע\"מ 299",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 395 (kav-isr/satsigma 395); מחיר מתקין טלרן+מע\"מ 353; תחרותי",
+    "telran_installer_incl_vat": 353
   },
   {
     "cost_source": "pricelist",
@@ -4847,12 +4875,12 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 529,
+        "source": "kav-isr 559",
+        "price": 559,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 529,
+    "market_low_ils": 559,
     "market_typical_ils": 529,
     "price_basis": "exact",
     "recommended_price_ils": 529,
@@ -4860,7 +4888,9 @@
     "estimated_margin_ils": 58,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 529, מתקין לפני מע\"מ 399",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 559 (kav-isr 559); מחיר מתקין טלרן+מע\"מ 471; תחרותי",
+    "telran_installer_incl_vat": 471
   },
   {
     "cost_source": "pricelist",
@@ -4882,12 +4912,12 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 549,
+        "source": "ZBM 599",
+        "price": 599,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 549,
+    "market_low_ils": 599,
     "market_typical_ils": 549,
     "price_basis": "exact",
     "recommended_price_ils": 549,
@@ -4895,7 +4925,9 @@
     "estimated_margin_ils": 66,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 409",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 599 (ZBM 599); מחיר מתקין טלרן+מע\"מ 483; תחרותי",
+    "telran_installer_incl_vat": 483
   },
   {
     "cost_source": "pricelist",
@@ -4917,7 +4949,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "satsigma 499",
         "price": 499,
         "currency": "ILS"
       }
@@ -4925,12 +4957,14 @@
     "market_low_ils": 499,
     "market_typical_ils": 499,
     "price_basis": "exact",
-    "recommended_price_ils": 499,
+    "recommended_price_ils": 489,
     "estimated_cost_ils": 447,
     "estimated_margin_ils": 52,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 379",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 499 (satsigma 499); מחיר מתקין טלרן+מע\"מ 447; תחרותי",
+    "telran_installer_incl_vat": 447
   },
   {
     "cost_source": "pricelist",
@@ -4952,7 +4986,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "satsigma 589",
         "price": 589,
         "currency": "ILS"
       }
@@ -4960,12 +4994,14 @@
     "market_low_ils": 589,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 589,
+    "recommended_price_ils": 579,
     "estimated_cost_ils": 518,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 589 (satsigma 589); מחיר מתקין טלרן+מע\"מ 518; תחרותי",
+    "telran_installer_incl_vat": 518
   },
   {
     "cost_source": "pricelist",
@@ -4987,20 +5023,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 589,
+        "source": "satsigma 540",
+        "price": 540,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 589,
+    "market_low_ils": 540,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 589,
+    "recommended_price_ils": 529,
     "estimated_cost_ils": 518,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 540 (satsigma 540); מחיר מתקין טלרן+מע\"מ 518; תחרותי",
+    "telran_installer_incl_vat": 518
   },
   {
     "cost_source": "pricelist",
@@ -5022,7 +5060,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "kav-isr 639",
         "price": 639,
         "currency": "ILS"
       }
@@ -5030,12 +5068,14 @@
     "market_low_ils": 639,
     "market_typical_ils": 639,
     "price_basis": "exact",
-    "recommended_price_ils": 639,
+    "recommended_price_ils": 629,
     "estimated_cost_ils": 577,
     "estimated_margin_ils": 62,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 639, מתקין לפני מע\"מ 489",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 639 (kav-isr 639); מחיר מתקין טלרן+מע\"מ 577; תחרותי",
+    "telran_installer_incl_vat": 577
   },
   {
     "cost_source": "pricelist",
@@ -5064,13 +5104,14 @@
     "market_low_ils": 799,
     "market_typical_ils": 969,
     "price_basis": "exact",
-    "recommended_price_ils": 969,
+    "recommended_price_ils": 779,
     "estimated_cost_ils": 943,
     "estimated_margin_ils": 26,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 969, מתקין לפני מע\"מ 799",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "שוק ישראלי נמוך 799 (ZBM 799 / סיגמה 1000 (בלי דיסק)); עלות טלרן 943; השוק (799) מתחת לעלות טלרן (943): לא תחרותי דרך טלרן"
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 799 (ZBM 799 / סיגמה 1000 (בלי דיסק)); מחיר מתקין טלרן+מע\"מ 943; מתחת לעלות מתקין (943) ב-164 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 943
   },
   {
     "cost_source": "pricelist",
@@ -5091,20 +5132,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1299,
+        "source": "satsigma 1150 (בלי דיסק)",
+        "price": 1150,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1299,
+    "market_low_ils": 1150,
     "market_typical_ils": 1299,
     "price_basis": "exact",
-    "recommended_price_ils": 1299,
+    "recommended_price_ils": 1129,
     "estimated_cost_ils": 1250,
     "estimated_margin_ils": 49,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1299, מתקין לפני מע\"מ 1059",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1150 (satsigma 1150 (בלי דיסק)); מחיר מתקין טלרן+מע\"מ 1250; מתחת לעלות מתקין (1250) ב-121 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 1250
   },
   {
     "cost_source": "pricelist",
@@ -5125,12 +5168,12 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1599,
+        "source": "satsigma 1800 (עם 4TB)",
+        "price": 1800,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1599,
+    "market_low_ils": 1800,
     "market_typical_ils": 1599,
     "price_basis": "exact",
     "recommended_price_ils": 1599,
@@ -5138,7 +5181,9 @@
     "estimated_margin_ils": 66,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1299",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1800 (satsigma 1800 (עם 4TB)); מחיר מתקין טלרן+מע\"מ 1533; תחרותי",
+    "telran_installer_incl_vat": 1533
   },
   {
     "cost_source": "pricelist",
@@ -5159,20 +5204,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 1399,
+        "source": "satsigma 1300 (RLN36, אותה חומרה)",
+        "price": 1300,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1399,
+    "market_low_ils": 1300,
     "market_typical_ils": 1399,
     "price_basis": "exact",
-    "recommended_price_ils": 1399,
+    "recommended_price_ils": 1279,
     "estimated_cost_ils": 1356,
     "estimated_margin_ils": 43,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1399, מתקין לפני מע\"מ 1149",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1300 (satsigma 1300 (RLN36, אותה חומרה)); מחיר מתקין טלרן+מע\"מ 1356; מתחת לעלות מתקין (1356) ב-77 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 1356
   },
   {
     "cost_source": "pricelist",
@@ -5193,7 +5240,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "kav-isr 1159",
         "price": 1159,
         "currency": "ILS"
       }
@@ -5201,12 +5248,14 @@
     "market_low_ils": 1159,
     "market_typical_ils": 1159,
     "price_basis": "exact",
-    "recommended_price_ils": 1159,
+    "recommended_price_ils": 1139,
     "estimated_cost_ils": 1120,
     "estimated_margin_ils": 39,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1159, מתקין לפני מע\"מ 949",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1159 (kav-isr 1159); מחיר מתקין טלרן+מע\"מ 1120; תחרותי",
+    "telran_installer_incl_vat": 1120
   },
   {
     "cost_source": "pricelist",
@@ -5227,20 +5276,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 499,
+        "source": "Hashmal Neto 448 / bconnect 449",
+        "price": 448,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 499,
+    "market_low_ils": 448,
     "market_typical_ils": 499,
     "price_basis": "exact",
-    "recommended_price_ils": 499,
+    "recommended_price_ils": 429,
     "estimated_cost_ils": 483,
     "estimated_margin_ils": 16,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 409",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 448 (Hashmal Neto 448 / bconnect 449); מחיר מתקין טלרן+מע\"מ 483; מתחת לעלות מתקין (483) ב-54 ₪: עידן צריך להשלים",
+    "telran_installer_incl_vat": 483
   },
   {
     "cost_source": "pricelist",
@@ -5261,20 +5312,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 4690,
+        "source": "kav-isr 4750",
+        "price": 4750,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 4690,
+    "market_low_ils": 4750,
     "market_typical_ils": 4690,
     "price_basis": "exact",
-    "recommended_price_ils": 4690,
+    "recommended_price_ils": 4659,
     "estimated_cost_ils": 4542,
     "estimated_margin_ils": 148,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 4690, מתקין לפני מע\"מ 3849",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 4750 (kav-isr 4750); מחיר מתקין טלרן+מע\"מ 4542; תחרותי",
+    "telran_installer_incl_vat": 4542
   },
   {
     "cost_source": "pricelist",
@@ -5295,20 +5348,22 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 4690,
+        "source": "satsigma/kav-isr 4750",
+        "price": 4750,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 4690,
+    "market_low_ils": 4750,
     "market_typical_ils": 4690,
     "price_basis": "exact",
-    "recommended_price_ils": 4690,
+    "recommended_price_ils": 4659,
     "estimated_cost_ils": 4542,
     "estimated_margin_ils": 148,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 4690, מתקין לפני מע\"מ 3849",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 4750 (satsigma/kav-isr 4750); מחיר מתקין טלרן+מע\"מ 4542; תחרותי",
+    "telran_installer_incl_vat": 4542
   },
   {
     "cost_source": "pricelist",
@@ -5329,7 +5384,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "kav-isr 5599",
         "price": 5599,
         "currency": "ILS"
       }
@@ -5337,12 +5392,14 @@
     "market_low_ils": 5599,
     "market_typical_ils": 5599,
     "price_basis": "exact",
-    "recommended_price_ils": 5599,
+    "recommended_price_ils": 5489,
     "estimated_cost_ils": 5427,
     "estimated_margin_ils": 172,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 5599, מתקין לפני מע\"מ 4599",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 5599 (kav-isr 5599); מחיר מתקין טלרן+מע\"מ 5427; תחרותי",
+    "telran_installer_incl_vat": 5427
   },
   {
     "cost_source": "pricelist",
@@ -5363,7 +5420,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "kav-isr 5599",
         "price": 5599,
         "currency": "ILS"
       }
@@ -5371,12 +5428,14 @@
     "market_low_ils": 5599,
     "market_typical_ils": 5599,
     "price_basis": "exact",
-    "recommended_price_ils": 5599,
+    "recommended_price_ils": 5489,
     "estimated_cost_ils": 5427,
     "estimated_margin_ils": 172,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 5599, מתקין לפני מע\"מ 4599",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 5599 (kav-isr 5599); מחיר מתקין טלרן+מע\"מ 5427; תחרותי",
+    "telran_installer_incl_vat": 5427
   },
   {
     "cost_source": "pricelist",
@@ -5396,7 +5455,7 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "source": "satsigma/kav-isr 89",
         "price": 89,
         "currency": "ILS"
       }
@@ -5404,12 +5463,14 @@
     "market_low_ils": 89,
     "market_typical_ils": 89,
     "price_basis": "exact",
-    "recommended_price_ils": 89,
+    "recommended_price_ils": 49,
     "estimated_cost_ils": 77,
     "estimated_margin_ils": 12,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 89, מתקין לפני מע\"מ 65",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 89 (satsigma/kav-isr 89); מחיר מתקין טלרן+מע\"מ 77; תחרותי",
+    "telran_installer_incl_vat": 77
   },
   {
     "cost_source": "pricelist",
@@ -5429,19 +5490,21 @@
     "datasheet_url": null,
     "market_prices": [
       {
-        "source": "Telran Reolink price list 05/2025 (consumer)",
-        "price": 89,
+        "source": "satsigma 85",
+        "price": 85,
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 89,
+    "market_low_ils": 85,
     "market_typical_ils": 89,
     "price_basis": "exact",
-    "recommended_price_ils": 89,
+    "recommended_price_ils": 79,
     "estimated_cost_ils": 77,
     "estimated_margin_ils": 12,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 89, מתקין לפני מע\"מ 65",
-    "batch": "reolink-pricelist-2026-09-23"
+    "batch": "reolink-pricelist-2026-09-23",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 85 (satsigma 85); מחיר מתקין טלרן+מע\"מ 77; תחרותי",
+    "telran_installer_incl_vat": 77
   }
 ]

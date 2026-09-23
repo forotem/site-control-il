@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { WHATSAPP_NUMBER, storeProducts } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, storeProducts, productName } from "../data/store-catalog";
 import { attrsOf, isCamera, isRecorder } from "../data/store-attrs";
 import { cart } from "./cart";
 import styles from "./store.module.css";
@@ -164,7 +164,7 @@ export function StoreChat() {
                         <Link href={`/store/${p.slug}`} className={c.chatProd}>
                           {p.image && <img src={p.image} alt="" loading="lazy" />}
                           <span>
-                            <b>{p.brand} {p.model}</b>
+                            <b>{productName(p)}</b>
                             <small>{p.title}</small>
                             <em>{p.price ? `${nis(p.price)} ₪` : "מחיר לפי פנייה"}</em>
                           </span>

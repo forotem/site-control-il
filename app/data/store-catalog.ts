@@ -8,6 +8,10 @@ export type StoreProduct = {
 export type StoreCategory = { id: string; name: string; blurb: string };
 export const WHATSAPP_NUMBER = "972502256866";
 export const WARRANTY_TEXT = "אחריות שנה על כל המוצרים";
+/** שם תצוגה: מותג + דגם, בלי לכפול את המותג כשהדגם כבר מתחיל בו ("Reolink Go PT Ultra"). */
+export const productName = (p: { brand: string; model: string }) =>
+  p.model.toLowerCase().startsWith(p.brand.toLowerCase()) ? p.model : `${p.brand} ${p.model}`;
+
 export const deliveryOptions = [
   { id: "courier", title: "משלוח עד הבית", desc: "שליח עד 3-5 ימי עסקים, בתוספת דמי משלוח" },
   { id: "pickup", title: "איסוף עצמי", desc: "ללא עלות, בתיאום מראש" },
@@ -59,7 +63,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת אינטרקום וידאו IP לוילה Hikvision DS-KIS607-S כולל מסך מגע 7\" ומתג PoE",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1349,
+    "price": 1309,
     "specs": [
       "ערכה מלאה: פנל דלת IP עם מצלמת 2MP (1080p, זווית אופקית 131°), מסך פנימי 7\" 1024x600 עם Wi-Fi, מתג PoE 4 פורטים, מודול ממסר, כרטיס מנהל, 5 תגים, כרטיס TF 32GB וספק",
       "שליטה מלאה מאפליקציית Hik-Connect: שיחה, פתיחת דלת וצפייה חיה מרחוק",
@@ -135,7 +139,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פנל אינטרקום IP לוילה Hikvision DS-KV8413-WME1(C) - 4 לחצנים, מצלמת 2MP, Wi-Fi/PoE, קורא כרטיסים",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 869,
+    "price": 839,
     "specs": [
       "מצלמת 2MP HD עם תאורת IR וזווית רחבה",
       "4 לחצני קריאה - מתאים לבניין/כניסה עם עד 4 יחידות דיור",
@@ -287,7 +291,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסוף זיהוי פנים Pro Hikvision DS-K1T671M - מסך מגע 7\", 6,000 פנים, כרטיס Mifare, IP65",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 2379,
+    "price": 1873,
     "specs": [
       "מסך מגע LCD 7\" ועדשה כפולה 2MP רחבת זווית - זיהוי גם בתאורה חלשה",
       "מרחק זיהוי פנים 0.3-3 מ', קיבולת 6,000 פנים ו-6,000 כרטיסי Mifare (גרסת MF מוסיפה 5,000 טביעות אצבע)",
@@ -312,7 +316,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-32 ערוצים AcuSense 4K, 2 דיסקים",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1349,
+    "price": 1063,
     "specs": [
       "32 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 256Mbps / יוצא 160Mbps",
@@ -364,7 +368,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-16 ערוצים AcuSense 4K, דיסק אחד",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 899,
+    "price": 708,
     "specs": [
       "16 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 80Mbps / יוצא 160Mbps",
@@ -390,7 +394,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-8 ערוצים עם 8 יציאות PoE, AcuSense 4K",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 999,
+    "price": 786,
     "specs": [
       "8 ערוצי IP + מתג PoE מובנה 8 יציאות (Plug & Play)",
       "רזולוציית הקלטה עד 12MP לערוץ",
@@ -416,7 +420,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision DVR היברידית ל-32 ערוצים AcuSense, 2 דיסקים",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 3349,
+    "price": 3159,
     "specs": [
       "32 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 8 ערוצי IP, סה\"כ עד 40 ערוצים",
       "הקלטה 1080p בכל הערוצים, קלט IP עד 8MP",
@@ -624,7 +628,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP טורט 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3628LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1189,
+    "price": 937,
     "specs": [
       "8MP (3840x2160) חיישן CMOS 1/1.8\" עם Wise-ISP, צבע מלא 24/7 (ColorHunter)",
       "עדשה קבועה 2.8 מ\"מ F1.0, זווית אופקית 111°",
@@ -858,7 +862,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה NVR 8 ערוצים 4K עד 8MP דיסק קשיח אחד Uniview NVR301",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 579,
+    "price": 456,
     "specs": [
       "8 ערוצי IP, רזולוציה עד 8MP/4K, Ultra 265/H.265/H.264",
       "רוחב פס כניסה 64Mbps / יציאה 48Mbps",
@@ -1170,7 +1174,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "גגון הגנה מגשם לקודן בקרת כניסה (מתאים לקודנים 560596/560597)",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 49,
+    "price": 39,
     "specs": [
       "ABS plastic rain/sun shield for surface-mounted keypads",
       "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
@@ -1194,7 +1198,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-820A, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 2699,
+    "price": 2599,
     "specs": [
       "8-channel PoE NVR (8 x 802.3at ports) with 2TB SATA HDD, max 12TB",
       "4 x RLC-820A 4K 8MP dome cameras, 1/2.49\" CMOS, 4.0 mm lens",
@@ -1246,7 +1250,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 5MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-510A, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 1999,
+    "price": 1959,
     "specs": [
       "8-channel 4K-capable PoE NVR (RLN8-410) with 2TB HDD",
       "4 x RLC-510A 5MP (2560x1920) bullet cameras",
@@ -1298,7 +1302,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-1224A צבע מלא עם זרקורים, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 3590,
+    "price": 3519,
     "specs": [
       "8-channel PoE NVR with 2TB HDD",
       "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
@@ -2206,7 +2210,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Plus, 4MP, סוללה וסים, בלי חשמל ובלי אינטרנט",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1129,
+    "price": 1109,
     "specs": [
       "4MP (2560×1440), עדשה קבועה רחבה",
       "חיבור 4G LTE עם כרטיס סים, לא צריך Wi-Fi או כבל רשת",
@@ -2232,7 +2236,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1139,
+    "price": 809,
     "specs": [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2258,7 +2262,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1129,
+    "price": 1109,
     "specs": [
       "5MP, מנוע Pan/Tilt: 355° אופקי, 140° אנכי, שליטה מהאפליקציה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2284,7 +2288,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1349,
+    "price": 1079,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2310,7 +2314,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G פנורמית Reolink Duo 2 LTE, שתי עדשות 180°, 6MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1539,
+    "price": 1509,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 6MP (4608×1728)",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2336,7 +2340,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1619,
+    "price": 1299,
     "specs": [
       "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
       "4MP, חיבור 4G LTE עם כרטיס סים",
@@ -2362,7 +2366,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink TrackMix LTE Plus עם פאנל סולארי 66W, הקלטה רציפה 24/7 על 4G",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 4199,
+    "price": 3899,
     "specs": [
       "כמו TrackMix LTE (שתי עדשות, זום x6, מעקב אוטומטי) עם הקלטה רציפה 24/7",
       "פאנל סולארי 66W כלול, לאתרים שצריכים הקלטה רציפה ולא רק לפי תנועה",
@@ -2413,7 +2417,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת שבילים 4G Reolink Talon Pro, 4K, GPS, סוללה, לשטח ולמטע",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1299,
+    "price": 1199,
     "specs": [
       "4K, חיישן Starlight לתמונה בלילה",
       "חיבור 4G LTE עם כרטיס סים, GPS מובנה",
@@ -2438,7 +2442,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 129,
+    "price": 79,
     "specs": [
       "הספק 6W, חיבור Type-C",
       "מתאים למצלמות Reolink בסוללה: Go Plus, Go Ultra, Go PT Plus, Argus, Duo 2, TrackMix",
@@ -2461,7 +2465,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 379,
+    "price": 259,
     "specs": [
       "3MP, עדשה קבועה",
       "Wi-Fi 2.4GHz, בלי כבלים",
@@ -2487,7 +2491,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 529,
+    "price": 349,
     "specs": [
       "5MP, עדשה קבועה",
       "Wi-Fi 2.4/5GHz",
@@ -2513,7 +2517,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 389,
+    "price": 289,
     "specs": [
       "3MP, עדשה רחבה 115°",
       "Wi-Fi 2.4GHz, 100% אלחוטית",
@@ -2538,7 +2542,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 559,
+    "price": 329,
     "specs": [
       "5MP (2560×1920)",
       "Wi-Fi 2.4/5GHz",
@@ -2564,7 +2568,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 659,
+    "price": 489,
     "specs": [
       "8MP 4K",
       "Wi-Fi 6 דו-ערוצי",
@@ -2590,7 +2594,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 899,
+    "price": 729,
     "specs": [
       "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
       "Wi-Fi דו-ערוצי",
@@ -2615,7 +2619,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 489,
+    "price": 359,
     "specs": [
       "3MP, מנוע Pan/Tilt 355°/140°",
       "Wi-Fi 2.4GHz",
@@ -2640,7 +2644,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E1 Pro, 4MP, ממונעת 355°, Wi-Fi, מעקב אחרי תנועה",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 259,
+    "price": 179,
     "specs": [
       "4MP, מנוע Pan/Tilt 355°/50°, מעקב אוטומטי אחרי תנועה",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2665,7 +2669,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E330, 5MP, ממונעת, Wi-Fi, זיהוי אדם וחיות מחמד",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 299,
+    "price": 289,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2690,7 +2694,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E1 Zoom, 5MP, ממונעת עם זום אופטי x3, Wi-Fi",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 419,
+    "price": 319,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2715,7 +2719,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi Reolink Lumus (E430), 4MP, זרקור 100 לומן, חיבור לחשמל",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 279,
+    "price": 159,
     "specs": [
       "4MP 2K, עדשה קבועה",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2740,7 +2744,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink TrackMix WiFi, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 1119,
+    "price": 1099,
     "specs": [
       "8MP 4K, שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2765,7 +2769,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink E1 Outdoor (E540), 5MP, זום x3, זרקור",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 569,
+    "price": 429,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2790,7 +2794,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi 6 ממונעת Reolink E1 Outdoor Pro (E560), 4K 8MP, זום x3",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 689,
+    "price": 479,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt, זום אופטי x3",
       "Wi-Fi 6 דו-ערוצי, חיבור לחשמל",
@@ -2815,7 +2819,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi פנורמית Reolink Duo 2 WiFi, שתי עדשות 180°, 4K",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 939,
+    "price": 839,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 4K",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2840,7 +2844,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת עין דג 360° Wi-Fi Reolink FE-W, 6MP, לתקרה, חיבור לחשמל",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 799,
+    "price": 739,
     "specs": [
       "6MP, עדשת עין דג 360° לתקרה: כל החדר במצלמה אחת",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2865,7 +2869,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פעמון וידאו Wi-Fi Reolink Video Doorbell, 4MP, שמע דו-כיווני, בלי מנוי",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 499,
+    "price": 369,
     "specs": [
       "4MP, עדשה 2.2 מ\"מ בזווית רחבה, רואים את כל מי שבדלת",
       "Wi-Fi 2.4/5GHz, חיבור לחיווט פעמון קיים",
@@ -2890,7 +2894,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE Reolink CX410, 4MP, ColorX צבע 24/7 בלי זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 549,
+    "price": 439,
     "specs": [
       "4MP 2K, חיישן F1.0 גדול: תמונה צבעונית בלילה גם בלי אור לבן (ColorX)",
       "PoE: חשמל ותקשורת בכבל רשת אחד",
@@ -2940,7 +2944,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE אנטי-ונדלית Reolink P327, 5MP, IK10, IP67",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 395,
+    "price": 379,
     "specs": [
       "5MP, כיפה עמידה למכות IK10",
       "PoE, זיהוי אדם/רכב",
@@ -3015,7 +3019,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE Reolink P337, 4K 8MP, זווית 125°, ראיית לילה צבעונית",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 499,
+    "price": 489,
     "specs": [
       "8MP 4K, עדשה רחבה 125°",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3040,7 +3044,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P340, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 589,
+    "price": 579,
     "specs": [
       "12MP (4512×2512), עדשה קבועה",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3065,7 +3069,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE Reolink P344, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 589,
+    "price": 529,
     "specs": [
       "12MP (4512×2512), כיפה",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3090,7 +3094,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P430, 4K 8MP, זום אופטי x5, זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 639,
+    "price": 629,
     "specs": [
       "8MP 4K, עדשה ממונעת עם זום אופטי x5",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3115,7 +3119,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink RLN8-410, 8 ערוצים, 8 יציאות PoE, ללא דיסק",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 969,
+    "price": 779,
     "specs": [
       "8 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
       "מפרץ SATA אחד עד 12TB, מסופק ללא דיסק",
@@ -3139,7 +3143,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink RLN16-410, 16 ערוצים, 8 יציאות PoE, ללא דיסק",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1299,
+    "price": 1129,
     "specs": [
       "16 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
       "מפרץ SATA אחד עד 12TB (אפשר להוסיף eSATA), מסופק ללא דיסק",
@@ -3187,7 +3191,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink NVS36, 36 ערוצים, ללא דיסק",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1399,
+    "price": 1279,
     "specs": [
       "36 ערוצי IP עד 12MP",
       "2 מפרצי SATA, מסופק ללא דיסק",
@@ -3211,7 +3215,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR אלחוטי Reolink NVS12W, 12 ערוצים Wi-Fi 6, ללא דיסק",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1159,
+    "price": 1139,
     "specs": [
       "12 ערוצים למצלמות Wi-Fi של Reolink (גם בסוללה), Wi-Fi 6 מובנה",
       "מפרץ SATA אחד, מסופק ללא דיסק",
@@ -3235,7 +3239,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "רכזת אבטחה ביתית Reolink Home Hub, אחסון מקומי לעד 8 מצלמות Reolink",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 499,
+    "price": 429,
     "specs": [
       "מרכזת עד 8 מצלמות Reolink (Wi-Fi ובסוללה) להקלטה מקומית",
       "2 חריצי microSD, ללא מנוי ענן",
@@ -3259,7 +3263,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 4 מ\"מ, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 4690,
+    "price": 4659,
     "specs": [
       "מקליט 16 ערוצים PoE עם דיסק 4TB",
       "8 מצלמות צינור 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
@@ -3283,7 +3287,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 4 מ\"מ, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 4690,
+    "price": 4659,
     "specs": [
       "מקליט 16 ערוצים PoE עם דיסק 4TB",
       "8 מצלמות כיפה 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
@@ -3307,7 +3311,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 12MP צבע 24/7, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 5599,
+    "price": 5489,
     "specs": [
       "מקליט 16 ערוצים PoE עם דיסק 4TB",
       "8 מצלמות צינור 12MP (RLC-1212A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
@@ -3331,7 +3335,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 12MP צבע 24/7, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 5599,
+    "price": 5489,
     "specs": [
       "מקליט 16 ערוצים PoE עם דיסק 4TB",
       "8 מצלמות כיפה 12MP (RLC-1224A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
@@ -3355,7 +3359,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "קופסת חיבורים Reolink B10 למצלמות צינור, להסתרת הכבל והחיבור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 89,
+    "price": 49,
     "specs": [
       "קופסת חיבורים למצלמות צינור של Reolink",
       "מסתירה את חיבור הכבל ומגינה עליו מגשם",
@@ -3377,7 +3381,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "קופסת חיבורים Reolink D20 למצלמות כיפה, להסתרת הכבל והחיבור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 89,
+    "price": 79,
     "specs": [
       "קופסת חיבורים למצלמות כיפה של Reolink",
       "מסתירה את חיבור הכבל ומגינה עליו מגשם",

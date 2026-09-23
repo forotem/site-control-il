@@ -1,0 +1,530 @@
+{
+ "date": "2026-09-23",
+ "apply": true,
+ "results": [
+  {
+   "slug": "ds-kis607-s",
+   "model": "DS-KIS607-S",
+   "brand": "Hikvision",
+   "ours": 1349,
+   "low": 1337,
+   "lowSeller": "zbm.co.il (via zap.co.il)",
+   "lowUrl": "https://www.zap.co.il/fs.aspx?pid=1396903572&sog=h-intercom&indicator=20",
+   "target": 1309,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.zap.co.il/fs.aspx?pid=1396903572&sog=h-intercom&indicator=20",
+     "seller": "zbm.co.il (via zap.co.il)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://zbm.co.il/product/%d7%a2%d7%a8%d7%9b%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%a8%d7%a7%d7%95%d7%9d-%d7%95%d7%99%d7%93%d7%90%d7%95-ip-%d7%9e%d7%9c%d7%90%d7%94-%d7%93%d7%92%d7%9d-ds-kis607-s/",
+     "price": 1337,
+     "method": "near-model-repeated"
+    },
+    {
+     "url": "https://zbm.co.il/?p=280473",
+     "seller": "ZBM (zbm.co.il) via zap",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://zbm.co.il/product/%d7%a2%d7%a8%d7%9b%d7%aa-%d7%90%d7%99%d7%a0%d7%98%d7%a8%d7%a7%d7%95%d7%9d-%d7%95%d7%99%d7%93%d7%90%d7%95-ip-%d7%9e%d7%9c%d7%90%d7%94-%d7%93%d7%92%d7%9d-ds-kis607-s/",
+     "price": 1337,
+     "method": "near-model-repeated"
+    }
+   ]
+  },
+  {
+   "slug": "ds-kv8413-wme1",
+   "model": "DS-KV8413-WME1(C)",
+   "brand": "Hikvision",
+   "ours": 869,
+   "low": 856,
+   "lowSeller": "zbm.co.il (via zap.co.il)",
+   "lowUrl": "https://www.zap.co.il/fs.aspx?pid=1396903598&sog=h-intercom&indicator=20",
+   "target": 839,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-hikvision-ip-2mp-camera-ir-%D7%90%D7%A8%D7%91%D7%A2%D7%94-%D7%9C%D7%97%D7%A6%D7%A0%D7%99%D7%9D-ds-kv8413-wme1c/",
+     "seller": "com4tech.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-hikvision-ip-2mp-camera-ir-%D7%90%D7%A8%D7%91%D7%A2%D7%94-%D7%9C%D7%97%D7%A6%D7%A0%D7%99%D7%9D-ds-kv8413-wme1c/",
+     "price": 895,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.zap.co.il/fs.aspx?pid=1396903598&sog=h-intercom&indicator=20",
+     "seller": "zbm.co.il (via zap.co.il)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://zbm.co.il/product/ds-kv8413-wme1c/",
+     "price": 856,
+     "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.zap.co.il/fs.aspx?pid=1141071069&sog=h-intercom&indicator=20",
+     "seller": "AllTechStore (via zap.co.il)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.alltechstore.co.il/items/8711764",
+     "price": 959,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "ds-k1t671m",
+   "model": "DS-K1T671M",
+   "brand": "Hikvision",
+   "ours": 2379,
+   "low": 1890,
+   "lowSeller": "com4tech.co.il",
+   "lowUrl": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99/",
+   "target": 1873,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99/",
+     "seller": "com4tech.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.com4tech.co.il/product/%d7%9e%d7%a1%d7%95%d7%a3-%d7%96%d7%99%d7%94%d7%95%d7%99-%d7%a4%d7%a0%d7%99%d7%9d-7-%d7%9e%d7%92%d7%a2-%d7%a7%d7%95%d7%a8%d7%90-%d7%9e%d7%99%d7%99%d7%a4%d7%99%d7%a8%d7%a8%d7%9e%d7%a7%d7%95%d7%9c-d/",
+     "price": 1890,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99-hikvision-ds-k1t671mf-face-fingerprint-terminal/",
+     "seller": "com4tech.co.il (fingerprint variant DS-K1T671MF)",
+     "note": "",
+     "ok": true,
+     "comparable": false,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.com4tech.co.il/product/%D7%9E%D7%A1%D7%95%D7%A3-%D7%96%D7%99%D7%94%D7%95%D7%99-hikvision-ds-k1t671mf-face-fingerprint-terminal/",
+     "price": 2450,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "ds-7632nxi-k2",
+   "model": "DS-7632NXI-K2(D)",
+   "brand": "Hikvision",
+   "ours": 1349,
+   "low": 746,
+   "lowSeller": "Senetic Israel",
+   "lowUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
+   "target": 1063,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
+     "seller": "Com4Tech",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
+     "price": 1550,
+     "method": "structured"
+    },
+    {
+     "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7632nxi-k2-32-ch-4k/",
+     "seller": "Connect Vision",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7632nxi-k2-32-ch-4k/",
+     "price": 1649,
+     "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.senetic.co.il/product/DS-7632NXI-K2",
+     "seller": "Senetic Israel",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
+     "price": 746,
+     "method": "structured+vat"
+    }
+   ]
+  },
+  {
+   "slug": "ds-7616nxi-k1",
+   "model": "DS-7616NXI-K1(D)",
+   "brand": "Hikvision",
+   "ours": 899,
+   "low": 505,
+   "lowSeller": "Senetic Israel",
+   "lowUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
+   "target": 708,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
+     "seller": "Connect Vision",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
+     "price": 1099,
+     "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.senetic.co.il/product/DS-7616NXI-K1",
+     "seller": "Senetic Israel",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
+     "price": 505,
+     "method": "structured+vat"
+    }
+   ]
+  },
+  {
+   "slug": "ds-7608nxi-k1-8p",
+   "model": "DS-7608NXI-K1/8P(D)",
+   "brand": "Hikvision",
+   "ours": 999,
+   "low": 569,
+   "lowSeller": "Senetic Israel",
+   "lowUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
+   "target": 786,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
+     "seller": "Senetic Israel",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
+     "price": 569,
+     "method": "structured+vat"
+    },
+    {
+     "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
+     "seller": "Senetic (senetic.co.il)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
+     "price": 819,
+     "method": "structured+vat"
+    }
+   ]
+  },
+  {
+   "slug": "ids-7232hqhi-m2-xt",
+   "model": "iDS-7232HQHI-M2/XT",
+   "brand": "Hikvision",
+   "ours": 3349,
+   "low": 3219,
+   "lowSeller": "AllTechStore via zap",
+   "lowUrl": "https://www.zap.co.il/search.aspx?keyword=iDS-7232HQHI",
+   "target": 3159,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7232hqhi-m2s",
+     "seller": "technovision.co.il (iDS-7232HQHI-M2/XT 4T, incl. 4TB HDD)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7232hqhi-m2s",
+     "price": 3450,
+     "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.zap.co.il/search.aspx?keyword=iDS-7232HQHI",
+     "seller": "AllTechStore via zap",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&keyword=ids-7232hqhi",
+     "price": 3219,
+     "method": "near-model"
+    }
+   ]
+  },
+  {
+   "slug": "ipc3628le-adf28k-wp",
+   "model": "IPC3628LE-ADF28K-WP",
+   "brand": "Uniview",
+   "ours": 1189,
+   "low": 605,
+   "lowSeller": "hitechcomputers.co.il",
+   "lowUrl": "https://www.hitechcomputers.co.il/items/8609694",
+   "target": 937,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
+     "seller": "senetic.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
+     "price": 1232,
+     "method": "structured+vat"
+    },
+    {
+     "url": "https://www.hitechcomputers.co.il/items/8609694",
+     "seller": "hitechcomputers.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.hitechcomputers.co.il/items/8609694",
+     "price": 605,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.alltechstore.co.il/items/8817682",
+     "seller": "AllTechStore (alltechstore.co.il)",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.alltechstore.co.il/items/8817682",
+     "price": 609,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.beres.co.il/active-equipment/cctv/ip-cameras",
+     "seller": "G. Beres Marketing (beres.co.il, Uniview-listed Israel partner)",
+     "note": "",
+     "ok": false,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.beres.co.il/active-equipment/cctv/ip-cameras"
+    }
+   ]
+  },
+  {
+   "slug": "nvr301-08s3",
+   "model": "NVR301-08S3",
+   "brand": "Uniview",
+   "ours": 579,
+   "low": 306,
+   "lowSeller": "hitechcomputers.co.il",
+   "lowUrl": "https://www.hitechcomputers.co.il/items/8941472",
+   "target": 456,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-%d7%9c8-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-uniview-nvr301-08b-iq/",
+     "seller": "com4tech.co.il (related newer model NVR301-08B-IQ, 8ch AI)",
+     "note": "",
+     "ok": true,
+     "comparable": false,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-%d7%9c8-%d7%a2%d7%a8%d7%95%d7%a6%d7%99%d7%9d-12-%d7%9e%d7%92%d7%94-uniview-nvr301-08b-iq/",
+     "price": 600,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.hitechcomputers.co.il/items/8941472",
+     "seller": "hitechcomputers.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.hitechcomputers.co.il/items/8941472",
+     "price": 306,
+     "method": "structured"
+    },
+    {
+     "url": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/uniview-ip-%D7%A8%D7%A9%D7%AA/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-%D7%9C8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-1tb-%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F-nvr301-08s3",
+     "seller": "vsale.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/uniview-ip-%D7%A8%D7%A9%D7%AA/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-%D7%9C8-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-1tb-%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F-nvr301-08s3",
+     "price": 769,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.senetic.co.il/product/NVR301-08S3",
+     "seller": "senetic.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
+     "price": 413,
+     "method": "text-anywhere+vat"
+    }
+   ]
+  },
+  {
+   "slug": "rain-roof-for-keypads-560878",
+   "model": "Rain roof for keypads 560878",
+   "brand": "VisionNet",
+   "ours": 49,
+   "low": 45,
+   "lowSeller": "Belshop",
+   "lowUrl": "https://www.belshop.co.il/items/5511408",
+   "target": 39,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.alon-computers.co.il/items/7888026-waterproof-access-control-rfid-cover-black",
+     "seller": "Alon Computers",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.alon-computers.co.il/items/7888026-waterproof-access-control-rfid-cover-black",
+     "price": 49,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.belshop.co.il/items/5511408",
+     "seller": "Belshop",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.belshop.co.il/items/5511408",
+     "price": 45,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-video-doorbell-wifi",
+   "model": "Doorbell WiFi",
+   "brand": "Reolink",
+   "ours": 389,
+   "low": 379,
+   "lowSeller": "Refaeli (via zap search)",
+   "lowUrl": "https://www.zap.co.il/fs.aspx?pid=1188027572",
+   "target": 369,
+   "action": "applied",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://bconnect.co.il/product/reolink-video-doorbell-wifi/",
+     "seller": "bconnect.co.il",
+     "note": "sale (reg 599)",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://bconnect.co.il/product/reolink-video-doorbell-wifi/",
+     "price": 399,
+     "method": "structured"
+    },
+    {
+     "url": "https://kav-isr.com/access-control/intercom/reolink-video-doorbell-wifi.html",
+     "seller": "kav-isr.com",
+     "note": "sale (reg 499), +30 shipping",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://kav-isr.com/access-control/intercom/reolink-video-doorbell-wifi.html",
+     "price": 399,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.satsigma.co.il/product/reolink-video-doorbell-wifi-2k/",
+     "seller": "satsigma.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/reolink-video-doorbell-wifi-2k/",
+     "price": 399,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.zap.co.il/fs.aspx?pid=1188027572",
+     "seller": "Refaeli (via zap search)",
+     "note": "409 INCLUDING 30 shipping (=379 item); product page did not render",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://refaeli.co.il/items/9072603",
+     "price": 379,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.alltechstore.co.il/items/8772620",
+     "seller": "alltechstore.co.il",
+     "note": "snippet: 449 -> 430",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.alltechstore.co.il/items/8772620",
+     "price": 539,
+     "method": "structured"
+    }
+   ]
+  }
+ ]
+}

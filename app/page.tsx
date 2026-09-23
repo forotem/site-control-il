@@ -31,6 +31,7 @@ const catImage: Record<string, string> = {
   intercom: "ds-kis607-s",
   wifi: "ch10",
   analog: "ds-2ce12kf0t-lfs-2-8mm",
+  solar: "reolink-go-pt-ultra",
 };
 
 // המותגים שאנחנו עובדים איתם: לוגו רשמי בלבן על אריח כהה בשפה של האתר
@@ -106,7 +107,8 @@ export default function Page() {
           <div className={styles.cats}>
             {storeCategories.map((c) => {
               const n = storeProducts.filter((p) => p.category === c.id).length;
-              const img = bySlug(catImage[c.id])?.image;
+              // אם אין מיפוי ידני לקטגוריה (למשל קטגוריה חדשה), לוקחים את המוצר הראשון עם תמונה, כדי שלא יישאר אריח ריק
+              const img = bySlug(catImage[c.id])?.image || storeProducts.find((p) => p.category === c.id && p.image)?.image;
               return (
                 <Link key={c.id} href={`/store#${c.id}`} className={styles.cat}>
                   <span className={styles.tile}>{img && <img src={img} alt="" loading="lazy" />}</span>

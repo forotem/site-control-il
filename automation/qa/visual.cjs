@@ -49,6 +49,7 @@ function rectsOverlap(a, b) { return !(a.right <= b.left || b.right <= a.left ||
           const a = rects[i], b = rects[j];
           if (a.r.width * a.r.height > 300000 || b.r.width * b.r.height > 300000) continue; // full-screen overlays
           if (rects[i].el.startsWith("NAV") || rects[j].el.startsWith("NAV")) continue;
+          if (/^(TH|TD)\./.test(rects[i].el) || /^(TH|TD)\./.test(rects[j].el)) continue; // כותרות טבלה דביקות, לא באג
           if (fixed[i].contains(fixed[j]) || fixed[j].contains(fixed[i])) continue;
           const A = a.r, B = b.r;
           if (!(A.right <= B.left || B.right <= A.left || A.bottom <= B.top || B.bottom <= A.top)) overlaps.push(a.el + " x " + b.el);
@@ -57,12 +58,18 @@ function rectsOverlap(a, b) { return !(a.right <= b.left || b.right <= a.left ||
         const tinyTap = [...document.querySelectorAll("a,button")].filter((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && (r.height < 28 || r.width < 28) && el.offsetParent !== null; }).length;
         const imgsNoAlt = [...document.querySelectorAll("img")].filter((i) => !i.hasAttribute("alt")).length;
         const brokenImgs = [...document.querySelectorAll("img")].filter((i) => i.complete && i.naturalWidth === 0 && !i.src.startsWith("data:")).map((i) => i.getAttribute("src")).slice(0, 5);
-        return { overflowX, wide, overlaps, h1, tinyTap, imgsNoAlt, brokenImgs };
+        // אריחי תמונה ריקים: מיכל עם רקע לבן/אריח בגודל תמונה בלי img או עם img ריק (כמו אריח הקטגוריה הסולארית 23/09)
+        const emptyTiles = [...document.querySelectorAll("[class*=tile], [class*=thumb], [class*=gallery]")].filter((el) => {
+          const r = el.getBoundingClientRect(); if (r.width < 60 || r.height < 60 || el.offsetParent === null) return false;
+          const img = el.querySelector("img"); return !img || (img.complete && img.naturalWidth === 0) || img.getBoundingClientRect().width === 0;
+        }).map((el) => String(el.className || "").split(" ")[0] + " @" + Math.round(el.getBoundingClientRect().top)).slice(0, 5);
+        return { overflowX, wide, overlaps, h1, tinyTap, imgsNoAlt, brokenImgs, emptyTiles };
       });
       if (m.overflowX > 2) findings.push({ w, p, issue: `horizontal overflow ${m.overflowX}px`, detail: m.wide });
       if (m.overlaps.length) findings.push({ w, p, issue: "fixed elements overlap", detail: m.overlaps });
       if (m.h1 !== 1) findings.push({ w, p, issue: `h1 count ${m.h1}` });
       if (m.brokenImgs.length) findings.push({ w, p, issue: "broken images", detail: m.brokenImgs });
+      if (m.emptyTiles.length) findings.push({ w, p, issue: "empty image tiles", detail: m.emptyTiles });
       if (m.imgsNoAlt) findings.push({ w, p, issue: `${m.imgsNoAlt} images without alt` });
       if (consoleErrors.length) findings.push({ w, p, issue: "console errors", detail: [...new Set(consoleErrors)].slice(0, 4) });
       const realFailed = failed.filter((f) => !/googleapis|gstatic|google-analytics|googletagmanager|vercel-insights|clarity/.test(f));

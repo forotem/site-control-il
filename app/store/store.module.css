@@ -57,8 +57,8 @@
 .recItem { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 0.9rem; align-items: center; padding: 0.7rem 0.8rem; border-radius: 12px; border: 1px solid var(--border); background: var(--card); }
 .recItem:has(> .recBody:first-child) { grid-template-columns: minmax(0, 1fr); }
 @media (max-width: 520px) { .recItem { grid-template-columns: 56px minmax(0, 1fr); } .recPrice { grid-column: 2; text-align: start; } }
-.recThumb { width: 72px; aspect-ratio: 1; border-radius: 10px; background: #fff; display: grid; place-items: center; overflow: hidden; }
-.recThumb img { width: 100%; height: 100%; object-fit: contain; padding: 8%; }
+.recThumb { width: 72px; aspect-ratio: 1; border-radius: 10px; background: #fff; position: relative; overflow: hidden; }
+.recThumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8%; }
 .recBody { display: grid; gap: 0.15rem; min-width: 0; }
 .recBody p { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
 .recRole { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
@@ -125,8 +125,9 @@
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; }
 .card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; transition: border-color var(--transition-fast), background var(--transition-fast); }
 .card:hover { border-color: var(--border-accent); background: var(--card-hover); }
-.thumb { aspect-ratio: 1 / 1; background: #fff; display: grid; place-items: center; overflow: hidden; }
-.thumb img { width: 100%; height: 100%; object-fit: contain; padding: 10%; }
+/* התמונה ממוקמת אבסולוטית: אחוזי גובה לא נפתרים בתוך קופסת aspect-ratio, ותמונה לגובה הייתה נחתכת */
+.thumb { aspect-ratio: 1 / 1; background: #fff; position: relative; overflow: hidden; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 10%; }
 .thumbEmpty { aspect-ratio: 1 / 1; display: grid; place-items: center; background: linear-gradient(135deg, #0f1a2b, #0c1220); color: var(--accent); font-weight: 800; font-size: 2rem; letter-spacing: 0.04em; }
 .body { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.9rem 0.95rem 1rem; flex: 1; }
 .brand { font-size: 0.75rem; color: var(--accent); font-weight: 600; display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
@@ -151,8 +152,8 @@
 .productWrap { padding-bottom: 6rem; }
 .product { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 2rem; align-items: start; margin-top: 1rem; }
 @media (max-width: 860px) { .product { grid-template-columns: 1fr; } }
-.gallery { background: #fff; border-radius: var(--radius-lg); aspect-ratio: 1 / 1; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--border); position: sticky; top: 90px; }
-.gallery img { width: 100%; height: 100%; object-fit: contain; padding: 8%; }
+.gallery { background: #fff; border-radius: var(--radius-lg); aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--border); position: sticky; top: 90px; }
+.gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8%; }
 .galleryEmpty { aspect-ratio: 1 / 1; border-radius: var(--radius-lg); display: grid; place-items: center; background: linear-gradient(135deg, #0f1a2b, #0c1220); color: var(--accent); font-weight: 800; font-size: 3rem; border: 1px solid var(--border); }
 .info { display: grid; gap: 1.1rem; }
 .info h1 { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; color: var(--text-bright); text-wrap: balance; }
@@ -201,7 +202,7 @@
   .stickyBar b { color: var(--text-bright); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
   .stickyBar span { color: var(--muted); font-size: 0.75rem; direction: ltr; text-align: right; }
   .stickyBar .cta { padding: 0.7rem 1rem; font-size: 0.95rem; box-shadow: none; }
-  .gallery { position: static; aspect-ratio: 4 / 3; max-height: 340px; }
+  .gallery { position: relative; aspect-ratio: 4 / 3; max-height: 340px; }
 }
 
 /* ---- closing ---- */

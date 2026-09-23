@@ -68,7 +68,7 @@ function rectsOverlap(a, b) { return !(a.right <= b.left || b.right <= a.left ||
         for (const el of [document.querySelector("h1"), ...[...document.querySelectorAll("main p, main h2")].slice(0, 3)].filter(Boolean)) {
           const r = el.getBoundingClientRect(); if (r.width === 0 || r.top < 0 || r.top > innerHeight) { el.scrollIntoView({ block: "center" }); }
           const rr = el.getBoundingClientRect(); const hit = document.elementFromPoint(Math.min(innerWidth - 2, Math.max(2, rr.left + rr.width / 2)), rr.top + Math.min(rr.height / 2, 12));
-          if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) { const cs = getComputedStyle(hit); if (cs.position !== "fixed") covered.push(`${el.tagName} under ${hit.tagName}.${String(hit.className || "").split(" ")[0]}`); }
+          if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) { let fixed = false; for (let a = hit; a && a !== document.body; a = a.parentElement) { const ps = getComputedStyle(a).position; if (ps === "fixed" || ps === "sticky") { fixed = true; break; } } if (!fixed) covered.push(`${el.tagName} under ${hit.tagName}.${String(hit.className || "").split(" ")[0]}`); }
         }
         window.scrollTo(0, 0);
         return { overflowX, wide, overlaps, h1, tinyTap, imgsNoAlt, brokenImgs, emptyTiles, covered };

@@ -59,3 +59,32 @@
 - הרפו יושב על Google Drive (G:). `npm run build` מקומי עלול להיכשל (EINVAL); לבדיקת טיפוסים `npx tsc --noEmit`; `npm run dev` (פורט 3002) עובד. בנייה אמיתית רק ב-Vercel.
 - ווצאפ: GreenAPI instance 7103123858 (הפרטים בסקריפט הלידים leads.js). שליחת קבצים עם עברית: דרך python requests, לא curl -F.
 - תמלול: faster-whisper עם המודל ivrit-ai/whisper-large-v3-turbo-ct2 על ה-GPU המקומי (RTX 3090).
+
+## 9. מצב פרסום (23/09/2026 ערב)
+
+- כל 84 המוצרים עם תמונה מקומית (public/store-images, WebP). 18 תמונות חסרות הושלמו ממקורות רשמיים (Visiotech CDN, assets.hikvision.com, סוחרים); שתיים זהות (iDS-7204/7216 אותו שלדה).
+- החנות הועלתה לענף `store-preview` ב-GitHub (commit 8d550cc) מתוך worktree נקי ב-`C:\sc\wt` (מבוסס origin/master 956e1c6). דחיפה ישירה ל-master נחסמה ע"י מנגנון ההרשאות של הסשן; המיזוג נעשה ע"י רותם דרך GitHub: https://github.com/forotem/site-control-il/compare/master...store-preview
+- אחרי מיזוג ל-master: Vercel פורס אוטומטית, והחנות זמינה ב-https://www.site-control-il.com/store (noindex, בלי קישור בתפריט). זה הקישור לעידן.
+- ה-Vercel של הפרויקט: פריסות preview מוגנות ב-SSO (all_except_custom_domains), לכן קישור preview לא יעבוד לעידן; רק הדומיין הראשי.
+- תיקיית העבודה על G: עדיין מכילה שינויים ישנים לא מחויבים של בוט הבלוג (תמונות png/webp). לא לגעת בהם בלי לבדוק.
+- הקישור לתפריט ולמפת האתר (app/layout.tsx, app/sitemap.ts) נערך רק בעותק שעל G:, ולא נכלל בענף. להוסיף כשמסירים את ה-noindex.
+
+## 10. שכבת המכירה (23/09/2026 לילה, commit d1bc145 ואילך בענף store-preview)
+
+מה רותם ביקש: חנות ממוקדת מכירה, פחות בלבול בין מוצרים דומים, שאלון "מה הצורך שלך", עיצוב טוב יותר, ושבוט הבלוג יקדם את החנות. ואז: סוכן AI באתר שמכיר את כל המוצרים, מעביר אליו שאלות שאין לו תשובה, קופץ ללקוח, עם פרצוף, ועגלת קניות עם הנחת כמות לקבלנים.
+
+מה נבנה (הכל ב-`C:\sc\wt`, worktree של הענף; הרפו על G: לא עודכן בקבצים האלה עד הסנכרון בסוף הסשן):
+- `app/data/store-attrs.ts`: מאפיינים מובנים ל-84 המוצרים (סוג גוף, רזולוציה, לילה ir/color/hybrid, טווח, שמע, AI, ערוצים, PoE, חיווט אינטרקום) + `fitLine()` ("מתאים ל") + `tierOf()`. נגזר מהכותרות בסקריפט ונבדק ידנית. מוצר חדש = שורה חדשה כאן.
+- `app/store/finder-logic.ts`: לוגיקת השאלון (5 שאלות: מה מאבטחים / מה קיים / כמה נקודות / מה חשוב / תקציב) עם כללים מפורשים לכל תרחיש (אתר בנייה -> סולארי, אינטרקום לפי בית/עסק/בניין, מצלמה בודדת -> Tenda, שדרוג אנלוגי, מצלמות למקליט קיים, ערכת Reolink ל-2-4, מערכת IP מלאה). `ProductFinder.tsx` הוא ה-UI, גם בדף החנות וגם ב-`/store/finder`. בסוף: "לשלוח את ההמלצה בווצאפ" עם טקסט מוכן.
+- `app/data/store-guides.ts` + `CategoryGuide.tsx` + `CompareTable.tsx`: "איך בוחרים" לכל קטגוריה, מונחים, וטבלאות השוואה (שורות שונות מודגשות). בדף מוצר: השוואה אוטומטית מול הדגם הזול הבא והיקר הבא מאותו סוג גוף.
+- כרטיס מוצר: שבבי מפרט (רזולוציה, צבע/אינפרא/היברידי, אור+סירנה, מיקרופון) + שורת "מתאים ל". דף מוצר: "בקצרה" בשפת לקוח לפני המפרט, פס קנייה דביק במובייל (הכפתורים הצפים של האתר מורמים מעליו דרך `body:has(.store-sticky-bar)` ב-globals.css).
+- סוכן AI "טל" (לא "נועה": נועה בן זקן היא עובדת אמיתית): `app/api/store-chat/route.ts` (Gemini 2.5 Flash דרך REST, פלט JSON לפי סכמה, thinkingBudget 0, בסיס ידע מ-`app/data/store-knowledge.ts` שנבנה מהקטלוג + המדריכים + מדיניות). מחזיר reply + עד 3 מוצרים ככרטיסים. שדות escalate/lead -> `app/lib/store-notify.ts` שולח לרותם ווצאפ (GreenAPI) או מייל (Resend) עם תמליל השיחה. הווידג'ט: `app/store/StoreChat.tsx` (בועת ברכה אחרי 7 שניות פעם בסשן, שאלות מהירות, כפתור "לעגלה" על כל מוצר שהוא מציע). אווטאר: `public/store-images/assistant-avatar.png` (איור שטוח מ-Nano Banana, לא פוטוריאליסטי, ומסומן "עוזר AI").
+- עגלה: `app/store/cart.ts` (localStorage) + `CartUI.tsx` (AddToCart עם כמות בדף מוצר, כפתור עגלה צף, מגירה עם טופס שם/טלפון/אספקה -> `/api/store-order` -> הודעה לצוות עם מספר הזמנה SC-xxxx; 5 יחידות+ או 5,000 ₪+ מסומן "קבלן, להכין הצעה עם הנחת כמות"). אין תשלום באתר: הצוות מאשר זמינות מול עידן וחוזר ללקוח. הכל מותקן דרך `app/store/layout.tsx`.
+- בוט הבלוג: `automation/store-topics.js` (30 נושאי חנות עם slugs, בחירת מוצרים אמיתיים מהקטלוג לפי קטגוריה, פרומפט ייעודי, סצנת תמונה) ו-`blog-bot.js` עם `FOCUS`: ימי שני = חנות, אחרת סולארי; `BLOG_FOCUS=store` כופה; ב-GitHub Actions יש input `focus`. הפוסטים מקשרים ל-/store, /store/finder ולדפי מוצר עם מחירים מהקטלוג.
+
+## 11. מה רותם צריך לעשות (Vercel)
+
+1. למזג את `store-preview` ל-master (הקישור בסעיף 9). אחרי המיזוג: https://www.site-control-il.com/store, /store/finder.
+2. משתני סביבה ב-Vercel (Settings > Environment Variables, Production + Preview): `GEMINI_API_KEY` (חובה לצ'אט; אותו מפתח של בוט הבלוג), `GREEN_ID_INSTANCE` + `GREEN_API_TOKEN` (התראות ווצאפ, הערכים ב-leads.js CONFIG של מערכת הלידים), אופציונלי `STORE_ALERT_WHATSAPP` (ברירת מחדל 972502256866), `STORE_ALERT_EMAIL` (ברירת מחדל info@site-control-il.com). בלי GreenAPI ההתראות הולכות במייל דרך RESEND_API_KEY שכבר קיים.
+3. ה-MCP של Vercel בסשן הזה רואה את רשימת הפרויקטים אבל get_project / env מחזירים 404 (הרשאת טוקן), לכן לא הוגדר אוטומטית.
+4. בדיקה מקומית: `C:\sc\wt\.env.local` מכיל GEMINI_API_KEY (לא בגיט). `npm run build` עובד ב-C:\sc\wt; `.claude/launch.json` בתיקיית האב מגדיר `store-wt` (next start על 3005).

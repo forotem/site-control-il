@@ -2220,7 +2220,7 @@ export const storeProducts: StoreProduct[] = [
       "סוללה + פאנל סולארי: אפס כבלים",
       "התראות PIR לנייד ושמע דו-כיווני"
     ],
-    "image": "/store-images/reolink-go-plus.webp",
+    "image": "/store-images/reolink-go-plus-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2246,7 +2246,7 @@ export const storeProducts: StoreProduct[] = [
       "4G LTE עם סים, בלי תשתית",
       "סוללה + פאנל סולארי"
     ],
-    "image": "/store-images/reolink-go-ultra.webp",
+    "image": "/store-images/reolink-go-ultra-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2272,7 +2272,7 @@ export const storeProducts: StoreProduct[] = [
       "4G LTE עם סים, בלי תשתית",
       "סוללה + פאנל סולארי"
     ],
-    "image": "/store-images/reolink-go-pt-plus.webp",
+    "image": "/store-images/reolink-go-pt-plus-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2298,7 +2298,7 @@ export const storeProducts: StoreProduct[] = [
       "פאנל סולארי כלול: פותחים ומתקינים",
       "4G LTE עם סים, בלי תשתית"
     ],
-    "image": "/store-images/reolink-go-pt-ultra.webp",
+    "image": "/store-images/reolink-go-pt-ultra-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2324,7 +2324,7 @@ export const storeProducts: StoreProduct[] = [
       "4G LTE עם סים",
       "סוללה + פאנל סולארי"
     ],
-    "image": "/store-images/reolink-duo-2-lte.webp",
+    "image": "/store-images/reolink-duo-2-lte-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2350,7 +2350,7 @@ export const storeProducts: StoreProduct[] = [
       "מעקב אוטומטי אחרי תנועה",
       "4G LTE עם סים, סוללה ופאנל"
     ],
-    "image": "/store-images/reolink-trackmix-lte.webp",
+    "image": "/store-images/reolink-trackmix-lte-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2375,7 +2375,7 @@ export const storeProducts: StoreProduct[] = [
       "פאנל 66W כלול",
       "זום ומעקב אוטומטי"
     ],
-    "image": "/store-images/reolink-trackmix-lte-plus-solar.webp",
+    "image": "/store-images/reolink-trackmix-lte-plus-solar-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2401,7 +2401,7 @@ export const storeProducts: StoreProduct[] = [
       "פאנל סולארי כלול",
       "4G LTE עם סים"
     ],
-    "image": "/store-images/reolink-go-ranger-pt.webp",
+    "image": "/store-images/reolink-go-ranger-pt-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2449,7 +2449,7 @@ export const storeProducts: StoreProduct[] = [
       "טעינה רציפה בלי להוריד את המצלמה",
       "מתאים לכל מצלמות הסוללה של Reolink"
     ],
-    "image": "/store-images/reolink-solar-panel-2.webp",
+    "image": "/store-images/reolink-solar-panel-2-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2475,7 +2475,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi + סוללה",
       "התראות PIR לנייד"
     ],
-    "image": "/store-images/reolink-argus-eco.webp",
+    "image": "/store-images/reolink-argus-eco-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2501,7 +2501,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi 5GHz יציב יותר",
       "סוללה + פאנל"
     ],
-    "image": "/store-images/reolink-argus-eco-pro.webp",
+    "image": "/store-images/reolink-argus-eco-pro-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2526,7 +2526,7 @@ export const storeProducts: StoreProduct[] = [
       "זרקור וצבע בלילה",
       "Wi-Fi + סוללה"
     ],
-    "image": "/store-images/reolink-argus-3e.webp",
+    "image": "/store-images/reolink-argus-3e-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2552,7 +2552,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi 5GHz",
       "סוללה + פאנל"
     ],
-    "image": "/store-images/reolink-argus-3-pro.webp",
+    "image": "/store-images/reolink-argus-3-pro-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2578,7 +2578,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi 6",
       "זרקור וצבע בלילה"
     ],
-    "image": "/store-images/reolink-argus-3-ultra.webp",
+    "image": "/store-images/reolink-argus-3-ultra-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2603,7 +2603,7 @@ export const storeProducts: StoreProduct[] = [
       "4K בסוללה",
       "Wi-Fi, בלי כבלים"
     ],
-    "image": "/store-images/reolink-argus-track.webp",
+    "image": "/store-images/reolink-argus-track-v2.webp",
     "datasheet": null,
     "oldStock": false
   },
@@ -2628,7 +2628,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi, בלי כבלים",
       "סוללה + פאנל"
     ],
-    "image": "/store-images/reolink-argus-pt-lite.webp",
+    "image": "/store-images/reolink-argus-pt-lite-v2.webp",
     "datasheet": null,
     "oldStock": false
   },

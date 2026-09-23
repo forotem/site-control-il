@@ -97,3 +97,5 @@
   .chat { height: 100dvh; }
   .chatList { padding-bottom: 1.5rem; }
 }
+
+.msgBot a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }

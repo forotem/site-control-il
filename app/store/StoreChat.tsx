@@ -41,6 +41,21 @@ function nudgeFor(page: string | undefined, pagesSeen: number): string {
 
 const nis = (v: number) => v.toLocaleString("he-IL");
 
+/** קישורים בתוך טקסט של טל: כתובות מלאות ונתיבים באתר (/products/go, /packages) הופכים ללחיצים */
+const LINK_RE = /(https?:\/\/[^\s)]+|(?<![\w/])\/(?:store|products|packages|pricing|contact|blog|about|locations|use-cases|cloud-backup|weatherproof|video-quality)(?:[\w\-/#]*)?)/g;
+function renderText(text: string) {
+  const parts = text.split(LINK_RE);
+  return parts.map((part, i) => {
+    if (!part) return null;
+    if (/^https?:\/\//.test(part)) {
+      const clean = part.replace(/[.,;:]+$/, "");
+      return <a key={i} href={clean} target="_blank" rel="noopener noreferrer">{clean.replace(/^https?:\/\//, "")}</a>;
+    }
+    if (part.startsWith("/")) return <Link key={i} href={part.replace(/[.,;:]+$/, "")}>{part}</Link>;
+    return <span key={i}>{part}</span>;
+  });
+}
+
 export function StoreChat() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -141,7 +156,7 @@ export function StoreChat() {
           <div className={c.chatList} ref={listRef}>
             {msgs.map((m, i) => (
               <div key={i} className={m.role === "user" ? c.msgUser : c.msgBot}>
-                <p>{m.content}</p>
+                <p>{renderText(m.content)}</p>
                 {m.products && m.products.length > 0 && (
                   <ul className={c.chatProducts}>
                     {m.products.map((p) => (

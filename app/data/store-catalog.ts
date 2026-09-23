@@ -2206,7 +2206,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Plus, 4MP, סוללה וסים, בלי חשמל ובלי אינטרנט",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1189,
+    "price": 1129,
     "specs": [
       "4MP (2560×1440), עדשה קבועה רחבה",
       "חיבור 4G LTE עם כרטיס סים, לא צריך Wi-Fi או כבל רשת",
@@ -2232,7 +2232,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1279,
+    "price": 1139,
     "specs": [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2258,7 +2258,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1279,
+    "price": 1129,
     "specs": [
       "5MP, מנוע Pan/Tilt: 355° אופקי, 140° אנכי, שליטה מהאפליקציה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2284,7 +2284,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1489,
+    "price": 1349,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2310,7 +2310,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G פנורמית Reolink Duo 2 LTE, שתי עדשות 180°, 6MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1599,
+    "price": 1539,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 6MP (4608×1728)",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2336,7 +2336,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1799,
+    "price": 1619,
     "specs": [
       "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
       "4MP, חיבור 4G LTE עם כרטיס סים",
@@ -2438,7 +2438,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 149,
+    "price": 129,
     "specs": [
       "הספק 6W, חיבור Type-C",
       "מתאים למצלמות Reolink בסוללה: Go Plus, Go Ultra, Go PT Plus, Argus, Duo 2, TrackMix",
@@ -2461,7 +2461,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 389,
+    "price": 379,
     "specs": [
       "3MP, עדשה קבועה",
       "Wi-Fi 2.4GHz, בלי כבלים",
@@ -2487,7 +2487,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 549,
+    "price": 529,
     "specs": [
       "5MP, עדשה קבועה",
       "Wi-Fi 2.4/5GHz",
@@ -2513,7 +2513,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 409,
+    "price": 389,
     "specs": [
       "3MP, עדשה רחבה 115°",
       "Wi-Fi 2.4GHz, 100% אלחוטית",
@@ -2564,7 +2564,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 689,
+    "price": 659,
     "specs": [
       "8MP 4K",
       "Wi-Fi 6 דו-ערוצי",
@@ -2615,7 +2615,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 519,
+    "price": 489,
     "specs": [
       "3MP, מנוע Pan/Tilt 355°/140°",
       "Wi-Fi 2.4GHz",
@@ -2640,7 +2640,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E1 Pro, 4MP, ממונעת 355°, Wi-Fi, מעקב אחרי תנועה",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 270,
+    "price": 259,
     "specs": [
       "4MP, מנוע Pan/Tilt 355°/50°, מעקב אוטומטי אחרי תנועה",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2740,7 +2740,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink TrackMix WiFi, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 1190,
+    "price": 1119,
     "specs": [
       "8MP 4K, שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2765,7 +2765,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink E1 Outdoor (E540), 5MP, זום x3, זרקור",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 589,
+    "price": 569,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2790,7 +2790,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi 6 ממונעת Reolink E1 Outdoor Pro (E560), 4K 8MP, זום x3",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 719,
+    "price": 689,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt, זום אופטי x3",
       "Wi-Fi 6 דו-ערוצי, חיבור לחשמל",
@@ -2815,7 +2815,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi פנורמית Reolink Duo 2 WiFi, שתי עדשות 180°, 4K",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 999,
+    "price": 939,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 4K",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",

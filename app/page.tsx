@@ -37,7 +37,7 @@ const catImage: Record<string, string> = {
 const brands = [
   { key: "hikvision", name: "Hikvision", line: "מצלמות IP, מקליטים ואינטרקום", href: "/store#ip" },
   { key: "uniview", name: "Uniview", line: "מצלמות IP ומקליטים במחיר חכם", href: "/store#ip" },
-  { key: "reolink", name: "Reolink", line: "ערכות מוכנות עם מקליט ודיסק", href: "/store#kits" },
+  { key: "reolink", name: "Reolink", line: "ערכות מוכנות ומצלמות סולאריות 4G", href: "/store#solar" },
   { key: "visionnet", name: "VisionNet", line: "אינטרקום 2 גידים וקודנים", href: "/store#intercom" },
   { key: "tenda", name: "Tenda", line: "מצלמות Wi-Fi לבית", href: "/store#wifi" },
   { key: "hiwatch", name: "HiWatch by Hikvision", line: "מצלמות 4K במחיר נגיש", href: "/store#ip" },
@@ -50,7 +50,7 @@ const faq = [
   { q: "איך אני יודע איזו מצלמה מתאימה לי?", a: "בחנות יש שאלון קצר של חמש שאלות שמצמצם את הבחירה לשניים-שלושה דגמים עם הסבר. יש גם עוזר AI שמכיר את כל המוצרים, ותמיד אפשר לכתוב לנו בווצאפ." },
   { q: "מה עם אחריות ושירות?", a: `${WARRANTY_TEXT}, בשיתוף היבואן הראשי. אנחנו מכירים אותו ואת המוצרים מהשטח, אז כל שאלה או תקלה, מדברים איתנו ואנחנו מבררים בשבילכם. אחרי ההתקנה יש תמיכה טלפונית להגדרות האפליקציה.` },
   { q: "יש הנחה לקבלנים ולכמויות?", a: "כן. מ-5 יחידות מאותו מוצר או הזמנה מעל 5,000 ₪ אנחנו מכינים הצעת מחיר עם הנחת כמות במקום המחיר באתר. אפשר להרכיב עגלה באתר ולסמן שזו הזמנה לקבלן." },
-  { q: "ומה עם אתר בנייה בלי חשמל?", a: "לשם מתאימה מצלמה סולארית עם סים 4G והקלטה לענן. זה לא מוצר מדף בחנות אלא התקנה לפי הצעת מחיר לאתר. כתבו לנו מה יש במקום ונחזור עם פתרון." },
+  { q: "ומה עם אתר בנייה בלי חשמל?", a: "לשם יש בחנות את מצלמות הסוללה של Reolink עם סים 4G ופאנל סולארי, מ-Go Plus הקבועה ועד TrackMix עם זום ומעקב. מקליטות לכרטיס ושולחות התראה לנייד. ההתקנה על עמוד או פיגום לפי הצעת מחיר." },
 ];
 
 export default function Page() {
@@ -160,12 +160,12 @@ export default function Page() {
           <div className={styles.solarText}>
             <h2 id="solar">אתר בנייה, שטח או מחסן בלי חשמל ואינטרנט?</h2>
             <p>
-              לשם לא מתאימה מצלמה קווית. אנחנו מתקינים שם מצלמות סולאריות עם סים 4G והקלטה לענן, לפי הצעת מחיר לאתר.
-              ספרו לנו מה יש במקום ונחזור עם פתרון.
+              לשם לא מתאימה מצלמה קווית. מצלמות הסוללה של Reolink עובדות עם סים 4G ופאנל סולארי, מקליטות לכרטיס ושולחות התראה לנייד.
+              בחנות יש את כל הדגמים עם מחיר, ואנחנו גם מתקינים על עמוד או פיגום לפי הצעת מחיר.
             </p>
             <div className={styles.ctas}>
-              <a className={`${styles.cta} ${styles.ctaWa}`} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, יש לי אתר בלי חשמל ואינטרנט ואני צריך מצלמות")}`} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
-              <Link className={`${styles.cta} ${styles.ctaGhost}`} href="/contact">להשאיר פרטים</Link>
+              <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/store#solar">למצלמות הסולאריות בחנות</Link>
+              <a className={`${styles.cta} ${styles.ctaGhost}`} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, יש לי אתר בלי חשמל ואינטרנט ואני צריך מצלמות")}`} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
             </div>
           </div>
         </section>

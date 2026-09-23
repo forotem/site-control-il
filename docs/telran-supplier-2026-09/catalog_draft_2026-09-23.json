@@ -1981,12 +1981,13 @@
     "market_low_ils": 2699,
     "market_typical_ils": 2729,
     "price_basis": "exact",
-    "recommended_price_ils": 2619,
+    "recommended_price_ils": 2699,
     "estimated_cost_ils": 2618,
     "estimated_margin_ils": 1,
     "foreign_prices_note": "USD 499.99 (megatop.com), EUR ~603 after discount (homebrainz.shop).",
     "notes": "NVS8-8MD4 is Reolink's current name for RLK8-820D4-A / 800D4. Telran also lists RLK8-800B4 and 810B4-A bullet equivalents.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "מחיר צרכן של טלרן כמו שהוא: מחיר מתקין+מע\"מ משאיר רק 3-5%; ממתינים להנחת מפיץ מעידן"
   },
   {
     "cost_source": "estimate",
@@ -2073,12 +2074,13 @@
     "market_low_ils": 1999,
     "market_typical_ils": 1999,
     "price_basis": "exact",
-    "recommended_price_ils": 1939,
+    "recommended_price_ils": 1999,
     "estimated_cost_ils": 1934,
     "estimated_margin_ils": 5,
     "foreign_prices_note": "USD 349.99-459.99 (eBay/Walmart); EUR 468 (Germany).",
     "notes": "Consistently 1,999-2,018 ILS in Israel; com4tech lists NVS8-5MD4 dome version at 1,900 without HDD.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "מחיר צרכן של טלרן כמו שהוא: מחיר מתקין+מע\"מ משאיר רק 3-5%; ממתינים להנחת מפיץ מעידן"
   },
   {
     "cost_source": "estimate",
@@ -2165,12 +2167,13 @@
     "market_low_ils": 3590,
     "market_typical_ils": 3600,
     "price_basis": "exact",
-    "recommended_price_ils": 3479,
+    "recommended_price_ils": 3590,
     "estimated_cost_ils": 3669,
     "estimated_margin_ils": -190,
     "foreign_prices_note": "USD 499.99-845.99 across US retailers (Walmart, Best Buy, Micro Center).",
     "notes": "Telran's RLK8 search page lists 6 8CH kits: 1200D4-A, 1200B4-A, 800B4, 410B4-5MP, 820D4-A, 810B4-A. No Telran prices are public (login required).",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "מחיר צרכן של טלרן כמו שהוא: מחיר מתקין+מע\"מ משאיר רק 3-5%; ממתינים להנחת מפיץ מעידן"
   },
   {
     "cost_source": "estimate",
@@ -3771,5 +3774,1681 @@
     "foreign_prices_note": "Amazon.com ASIN B0C4YLN1XK – מבצעים ישראליים (ZUZU Deals / SmartBuy) דיווחו על $17.90 (~₪55) לפני משלוח ומע\"מ; מחיר רגיל באמזון ~$30–40. דגם אח CP3 V3 נמכר ב-kstore.co.il ב-₪200.",
     "notes": "לא מופיע ב-telran.co.il (No products found), אך דף kav-isr מציין במפורש שהיבואן הרשמי הוא טלרן. הדף הישראלי מציין IR עד 12 מ' ו-microSD עד 256GB (גרסה ישנה יותר) לעומת 10 מ' ו-512GB במפרט היצרן V1.1; מתח ההזנה בדף הישראלי 9V DC לעומת USB-C 5V אצל היצרן – כנראה גרסת חומרה שונה, לוודא עם טלרן.",
     "batch": 2
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Go PLUS / G-330c",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G Reolink Go Plus, 4MP, סוללה וסים, בלי חשמל ובלי אינטרנט",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 4MP סולארית, SD 128GB",
+    "specs": [
+      "4MP (2560×1440), עדשה קבועה רחבה",
+      "חיבור 4G LTE עם כרטיס סים, לא צריך Wi-Fi או כבל רשת",
+      "סוללה נטענת מובנית; טעינה מפאנל סולארי Solar Panel 2 (נמכר בנפרד) או מ-USB",
+      "ראיית לילה אינפרא-אדום, חיישן PIR לזיהוי אדם, שמע דו-כיווני",
+      "הקלטה לכרטיס microSD עד 128GB, אפליקציית Reolink בעברית, ענן אופציונלי",
+      "עמידות IP65 לחוץ"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1189,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1189,
+    "market_typical_ils": 1189,
+    "price_basis": "exact",
+    "recommended_price_ils": 1189,
+    "estimated_cost_ils": 944,
+    "estimated_margin_ils": 245,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1189, מתקין לפני מע\"מ 800; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Go Ultra / G340",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 8MP סולארית, SD 128GB",
+    "specs": [
+      "8MP 4K (3840×2160), עדשה קבועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או מ-USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית, ענן אופציונלי",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1279,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1279,
+    "market_typical_ils": 1279,
+    "price_basis": "exact",
+    "recommended_price_ils": 1279,
+    "estimated_cost_ils": 1073,
+    "estimated_margin_ils": 206,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1279, מתקין לפני מע\"מ 909; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Go PT Plus",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, סוללה וסים",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 5MP סולארית, SD 128GB, פנס, IR 10 מ'",
+    "specs": [
+      "5MP, מנוע Pan/Tilt: 355° אופקי, 140° אנכי, שליטה מהאפליקציה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או מ-USB",
+      "זרקור, ראיית לילה אינפרא עד 10 מ', PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1279,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1279,
+    "market_typical_ils": 1279,
+    "price_basis": "exact",
+    "recommended_price_ils": 1279,
+    "estimated_cost_ils": 1044,
+    "estimated_margin_ils": 235,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1279, מתקין לפני מע\"מ 885; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Go PT Ultra",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 8MP סולארית, SD 128GB, פנס (בונוס פאנל סולארי)",
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת + פאנל סולארי כלול באריזה",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1489,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1489,
+    "market_typical_ils": 1489,
+    "price_basis": "exact",
+    "recommended_price_ils": 1489,
+    "estimated_cost_ils": 1274,
+    "estimated_margin_ils": 215,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1489, מתקין לפני מע\"מ 1080; פאנל סולארי כלול",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Duo 2 LTE",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G פנורמית Reolink Duo 2 LTE, שתי עדשות 180°, 6MP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנורמית 2 עדשות 180°, 6MP, סולארית, SD 128GB, Type C",
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 6MP (4608×1728)",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או Type-C",
+      "זרקורים וראיית לילה צבעונית, PIR כפול, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1599,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1599,
+    "market_typical_ils": 1599,
+    "price_basis": "exact",
+    "recommended_price_ils": 1599,
+    "estimated_cost_ils": 1410,
+    "estimated_margin_ils": 189,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1195; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink TrackMix LTE",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 2 עדשות 4MP, זום X6 היברידי, עקיבה, SD 256GB",
+    "specs": [
+      "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
+      "4MP, חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד)",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1799,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1799,
+    "market_typical_ils": 1799,
+    "price_basis": "exact",
+    "recommended_price_ils": 1799,
+    "estimated_cost_ils": 1528,
+    "estimated_margin_ils": 271,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1799, מתקין לפני מע\"מ 1295; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "TrackMix LTE Plus + Solar Panel",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "ערכת Reolink TrackMix LTE Plus עם פאנל סולארי 66W, הקלטה רציפה 24/7 על 4G",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "כמו TrackMix LTE + הקלטה 24/7 + פאנל 66W",
+    "specs": [
+      "כמו TrackMix LTE (שתי עדשות, זום x6, מעקב אוטומטי) עם הקלטה רציפה 24/7",
+      "פאנל סולארי 66W כלול, לאתרים שצריכים הקלטה רציפה ולא רק לפי תנועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 4199,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 4199,
+    "market_typical_ils": 4199,
+    "price_basis": "exact",
+    "recommended_price_ils": 4199,
+    "estimated_cost_ils": 3410,
+    "estimated_margin_ils": 789,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 4199, מתקין לפני מע\"מ 2890; פאנל סולארי כלול",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Go Ranger + Solar Panel 2",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go Ranger PT בצבע הסוואה, 4K, כולל פאנל סולארי",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 8MP צבע הסוואה, סים+סולארית",
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt, גוף בצבע הסוואה לשטח, שדה ומטע",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת + פאנל סולארי Solar Panel 2 כלול",
+      "ראיית לילה, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1599,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1599,
+    "market_typical_ils": 1599,
+    "price_basis": "exact",
+    "recommended_price_ils": 1599,
+    "estimated_cost_ils": 1357,
+    "estimated_margin_ils": 242,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1150; פאנל סולארי כלול",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Talon Pro",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת שבילים 4G Reolink Talon Pro, 4K, GPS, סוללה, לשטח ולמטע",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "מצלמת שבילים 4K 4G LTE, Starlight, GPS, IP67",
+    "specs": [
+      "4K, חיישן Starlight לתמונה בלילה",
+      "חיבור 4G LTE עם כרטיס סים, GPS מובנה",
+      "סוללה; מיועדת לשטח פתוח, ציד, מטעים ושבילים",
+      "microSD, אפליקציה בעברית",
+      "IP67"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1299,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1299,
+    "market_typical_ils": 1299,
+    "price_basis": "exact",
+    "recommended_price_ils": 1299,
+    "estimated_cost_ils": 1145,
+    "estimated_margin_ils": 154,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1299, מתקין לפני מע\"מ 970; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Solar Panel 2-W",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פאנל סולארי 6W Type-C, לבן",
+    "specs": [
+      "הספק 6W, חיבור Type-C",
+      "מתאים למצלמות Reolink בסוללה: Go Plus, Go Ultra, Go PT Plus, Argus, Duo 2, TrackMix",
+      "כבל 4 מטר וזרוע מתכווננת",
+      "עמיד לחוץ"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 149,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 149,
+    "market_typical_ils": 149,
+    "price_basis": "exact",
+    "recommended_price_ils": 149,
+    "estimated_cost_ils": 124,
+    "estimated_margin_ils": 25,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 149, מתקין לפני מע\"מ 105",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus Eco / B320",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 3MP WiFi סולארית, SD 128GB",
+    "specs": [
+      "3MP, עדשה קבועה",
+      "Wi-Fi 2.4GHz, בלי כבלים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "ראיית לילה אינפרא, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 389,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 389,
+    "market_typical_ils": 389,
+    "price_basis": "exact",
+    "recommended_price_ils": 389,
+    "estimated_cost_ils": 360,
+    "estimated_margin_ils": 29,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 389, מתקין לפני מע\"מ 305; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus Eco PRO / B340",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 5MP WiFi סולארית, פנס, SD 128GB",
+    "specs": [
+      "5MP, עדשה קבועה",
+      "Wi-Fi 2.4/5GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 549,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 549,
+    "market_typical_ils": 549,
+    "price_basis": "exact",
+    "recommended_price_ils": 549,
+    "estimated_cost_ils": 502,
+    "estimated_margin_ils": 47,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 425; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus 3E",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "3MP WiFi 2.4, פנס, 100% אלחוטית, עדשה 115°",
+    "specs": [
+      "3MP, עדשה רחבה 115°",
+      "Wi-Fi 2.4GHz, 100% אלחוטית",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 409,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 409,
+    "market_typical_ils": 409,
+    "price_basis": "exact",
+    "recommended_price_ils": 409,
+    "estimated_cost_ils": 365,
+    "estimated_margin_ils": 44,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 409, מתקין לפני מע\"מ 309; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus 3 Pro",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "מעוצבת 5MP WiFi, פנס, SD 128GB",
+    "specs": [
+      "5MP (2560×1920)",
+      "Wi-Fi 2.4/5GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 559,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 559,
+    "market_typical_ils": 559,
+    "price_basis": "exact",
+    "recommended_price_ils": 559,
+    "estimated_cost_ils": 531,
+    "estimated_margin_ils": 28,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 559, מתקין לפני מע\"מ 450; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus 3 Ultra",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "מעוצבת 8MP WiFi, פנס, SD 128GB",
+    "specs": [
+      "8MP 4K",
+      "Wi-Fi 6 דו-ערוצי",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 689,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 689,
+    "market_typical_ils": 689,
+    "price_basis": "exact",
+    "recommended_price_ils": 689,
+    "estimated_cost_ils": 620,
+    "estimated_margin_ils": 69,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 689, מתקין לפני מע\"מ 525; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus Track",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "4K WiFi, סוללה, מעקב אוטומטי, ראיית לילה צבעונית",
+    "specs": [
+      "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
+      "Wi-Fi דו-ערוצי",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד)",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD, אפליקציה בעברית"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 899,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 899,
+    "market_typical_ils": 899,
+    "price_basis": "exact",
+    "recommended_price_ils": 899,
+    "estimated_cost_ils": 825,
+    "estimated_margin_ils": 74,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 899, מתקין לפני מע\"מ 699; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Argus PT Lite",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 3MP WiFi 2.4, סולארית, IR 10 מ'",
+    "specs": [
+      "3MP, מנוע Pan/Tilt 355°/140°",
+      "Wi-Fi 2.4GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "ראיית לילה אינפרא עד 10 מ', PIR, שמע דו-כיווני",
+      "microSD עד 128GB"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 519,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 519,
+    "market_typical_ils": 519,
+    "price_basis": "exact",
+    "recommended_price_ils": 519,
+    "estimated_cost_ils": 459,
+    "estimated_margin_ils": 60,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 519, מתקין לפני מע\"מ 389; פאנל סולארי בנפרד",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "E1 Pro",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה ביתית Reolink E1 Pro, 4MP, ממונעת 355°, Wi-Fi, מעקב אחרי תנועה",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנימית ממונעת 4MP, עקיבה לפי תנועה",
+    "specs": [
+      "4MP, מנוע Pan/Tilt 355°/50°, מעקב אוטומטי אחרי תנועה",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית, ענן אופציונלי",
+      "לפנים הבית: סלון, חדר ילדים, חנות"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 270,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 270,
+    "market_typical_ils": 270,
+    "price_basis": "exact",
+    "recommended_price_ils": 270,
+    "estimated_cost_ils": 242,
+    "estimated_margin_ils": 28,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 270, מתקין לפני מע\"מ 205",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "E330",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה ביתית Reolink E330, 5MP, ממונעת, Wi-Fi, זיהוי אדם וחיות מחמד",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנימית 5MP, זיהוי תנועה, ראיית לילה",
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זיהוי אדם וחיות מחמד, ראיית לילה, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לפנים הבית"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 299,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 299,
+    "market_typical_ils": 299,
+    "price_basis": "exact",
+    "recommended_price_ils": 299,
+    "estimated_cost_ils": 266,
+    "estimated_margin_ils": 33,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 299, מתקין לפני מע\"מ 225",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "E1 Zoom",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה ביתית Reolink E1 Zoom, 5MP, ממונעת עם זום אופטי x3, Wi-Fi",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנימית ממונעת 5MP, זום X3, SD 256GB, IR 12 מ'",
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לחלל גדול: חנות, משרד, אולם"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 419,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 419,
+    "market_typical_ils": 419,
+    "price_basis": "exact",
+    "recommended_price_ils": 419,
+    "estimated_cost_ils": 378,
+    "estimated_margin_ils": 41,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 419, מתקין לפני מע\"מ 320",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Lumus / E430",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה חיצונית Wi-Fi Reolink Lumus (E430), 4MP, זרקור 100 לומן, חיבור לחשמל",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "2K 4MP WiFi, פנס לבן, תאורה 100 לומן",
+    "specs": [
+      "4MP 2K, עדשה קבועה",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקור לבן 100 לומן וראיית לילה צבעונית, PIR, שמע דו-כיווני, סירנה",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 279,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 279,
+    "market_typical_ils": 279,
+    "price_basis": "exact",
+    "recommended_price_ils": 279,
+    "estimated_cost_ils": 260,
+    "estimated_margin_ils": 19,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 279, מתקין לפני מע\"מ 220",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "TrackMix WiFi",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink TrackMix WiFi, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 2 עדשות 8MP, זום X6 היברידי, עקיבה, SD 256GB, IR 30 מ'",
+    "specs": [
+      "8MP 4K, שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 30 מ' וזרקורים, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1190,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1190,
+    "market_typical_ils": 1190,
+    "price_basis": "exact",
+    "recommended_price_ils": 1190,
+    "estimated_cost_ils": 1003,
+    "estimated_margin_ils": 187,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1190, מתקין לפני מע\"מ 850",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "E1 Outdoor / E540",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink E1 Outdoor (E540), 5MP, זום x3, זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 5MP, זום X3, פנס, SD 256GB, IR 12 מ'",
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 12 מ', מעקב אוטומטי, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 589,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 589,
+    "market_typical_ils": 589,
+    "price_basis": "exact",
+    "recommended_price_ils": 589,
+    "estimated_cost_ils": 537,
+    "estimated_margin_ils": 52,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 455",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "E1 Outdoor Pro / E560",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה חיצונית Wi-Fi 6 ממונעת Reolink E1 Outdoor Pro (E560), 4K 8MP, זום x3",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "ממונעת 8MP, זום X3, WiFi 6, SD 256GB",
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt, זום אופטי x3",
+      "Wi-Fi 6 דו-ערוצי, חיבור לחשמל",
+      "זרקור וראיית לילה צבעונית, מעקב אוטומטי, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 719,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 719,
+    "market_typical_ils": 719,
+    "price_basis": "exact",
+    "recommended_price_ils": 719,
+    "estimated_cost_ils": 648,
+    "estimated_margin_ils": 71,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 719, מתקין לפני מע\"מ 549",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Duo 2 WiFi",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת אבטחה חיצונית Wi-Fi פנורמית Reolink Duo 2 WiFi, שתי עדשות 180°, 4K",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנורמית 2 עדשות 180°, 4K, פנסים, SD 256GB, IR 30 מ'",
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 4K",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקורים וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 999,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 999,
+    "market_typical_ils": 999,
+    "price_basis": "exact",
+    "recommended_price_ils": 999,
+    "estimated_cost_ils": 885,
+    "estimated_margin_ils": 114,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 999, מתקין לפני מע\"מ 750",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "FE-W",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "מצלמת עין דג 360° Wi-Fi Reolink FE-W, 6MP, לתקרה, חיבור לחשמל",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "עין דג 360°, 6MP, SD 256GB, IR 8 מ'",
+    "specs": [
+      "6MP, עדשת עין דג 360° לתקרה: כל החדר במצלמה אחת",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 8 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לחנות, משרד פתוח, מחסן"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 799,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 799,
+    "market_typical_ils": 799,
+    "price_basis": "exact",
+    "recommended_price_ils": 799,
+    "estimated_cost_ils": 679,
+    "estimated_margin_ils": 120,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 799, מתקין לפני מע\"מ 575",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Doorbell WiFi",
+    "brand": "Reolink",
+    "category": "wifi",
+    "title_he": "פעמון וידאו Wi-Fi Reolink Video Doorbell, 4MP, שמע דו-כיווני, בלי מנוי",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פעמון וידאו 4MP WiFi, עדשה 2.2 מ\"מ",
+    "specs": [
+      "4MP, עדשה 2.2 מ\"מ בזווית רחבה, רואים את כל מי שבדלת",
+      "Wi-Fi 2.4/5GHz, חיבור לחיווט פעמון קיים",
+      "שמע דו-כיווני, זיהוי אדם, ראיית לילה",
+      "microSD, אפליקציה בעברית, בלי דמי מנוי",
+      "פעמון פנימי כלול"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 499,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 499,
+    "market_typical_ils": 499,
+    "price_basis": "exact",
+    "recommended_price_ils": 499,
+    "estimated_cost_ils": 483,
+    "estimated_margin_ils": 16,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 409",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "CX410",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת אבטחה IP PoE Reolink CX410, 4MP, ColorX צבע 24/7 בלי זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 4MP PoE, צבע 24/7, SD 256GB, IP66",
+    "specs": [
+      "4MP 2K, חיישן F1.0 גדול: תמונה צבעונית בלילה גם בלי אור לבן (ColorX)",
+      "PoE: חשמל ותקשורת בכבל רשת אחד",
+      "זיהוי אדם/רכב/חיה, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink ול-ONVIF",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 549,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 549,
+    "market_typical_ils": 549,
+    "price_basis": "exact",
+    "recommended_price_ils": 549,
+    "estimated_cost_ils": 502,
+    "estimated_margin_ils": 47,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 425",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Duo 3 PoE",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת אבטחה IP PoE פנורמית Reolink Duo 3 PoE, שתי עדשות 180°, 16MP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "פנורמית 2 עדשות 180°, 16MP UHD",
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 16MP UHD",
+      "PoE, זיהוי אדם/רכב/חיה, מעקב תנועה",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP67"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1059,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1059,
+    "market_typical_ils": 1059,
+    "price_basis": "exact",
+    "recommended_price_ils": 1059,
+    "estimated_cost_ils": 978,
+    "estimated_margin_ils": 81,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1059, מתקין לפני מע\"מ 829",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P327",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת כיפה IP PoE אנטי-ונדלית Reolink P327, 5MP, IK10, IP67",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "כיפה 5MP PoE אנטי-ונדלית IK10, IP67",
+    "specs": [
+      "5MP, כיפה עמידה למכות IK10",
+      "PoE, זיהוי אדם/רכב",
+      "ראיית לילה אינפרא עד 30 מ', מיקרופון",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP67"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 395,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 395,
+    "market_typical_ils": 395,
+    "price_basis": "exact",
+    "recommended_price_ils": 395,
+    "estimated_cost_ils": 353,
+    "estimated_margin_ils": 42,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 395, מתקין לפני מע\"מ 299",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P330P",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת אבטחה IP PoE פנורמית ממונעת Reolink P330P, 4K, 180° ומעקב אוטומטי",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "4K 8MP PoE פנורמית 180°, מעקב אוטומטי",
+    "specs": [
+      "8MP 4K, כיסוי 180° עם מנוע Pan ומעקב אוטומטי",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 529,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 529,
+    "market_typical_ils": 529,
+    "price_basis": "exact",
+    "recommended_price_ils": 529,
+    "estimated_cost_ils": 471,
+    "estimated_margin_ils": 58,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 529, מתקין לפני מע\"מ 399",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P330M",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת אבטחה IP PoE Reolink P330M, 4K, שתי עדשות: רחבה + תקריב",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "4K 8MP PoE, 2 עדשות, תצוגה רחבה + תקריב",
+    "specs": [
+      "8MP 4K, שתי עדשות: תצוגה רחבה ותקריב באותו זמן",
+      "PoE, זיהוי אדם/רכב/חיה, מעקב אוטומטי",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 549,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 549,
+    "market_typical_ils": 549,
+    "price_basis": "exact",
+    "recommended_price_ils": 549,
+    "estimated_cost_ils": 483,
+    "estimated_margin_ils": 66,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 409",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P337",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת כיפה IP PoE Reolink P337, 4K 8MP, זווית 125°, ראיית לילה צבעונית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "כיפה 4K PoE, זווית 125°, ראיית לילה צבעונית",
+    "specs": [
+      "8MP 4K, עדשה רחבה 125°",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 499,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 499,
+    "market_typical_ils": 499,
+    "price_basis": "exact",
+    "recommended_price_ils": 499,
+    "estimated_cost_ils": 447,
+    "estimated_margin_ils": 52,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 379",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P340",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת צינור IP PoE Reolink P340, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 12MP PoE, ראיית לילה צבעונית, אודיו דו-כיווני",
+    "specs": [
+      "12MP (4512×2512), עדשה קבועה",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 589,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 589,
+    "market_typical_ils": 589,
+    "price_basis": "exact",
+    "recommended_price_ils": 589,
+    "estimated_cost_ils": 518,
+    "estimated_margin_ils": 71,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P344",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת כיפה IP PoE Reolink P344, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "כיפה 12MP Ultra HD PoE, אודיו דו-כיווני",
+    "specs": [
+      "12MP (4512×2512), כיפה",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 589,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 589,
+    "market_typical_ils": 589,
+    "price_basis": "exact",
+    "recommended_price_ils": 589,
+    "estimated_cost_ils": 518,
+    "estimated_margin_ils": 71,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "P430",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "מצלמת צינור IP PoE Reolink P430, 4K 8MP, זום אופטי x5, זרקור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "צינור 4K 8MP PoE, זום אופטי X5, פנס",
+    "specs": [
+      "8MP 4K, עדשה ממונעת עם זום אופטי x5",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 639,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 639,
+    "market_typical_ils": 639,
+    "price_basis": "exact",
+    "recommended_price_ils": 639,
+    "estimated_cost_ils": 577,
+    "estimated_margin_ils": 62,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 639, מתקין לפני מע\"מ 489",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "RLN8-410",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "מקליט NVR Reolink RLN8-410, 8 ערוצים, 8 יציאות PoE, ללא דיסק",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "NVR 8 ערוצים ללא דיסק",
+    "specs": [
+      "8 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
+      "מפרץ SATA אחד עד 12TB, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 969,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 969,
+    "market_typical_ils": 969,
+    "price_basis": "exact",
+    "recommended_price_ils": 969,
+    "estimated_cost_ils": 943,
+    "estimated_margin_ils": 26,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 969, מתקין לפני מע\"מ 799",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "RLN16-410",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "מקליט NVR Reolink RLN16-410, 16 ערוצים, 8 יציאות PoE, ללא דיסק",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "NVR 16 ערוצים ללא דיסק",
+    "specs": [
+      "16 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
+      "מפרץ SATA אחד עד 12TB (אפשר להוסיף eSATA), מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1299,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1299,
+    "market_typical_ils": 1299,
+    "price_basis": "exact",
+    "recommended_price_ils": 1299,
+    "estimated_cost_ils": 1250,
+    "estimated_margin_ils": 49,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1299, מתקין לפני מע\"מ 1059",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS16",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "מקליט NVR Reolink NVS16, 16 ערוצים, כולל דיסק 4TB",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "NVR 16 ערוצים עד 16MP, כולל דיסק 4TB",
+    "specs": [
+      "16 ערוצי IP עד 16MP, 8 יציאות PoE מובנות",
+      "דיסק 4TB כלול",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1599,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1599,
+    "market_typical_ils": 1599,
+    "price_basis": "exact",
+    "recommended_price_ils": 1599,
+    "estimated_cost_ils": 1533,
+    "estimated_margin_ils": 66,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1299",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS36",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "מקליט NVR Reolink NVS36, 36 ערוצים, ללא דיסק",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "NVR 36 ערוצים, ללא דיסק",
+    "specs": [
+      "36 ערוצי IP עד 12MP",
+      "2 מפרצי SATA, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "למצלמות PoE של Reolink עם מתג PoE נפרד"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1399,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1399,
+    "market_typical_ils": 1399,
+    "price_basis": "exact",
+    "recommended_price_ils": 1399,
+    "estimated_cost_ils": 1356,
+    "estimated_margin_ils": 43,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1399, מתקין לפני מע\"מ 1149",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS12W",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "מקליט NVR אלחוטי Reolink NVS12W, 12 ערוצים Wi-Fi 6, ללא דיסק",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "NVR 12 ערוצים WiFi 6, ללא דיסק",
+    "specs": [
+      "12 ערוצים למצלמות Wi-Fi של Reolink (גם בסוללה), Wi-Fi 6 מובנה",
+      "מפרץ SATA אחד, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "הקלטה מרכזית למצלמות אלחוטיות בלי כבלי רשת"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 1159,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 1159,
+    "market_typical_ils": 1159,
+    "price_basis": "exact",
+    "recommended_price_ils": 1159,
+    "estimated_cost_ils": 1120,
+    "estimated_margin_ils": 39,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 1159, מתקין לפני מע\"מ 949",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "Reolink Home Hub",
+    "brand": "Reolink",
+    "category": "recorders",
+    "title_he": "רכזת אבטחה ביתית Reolink Home Hub, אחסון מקומי לעד 8 מצלמות Reolink",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "רכזת אבטחה ביתית, אחסון מקומי, עד 8 מצלמות",
+    "specs": [
+      "מרכזת עד 8 מצלמות Reolink (Wi-Fi ובסוללה) להקלטה מקומית",
+      "2 חריצי microSD, ללא מנוי ענן",
+      "מאריכה חיי סוללה למצלמות הסוללה",
+      "אפליקציה בעברית"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 499,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 499,
+    "market_typical_ils": 499,
+    "price_basis": "exact",
+    "recommended_price_ils": 499,
+    "estimated_cost_ils": 483,
+    "estimated_margin_ils": 16,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 409",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS16-8MB8",
+    "brand": "Reolink",
+    "category": "kits",
+    "title_he": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 4 מ\"מ, קושחה בעברית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "קיט NVR 16 ערוצים + 8 מצלמות צינור 8MP 4 מ\"מ, דיסק 4TB",
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות צינור 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
+      "כבלי רשת לכל המצלמות, אפליקציה בעברית",
+      "מקום להרחבה עד 16 מצלמות"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 4690,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 4690,
+    "market_typical_ils": 4690,
+    "price_basis": "exact",
+    "recommended_price_ils": 4690,
+    "estimated_cost_ils": 4542,
+    "estimated_margin_ils": 148,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 4690, מתקין לפני מע\"מ 3849",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS16-8MD8",
+    "brand": "Reolink",
+    "category": "kits",
+    "title_he": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 4 מ\"מ, קושחה בעברית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "קיט NVR 16 ערוצים + 8 מצלמות כיפה 8MP 2.8 מ\"מ, דיסק 4TB",
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות כיפה 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
+      "כבלי רשת לכל המצלמות, אפליקציה בעברית",
+      "מקום להרחבה עד 16 מצלמות"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 4690,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 4690,
+    "market_typical_ils": 4690,
+    "price_basis": "exact",
+    "recommended_price_ils": 4690,
+    "estimated_cost_ils": 4542,
+    "estimated_margin_ils": 148,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 4690, מתקין לפני מע\"מ 3849",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS16-12MB8",
+    "brand": "Reolink",
+    "category": "kits",
+    "title_he": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 12MP צבע 24/7, קושחה בעברית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "קיט NVR 16 ערוצים + 8 מצלמות צינור 12MP 4 מ\"מ, דיסק 4TB",
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות צינור 12MP (RLC-1212A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
+      "שמע דו-כיווני, כבלי רשת, אפליקציה בעברית",
+      "הרחבה עד 16 מצלמות"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 5599,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 5599,
+    "market_typical_ils": 5599,
+    "price_basis": "exact",
+    "recommended_price_ils": 5599,
+    "estimated_cost_ils": 5427,
+    "estimated_margin_ils": 172,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 5599, מתקין לפני מע\"מ 4599",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "NVS16-12MD8",
+    "brand": "Reolink",
+    "category": "kits",
+    "title_he": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 12MP צבע 24/7, קושחה בעברית",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "קיט NVR 16 ערוצים + 8 מצלמות כיפה 12MP 4 מ\"מ, דיסק 4TB",
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות כיפה 12MP (RLC-1224A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
+      "שמע דו-כיווני, כבלי רשת, אפליקציה בעברית",
+      "הרחבה עד 16 מצלמות"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 5599,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 5599,
+    "market_typical_ils": 5599,
+    "price_basis": "exact",
+    "recommended_price_ils": 5599,
+    "estimated_cost_ils": 5427,
+    "estimated_margin_ils": 172,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 5599, מתקין לפני מע\"מ 4599",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "B10",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "קופסת חיבורים Reolink B10 למצלמות צינור, להסתרת הכבל והחיבור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "אביזר התקנה למצלמות צינור",
+    "specs": [
+      "קופסת חיבורים למצלמות צינור של Reolink",
+      "מסתירה את חיבור הכבל ומגינה עליו מגשם",
+      "מתאימה לרוב מצלמות הצינור (RLC-810A, 1212A, P340, CX410)"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 89,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 89,
+    "market_typical_ils": 89,
+    "price_basis": "exact",
+    "recommended_price_ils": 89,
+    "estimated_cost_ils": 77,
+    "estimated_margin_ils": 12,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 89, מתקין לפני מע\"מ 65",
+    "batch": "reolink-pricelist-2026-09-23"
+  },
+  {
+    "cost_source": "pricelist",
+    "model": "D20",
+    "brand": "Reolink",
+    "category": "ip",
+    "title_he": "קופסת חיבורים Reolink D20 למצלמות כיפה, להסתרת הכבל והחיבור",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": "קופסת ההגבהה למצלמות כיפה (Reolink B20)",
+    "specs": [
+      "קופסת חיבורים למצלמות כיפה של Reolink",
+      "מסתירה את חיבור הכבל ומגינה עליו מגשם",
+      "מתאימה לרוב מצלמות הכיפה (RLC-820A, 1224A, P344, P337)"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "Telran Reolink price list 05/2025 (consumer)",
+        "price": 89,
+        "currency": "ILS"
+      }
+    ],
+    "market_low_ils": 89,
+    "market_typical_ils": 89,
+    "price_basis": "exact",
+    "recommended_price_ils": 89,
+    "estimated_cost_ils": 77,
+    "estimated_margin_ils": 12,
+    "foreign_prices_note": null,
+    "notes": "מחירון Reolink של טלרן: צרכן 89, מתקין לפני מע\"מ 65",
+    "batch": "reolink-pricelist-2026-09-23"
   }
 ]

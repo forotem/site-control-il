@@ -22,7 +22,7 @@ const quickPaths = [
   { title: "יש מערכת ישנה על קואקס", desc: "מצלמות 3K ColorVu ומקליט היברידי על אותם כבלים", href: "#analog" },
   { title: "אינטרקום לבית או לבניין", desc: "2 גידים על הכבל הקיים, או IP עם מענה מהנייד", href: "#intercom" },
   { title: "מצלמה אחת בלי מקליט", desc: "Wi-Fi עם כרטיס זיכרון ואפליקציה", href: "#wifi" },
-  { title: "אתר בנייה או שטח בלי חשמל", desc: "המצלמות הסולאריות 4G שלנו", href: "/products/go" },
+  { title: "אתר בנייה או שטח בלי חשמל", desc: "מצלמות סוללה עם סים 4G ופאנל סולארי", href: "#solar" },
 ];
 
 export default function StorePage() {

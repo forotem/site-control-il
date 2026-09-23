@@ -32,6 +32,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     compare: [
       { title: "ארבע מדרגות של מצלמת 2.8 מ\"מ לבית", note: "אותה זווית, אותו כבל. ההבדל הוא לילה, סינון והרתעה.", slugs: ["ipc2124lb-af28k-dl2", "ds-2cd1043g2-liu-2-8mm", "ds-2cd2t47g2h-li-2-8mm", "ds-2cd2387g2h-lisu-sl-2-8mm"] },
       { title: "4K לחניון ולחצר גדולה", slugs: ["ds-2cd1383g0-iuf-2-8mm", "ipc2318le-adf28km-wp", "ds-2cd2183g2-iu-2-8mm", "ds-2cd2t87g2h-lisu-sl-2-8mm"] },
+      { title: "מצלמות PoE של Reolink (למקליט Reolink)", slugs: ["reolink-cx410", "reolink-p337", "reolink-p340", "reolink-p430", "reolink-duo-3-poe"] },
     ],
   },
   kits: {
@@ -45,7 +46,10 @@ export const storeGuides: Record<string, CategoryGuide> = {
     terms: [
       { term: "קושחה בעברית", explain: "הערכות שמגיעות דרך היבואן הרשמי כוללות ממשק ואפליקציה בעברית ותמיכה בישראל." },
     ],
-    compare: [{ title: "כל הערכות זו מול זו", slugs: ["reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rlk8-1200b4-a", "reolink-rlk8-1200d4-a"] }],
+    compare: [
+      { title: "ערכות 4 מצלמות (8 ערוצים)", slugs: ["reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rlk8-1200b4-a", "reolink-rlk8-1200d4-a"] },
+      { title: "ערכות 8 מצלמות (16 ערוצים, דיסק 4TB)", slugs: ["reolink-nvs16-8mb8", "reolink-nvs16-8md8", "reolink-nvs16-12mb8", "reolink-nvs16-12md8"] },
+    ],
   },
   recorders: {
     id: "recorders",
@@ -62,6 +66,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     ],
     compare: [
       { title: "מקליטים למצלמות IP", slugs: ["nvr301-08s3", "ds-7608nxi-k1-8p", "ds-7616nxi-k2", "nvr302-32b-iq"] },
+      { title: "מקליטי Reolink (למצלמות Reolink)", note: "מקליט Reolink מתאים למצלמות Reolink; ל-Hikvision ו-Uniview עדיף מקליט מאותו יצרן.", slugs: ["reolink-rln8-410", "reolink-nvs16", "reolink-nvs36", "reolink-nvs12w", "reolink-home-hub"] },
       { title: "מקליטים היברידיים לשדרוג מערכת קואקס", slugs: ["xvr301-04g3", "ids-7204hqhi-m1-xt", "ids-7208hqhi-m1-xt", "ids-7216hqhi-m1-xt"] },
     ],
   },
@@ -92,7 +97,29 @@ export const storeGuides: Record<string, CategoryGuide> = {
       { title: "מתי לא", body: "מעל 3 נקודות, או כשחשובה הקלטה רציפה לשבועות אחורה, ערכת Reolink עם מקליט זולה יותר לטווח ארוך ואמינה יותר." },
     ],
     terms: [{ term: "Wi-Fi 6", explain: "תקן אלחוט חדש שמחזיק יותר מכשירים באותו ראוטר בלי קיטועים. דורש ראוטר תואם כדי ליהנות מזה, אבל עובד גם עם ראוטר ישן." }],
-    compare: [{ title: "ארבע מצלמות ה-Wi-Fi", slugs: ["cp3-pro", "ct3", "ch9", "ch10"] }],
+    compare: [
+      { title: "לפנים הבית: Tenda מול Reolink", slugs: ["cp3-pro", "reolink-e1-pro", "reolink-e330", "reolink-e1-zoom"] },
+      { title: "לחצר בלי מקליט", slugs: ["ct3", "ch10", "reolink-e1-outdoor-e540", "reolink-trackmix-wifi", "reolink-duo-2-wifi"] },
+    ],
+  },
+  solar: {
+    id: "solar",
+    lead: "מצלמת סוללה של Reolink היא הפתרון כשאין חשמל בנקודה. שתי משפחות: 4G עם כרטיס סים לאתרי בנייה ושטחים בלי אינטרנט, ו-Wi-Fi לבית ולחצר בלי כבל חשמל. הדבר החשוב ביותר לבדוק: האם הפאנל הסולארי כלול.",
+    choose: [
+      { title: "4G או Wi-Fi", body: "אין אינטרנט במקום (אתר בנייה, שדה, מגרש)? רק 4G עם סים. יש Wi-Fi של הבית בטווח? Argus ב-Wi-Fi זולה משמעותית." },
+      { title: "פאנל סולארי", body: "רוב הדגמים נמכרים בלי פאנל: הסוללה מחזיקה שבועות לפי כמות התנועה, ועם Solar Panel 2 (149 ₪) היא נטענת לבד. Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל." },
+      { title: "קבועה, ממונעת או פנורמית", body: "Go Plus / Go Ultra מסתכלות לכיוון אחד. Go PT מסתובבות מהאפליקציה ומכסות חצר. Duo 2 נותנת 180° בתמונה אחת. TrackMix רואה רחב ומתקרבת אוטומטית למי שנכנס." },
+      { title: "סים ונתונים", body: "צריך סים עם חבילת גלישה (כ-10 עד 30GB בחודש לפי צפייה). אנחנו עוזרים לבחור חבילה ולהגדיר." },
+      { title: "הקלטה", body: "המצלמות מקליטות לכרטיס microSD לפי תנועה (PIR). הקלטה רציפה 24/7 קיימת רק ב-TrackMix LTE Plus עם פאנל 66W." },
+    ],
+    terms: [
+      { term: "PIR", explain: "חיישן חום שמעיר את המצלמה כשאדם או רכב עוברים, כך שהסוללה מחזיקה שבועות." },
+      { term: "Solar Panel 2", explain: "פאנל 6W עם Type-C וכבל 4 מטר. מתאים לכל מצלמות הסוללה של Reolink מהדור הנוכחי." },
+    ],
+    compare: [
+      { title: "4G עם סים: מקבועה ועד מעקב אוטומטי", slugs: ["reolink-go-plus", "reolink-go-ultra", "reolink-go-pt-ultra", "reolink-trackmix-lte"] },
+      { title: "Wi-Fi בסוללה לבית", slugs: ["reolink-argus-eco", "reolink-argus-3-pro", "reolink-argus-3-ultra", "reolink-argus-pt-lite"] },
+    ],
   },
   analog: {
     id: "analog",

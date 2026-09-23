@@ -40,6 +40,11 @@ export const storeCategories: StoreCategory[] = [
     "blurb": "מצלמות Tenda עצמאיות, חיבור חשמל בלבד, מעקב אוטומטי וראיית לילה צבעונית."
   },
   {
+    "id": "solar",
+    "name": "סולארי 4G ובסוללה",
+    "blurb": "מצלמות Reolink עם סוללה: 4G עם סים לאתרים בלי חשמל ואינטרנט, או Wi-Fi לבית בלי כבלים. פאנל סולארי נמכר בנפרד אלא אם צוין אחרת."
+  },
+  {
     "id": "analog",
     "name": "מצלמות אנלוגיות",
     "blurb": "מצלמות Turbo HD ו-TVI לשדרוג מערכות קיימות על כבל קואקס, כולל ColorVu 3K ו-4K."
@@ -1189,7 +1194,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-820A, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 2619,
+    "price": 2699,
     "specs": [
       "8-channel PoE NVR (8 x 802.3at ports) with 2TB SATA HDD, max 12TB",
       "4 x RLC-820A 4K 8MP dome cameras, 1/2.49\" CMOS, 4.0 mm lens",
@@ -1241,7 +1246,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 5MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-510A, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 1939,
+    "price": 1999,
     "specs": [
       "8-channel 4K-capable PoE NVR (RLN8-410) with 2TB HDD",
       "4 x RLC-510A 5MP (2560x1920) bullet cameras",
@@ -1293,7 +1298,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-1224A צבע מלא עם זרקורים, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 3479,
+    "price": 3590,
     "specs": [
       "8-channel PoE NVR with 2TB HDD",
       "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
@@ -2191,6 +2196,1199 @@ export const storeProducts: StoreProduct[] = [
       "Pan/Tilt ממונע 355° אופקי, 155° אנכי (‎-65° עד +90°) עם מעקב אוטומטי אחר אדם (Human Tracking)",
       "ראיית לילה IR (2 נורות 850nm) עד 10 מ'; Smart Guardian: זיהוי תנועה, אדם, חיית מחמד, בכי תינוק וחבלה, אזעקת קול ואור, תריס פרטיות"
     ],
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-go-plus",
+    "brand": "Reolink",
+    "model": "Reolink Go PLUS / G-330c",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G Reolink Go Plus, 4MP, סוללה וסים, בלי חשמל ובלי אינטרנט",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1189,
+    "specs": [
+      "4MP (2560×1440), עדשה קבועה רחבה",
+      "חיבור 4G LTE עם כרטיס סים, לא צריך Wi-Fi או כבל רשת",
+      "סוללה נטענת מובנית; טעינה מפאנל סולארי Solar Panel 2 (נמכר בנפרד) או מ-USB",
+      "ראיית לילה אינפרא-אדום, חיישן PIR לזיהוי אדם, שמע דו-כיווני",
+      "הקלטה לכרטיס microSD עד 128GB, אפליקציית Reolink בעברית, ענן אופציונלי",
+      "עמידות IP65 לחוץ"
+    ],
+    "highlights": [
+      "4G LTE עם סים: עובד בכל מקום שיש קליטה סלולרית",
+      "סוללה + פאנל סולארי: אפס כבלים",
+      "התראות PIR לנייד ושמע דו-כיווני"
+    ],
+    "image": "/store-images/reolink-go-plus.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-go-ultra",
+    "brand": "Reolink",
+    "model": "Reolink Go Ultra / G340",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1279,
+    "specs": [
+      "8MP 4K (3840×2160), עדשה קבועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או מ-USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית, ענן אופציונלי",
+      "IP65"
+    ],
+    "highlights": [
+      "4K עם זרקור: פרטים וצבע גם בלילה",
+      "4G LTE עם סים, בלי תשתית",
+      "סוללה + פאנל סולארי"
+    ],
+    "image": "/store-images/reolink-go-ultra.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-go-pt-plus",
+    "brand": "Reolink",
+    "model": "Reolink Go PT Plus",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, סוללה וסים",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1279,
+    "specs": [
+      "5MP, מנוע Pan/Tilt: 355° אופקי, 140° אנכי, שליטה מהאפליקציה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או מ-USB",
+      "זרקור, ראיית לילה אינפרא עד 10 מ', PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "highlights": [
+      "מסתובבת מרחוק: מצלמה אחת מכסה חצר או מגרש",
+      "4G LTE עם סים, בלי תשתית",
+      "סוללה + פאנל סולארי"
+    ],
+    "image": "/store-images/reolink-go-pt-plus.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-go-pt-ultra",
+    "brand": "Reolink",
+    "model": "Reolink Go PT Ultra",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1489,
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת + פאנל סולארי כלול באריזה",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "highlights": [
+      "4K ממונעת עם מעקב אוטומטי",
+      "פאנל סולארי כלול: פותחים ומתקינים",
+      "4G LTE עם סים, בלי תשתית"
+    ],
+    "image": "/store-images/reolink-go-pt-ultra.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-duo-2-lte",
+    "brand": "Reolink",
+    "model": "Reolink Duo 2 LTE",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G פנורמית Reolink Duo 2 LTE, שתי עדשות 180°, 6MP",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1599,
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 6MP (4608×1728)",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או Type-C",
+      "זרקורים וראיית לילה צבעונית, PIR כפול, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "highlights": [
+      "180° במצלמה אחת: חזית שלמה של מגרש או אתר",
+      "4G LTE עם סים",
+      "סוללה + פאנל סולארי"
+    ],
+    "image": "/store-images/reolink-duo-2-lte.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-trackmix-lte",
+    "brand": "Reolink",
+    "model": "Reolink TrackMix LTE",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1799,
+    "specs": [
+      "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
+      "4MP, חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד)",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "רואים את כל השטח ומתקרבים למי שנכנס, באותה מצלמה",
+      "מעקב אוטומטי אחרי תנועה",
+      "4G LTE עם סים, סוללה ופאנל"
+    ],
+    "image": "/store-images/reolink-trackmix-lte.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-trackmix-lte-plus-solar",
+    "brand": "Reolink",
+    "model": "TrackMix LTE Plus + Solar Panel",
+    "sku": null,
+    "title": "ערכת Reolink TrackMix LTE Plus עם פאנל סולארי 66W, הקלטה רציפה 24/7 על 4G",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 4199,
+    "specs": [
+      "כמו TrackMix LTE (שתי עדשות, זום x6, מעקב אוטומטי) עם הקלטה רציפה 24/7",
+      "פאנל סולארי 66W כלול, לאתרים שצריכים הקלטה רציפה ולא רק לפי תנועה",
+      "חיבור 4G LTE עם כרטיס סים",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "הקלטה רציפה 24/7 בלי חשמל",
+      "פאנל 66W כלול",
+      "זום ומעקב אוטומטי"
+    ],
+    "image": "/store-images/reolink-trackmix-lte-plus-solar.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-go-ranger-pt",
+    "brand": "Reolink",
+    "model": "Go Ranger + Solar Panel 2",
+    "sku": null,
+    "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go Ranger PT בצבע הסוואה, 4K, כולל פאנל סולארי",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1599,
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt, גוף בצבע הסוואה לשטח, שדה ומטע",
+      "חיבור 4G LTE עם כרטיס סים",
+      "סוללה נטענת + פאנל סולארי Solar Panel 2 כלול",
+      "ראיית לילה, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP64"
+    ],
+    "highlights": [
+      "הסוואה לשטח פתוח",
+      "פאנל סולארי כלול",
+      "4G LTE עם סים"
+    ],
+    "image": "/store-images/reolink-go-ranger-pt.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-talon-pro",
+    "brand": "Reolink",
+    "model": "Talon Pro",
+    "sku": null,
+    "title": "מצלמת שבילים 4G Reolink Talon Pro, 4K, GPS, סוללה, לשטח ולמטע",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1299,
+    "specs": [
+      "4K, חיישן Starlight לתמונה בלילה",
+      "חיבור 4G LTE עם כרטיס סים, GPS מובנה",
+      "סוללה; מיועדת לשטח פתוח, ציד, מטעים ושבילים",
+      "microSD, אפליקציה בעברית",
+      "IP67"
+    ],
+    "highlights": [
+      "4G בשטח פתוח בלי תשתית",
+      "GPS: יודעים איפה המצלמה",
+      "4K בלילה"
+    ],
+    "image": "/store-images/reolink-talon-pro.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-solar-panel-2",
+    "brand": "Reolink",
+    "model": "Solar Panel 2-W",
+    "sku": null,
+    "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 149,
+    "specs": [
+      "הספק 6W, חיבור Type-C",
+      "מתאים למצלמות Reolink בסוללה: Go Plus, Go Ultra, Go PT Plus, Argus, Duo 2, TrackMix",
+      "כבל 4 מטר וזרוע מתכווננת",
+      "עמיד לחוץ"
+    ],
+    "highlights": [
+      "טעינה רציפה בלי להוריד את המצלמה",
+      "מתאים לכל מצלמות הסוללה של Reolink"
+    ],
+    "image": "/store-images/reolink-solar-panel-2.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-eco",
+    "brand": "Reolink",
+    "model": "Argus Eco / B320",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 389,
+    "specs": [
+      "3MP, עדשה קבועה",
+      "Wi-Fi 2.4GHz, בלי כבלים",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "ראיית לילה אינפרא, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "הכי זולה למצלמה בלי כבל חשמל",
+      "Wi-Fi + סוללה",
+      "התראות PIR לנייד"
+    ],
+    "image": "/store-images/reolink-argus-eco.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-eco-pro",
+    "brand": "Reolink",
+    "model": "Argus Eco PRO / B340",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 549,
+    "specs": [
+      "5MP, עדשה קבועה",
+      "Wi-Fi 2.4/5GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "5MP עם זרקור וצבע בלילה",
+      "Wi-Fi 5GHz יציב יותר",
+      "סוללה + פאנל"
+    ],
+    "image": "/store-images/reolink-argus-eco-pro.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-3e",
+    "brand": "Reolink",
+    "model": "Argus 3E",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 409,
+    "specs": [
+      "3MP, עדשה רחבה 115°",
+      "Wi-Fi 2.4GHz, 100% אלחוטית",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB"
+    ],
+    "highlights": [
+      "זווית רחבה 115°",
+      "זרקור וצבע בלילה",
+      "Wi-Fi + סוללה"
+    ],
+    "image": "/store-images/reolink-argus-3e.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-3-pro",
+    "brand": "Reolink",
+    "model": "Argus 3 Pro",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 559,
+    "specs": [
+      "5MP (2560×1920)",
+      "Wi-Fi 2.4/5GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "5MP עם זרקור",
+      "Wi-Fi 5GHz",
+      "סוללה + פאנל"
+    ],
+    "image": "/store-images/reolink-argus-3-pro.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-3-ultra",
+    "brand": "Reolink",
+    "model": "Argus 3 Ultra",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 689,
+    "specs": [
+      "8MP 4K",
+      "Wi-Fi 6 דו-ערוצי",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "microSD עד 128GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "4K בסוללה",
+      "Wi-Fi 6",
+      "זרקור וצבע בלילה"
+    ],
+    "image": "/store-images/reolink-argus-3-ultra.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-track",
+    "brand": "Reolink",
+    "model": "Argus Track",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 899,
+    "specs": [
+      "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
+      "Wi-Fi דו-ערוצי",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד)",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD, אפליקציה בעברית"
+    ],
+    "highlights": [
+      "מעקב אוטומטי אחרי מי שנכנס",
+      "4K בסוללה",
+      "Wi-Fi, בלי כבלים"
+    ],
+    "image": "/store-images/reolink-argus-track.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-argus-pt-lite",
+    "brand": "Reolink",
+    "model": "Argus PT Lite",
+    "sku": null,
+    "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 519,
+    "specs": [
+      "3MP, מנוע Pan/Tilt 355°/140°",
+      "Wi-Fi 2.4GHz",
+      "סוללה נטענת; טעינה מפאנל סולארי (נמכר בנפרד) או USB",
+      "ראיית לילה אינפרא עד 10 מ', PIR, שמע דו-כיווני",
+      "microSD עד 128GB"
+    ],
+    "highlights": [
+      "ממונעת בסוללה במחיר נמוך",
+      "Wi-Fi, בלי כבלים",
+      "סוללה + פאנל"
+    ],
+    "image": "/store-images/reolink-argus-pt-lite.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-e1-pro",
+    "brand": "Reolink",
+    "model": "E1 Pro",
+    "sku": null,
+    "title": "מצלמת אבטחה ביתית Reolink E1 Pro, 4MP, ממונעת 355°, Wi-Fi, מעקב אחרי תנועה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 270,
+    "specs": [
+      "4MP, מנוע Pan/Tilt 355°/50°, מעקב אוטומטי אחרי תנועה",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית, ענן אופציונלי",
+      "לפנים הבית: סלון, חדר ילדים, חנות"
+    ],
+    "highlights": [
+      "מסתובבת ועוקבת אחרי מי שבחדר",
+      "Wi-Fi 5GHz",
+      "שמע דו-כיווני"
+    ],
+    "image": "/store-images/reolink-e1-pro.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-e330",
+    "brand": "Reolink",
+    "model": "E330",
+    "sku": null,
+    "title": "מצלמת אבטחה ביתית Reolink E330, 5MP, ממונעת, Wi-Fi, זיהוי אדם וחיות מחמד",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 299,
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זיהוי אדם וחיות מחמד, ראיית לילה, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לפנים הבית"
+    ],
+    "highlights": [
+      "5MP חדה לחדר",
+      "זיהוי אדם וחיות מחמד",
+      "Wi-Fi 5GHz"
+    ],
+    "image": "/store-images/reolink-e330.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-e1-zoom",
+    "brand": "Reolink",
+    "model": "E1 Zoom",
+    "sku": null,
+    "title": "מצלמת אבטחה ביתית Reolink E1 Zoom, 5MP, ממונעת עם זום אופטי x3, Wi-Fi",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 419,
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לחלל גדול: חנות, משרד, אולם"
+    ],
+    "highlights": [
+      "זום אופטי אמיתי בחדר",
+      "מסתובבת 355°",
+      "Wi-Fi 5GHz"
+    ],
+    "image": "/store-images/reolink-e1-zoom.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-lumus-e430",
+    "brand": "Reolink",
+    "model": "Lumus / E430",
+    "sku": null,
+    "title": "מצלמת אבטחה חיצונית Wi-Fi Reolink Lumus (E430), 4MP, זרקור 100 לומן, חיבור לחשמל",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 279,
+    "specs": [
+      "4MP 2K, עדשה קבועה",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקור לבן 100 לומן וראיית לילה צבעונית, PIR, שמע דו-כיווני, סירנה",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "זרקור שמאיר את הכניסה",
+      "Wi-Fi, בלי מקליט",
+      "ראיית לילה צבעונית"
+    ],
+    "image": "/store-images/reolink-lumus-e430.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-trackmix-wifi",
+    "brand": "Reolink",
+    "model": "TrackMix WiFi",
+    "sku": null,
+    "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink TrackMix WiFi, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 1190,
+    "specs": [
+      "8MP 4K, שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 30 מ' וזרקורים, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP65"
+    ],
+    "highlights": [
+      "רואים הכל ומתקרבים למי שנכנס",
+      "מעקב אוטומטי",
+      "4K ב-Wi-Fi"
+    ],
+    "image": "/store-images/reolink-trackmix-wifi.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-e1-outdoor-e540",
+    "brand": "Reolink",
+    "model": "E1 Outdoor / E540",
+    "sku": null,
+    "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink E1 Outdoor (E540), 5MP, זום x3, זרקור",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 589,
+    "specs": [
+      "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 12 מ', מעקב אוטומטי, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "highlights": [
+      "ממונעת עם זום לחצר",
+      "מעקב אוטומטי",
+      "Wi-Fi, בלי מקליט"
+    ],
+    "image": "/store-images/reolink-e1-outdoor-e540.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-e1-outdoor-pro-e560",
+    "brand": "Reolink",
+    "model": "E1 Outdoor Pro / E560",
+    "sku": null,
+    "title": "מצלמת אבטחה חיצונית Wi-Fi 6 ממונעת Reolink E1 Outdoor Pro (E560), 4K 8MP, זום x3",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 719,
+    "specs": [
+      "8MP 4K, מנוע Pan/Tilt, זום אופטי x3",
+      "Wi-Fi 6 דו-ערוצי, חיבור לחשמל",
+      "זרקור וראיית לילה צבעונית, מעקב אוטומטי, שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "highlights": [
+      "4K ממונעת עם זום",
+      "Wi-Fi 6",
+      "מעקב אוטומטי"
+    ],
+    "image": "/store-images/reolink-e1-outdoor-pro-e560.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-duo-2-wifi",
+    "brand": "Reolink",
+    "model": "Duo 2 WiFi",
+    "sku": null,
+    "title": "מצלמת אבטחה חיצונית Wi-Fi פנורמית Reolink Duo 2 WiFi, שתי עדשות 180°, 4K",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 999,
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 4K",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "זרקורים וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "IP66"
+    ],
+    "highlights": [
+      "180° במצלמה אחת",
+      "4K",
+      "Wi-Fi, בלי מקליט"
+    ],
+    "image": "/store-images/reolink-duo-2-wifi.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-fe-w",
+    "brand": "Reolink",
+    "model": "FE-W",
+    "sku": null,
+    "title": "מצלמת עין דג 360° Wi-Fi Reolink FE-W, 6MP, לתקרה, חיבור לחשמל",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 799,
+    "specs": [
+      "6MP, עדשת עין דג 360° לתקרה: כל החדר במצלמה אחת",
+      "Wi-Fi 2.4/5GHz, חיבור לחשמל",
+      "ראיית לילה אינפרא עד 8 מ', שמע דו-כיווני",
+      "microSD עד 256GB, אפליקציה בעברית",
+      "לחנות, משרד פתוח, מחסן"
+    ],
+    "highlights": [
+      "כל החלל במצלמה אחת",
+      "Wi-Fi לתקרה",
+      "6MP"
+    ],
+    "image": "/store-images/reolink-fe-w.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-video-doorbell-wifi",
+    "brand": "Reolink",
+    "model": "Doorbell WiFi",
+    "sku": null,
+    "title": "פעמון וידאו Wi-Fi Reolink Video Doorbell, 4MP, שמע דו-כיווני, בלי מנוי",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "price": 499,
+    "specs": [
+      "4MP, עדשה 2.2 מ\"מ בזווית רחבה, רואים את כל מי שבדלת",
+      "Wi-Fi 2.4/5GHz, חיבור לחיווט פעמון קיים",
+      "שמע דו-כיווני, זיהוי אדם, ראיית לילה",
+      "microSD, אפליקציה בעברית, בלי דמי מנוי",
+      "פעמון פנימי כלול"
+    ],
+    "highlights": [
+      "רואים ומדברים עם מי שבדלת מהנייד",
+      "בלי מנוי חודשי",
+      "מתחבר לחיווט הפעמון הקיים"
+    ],
+    "image": "/store-images/reolink-video-doorbell-wifi.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-cx410",
+    "brand": "Reolink",
+    "model": "CX410",
+    "sku": null,
+    "title": "מצלמת אבטחה IP PoE Reolink CX410, 4MP, ColorX צבע 24/7 בלי זרקור",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 549,
+    "specs": [
+      "4MP 2K, חיישן F1.0 גדול: תמונה צבעונית בלילה גם בלי אור לבן (ColorX)",
+      "PoE: חשמל ותקשורת בכבל רשת אחד",
+      "זיהוי אדם/רכב/חיה, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink ול-ONVIF",
+      "IP66"
+    ],
+    "highlights": [
+      "צבע בלילה בלי זרקור מסנוור",
+      "PoE, מתאים לכל מקליט Reolink",
+      "זיהוי אדם/רכב"
+    ],
+    "image": "/store-images/reolink-cx410.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-duo-3-poe",
+    "brand": "Reolink",
+    "model": "Duo 3 PoE",
+    "sku": null,
+    "title": "מצלמת אבטחה IP PoE פנורמית Reolink Duo 3 PoE, שתי עדשות 180°, 16MP",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 1059,
+    "specs": [
+      "שתי עדשות עם תמונה אחת רציפה של 180°, 16MP UHD",
+      "PoE, זיהוי אדם/רכב/חיה, מעקב תנועה",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP67"
+    ],
+    "highlights": [
+      "180° ב-16MP: חזית שלמה בפרטים",
+      "PoE",
+      "צבע בלילה"
+    ],
+    "image": "/store-images/reolink-duo-3-poe.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p327",
+    "brand": "Reolink",
+    "model": "P327",
+    "sku": null,
+    "title": "מצלמת כיפה IP PoE אנטי-ונדלית Reolink P327, 5MP, IK10, IP67",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 395,
+    "specs": [
+      "5MP, כיפה עמידה למכות IK10",
+      "PoE, זיהוי אדם/רכב",
+      "ראיית לילה אינפרא עד 30 מ', מיקרופון",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP67"
+    ],
+    "highlights": [
+      "עמידה למכות: חדר מדרגות, חניון",
+      "PoE",
+      "5MP"
+    ],
+    "image": "/store-images/reolink-p327.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p330p",
+    "brand": "Reolink",
+    "model": "P330P",
+    "sku": null,
+    "title": "מצלמת אבטחה IP PoE פנורמית ממונעת Reolink P330P, 4K, 180° ומעקב אוטומטי",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 529,
+    "specs": [
+      "8MP 4K, כיסוי 180° עם מנוע Pan ומעקב אוטומטי",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "180° + מעקב אוטומטי",
+      "PoE",
+      "4K"
+    ],
+    "image": "/store-images/reolink-p330p.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p330m",
+    "brand": "Reolink",
+    "model": "P330M",
+    "sku": null,
+    "title": "מצלמת אבטחה IP PoE Reolink P330M, 4K, שתי עדשות: רחבה + תקריב",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 549,
+    "specs": [
+      "8MP 4K, שתי עדשות: תצוגה רחבה ותקריב באותו זמן",
+      "PoE, זיהוי אדם/רכב/חיה, מעקב אוטומטי",
+      "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "רואים רחב ומתקרבים בו-זמנית",
+      "PoE",
+      "4K"
+    ],
+    "image": "/store-images/reolink-p330m.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p337",
+    "brand": "Reolink",
+    "model": "P337",
+    "sku": null,
+    "title": "מצלמת כיפה IP PoE Reolink P337, 4K 8MP, זווית 125°, ראיית לילה צבעונית",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 499,
+    "specs": [
+      "8MP 4K, עדשה רחבה 125°",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "4K רחבה לתקרה",
+      "צבע בלילה",
+      "PoE"
+    ],
+    "image": "/store-images/reolink-p337.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p340",
+    "brand": "Reolink",
+    "model": "P340",
+    "sku": null,
+    "title": "מצלמת צינור IP PoE Reolink P340, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 589,
+    "specs": [
+      "12MP (4512×2512), עדשה קבועה",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "12MP: הכי חדה בקטגוריה",
+      "צבע בלילה",
+      "PoE"
+    ],
+    "image": "/store-images/reolink-p340.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p344",
+    "brand": "Reolink",
+    "model": "P344",
+    "sku": null,
+    "title": "מצלמת כיפה IP PoE Reolink P344, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 589,
+    "specs": [
+      "12MP (4512×2512), כיפה",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "12MP לתקרה",
+      "צבע בלילה",
+      "PoE"
+    ],
+    "image": "/store-images/reolink-p344.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p430",
+    "brand": "Reolink",
+    "model": "P430",
+    "sku": null,
+    "title": "מצלמת צינור IP PoE Reolink P430, 4K 8MP, זום אופטי x5, זרקור",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 639,
+    "specs": [
+      "8MP 4K, עדשה ממונעת עם זום אופטי x5",
+      "PoE, זיהוי אדם/רכב/חיה",
+      "זרקור וראיית לילה צבעונית, אינפרא עד 30 מ', שמע דו-כיווני",
+      "microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP66"
+    ],
+    "highlights": [
+      "זום אופטי x5 לשער ולחניון",
+      "4K",
+      "PoE"
+    ],
+    "image": "/store-images/reolink-p430.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-rln8-410",
+    "brand": "Reolink",
+    "model": "RLN8-410",
+    "sku": null,
+    "title": "מקליט NVR Reolink RLN8-410, 8 ערוצים, 8 יציאות PoE, ללא דיסק",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 969,
+    "specs": [
+      "8 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
+      "מפרץ SATA אחד עד 12TB, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "highlights": [
+      "PoE מובנה: המצלמות מתחברות ישר למקליט",
+      "8 ערוצים",
+      "בלי דיסק, בוחרים לבד"
+    ],
+    "image": "/store-images/reolink-rln8-410.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-rln16-410",
+    "brand": "Reolink",
+    "model": "RLN16-410",
+    "sku": null,
+    "title": "מקליט NVR Reolink RLN16-410, 16 ערוצים, 8 יציאות PoE, ללא דיסק",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 1299,
+    "specs": [
+      "16 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
+      "מפרץ SATA אחד עד 12TB (אפשר להוסיף eSATA), מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "highlights": [
+      "16 ערוצים עם PoE",
+      "עד 12MP",
+      "בלי דיסק"
+    ],
+    "image": "/store-images/reolink-rln16-410.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs16",
+    "brand": "Reolink",
+    "model": "NVS16",
+    "sku": null,
+    "title": "מקליט NVR Reolink NVS16, 16 ערוצים, כולל דיסק 4TB",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 1599,
+    "specs": [
+      "16 ערוצי IP עד 16MP, 8 יציאות PoE מובנות",
+      "דיסק 4TB כלול",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "מתאים לכל מצלמות ה-PoE של Reolink"
+    ],
+    "highlights": [
+      "16 ערוצים עם דיסק 4TB כלול",
+      "עד 16MP",
+      "PoE מובנה"
+    ],
+    "image": "/store-images/reolink-nvs16.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs36",
+    "brand": "Reolink",
+    "model": "NVS36",
+    "sku": null,
+    "title": "מקליט NVR Reolink NVS36, 36 ערוצים, ללא דיסק",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 1399,
+    "specs": [
+      "36 ערוצי IP עד 12MP",
+      "2 מפרצי SATA, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "למצלמות PoE של Reolink עם מתג PoE נפרד"
+    ],
+    "highlights": [
+      "36 ערוצים למתחם גדול",
+      "2 דיסקים",
+      "בלי דיסק"
+    ],
+    "image": "/store-images/reolink-nvs36.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs12w",
+    "brand": "Reolink",
+    "model": "NVS12W",
+    "sku": null,
+    "title": "מקליט NVR אלחוטי Reolink NVS12W, 12 ערוצים Wi-Fi 6, ללא דיסק",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 1159,
+    "specs": [
+      "12 ערוצים למצלמות Wi-Fi של Reolink (גם בסוללה), Wi-Fi 6 מובנה",
+      "מפרץ SATA אחד, מסופק ללא דיסק",
+      "יציאות HDMI ו-VGA, אפליקציה בעברית",
+      "הקלטה מרכזית למצלמות אלחוטיות בלי כבלי רשת"
+    ],
+    "highlights": [
+      "מקליט למצלמות Wi-Fi ובסוללה",
+      "Wi-Fi 6",
+      "12 ערוצים"
+    ],
+    "image": "/store-images/reolink-nvs12w.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-home-hub",
+    "brand": "Reolink",
+    "model": "Reolink Home Hub",
+    "sku": null,
+    "title": "רכזת אבטחה ביתית Reolink Home Hub, אחסון מקומי לעד 8 מצלמות Reolink",
+    "category": "recorders",
+    "categoryName": "מקליטים NVR / DVR",
+    "price": 499,
+    "specs": [
+      "מרכזת עד 8 מצלמות Reolink (Wi-Fi ובסוללה) להקלטה מקומית",
+      "2 חריצי microSD, ללא מנוי ענן",
+      "מאריכה חיי סוללה למצלמות הסוללה",
+      "אפליקציה בעברית"
+    ],
+    "highlights": [
+      "הקלטה מרכזית בלי מנוי",
+      "עד 8 מצלמות",
+      "מאריכה סוללה"
+    ],
+    "image": "/store-images/reolink-home-hub.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs16-8mb8",
+    "brand": "Reolink",
+    "model": "NVS16-8MB8",
+    "sku": null,
+    "title": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 4 מ\"מ, קושחה בעברית",
+    "category": "kits",
+    "categoryName": "ערכות מצלמות מוכנות",
+    "price": 4690,
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות צינור 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
+      "כבלי רשת לכל המצלמות, אפליקציה בעברית",
+      "מקום להרחבה עד 16 מצלמות"
+    ],
+    "highlights": [
+      "8 מצלמות 4K ומקליט עם דיסק 4TB בקופסה אחת",
+      "לבית גדול, עסק או מחסן",
+      "הרחבה עד 16"
+    ],
+    "image": "/store-images/reolink-nvs16-8mb8.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs16-8md8",
+    "brand": "Reolink",
+    "model": "NVS16-8MD8",
+    "sku": null,
+    "title": "ערכת Reolink 4K 8MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 4 מ\"מ, קושחה בעברית",
+    "category": "kits",
+    "categoryName": "ערכות מצלמות מוכנות",
+    "price": 4690,
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות כיפה 8MP 4K, עדשה 4 מ\"מ, אינפרא עד 30 מ'",
+      "כבלי רשת לכל המצלמות, אפליקציה בעברית",
+      "מקום להרחבה עד 16 מצלמות"
+    ],
+    "highlights": [
+      "8 כיפות 4K לתקרות ופנים",
+      "מקליט עם דיסק 4TB",
+      "הרחבה עד 16"
+    ],
+    "image": "/store-images/reolink-nvs16-8md8.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs16-12mb8",
+    "brand": "Reolink",
+    "model": "NVS16-12MB8",
+    "sku": null,
+    "title": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות צינור 12MP צבע 24/7, קושחה בעברית",
+    "category": "kits",
+    "categoryName": "ערכות מצלמות מוכנות",
+    "price": 5599,
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות צינור 12MP (RLC-1212A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
+      "שמע דו-כיווני, כבלי רשת, אפליקציה בעברית",
+      "הרחבה עד 16 מצלמות"
+    ],
+    "highlights": [
+      "8 מצלמות 12MP עם צבע בלילה",
+      "מקליט עם דיסק 4TB",
+      "הכי חדה בערכות"
+    ],
+    "image": "/store-images/reolink-nvs16-12mb8.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-nvs16-12md8",
+    "brand": "Reolink",
+    "model": "NVS16-12MD8",
+    "sku": null,
+    "title": "ערכת Reolink 12MP - מקליט NVR 16 ערוצים עם דיסק 4TB + 8 מצלמות כיפה 12MP צבע 24/7, קושחה בעברית",
+    "category": "kits",
+    "categoryName": "ערכות מצלמות מוכנות",
+    "price": 5599,
+    "specs": [
+      "מקליט 16 ערוצים PoE עם דיסק 4TB",
+      "8 מצלמות כיפה 12MP (RLC-1224A) עם זרקורים וצבע בלילה, עדשה 4 מ\"מ",
+      "שמע דו-כיווני, כבלי רשת, אפליקציה בעברית",
+      "הרחבה עד 16 מצלמות"
+    ],
+    "highlights": [
+      "8 כיפות 12MP עם צבע בלילה",
+      "מקליט עם דיסק 4TB",
+      "לתקרות ולפנים"
+    ],
+    "image": "/store-images/reolink-nvs16-12md8.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-b10",
+    "brand": "Reolink",
+    "model": "B10",
+    "sku": null,
+    "title": "קופסת חיבורים Reolink B10 למצלמות צינור, להסתרת הכבל והחיבור",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 89,
+    "specs": [
+      "קופסת חיבורים למצלמות צינור של Reolink",
+      "מסתירה את חיבור הכבל ומגינה עליו מגשם",
+      "מתאימה לרוב מצלמות הצינור (RLC-810A, 1212A, P340, CX410)"
+    ],
+    "highlights": [
+      "התקנה נקייה בלי כבל חשוף",
+      "הגנה מגשם"
+    ],
+    "image": "/store-images/reolink-b10.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-d20",
+    "brand": "Reolink",
+    "model": "D20",
+    "sku": null,
+    "title": "קופסת חיבורים Reolink D20 למצלמות כיפה, להסתרת הכבל והחיבור",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 89,
+    "specs": [
+      "קופסת חיבורים למצלמות כיפה של Reolink",
+      "מסתירה את חיבור הכבל ומגינה עליו מגשם",
+      "מתאימה לרוב מצלמות הכיפה (RLC-820A, 1224A, P344, P337)"
+    ],
+    "highlights": [
+      "התקנה נקייה",
+      "הגנה מגשם"
+    ],
+    "image": "/store-images/reolink-d20.webp",
+    "datasheet": null,
     "oldStock": false
   }
 ];

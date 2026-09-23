@@ -6,10 +6,12 @@ import styles from "./store.module.css";
 const nis = (v: number) => v.toLocaleString("he-IL");
 
 /** שבבי מידע שמבדילים בין דגמים דומים במבט אחד */
-export function SpecChips({ p, max = 4 }: { p: StoreProduct; max?: number }) {
+export function SpecChips({ p, max = 5 }: { p: StoreProduct; max?: number }) {
   const a = attrsOf(p);
   const chips: { text: string; cls?: string }[] = [];
   if (isCamera(a)) {
+    if (a.lte) chips.push({ text: "4G סים", cls: styles.chipDeter });
+    if (a.battery) chips.push({ text: a.panelIncluded ? "סוללה + פאנל כלול" : "סוללה" });
     if (a.mp) chips.push({ text: mpLabel(a.mp) });
     if (a.night) chips.push({ text: nightShort[a.night], cls: a.night === "color" ? styles.chipColor : a.night === "hybrid" ? styles.chipHybrid : styles.chipIr });
     if (a.deter) chips.push({ text: "אור + סירנה", cls: styles.chipDeter });
@@ -18,7 +20,7 @@ export function SpecChips({ p, max = 4 }: { p: StoreProduct; max?: number }) {
     if (a.audio === "two-way") chips.push({ text: "דיבור דו-כיווני" });
     else if (a.audio === "mic") chips.push({ text: "מיקרופון" });
     if (a.varifocal) chips.push({ text: "זום אופטי" });
-    if (a.wifi) chips.push({ text: "Wi-Fi" });
+    if (a.wifi && !a.battery) chips.push({ text: "Wi-Fi" });
   } else if (a.kind === "nvr" || a.kind === "dvr" || a.kind === "xvr") {
     if (a.channels) chips.push({ text: `${a.channels} ערוצים` });
     chips.push({ text: a.kind === "nvr" ? "למצלמות IP" : "קואקס + IP" });

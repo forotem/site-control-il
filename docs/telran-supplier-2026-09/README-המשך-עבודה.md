@@ -82,9 +82,20 @@
 - עגלה: `app/store/cart.ts` (localStorage) + `CartUI.tsx` (AddToCart עם כמות בדף מוצר, כפתור עגלה צף, מגירה עם טופס שם/טלפון/אספקה -> `/api/store-order` -> הודעה לצוות עם מספר הזמנה SC-xxxx; 5 יחידות+ או 5,000 ₪+ מסומן "קבלן, להכין הצעה עם הנחת כמות"). אין תשלום באתר: הצוות מאשר זמינות מול עידן וחוזר ללקוח. הכל מותקן דרך `app/store/layout.tsx`.
 - בוט הבלוג: `automation/store-topics.js` (30 נושאי חנות עם slugs, בחירת מוצרים אמיתיים מהקטלוג לפי קטגוריה, פרומפט ייעודי, סצנת תמונה) ו-`blog-bot.js` עם `FOCUS`: ימי שני = חנות, אחרת סולארי; `BLOG_FOCUS=store` כופה; ב-GitHub Actions יש input `focus`. הפוסטים מקשרים ל-/store, /store/finder ולדפי מוצר עם מחירים מהקטלוג.
 
+## 12. מיצוב מחדש של האתר (23/09/2026 לילה, commit c911e56, נדחף ל-master באישור רותם)
+
+רותם: "האתר כבר לא רלוונטי לטיימלאפס, זה עובר ל-timelapseit.co.il. הכיוון החדש: אתר מכירות של המוצרים." בוצע:
+- `/timelapse` + 5 פוסטי טיימלאפס (documentation-project-construction-2026, photography-timelapse-construction-2026, timelapse-marketing-advertising-projects-construction-2026, monitoring-progress-project-construction-2026, documentation-construction-legal-2026): הפניה קבועה (308) ל-https://timelapseit.co.il/ ב-next.config.mjs, הקבצים נמחקו, ה-slugs נוספו ל-retired-slugs.json. קישורי `/timelapse` ב-20 פוסטים אחרים מפנים ישירות לאתר האחות. חבילת "תוספת טיים-לאפס" הוסרה מ-packages.ts.
+- דף בית חדש (`app/page.tsx` + `app/home.module.css`): מדף מוצרים, 6 קטגוריות, שלוש דרכים לבחור, הדגמים הנפוצים, בלוק סולארי 4G, למה אצלנו, FAQ, בלוג. הקומפוננטות הישנות (Hero, FeatureGrid, Packages, ProofSections, StatsSection, TrustBar, FAQ) לא נמחקו אבל לא בשימוש בדף הבית.
+- אודות ויצירת קשר נכתבו מחדש; layout: כותרת/תיאור/מילות מפתח, תפריט (חנות, מה מתאים לי?, סולארי 4G, בלוג, אודות), פוטר; Schema.tsx; sitemap בלי /timelapse.
+- החנות והשאלון פתוחים לאינדוקס (robots index). הצ'אט "טל" והעגלה מותקנים ב-layout הראשי לכל האתר.
+- נשארו כמו שהם (קו הסולארי 4G הוא עדיין מוצר): /packages, /pricing, /products/go, /products/ptz, /use-cases/*, /cloud-backup, /weatherproof, /video-quality, /locations/*. הם מקושרים מבלוק הסולארי בדף הבית ומהתפריט ("סולארי 4G").
+- בוט הבלוג: תיאור החברה עודכן, נושאי טיימלאפס הוסרו מרשימת ה-fallback ומהפרומפטים, קישורים פנימיים ל-/store ו-/store/finder.
+- לא בוצע (אפשר בהמשך): ניקוי מילות "טיימלאפס" מתוך גוף הפוסטים הישנים שנשארו, מחיקת הקומפוננטות הישנות, איחוד /packages ו-/pricing לדף אחד.
+
 ## 11. מה רותם צריך לעשות (Vercel)
 
-1. למזג את `store-preview` ל-master (הקישור בסעיף 9). אחרי המיזוג: https://www.site-control-il.com/store, /store/finder.
-2. משתני סביבה ב-Vercel (Settings > Environment Variables, Production + Preview): `GEMINI_API_KEY` (חובה לצ'אט; אותו מפתח של בוט הבלוג), `GREEN_ID_INSTANCE` + `GREEN_API_TOKEN` (התראות ווצאפ, הערכים ב-leads.js CONFIG של מערכת הלידים), אופציונלי `STORE_ALERT_WHATSAPP` (ברירת מחדל 972502256866), `STORE_ALERT_EMAIL` (ברירת מחדל info@site-control-il.com). בלי GreenAPI ההתראות הולכות במייל דרך RESEND_API_KEY שכבר קיים.
-3. ה-MCP של Vercel בסשן הזה רואה את רשימת הפרויקטים אבל get_project / env מחזירים 404 (הרשאת טוקן), לכן לא הוגדר אוטומטית.
+1. בוצע 23/09 לילה באישור רותם: `store-preview` נדחף ל-master (c911e56, 3d50b2a). האתר החי: https://www.site-control-il.com (בית חדש), /store, /store/finder.
+2. בוצע: משתני סביבה הוגדרו ב-Vercel דרך ה-CLI המחובר (`npx vercel env add` מתוך C:\sc\wt המקושר לפרויקט), ל-Production ול-Preview: `GEMINI_API_KEY`, `GREEN_ID_INSTANCE`, `GREEN_API_TOKEN`, `GREEN_API_URL`. ברירות מחדל בקוד: התראות לווצאפ 972502256866, מייל info@site-control-il.com (אפשר לשנות עם `STORE_ALERT_WHATSAPP` / `STORE_ALERT_EMAIL`).
+3. ה-MCP של Vercel מחזיר 404 לקריאות פרויקט; ה-CLI (`npx vercel whoami` = timelapseit11-3572) עובד. לשינויים עתידיים: `cd C:\sc\wt && npx vercel env ls production`.
 4. בדיקה מקומית: `C:\sc\wt\.env.local` מכיל GEMINI_API_KEY (לא בגיט). `npm run build` עובד ב-C:\sc\wt; `.claude/launch.json` בתיקיית האב מגדיר `store-wt` (next start על 3005).

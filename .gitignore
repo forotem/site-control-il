@@ -27,3 +27,4 @@ secrets/
 *.tsbuildinfo
 gsc_output.*
 output.txt
+.env*

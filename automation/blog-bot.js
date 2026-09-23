@@ -8,13 +8,18 @@
  * 3. יוצר תוכן בלוג מקצועי עם Gemini 2.5 Flash
  * 4. מייצר תמונת hero עם Gemini 3 Pro Image (Nano Banana Pro)
  * 5. כותב את הקבצים לפרויקט ומעדכן את רשימת הבלוגים
- * 
+ *
+ * פוקוס: ימי שני הבוט כותב על מוצרי החנות (/store) עם קישורים למוצרים אמיתיים
+ * מהקטלוג (ראה store-topics.js); בשאר הימים על מצלמות סולאריות וטיימלאפס.
+ * לכפות: BLOG_FOCUS=store node automation/blog-bot.js
+ *
  * הרצה: node automation/blog-bot.js
  */
 
 const fs = require('fs');
 const path = require('path');
 const slugify = require('slugify');
+const store = require('./store-topics');
 
 // ---------- CONFIG ----------
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -24,6 +29,10 @@ const IMAGES_DIR = path.join(PROJECT_ROOT, 'public', 'blog-images');
 const GSC_JSON_PATH = path.join(PROJECT_ROOT, 'gsc_output.json');
 // נכס URL-prefix ב-Search Console (הנכס הישן sc-domain כבר לא נגיש)
 const SITE_URL = 'https://www.site-control-il.com/';
+
+// פוקוס הריצה: 'store' מקדם את החנות (/store), 'solar' את המצלמות הסולאריות והטיימלאפס.
+// ברירת מחדל: ימי שני = חנות, שאר הימים = סולארי. אפשר לכפות עם BLOG_FOCUS.
+const FOCUS = (process.env.BLOG_FOCUS || (new Date().getUTCDay() === 1 ? 'store' : 'solar')).toLowerCase();
 
 // Gemini models
 const CONTENT_MODEL = 'gemini-2.5-flash';
@@ -452,7 +461,7 @@ async function generateBlogContent(topic) {
 - כלול קישור לאתר השותף <a href="https://timelapseit.co.il" target="_blank" rel="noopener">timelapseit.co.il</a> — שלב כשמדברים על דוגמאות עבודות, עריכת סרטון, או שיתוף פעולה לצילום טיימלאפס. הצג אותו כשותף המקצועי שלנו לצילום ועריכת טיימלאפס.`
     : '';
 
-  const prompt = `אתה כותב תוכן SEO מומחה בישראל, מתמחה בתחום אבטחה ומצלמות סולאריות 4G, עובד בחברת Site-Control.
+  const prompt = topic.focus === 'store' ? store.buildStorePrompt(topic) : `אתה כותב תוכן SEO מומחה בישראל, מתמחה בתחום אבטחה ומצלמות סולאריות 4G, עובד בחברת Site-Control.
 Site-Control מתמחה אך ורק במצלמות אבטחה סולאריות 4G (Reolink GO Plus ו-PTZ Solar) לשוק B2B: קבלני בנייה, חקלאים, מנהלי אתרים מבודדים.
 
 כתוב פוסט בלוג מקצועי ומקיף בעברית על הנושא: "${topic.query}"
@@ -554,11 +563,19 @@ async function generateBlogImage(topic, slug) {
       sceneContext = 'a remote outdoor location with solar-powered 4G security cameras';
     }
 
+    let equipment = 'Reolink-style solar security camera with small solar panel attached, mounted on a pole or wall';
+    let environment = 'Israeli landscape, clear sky, professional B2B setting';
+    if (topic.focus === 'store') {
+      sceneContext = store.storeImageScene(topic);
+      equipment = 'a wired professional security camera or intercom unit (turret/bullet/dome style, no solar panel), realistic scale';
+      environment = 'Israeli residential or small-business setting, realistic and inviting';
+    }
+
     const prompt = `Create a professional, photorealistic hero image for a security camera company blog post about: "${topic.query}".
 
 Scene: ${sceneContext}
-Equipment visible: Reolink-style solar security camera with small solar panel attached, mounted on a pole or wall
-Environment: Israeli landscape, clear sky, professional B2B setting
+Equipment visible: ${equipment}
+Environment: ${environment}
 Style: wide 16:9 banner format, clean and professional, natural daylight
 Color palette: blues, whites, and earthy tones matching Israeli construction/agriculture
 Mood: trustworthy, professional, modern technology in real-world use
@@ -687,6 +704,9 @@ function writeBlogPage(slug, blogData, topic) {
   }
 
   const today = new Date().toISOString().split('T')[0];
+  const cta = topic && topic.focus === 'store'
+    ? { title: 'לא בטוחים איזה דגם מתאים לכם?', text: 'חמש שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת עם מחיר משוער, או שאלו אותנו בווצאפ', href: '/store/finder', button: 'לשאלון ההתאמה בחנות' }
+    : { title: 'צריכים ייעוץ מקצועי?', text: 'הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם', href: '/contact', button: 'צרו קשר עכשיו' };
   const articleSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -799,10 +819,10 @@ export default function Page() {
           <div dangerouslySetInnerHTML={{ __html: \`${(blogData.content || '').replace(/`/g, '\\`').replace(/\$/g, '\\$')}\` }} />
           ${faqHtml ? `<div dangerouslySetInnerHTML={{ __html: \`${faqHtml.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\` }} />` : ''}
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
-            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
-              צרו קשר עכשיו
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>${cta.title}</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>${cta.text}</p>
+            <a href="${cta.href}" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              ${cta.button}
             </a>
           </div>
         </article>
@@ -880,8 +900,21 @@ async function main() {
   // Step 1: Get GSC data
   const queries = await fetchGSCData();
 
-  // Step 2: Find opportunity (GSC / fallback list), or generate a fresh topic with Gemini
-  let opportunity = findOpportunity(queries);
+  // Step 2: Find a topic. Focus 'store' promotes the online store first; otherwise the
+  // classic flow (GSC opportunity / fallback list / Gemini). Either way we never exit empty
+  // while the other track still has topics.
+  console.log(`🎯 פוקוס הריצה: ${FOCUS}`);
+  let opportunity = null;
+  if (FOCUS === 'store') {
+    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries);
+    if (opportunity) console.log(`🛒 נושא חנות: "${opportunity.query}" (${opportunity.slug})`);
+    else console.log('🛒 כל נושאי החנות כבר כוסו, עובר למסלול הרגיל');
+  }
+  if (!opportunity) opportunity = findOpportunity(queries);
+  if (!opportunity && FOCUS !== 'store') {
+    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries);
+    if (opportunity) console.log(`🛒 אין הזדמנות סולארית חדשה, לוקח נושא חנות: "${opportunity.query}"`);
+  }
   if (!opportunity) {
     opportunity = await generateTopicWithGemini();
   }

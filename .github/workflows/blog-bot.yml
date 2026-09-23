@@ -5,8 +5,15 @@ on:
   schedule:
     - cron: '0 6 * * 1,4'
   
-  # אפשרות להריץ ידנית
+  # אפשרות להריץ ידנית, עם בחירת פוקוס
   workflow_dispatch:
+    inputs:
+      focus:
+        description: 'store = מוצרי החנות, solar = סולארי/טיימלאפס, auto = לפי היום (שני = חנות)'
+        required: false
+        default: 'auto'
+        type: choice
+        options: [auto, store, solar]
 
 jobs:
   create-blog:
@@ -40,6 +47,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GSC_SERVICE_ACCOUNT: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          BLOG_FOCUS: ${{ (github.event.inputs.focus != '' && github.event.inputs.focus != 'auto') && github.event.inputs.focus || '' }}
         run: |
           cd automation
           node blog-bot.js

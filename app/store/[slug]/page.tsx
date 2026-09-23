@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT } from "../../data/store-catalog";
+import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder } from "../../data/store-attrs";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
-import { ProductCard } from "../ProductCard";
+import { ProductCard, SpecChips } from "../ProductCard";
+import { CompareTable } from "../CompareTable";
 import styles from "../store.module.css";
 
 export function generateStaticParams() {
@@ -24,10 +26,55 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 const nis = (v: number) => v.toLocaleString("he-IL");
 
+/** השכנים הקרובים: אותו סוג גוף, הזול הבא והיקר הבא, להשוואה ישירה */
+function neighbours(p: (typeof storeProducts)[number]) {
+  const a = attrsOf(p);
+  const same = storeProducts
+    .filter((x) => x.slug !== p.slug && x.category === p.category && attrsOf(x).kind === a.kind && x.price && p.price)
+    .sort((x, y) => (x.price || 0) - (y.price || 0));
+  const cheaper = [...same].reverse().find((x) => (x.price || 0) <= (p.price || 0));
+  const pricier = same.find((x) => (x.price || 0) > (p.price || 0));
+  return [cheaper?.slug, p.slug, pricier?.slug].filter(Boolean) as string[];
+}
+
+/** "בקצרה" בשפה של לקוח: מה המצלמה הזאת עושה, לפני המפרט */
+function plainSummary(p: (typeof storeProducts)[number]): string[] {
+  const a = attrsOf(p);
+  const out: string[] = [];
+  if (isCamera(a)) {
+    if (a.night) out.push(nightLabel[a.night] + (a.range ? `, טווח תאורה עד ${a.range} מטר` : ""));
+    if (a.ai && a.ai !== "none") out.push(aiLabel[a.ai]);
+    if (a.deter) out.push("אור מהבהב וסירנה שנדלקים כשאדם נכנס לאזור שהגדרתם");
+    if (a.audio && a.audio !== "none") out.push(a.audio === "two-way" ? "רמקול ומיקרופון: אפשר לדבר עם מי שמול המצלמה מהנייד" : "מיקרופון: ההקלטה כוללת קול");
+    if (a.varifocal) out.push("עדשה ממונעת: מכוונים את הזום מהאפליקציה, בלי לטפס לסולם");
+    if (a.wifi) out.push("חיבור Wi-Fi והקלטה לכרטיס זיכרון, בלי מקליט");
+    else if (a.kind !== "kit") out.push("הזנה בכבל רשת אחד (PoE) ממתג או ממקליט עם PoE");
+  } else if (isRecorder(a)) {
+    out.push(`${kindLabel[a.kind]}, עד ${a.channels} מצלמות`);
+    out.push(a.poePorts ? `${a.poePorts} יציאות PoE מובנות: המצלמות מתחברות ישר למקליט` : "נדרש מתג PoE להזנת המצלמות");
+    out.push(`${a.bays === 2 ? "שני מפרצי דיסק" : "מפרץ דיסק אחד"}, מסופק בלי דיסק`);
+    if (a.ai === "acusense") out.push("סינון אדם/רכב במקליט וחיפוש חכם בהקלטות");
+  } else if (a.kind === "kit") {
+    out.push(`${a.cams} מצלמות ומקליט ${a.channels} ערוצים עם דיסק ${a.hdd}, כבלים ואפליקציה בעברית`);
+    if (a.night) out.push(nightLabel[a.night]);
+    if (a.audio && a.audio !== "none") out.push(audioLabel[a.audio]);
+  } else {
+    const wiring: Record<string, string> = { ip: "מתחבר בכבל רשת (IP)", "2wire": "עובד על 2 הגידים הקיימים", "4wire": "חיווט 4 גידים פשוט", hybrid: "2 גידים קיימים + Wi-Fi ואפליקציה", standalone: "עצמאי, בלי מערכת מאחור" };
+    if (a.wiring && wiring[a.wiring]) out.push(wiring[a.wiring]);
+    if (a.app) out.push("מענה ופתיחת דלת מהנייד");
+  }
+  const fit = fitLine(p);
+  if (fit) out.push(`מתאים ל: ${fit}`);
+  return out;
+}
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) notFound();
-  const related = storeProducts.filter((x) => x.category === p.category && x.slug !== p.slug).slice(0, 4);
+  const a = attrsOf(p);
+  const related = storeProducts.filter((x) => x.category === p.category && x.slug !== p.slug && attrsOf(x).kind !== a.kind).slice(0, 4);
+  const compareSlugs = neighbours(p);
+  const summary = plainSummary(p);
   const waText = encodeURIComponent(
     `היי, אני מתעניין ב-${p.title} (${p.brand} ${p.model}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
   );
@@ -52,7 +99,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <main className={styles.wrap}>
+    <main className={`${styles.wrap} ${styles.productWrap}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <BreadcrumbSchema items={breadcrumbItems} />
       <Breadcrumb items={breadcrumbItems} />
@@ -65,19 +112,24 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         <div className={styles.info}>
-          <span className={styles.eyebrow}>{p.categoryName}</span>
+          <span className={styles.eyebrow}>{p.categoryName} · {kindLabel[a.kind]}</span>
           <h1>{p.title}</h1>
           <div className={styles.meta}>
             <span>מותג: <b>{p.brand}</b></span>
             <span>דגם: <code>{p.model}</code></span>
             {p.sku && <span>מק״ט: <code>{p.sku}</code></span>}
           </div>
+          <SpecChips p={p} max={6} />
+
+          {summary.length > 0 && (
+            <ul className={styles.plain}>{summary.map((s, i) => <li key={i}>{s}</li>)}</ul>
+          )}
 
           <div className={styles.buyBox}>
             {p.price ? (
               <div className={styles.bigPrice}><strong>{nis(p.price)} ₪</strong><span>כולל מע״מ</span></div>
             ) : (
-              <div className={styles.bigPrice}><strong>מחיר לפי פנייה</strong></div>
+              <div className={styles.bigPrice}><strong>מחיר לפי פנייה</strong><span>נחזור עם מחיר תוך שעות עבודה</span></div>
             )}
             <p className={styles.stockNote}>
               המלאי מתעדכן יומית אצל היבואן. לפני חיוב אנחנו מאשרים זמינות ומועד אספקה, כך שלא תשלם על מוצר שאין במלאי.
@@ -100,23 +152,40 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
           {p.specs.length > 0 && (
             <div className={styles.specs}>
-              <h2>מפרט עיקרי</h2>
+              <h2>מפרט מלא</h2>
               <ul>{p.specs.map((s, i) => <li key={i}>{s}</li>)}</ul>
             </div>
           )}
           <div className={styles.links}>
             {p.datasheet && <a href={p.datasheet} target="_blank" rel="noopener noreferrer">דף נתונים מלא של היצרן (PDF)</a>}
             <Link href={`/store#${p.category}`}>עוד מוצרים ב{p.categoryName}</Link>
+            <Link href="/store/finder">לא בטוחים? שאלון התאמה קצר</Link>
           </div>
         </div>
       </div>
 
+      {compareSlugs.length > 1 && (
+        <section className={styles.related}>
+          <h2>מול הדגם הזול יותר והיקר יותר</h2>
+          <p className={styles.compareNote}>אותו סוג גוף, מסודר לפי מחיר. השורות המודגשות הן מה שבאמת שונה.</p>
+          <CompareTable slugs={compareSlugs} highlight={p.slug} />
+        </section>
+      )}
+
       {related.length > 0 && (
         <section className={styles.related}>
-          <h2>מוצרים דומים</h2>
+          <h2>משלימים מאותה קטגוריה</h2>
           <div className={styles.grid}>{related.map((r) => <ProductCard key={r.slug} p={r} />)}</div>
         </section>
       )}
+
+      <div className={`${styles.stickyBar} store-sticky-bar`}>
+        <div>
+          <b>{p.price ? `${nis(p.price)} ₪` : "מחיר לפי פנייה"}</b>
+          <span>{p.model}</span>
+        </div>
+        <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">בדיקת זמינות בווצאפ</a>
+      </div>
     </main>
   );
 }

@@ -580,6 +580,8 @@ section > h2::after {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-number { font-size: 2.2rem; }
   .floating-cta { bottom: 16px; left: 16px; }
+  /* בדף מוצר בחנות יש פס קנייה דביק בתחתית: מרימים את הכפתורים הצפים מעליו */
+  body:has(.store-sticky-bar) .floating-cta { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
   .floating-btn { width: 52px; height: 52px; font-size: 20px; }
   .trust-bar { gap: 20px; padding: 24px 16px; }
 }

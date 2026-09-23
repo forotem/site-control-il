@@ -6,6 +6,7 @@ import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera,
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
+import { AddToCart } from "../CartUI";
 import styles from "../store.module.css";
 
 export function generateStaticParams() {
@@ -134,6 +135,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <p className={styles.stockNote}>
               המלאי מתעדכן יומית אצל היבואן. לפני חיוב אנחנו מאשרים זמינות ומועד אספקה, כך שלא תשלם על מוצר שאין במלאי.
             </p>
+            <AddToCart slug={p.slug} />
             <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">
               בדיקת זמינות והזמנה בווצאפ
             </a>

@@ -24,6 +24,10 @@ async function measure(file) {
   return { w: meta.width, h: meta.height, ratio: +(meta.height / meta.width).toFixed(2), colorful: +(100 * colorful / n).toFixed(1), red: +(100 * red / n).toFixed(1), white: +(100 * white / n).toFixed(1) };
 }
 
+// חריגים מאושרים (נבדקו בעין): מסך המוצר עצמו צבעוני, או רינדור רשמי לגובה שנשאר כי הוא מוכל היטב מאז תיקון ה-CSS
+const allowPath = path.join(__dirname, "image-style-allow.json");
+const allow = fs.existsSync(allowPath) ? JSON.parse(fs.readFileSync(allowPath, "utf8")) : {};
+
 (async () => {
   const out = [];
   for (const p of catalog) {
@@ -36,6 +40,7 @@ async function measure(file) {
     else if (m.colorful >= 9) issues.push("colorful collage");
     if (m.ratio >= 1.25) issues.push("portrait " + m.ratio);
     if (m.white < 25) issues.push("dark/non-white background");
+    if (allow[p.slug]) continue;
     if (issues.length) out.push({ slug: p.slug, image: p.image, brand: p.brand, model: p.model, ...m, issues });
   }
   fs.writeFileSync(path.join(__dirname, "image-style.json"), JSON.stringify(out, null, 1));

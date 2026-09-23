@@ -1,8 +1,8 @@
 const base = "/optimized-variants"; // served from public/optimized-variants
 
 export const logo = {
-  src: `${base}/הלוגו שלי/site-control-logo.optimized-w480.webp`,
-  alt: "Site-Control - מצלמות אבטחה סולאריות 4G לאתרי בנייה וחקלאות | לוגו רשמי",
+  src: "/images/site-control-logo.webp",
+  alt: "Site-Control - מצלמות אבטחה, התקנה וחנות | לוגו",
   width: 480,
   height: 480,
 };

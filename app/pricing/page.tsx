@@ -21,7 +21,7 @@ export default function PricingPage() {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/images/reolink-go-plus-security-camera.webp" 
+                src="/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.webp" 
                 alt="ReoLink Go Plus"
                 className="rounded-lg shadow-2xl max-w-full h-auto"
                 width={350}
@@ -88,7 +88,7 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
                 <img 
-                  src="/images/reolink-go.webp" 
+                  src="/optimized-variants/2 סוגי המצלמה/reolink-go-plus-security-camera.optimized-w1080.webp" 
                   alt="ReoLink Go"
                   className="w-full h-64 object-cover"
                 />
@@ -99,7 +99,7 @@ export default function PricingPage() {
               </div>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
                 <img 
-                  src="/images/reolink-4g-camera-hebrew-features.webp" 
+                  src="/optimized-variants/מלבניות הסבר על פונקיות המצלמה קרוסלה/reolink-4g-camera-hebrew-features.optimized-w1080.webp" 
                   alt="ReoLink 4G"
                   className="w-full h-64 object-cover"
                 />
@@ -110,7 +110,7 @@ export default function PricingPage() {
               </div>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
                 <img 
-                  src="/images/reolink-ptz-solar-security-camera-with-solar-panel.webp" 
+                  src="/optimized-variants/2 סוגי המצלמה/reolink-ptz-solar-security-camera-with-solar-panel.optimized-w1080.webp" 
                   alt="ReoLink PT עם סולאר"
                   className="w-full h-64 object-cover"
                 />
@@ -121,7 +121,7 @@ export default function PricingPage() {
               </div>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
                 <img 
-                  src="/images/outdoor-waterproof-security-camera-rain-weatherproof.webp" 
+                  src="/optimized-variants/עמידות למזג אוויר קשה/outdoor-waterproof-security-camera-rain-weatherproof.optimized-w1080.webp" 
                   alt="מצלמה עמידה"
                   className="w-full h-64 object-cover"
                 />

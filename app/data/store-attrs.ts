@@ -150,6 +150,7 @@ export function fitLine(p: StoreProduct): string {
     case "monitor": return "מסך נוסף לדירה או להחלפה";
     case "terminal": return a.auth?.includes("face") ? "עסק: כניסת עובדים ונוכחות בזיהוי פנים" : "עסק: דלת עובדים באצבע, כרטיס או קוד";
     case "keypad": return "שער או דלת: קוד ותג, עמיד לחוץ";
+    case "accessory": return "משלים לקודן חיצוני: הגנה מגשם ושמש";
     default: return "";
   }
 }

@@ -10,7 +10,7 @@ import styles from "./store.module.css";
 export const metadata: Metadata = {
   title: "חנות מצלמות אבטחה ובקרת כניסה | Site-Control",
   description:
-    "מצלמות IP של Hikvision ו-UNV, ערכות Reolink מוכנות, מקליטים, אינטרקום וקודנים. מלאי בישראל, אחריות שנה, משלוח או התקנה על ידי הצוות שלנו. שאלון קצר שמתאים לכם את המערכת.",
+    "מצלמות IP של Hikvision ו-Uniview, ערכות Reolink, מקליטים, אינטרקום וקודנים. מלאי בישראל, אחריות שנה, משלוח או התקנה. שאלון קצר מתאים לכם את המערכת.",
   alternates: { canonical: "/store" },
   robots: { index: true, follow: true },
   openGraph: { title: "חנות מצלמות אבטחה ובקרת כניסה | Site-Control", description: "מלאי בישראל, אחריות שנה, משלוח או התקנה מקצועית.", type: "website", locale: "he_IL" },

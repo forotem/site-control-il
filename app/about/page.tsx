@@ -7,7 +7,7 @@ import styles from "../home.module.css";
 export const metadata: Metadata = {
   title: "אודות Site-Control | מתקינים ומוכרים מצלמות אבטחה",
   description:
-    "Site-Control היא חברת התקנות של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה, שמוכרת את אותו ציוד גם אונליין מהמלאי של היבואן בישראל. Hikvision, Uniview, Reolink, VisionNet ו-Tenda, ומצלמות סולאריות 4G לאתרים בלי חשמל.",
+    "Site-Control: חברת התקנות של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה, שמוכרת את אותו ציוד גם אונליין מהמלאי של היבואן בישראל.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "אודות Site-Control",

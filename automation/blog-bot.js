@@ -670,7 +670,7 @@ function writeBlogPage(slug, blogData, topic) {
       name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: String(faq.answer || '').replace(/<[^>]+>/g, ''), // סכמה = טקסט נקי, בלי HTML
       },
     })),
   }) : null;
@@ -782,11 +782,11 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: \`${articleSchema.replace(/`/g, '\\`')}\` }}
+        dangerouslySetInnerHTML={{ __html: \`${articleSchema.replace(/\\/g, '\\\\').replace(/`/g, '\\`')}\` }}
       />
       ${faqSchema ? `<script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: \`${faqSchema.replace(/`/g, '\\`')}\` }}
+        dangerouslySetInnerHTML={{ __html: \`${faqSchema.replace(/\\/g, '\\\\').replace(/`/g, '\\`')}\` }}
       />` : ''}
       <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
         <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>

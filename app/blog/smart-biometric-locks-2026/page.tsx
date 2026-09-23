@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.site-control-il.com/blog/smart-biometric-locks-2026' },
   title: 'מנעולים חכמים ביומטריים 2026 - המדריך המלא לדלת הכניסה | Site-Control',
   description: 'מדריך מקיף ועדכני ל-2026: איך בוחרים מנעול חכם ביומטרי? השוואת דגמים, יתרונות אבטחה, זיהוי פנים לעומת טביעת אצבע, ומדריך התקנה מלא.',
   keywords: 'מנעול חכם ביומטרי, מנעול טביעת אצבע לדלת, מנעול חכם לדלת כניסה, מנעול חכם עם מצלמה, התקנת מנעול חכם, אבטחת בית חכם, מנעול פלדלת חכם',
@@ -244,7 +245,7 @@ export default function BlogPage() {
               }}>
                 ייעוץ והתקנה
               </a>
-              <a href="/services" style={{
+              <a href="/contact" style={{
                 backgroundColor: 'rgba(255,255,255,0.2)',
                 color: 'white',
                 border: '2px solid white',

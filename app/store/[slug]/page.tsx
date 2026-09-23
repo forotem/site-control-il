@@ -16,16 +16,26 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) return {};
+  const a = attrsOf(p);
+  const shortTitle = `${p.brand} ${p.model} | ${kindLabel[a.kind]} | Site-Control`;
+  const desc = trim155(`${p.title}. ${p.highlights[0] || ""}. ${WARRANTY_TEXT}, משלוח או התקנה.`);
   return {
-    title: `${p.title} | ${p.model} | Site-Control`,
-    description: `${p.brand} ${p.model}. ${p.highlights.join(". ")}. ${WARRANTY_TEXT}. משלוח, איסוף או התקנה מקצועית.`,
+    title: shortTitle.length <= 70 ? shortTitle : `${p.brand} ${p.model} | Site-Control`,
+    description: desc,
     alternates: { canonical: `/store/${p.slug}` },
     robots: { index: true, follow: true },
-    openGraph: { title: `${p.title} | Site-Control`, description: p.highlights.join(" · "), type: "website", locale: "he_IL", images: p.image ? [{ url: p.image }] : undefined },
+    openGraph: { title: `${p.brand} ${p.model} | Site-Control`, description: p.highlights.join(" · "), type: "website", locale: "he_IL", images: p.image ? [{ url: p.image }] : undefined },
   };
 }
 
 const nis = (v: number) => v.toLocaleString("he-IL");
+/** תיאור meta עד 155 תווים, נחתך בגבול מילה */
+function trim155(s: string) {
+  const t = s.replace(/\s+/g, " ").replace(/\.\s*\./g, ".").trim();
+  if (t.length <= 150) return t;
+  const cut = t.slice(0, 147);
+  return cut.slice(0, cut.lastIndexOf(" ")) + "…";
+}
 
 /** השכנים הקרובים: אותו סוג גוף, הזול הבא והיקר הבא, להשוואה ישירה */
 function neighbours(p: (typeof storeProducts)[number]) {

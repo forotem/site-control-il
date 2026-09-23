@@ -10,7 +10,7 @@ import styles from "./home.module.css";
 export const metadata: Metadata = {
   title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
   description:
-    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. מצלמות IP, ערכות מוכנות, מקליטים, אינטרקום ובקרת כניסה, ומצלמות סולאריות 4G לאתרים בלי חשמל. אחריות שנה, זמינות מאושרת לפני חיוב.",
+    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink ו-VisionNet מהמלאי של היבואן. מצלמות IP, מקליטים, אינטרקום וסולארי 4G. אחריות שנה.",
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
@@ -33,7 +33,15 @@ const catImage: Record<string, string> = {
   analog: "ds-2ce12kf0t-lfs-2-8mm",
 };
 
-const shelf = ["ds-2cd2t47g2h-li-2-8mm", "reolink-rlk8-810b4-a-rlk8-800b4", "ds-kis607-s", "nvr301-08s3", "cp3-pro", "ds-k1t344ebfwx-e1"];
+// המותגים שאנחנו עובדים איתם: לוגו רשמי בלבן על אריח כהה בשפה של האתר
+const brands = [
+  { key: "hikvision", name: "Hikvision", line: "מצלמות IP, מקליטים ואינטרקום", href: "/store#ip" },
+  { key: "uniview", name: "Uniview", line: "מצלמות IP ומקליטים במחיר חכם", href: "/store#ip" },
+  { key: "reolink", name: "Reolink", line: "ערכות מוכנות ומצלמות סולאריות 4G", href: "/store#kits" },
+  { key: "visionnet", name: "VisionNet", line: "אינטרקום 2 גידים וקודנים", href: "/store#intercom" },
+  { key: "tenda", name: "Tenda", line: "מצלמות Wi-Fi לבית", href: "/store#wifi" },
+  { key: "hiwatch", name: "HiWatch by Hikvision", line: "מצלמות 4K במחיר נגיש", href: "/store#ip" },
+];
 const popular = ["ds-2cd1043g2-liu-2-8mm", "ipc2124lb-af28k-dl2", "ds-2cd2t47g2h-li-2-8mm", "reolink-rlk8-410b4-5mp", "nvr301-08s3", "ds-kis607-s", "cp3-pro", "ds-2ce10kf0t-lpfs-2-8mm"];
 
 const faq = [
@@ -79,14 +87,14 @@ export default function Page() {
               <span>משלוח, איסוף עצמי או התקנה</span>
             </div>
           </div>
-          <div className={styles.shelf} aria-label="מוצרים נבחרים">
-            {shelf.map((s) => { const p = bySlug(s); return (
-              <Link key={s} href={`/store/${p.slug}`} prefetch={false}>
-                <span className={styles.tile}>{p.image && <img src={p.image} alt={p.title} loading="eager" />}</span>
-                <b>{p.brand}</b>
-                <small>{p.price ? `${p.price.toLocaleString("he-IL")} ₪` : "לפי פנייה"}</small>
+          <div className={styles.brands} aria-label="המותגים שאנחנו עובדים איתם">
+            {brands.map((b) => (
+              <Link key={b.key} href={b.href} className={styles.brand} prefetch={false}>
+                <span className={styles.brandTile}><img src={`/brand-logos/${b.key}.png`} alt={b.name} loading="eager" /></span>
+                <b>{b.name}</b>
+                <small>{b.line}</small>
               </Link>
-            ); })}
+            ))}
           </div>
         </section>
 

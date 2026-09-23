@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.site-control-il.com/blog/smart-security-ai-2026' },
   title: 'מערכות אבטחה חכמות עם AI בישראל 2026 | מדריך מקצועי',
   description: 'מערכות אבטחה חכמות עם AI בישראל 2026 - מדריך מקיף ומעודכן. מערכות אבטחה חכמות, מצלמות אבטחה AI, בינה מלאכותית אבטחה עם ייעוץ מקצועי והתקנה ברמה הגבוהה ביותר בישראל.',
   keywords: 'מערכות אבטחה חכמות, מצלמות אבטחה AI, בינה מלאכותית אבטחה, מערכת אבטחה חכמה לבית, זיהוי פנים מצלמות אבטחה, אבטחה חכמה ישראל',

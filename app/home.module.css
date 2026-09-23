@@ -18,7 +18,18 @@
 .trust { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; color: var(--text); font-size: 0.92rem; }
 .trust span::before { content: "✓"; color: var(--accent); margin-inline-end: 0.4rem; font-weight: 700; }
 
-/* קולאז' מוצרים בצד ההירו: ריבועים לבנים על כהה, כמו מדף */
+/* מותגים בצד ההירו: לוגו לבן על אריח כהה עם קו תכלת דק */
+.brands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+@media (max-width: 380px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+.brand { display: grid; gap: 0.35rem; text-decoration: none; color: inherit; justify-items: center; text-align: center; }
+.brandTile { width: 100%; aspect-ratio: 1; border-radius: 16px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(120% 100% at 50% 0%, rgba(0, 194, 255, 0.16), rgba(12, 18, 32, 0) 60%), linear-gradient(160deg, #101a2e, #0a111d); border: 1px solid rgba(0, 194, 255, 0.22); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 30px rgba(0, 0, 0, 0.35); transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast); }
+.brand:hover .brandTile { border-color: rgba(0, 194, 255, 0.55); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 34px rgba(0, 194, 255, 0.22); transform: translateY(-3px); }
+.brandTile img { width: 72%; height: 44%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 194, 255, 0.25)); }
+.brand b { font-size: 0.85rem; color: var(--text-bright); font-weight: 600; }
+.brand small { font-size: 0.74rem; color: var(--muted); line-height: 1.35; }
+.brand:focus-visible .brandTile { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* קולאז' מוצרים (לא בשימוש בבית, נשאר לדפים אחרים) */
 .shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
 .shelf a { display: grid; gap: 0.4rem; text-decoration: none; color: inherit; }
 .shelf .tile { aspect-ratio: 1; background: #fff; border-radius: 14px; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--border); transition: transform var(--transition-fast); }

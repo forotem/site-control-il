@@ -169,7 +169,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: 'Site-Control',
     url: BASE_URL,
-    logo: `${BASE_URL}/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif`,
+    logo: `${BASE_URL}/images/site-control-logo.webp`,
     description: 'חברת התקנות וחנות אונליין של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. Hikvision, Uniview, Reolink, VisionNet ו-Tenda, ומצלמות סולאריות 4G לאתרים בלי חשמל.',
     telephone: '+972-50-2256866',
     address: {

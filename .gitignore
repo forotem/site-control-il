@@ -28,3 +28,4 @@ secrets/
 gsc_output.*
 output.txt
 .env*
+automation/qa/tsout/

@@ -202,7 +202,7 @@
   .stickyBar b { color: var(--text-bright); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
   .stickyBar span { color: var(--muted); font-size: 0.75rem; direction: ltr; text-align: right; }
   .stickyBar .cta { padding: 0.7rem 1rem; font-size: 0.95rem; box-shadow: none; }
-  .gallery { position: relative; aspect-ratio: 4 / 3; max-height: 340px; }
+  .gallery { position: relative; top: auto; aspect-ratio: 4 / 3; max-height: 340px; } /* top: auto מבטל את ה-top של המצב הדביק בדסקטופ, אחרת הקופסה יורדת 90px על הטקסט */
 }
 
 /* ---- closing ---- */

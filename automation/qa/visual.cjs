@@ -63,13 +63,22 @@ function rectsOverlap(a, b) { return !(a.right <= b.left || b.right <= a.left ||
           const r = el.getBoundingClientRect(); if (r.width < 60 || r.height < 60 || el.offsetParent === null) return false;
           const img = el.querySelector("img"); return !img || (img.complete && img.naturalWidth === 0) || img.getBoundingClientRect().width === 0;
         }).map((el) => String(el.className || "").split(" ")[0] + " @" + Math.round(el.getBoundingClientRect().top)).slice(0, 5);
-        return { overflowX, wide, overlaps, h1, tinyTap, imgsNoAlt, brokenImgs, emptyTiles };
+        // טקסט מוסתר מתחת לאלמנט אחר: הכותרת הראשית ושלושת הפסקאות הראשונות חייבות להיות מה שנמצא בנקודת המרכז שלהן
+        const covered = [];
+        for (const el of [document.querySelector("h1"), ...[...document.querySelectorAll("main p, main h2")].slice(0, 3)].filter(Boolean)) {
+          const r = el.getBoundingClientRect(); if (r.width === 0 || r.top < 0 || r.top > innerHeight) { el.scrollIntoView({ block: "center" }); }
+          const rr = el.getBoundingClientRect(); const hit = document.elementFromPoint(Math.min(innerWidth - 2, Math.max(2, rr.left + rr.width / 2)), rr.top + Math.min(rr.height / 2, 12));
+          if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) { const cs = getComputedStyle(hit); if (cs.position !== "fixed") covered.push(`${el.tagName} under ${hit.tagName}.${String(hit.className || "").split(" ")[0]}`); }
+        }
+        window.scrollTo(0, 0);
+        return { overflowX, wide, overlaps, h1, tinyTap, imgsNoAlt, brokenImgs, emptyTiles, covered };
       });
       if (m.overflowX > 2) findings.push({ w, p, issue: `horizontal overflow ${m.overflowX}px`, detail: m.wide });
       if (m.overlaps.length) findings.push({ w, p, issue: "fixed elements overlap", detail: m.overlaps });
       if (m.h1 !== 1) findings.push({ w, p, issue: `h1 count ${m.h1}` });
       if (m.brokenImgs.length) findings.push({ w, p, issue: "broken images", detail: m.brokenImgs });
       if (m.emptyTiles.length) findings.push({ w, p, issue: "empty image tiles", detail: m.emptyTiles });
+      if (m.covered.length) findings.push({ w, p, issue: "text covered by another element", detail: m.covered });
       if (m.imgsNoAlt) findings.push({ w, p, issue: `${m.imgsNoAlt} images without alt` });
       if (consoleErrors.length) findings.push({ w, p, issue: "console errors", detail: [...new Set(consoleErrors)].slice(0, 4) });
       const realFailed = failed.filter((f) => !/googleapis|gstatic|google-analytics|googletagmanager|vercel-insights|clarity/.test(f));

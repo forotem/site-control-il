@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Site-Control - מצלמות אבטחה סולאריות 4G',
+    name: 'Site-Control - מצלמות אבטחה, אינטרקום והתקנה',
     short_name: 'Site-Control',
-    description: 'מצלמות אבטחה סולאריות 4G לאתרי בנייה וחקלאות - ניטור מרחוק עם גיבוי ענן',
+    description: 'חנות מצלמות אבטחה, מקליטים ואינטרקום עם צוות שגם מתקין. מלאי בישראל, אחריות שנה.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0f1622',

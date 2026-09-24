@@ -13,16 +13,16 @@ export const metadata: Metadata = {
     "מצלמות IP של Hikvision ו-Uniview, ערכות Reolink, מקליטים, אינטרקום וקודנים. מלאי בישראל, אחריות שנה, משלוח או התקנה. שאלון קצר מתאים לכם את המערכת.",
   alternates: { canonical: "/store" },
   robots: { index: true, follow: true },
-  openGraph: { title: "חנות מצלמות אבטחה ובקרת כניסה | Site-Control", description: "מלאי בישראל, אחריות שנה, משלוח או התקנה מקצועית.", type: "website", locale: "he_IL" },
+  openGraph: { title: "חנות מצלמות אבטחה ובקרת כניסה | Site-Control", description: "מלאי בישראל, אחריות שנה, משלוח או התקנה מקצועית.", type: "website", locale: "he_IL", images: ["/og-default.jpg"] },
 };
 
 // כניסות מהירות לפי מצב הלקוח, במקום לגלול 84 מוצרים
 const quickPaths = [
-  { title: "בית פרטי, מתחילים מאפס", desc: "ערכת Reolink מוכנה או מצלמות Hikvision עם מקליט", href: "#kits" },
-  { title: "יש מערכת ישנה על קואקס", desc: "מצלמות 3K ColorVu ומקליט היברידי על אותם כבלים", href: "#analog" },
-  { title: "אינטרקום לבית או לבניין", desc: "2 גידים על הכבל הקיים, או IP עם מענה מהנייד", href: "#intercom" },
-  { title: "מצלמה אחת בלי מקליט", desc: "Wi-Fi עם כרטיס זיכרון ואפליקציה", href: "#wifi" },
-  { title: "אתר בנייה או שטח בלי חשמל", desc: "מצלמות סוללה עם סים 4G ופאנל סולארי", href: "#solar" },
+  { title: "בית פרטי, מתחילים מאפס", desc: "ערכת Reolink מוכנה או מצלמות Hikvision עם מקליט", href: "/store/c/kits" },
+  { title: "יש מערכת ישנה על קואקס", desc: "מצלמות 3K ColorVu ומקליט היברידי על אותם כבלים", href: "/store/c/analog" },
+  { title: "אינטרקום לבית או לבניין", desc: "2 גידים על הכבל הקיים, או IP עם מענה מהנייד", href: "/store/c/intercom" },
+  { title: "מצלמה אחת בלי מקליט", desc: "Wi-Fi עם כרטיס זיכרון ואפליקציה", href: "/store/c/wifi" },
+  { title: "אתר בנייה או שטח בלי חשמל", desc: "מצלמות סוללה עם סים 4G ופאנל סולארי", href: "/store/c/solar" },
 ];
 
 export default function StorePage() {
@@ -75,7 +75,7 @@ export default function StorePage() {
       <nav className={styles.catNav} aria-label="קטגוריות" id="categories">
         {storeCategories.map((c) => {
           const n = storeProducts.filter((p) => p.category === c.id).length;
-          return n ? <a key={c.id} href={`#${c.id}`}>{c.name} <small>{n}</small></a> : null;
+          return n ? <Link key={c.id} href={`/store/c/${c.id}`}>{c.name} <small>{n}</small></Link> : null;
         })}
       </nav>
 

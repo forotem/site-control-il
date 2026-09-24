@@ -9,8 +9,8 @@
  * 4. מייצר תמונת hero עם Gemini 3 Pro Image (Nano Banana Pro)
  * 5. כותב את הקבצים לפרויקט ומעדכן את רשימת הבלוגים
  *
- * פוקוס: ימי שני הבוט כותב על מוצרי החנות (/store) עם קישורים למוצרים אמיתיים
- * מהקטלוג (ראה store-topics.js); בשאר הימים על מצלמות סולאריות וטיימלאפס.
+ * פוקוס: ברירת המחדל היא מוצרי החנות (/store) עם קישורים למוצרים אמיתיים
+ * מהקטלוג (ראה store-topics.js); ביום חמישי הראשון בכל חודש על מצלמות סולאריות 4G.
  * לכפות: BLOG_FOCUS=store node automation/blog-bot.js
  *
  * הרצה: node automation/blog-bot.js
@@ -30,9 +30,18 @@ const GSC_JSON_PATH = path.join(PROJECT_ROOT, 'gsc_output.json');
 // נכס URL-prefix ב-Search Console (הנכס הישן sc-domain כבר לא נגיש)
 const SITE_URL = 'https://www.site-control-il.com/';
 
-// פוקוס הריצה: 'store' מקדם את החנות (/store), 'solar' את המצלמות הסולאריות והטיימלאפס.
-// ברירת מחדל: ימי שני = חנות, שאר הימים = סולארי. אפשר לכפות עם BLOG_FOCUS.
-const FOCUS = (process.env.BLOG_FOCUS || (new Date().getUTCDay() === 1 ? 'store' : 'solar')).toLowerCase();
+// פוקוס הריצה: 'store' מקדם את החנות (/store), 'solar' את המצלמות הסולאריות 4G.
+// ברירת מחדל: חנות בכל יום, חוץ מיום חמישי הראשון בחודש = סולארי (פעם בחודש).
+// אפשר לכפות עם BLOG_FOCUS.
+const _now = new Date();
+const IS_FIRST_THURSDAY = _now.getUTCDay() === 4 && _now.getUTCDate() <= 7;
+const FOCUS = (process.env.BLOG_FOCUS || (IS_FIRST_THURSDAY ? 'solar' : 'store')).toLowerCase();
+
+// נושאים שאינם חלק מהעסק (טיימלאפס/תיעוד שייכים לאתר האחות timelapseit.co.il)
+const EXCLUDED_TOPIC_RE = /טיימלאפס|טיים[- ]?לאפס|time[- ]?lapse|תיעוד/i;
+function isExcludedTopic(text) {
+  return EXCLUDED_TOPIC_RE.test(String(text || ''));
+}
 
 // Gemini models
 const CONTENT_MODEL = 'gemini-2.5-flash';
@@ -207,7 +216,7 @@ const COMMERCIAL_INTENT_KEYWORDS = [
   'ללא חשמל', 'ללא אינטרנט', 'סולארי', 'סולארית', '4G', 'LTE',
   'מחיר', 'עלות', 'כמה עולה', 'לקנות', 'השוואה', 'ביקורת',
   'reolink', 'go plus', 'ptz', 'gיבוי ענן', 'גיבוי ענן',
-  'טיימלאפס', 'timelapse', 'תיעוד', 'ניטור', 'פיקוח',
+  'ניטור', 'פיקוח',
 ];
 
 function getCommercialScore(query) {
@@ -283,6 +292,7 @@ function findOpportunity(queries) {
 
   // Filter: high impressions, low clicks, position 8-50 (sweet spot — off first page but indexable)
   const opportunities = queries
+    .filter(q => !isExcludedTopic(q.query))
     .filter(q => q.impressions >= 3 && q.clicks < 30 && q.position > 7 && q.position < 60)
     .map(q => {
       const commercialBonus = getCommercialScore(q.query) * 10;
@@ -312,7 +322,6 @@ function findOpportunity(queries) {
     'מצלמות מעקב לקבלן בנין',
     'מניעת גניבות ציוד באתר בנייה',
     'פיקוח על עובדים באתר בנייה מצלמות',
-    'תיעוד התקדמות בנייה מצלמות סולאריות',
     // Agriculture - high commercial intent
     'מצלמות אבטחה לשדה חקלאי ללא חשמל',
     'ניטור ציוד חקלאי מרחוק 4G',
@@ -330,6 +339,7 @@ function findOpportunity(queries) {
   ];
 
   for (const topic of fallbackTopics) {
+    if (isExcludedTopic(topic)) continue;
     const slug = hebrewToSlug(topic);
     if (!isDuplicateSlug(slug, existingSlugs)) {
       console.log(`🎯 נושא מ-fallback: "${topic}"`);
@@ -408,6 +418,11 @@ ${existingTitles.map(t => `- ${t}`).join('\n')}
       continue;
     }
 
+    if (isExcludedTopic(data.topic) || /timelapse|documentation/.test(cleanSlug)) {
+      console.warn(`⚠️ ניסיון ${attempt}: הנושא "${data.topic}" לא רלוונטי לעסק (טיימלאפס/תיעוד), מנסה שוב`);
+      continue;
+    }
+
     const slug = `${cleanSlug}-${new Date().getFullYear()}`;
 
     if (isDuplicateSlug(slug, existingSlugs)) {
@@ -437,17 +452,16 @@ async function generateBlogContent(topic) {
 
   // Smart internal links to relevant pages based on topic
   const sitePages = [
-    { url: '/products/go', anchor: 'Reolink GO Plus 4G', context: 'מצלמה סולארית 4G' },
-    { url: '/products/ptz', anchor: 'Reolink PTZ Solar', context: 'מצלמה מסתובבת סולארית' },
-    { url: '/use-cases/construction', anchor: 'מצלמות לאתרי בנייה', context: 'אתרי בנייה' },
-    { url: '/use-cases/agriculture', anchor: 'מצלמות לחקלאות', context: 'חקלאות' },
-    { url: '/use-cases/remote', anchor: 'ניהול אתרים מבודדים', context: 'אתרים מרוחקים' },
-    { url: '/cloud-backup', anchor: 'גיבוי ענן אוטומטי', context: 'גיבוי ענן' },
-    { url: '/weatherproof', anchor: 'עמידות IP66', context: 'עמידות מזג אוויר' },
-    { url: '/video-quality', anchor: 'איכות וידאו 4K', context: 'רזולוציה 4K' },
-    { url: '/contact', anchor: 'ייעוץ חינם', context: 'יצירת קשר' },
     { url: '/store', anchor: 'החנות שלנו', context: 'קניית מצלמות, מקליטים ואינטרקום' },
+    { url: '/store/c/solar', anchor: 'מצלמות סולאריות 4G', context: 'מצלמות ללא חשמל ואינטרנט, אתרים מרוחקים' },
+    { url: '/store/reolink-go-plus', anchor: 'Reolink GO Plus 4G', context: 'מצלמה סולארית 4G' },
+    { url: '/store/c/ip', anchor: 'מצלמות IP', context: 'מצלמות אבטחה קוויות' },
+    { url: '/store/c/kits', anchor: 'ערכות מצלמות', context: 'ערכה מלאה עם מקליט' },
+    { url: '/store/c/intercom', anchor: 'אינטרקום', context: 'אינטרקום ובקרת כניסה' },
     { url: '/store/finder', anchor: 'שאלון: איזו מצלמה מתאימה לי', context: 'התלבטות בין דגמים' },
+    { url: '/installation', anchor: 'התקנת מצלמות אבטחה', context: 'התקנה' },
+    { url: '/store/c/recorders', anchor: 'מקליטים NVR', context: 'מקליטים' },
+    { url: '/contact', anchor: 'ייעוץ חינם', context: 'יצירת קשר' },
   ];
 
   // Check if topic is timelapse-related for external link instruction
@@ -461,7 +475,7 @@ Site-Control היא חברת התקנות עם חנות אונליין של מצ
 כתוב פוסט בלוג מקצועי ומקיף בעברית על הנושא: "${topic.query}"
 
 ## קהל יעד מרכזי (כתוב עבורם!):
-- קבלני בנייה ומנהלי פרויקטים (שמחפשים לאבטח ציוד ולתעד התקדמות)
+- קבלני בנייה ומנהלי פרויקטים (שמחפשים לאבטח ציוד ולפקח על האתר מרחוק)
 - בעלי משקים חקלאיים (שמחפשים פתרון ללא חשמל ואינטרנט)
 - מנהלי אתרים מרוחקים (מחסנים, שדות, אתרים מבודדים)
 
@@ -492,7 +506,7 @@ ${sitePages.map(p => `- <a href="${p.url}">${p.anchor}</a> — שלב כשמדב
 {
   "title": "כותרת מושכת עם מילת המפתח הראשית, עד 65 תווים",
   "metaDescription": "תיאור meta עד 155 תווים שמכיל את מילת המפתח ופונה לקהל היעד",
-  "category": "קטגוריה מתאימה (מצלמות אבטחה / פתרונות B2B / מדריכים / תיעוד בנייה / חקלאות)",
+  "category": "קטגוריה מתאימה (מצלמות אבטחה / פתרונות B2B / מדריכים / חקלאות)",
   "content": "תוכן המאמר המלא ב-HTML עם תגיות h2, h3, p, ul, li, strong, table, a. style: direction:rtl. קישורים פנימיים עם href מלא לדפי האתר.",
   "faqItems": [
     {"question": "שאלה בדיוק כמו שאנשים מחפשים בגוגל", "answer": "תשובה מפורטת ומועילה"}
@@ -551,8 +565,6 @@ async function generateBlogImage(topic, slug) {
     let sceneContext = 'a construction site with security cameras on poles';
     if (topicLower.includes('חקלא') || topicLower.includes('שדה') || topicLower.includes('כרם')) {
       sceneContext = 'an agricultural field or farm with solar-powered security cameras';
-    } else if (topicLower.includes('טיימלאפס') || topicLower.includes('timelapse') || topicLower.includes('תיעוד')) {
-      sceneContext = 'a construction site timelapse setup with cameras and solar panels';
     } else if (topicLower.includes('מבודד') || topicLower.includes('מרוחק') || topicLower.includes('ללא חשמל')) {
       sceneContext = 'a remote outdoor location with solar-powered 4G security cameras';
     }
@@ -891,8 +903,8 @@ async function main() {
     process.exit(1);
   }
 
-  // Step 1: Get GSC data
-  const queries = await fetchGSCData();
+  // Step 1: Get GSC data (hard filter: no timelapse/documentation queries at all)
+  const queries = (await fetchGSCData()).filter(q => !isExcludedTopic(q && q.query));
 
   // Step 2: Find a topic. Focus 'store' promotes the online store first; otherwise the
   // classic flow (GSC opportunity / fallback list / Gemini). Either way we never exit empty

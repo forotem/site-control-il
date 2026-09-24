@@ -21,6 +21,12 @@ const BLOG_DIR = path.join(PROJECT_ROOT, 'app', 'blog');
 const GSC_JSON_PATH = path.join(PROJECT_ROOT, 'gsc_output.json');
 const SITE_URL = 'sc-domain:site-control-il.com';
 
+// שאילתות טיימלאפס/תיעוד אינן חלק מהעסק (שייכות לאתר האחות timelapseit.co.il) — מדלגים עליהן
+const EXCLUDED_QUERY_RE = /טיימלאפס|טיים[- ]?לאפס|time[- ]?lapse|תיעוד/i;
+function isExcludedQuery(query) {
+  return EXCLUDED_QUERY_RE.test(String(query || ''));
+}
+
 // ---------- GSC DATA ----------
 
 async function fetchBlogPerformance() {
@@ -63,6 +69,7 @@ async function fetchBlogPerformance() {
       for (const row of rows) {
         const page = row.keys[0];
         const query = row.keys[1];
+        if (isExcludedQuery(query)) continue;
         if (!pageData[page]) {
           pageData[page] = { clicks: 0, impressions: 0, ctr: 0, position: 0, queries: [], count: 0 };
         }
@@ -89,7 +96,7 @@ async function fetchBlogPerformance() {
   console.log('📂 משתמש בנתוני GSC סטטיים (מוגבל)...');
   try {
     const data = JSON.parse(fs.readFileSync(GSC_JSON_PATH, 'utf-8'));
-    return data.queries.reduce((acc, q) => {
+    return data.queries.filter(q => !isExcludedQuery(q.query)).reduce((acc, q) => {
       if (!acc['_general']) acc['_general'] = { clicks: 0, impressions: 0, queries: [], count: 0 };
       acc['_general'].queries.push(q);
       return acc;
@@ -163,6 +170,7 @@ async function improvePost(improvement) {
 
   const existingContent = fs.readFileSync(pagePath, 'utf-8');
   const topQueries = improvement.data.queries
+    .filter(q => !isExcludedQuery(q.query))
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 5)
     .map(q => q.query);

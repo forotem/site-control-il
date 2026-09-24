@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BASE_URL } from "../../config";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
@@ -92,7 +93,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
   const breadcrumbItems = [
     { name: "חנות", url: "/store" },
-    { name: p.categoryName, url: `/store#${p.category}` },
+    { name: p.categoryName, url: `/store/c/${p.category}` },
     { name: p.model, url: `/store/${p.slug}` },
   ];
   const productSchema = {
@@ -102,10 +103,19 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     brand: { "@type": "Brand", name: p.brand },
     mpn: p.model,
     sku: p.sku || p.model,
-    image: p.image || undefined,
+    image: p.image ? `${BASE_URL}${encodeURI(p.image)}` : undefined,
+    url: `${BASE_URL}/store/${p.slug}`,
     description: p.highlights.join(". "),
     offers: p.price
-      ? { "@type": "Offer", priceCurrency: "ILS", price: p.price, availability: "https://schema.org/InStock", seller: { "@type": "Organization", name: "Site-Control" } }
+      ? {
+          "@type": "Offer",
+          url: `${BASE_URL}/store/${p.slug}`,
+          priceCurrency: "ILS",
+          price: p.price,
+          itemCondition: "https://schema.org/NewCondition",
+          availability: p.oldStock ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: "Site-Control" },
+        }
       : undefined,
   };
 
@@ -179,7 +189,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           )}
           <div className={styles.links}>
             {p.datasheet && <a href={p.datasheet} target="_blank" rel="noopener noreferrer">דף נתונים מלא של היצרן (PDF)</a>}
-            <Link href={`/store#${p.category}`}>עוד מוצרים ב{p.categoryName}</Link>
+            <Link href={`/store/c/${p.category}`}>עוד מוצרים ב{p.categoryName}</Link>
             <Link href="/store/finder">לא בטוחים? שאלון התאמה קצר</Link>
           </div>
         </div>

@@ -4,13 +4,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
+import { attributionLabel } from "../../lib/attribution-label";
 
 export const runtime = "nodejs";
 
 type Line = { slug: string; qty: number };
 
 export async function POST(req: NextRequest) {
-  let body: { name?: string; phone?: string; delivery?: string; note?: string; items?: Line[]; email?: string };
+  let body: { name?: string; phone?: string; delivery?: string; note?: string; items?: Line[]; email?: string; attribution?: unknown };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const name = String(body.name || "").trim().slice(0, 80);
   const phone = String(body.phone || "").replace(/[^\d+]/g, "").slice(0, 20);
@@ -33,6 +34,7 @@ export async function POST(req: NextRequest) {
     `טלפון: ${phone}`,
     body.email ? `מייל: ${String(body.email).slice(0, 120)}` : null,
     `אספקה: ${delivery}`,
+    `מקור: ${attributionLabel(body.attribution)}`,
     bulk ? "כמות/סכום של קבלן: להכין הצעת מחיר עם הנחת כמות" : null,
     "",
     "פריטים:",
@@ -45,5 +47,7 @@ export async function POST(req: NextRequest) {
   ].filter((x) => x !== null).join("\n");
 
   const sent = await notifyTeam(`הזמנה חדשה מהחנות ${ref}${bulk ? " (קבלן)" : ""}`, text);
+  // אם אף ערוץ לא עבד, לא מאשרים ללקוח הזמנה שאף אחד לא יראה: מחזירים שגיאה וה-UI מציע וואטסאפ.
+  if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח את ההזמנה כרגע. אפשר לשלוח אותה בווצאפ ונטפל מיד." }, { status: 502 });
   return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email });
 }

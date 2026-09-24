@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { STORE_KNOWLEDGE, productBySlug } from "../../data/store-knowledge";
 import { productName } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
+import { attributionLabel } from "../../lib/attribution-label";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -98,7 +99,7 @@ export async function POST(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (limited(ip)) return NextResponse.json({ error: "יותר מדי הודעות ברצף. נסו שוב בעוד כמה דקות או כתבו לנו בווצאפ." }, { status: 429 });
 
-  let body: { messages?: Msg[]; page?: string; cart?: { slug: string; qty: number }[] };
+  let body: { messages?: Msg[]; page?: string; cart?: { slug: string; qty: number }[]; attribution?: unknown };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const messages = (body.messages || []).filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string").slice(-16);
   if (!messages.length || messages[messages.length - 1].role !== "user") return NextResponse.json({ error: "bad request" }, { status: 400 });
@@ -138,7 +139,7 @@ export async function POST(req: NextRequest) {
       tasks.push(notifyTeam("שאלה מהצ'אט בחנות שצריך תשובה מהצוות", `שאלה: ${data.escalate}\n${body.page ? `דף: /store/${body.page}\n` : ""}${leadCaptured ? `לקוח: ${data.lead_name || "-"} ${data.lead_phone}\n` : "הלקוח עדיין לא השאיר טלפון.\n"}\nשיחה:\n${transcript}`));
     }
     if (leadCaptured) {
-      tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\n\nשיחה:\n${transcript}`));
+      tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
     }
     if (tasks.length) await Promise.allSettled(tasks);
 

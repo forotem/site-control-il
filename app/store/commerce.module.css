@@ -21,8 +21,9 @@
 .drawerHead h2 { font-size: 1.15rem; color: var(--text-bright); }
 .drawerBody { padding: 1rem 1.2rem calc(1.2rem + env(safe-area-inset-bottom, 0px)); overflow-y: auto; display: grid; gap: 0.9rem; align-content: start; }
 .field { display: grid; gap: 0.3rem; font-size: 0.9rem; color: var(--muted); }
-.field input, .field textarea { font: inherit; padding: 0.65rem 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text-bright); }
-.field input:focus, .field textarea:focus, .chatForm input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.field input, .field textarea, .field select { font: inherit; padding: 0.65rem 0.8rem; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text-bright); }
+.field select option { background: #0f1622; color: var(--text-bright); }
+.field input:focus, .field textarea:focus, .field select:focus, .chatForm input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
 .fieldset { border: 1px solid var(--border); border-radius: 12px; padding: 0.6rem 0.9rem 0.8rem; display: grid; gap: 0.4rem; }
 .fieldset legend { color: var(--muted); font-size: 0.9rem; padding: 0 0.3rem; }
 .radio { display: flex; gap: 0.6rem; align-items: start; cursor: pointer; font-size: 0.92rem; color: var(--text); }

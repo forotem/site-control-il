@@ -650,3 +650,6 @@ body.sc-chat-open .scroll-top, body.sc-cart-open .scroll-top { display: none !im
   nav > div > a { flex: 0 0 auto; white-space: nowrap; }
   nav > div > a:first-child span { display: none; } /* רק הלוגו, בלי הטקסט */
 }
+
+/* דפי טופס לידים (התקנה, יצירת קשר): עגלה ריקה לא מוצגת כדי לא להסיח מהטופס. הדף מסמן את עצמו ב-data-lead-page. */
+body:has([data-lead-page]) #store-cart-button[data-empty="true"] { display: none; }

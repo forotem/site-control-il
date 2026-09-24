@@ -1,11 +1,11 @@
 // התראות לצוות מהחנות (שאלה שהעוזר לא ידע לענות, ליד, הזמנה מהעגלה).
 // ערוץ ראשי: ווצאפ דרך GreenAPI (אם מוגדרים GREEN_ID_INSTANCE + GREEN_API_TOKEN ב-Vercel).
-// גיבוי: מייל דרך Resend (RESEND_API_KEY, כבר קיים לטופס יצירת הקשר). אם אין אף אחד, נכתב ללוג בלבד.
+// בנוסף תמיד: מייל דרך Resend (RESEND_API_KEY) כארכיון וכגיבוי. אם אין אף אחד, נכתב ללוג בלבד.
 
 const ALERT_WA = process.env.STORE_ALERT_WHATSAPP || "972502256866"; // המספר העסקי של רותם
 const ALERT_EMAIL = process.env.STORE_ALERT_EMAIL || "info@site-control-il.com";
 
-export async function notifyTeam(subject: string, text: string): Promise<{ whatsapp: boolean; email: boolean }> {
+export async function notifyTeam(subject: string, text: string, opts?: { replyTo?: string }): Promise<{ whatsapp: boolean; email: boolean }> {
   const out = { whatsapp: false, email: false };
   const id = process.env.GREEN_ID_INSTANCE;
   const token = process.env.GREEN_API_TOKEN;
@@ -22,12 +22,13 @@ export async function notifyTeam(subject: string, text: string): Promise<{ whats
       console.error("store-notify whatsapp failed", e);
     }
   }
-  if (!out.whatsapp && process.env.RESEND_API_KEY) {
+  // מייל תמיד (לא רק כגיבוי): ארכיון של כל ליד ב-info@, גם כשהווצאפ עבד
+  if (process.env.RESEND_API_KEY) {
     try {
       const { Resend } = await import("resend");
       const resend = new Resend(process.env.RESEND_API_KEY);
       for (const from of ["Site-Control <noreply@site-control-il.com>", "onboarding@resend.dev"]) {
-        const r = await resend.emails.send({ from, to: ALERT_EMAIL, subject, text });
+        const r = await resend.emails.send({ from, to: ALERT_EMAIL, subject, text, ...(opts?.replyTo ? { replyTo: opts.replyTo } : {}) });
         if (!r.error) { out.email = true; break; }
       }
     } catch (e) {

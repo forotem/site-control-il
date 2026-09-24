@@ -11,6 +11,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import "./globals.css";
 import { logo } from "./data/images";
 import { BASE_URL } from "./config";
+import { BUSINESS } from "./data/business";
 
 // Use next/font to avoid render-blocking font requests
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -210,7 +211,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <p style={{ color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7', fontSize: '0.95rem' }}>מתקינים ומוכרים מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.</p>
                 <div style={{ display: 'flex', gap: '12px', marginTop: '1rem' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> אבטחה מקצועית</span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> התקנה בכל הארץ</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> התקנה במרכז ובדרום</span>
                 </div>
               </div>
               <div>
@@ -226,7 +227,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ul>
               </div>
               <div>
-                <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>שותפים</h4>
+                <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>מותגים</h4>
                 <p style={{ fontSize: '0.95rem', color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7' }}>מוכרים ומתקינים <strong style={{ color: '#00c2ff' }}>Hikvision, Uniview, Reolink, VisionNet ו-Tenda</strong> מהמלאי של היבואן בישראל.</p>
                 <div style={{ marginTop: '1rem', padding: '16px', background: 'rgba(12, 18, 32, 0.7)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -251,7 +252,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
               </p>
-              <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(139, 163, 191, 0.6)', display: 'flex', alignItems: 'center', gap: '6px' }}>בשיתוף Reolink <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(139, 163, 191, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></p>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.6)', flexBasis: '100%' }}>Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId} · <a href={`tel:${BUSINESS.phoneE164}`} style={{ color: 'rgba(139, 163, 191, 0.8)' }}>{BUSINESS.phoneDisplay}</a> · {BUSINESS.hours} · התקנות {BUSINESS.installAreaIn}, משלוחים לכל הארץ</p>
             </div>
           </div>
         </footer>

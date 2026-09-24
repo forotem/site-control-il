@@ -7,8 +7,13 @@ import { Breadcrumb, BreadcrumbSchema } from "../../../components/Breadcrumb";
 import { ProductCard } from "../../ProductCard";
 import { CategoryGuide } from "../../CategoryGuide";
 import { BASE_URL } from "../../../config";
+import { BUSINESS } from "../../../data/business";
+import { InstallForm } from "../../../installation/InstallForm";
 import styles from "../../store.module.css";
 import home from "../../../home.module.css";
+
+// קטגוריות שקמפייני הלידים שולחים אליהן: מקבלות טופס "צריך גם התקנה?" עם id="quote"
+const QUOTE_CATEGORIES = new Set(["intercom", "ip", "recorders", "analog"]);
 
 // דף קטגוריה אמיתי (לא עוגן #) כדי שגוגל יוכל לדרג "אינטרקום לבניין", "מקליט NVR" וכו',
 // ושיהיה דף נחיתה ממוקד לכל קבוצת מודעות.
@@ -36,6 +41,7 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
   const seo = categorySeo[params.cat];
   if (!cat || !seo) notFound();
   const items = storeProducts.filter((p) => p.category === cat.id);
+  const withQuote = QUOTE_CATEGORIES.has(cat.id);
   const breadcrumbItems = [
     { name: "חנות", url: "/store" },
     { name: cat.name, url: `/store/c/${cat.id}` },
@@ -67,12 +73,14 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
           <p>{seo.intro}</p>
           <div className={styles.heroCtas} data-track={`category_${cat.id}`}>
             <a className={`${styles.cta} ${styles.ctaAccent}`} href="#products">ל-{items.length} המוצרים עם מחיר</a>
-            <a className={`${styles.cta} ${styles.ctaSecondary}`} href={wa} target="_blank" rel="noopener noreferrer">המלצה והצעת מחיר בווצאפ</a>
+            {withQuote
+              ? <a className={`${styles.cta} ${styles.ctaSecondary}`} href="#quote">הצעת מחיר כולל התקנה</a>
+              : <a className={`${styles.cta} ${styles.ctaSecondary}`} href={wa} target="_blank" rel="noopener noreferrer">המלצה והצעת מחיר בווצאפ</a>}
           </div>
           <div className={styles.trust}>
             <span>{WARRANTY_TEXT}</span>
             <span>מלאי של היבואן בישראל</span>
-            <span>משלוח, איסוף עצמי או התקנה על ידינו</span>
+            <span>משלוח לכל הארץ, או התקנה על ידינו {BUSINESS.installAreaIn}</span>
           </div>
         </div>
       </header>
@@ -90,6 +98,18 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
           {items.map((p) => <ProductCard key={p.slug} p={p} />)}
         </div>
       </section>
+
+      {withQuote && (
+        <section id="quote" className={styles.section} aria-labelledby="quote-title" data-track={`category_${cat.id}_quote`} style={{ scrollMarginTop: "90px" }}>
+          <div className={styles.sectionHead}>
+            <div>
+              <h2 id="quote-title">צריך גם התקנה או תכנון?</h2>
+              <p>משאירים שם, טלפון ומה צריך, וחוזרים אליך עם הצעה לציוד ולהתקנה יחד. מתקינים {BUSINESS.installAreaIn}.</p>
+            </div>
+          </div>
+          <InstallForm variant="short" category={cat.id} />
+        </section>
+      )}
 
       <section className={styles.section} aria-labelledby="faq-title">
         <div className={styles.sectionHead}><h2 id="faq-title">שאלות נפוצות</h2></div>

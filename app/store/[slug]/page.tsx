@@ -168,7 +168,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">
               בדיקת זמינות והזמנה בווצאפ
             </a>
-            <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/contact">רוצה שנתקין? דברו איתנו</Link>
+            <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/installation#quote">רוצה שנתקין? הצעת מחיר</Link>
             <div className={styles.delivery}>
               <h3>איך תרצה לקבל את המוצר?</h3>
               {deliveryOptions.map((d, i) => (

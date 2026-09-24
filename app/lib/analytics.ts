@@ -21,7 +21,9 @@ type Item = { item_id: string; item_name?: string; item_brand?: string; item_cat
 export const track = {
   whatsapp: (location: string) => trackEvent('contact_whatsapp', { location }),
   phone: (location: string) => trackEvent('contact_phone', { location }),
-  formSubmit: (category?: string) => trackEvent('generate_lead', { method: 'contact_form', category: category || '' }),
+  /** טופס ליד נשלח. אותו אירוע (generate_lead, כבר מיובא כהמרה) לכל הטפסים; lead_type מבדיל: install / category_quote / contact */
+  formSubmit: (leadType: string, category?: string, leadId?: string) =>
+    trackEvent('generate_lead', { method: 'contact_form', lead_type: leadType, category: category || '', lead_id: leadId || '' }),
   /** הזמנה מהעגלה נשלחה בהצלחה (אין תשלום באתר, זו בקשת הזמנה) */
   orderRequest: (ref: string, value: number, items: Item[]) =>
     trackEvent('purchase_request', { transaction_id: ref, value, currency: 'ILS', items }),

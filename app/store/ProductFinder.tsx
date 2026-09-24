@@ -119,7 +119,7 @@ export function ProductFinder({ compact = false }: { compact?: boolean }) {
         <a className={`${styles.cta} ${styles.ctaPrimary}`} href={wa} target="_blank" rel="noopener noreferrer">
           לשלוח את ההמלצה בווצאפ ולקבל מחיר סופי
         </a>
-        <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/contact">רוצה שנתקין? דברו איתנו</Link>
+        <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/installation#quote">רוצה שנתקין? הצעת מחיר</Link>
       </div>
 
       {r.alternatives.length > 0 && (

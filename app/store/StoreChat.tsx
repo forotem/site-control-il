@@ -44,7 +44,7 @@ function nudgeFor(page: string | undefined, pagesSeen: number): string {
 const nis = (v: number) => v.toLocaleString("he-IL");
 
 /** קישורים בתוך טקסט של טל: כתובות מלאות ונתיבים באתר (/products/go, /packages) הופכים ללחיצים */
-const LINK_RE = /(https?:\/\/[^\s)]+|(?<![\w/])\/(?:store|products|packages|pricing|contact|blog|about|locations|use-cases|cloud-backup|weatherproof|video-quality)(?:[\w\-/#]*)?)/g;
+const LINK_RE = /(https?:\/\/[^\s)]+|(?<![\w/])\/(?:store|products|packages|pricing|contact|installation|blog|about|locations|use-cases|cloud-backup|weatherproof|video-quality)(?:[\w\-/#]*)?)/g;
 function renderText(text: string) {
   const parts = text.split(LINK_RE);
   return parts.map((part, i) => {
@@ -77,6 +77,7 @@ export function StoreChat() {
   // התוכן תלוי בדף: על מצלמה היברידית טל מציע להסביר לילה, על מקליט לבדוק ערוצים וכו'.
   useEffect(() => {
     if (open) return;
+    if (/^\/(installation|contact)(\/|$)/.test(pathname || "")) { setNudge(null); return; } // דפי טופס לידים: לא מסיחים מהטופס
     let seen = 0, shown = false;
     try { seen = Number(sessionStorage.getItem("sc-pages") || 0) + 1; sessionStorage.setItem("sc-pages", String(seen)); shown = sessionStorage.getItem("sc-chat-nudged") === "1"; } catch {}
     if (shown) return;

@@ -1,14 +1,21 @@
 // מקור הגעה של הגולש (first touch): נשמר פעם אחת כשמגיעים לאתר עם gclid / UTM / מפנה חיצוני,
 // ונשלח עם טופס, הזמנה וצ'אט כדי שבהתראה לצוות יהיה כתוב אם הליד הגיע מ-Google Ads.
+// מזהה הקליק (gclid / gbraid / wbraid) נשמר כמחרוזת, כדי שאפשר יהיה לדווח לגוגל על ליד שהפך לעסקה (המרות אופליין).
 const KEY = 'sc-attribution';
 const TTL_DAYS = 90;
+
+export type ClickIdType = 'gclid' | 'gbraid' | 'wbraid';
 
 export type Attribution = {
   source: string; // "google_ads" | "google" | "facebook" | utm_source | referrer host | "direct"
   medium?: string;
   campaign?: string;
   term?: string;
-  gclid?: boolean;
+  content?: string; // utm_content (בקמפיינים: מזהה קבוצת המודעות)
+  utmId?: string; // utm_id (בקמפיינים: מזהה הקמפיין)
+  gclid?: boolean; // נשאר לתאימות עם רשומות ישנות: true = הגיע ממודעה
+  clickId?: string;
+  clickIdType?: ClickIdType;
   landing: string;
   at: number;
 };
@@ -18,10 +25,15 @@ function detect(): Attribution | null {
   const q = url.searchParams;
   const landing = url.pathname;
   const at = Date.now();
-  const gclid = q.get('gclid') || q.get('gbraid') || q.get('wbraid');
   const utm = (k: string) => q.get(`utm_${k}`)?.slice(0, 80) || undefined;
-  if (gclid) return { source: 'google_ads', medium: 'cpc', campaign: utm('campaign'), term: utm('term'), gclid: true, landing, at };
-  if (utm('source')) return { source: utm('source')!, medium: utm('medium'), campaign: utm('campaign'), term: utm('term'), landing, at };
+  const utms = { campaign: utm('campaign'), term: utm('term'), content: utm('content'), utmId: utm('id') };
+  const types: ClickIdType[] = ['gclid', 'gbraid', 'wbraid'];
+  const clickIdType = types.find((t) => q.get(t));
+  if (clickIdType) {
+    const clickId = (q.get(clickIdType) || '').replace(/[^\w-]/g, '').slice(0, 200);
+    return { source: 'google_ads', medium: 'cpc', ...utms, gclid: true, clickId, clickIdType, landing, at };
+  }
+  if (utm('source')) return { source: utm('source')!, medium: utm('medium'), ...utms, landing, at };
   if (q.get('fbclid')) return { source: 'facebook', medium: 'paid_or_social', landing, at };
   try {
     const ref = document.referrer ? new URL(document.referrer).hostname : '';
@@ -49,7 +61,8 @@ export function getAttribution(): Attribution | null {
   if (typeof window === 'undefined') return null;
   try {
     const a = JSON.parse(localStorage.getItem(KEY) || 'null') as Attribution | null;
-    if (!a || Date.now() - a.at > TTL_DAYS * 864e5) return null;
+    if (!a) return null;
+    if (Date.now() - a.at > TTL_DAYS * 864e5) { localStorage.removeItem(KEY); return null; }
     return a;
   } catch { return null; }
 }

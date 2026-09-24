@@ -1,4 +1,5 @@
 import { BASE_URL } from '../config';
+import { BUSINESS } from '../data/business';
 export function JsonLd({ json }: { json: Record<string, any> }) {
   return (
     <script
@@ -15,13 +16,16 @@ export function LocalBusinessSchema() {
     name: 'Site-Control',
     description:
       'חנות מצלמות אבטחה עם צוות שגם מתקין: מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה של Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. התקנה, משלוח או איסוף עצמי.',
-    telephone: '+972-50-2256866',
-    email: 'info@site-control-il.com',
+    legalName: BUSINESS.legalName,
+    telephone: BUSINESS.phoneE164,
+    email: BUSINESS.email,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
     },
+    // החנות שולחת לכל הארץ; ההתקנות רק במרכז ובדרום (מפורט בסכמת Service בדף /installation)
     areaServed: { '@type': 'Country', name: 'Israel' },
+    openingHoursSpecification: BUSINESS.hoursSpec.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days, opens: h.opens, closes: h.closes })),
     url: BASE_URL,
     priceRange: '₪-₪₪₪',
     image: `${BASE_URL}/og-default.jpg`,
@@ -70,31 +74,8 @@ export function ProductSchema({
         '@type': 'Organization',
         name: 'Site-Control',
       },
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'IL',
-        returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
-        merchantReturnDays: '30',
-        returnShippingFeeBusiness: 'FreeReturn',
-        returnFees: 'FreeReturn',
-        returnMethod: 'ReturnMailIn',
-      },
-      shippingDetails: {
-        '@type': 'ShippingDeliveryTime',
-        shippingRate: {
-          '@type': 'PriceSpecification',
-          priceCurrency: 'ILS',
-          price: '0',
-        },
-        shippingDestination: {
-          '@type': 'DeliveryAddress',
-          addressCountry: 'IL',
-        },
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          businessDays: '3-7',
-        },
-      },
+      // בלי מדיניות החזרה ומשלוח בסכמה: הערכים הישנים (החזרה חינם 30 יום, משלוח חינם) לא נכונים,
+      // ונתון לא נכון בסכמה הוא הטעיה בעיני גוגל. יחזרו כשיהיו דפי /shipping ו-/returns אמיתיים.
     } : undefined,
   };
   return <JsonLd json={json} />;
@@ -147,15 +128,15 @@ export function OrganizationSchema() {
     url: BASE_URL,
     logo: `${BASE_URL}/images/site-control-logo.webp`,
     description: 'חברת התקנות וחנות אונליין של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. Hikvision, Uniview, Reolink, VisionNet ו-Tenda, ומצלמות סולאריות 4G לאתרים בלי חשמל.',
-    telephone: '+972-50-2256866',
+    legalName: BUSINESS.legalName,
+    telephone: BUSINESS.phoneE164,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
-      addressLocality: 'ישראל',
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+972-50-2256866',
+      telephone: BUSINESS.phoneE164,
       contactType: 'customer service',
       availableLanguage: ['Hebrew', 'English'],
     },

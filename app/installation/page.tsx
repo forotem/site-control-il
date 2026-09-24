@@ -1,44 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, WARRANTY_TEXT, storeProducts, productName } from "../data/store-catalog";
+import { BUSINESS } from "../data/business";
 import { BASE_URL } from "../config";
 import { InstallForm } from "./InstallForm";
 import styles from "../home.module.css";
 
 export const metadata: Metadata = {
-  title: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה | Site-Control",
+  title: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה במרכז ובדרום | Site-Control",
   description:
-    "התקנת מצלמות אבטחה לבית, לעסק ולבניין: תכנון, חיווט, מקליט, הגדרת אפליקציה והדרכה. גם אינטרקום ובקרת כניסה. ציוד Hikvision, Uniview ו-Reolink מהמלאי של היבואן, אחריות שנה.",
+    `התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה ${BUSINESS.installAreaIn}: תכנון, חיווט, מקליט, אפליקציה והדרכה. Hikvision, Uniview ו-Reolink, אחריות שנה.`,
   alternates: { canonical: "/installation" },
   openGraph: {
     title: "התקנת מצלמות אבטחה ואינטרקום | Site-Control",
-    description: "תכנון, חיווט, הגדרה והדרכה. ציוד מהמלאי של היבואן בישראל, אחריות שנה.",
+    description: `תכנון, חיווט, הגדרה והדרכה ${BUSINESS.installAreaIn}. ${WARRANTY_TEXT}.`,
     url: "/installation",
     type: "website",
     locale: "he_IL",
     images: ["/og-default.jpg"],
   },
-  twitter: { card: "summary_large_image", title: "התקנת מצלמות אבטחה ואינטרקום | Site-Control", description: "תכנון, חיווט, הגדרה והדרכה. ציוד מהמלאי של היבואן בישראל, אחריות שנה." },
+  twitter: { card: "summary_large_image", title: "התקנת מצלמות אבטחה ואינטרקום | Site-Control", description: `תכנון, חיווט, הגדרה והדרכה ${BUSINESS.installAreaIn}.` },
 };
 
+// ציוד שאנחנו מתקינים הכי הרבה, עם המחיר מהחנות (ציוד בלבד, ההתקנה בהצעת המחיר)
+const EQUIPMENT = [
+  "reolink-rlk8-410b4-5mp",
+  "ds-2cd1347g2-luf-2-8mm",
+  "nvr301-08s3",
+  "ds-kis607-s",
+  "visionnet-kitcom-2-wire-villa-kit-560789",
+  "ds-k1t502dbfwx-c",
+];
+
 const faq = [
-  { q: "כמה עולה התקנת מצלמות אבטחה?", a: "המחיר תלוי במספר הנקודות, במרחק מהמקליט ובתשתית הקיימת. שלחו כמה מצלמות ואיפה, או תמונות של המקום בווצאפ, ונחזור עם הצעת מחיר מסודרת לציוד ולהתקנה." },
+  { q: "באילו אזורים אתם מתקינים?", a: `${BUSINESS.installAreaIn} הארץ. אם אתם מחוץ לאזורים האלה, כתבו לנו ונבדוק. ציוד מהחנות נשלח לכל הארץ.` },
+  { q: "כמה עולה התקנת מצלמות אבטחה?", a: "המחיר תלוי במספר הנקודות, בגובה ובמרחק מהמקליט, ובתשתית שכבר יש במקום. שלחו כמה מצלמות ואיפה, או תמונות של המקום בווצאפ, ונחזור עם הצעת מחיר אחת לציוד ולהתקנה." },
   { q: "אתם מתקינים גם ציוד שקניתי לבד?", a: "שלחו לנו את הדגמים ונבדוק. ציוד מהחנות שלנו אנחנו מכירים לעומק, ולכן ההתקנה שלו מהירה ופשוטה יותר." },
-  { q: "יש לי מערכת ישנה, צריך להחליף הכל?", a: "לא תמיד. על כבלי קואקס קיימים אפשר לשדרג למצלמות 3K ו-4K ולמקליט היברידי, ובאינטרקום 2 גידים אפשר לעבור לוידאו על אותו חיווט." },
+  { q: "יש לי מערכת ישנה, צריך להחליף הכל?", a: "לא תמיד. על כבלי קואקס קיימים אפשר לשדרג למצלמות 3K ו-4K ולמקליט היברידי, ובאינטרקום 2 גידים אפשר לעבור לווידאו על אותו חיווט." },
   { q: "מה מקבלים בסוף ההתקנה?", a: "מערכת עובדת, אפליקציה מוגדרת בנייד של כל מי שצריך, והסבר איך צופים, מחפשים הקלטה ומקבלים התראות. " + WARRANTY_TEXT + "." },
 ];
 
+const nis = (n: number) => n.toLocaleString("he-IL");
+
 export default function InstallationPage() {
   const items = [{ name: "התקנה", url: "/installation" }];
-  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, אשמח להצעת מחיר להתקנת מצלמות / אינטרקום")}`;
+  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, אשמח להצעת מחיר להתקנת מצלמות / אינטרקום. מצרף תמונה של המקום:")}`;
+  const equipment = EQUIPMENT.map((slug) => storeProducts.find((p) => p.slug === slug)).filter((p): p is NonNullable<typeof p> => !!p && !!p.price);
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה",
     serviceType: "התקנת מערכות אבטחה",
-    provider: { "@type": "Organization", name: "Site-Control", url: BASE_URL, telephone: "+972-50-2256866" },
-    areaServed: { "@type": "Country", name: "Israel" },
+    provider: { "@type": "LocalBusiness", name: BUSINESS.brand, legalName: BUSINESS.legalName, url: BASE_URL, telephone: BUSINESS.phoneE164 },
+    areaServed: BUSINESS.installRegions.map((name) => ({ "@type": "AdministrativeArea", name })),
     url: `${BASE_URL}/installation`,
   };
   const faqSchema = {
@@ -46,40 +61,70 @@ export default function InstallationPage() {
     "@type": "FAQPage",
     mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
+  const card = { padding: "1.4rem", borderRadius: "var(--radius-lg)", border: "1px solid var(--border-accent)", background: "var(--glass-strong)", display: "grid", gap: "0.8rem", scrollMarginTop: "90px" } as const;
   return (
-    <main className={styles.wrap}>
+    <main className={styles.wrap} data-lead-page="installation">
       <BreadcrumbSchema items={items} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Breadcrumb items={items} />
 
-      <section className={styles.heroText} data-track="installation_hero">
-        <span className={styles.kicker}>צוות התקנות, לא רק חנות</span>
-        <h1>התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה</h1>
-        <p style={{ color: "var(--muted)", fontSize: "1.08rem", lineHeight: 1.75, maxWidth: "65ch" }}>
-          מתכננים, מחווטים, מתקינים ומגדירים את האפליקציה בנייד. בבתים פרטיים, בדירות, בעסקים, בבניינים משותפים ובאתרים.
-          הציוד של Hikvision, Uniview, Reolink ו-VisionNet מגיע מהמלאי של היבואן בישראל, במחיר של חנות אונליין.
-        </p>
-        <div className={styles.ctas}>
-          <a className={`${styles.cta} ${styles.ctaAccent}`} href="#quote">הצעת מחיר להתקנה</a>
-          <a className={`${styles.cta} ${styles.ctaGhost}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח תמונה בווצאפ</a>
+      <section className={styles.hero} data-track="installation_hero">
+        <div className={styles.heroText}>
+          <span className={styles.kicker}>צוות התקנות, לא רק חנות</span>
+          <h1>התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה</h1>
+          <p>
+            מתכננים, מחווטים, מתקינים ומגדירים את האפליקציה בנייד. בבתים פרטיים, בדירות, בעסקים ובבניינים משותפים.
+            הציוד של Hikvision, Uniview, Reolink ו-VisionNet, במחיר של חנות אונליין.
+          </p>
+          <p style={{ color: "var(--text-bright)", fontWeight: 600 }}>
+            {BUSINESS.installer}, מתקין מצלמות ואינטרקום · מתקינים {BUSINESS.installAreaIn}
+          </p>
+          <div className={styles.trust}>
+            <span>{WARRANTY_TEXT}</span>
+            <span>הצעת מחיר בלי התחייבות</span>
+            <span>הגדרה והדרכה כלולות</span>
+          </div>
+          <div className={styles.ctas}>
+            <a className={`${styles.cta} ${styles.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח תמונה של המקום בווצאפ</a>
+            {/* בנייד הטופס יורד מתחת לטקסט: כפתור שמקפיץ אליו */}
+            <a className={`${styles.cta} ${styles.ctaGhost}`} href="#quote">לטופס הקצר</a>
+          </div>
         </div>
-        <div className={styles.trust}>
-          <span>{WARRANTY_TEXT}</span>
-          <span>ממליצים רק על מה שצריך</span>
-          <span>הגדרה והדרכה כלולות</span>
+        <div id="quote" style={card}>
+          <h2 style={{ fontSize: "1.35rem", color: "var(--text-bright)" }}>הצעת מחיר להתקנה</h2>
+          <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: 0 }}>שם, טלפון ומה צריך. נחזור אליך עם שאלות קצרות והצעה.</p>
+          <InstallForm variant="short" />
         </div>
       </section>
 
       <section aria-labelledby="what">
         <div className={styles.sectionHead}><h2 id="what">מה אנחנו מתקינים</h2></div>
         <div className={styles.ways}>
-          <Link className={styles.way} href="/store/c/kits"><i>1</i><b>מערכת מצלמות לבית</b><p>4 עד 8 מצלמות עם מקליט, צפייה והתראות בנייד. ערכות מוכנות או מצלמות לפי בחירה.</p><em>לערכות בחנות</em></Link>
-          <Link className={styles.way} href="/store/c/ip"><i>2</i><b>מצלמות לעסק</b><p>מצלמות IP ומקליט NVR לחנות, משרד, מחסן או חניון, עם התראות על אדם ורכב.</p><em>למצלמות IP</em></Link>
-          <Link className={styles.way} href="/store/c/intercom"><i>3</i><b>אינטרקום ובקרת כניסה</b><p>אינטרקום וידאו לוילה ולבניין, קודנים, קוראי כרטיסים ומסופי זיהוי פנים.</p><em>לאינטרקום</em></Link>
-          <Link className={styles.way} href="/store/c/analog"><i>4</i><b>שדרוג מערכת קיימת</b><p>מצלמות חדשות על הכבלים הקיימים, מקליט היברידי, והחלפת אינטרקום ישן.</p><em>למצלמות לשדרוג</em></Link>
+          <a className={styles.way} href="#quote"><i>1</i><b>מערכת מצלמות לבית</b><p>4 עד 8 מצלמות עם מקליט, צפייה והתראות בנייד.</p><em>להצעת מחיר</em></a>
+          <a className={styles.way} href="#quote"><i>2</i><b>מצלמות לעסק</b><p>מצלמות IP ומקליט NVR לחנות, משרד, מחסן או חניון, עם התראות על אדם ורכב.</p><em>להצעת מחיר</em></a>
+          <a className={styles.way} href="#quote"><i>3</i><b>אינטרקום ובקרת כניסה</b><p>אינטרקום וידאו לווילה ולבניין, קודנים, קוראי כרטיסים ומסופי זיהוי פנים.</p><em>להצעת מחיר</em></a>
+          <a className={styles.way} href="#quote"><i>4</i><b>שדרוג מערכת קיימת</b><p>מצלמות חדשות על הכבלים הקיימים, מקליט היברידי, והחלפת אינטרקום ישן.</p><em>להצעת מחיר</em></a>
         </div>
       </section>
+
+      {equipment.length > 0 && (
+        <section aria-labelledby="equipment">
+          <div className={styles.sectionHead}>
+            <h2 id="equipment">הציוד שאנחנו מתקינים</h2>
+            <p>אלה הדגמים שאנחנו מתקינים הכי הרבה. המחיר הוא של הציוד בלבד, כמו בחנות. ההתקנה נכנסת להצעת המחיר.</p>
+          </div>
+          <div className={styles.shelf}>
+            {equipment.map((p) => (
+              <Link key={p.slug} href={`/store/${p.slug}`}>
+                <span className={styles.tile}>{p.image && <img src={p.image} alt={productName(p)} loading="lazy" />}</span>
+                <b>{productName(p)}</b>
+                <small>{nis(p.price as number)} ₪ לציוד</small>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section aria-labelledby="how">
         <div className={styles.sectionHead}><h2 id="how">איך זה עובד</h2></div>
@@ -90,12 +135,17 @@ export default function InstallationPage() {
         </div>
       </section>
 
-      <section id="quote" aria-labelledby="quote-title">
+      <section id="pricing" aria-labelledby="pricing-title">
         <div className={styles.sectionHead}>
-          <h2 id="quote-title">הצעת מחיר להתקנה</h2>
-          <p>משאירים שם וטלפון ומה צריך, ואנחנו חוזרים עם הצעה. בלי התחייבות.</p>
+          <h2 id="pricing-title">איך בנויה הצעת מחיר להתקנה</h2>
+          <p>אין מחיר אחד לכולם, כי כל מקום שונה. אלה ארבעת הרכיבים של כל הצעה:</p>
         </div>
-        <InstallForm />
+        <div className={styles.why}>
+          <div><b>ציוד</b><p>במחיר של החנות באתר. אפשר לבדוק כל דגם לפני שמחליטים.</p></div>
+          <div><b>עבודה</b><p>לפי מספר הנקודות, הגובה והמרחק מהמקליט, ולפי מה שכבר קיים במקום.</p></div>
+          <div><b>חומרים</b><p>כבלים, תעלות, קופסאות ומתאמים, לפי אורך החיווט בפועל.</p></div>
+          <div><b>הגדרה והדרכה</b><p>הגדרת המקליט והאפליקציה בנייד של כל מי שצריך, והסבר קצר בסוף. כלולות.</p></div>
+        </div>
       </section>
 
       <section aria-labelledby="faq">
@@ -104,9 +154,18 @@ export default function InstallationPage() {
           {faq.map((f) => (
             <details key={f.q}>
               <summary>{f.q}</summary>
-              <p style={{ padding: "0 1.1rem 1rem", color: "var(--muted)", lineHeight: 1.7 }}>{f.a}</p>
+              <p>{f.a}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      <section className={styles.closing} data-track="installation_closing">
+        <h2>מוכנים להצעת מחיר?</h2>
+        <p>הכי מהיר: תמונה של המקום בווצאפ עם כמה מילים על מה שצריך.</p>
+        <div className={styles.ctas}>
+          <a className={`${styles.cta} ${styles.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
+          <a className={`${styles.cta} ${styles.ctaGhost}`} href="#quote">לטופס הקצר</a>
         </div>
       </section>
     </main>

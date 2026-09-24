@@ -27,7 +27,7 @@ export default function PrivacyPage() {
         <span className={styles.kicker}>עודכן לאחרונה: {UPDATED}</span>
         <h1 style={{ fontSize: "clamp(1.8rem, 3.4vw, 2.4rem)", color: "var(--text-bright)" }}>מדיניות פרטיות</h1>
         <p style={p}>
-          המסמך מסביר איזה מידע Site-Control (&quot;אנחנו&quot;) אוספת כשאתם גולשים באתר site-control-il.com, משאירים פרטים,
+          המסמך מסביר איזה מידע Site-Control (&quot;אנחנו&quot;), שם מסחרי של סטודיו גולן, עוסק מורשה 039513494, אוספת כשאתם גולשים באתר site-control-il.com, משאירים פרטים,
           שולחים הזמנה או מדברים עם העוזר בחנות, מה אנחנו עושים איתו ומה הזכויות שלכם לפי חוק הגנת הפרטיות, התשמ&quot;א-1981.
         </p>
       </section>

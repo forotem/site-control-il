@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Inter, Assistant } from "next/font/google";
 import { Analytics } from "./components/Analytics";
 import { FloatingCTA } from "./components/FloatingCTA";
+import { SiteTracking } from "./components/SiteTracking";
 import { StoreChat } from "./store/StoreChat";
 import { CartDrawer } from "./store/CartUI";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -62,22 +63,15 @@ export const metadata: Metadata = {
     locale: "he_IL",
     url: BASE_URL,
     siteName: "Site-Control",
-    title: "מצלמות אבטחה סולאריות 4G 2026 - Reolink GO Plus & PTZ",
-    description: "מצלמות אבטחה 4G סולאריות מתקדמות לאתרי בנייה וחקלאות. איכות 4K, גיבוי ענן אוטומטי, התקנה ללא חשמל.",
-    images: [
-      {
-        url: "/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif",
-        width: 1920,
-        height: 1080,
-        alt: "מצלמת אבטחה סולארית Reolink GO Plus 4G",
-      },
-    ],
+    title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
+    description: "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink ו-VisionNet מהמלאי של היבואן בישראל. אחריות שנה, משלוח או התקנה.",
+    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "מצלמות אבטחה, ערכות ואינטרקום ב-Site-Control" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "מצלמות אבטחה סולאריות 4G - Site-Control",
-    description: "מצלמות אבטחה 4G עם סולאר וגיבוי ענן לאתרי בנייה וחקלאות. התקנה ללא חשמל.",
-    images: ["/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif"],
+    title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
+    description: "חנות מצלמות אבטחה עם צוות שגם מתקין. מלאי בישראל, אחריות שנה, משלוח או התקנה.",
+    images: ["/og-default.jpg"],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
@@ -170,6 +164,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/store/finder" style={navStyle.link}>
               מה מתאים לי?
             </Link>
+            <Link href="/installation" style={navStyle.link}>
+              התקנה
+            </Link>
             <Link href="/blog" style={navStyle.link}>
               בלוג
             </Link>
@@ -187,6 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreChat />
         <ScrollToTop />
         <Analytics />
+        <SiteTracking />
         <footer style={{ 
           background: 'linear-gradient(180deg, rgba(6, 10, 16, 0) 0%, rgba(6, 10, 16, 1) 15%)', 
           color: 'white', 
@@ -212,7 +210,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <p style={{ color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7', fontSize: '0.95rem' }}>מתקינים ומוכרים מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.</p>
                 <div style={{ display: 'flex', gap: '12px', marginTop: '1rem' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> אבטחה מקצועית</span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> סולארי</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> התקנה בכל הארץ</span>
                 </div>
               </div>
               <div>
@@ -220,6 +218,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <li><Link href="/" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> דף הבית</Link></li>
                   <li><Link href="/store" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> חנות</Link></li>
+                  <li><Link href="/installation" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg> התקנה</Link></li>
                   <li><Link href="/blog" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg> בלוג</Link></li>
                   <li><Link href="/store/finder" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg> מה מתאים לי?</Link></li>
                   <li><Link href="/about" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg> אודות</Link></li>
@@ -229,7 +228,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>שותפים</h4>
                 <p style={{ fontSize: '0.95rem', color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7' }}>מוכרים ומתקינים <strong style={{ color: '#00c2ff' }}>Hikvision, Uniview, Reolink, VisionNet ו-Tenda</strong> מהמלאי של היבואן בישראל.</p>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(139, 163, 191, 0.7)', lineHeight: '1.7', marginTop: '0.5rem' }}>צילום טיימלאפס לפרויקטים? זה אצל האחות שלנו: <a href="https://timelapseit.co.il" target="_blank" rel="noopener" style={{ color: '#00c2ff', textDecoration: 'none' }}>TimeLapseIt</a></p>
                 <div style={{ marginTop: '1rem', padding: '16px', background: 'rgba(12, 18, 32, 0.7)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                     <span style={{ fontSize: '1.2rem', display: 'flex' }}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>

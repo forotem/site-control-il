@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER } from "../data/store-catalog";
 import { cart, useCart } from "./cart";
+import { track } from "../lib/analytics";
+import { getAttribution } from "../lib/attribution";
 import styles from "./store.module.css";
 import c from "./commerce.module.css";
 
@@ -72,10 +74,11 @@ export function CartDrawer() {
     try {
       const res = await fetch("/api/store-order", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, items: rows.map((r) => ({ slug: r.slug, qty: r.qty })) }),
+        body: JSON.stringify({ ...form, items: rows.map((r) => ({ slug: r.slug, qty: r.qty })), attribution: getAttribution() }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "שגיאה");
+      track.orderRequest(data.ref, data.total || total, rows.map((r) => ({ item_id: r.slug, item_name: `${r.p!.brand} ${r.p!.model}`, item_brand: r.p!.brand, item_category: r.p!.category, price: r.p!.price ?? undefined, quantity: r.qty })));
       setRef(data.ref); setStep("done"); cart.clear();
     } catch (ex) {
       setErr(ex instanceof Error ? ex.message : "שגיאה בשליחה. אפשר לשלוח בווצאפ במקום.");
@@ -167,7 +170,7 @@ export function CartDrawer() {
                   ))}
                 </fieldset>
                 <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כתובת למשלוח, מועד נוח, שאלה" /></label>
-                {err && <p className={c.formErr}>{err}</p>}
+                {err && <p className={c.formErr}>{err} <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
                 <div className={styles.finderCtas}>
                   <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : "שליחת ההזמנה"}</button>
                   <button type="button" className={`${styles.cta} ${styles.ctaSecondary}`} onClick={() => setStep("cart")}>חזרה לעגלה</button>

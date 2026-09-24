@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     title: "אודות Site-Control",
     description: "מתקינים ומוכרים מצלמות אבטחה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.",
     type: "website",
-    locale: "he_IL",
-  },
+    locale: "he_IL", images: ["/og-default.jpg"] },
 };
 
 export default function AboutPage() {
@@ -42,7 +41,7 @@ export default function AboutPage() {
         <div className={styles.why}>
           <div><b>התקנה</b><p>מערכות מצלמות IP ואנלוגיות, מקליטים, אינטרקום 2 גידים ו-IP, בקרת כניסה וזיהוי פנים. תכנון, חיווט, הגדרת אפליקציה והדרכה.</p></div>
           <div><b>חנות</b><p>מצלמות של Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. משלוח, איסוף עצמי או התקנה על ידינו. <Link href="/store">לחנות</Link>.</p></div>
-          <div><b>אתרים בלי חשמל</b><p>לאתרי בנייה, חקלאות ושטחים מרוחקים: מצלמות סוללה של Reolink עם סים 4G ופאנל סולארי, <Link href="/store#solar">בחנות עם מחיר</Link>, והתקנה על ידינו לפי הצעת מחיר.</p></div>
+          <div><b>אתרים בלי חשמל</b><p>לאתרי בנייה, חקלאות ושטחים מרוחקים: מצלמות סוללה של Reolink עם סים 4G ופאנל סולארי, <Link href="/store/c/solar">בחנות עם מחיר</Link>, והתקנה על ידינו לפי הצעת מחיר.</p></div>
           <div><b>ייעוץ לפני הקנייה</b><p>שאלון התאמה, מדריכי בחירה, השוואות ועוזר AI שמכיר את כל המפרטים. ומי שרוצה, מדבר איתנו בווצאפ.</p></div>
         </div>
       </section>

@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       focus:
-        description: 'store = מוצרי החנות, solar = סולארי/טיימלאפס, auto = לפי היום (שני = חנות)'
+        description: 'store = מוצרי החנות, solar = מצלמות סולאריות 4G, auto = לפי היום (חנות, חמישי ראשון בחודש = סולארי)'
         required: false
         default: 'auto'
         type: choice

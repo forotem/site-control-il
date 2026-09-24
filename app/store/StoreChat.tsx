@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { WHATSAPP_NUMBER, storeProducts, productName } from "../data/store-catalog";
 import { attrsOf, isCamera, isRecorder } from "../data/store-attrs";
 import { cart } from "./cart";
+import { track } from "../lib/analytics";
+import { getAttribution } from "../lib/attribution";
 import styles from "./store.module.css";
 import c from "./commerce.module.css";
 
@@ -67,6 +69,7 @@ export function StoreChat() {
   const [err, setErr] = useState<string | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const leadTracked = useRef(false);
 
   const page = pathname?.startsWith("/store/") ? pathname.slice("/store/".length) : pathname === "/store" ? "store" : undefined;
 
@@ -109,11 +112,12 @@ export function StoreChat() {
       const res = await fetch("/api/store-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next.slice(1).map(({ role, content }) => ({ role, content })), page, cart: cart.get() }),
+        body: JSON.stringify({ messages: next.slice(1).map(({ role, content }) => ({ role, content })), page, cart: cart.get(), attribution: getAttribution() }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "שגיאה");
       setMsgs((m) => [...m, { role: "assistant", content: data.reply, products: data.products }]);
+      if (data.leadCaptured && !leadTracked.current) { leadTracked.current = true; track.chatLead(data.intent); }
     } catch (ex) {
       setErr(ex instanceof Error ? ex.message : "משהו השתבש. אפשר לנסות שוב או לכתוב לנו בווצאפ.");
     } finally {

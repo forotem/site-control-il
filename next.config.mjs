@@ -22,6 +22,19 @@ const nextConfig = {
       // 23.9.2026: חבילות/מחירון של המצלמות הסולאריות מהאתר הישן הוסרו; החנות היא המחירון
       { source: '/packages', destination: '/store', permanent: true },
       { source: '/pricing', destination: '/store', permanent: true },
+      // 24.9.2026: דפי האתר הישן (מצלמות סולאריות לאתרי בנייה) מופנים לדפים המקבילים בחנות.
+      { source: '/products/go', destination: '/store/reolink-go-plus', permanent: true },
+      { source: '/products/ptz', destination: '/store/reolink-go-pt-ultra', permanent: true },
+      { source: '/cloud-backup', destination: '/store/c/solar', permanent: true },
+      { source: '/weatherproof', destination: '/store/c/solar', permanent: true },
+      { source: '/video-quality', destination: '/store/c/solar', permanent: true },
+      { source: '/use-cases', destination: '/store/c/solar', permanent: true },
+      { source: '/use-cases/:path*', destination: '/store/c/solar', permanent: true },
+      // דפי המיקום היו "מצלמה סולארית לאתר בנייה ב<עיר>". השירות הארצי הוא עכשיו דף ההתקנה.
+      { source: '/locations', destination: '/installation', permanent: true },
+      { source: '/locations/:slug', destination: '/installation', permanent: true },
+      // דפים טכניים שלא צריכים להיות באינדקס
+      { source: '/background', destination: '/', permanent: true },
       { source: '/blog/documentation-project-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/photography-timelapse-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/timelapse-marketing-advertising-projects-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },

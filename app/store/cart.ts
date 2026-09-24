@@ -1,6 +1,8 @@
 "use client";
 // עגלת קניות קלה: localStorage + אירוע גלובלי, בלי ספריות. נשמרת בין דפים ובין ביקורים באותו דפדפן.
 import { useEffect, useState } from "react";
+import { storeProducts } from "../data/store-catalog";
+import { track } from "../lib/analytics";
 
 export type CartLine = { slug: string; qty: number };
 const KEY = "sc-store-cart";
@@ -25,6 +27,8 @@ export const cart = {
     const l = lines.find((x) => x.slug === slug);
     if (l) l.qty = Math.min(200, l.qty + qty); else lines.push({ slug, qty });
     write(lines);
+    const p = storeProducts.find((x) => x.slug === slug);
+    track.addToCart([{ item_id: slug, item_name: p ? `${p.brand} ${p.model}` : slug, item_brand: p?.brand, item_category: p?.category, price: p?.price ?? undefined, quantity: qty }]);
   },
   set(slug: string, qty: number) {
     const lines = read().filter((x) => x.slug !== slug);

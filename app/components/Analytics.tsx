@@ -3,6 +3,8 @@ import Script from 'next/script';
 export function Analytics() {
   // קריאת ה-Measurement ID מה-environment variables
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  // אופציונלי: מזהה Google Ads (AW-XXXXXXXXX) לרימרקטינג ולתיוג ישיר. ההמרות עצמן מיובאות מ-GA4.
+  const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
   // אם אין ID, לא לטעון את ה-analytics (למשל בסביבת פיתוח)
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
@@ -25,7 +27,8 @@ export function Analytics() {
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
             send_page_view: true
-          });
+          });${ADS_ID ? `
+          gtag('config', '${ADS_ID}');` : ''}
         `}
       </Script>
     </>

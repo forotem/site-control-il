@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './ContactPage.module.css';
 import { track } from '../lib/analytics';
+import { getAttribution } from '../lib/attribution';
 
 export default function ContactFormContent() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function ContactFormContent() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, attribution: getAttribution() }),
       });
 
       const data = await response.json();
@@ -164,7 +165,7 @@ export default function ContactFormContent() {
           <div className={styles.infoBox}>
             <h3>📞 טלפון</h3>
             <p>
-              <a href="tel:+972-50-2256866" onClick={() => track.phone('contact_page')}>050-225-6866</a>
+              <a href="tel:+972-50-2256866">050-225-6866</a>
             </p>
           </div>
 

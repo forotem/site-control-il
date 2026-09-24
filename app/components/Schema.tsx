@@ -11,36 +11,25 @@ export function JsonLd({ json }: { json: Record<string, any> }) {
 export function LocalBusinessSchema() {
   const json = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'Store'],
     name: 'Site-Control',
     description:
-      'מצלמות אבטחה סולאריות 4G לאתרי בנייה, חקלאות ושטחים מבודדים - גיבוי ענן אוטומטי, איכות 4K, ראיית לילה צבעונית ושליטה מרחוק 24/7',
+      'חנות מצלמות אבטחה עם צוות שגם מתקין: מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה של Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. התקנה, משלוח או איסוף עצמי.',
     telephone: '+972-50-2256866',
+    email: 'info@site-control-il.com',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
-      addressLocality: 'ישראל',
     },
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: '31.5',
-        longitude: '34.9',
-      },
-      geoRadius: '200000',
-    },
+    areaServed: { '@type': 'Country', name: 'Israel' },
     url: BASE_URL,
-    priceRange: '₪₪-₪₪₪',
-    image: `${BASE_URL}/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif`,
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00',
-      },
-    ],
+    priceRange: '₪-₪₪₪',
+    image: `${BASE_URL}/og-default.jpg`,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'מצלמות אבטחה, מקליטים ואינטרקום',
+      url: `${BASE_URL}/store`,
+    },
   };
   return <JsonLd json={json} />;
 }
@@ -71,11 +60,6 @@ export function ProductSchema({
       logo: `${BASE_URL}/optimized-variants/הלוגו של ראולינק/Reolink-logo.optimized-w480.avif`,
     },
     image: imageUrl,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-    },
     offers: price ? {
       '@type': 'Offer',
       price: price,
@@ -151,14 +135,6 @@ export function WebSiteSchema() {
     url: BASE_URL,
     description: 'חנות והתקנה של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה בישראל, ומצלמות סולאריות 4G לאתרים בלי חשמל',
     inLanguage: 'he',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
   return <JsonLd json={json} />;
 }
@@ -177,10 +153,6 @@ export function OrganizationSchema() {
       addressCountry: 'IL',
       addressLocality: 'ישראל',
     },
-    sameAs: [
-      'https://www.facebook.com/sitecontrol',
-      'https://www.linkedin.com/company/sitecontrol',
-    ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+972-50-2256866',

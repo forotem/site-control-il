@@ -1,16 +1,13 @@
 'use client';
 
-import { track } from '../lib/analytics';
-
 export function FloatingCTA() {
   return (
-    <div className="floating-cta">
+    <div className="floating-cta" data-track="floating">
       <a 
-        href="https://wa.me/972502256866?text=שלום, אני מעוניין במצלמות אבטחה סולאריות" 
+        href={`https://wa.me/972502256866?text=${encodeURIComponent("שלום, אשמח לייעוץ לגבי מצלמות אבטחה / אינטרקום")}`} 
         target="_blank" 
         rel="noopener noreferrer"
         className="floating-btn whatsapp animate-pulse-glow"
-        onClick={() => track.whatsapp('floating')}
         aria-label="שלח הודעת WhatsApp"
         style={{ animationDelay: '0s' }}
       >
@@ -21,7 +18,6 @@ export function FloatingCTA() {
       <a 
         href="tel:+972502256866" 
         className="floating-btn phone"
-        onClick={() => track.phone('floating')}
         aria-label="התקשר אלינו"
       >
         <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '24px', height: '24px' }}>

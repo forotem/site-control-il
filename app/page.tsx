@@ -17,8 +17,7 @@ export const metadata: Metadata = {
     description: "חנות מצלמות אבטחה עם צוות שגם מתקין. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.",
     type: "website",
     locale: "he_IL",
-    siteName: "Site-Control",
-  },
+    siteName: "Site-Control", images: ["/og-default.jpg"] },
 };
 
 const bySlug = (slug: string) => storeProducts.find((p) => p.slug === slug)!;
@@ -36,12 +35,12 @@ const catImage: Record<string, string> = {
 
 // המותגים שאנחנו עובדים איתם: לוגו רשמי בלבן על אריח כהה בשפה של האתר
 const brands = [
-  { key: "hikvision", name: "Hikvision", line: "מצלמות IP, מקליטים ואינטרקום", href: "/store#ip" },
-  { key: "uniview", name: "Uniview", line: "מצלמות IP ומקליטים במחיר חכם", href: "/store#ip" },
-  { key: "reolink", name: "Reolink", line: "ערכות מוכנות ומצלמות סולאריות 4G", href: "/store#solar" },
-  { key: "visionnet", name: "VisionNet", line: "אינטרקום 2 גידים וקודנים", href: "/store#intercom" },
-  { key: "tenda", name: "Tenda", line: "מצלמות Wi-Fi לבית", href: "/store#wifi" },
-  { key: "hiwatch", name: "HiWatch by Hikvision", line: "מצלמות 4K במחיר נגיש", href: "/store#ip" },
+  { key: "hikvision", name: "Hikvision", line: "מצלמות IP, מקליטים ואינטרקום", href: "/store/c/ip" },
+  { key: "uniview", name: "Uniview", line: "מצלמות IP ומקליטים במחיר חכם", href: "/store/c/ip" },
+  { key: "reolink", name: "Reolink", line: "ערכות מוכנות ומצלמות סולאריות 4G", href: "/store/c/solar" },
+  { key: "visionnet", name: "VisionNet", line: "אינטרקום 2 גידים וקודנים", href: "/store/c/intercom" },
+  { key: "tenda", name: "Tenda", line: "מצלמות Wi-Fi לבית", href: "/store/c/wifi" },
+  { key: "hiwatch", name: "HiWatch by Hikvision", line: "מצלמות 4K במחיר נגיש", href: "/store/c/ip" },
 ];
 const popular = ["ds-2cd1043g2-liu-2-8mm", "ipc2124lb-af28k-dl2", "ds-2cd2t47g2h-li-2-8mm", "reolink-rlk8-410b4-5mp", "nvr301-08s3", "ds-kis607-s", "cp3-pro", "ds-2ce10kf0t-lpfs-2-8mm"];
 
@@ -102,7 +101,7 @@ export default function Page() {
         <section aria-labelledby="cats">
           <div className={styles.sectionHead}>
             <h2 id="cats">מה מחפשים?</h2>
-            <p>שש קטגוריות, ובכל אחת הסבר קצר איך בוחרים נכון והשוואה בין הדגמים.</p>
+            <p>{storeCategories.length} קטגוריות, ובכל אחת הסבר קצר איך בוחרים נכון והשוואה בין הדגמים.</p>
           </div>
           <div className={styles.cats}>
             {storeCategories.map((c) => {
@@ -110,7 +109,7 @@ export default function Page() {
               // אם אין מיפוי ידני לקטגוריה (למשל קטגוריה חדשה), לוקחים את המוצר הראשון עם תמונה, כדי שלא יישאר אריח ריק
               const img = bySlug(catImage[c.id])?.image || storeProducts.find((p) => p.category === c.id && p.image)?.image;
               return (
-                <Link key={c.id} href={`/store#${c.id}`} className={styles.cat}>
+                <Link key={c.id} href={`/store/c/${c.id}`} className={styles.cat}>
                   <span className={styles.tile}>{img && <img src={img} alt="" loading="lazy" />}</span>
                   <span>
                     <b>{c.name}</b>
@@ -166,7 +165,7 @@ export default function Page() {
               בחנות יש את כל הדגמים עם מחיר, ואנחנו גם מתקינים על עמוד או פיגום לפי הצעת מחיר.
             </p>
             <div className={styles.ctas}>
-              <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/store#solar">למצלמות הסולאריות בחנות</Link>
+              <Link className={`${styles.cta} ${styles.ctaAccent}`} href="/store/c/solar">למצלמות הסולאריות בחנות</Link>
               <a className={`${styles.cta} ${styles.ctaGhost}`} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, יש לי אתר בלי חשמל ואינטרנט ואני צריך מצלמות")}`} target="_blank" rel="noopener noreferrer">לכתוב בווצאפ</a>
             </div>
           </div>
@@ -193,7 +192,7 @@ export default function Page() {
           </div>
         </section>
 
-        <BlogList />
+        <BlogList slugs={["installation-cameras-security-home-2026", "privacy-law-amendment-13-cameras-2026", "smart-alarm-vs-security-cameras-2026", "cameras-security-with-detection-face-2026", "cameras-security-outdoor-weatherproof-water-2026", "smart-security-ai-2026"]} />
 
         <section className={styles.closing}>
           <h2>לא בטוחים מאיפה להתחיל?</h2>

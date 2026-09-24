@@ -33,7 +33,10 @@
 .formErr a { color: var(--link-color); }
 
 /* ===== chat ===== */
-.chatLauncher { position: fixed; z-index: 30; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); right: 24px; display: grid; justify-items: end; gap: 0.6rem; }
+/* justify-items: start = צד ימין ב-RTL, כך שהאווטאר צמוד לפינה הימנית ולא נוחת על כפתור העגלה שבשמאל.
+   המיכל עצמו לא תופס קליקים (הוא רחב כמו בועת ההודעה), רק הילדים שלו. */
+.chatLauncher { position: fixed; z-index: 30; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); right: 24px; display: grid; justify-items: start; gap: 0.6rem; pointer-events: none; }
+.chatLauncher > * { pointer-events: auto; }
 .chatFab { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.4rem 1rem 0.4rem 0.4rem; border-radius: 999px; border: 1px solid var(--border-accent); background: var(--glass-strong); backdrop-filter: blur(12px); color: var(--text-bright); font: inherit; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-md), var(--shadow-glow); }
 .chatFab img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
 .chatFab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

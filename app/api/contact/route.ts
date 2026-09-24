@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
+import { attributionLabel } from '../../lib/attribution-label';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,6 +25,7 @@ export async function POST(request: NextRequest) {
     };
     const body = await request.json();
     const { name, email, phone, message } = body;
+    const source = attributionLabel(body.attribution).replace(/&/g, '&amp;');
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -42,6 +44,7 @@ export async function POST(request: NextRequest) {
         <p><strong>שם:</strong> ${name}</p>
         <p><strong>מייל:</strong> ${email}</p>
         <p><strong>טלפון:</strong> ${phone || 'לא ציין'}</p>
+        <p><strong>מקור:</strong> ${source}</p>
         <p><strong>הודעה:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <hr>
@@ -66,7 +69,7 @@ export async function POST(request: NextRequest) {
         <p>קיבלנו את ההודעה שלך והצוות שלנו יחזור אליך בהקדם האפשרי.</p>
         <p>בינתיים, אם יש לך שאלות נוספות, אתה מוזמן להתקשר או לשלוח לנו מייל חדש.</p>
         <hr>
-        <p><strong>Site-Control - מצלמות אבטחה סולאריות 4G</strong></p>
+        <p><strong>Site-Control - מצלמות אבטחה, אינטרקום והתקנה</strong></p>
         <p>info@site-control-il.com</p>
       `,
     });

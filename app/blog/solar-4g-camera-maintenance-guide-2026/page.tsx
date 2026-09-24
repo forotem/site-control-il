@@ -285,7 +285,7 @@ export default function Page() {
   <p>אך כפי שראינו במדריך מקיף זה, כדי ליהנות באופן מלא מ<a href="#maintenance-guide">הארכת חיי הסוללה ומקסום הביצועים</a> של השקעה כזו, יש להקפיד על תחזוקה נכונה וקבועה. ניקוי הפאנל הסולארי והעדשה, ניטור קבוע של מצב הסוללה, בדיקת חיבוריות ה-4G ואופטימיזציה של הגדרות חיסכון באנרגיה – כל אלו הם צעדים פשוטים אך קריטיים שיבטיחו לכם שנים ארוכות של פעולה אמינה, שקט נפשי מלא, והגנה מתמשכת על הנכסים שלכם.</p>
 
   <p><strong>אל תחכו שהבעיה תצוץ!</strong> ב-Site-Control אנו עומדים לרשותכם עם ידע, ניסיון ומחויבות בלתי מתפשרת לפתרון האבטחה הטוב ביותר עבורכם. צוות המומחים שלנו ישמח לעמוד לרשותכם בכל שאלה, לייעץ לכם בבחירת המצלמות המתאימות ביותר לצרכים שלכם (בין אם זו ה-<a href="/store/reolink-go-plus">Reolink GO Plus 4G</a> לאבטחה נקודתית או ה-<a href="/store/reolink-go-pt-ultra">Reolink PTZ Solar</a> לשליטה מלאה בשטחים גדולים), ולסייע לכם בכל שלבי ההתקנה וה<a href="#maintenance-guide">תחזוקת מצלמות אבטחה סולאריות 4G</a>.</p>
-  <p><strong><a href="/contact">צרו קשר עוד היום לקבלת ייעוץ חינם ובלתי מחייב ממומחה Site-Control</a> ובואו נדאג יחד לאבטחה האופטימלית והשקט הנפשי המגיע לכם.</strong></p>
+  <p><strong><a href="/installation#quote">צרו קשר עוד היום לקבלת ייעוץ חינם ובלתי מחייב ממומחה Site-Control</a> ובואו נדאג יחד לאבטחה האופטימלית והשקט הנפשי המגיע לכם.</strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -314,7 +314,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

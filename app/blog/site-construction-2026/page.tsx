@@ -284,7 +284,7 @@ export default function Page() {
 
     <p>אל תחכו לרגע שבו תתמודדו עם גניבה, ונדליזם או עיכובים בפרויקטים. קחו את השליטה לידיים שלכם היום.</p>
 
-    <p><strong><a href="/contact" style="font-weight:bold; color:#0056b3; text-decoration:underline;">צרו קשר עוד היום לקבלת ייעוץ חינם ובלתי מחייב ממומחי Site-Control!</a></strong></p>
+    <p><strong><a href="/installation#quote" style="font-weight:bold; color:#0056b3; text-decoration:underline;">צרו קשר עוד היום לקבלת ייעוץ חינם ובלתי מחייב ממומחי Site-Control!</a></strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -318,7 +318,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

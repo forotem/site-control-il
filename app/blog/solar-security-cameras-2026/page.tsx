@@ -406,7 +406,7 @@ export default function SolarSecurityCamerasPage() {
               קבלו ייעוץ אישי, סקר מקצועי והצעת מחיר ללא התחייבות
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/contact" style={{
+              <a href="/installation#quote" style={{
                 backgroundColor: 'white',
                 color: '#0070f3',
                 padding: '1rem 2rem',

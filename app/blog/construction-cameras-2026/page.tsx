@@ -327,7 +327,7 @@ export default function Page() {
         <li>לפתור מחלוקות בקלות בעזרת הקלטות וידאו.</li>
         <li>לשמור על שליטה מלאה באתר, גם ללא חשמל או אינטרנט קווי.</li>
     </ul>
-    <p>אל תחכו שהנזק יקרה. צרו קשר עוד היום עם מומחי Site-Control וקבלו <a href="/contact">ייעוץ חינם</a> להתאמת פתרון האבטחה המושלם עבורכם. אנחנו כאן כדי להעניק לכם שקט נפשי ובטחון, 24 שעות ביממה, 7 ימים בשבוע.</p>
+    <p>אל תחכו שהנזק יקרה. צרו קשר עוד היום עם מומחי Site-Control וקבלו <a href="/installation#quote">ייעוץ חינם</a> להתאמת פתרון האבטחה המושלם עבורכם. אנחנו כאן כדי להעניק לכם שקט נפשי ובטחון, 24 שעות ביממה, 7 ימים בשבוע.</p>
     <p><strong>Site-Control – המומחים שלכם לאבטחה סולארית 4G בישראל.</strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
@@ -362,7 +362,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

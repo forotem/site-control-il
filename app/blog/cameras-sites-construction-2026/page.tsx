@@ -287,7 +287,7 @@ export default function Page() {
     <p>כשאתם בוחרים ב-Site-Control, אתם לא רק רוכשים מצלמת אבטחה; אתם מקבלים שותף אסטרטגי שמבין את הצרכים העסקיים הייחודיים שלכם. אנו מתמחים באופן בלעדי במצלמות אבטחה סולאריות 4G ומובילים את השוק הישראלי בתחום זה.</p>
     <ul>
         <li><strong>מומחיות ללא פשרות:</strong> כל הצוות שלנו ממוקד ומומחה בטכנולוגיית 4G סולארית. אנו מכירים את הדגמים, את היישומים ואת האתגרים הספציפיים לשוק הישראלי.</li>
-        <li><strong>התאמה אישית:</strong> אנו מציעים ייעוץ מקצועי ללא עלות (<a href="/contact">ייעוץ חינם</a>!) כדי להתאים עבורכם את הפתרון המדויק ביותר, בין אם זה עבור <a href="/use-cases/construction">אתרי בנייה</a>, <a href="/use-cases/agriculture">חקלאות</a> או <a href="/store/c/solar">אתרים מרוחקים</a>.</li>
+        <li><strong>התאמה אישית:</strong> אנו מציעים ייעוץ מקצועי ללא עלות (<a href="/installation#quote">ייעוץ חינם</a>!) כדי להתאים עבורכם את הפתרון המדויק ביותר, בין אם זה עבור <a href="/use-cases/construction">אתרי בנייה</a>, <a href="/use-cases/agriculture">חקלאות</a> או <a href="/store/c/solar">אתרים מרוחקים</a>.</li>
         <li><strong>תמיכה טכנית מקומית:</strong> צוות התמיכה שלנו זמין בשפה העברית, עם הבנה מעמיקה של המוצרים ושל הסביבה התפעולית בישראל.</li>
         <li><strong>מוצרים מובילים:</strong> אנו עובדים רק עם המותגים המובילים והאמינים ביותר, כמו Reolink, כדי להבטיח לכם שקט נפשי וביצועים ללא תחרות.</li>
         <li><strong>מחויבות ל-B2B:</strong> כל הפעילות שלנו ממוקדת בפתרונות לעסקים, מה שמבטיח שאתם מקבלים מענה מקצועי, יציב וארוך טווח.</li>
@@ -317,7 +317,7 @@ export default function Page() {
     <p>היכולת לפקח, לתעד, לקבל התראות בזמן אמת ולנהל את הנכסים שלכם מרחוק, מעניקה לכם שליטה מלאה ושקט נפשי. ב-Site-Control, אנו מומחים בתחום זה ומחויבים לספק לכם את הפתרון הטוב ביותר, מותאם אישית לצרכים העסקיים שלכם, עם תמיכה ושירות ללא פשרות.</p>
 
     <p><strong>אל תחכו שהאירוע הבא יפתיע אתכם. קחו את השליטה לידיים!</strong></p>
-    <h3><a href="/contact">צרו קשר עוד היום לייעוץ חינם ונתאים לכם את פתרון האבטחה המושלם!</a></h3>
+    <h3><a href="/installation#quote">צרו קשר עוד היום לייעוץ חינם ונתאים לכם את פתרון האבטחה המושלם!</a></h3>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -351,7 +351,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

@@ -336,13 +336,13 @@ export default function Page() {
     <dd>גיבוי ענן אינו חובה, שכן המצלמות תומכות באחסון מקומי על כרטיס MicroSD (עד 256GB). עם זאת, <a href="/store/c/solar">גיבוי ענן אוטומטי</a> מומלץ בחום כשכבת אבטחה נוספת. הוא מבטיח שההקלטות החשובות שלכם בטוחות ונגישות גם אם המצלמה תיפגע, תיגנב או אם כרטיס הזיכרון ייפגם. ניתן להגדיר גיבוי ענן חכם רק לאירועי תנועה כדי לחסוך בנתונים.</dd>
 
     <dt><strong>האם Site-Control מספקת גם את כרטיסי ה-SIM וחבילות הגלישה?</strong></dt>
-    <dd>Site-Control מתמחה באספקת המצלמות והפתרונות הנלווים. אנו מציעים ליווי ו<a href="/contact">ייעוץ חינם</a> מלא בבחירת ספק הסלולר והחבילה המתאימה ביותר לצרכים שלכם, ויש לנו שיתופי פעולה ופתרונות ייעודיים עבור לקוחותינו, כחלק מ<a href="/store">חבילות אבטחה</a> משולבות, כדי להבטיח לכם את העסקה הטובה ביותר.</dd>
+    <dd>Site-Control מתמחה באספקת המצלמות והפתרונות הנלווים. אנו מציעים ליווי ו<a href="/installation#quote">ייעוץ חינם</a> מלא בבחירת ספק הסלולר והחבילה המתאימה ביותר לצרכים שלכם, ויש לנו שיתופי פעולה ופתרונות ייעודיים עבור לקוחותינו, כחלק מ<a href="/store">חבילות אבטחה</a> משולבות, כדי להבטיח לכם את העסקה הטובה ביותר.</dd>
   </dl>
 
   <h2 id="section10">Site-Control: השותף שלך לאבטחה חכמה וחסכונית</h2>
   <p>ב-Site-Control, אנו מבינים את האתגרים הייחודיים שלכם. אנו מחויבים לספק לכם לא רק את מצלמות האבטחה הסולאריות 4G המתקדמות והאמינות ביותר של Reolink, אלא גם את הידע והתמיכה הדרושים לכם כדי להפעיל אותן בצורה היעילה והחסכונית ביותר.</p>
   <p>הצוות שלנו מורכב ממומחים בעלי ניסיון רב, שישמחו ללוות אתכם בתהליך – החל מאפיון הצרכים הספציפיים שלכם, דרך בחירת המצלמות והגדרתן האופטימלית, ועד לבחירת חבילת הסלולר המשתלמת ביותר. אנחנו כאן כדי להבטיח שתיהנו מביטחון מלא וראש שקט, ללא הפתעות לא נעימות בחשבון.</p>
-  <p>אל תתפשרו על אבטחת הנכסים היקרים שלכם. צרו קשר עוד היום לקבלת <a href="/contact">ייעוץ חינם</a> ממומחי Site-Control. יחד, נבנה את פתרון האבטחה המושלם והחסכוני ביותר עבורכם.</p>
+  <p>אל תתפשרו על אבטחת הנכסים היקרים שלכם. צרו קשר עוד היום לקבלת <a href="/installation#quote">ייעוץ חינם</a> ממומחי Site-Control. יחד, נבנה את פתרון האבטחה המושלם והחסכוני ביותר עבורכם.</p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -376,7 +376,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

@@ -252,7 +252,7 @@ export default function Page() {
   <p>אנו מאמינים שאין פתרון אחד שמתאים לכולם. בין אם אתם זקוקים למספר מצלמות Reolink GO Plus 4G לאבטחת נקודות קריטיות בכרם, או ל-<a href="/store/reolink-go-pt-ultra">Reolink PTZ Solar</a> אחת או יותר לכיסוי שטח בנייה נרחב, אנו נלווה אתכם בבחירת <a href="/store">חבילות האבטחה</a> המתאימות ביותר עבורכם, תוך התחשבות בתקציב ובדרישות התפעוליות.</p>
 
   <h2><a id="toc-10"></a>אל תחכו לאסון – פעלו עכשיו!</h2>
-  <p>השקט הנפשי שווה יותר מכל ציוד יקר. אל תחכו שהאירוע הבא יתרחש. קחו שליטה על האבטחה של הנכסים היקרים שלכם, גם במקומות המרוחקים ביותר. צרו קשר עוד היום עם המומחים של Site-Control וקבלו <a href="/contact">ייעוץ חינם</a> ללא כל התחייבות. נשמח לבנות עבורכם פתרון אבטחה סולארי 4G שיענה על כל הצרכים שלכם, ויספק לכם שקט נפשי מלא, יום ולילה, בכל תנאי מזג אוויר. מצלמות לכרם ומטע ללא אינטרנט הן כבר לא חלום – הן מציאות נגישה ויעילה.</p>
+  <p>השקט הנפשי שווה יותר מכל ציוד יקר. אל תחכו שהאירוע הבא יתרחש. קחו שליטה על האבטחה של הנכסים היקרים שלכם, גם במקומות המרוחקים ביותר. צרו קשר עוד היום עם המומחים של Site-Control וקבלו <a href="/installation#quote">ייעוץ חינם</a> ללא כל התחייבות. נשמח לבנות עבורכם פתרון אבטחה סולארי 4G שיענה על כל הצרכים שלכם, ויספק לכם שקט נפשי מלא, יום ולילה, בכל תנאי מזג אוויר. מצלמות לכרם ומטע ללא אינטרנט הן כבר לא חלום – הן מציאות נגישה ויעילה.</p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -286,7 +286,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

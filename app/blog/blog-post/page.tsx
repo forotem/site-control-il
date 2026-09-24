@@ -224,7 +224,7 @@ export default function Page() {
   <h2 id="cta">סיכום וקריאה לפעולה</h2>
   <p>בעידן שבו אבטחת רכוש, יבול וציוד היא צו השעה, אין מקום לפשרות. מצלמות האבטחה הסולאריות 4G של Site-Control, מדגמי Reolink GO Plus ו-PTZ Solar, מציעות פתרון אולטימטיבי לקבלני בנייה, חקלאים ומנהלי אתרים מבודדים בישראל. הן מספקות אבטחה חכמה, עצמאית ויעילה, ללא צורך בתשתית חשמל או אינטרנט, ובאמצעותן תוכלו לישון בשקט בידיעה שהשטח שלכם מוגן.</p>
   <p>אל תחכו שהנזק הבא יתרחש. קחו שליטה על האבטחה שלכם עוד היום.</p>
-  <p><strong>צרו קשר עכשיו לקבלת <a href="/contact">ייעוץ חינם</a> ממומחי Site-Control ובנו את מערך האבטחה המושלם עבור הצרכים הייחודיים שלכם. אנחנו כאן כדי לעזור לכם להגן על היקר לכם מכל.</strong></p>
+  <p><strong>צרו קשר עכשיו לקבלת <a href="/installation#quote">ייעוץ חינם</a> ממומחי Site-Control ובנו את מערך האבטחה המושלם עבור הצרכים הייחודיים שלכם. אנחנו כאן כדי לעזור לכם להגן על היקר לכם מכל.</strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -258,7 +258,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

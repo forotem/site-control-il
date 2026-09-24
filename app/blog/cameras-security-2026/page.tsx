@@ -293,7 +293,7 @@ export default function Page() {
   <h2 id="conclusion">הגנו על הנכסים שלכם עם Site-Control: צרו קשר לייעוץ חינם</h2>
   <p>בעולם המודרני, שבו אתגרי האבטחה הולכים וגדלים, במיוחד באזורים ללא תשתית, אין מקום לפשרות. מצלמות אבטחה סולאריות 4G מבית Site-Control הן לא רק פתרון טכנולוגי מתקדם, אלא גם השקעה חכמה בשקט הנפשי שלכם, בביטחון העסקי וברווחיות לטווח הארוך. אנו מציעים את הפתרונות המובילים בשוק, המותאמים בדיוק לצרכים הייחודיים של קבלני בנייה, חקלאים ומנהלי אתרים מרוחקים בישראל.</p>
   <p>אל תחכו לגניבה הבאה, לנזק הבלתי הפיך או לעיכובים יקרים בפרויקטים שלכם. קחו את השליטה לידיים ואבטחו את הנכסים שלכם באופן מקצועי, יעיל וחסכוני.</p>
-  <p><strong>צרו קשר עוד היום עם מומחי Site-Control ל-<a href="/contact">ייעוץ חינם</a> וללא התחייבות. אנו נשמח להבין את הצרכים הספציפיים שלכם ולהתאים עבורכם את פתרון האבטחה המושלם.</strong></p>
+  <p><strong>צרו קשר עוד היום עם מומחי Site-Control ל-<a href="/installation#quote">ייעוץ חינם</a> וללא התחייבות. אנו נשמח להבין את הצרכים הספציפיים שלכם ולהתאים עבורכם את פתרון האבטחה המושלם.</strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -327,7 +327,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

@@ -244,7 +244,7 @@ export default function Page() {
     <h2 id="section8">סיכום וקריאה לפעולה</h2>
     <p>בעידן שבו אבטחה, ניטור ותיעוד הם אבני יסוד לכל עסק מצליח – ובמיוחד בתחום הבנייה, החקלאות וניהול אתרים מרוחקים – פתרונות אבטחה סולאריים 4G הם לא עוד מותרות, אלא הכרח. הם מעניקים לכם את היכולת לשלוט, לנטר ולהגן על הנכסים היקרים ביותר שלכם, ללא תלות בתשתיות קיימות, מכל מקום ובכל זמן.</p>
     <p>אנו ב-Site-Control גאים להיות חוד החנית בתחום זה בישראל. ההתמחות הבלעדית שלנו במצלמות Reolink GO Plus ו-PTZ Solar מבטיחה לכם את הידע, הניסיון והפתרונות המותאמים ביותר לצרכים הספציפיים שלכם. לא עוד פשרות, לא עוד דאגות – רק אבטחה חכמה, יעילה ונגישה.</p>
-    <p>הגיע הזמן להפסיק לדאוג מהלא נודע בשטח ולהתחיל ליהנות מראש שקט ומשליטה מלאה. צרו קשר עם מומחי Site-Control עוד היום לקבלת <a href="/contact">ייעוץ חינם</a> והצעת מחיר מותאמת אישית. נשמח לעמוד לשירותכם ולבנות עבורכם את פתרון ה<a href="https://www.site-control.co.il/blog/remote-monitoring-4g">ניטור ציוד חקלאי מרחוק 4G</a> המושלם.</p>
+    <p>הגיע הזמן להפסיק לדאוג מהלא נודע בשטח ולהתחיל ליהנות מראש שקט ומשליטה מלאה. צרו קשר עם מומחי Site-Control עוד היום לקבלת <a href="/installation#quote">ייעוץ חינם</a> והצעת מחיר מותאמת אישית. נשמח לעמוד לשירותכם ולבנות עבורכם את פתרון ה<a href="https://www.site-control.co.il/blog/remote-monitoring-4g">ניטור ציוד חקלאי מרחוק 4G</a> המושלם.</p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -278,7 +278,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

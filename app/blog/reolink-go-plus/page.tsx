@@ -319,7 +319,7 @@ export default function Page() {
 
   <p>חברת Site-Control היא הכתובת המקצועית והאמינה שלכם לכל פתרונות האבטחה הסולאריים 4G בישראל. עם ידע וניסיון עשיר, אנו נלווה אתכם צעד אחר צעד, החל משלב הייעוץ והאפיון, דרך התאמת הפתרון הנכון ביותר (בין אם זה Reolink GO Plus, Reolink PTZ Solar, או שילוב ביניהם), ועד לתמיכה שוטפת. אנו מתמחים אך ורק בפתרונות אלו, ומתחייבים לספק לכם את המענה הטוב ביותר.</p>
 
-  <p><strong>אל תתפשרו על האבטחה של הנכסים היקרים שלכם. <a href="/contact">צרו קשר עוד היום</a> לקבלת ייעוץ חינם ממומחי Site-Control. יחד, נבנה את תוכנית האבטחה המושלמת שתתאים בדיוק לצרכים ולתקציב שלכם.</strong></p>
+  <p><strong>אל תתפשרו על האבטחה של הנכסים היקרים שלכם. <a href="/installation#quote">צרו קשר עוד היום</a> לקבלת ייעוץ חינם ממומחי Site-Control. יחד, נבנה את תוכנית האבטחה המושלמת שתתאים בדיוק לצרכים ולתקציב שלכם.</strong></p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -353,7 +353,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

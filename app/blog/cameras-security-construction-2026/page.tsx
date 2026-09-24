@@ -303,7 +303,7 @@ export default function Page() {
   <p>אל תתנו לגניבות, ונדליזם או חוסר תיעוד לפגוע בפרויקטים ובפרנסה שלכם. Site-Control כאן כדי לספק לכם את הפתרון המותאם ביותר לצרכים הייחודיים שלכם.</p>
 
   <p><strong>רוצים לדעת איזה פתרון אבטחה סולארי 4G מתאים בדיוק עבורכם?</strong></p>
-  <p>צרו קשר עוד היום עם המומחים של Site-Control לקבלת <a href="/contact">ייעוץ חינם</a> וללא כל התחייבות. אנו נשמח להבין את הדרישות הספציפיות שלכם, להציג את מגוון <a href="/store">חבילות האבטחה</a> שלנו ולבנות עבורכם תוכנית אבטחה מקיפה שתבטיח לכם ראש שקט ובטחון מלא. אל תחכו לרגע שיהיה מאוחר מדי – אבטחו את העתיד שלכם היום!</p>
+  <p>צרו קשר עוד היום עם המומחים של Site-Control לקבלת <a href="/installation#quote">ייעוץ חינם</a> וללא כל התחייבות. אנו נשמח להבין את הדרישות הספציפיות שלכם, להציג את מגוון <a href="/store">חבילות האבטחה</a> שלנו ולבנות עבורכם תוכנית אבטחה מקיפה שתבטיח לכם ראש שקט ובטחון מלא. אל תחכו לרגע שיהיה מאוחר מדי – אבטחו את העתיד שלכם היום!</p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
         <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
@@ -337,7 +337,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

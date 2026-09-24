@@ -357,7 +357,7 @@ export default function Page() {
   <h2 id="toc_conclusion">סיכום וקריאה לפעולה</h2>
   <p>בעידן שבו ביטחון נכסים ורציפות עסקית הם קריטיים, מצלמות אבטחה סולאריות 4G של Site-Control הן הפתרון המתקדם, החכם והיעיל ביותר עבור קבלני בנייה, חקלאים ומנהלי אתרים מבודדים. הן מציעות עצמאות מוחלטת מתשתית, גמישות מרבית, איכות צילום גבוהה ואמינות ללא פשרות, ובכך מאפשרות לכם לשמור על הנכסים שלכם, למנוע גניבות ולנהל את הפעילות שלכם בראש שקט.</p>
   <p>אל תחכו שהגניבה הבאה תהיה הסיבה שלכם לפעול. <strong>קחו שליטה על האבטחה שלכם עוד היום!</strong></p>
-  <p><strong><a href="/contact" style="background-color:#4CAF50; color: white; padding: 15px 25px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">לקבלת ייעוץ חינם ופתרון אבטחה מותאם אישית – צרו קשר עם מומחי Site-Control</a></strong></p>
+  <p><strong><a href="/installation#quote" style="background-color:#4CAF50; color: white; padding: 15px 25px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">לקבלת ייעוץ חינם ופתרון אבטחה מותאם אישית – צרו קשר עם מומחי Site-Control</a></strong></p>
 
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
@@ -392,7 +392,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

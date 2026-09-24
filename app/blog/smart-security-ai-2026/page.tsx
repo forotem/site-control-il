@@ -278,7 +278,7 @@ export default function SmartSecurityAI2026Page() {
               הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/contact" style={{
+              <a href="/installation#quote" style={{
                 backgroundColor: 'white',
                 color: '#0070f3',
                 padding: '1rem 2rem',

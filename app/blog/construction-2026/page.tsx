@@ -237,7 +237,7 @@ export default function Page() {
     <p>גניבות ציוד באתר בנייה, שדות חקלאיים ואתרים מרוחקים הן לא גזירת גורל. בעידן שבו הטכנולוגיה מאפשרת פתרונות אבטחה אוטונומיים וחכמים, אין סיבה להמשיך לספוג הפסדים כבדים ועיכובים בפרויקטים.</p>
     <p>מצלמות אבטחה סולאריות 4G של Site-Control, המבוססות על טכנולוגיית Reolink המתקדמת, מציעות פתרון מקיף, אמין ומשתלם. הן לא רק מונעות גניבות ומספקות ראיות חותכות, אלא גם משמשות ככלי ניהולי רב עוצמה המייעל את העבודה, משפר את הבקרה וחוסך בעלויות.</p>
     <p>בין אם אתם קבלני בנייה המבקשים לאבטח אתר חדש, חקלאים שרוצים להגן על יבולכם וציודכם, או מנהלי אתרים מרוחקים הזקוקים לפיקוח ובקרה – יש לנו את הפתרון המושלם עבורכם.</p>
-    <p><strong>אל תחכו שהגניבה הבאה תהיה הסימן!</strong> צרו קשר עוד היום עם מומחי Site-Control ל<a href="/contact">ייעוץ חינם</a> וללא כל התחייבות. אנו נשמח להבין את הצרכים הספציפיים שלכם, להתאים לכם את חבילת האבטחה האופטימלית ולסייע לכם להגן על הנכסים היקרים שלכם בראש שקט.</p>
+    <p><strong>אל תחכו שהגניבה הבאה תהיה הסימן!</strong> צרו קשר עוד היום עם מומחי Site-Control ל<a href="/installation#quote">ייעוץ חינם</a> וללא כל התחייבות. אנו נשמח להבין את הצרכים הספציפיים שלכם, להתאים לכם את חבילת האבטחה האופטימלית ולסייע לכם להגן על הנכסים היקרים שלכם בראש שקט.</p>
     <p>השאירו פרטים ונחזור אליכם בהקדם!</p>
 </div>` }} />
           <div dangerouslySetInnerHTML={{ __html: `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
@@ -267,7 +267,7 @@ export default function Page() {
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>צריכים ייעוץ מקצועי?</h3>
             <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>הצוות שלנו ב-Site-Control ישמח לעזור לכם לבחור את הפתרון המושלם</p>
-            <a href="/contact" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+            <a href="/installation#quote" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
               צרו קשר עכשיו
             </a>
           </div>

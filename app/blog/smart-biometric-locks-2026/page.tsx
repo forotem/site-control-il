@@ -231,7 +231,7 @@ export default function BlogPage() {
               השאירו פרטים ונחזור אליכם עם הצעה משתלמת במיוחד למנעול המתאים בדיוק לדלת שלכם.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/contact" style={{
+              <a href="/installation#quote" style={{
                 backgroundColor: 'white',
                 color: '#0070f3',
                 padding: '1rem 2.5rem',
@@ -245,7 +245,7 @@ export default function BlogPage() {
               }}>
                 ייעוץ והתקנה
               </a>
-              <a href="/contact" style={{
+              <a href="/installation#quote" style={{
                 backgroundColor: 'rgba(255,255,255,0.2)',
                 color: 'white',
                 border: '2px solid white',

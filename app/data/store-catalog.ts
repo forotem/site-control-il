@@ -1044,7 +1044,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת אינטרקום וידאו 2 גידים Wi-Fi לבית פרטי VisionNet KITCOM - מסך 7\" + פנל מצלמה וקודן, אפליקציה, Plug & Play",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1489,
+    "price": 1589,
     "specs": [
       "7\" high-resolution digital colour TFT monitor with touch-sensor buttons",
       "Wi-Fi: call divert to mobile phone app (remote view & door open)",

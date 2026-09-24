@@ -1672,6 +1672,49 @@
   },
   {
     "cost_source": "estimate",
+    "model": "VisionNet KITCOM Wi-Fi 2-wire villa kit 560791",
+    "brand": "VisionNet",
+    "category": "video_intercom_kit",
+    "title_he": "ערכת אינטרקום וידאו 2 גידים Wi-Fi לבית פרטי VisionNet KITCOM - מסך 7\" + פנל מצלמה וקודן, אפליקציה, Plug & Play",
+    "telran_sku": "560791",
+    "telran_url": "https://www.telran.co.il/product/7796/2-wire-wifi-kitcom-intercom-villa-kit-plug-play",
+    "telran_name": "2 wire WiFi KITCOM intercom villa kit plug & play",
+    "specs": [
+      "7\" high-resolution digital colour TFT monitor with touch-sensor buttons",
+      "Wi-Fi: call divert to mobile phone app (remote view & door open)",
+      "2-wire connection between panel and monitor (plug & play)",
+      "Outdoor door station with camera and numeric keypad (code door opening / access control)",
+      "Inner call / intercom between monitors, picture memory function",
+      "Kit: monitor + outdoor camera/keypad door station + power supply"
+    ],
+    "image_url": "https://www.telran.co.il/images/560791.01.png",
+    "datasheet_url": "https://www.telran.co.il/images/560791_VisionNet_ENG_DS_2023_2.pdf",
+    "market_prices": [
+      {
+        "site": "kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touchscreen monitor + keypad panel + electric lock, not exact)",
+        "price": 1599,
+        "url": "https://kav-isr.com/access-control/intercom/kit-intercom-visionnet-wifi.html",
+        "comparable": false
+      },
+      {
+        "site": "kav-isr.com (VisionNet 2-wire keypad kit without Wi-Fi, ~560789)",
+        "price": 1399,
+        "url": "https://kav-isr.com/access-control/intercom/%D7%A1%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%94%D7%9B%D7%95%D7%9C%D7%9C-%D7%A4%D7%A0%D7%9C-%D7%A2%D7%9D-%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%95%D7%A7%D7%95%D7%93%D7%9F-%D7%9E%D7%A1%D7%9A-7-%D7%90%D7%99%D7%A0%D7%A5-visionnet.html",
+        "comparable": false
+      }
+    ],
+    "market_low_ils": null,
+    "market_typical_ils": null,
+    "price_basis": "relative",
+    "recommended_price_ils": 1489,
+    "estimated_cost_ils": 1092,
+    "estimated_margin_ils": 397,
+    "notes": "No Israeli listing found for 560791 / KITCOM Wi-Fi (searched telran, zap, kav-isr, zbm, alon-computers). Priced between 560789 (same kit without Wi-Fi, 1,389) and 560171 (DH hybrid touchscreen, 1,579), below kav-isr Wi-Fi keypad kit 1,599.",
+    "batch": 1,
+    "pricing_note": "2026-09-24: אין מחיר שוק לדגם המדויק; מוקם בין 560789 (1,389, בלי Wi-Fi) ל-560171 (1,579), מתחת לקיט Wi-Fi עם קודן ב-kav-isr (1,599). לבקש מחיר מעידן."
+  },
+  {
+    "cost_source": "estimate",
     "model": "VisionNet DH Hybrid KIT 560171",
     "brand": "VisionNet",
     "category": "video_intercom_kit",

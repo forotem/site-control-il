@@ -1037,6 +1037,32 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
+    "slug": "visionnet-kitcom-wifi-2-wire-villa-kit-560791",
+    "brand": "VisionNet",
+    "model": "VisionNet KITCOM Wi-Fi 2-wire villa kit 560791",
+    "sku": "560791",
+    "title": "ערכת אינטרקום וידאו 2 גידים Wi-Fi לבית פרטי VisionNet KITCOM - מסך 7\" + פנל מצלמה וקודן, אפליקציה, Plug & Play",
+    "category": "intercom",
+    "categoryName": "אינטרקום ובקרת כניסה",
+    "price": 1489,
+    "specs": [
+      "7\" high-resolution digital colour TFT monitor with touch-sensor buttons",
+      "Wi-Fi: call divert to mobile phone app (remote view & door open)",
+      "2-wire connection between panel and monitor (plug & play)",
+      "Outdoor door station with camera and numeric keypad (code door opening / access control)",
+      "Inner call / intercom between monitors, picture memory function",
+      "Kit: monitor + outdoor camera/keypad door station + power supply"
+    ],
+    "image": "/store-images/visionnet-kitcom-wifi-2-wire-villa-kit-560791.webp",
+    "datasheet": "https://www.telran.co.il/images/560791_VisionNet_ENG_DS_2023_2.pdf",
+    "highlights": [
+      "7\" high-resolution digital colour TFT monitor with touch-sensor buttons",
+      "Wi-Fi: call divert to mobile phone app (remote view & door open)",
+      "2-wire connection between panel and monitor (plug & play)"
+    ],
+    "oldStock": false
+  },
+  {
     "slug": "visionnet-dh-hybrid-kit-560171",
     "brand": "VisionNet",
     "model": "VisionNet DH Hybrid KIT 560171",

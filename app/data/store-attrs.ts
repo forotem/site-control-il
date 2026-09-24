@@ -58,6 +58,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "xvr301-08g3": {"kind":"xvr","mp":5,"channels":8,"bays":1,"poePorts":0,"maxMp":5,"ai":"none"},
   "visionnet-k-560820": {"kind":"keypad","wiring":"standalone","app":false,"auth":["card","code"]},
   "visionnet-kitcom-2-wire-villa-kit-560789": {"kind":"intercom-kit","wiring":"2wire","app":true,"auth":["card"]},
+  "visionnet-kitcom-wifi-2-wire-villa-kit-560791": {"kind":"intercom-kit","wiring":"2wire","app":true,"auth":["keypad"]},
   "visionnet-dh-hybrid-kit-560171": {"kind":"intercom-kit","wiring":"hybrid","app":true,"auth":["card"]},
   "visionnet-2tl-17-560580": {"kind":"monitor","wiring":"2wire","app":false,"auth":["card"]},
   "visionnet-dh-wi-fi-monitor-560975": {"kind":"monitor","wiring":"hybrid","app":true,"auth":["card"]},

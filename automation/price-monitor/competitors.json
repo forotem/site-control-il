@@ -704,6 +704,24 @@
    }
   ]
  },
+ "visionnet-kitcom-wifi-2-wire-villa-kit-560791": {
+  "model": "VisionNet KITCOM Wi-Fi 2-wire villa kit 560791",
+  "brand": "VisionNet",
+  "policy": "undercut-with-floor",
+  "floor": 1147,
+  "urls": [
+   {
+    "url": "https://kav-isr.com/access-control/intercom/kit-intercom-visionnet-wifi.html",
+    "seller": "kav-isr.com (VisionNet Wi-Fi app kit w/ keypad panel, touchscreen + lock, not exact)",
+    "note": "not exact model"
+   },
+   {
+    "url": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
+    "seller": "zap.co.il (VisionNet intercom listing)",
+    "note": "no exact 560791 listing on 2026-09-24"
+   }
+  ]
+ },
  "visionnet-dh-hybrid-kit-560171": {
   "model": "VisionNet DH Hybrid KIT 560171",
   "brand": "VisionNet",

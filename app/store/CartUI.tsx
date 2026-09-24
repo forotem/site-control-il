@@ -170,6 +170,7 @@ export function CartDrawer() {
                   ))}
                 </fieldset>
                 <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כתובת למשלוח, מועד נוח, שאלה" /></label>
+                <p style={{ fontSize: "0.82rem", color: "var(--muted)", margin: 0 }}>הפרטים משמשים רק לטיפול בהזמנה. <Link href="/privacy">מדיניות פרטיות</Link></p>
                 {err && <p className={c.formErr}>{err} <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
                 <div className={styles.finderCtas}>
                   <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : "שליחת ההזמנה"}</button>

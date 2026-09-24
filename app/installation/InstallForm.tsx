@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { track } from "../lib/analytics";
 import { getAttribution } from "../lib/attribution";
@@ -57,6 +58,7 @@ export function InstallForm() {
       </fieldset>
       <label className={c.field}><span>יישוב</span><input value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} autoComplete="address-level2" /></label>
       <label className={c.field}><span>עוד פרטים (לא חובה)</span><textarea rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כמה מצלמות בערך, יש תשתית קיימת, מועד רצוי" /></label>
+      <p style={{ fontSize: "0.82rem", color: "var(--muted)", margin: 0 }}>הפרטים משמשים רק כדי לחזור אליך עם הצעת מחיר. <Link href="/privacy">מדיניות פרטיות</Link></p>
       {err && <p className={c.formErr}>{err} <a href={wa} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
       <div className={styles.ctas}>
         <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : "קבלת הצעת מחיר"}</button>

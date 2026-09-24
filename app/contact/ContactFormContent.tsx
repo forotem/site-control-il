@@ -149,6 +149,10 @@ export default function ContactFormContent() {
               ></textarea>
             </div>
 
+            <p style={{ fontSize: '0.82rem', color: '#666', margin: 0 }}>
+              הפרטים משמשים רק כדי לחזור אליך. <a href="/privacy">מדיניות פרטיות</a>
+            </p>
+
             <button 
               type="submit" 
               className={styles.submitButton}

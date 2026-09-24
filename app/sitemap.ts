@@ -26,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/store/finder"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.7 },
     { url: url("/about"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: url("/contact"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
+    { url: url("/privacy"), lastModified: CATALOG_UPDATED, changeFrequency: "yearly", priority: 0.2 },
+    { url: url("/accessibility"), lastModified: CATALOG_UPDATED, changeFrequency: "yearly", priority: 0.2 },
     { url: url("/blog"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.6 },
   ];
   const categories: MetadataRoute.Sitemap = storeCategories

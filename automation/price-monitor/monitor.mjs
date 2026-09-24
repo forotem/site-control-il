@@ -14,14 +14,15 @@ const flag = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : und
 const only = (flag("--only") || "").split(",").filter(Boolean);
 const limit = Number(flag("--limit")) || Infinity;
 
-// RULES
-const UNDERCUT = 0.98;        // יעד: 2% מתחת לזול ביותר, מעוגל ל-9, ולפחות 10 ₪ מתחת
+// RULES (עידן טלרן, 24/09/2026: לא אחוזים מתחת לשוק, אלא "כמה שקלים" מתחת לזול ביותר שנמצא ברשת)
+const GAP = (low) => (low < 300 ? 5 : low < 1500 ? 10 : 20); // כמה שקלים מתחת לזול ביותר, לפי גובה המחיר
 const MAX_AUTO_DROP = 0.25;   // הורדה אוטומטית של עד 25% מהמחיר הנוכחי; מעבר לזה: לבדיקה ידנית
-const RAISE_HINT = 0.08;      // אם אנחנו 8%+ מתחת לכולם: רק רמז להעלאה, לא אוטומטי
+const MAX_AUTO_RAISE = 0.05;  // עם --realign: העלאה של עד 5%, רק כשאנחנו נמוכים ביותר מפי 2 מהפער ויש ראיה חזקה
+const REALIGN = args.includes("--realign");
+const FROM_CACHE = args.includes("--from-cache"); // להשתמש במחירים מהסריקה האחרונה (reports/latest.json) בלי לסרוק שוב; להערכה מהירה אחרי שינוי כלל
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36";
 
-const to9 = (v) => { const x = Math.round(v); const r = x % 10; return r === 9 ? x : (x - r + 9 > x + 5 ? x - r - 1 : x - r + 9); };
-const undercut = (low) => { let t = to9(low * UNDERCUT); if (t > low - 10) t = to9(low - 20); return Math.max(t, 9); };
+const undercut = (low) => Math.max(low - GAP(low), 5);
 const nis = (n) => n.toLocaleString("he-IL");
 
 const catPath = path.join(root, "app/data/store-catalog.ts");
@@ -90,6 +91,18 @@ function extractPrices(html, ours, keys) {
   return { strong, weak, anywhere, score, modelSeen: hits.length > 0 };
 }
 
+// דגם אחר בתיאור המוכר (וריאנט, דור קודם, ערכה, מקליט עם דיסק) = לא להשוואה ישירה.
+// דגמים בתיאור: כל אסימון שנראה כמו מק"ט (DS-2CD2T87G2H-LISU/SL2, iDS-7216HQHI-M1/XT, IPC3626LE-ADF28K, 560408) חייב להופיע בדגם שלנו.
+function isComparable(p, u) {
+  const label = `${u.seller} ${u.note}`;
+  const ours = String(p.model).toUpperCase().replace(/\s+/g, " ");
+  const noDomains = label.replace(/\b[\w-]+(?:\.[\w-]+)*\.(?:co\.il|org\.il|com|net|org|il)\b/gi, " "); // com4tech.co.il אינו מק"ט
+  const toks = [...noDomains.matchAll(/\b(?:[A-Za-z]{1,4}-?\d[A-Za-z0-9/-]{3,}|5\d{5})\b/g)].map((m) => m[0].toUpperCase().replace(/[/-]+$/, ""));
+  const foreignModel = toks.some((t) => !ours.includes(t));
+  const bundleOrVariant = /variant|predecessor|related|kit |bundle|wired only|incl|hdd|\b\d\s?tb\b|ללא |בלי |דומה|ערכה|קודם|גרסה|כולל|דיסק|similar|comparable|-2T|-4T|\b2T\b|\b4T\b/i.test(label);
+  return !foreignModel && !bundleOrVariant;
+}
+
 function pickPrice(ex) {
   if (ex.strong.length) return { price: Math.min(...ex.strong), method: "structured" };
   if (ex.weak.length) {
@@ -103,6 +116,10 @@ function pickPrice(ex) {
   return null;
 }
 
+const cachePath = path.join(here, "reports", "latest.json");
+const cached = FROM_CACHE && fs.existsSync(cachePath) ? Object.fromEntries(JSON.parse(fs.readFileSync(cachePath, "utf8")).results.map((r) => [r.slug, r.offers])) : null;
+if (FROM_CACHE && !cached) { console.error("אין reports/latest.json, מריצים סריקה מלאה"); }
+
 const results = []; let n = 0;
 for (const p of catalog) {
   if (only.length && !only.includes(p.slug)) continue;
@@ -110,17 +127,15 @@ for (const p of catalog) {
   if (++n > limit) break;
   const offers = [];
   for (const u of c.urls) {
+    const hit = cached?.[p.slug]?.find((o) => o.url === u.url);
+    if (hit) { offers.push({ ...hit, ...u, comparable: isComparable(p, u) }); continue; }
     const r = await fetchHtml(u.url);
     if (!r.html || r.status >= 400) { offers.push({ ...u, ok: false, status: r.status, error: r.error || "" }); continue; }
     const ex = extractPrices(r.html, p.price, modelKeys(p));
     const picked = pickPrice(ex);
     // senetic מציגים מחירים לפני מע"מ
     if (picked && /senetic\.co\.il/.test(r.finalUrl || u.url)) { picked.price = Math.round(picked.price * 1.18); picked.method += "+vat"; }
-    const label = `${u.seller} ${u.note}`;
-    // דגם אחר בתיאור המוכר (וריאנט, דור קודם, ערכה) = לא להשוואה ישירה
-    const foreignModel = [...label.matchAll(/[A-Z]{2,4}-?\d{2,}[A-Z0-9/()-]*/g)].map((m) => m[0]).some((tok) => !String(p.model).toUpperCase().includes(tok.toUpperCase().replace(/[()]/g, "")));
-    const comparable = !foreignModel && !/variant|predecessor|related|kit |bundle|wired only|ללא |בלי |דומה|ערכה|קודם|similar|comparable|-2T|-4T/i.test(label);
-    offers.push({ ...u, ok: !!picked, comparable, status: r.status, modelSeen: ex.modelSeen, finalUrl: r.finalUrl, ...(picked || {}) });
+    offers.push({ ...u, ok: !!picked, comparable: isComparable(p, u), status: r.status, modelSeen: ex.modelSeen, finalUrl: r.finalUrl, ...(picked || {}) });
   }
   const good = offers.filter((o) => o.ok && o.comparable && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen));
   const low = good.length ? Math.min(...good.map((o) => o.price)) : null;
@@ -128,20 +143,28 @@ for (const p of catalog) {
   let action = "no_data", target = null, reason = "";
   if (low != null) {
     const strongEvidence = good.some((o) => o.method === "structured" || o.method === "near-model-repeated") || good.length >= 2;
-    if (p.price >= low - 5) {
-      target = Math.max(undercut(low), c.floor || 0);
-      if (target >= p.price) { action = "floor_blocks"; reason = `רצפה ${c.floor} לא מאפשרת לרדת מתחת ל-${low}`; }
-      else if (!strongEvidence) { action = "review"; reason = "ראיה חלשה (מחיר בודד מטקסט)"; }
+    const want = undercut(low);                 // היעד: כמה שקלים מתחת לזול ביותר
+    target = Math.max(want, c.floor || 0);
+    if (p.price > target) {                     // יקרים מהיעד: להוריד
+      if (!strongEvidence) { action = "review"; reason = "ראיה חלשה (מחיר בודד מטקסט)"; }
       else if (target < p.price * (1 - MAX_AUTO_DROP)) { action = "review"; reason = `ירידה של ${Math.round((1 - target / p.price) * 100)}% דורשת אישור`; }
       else action = APPLY ? "applied" : "lower";
-    } else if (p.price < low * (1 - RAISE_HINT)) { action = "room_to_raise"; }
-    else action = "ok";
+    } else if (p.price > want) { action = "floor_blocks"; reason = `רצפה ${c.floor} לא מאפשרת לרדת ל-${want}`; }
+    else if (p.price < want - GAP(low)) {       // נמוכים ביותר מ"כמה שקלים": מוותרים על רווח בלי סיבה
+      target = want;
+      // העלאה רק אם אחרי ההעלאה אנחנו עדיין כמה שקלים מתחת לכל מוכר שמזכיר את הדגם, גם כזה שסומן כווריאנט/ערכה (זהירות כפולה בכיוון למעלה)
+      const anyModelLow = Math.min(...offers.filter((o) => o.ok && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen)).map((o) => o.price));
+      const safeRaise = want <= anyModelLow - GAP(anyModelLow);
+      if (REALIGN && strongEvidence && safeRaise && want <= p.price * (1 + MAX_AUTO_RAISE)) action = APPLY ? "applied" : "raise";
+      else { action = "room_to_raise"; reason = !REALIGN ? "הרצה עם --realign תיישר למעלה" : !strongEvidence ? "ראיה חלשה" : !safeRaise ? `מוכר בדגם דומה/ערכה ב-${anyModelLow}, לא מעלים` : `העלאה של ${Math.round((want / p.price - 1) * 100)}% דורשת אישור`; }
+    } else { action = "ok"; target = null; }
   } else if (offers.some((o) => o.ok && !o.comparable)) { action = "no_comparable"; reason = "נמצאו רק דגמים דומים/ערכות, לא אותו דגם"; } else if (offers.length) action = "fetch_failed";
   results.push({ slug: p.slug, model: p.model, brand: String(p.model).toLowerCase().startsWith(String(p.brand).toLowerCase()) ? "" : p.brand, ours: p.price, low, lowSeller: lowOffer?.seller || null, lowUrl: lowOffer?.url || null, target, action, reason, offers });
   process.stderr.write(`${p.slug}: ours ${p.price} low ${low ?? "-"} -> ${action}${target ? " " + target : ""}\n`);
 }
 
 // החלה
+const day = new Date().toISOString().slice(0, 10);
 let applied = 0;
 if (APPLY) {
   let src = catSrc;
@@ -166,7 +189,6 @@ if (APPLY) {
 }
 
 // דוחות
-const day = new Date().toISOString().slice(0, 10);
 const repDir = path.join(here, "reports"); fs.mkdirSync(repDir, { recursive: true });
 fs.writeFileSync(path.join(repDir, "latest.json"), JSON.stringify({ date: day, apply: APPLY, results }, null, 1));
 const groups = (a) => results.filter((r) => r.action === a);
@@ -174,11 +196,12 @@ const line = (r) => `- ${r.brand} ${r.model}: אצלנו ${nis(r.ours)}${r.targe
 const md = [
   `# סריקת מחירי מתחרים ${day}`, "",
   `נסרקו ${results.length} מוצרים, ${results.reduce((a, r) => a + r.offers.length, 0)} דפים. ${APPLY ? `עודכנו אוטומטית: ${applied}.` : ""}`, "",
-  `## הוזלו אוטומטית (${groups("applied").length})`, ...groups("applied").map(line), "",
+  `## עודכנו אוטומטית (${groups("applied").length}: הוזלו ${groups("applied").filter((r) => r.target < r.ours).length}, הועלו ${groups("applied").filter((r) => r.target > r.ours).length})`, ...groups("applied").map(line), "",
   `## יש להוזיל (${groups("lower").length})`, ...groups("lower").map(line), "",
+  `## יש להעלות ל"כמה שקלים מתחת לזול" (${groups("raise").length})`, ...groups("raise").map(line), "",
   `## לבדיקה ידנית (${groups("review").length})`, ...groups("review").map(line), "",
   `## הרצפה חוסמת (${groups("floor_blocks").length})`, ...groups("floor_blocks").map(line), "",
-  `## אנחנו הכי זולים, יש מרווח להעלות (${groups("room_to_raise").length})`, ...groups("room_to_raise").map(line), "",
+  `## נמוכים ביותר מכמה שקלים מתחת לזול, יש מרווח להעלות (${groups("room_to_raise").length})`, ...groups("room_to_raise").map(line), "",
   `## תקין, כבר מתחת לשוק (${groups("ok").length})`, ...groups("ok").map((r) => `- ${r.brand} ${r.model}: ${nis(r.ours)} מול ${nis(r.low)} (${r.lowSeller})`), "",
   `## הסריקה נכשלה (${groups("fetch_failed").length})`, ...groups("fetch_failed").map((r) => `- ${r.brand} ${r.model}: ${r.offers.map((o) => `${o.seller} ${o.status || o.error}`).join("; ")}`), "",
 ].join("\n");
@@ -190,7 +213,7 @@ const { GREEN_ID_INSTANCE, GREEN_API_TOKEN, GREEN_API_URL, STORE_ALERT_WHATSAPP 
 if (GREEN_ID_INSTANCE && GREEN_API_TOKEN) {
   const summary = [
     `סריקת מחירים ${day}`,
-    `הוזלו אוטומטית: ${applied}`,
+    `עודכנו אוטומטית: ${applied} (הוזלו ${groups("applied").filter((r) => r.target < r.ours).length}, הועלו ${groups("applied").filter((r) => r.target > r.ours).length})`,
     `לבדיקה: ${groups("review").length + groups("lower").length}`,
     `רצפה חוסמת: ${groups("floor_blocks").length}`,
     `נכשלו: ${groups("fetch_failed").length}`,

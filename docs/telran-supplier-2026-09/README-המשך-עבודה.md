@@ -175,3 +175,7 @@
 2. בוצע: משתני סביבה הוגדרו ב-Vercel דרך ה-CLI המחובר (`npx vercel env add` מתוך C:\sc\wt המקושר לפרויקט), ל-Production ול-Preview: `GEMINI_API_KEY`, `GREEN_ID_INSTANCE`, `GREEN_API_TOKEN`, `GREEN_API_URL`. ברירות מחדל בקוד: התראות לווצאפ 972502256866, מייל info@site-control-il.com (אפשר לשנות עם `STORE_ALERT_WHATSAPP` / `STORE_ALERT_EMAIL`).
 3. ה-MCP של Vercel מחזיר 404 לקריאות פרויקט; ה-CLI (`npx vercel whoami` = timelapseit11-3572) עובד. לשינויים עתידיים: `cd C:\sc\wt && npx vercel env ls production`.
 4. בדיקה מקומית: `C:\sc\wt\.env.local` מכיל GEMINI_API_KEY (לא בגיט). `npm run build` עובד ב-C:\sc\wt; `.claude/launch.json` בתיקיית האב מגדיר `store-wt` (next start על 3005).
+
+## 20. תיקון כלל התמחור לפי עידן (24/09/2026)
+
+עידן, בהודעה קולית מ-24/09 (רותם תמצת): לא אחוזים מתחת למחיר הכללי ולא 2-3% מתחת לזול, אלא **המחיר הזול ביותר שנמצא ברשת פחות כמה שקלים**. יושם ב-`automation/price-monitor/monitor.mjs`: `GAP` = 5 ₪ עד 300, 10 ₪ עד 1,500, 20 ₪ מעל; הכלל הישן (2%, מעוגל ל-9, מינימום 10 ₪) בוטל. ריצה חד-פעמית `--realign --apply` יישרה למעלה מוצרים שהיו יותר מפי 2 מהפער מתחת לזול. הרצפות (Reolink 0, שאר המותגים עלות × 1.05) לא השתנו. גם הידע של טל עודכן ("בכמה שקלים מתחת לזול ביותר").

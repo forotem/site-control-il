@@ -1706,9 +1706,9 @@
     "market_low_ils": null,
     "market_typical_ils": null,
     "price_basis": "relative",
-    "recommended_price_ils": 1489,
+    "recommended_price_ils": 1589,
     "estimated_cost_ils": 1092,
-    "estimated_margin_ils": 397,
+    "estimated_margin_ils": 497,
     "notes": "No Israeli listing found for 560791 / KITCOM Wi-Fi (searched telran, zap, kav-isr, zbm, alon-computers). Priced between 560789 (same kit without Wi-Fi, 1,389) and 560171 (DH hybrid touchscreen, 1,579), below kav-isr Wi-Fi keypad kit 1,599.",
     "batch": 1,
     "pricing_note": "2026-09-24: אין מחיר שוק לדגם המדויק; מוקם בין 560789 (1,389, בלי Wi-Fi) ל-560171 (1,579), מתחת לקיט Wi-Fi עם קודן ב-kav-isr (1,599). לבקש מחיר מעידן."

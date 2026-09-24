@@ -7,7 +7,7 @@ import styles from "../home.module.css";
 export const metadata: Metadata = {
   title: "אודות Site-Control | מתקינים ומוכרים מצלמות אבטחה",
   description:
-    "Site-Control: חברת התקנות של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה, שמוכרת את אותו ציוד גם אונליין מהמלאי של היבואן בישראל.",
+    "Site-Control: חברת התקנות של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה, שמוכרת את אותו ציוד גם אונליין ציוד מיבואן בישראל.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "אודות Site-Control",
@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className={styles.sectionHead}><h2 id="what">מה אנחנו עושים</h2></div>
         <div className={styles.why}>
           <div><b>התקנה</b><p>מערכות מצלמות IP ואנלוגיות, מקליטים, אינטרקום 2 גידים ו-IP, בקרת כניסה וזיהוי פנים. תכנון, חיווט, הגדרת אפליקציה והדרכה.</p></div>
-          <div><b>חנות</b><p>מצלמות של Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. משלוח, איסוף עצמי או התקנה על ידינו. <Link href="/store">לחנות</Link>.</p></div>
+          <div><b>חנות</b><p>מצלמות של Hikvision, Uniview, Reolink, VisionNet ו-Tenda ציוד מיבואן בישראל. משלוח לכל הארץ, איסוף עצמי, או התקנה בתיאום ולפי הצעת מחיר. <Link href="/store">לחנות</Link>.</p></div>
           <div><b>אתרים בלי חשמל</b><p>לאתרי בנייה, חקלאות ושטחים מרוחקים: מצלמות סוללה של Reolink עם סים 4G ופאנל סולארי, <Link href="/store/c/solar">בחנות עם מחיר</Link>, והתקנה על ידינו לפי הצעת מחיר.</p></div>
           <div><b>ייעוץ לפני הקנייה</b><p>שאלון התאמה, מדריכי בחירה, השוואות ועוזר AI שמכיר את כל המפרטים. ומי שרוצה, מדבר איתנו בווצאפ.</p></div>
         </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className={styles.ways}>
           <div className={styles.way}><i>1</i><b>בוחרים</b><p>לבד בקטלוג, עם השאלון, או בשיחה איתנו. ממליצים רק על מה שמתאים, לא על היקר ביותר.</p></div>
           <div className={styles.way}><i>2</i><b>מאשרים זמינות</b><p>לפני כל חיוב אנחנו בודקים מלאי ומועד אספקה מול היבואן וחוזרים אליכם. אף אחד לא משלם על מוצר שאין.</p></div>
-          <div className={styles.way}><i>3</i><b>מקבלים</b><p>משלוח עד הבית, איסוף עצמי בתיאום, או התקנה על ידי הצוות שלנו לפי הצעת מחיר. {WARRANTY_TEXT}.</p></div>
+          <div className={styles.way}><i>3</i><b>מקבלים</b><p>משלוח עד הבית, איסוף עצמי בתיאום, או התקנה בכל הארץ על ידי מתקין מטעמנו, בתיאום ולפי הצעת מחיר נפרדת. {WARRANTY_TEXT}.</p></div>
         </div>
       </section>
 

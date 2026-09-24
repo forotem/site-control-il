@@ -79,8 +79,8 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
           </div>
           <div className={styles.trust}>
             <span>{WARRANTY_TEXT}</span>
-            <span>מלאי של היבואן בישראל</span>
-            <span>משלוח לכל הארץ, או התקנה על ידינו {BUSINESS.installAreaIn}</span>
+            <span>ציוד מיבואן בישראל</span>
+            <span>משלוח לכל הארץ. התקנה בנפרד, בתיאום ולפי הצעת מחיר</span>
           </div>
         </div>
       </header>
@@ -104,7 +104,7 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
           <div className={styles.sectionHead}>
             <div>
               <h2 id="quote-title">צריך גם התקנה או תכנון?</h2>
-              <p>משאירים שם, טלפון ומה צריך, וחוזרים אליך עם הצעה לציוד ולהתקנה יחד. מתקינים {BUSINESS.installAreaIn}.</p>
+              <p>משאירים שם, טלפון ומה צריך, וחוזרים אליך עם הצעה לציוד. התקנה {BUSINESS.installAreaIn}.</p>
             </div>
           </div>
           <InstallForm variant="short" category={cat.id} />

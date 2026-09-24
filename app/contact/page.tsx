@@ -4,7 +4,7 @@ import { Breadcrumb, BreadcrumbSchema } from '../components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: "יצירת קשר | Site-Control - מצלמות אבטחה, התקנה וחנות",
-  description: "הצעת מחיר להתקנת מצלמות אבטחה, אינטרקום או בקרת כניסה במרכז ובדרום, שאלה על מוצר מהחנות, או עזרה לבחור. ווצאפ, טלפון או טופס קצר.",
+  description: "הצעת מחיר להתקנת מצלמות אבטחה, אינטרקום או בקרת כניסה בכל הארץ, שאלה על מוצר מהחנות, או עזרה לבחור. ווצאפ, טלפון או טופס קצר.",
   alternates: { canonical: 'https://www.site-control-il.com/contact' },
 };
 

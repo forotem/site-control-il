@@ -197,8 +197,8 @@ export function fitLine(p: StoreProduct): string {
     case "wifi-bullet": return "נקודה אחת בחוץ בלי מקליט, חשמל בלבד";
     case "nvr": return a.poePorts ? `עד ${a.channels} מצלמות IP, בלי מתג נפרד` : `עד ${a.channels} מצלמות IP (נדרש מתג PoE)`;
     case "dvr": case "xvr": return `שדרוג מערכת קואקס קיימת, עד ${a.channels} מצלמות`;
-    case "kit": return "בית או עסק קטן: 4 מצלמות, מקליט ודיסק, מוכן להתקנה";
-    case "intercom-kit": return a.wiring === "ip" ? "בית פרטי חדש: תשתית רשת, מענה מהנייד" : a.wiring === "hybrid" ? "בית פרטי: 2 גידים קיימים + מענה מהנייד" : "החלפת אינטרקום ישן: אותם 2 גידים";
+    case "kit": return `${(a.cams || 4) >= 8 ? "בית גדול או עסק" : "בית או עסק קטן"}: ${a.cams || 4} מצלמות, מקליט ודיסק, מוכן להתקנה`;
+    case "intercom-kit": return a.wiring === "ip" ? "בית פרטי חדש: תשתית רשת, מענה מהנייד" : a.wiring === "hybrid" ? "בית פרטי: 2 גידים קיימים + מענה מהנייד" : a.wiring === "4wire" ? "החלפת אינטרקום ישן: 4 גידים קיימים" : "החלפת אינטרקום ישן: אותם 2 גידים";
     case "door-panel": return (a.buttons || 1) >= 4 || /821|T5/.test(p.model) ? "בניין משותף" : (a.buttons || 1) === 2 ? "בית דו-משפחתי" : "בית פרטי";
     case "monitor": return "מסך נוסף לדירה או להחלפה";
     case "terminal": return a.auth?.includes("face") ? "עסק: כניסת עובדים ונוכחות בזיהוי פנים" : "עסק: דלת עובדים באצבע, כרטיס או קוד";

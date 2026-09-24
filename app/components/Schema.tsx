@@ -15,7 +15,7 @@ export function LocalBusinessSchema() {
     '@type': ['LocalBusiness', 'Store'],
     name: 'Site-Control',
     description:
-      'חנות מצלמות אבטחה עם צוות שגם מתקין: מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה של Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. התקנה, משלוח או איסוף עצמי.',
+      'חנות מצלמות אבטחה עם שירות התקנה: מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה של Hikvision, Uniview, Reolink, VisionNet ו-Tenda ציוד מיבואן בישראל. משלוח, איסוף עצמי, או התקנה בתיאום ולפי הצעת מחיר.',
     legalName: BUSINESS.legalName,
     telephone: BUSINESS.phoneE164,
     email: BUSINESS.email,
@@ -23,7 +23,7 @@ export function LocalBusinessSchema() {
       '@type': 'PostalAddress',
       addressCountry: 'IL',
     },
-    // החנות שולחת לכל הארץ; ההתקנות רק במרכז ובדרום (מפורט בסכמת Service בדף /installation)
+    // החנות שולחת לכל הארץ; ההתקנה בכל הארץ בתיאום ולפי הצעת מחיר (סכמת Service בדף /installation)
     areaServed: { '@type': 'Country', name: 'Israel' },
     openingHoursSpecification: BUSINESS.hoursSpec.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days, opens: h.opens, closes: h.closes })),
     url: BASE_URL,

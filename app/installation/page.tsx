@@ -8,7 +8,7 @@ import { InstallForm } from "./InstallForm";
 import styles from "../home.module.css";
 
 export const metadata: Metadata = {
-  title: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה במרכז ובדרום | Site-Control",
+  title: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה בכל הארץ | Site-Control",
   description:
     `התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה ${BUSINESS.installAreaIn}: תכנון, חיווט, מקליט, אפליקציה והדרכה. Hikvision, Uniview ו-Reolink, אחריות שנה.`,
   alternates: { canonical: "/installation" },
@@ -34,8 +34,8 @@ const EQUIPMENT = [
 ];
 
 const faq = [
-  { q: "באילו אזורים אתם מתקינים?", a: `${BUSINESS.installAreaIn} הארץ. אם אתם מחוץ לאזורים האלה, כתבו לנו ונבדוק. ציוד מהחנות נשלח לכל הארץ.` },
-  { q: "כמה עולה התקנת מצלמות אבטחה?", a: "המחיר תלוי במספר הנקודות, בגובה ובמרחק מהמקליט, ובתשתית שכבר יש במקום. שלחו כמה מצלמות ואיפה, או תמונות של המקום בווצאפ, ונחזור עם הצעת מחיר אחת לציוד ולהתקנה." },
+  { q: "באילו אזורים אתם מתקינים?", a: "בכל הארץ, בתיאום. מתקין מטעמנו בודק זמינות באזור שלכם, ובדרך כלל רואה את המקום לפני הצעת המחיר. ציוד מהחנות נשלח לכל הארץ, וההתקנה היא שירות נפרד שלא חובה להזמין." },
+  { q: "כמה עולה התקנת מצלמות אבטחה?", a: "המחיר תלוי במספר הנקודות, בגובה ובמרחק מהמקליט, ובתשתית שכבר יש במקום. שלחו כמה מצלמות ואיפה, או תמונות של המקום בווצאפ, ונחזור עם הצעת מחיר. מחיר הציוד הוא המחיר שבחנות, ומחיר ההתקנה נקבע בנפרד אחרי בדיקת המקום." },
   { q: "אתם מתקינים גם ציוד שקניתי לבד?", a: "שלחו לנו את הדגמים ונבדוק. ציוד מהחנות שלנו אנחנו מכירים לעומק, ולכן ההתקנה שלו מהירה ופשוטה יותר." },
   { q: "יש לי מערכת ישנה, צריך להחליף הכל?", a: "לא תמיד. על כבלי קואקס קיימים אפשר לשדרג למצלמות 3K ו-4K ולמקליט היברידי, ובאינטרקום 2 גידים אפשר לעבור לווידאו על אותו חיווט." },
   { q: "מה מקבלים בסוף ההתקנה?", a: "מערכת עובדת, אפליקציה מוגדרת בנייד של כל מי שצריך, והסבר איך צופים, מחפשים הקלטה ומקבלים התראות. " + WARRANTY_TEXT + "." },
@@ -53,7 +53,7 @@ export default function InstallationPage() {
     name: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה",
     serviceType: "התקנת מערכות אבטחה",
     provider: { "@type": "LocalBusiness", name: BUSINESS.brand, legalName: BUSINESS.legalName, url: BASE_URL, telephone: BUSINESS.phoneE164 },
-    areaServed: BUSINESS.installRegions.map((name) => ({ "@type": "AdministrativeArea", name })),
+    areaServed: { "@type": "Country", name: "Israel" },
     url: `${BASE_URL}/installation`,
   };
   const faqSchema = {
@@ -71,14 +71,17 @@ export default function InstallationPage() {
 
       <section className={styles.hero} data-track="installation_hero">
         <div className={styles.heroText}>
-          <span className={styles.kicker}>צוות התקנות, לא רק חנות</span>
+          <span className={styles.kicker}>שירות התקנה בכל הארץ, בנפרד מהחנות</span>
           <h1>התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה</h1>
           <p>
             מתכננים, מחווטים, מתקינים ומגדירים את האפליקציה בנייד. בבתים פרטיים, בדירות, בעסקים ובבניינים משותפים.
             הציוד של Hikvision, Uniview, Reolink ו-VisionNet, במחיר של חנות אונליין.
           </p>
+          <p>
+            מצלמות אבטחה לווילה, לבית במושב ולוועד בית בבניין משותף.
+          </p>
           <p style={{ color: "var(--text-bright)", fontWeight: 600 }}>
-            {BUSINESS.installer}, מתקין מצלמות ואינטרקום · מתקינים {BUSINESS.installAreaIn}
+            התקנה {BUSINESS.installAreaIn} · מתקין מטעמנו בתיאום · ההצעה נפרדת ממחיר הציוד, אחרי בדיקת המקום
           </p>
           <div className={styles.trust}>
             <span>{WARRANTY_TEXT}</span>
@@ -130,7 +133,7 @@ export default function InstallationPage() {
         <div className={styles.sectionHead}><h2 id="how">איך זה עובד</h2></div>
         <div className={styles.ways}>
           <div className={styles.way}><i>1</i><b>מספרים לנו מה צריך</b><p>בטופס או בווצאפ: איפה, כמה נקודות, ומה יש היום. תמונה של המקום עוזרת מאוד.</p></div>
-          <div className={styles.way}><i>2</i><b>מקבלים הצעת מחיר</b><p>ציוד והתקנה בהצעה אחת, עם הסבר למה בחרנו כל רכיב. בלי להעמיס מה שלא צריך.</p></div>
+          <div className={styles.way}><i>2</i><b>מקבלים הצעת מחיר</b><p>מחיר הציוד כמו בחנות, והתקנה בהצעה נפרדת אחרי שבודקים זמינות באזור ובדרך כלל גם את המקום. עם הסבר למה בחרנו כל רכיב. בלי להעמיס מה שלא צריך.</p></div>
           <div className={styles.way}><i>3</i><b>מתקינים ומגדירים</b><p>התקנה, חיווט, הגדרת המקליט והאפליקציה, והדרכה קצרה בסוף.</p></div>
         </div>
       </section>

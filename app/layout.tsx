@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
   description:
-    "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink, VisionNet ו-Tenda מהמלאי של היבואן בישראל. מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה, ומצלמות סולאריות 4G לאתרים בלי חשמל.",
+    "חנות מצלמות אבטחה עם שירות התקנה: Hikvision, Uniview, Reolink, VisionNet ו-Tenda ציוד מיבואן בישראל. מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה, ומצלמות סולאריות 4G לאתרים בלי חשמל.",
   keywords: [
     "מצלמות אבטחה",
     "חנות מצלמות אבטחה",
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "Site-Control",
     title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
-    description: "חנות מצלמות אבטחה עם צוות שגם מתקין: Hikvision, Uniview, Reolink ו-VisionNet מהמלאי של היבואן בישראל. אחריות שנה, משלוח או התקנה.",
+    description: "חנות מצלמות אבטחה עם שירות התקנה: Hikvision, Uniview, Reolink ו-VisionNet ציוד מיבואן בישראל. אחריות שנה, משלוח או התקנה.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "מצלמות אבטחה, ערכות ואינטרקום ב-Site-Control" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
-    description: "חנות מצלמות אבטחה עם צוות שגם מתקין. מלאי בישראל, אחריות שנה, משלוח או התקנה.",
+    description: "חנות מצלמות אבטחה עם שירות התקנה. מלאי בישראל, אחריות שנה, משלוח או התקנה.",
     images: ["/og-default.jpg"],
   },
   verification: {
@@ -211,7 +211,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <p style={{ color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7', fontSize: '0.95rem' }}>מתקינים ומוכרים מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.</p>
                 <div style={{ display: 'flex', gap: '12px', marginTop: '1rem' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> אבטחה מקצועית</span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> התקנה במרכז ובדרום</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(0, 194, 255, 0.1)', border: '1px solid rgba(0, 194, 255, 0.2)', fontSize: '0.8rem', color: '#00c2ff' }}><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> התקנה בכל הארץ בתיאום</span>
                 </div>
               </div>
               <div>
@@ -228,13 +228,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div>
                 <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>מותגים</h4>
-                <p style={{ fontSize: '0.95rem', color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7' }}>מוכרים ומתקינים <strong style={{ color: '#00c2ff' }}>Hikvision, Uniview, Reolink, VisionNet ו-Tenda</strong> מהמלאי של היבואן בישראל.</p>
+                <p style={{ fontSize: '0.95rem', color: 'rgba(139, 163, 191, 0.9)', lineHeight: '1.7' }}>מוכרים ומתקינים <strong style={{ color: '#00c2ff' }}>Hikvision, Uniview, Reolink, VisionNet ו-Tenda</strong> ציוד מיבואן בישראל.</p>
                 <div style={{ marginTop: '1rem', padding: '16px', background: 'rgba(12, 18, 32, 0.7)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                     <span style={{ fontSize: '1.2rem', display: 'flex' }}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
                     <span style={{ fontSize: '0.85rem', color: '#ffd700', fontWeight: 600 }}>אחריות שנה על כל המוצרים</span>
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.7)', margin: 0 }}>בשיתוף היבואן הראשי. ניסיון מהשטח, ותמיכה בעברית פשוטה</p>
+                  <p style={{ fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.7)', margin: 0 }}>ציוד מיבואן בישראל. ניסיון מהשטח, ותמיכה בעברית פשוטה</p>
                 </div>
               </div>
             </div>

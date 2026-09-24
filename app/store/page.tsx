@@ -36,8 +36,8 @@ export default function StorePage() {
         <div className={styles.heroText}>
           <h1>מצלמות אבטחה, מקליטים ואינטרקום. עם מישהו שיגיד לכם מה באמת מתאים.</h1>
           <p>
-            אותו ציוד של Hikvision, Uniview, Reolink ו-VisionNet שהצוות שלנו מתקין בבתים, בעסקים ובאתרי בנייה.
-            מהמלאי של היבואן, במחיר שמתחרה בכל חנות אונליין, ועם הסבר פשוט למה לבחור דגם אחד ולא אחר.
+            אותו ציוד של Hikvision, Uniview, Reolink ו-VisionNet שאנחנו מתקינים בבתים, בעסקים ובאתרי בנייה.
+            ציוד מיבואן בישראל, במחיר שמתחרה בכל חנות אונליין, ועם הסבר פשוט למה לבחור דגם אחד ולא אחר.
           </p>
           <div className={styles.heroCtas}>
             <a className={`${styles.cta} ${styles.ctaAccent}`} href="#finder">עזרו לי לבחור, 5 שאלות</a>

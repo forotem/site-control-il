@@ -15,7 +15,7 @@ export const productName = (p: { brand: string; model: string }) =>
 export const deliveryOptions = [
   { id: "courier", title: "משלוח עד הבית", desc: "שליח עד 3-5 ימי עסקים, בתוספת דמי משלוח" },
   { id: "pickup", title: "איסוף עצמי", desc: "ללא עלות, בתיאום מראש" },
-  { id: "install", title: "התקנה על ידי הצוות שלנו", desc: "במרכז ובדרום, לפי הצעת מחיר" },
+  { id: "install", title: "התקנה על ידי מתקין מטעמנו", desc: "בכל הארץ, בתיאום ולפי הצעת מחיר נפרדת" },
 ];
 export const storeCategories: StoreCategory[] = [
   {

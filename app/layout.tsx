@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Inter, Assistant } from "next/font/google";
 import { Analytics } from "./components/Analytics";
+import { MetaPixel } from "./components/MetaPixel";
 import { FloatingCTA } from "./components/FloatingCTA";
 import { SiteTracking } from "./components/SiteTracking";
 import { StoreChat } from "./store/StoreChat";
@@ -10,7 +11,7 @@ import { CartDrawer } from "./store/CartUI";
 import { ScrollToTop } from "./components/ScrollToTop";
 import "./globals.css";
 import { logo } from "./data/images";
-import { BASE_URL } from "./config";
+import { BASE_URL, META_DOMAIN_VERIFICATION } from "./config";
 import { BUSINESS } from "./data/business";
 
 // Use next/font to avoid render-blocking font requests
@@ -76,6 +77,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    ...(META_DOMAIN_VERIFICATION ? { other: { "facebook-domain-verification": META_DOMAIN_VERIFICATION } } : {}),
   },
 };
 
@@ -185,6 +187,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreChat />
         <ScrollToTop />
         <Analytics />
+        <MetaPixel />
         <SiteTracking />
         <footer style={{ 
           background: 'linear-gradient(180deg, rgba(6, 10, 16, 0) 0%, rgba(6, 10, 16, 1) 15%)', 

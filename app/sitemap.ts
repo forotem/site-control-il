@@ -7,7 +7,7 @@ import { BASE_URL } from "./config";
 // מפת האתר משקפת את המיצוב הנוכחי: חנות, קטגוריות, מוצרים והתקנה.
 // דפי האתר הישן (סולארי לאתרי בנייה, דפי מיקום) מופנים ב-301 ב-next.config.mjs ולכן לא מופיעים כאן.
 // תאריך עדכון הקטלוג: כשהקטלוג נבנה מחדש, לעדכן כאן.
-const CATALOG_UPDATED = new Date("2026-09-24");
+const CATALOG_UPDATED = new Date("2026-09-27");
 
 function parseDate(dateStr?: string): Date {
   if (!dateStr) return CATALOG_UPDATED;
@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 1.0 },
     { url: url("/store"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.95 },
     { url: url("/installation"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: url("/deals"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.9 },
     { url: url("/store/finder"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.7 },
     { url: url("/about"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: url("/contact"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },

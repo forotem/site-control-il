@@ -5,6 +5,8 @@ import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 import { ProductCard } from "./ProductCard";
 import { ProductFinder } from "./ProductFinder";
 import { CategoryGuide } from "./CategoryGuide";
+import { deals } from "../data/deals";
+import { DealStrip } from "../deals/DealStrip";
 import styles from "./store.module.css";
 
 export const metadata: Metadata = {
@@ -59,6 +61,12 @@ export default function StorePage() {
           ))}
         </ul>
       </header>
+
+      {deals.length > 0 && (
+        <div style={{ display: "grid", gap: "0.6rem", marginBottom: "2rem" }}>
+          {deals.map((d) => <DealStrip key={d.id} deal={d} withName />)}
+        </div>
+      )}
 
       <section className={styles.finderSection} aria-labelledby="finder-title">
         <div className={styles.finderIntroCol}>

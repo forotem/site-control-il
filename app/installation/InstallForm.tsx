@@ -17,21 +17,26 @@ const topics = ["הצעת מחיר להתקנה", "שאלה על מוצר או �
 const needFor: Record<string, string> = { intercom: "אינטרקום", ip: "מצלמות אבטחה", recorders: "מצלמות אבטחה", analog: "שדרוג מערכת קיימת" };
 const categoryName: Record<string, string> = { intercom: "אינטרקום ובקרת כניסה", ip: "מצלמות IP", recorders: "מקליטים", analog: "מצלמות לשדרוג מערכת קיימת" };
 
-type Variant = "full" | "short" | "contact";
+const powerOptions = ["כן, יש שקע או נקודת חשמל קרובה", "אין חשמל בנקודה", "לא בטוח"];
+
+type Variant = "full" | "short" | "contact" | "deal";
 
 /**
  * full: דף ההתקנה (סוג נכס, צורך, יישוב, פרטים). short: 3 שדות (שם, טלפון, מה צריך) להירו ולדפי קטגוריה.
  * contact: דף יצירת קשר (נושא, מייל לא חובה, הודעה).
+ * deal: דף המבצעים. deal = שם המבצע; שואלים רק מה שקובע אם המבצע מתאים: יישוב, כמה מצלמות, ויש חשמל בנקודה.
  */
-export function InstallForm({ variant = "full", category }: { variant?: Variant; category?: string }) {
+export function InstallForm({ variant = "full", category, deal }: { variant?: Variant; category?: string; deal?: string }) {
   const page = usePathname();
-  const first = variant === "contact" ? topics[0] : (category && needFor[category]) || needs[0];
-  const [form, setForm] = useState({ name: "", phone: "", email: "", kind: kinds[0], need: first, city: "", note: "", website: "" });
+  const first = variant === "deal" ? deal || "מבצע" : variant === "contact" ? topics[0] : (category && needFor[category]) || needs[0];
+  const [form, setForm] = useState({ name: "", phone: "", email: "", kind: kinds[0], need: first, city: "", note: "", website: "", cams: "1", power: powerOptions[0] });
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const leadType = variant === "contact" ? "contact" : category ? "category_quote" : "install";
-  const waText = variant === "full"
+  const leadType = variant === "deal" ? "deal" : variant === "contact" ? "contact" : category ? "category_quote" : "install";
+  const waText = variant === "deal"
+    ? `היי, אני מתעניין ב${form.need}${form.city ? `, ${form.city}` : ""}. מצלמות: ${form.cams}. חשמל בנקודה: ${form.power}`
+    : variant === "full"
     ? `היי, אשמח להצעת מחיר להתקנה: ${form.need}, ${form.kind}${form.city ? `, ${form.city}` : ""}`
     : `היי, אשמח להצעת מחיר: ${form.need}${category ? ` (הגעתי מדף ${categoryName[category] || "החנות"})` : ""}`;
   const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
@@ -40,14 +45,17 @@ export function InstallForm({ variant = "full", category }: { variant?: Variant;
     e.preventDefault();
     setBusy(true); setErr(null);
     try {
-      const payload = variant === "full"
-        ? { ...form, email: undefined }
+      const payload = variant === "deal"
+        ? { name: form.name, phone: form.phone, need: form.need, city: form.city, note: `מצלמות: ${form.cams}
+חשמל בנקודה: ${form.power}`, website: form.website }
+        : variant === "full"
+        ? { ...form, email: undefined, cams: undefined, power: undefined }
         : variant === "short"
           ? { name: form.name, phone: form.phone, need: form.need, website: form.website }
           : { name: form.name, phone: form.phone, email: form.email, need: form.need, note: form.note, website: form.website };
       const res = await fetch("/api/lead", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, form: variant === "contact" ? "contact" : category ? "category" : "install", category, page, attribution: getAttribution() }),
+        body: JSON.stringify({ ...payload, form: variant === "deal" ? "deal" : variant === "contact" ? "contact" : category ? "category" : "install", category, page, attribution: getAttribution() }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "שגיאה");
@@ -79,6 +87,21 @@ export function InstallForm({ variant = "full", category }: { variant?: Variant;
       <label className={c.field}><span>שם</span><input required minLength={2} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} autoComplete="name" /></label>
       <label className={c.field}><span>טלפון</span><input required type="tel" inputMode="tel" dir="ltr" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} autoComplete="tel" /></label>
       {variant === "short" && select("מה צריך?", needs)}
+      {variant === "deal" && (
+        <>
+          <label className={c.field}><span>יישוב</span><input required value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} autoComplete="address-level2" /></label>
+          <label className={c.field}><span>כמה מצלמות?</span>
+            <select value={form.cams} onChange={(e) => setForm({ ...form, cams: e.target.value })}>
+              {["1", "2", "3", "4 ומעלה"].map((n) => <option key={n} value={n}>{n}</option>)}
+            </select>
+          </label>
+          <label className={c.field}><span>יש חשמל ליד מקום המצלמה?</span>
+            <select value={form.power} onChange={(e) => setForm({ ...form, power: e.target.value })}>
+              {powerOptions.map((n) => <option key={n} value={n}>{n}</option>)}
+            </select>
+          </label>
+        </>
+      )}
       {variant === "contact" && (
         <>
           <label className={c.field}><span>מייל (לא חובה)</span><input type="email" dir="ltr" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} autoComplete="email" /></label>
@@ -107,7 +130,7 @@ export function InstallForm({ variant = "full", category }: { variant?: Variant;
       <div style={{ fontSize: "0.82rem", color: "var(--muted)" }}>הפרטים משמשים כדי לחזור אליך, ולא נמסרים לאף גורם לשיווק. <Link href="/privacy">מדיניות פרטיות</Link></div>
       {err && <div className={c.formErr} role="alert">{err} <a href={wa} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></div>}
       <div className={styles.ctas}>
-        <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : variant === "contact" ? "שליחה" : "קבלת הצעת מחיר"}</button>
+        <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : variant === "contact" ? "שליחה" : variant === "deal" ? "אני רוצה את המבצע" : "קבלת הצעת מחיר"}</button>
         <a className={`${styles.cta} ${styles.ctaGhost}`} href={wa} target="_blank" rel="noopener noreferrer">או בווצאפ</a>
       </div>
     </form>

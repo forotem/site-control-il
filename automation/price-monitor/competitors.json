@@ -1677,6 +1677,29 @@
   "floor": 0,
   "urls": []
  },
+ "reolink-trackmix-wired-lte": {
+  "model": "TrackMix Wired LTE",
+  "brand": "Reolink",
+  "policy": "undercut",
+  "floor": 0,
+  "urls": [
+   {
+    "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-4mp-4g-ptz-wired-lte/",
+    "seller": "satsigma.co.il",
+    "note": "1,180 (27/09/2026), +19 shipping"
+   },
+   {
+    "url": "https://kav-isr.com/cameras/home-cameras/reolink-trackmix-wired-lte.html",
+    "seller": "kav-isr.com",
+    "note": "1,199 (27/09/2026), +30 shipping"
+   },
+   {
+    "url": "https://zbm.co.il/product/reolink-trackmix-wired-lte/",
+    "seller": "zbm.co.il",
+    "note": "1,199 (27/09/2026), +50 shipping"
+   }
+  ]
+ },
  "reolink-trackmix-lte-plus-solar": {
   "model": "TrackMix LTE Plus + Solar Panel",
   "brand": "Reolink",

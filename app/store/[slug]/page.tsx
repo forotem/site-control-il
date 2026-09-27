@@ -8,6 +8,8 @@ import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
 import { AddToCart } from "../CartUI";
+import { dealForProduct } from "../../data/deals";
+import { DealStrip } from "../../deals/DealStrip";
 import styles from "../store.module.css";
 
 export function generateStaticParams() {
@@ -59,7 +61,9 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
     if (a.deter) out.push("אור מהבהב וסירנה שנדלקים כשאדם נכנס לאזור שהגדרתם");
     if (a.audio && a.audio !== "none") out.push(a.audio === "two-way" ? "רמקול ומיקרופון: אפשר לדבר עם מי שמול המצלמה מהנייד" : "מיקרופון: ההקלטה כוללת קול");
     if (a.varifocal) out.push("עדשה ממונעת: מכוונים את הזום מהאפליקציה, בלי לטפס לסולם");
-    if (a.wifi) out.push("חיבור Wi-Fi והקלטה לכרטיס זיכרון, בלי מקליט");
+    if (a.lte) out.push(a.battery ? "סים 4G וסוללה נטענת: בלי חשמל, בלי אינטרנט ובלי כבלים" : "סים 4G וחיבור קבוע לחשמל: בלי אינטרנט במקום, בלי סוללה לטעון");
+    else if (a.battery) out.push("Wi-Fi וסוללה נטענת, בלי כבל חשמל");
+    else if (a.wifi) out.push("חיבור Wi-Fi והקלטה לכרטיס זיכרון, בלי מקליט");
     else if (a.kind !== "kit") out.push("הזנה בכבל רשת אחד (PoE) ממתג או ממקליט עם PoE");
   } else if (isRecorder(a)) {
     out.push(`${kindLabel[a.kind]}, עד ${a.channels} מצלמות`);
@@ -87,6 +91,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const related = storeProducts.filter((x) => x.category === p.category && x.slug !== p.slug && attrsOf(x).kind !== a.kind).slice(0, 4);
   const compareSlugs = neighbours(p);
   const summary = plainSummary(p);
+  const deal = dealForProduct(p.slug);
   const waText = encodeURIComponent(
     `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
   );
@@ -164,17 +169,20 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 ונשווה את המחיר.
               </p>
             ) : null}
+            {deal && <DealStrip deal={deal} />}
             <AddToCart slug={p.slug} />
             <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">
               בדיקת זמינות והזמנה בווצאפ
             </a>
-            <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/installation#quote">רוצה שנתקין? הצעת מחיר</Link>
+            {deal
+              ? <Link className={`${styles.cta} ${styles.ctaSecondary}`} href={`/deals#${deal.id}`}>רוצה שנתקין? {nis(deal.price)} ₪ + מע״מ כולל התקנה</Link>
+              : <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/installation#quote">רוצה שנתקין? הצעת מחיר</Link>}
             <div className={styles.delivery}>
               <h3>איך תרצה לקבל את המוצר?</h3>
               {deliveryOptions.map((d, i) => (
                 <div key={d.id} className={styles.deliveryOpt}>
                   <i>{i + 1}</i>
-                  <div><b>{d.title}</b><span>{d.desc}</span></div>
+                  <div><b>{d.title}</b><span>{deal && d.id === "install" ? `בכל הארץ, במבצע: ${nis(deal.price)} ₪ + מע״מ למצלמה מותקנת ועובדת` : d.desc}</span></div>
                 </div>
               ))}
             </div>

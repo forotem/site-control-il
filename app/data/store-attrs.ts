@@ -111,6 +111,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-go-pt-ultra": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-duo-2-lte": {"kind":"fisheye","mp":6,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"angle":180},
   "reolink-trackmix-lte": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"varifocal":true},
+  "reolink-trackmix-wired-lte": {"kind":"pt","mp":4,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"lte":true,"battery":false,"varifocal":true},
   "reolink-trackmix-lte-plus-solar": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true,"varifocal":true},
   "reolink-go-ranger-pt": {"kind":"pt","mp":8,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-talon-pro": {"kind":"bullet","mp":8,"night":"ir","range":20,"audio":"none","ai":"human-vehicle","sd":true,"solar":false,"lte":true,"battery":true,"panelIncluded":false},
@@ -181,6 +182,7 @@ export function fitLine(p: StoreProduct): string {
   const a = attrsOf(p);
   if (a.solar && a.kind === "accessory") return "טעינה רציפה לכל מצלמת סוללה של Reolink";
   if (a.battery && a.lte) return a.kind === "pt" ? "אתר בנייה, מגרש או שטח בלי חשמל: כיסוי רחב במצלמה אחת" : a.kind === "fisheye" ? "חזית שלמה של אתר או מגרש בלי חשמל" : "אתר בנייה, מכולה, שער או שטח בלי חשמל ואינטרנט";
+  if (a.lte && !a.battery) return "מקום עם חשמל ובלי אינטרנט: אתר בנייה, מחסן, חניון, משק";
   if (a.battery && a.wifi) return a.kind === "pt" ? "חצר או גינה בלי כבל חשמל, בטווח ה-Wi-Fi של הבית" : "נקודה בבית בלי כבל חשמל: מרפסת, כניסה, מחסן בחצר";
   switch (a.kind) {
     case "bullet":

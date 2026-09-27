@@ -4021,6 +4021,58 @@
     "telran_installer_incl_vat": 1528
   },
   {
+    "cost_source": null,
+    "model": "TrackMix Wired LTE",
+    "brand": "Reolink",
+    "category": "solar",
+    "title_he": "מצלמת אבטחה 4G ממונעת Reolink TrackMix Wired LTE עם חיבור קבוע לחשמל, שתי עדשות, זום x6 ומעקב אוטומטי, 4MP",
+    "telran_sku": null,
+    "telran_url": null,
+    "telran_name": null,
+    "specs": [
+      "שתי עדשות: רחבה 2.8 מ\"מ + טלה 8 מ\"מ, זום היברידי x6, שתי התמונות מוצגות יחד באפליקציה",
+      "4MP 2K (2560x1440), מעקב אוטומטי אחרי אדם, רכב או בעל חיים",
+      "ממונעת: סיבוב 355° והטיה 90°, עד 32 נקודות שמורות",
+      "חיבור 4G LTE עם כרטיס Nano-SIM, או כבל רשת. ללא Wi-Fi",
+      "חיבור קבוע לחשמל: ספק 12V/2A וכבל מאריך 4.5 מ' כלולים. ללא סוללה",
+      "הקלטה רציפה 24/7 או לפי תנועה, לכרטיס microSD עד 256GB (לא כלול)",
+      "ראיית לילה אינפרא עד 30 מ' וזרקורים לצבע בלילה, שמע דו-כיווני וסירנה",
+      "IP65, טמפ' עבודה -10 עד +55°C, אפליקציה בעברית"
+    ],
+    "image_url": null,
+    "datasheet_url": null,
+    "market_prices": [
+      {
+        "source": "satsigma.co.il",
+        "price": 1180,
+        "currency": "ILS",
+        "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-4mp-4g-ptz-wired-lte/"
+      },
+      {
+        "source": "kav-isr.com",
+        "price": 1199,
+        "currency": "ILS",
+        "url": "https://kav-isr.com/cameras/home-cameras/reolink-trackmix-wired-lte.html"
+      },
+      {
+        "source": "zbm.co.il",
+        "price": 1199,
+        "currency": "ILS",
+        "url": "https://zbm.co.il/product/reolink-trackmix-wired-lte/"
+      }
+    ],
+    "market_low_ils": 1180,
+    "market_typical_ils": 1199,
+    "price_basis": "exact",
+    "recommended_price_ils": 1170,
+    "estimated_cost_ils": null,
+    "estimated_margin_ils": null,
+    "foreign_prices_note": "Reolink US: 219.99$",
+    "notes": "נוסף 27/09/2026 לבקשת רותם. לא מופיע במחירון Reolink של טלרן מ-23/09: צריך מחיר עלות מעידן. משמש גם למבצע עם התקנה ב-3,000 ₪ (app/data/deals.ts).",
+    "batch": "manual-2026-09-27",
+    "pricing_note": "UNDERCUT: הזול בשוק 1180 (satsigma), פער 10 ₪ -> 1170"
+  },
+  {
     "cost_source": "pricelist",
     "model": "TrackMix LTE Plus + Solar Panel",
     "brand": "Reolink",

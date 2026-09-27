@@ -46,7 +46,7 @@ export const storeCategories: StoreCategory[] = [
   {
     "id": "solar",
     "name": "סולארי 4G ובסוללה",
-    "blurb": "מצלמות Reolink עם סוללה: 4G עם סים לאתרים בלי חשמל ואינטרנט, או Wi-Fi לבית בלי כבלים. פאנל סולארי נמכר בנפרד אלא אם צוין אחרת."
+    "blurb": "מצלמות Reolink עם סוללה: 4G עם סים לאתרים בלי חשמל ואינטרנט, או Wi-Fi לבית בלי כבלים. פאנל סולארי נמכר בנפרד אלא אם צוין אחרת. יש חשמל ואין אינטרנט? TrackMix Wired LTE."
   },
   {
     "id": "analog",
@@ -2406,6 +2406,34 @@ export const storeProducts: StoreProduct[] = [
       "זום ומעקב אוטומטי"
     ],
     "image": "/store-images/reolink-trackmix-lte-plus-solar-v2.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-trackmix-wired-lte",
+    "brand": "Reolink",
+    "model": "TrackMix Wired LTE",
+    "sku": null,
+    "title": "מצלמת אבטחה 4G ממונעת Reolink TrackMix Wired LTE עם חיבור קבוע לחשמל, שתי עדשות, זום x6 ומעקב אוטומטי, 4MP",
+    "category": "solar",
+    "categoryName": "סולארי 4G ובסוללה",
+    "price": 1170,
+    "specs": [
+      "שתי עדשות: רחבה 2.8 מ\"מ + טלה 8 מ\"מ, זום היברידי x6, שתי התמונות מוצגות יחד באפליקציה",
+      "4MP 2K (2560x1440), מעקב אוטומטי אחרי אדם, רכב או בעל חיים",
+      "ממונעת: סיבוב 355° והטיה 90°, עד 32 נקודות שמורות",
+      "חיבור 4G LTE עם כרטיס Nano-SIM, או כבל רשת. ללא Wi-Fi",
+      "חיבור קבוע לחשמל: ספק 12V/2A וכבל מאריך 4.5 מ' כלולים. ללא סוללה",
+      "הקלטה רציפה 24/7 או לפי תנועה, לכרטיס microSD עד 256GB (לא כלול)",
+      "ראיית לילה אינפרא עד 30 מ' וזרקורים לצבע בלילה, שמע דו-כיווני וסירנה",
+      "IP65, טמפ' עבודה -10 עד +55°C, אפליקציה בעברית"
+    ],
+    "highlights": [
+      "רואים את כל השטח ומתקרבים למי שנכנס, באותה מצלמה",
+      "4G עם סים וחשמל קבוע: הקלטה רציפה 24/7 בלי אינטרנט במקום",
+      "מעקב אוטומטי אחרי אדם ורכב"
+    ],
+    "image": "/store-images/reolink-trackmix-wired-lte.webp",
     "datasheet": null,
     "oldStock": false
   },

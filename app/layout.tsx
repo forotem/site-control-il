@@ -170,6 +170,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/installation" style={navStyle.link}>
               התקנה
             </Link>
+            <Link href="/deals" style={navStyle.link}>
+              מבצעים
+            </Link>
             <Link href="/blog" style={navStyle.link}>
               בלוג
             </Link>

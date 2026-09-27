@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { StoreProduct } from "../data/store-catalog";
 import { attrsOf, mpLabel, nightShort, fitLine, isCamera } from "../data/store-attrs";
+import { dealForProduct } from "../data/deals";
 import styles from "./store.module.css";
 
 const nis = (v: number) => v.toLocaleString("he-IL");
@@ -64,6 +65,7 @@ export function ProductCard({ p }: { p: StoreProduct }) {
         <div className={styles.priceRow}>
           {p.price ? <span className={styles.price}>{nis(p.price)} ₪<small>כולל מע״מ</small></span> : <span className={styles.ask}>מחיר לפי פנייה</span>}
           {p.oldStock && <span className={styles.badge}>מבצע חיסול</span>}
+          {dealForProduct(p.slug) && <span className={styles.badge}>מבצע עם התקנה</span>}
         </div>
       </div>
     </Link>

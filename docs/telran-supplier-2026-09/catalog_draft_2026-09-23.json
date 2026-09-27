@@ -2110,7 +2110,7 @@
     "telran_installer_incl_vat": 1934
   },
   {
-    "cost_source": "estimate",
+    "cost_source": "supplier-quote",
     "model": "Reolink RLK8-1200B4-A (NVS8-12MB4)",
     "brand": "Reolink",
     "category": "poe_nvr_kit",
@@ -2138,13 +2138,13 @@
     "market_low_ils": 3590,
     "market_typical_ils": 3650,
     "price_basis": "exact",
-    "recommended_price_ils": 2669,
-    "estimated_cost_ils": 2002,
-    "estimated_margin_ils": 667,
+    "recommended_price_ils": 3570,
+    "estimated_cost_ils": 3068,
+    "estimated_margin_ils": 502,
     "foreign_prices_note": "USD ~646 (US review aggregate), Walmart/Newegg similar.",
-    "notes": "Fewer Israeli listings than the dome version; satsigma 3,650 with 2TB is the reference. com4tech price excludes HDD.",
+    "notes": "Fewer Israeli listings than the dome version; satsigma 3,650 with 2TB is the reference. com4tech price excludes HDD. | 27/09/2026: עלות בפועל אצל אלי (בית המתקין) 2,600 + מע\"מ = 3,068. ערכת 8MP אצלו 1,900 + מע\"מ = 2,242.",
     "batch": 1,
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 3590 (kav-isr 3590); מחיר מתקין טלרן+מע\"מ null; תחרותי",
+    "pricing_note": "UNDERCUT: הזול בשוק 3590 (kav-isr, satsigma), פער 20 ₪ -> 3570. תוקן 27/09/2026: המחיר הקודם 2669 נשען על הערכת עלות שגויה (2002) והיה מתחת לעלות בפועל.",
     "telran_installer_incl_vat": null
   },
   {

@@ -1302,7 +1302,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-1212A עם זרקורים, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 2669,
+    "price": 3570,
     "specs": [
       "8-channel PoE NVR with 2TB HDD",
       "4 x RLC-1212A 12MP (4512x2512) bullet cameras, 2.8 mm lens",

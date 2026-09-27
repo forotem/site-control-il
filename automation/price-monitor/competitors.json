@@ -890,8 +890,8 @@
  "reolink-rlk8-1200b4-a": {
   "model": "Reolink RLK8-1200B4-A (NVS8-12MB4)",
   "brand": "Reolink",
-  "policy": "undercut",
-  "floor": 0,
+  "policy": "undercut-with-floor",
+  "floor": 3068,
   "urls": [
    {
     "url": "https://www.satsigma.co.il/product-category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-cctv-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA-ip-%D7%A0%D7%98%D7%A2%D7%A0%D7%95%D7%AA/reolink/",

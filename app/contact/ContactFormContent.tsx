@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { InstallForm } from "../installation/InstallForm";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT } from "../data/store-catalog";
+import { WHATSAPP_NUMBER } from "../data/store-catalog";
 import { BUSINESS } from "../data/business";
 import styles from "../home.module.css";
 
@@ -25,7 +25,7 @@ export default function ContactFormContent() {
             <div style={info}><b style={{ color: "var(--text-bright)" }}>שעות מענה</b><span style={{ color: "var(--muted)" }}>{BUSINESS.hours}</span></div>
             <div style={info}><b style={{ color: "var(--text-bright)" }}>מייל</b><a href={`mailto:${BUSINESS.email}`} dir="ltr" style={{ color: "var(--link-color)" }}>{BUSINESS.email}</a></div>
             <div style={info}><b style={{ color: "var(--text-bright)" }}>התקנות</b><span style={{ color: "var(--muted)" }}>{BUSINESS.installAreaIn}. <Link href="/installation" style={{ color: "var(--link-color)" }}>על ההתקנה</Link></span></div>
-            <div style={info}><b style={{ color: "var(--text-bright)" }}>משלוחים</b><span style={{ color: "var(--muted)" }}>לכל הארץ, או איסוף עצמי בתיאום. {WARRANTY_TEXT}.</span></div>
+            <div style={info}><b style={{ color: "var(--text-bright)" }}>משלוחים</b><span style={{ color: "var(--muted)" }}>לכל הארץ עם UPS, בתשלום נפרד לפי הכתובת, או איסוף עצמי בתיאום. <Link href="/shipping" style={{ color: "var(--link-color)" }}>על המשלוחים</Link></span></div>
           </div>
           <p style={{ fontSize: "0.9rem", color: "var(--muted)", margin: 0 }}>
             Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId}.

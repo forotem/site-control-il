@@ -255,10 +255,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(139, 163, 191, 0.6)' }}>© {new Date().getFullYear()} Site-Control - מצלמות אבטחה, התקנה וחנות. כל הזכויות שמורות.</p>
               <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', gap: '1rem' }}>
+                <Link href="/shipping" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>משלוחים</Link>
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
               </p>
-              <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.6)', flexBasis: '100%' }}>Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId} · <a href={`tel:${BUSINESS.phoneE164}`} style={{ color: 'rgba(139, 163, 191, 0.8)' }}>{BUSINESS.phoneDisplay}</a> · {BUSINESS.hours} · התקנות {BUSINESS.installAreaIn}, משלוחים לכל הארץ</p>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.6)', flexBasis: '100%' }}>Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId} · <a href={`tel:${BUSINESS.phoneE164}`} style={{ color: 'rgba(139, 163, 191, 0.8)' }}>{BUSINESS.phoneDisplay}</a> · {BUSINESS.hours} · התקנות {BUSINESS.installAreaIn}, משלוחים לכל הארץ בתשלום נפרד</p>
             </div>
           </div>
         </footer>

@@ -4,6 +4,7 @@ import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT, product
 import { attrsOf, fitLine, kindLabel, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
 import { storeGuides } from "./store-guides";
 import { deals, dealProduct, withVat } from "./deals";
+import { BUSINESS } from "./business";
 
 function productLine(p: (typeof storeProducts)[number]): string {
   const a = attrsOf(p);
@@ -50,8 +51,9 @@ export function buildKnowledge(): string {
     `אחריות: ${WARRANTY_TEXT}.`,
     "מדיניות מחיר: המטרה שלנו להיות הזולים בישראל לאותו דגם, בכמה שקלים מתחת לזול ביותר (לא בהנחות של אחוזים). אם לקוח אומר שמצא זול יותר באתר ישראלי, בקש קישור, אמור שנשווה את המחיר, וסמן escalate כדי שרותם יאשר. אל תבטיח בעצמך מחיר נמוך מזה שבקטלוג.",
     `אספקה: ${deliveryOptions.map((d) => `${d.title} (${d.desc})`).join("; ")}.`,
+    `משלוח: ${BUSINESS.shipping.rule} אף מחיר באתר לא כולל משלוח, גם לא מחירי מבצע. כשלקוח שואל כמה עולה משלוח: לא נוקבים מחיר מחייב. אומרים שהמחיר נקבע לפי הכתובת והמשקל, מבקשים יישוב או כתובת, ומוסרים שהצוות יחזור עם מחיר מדויק.${BUSINESS.shipping.estimates.length ? ` אפשר לתת הערכה בלבד, ולהדגיש שזו הערכה: ${BUSINESS.shipping.estimates.map((e) => `${e.what}: ${e.price}`).join("; ")}.` : ""} איסוף עצמי ללא עלות, בתיאום מראש. פרטים: /shipping.`,
     "מלאי: המוצרים מגיעים ציוד מיבואן בישראל. לפני חיוב מאשרים זמינות ומועד אספקה בווצאפ, כך שאף אחד לא משלם על מוצר שאין במלאי.",
-    "מחירים: כוללים מע\"מ, לא כוללים התקנה ולא כוללים דיסק קשיח למקליטים.",
+    "מחירים: כוללים מע\"מ, לא כוללים משלוח, לא כוללים התקנה ולא כוללים דיסק קשיח למקליטים.",
     "הנחת כמות: מ-5 יחידות מאותו מוצר, או הזמנה מעל 5,000 ₪, יש מחיר לקבלנים: אוספים פרטים ומחזירים הצעת מחיר.",
     "התקנה: שירות נפרד ואופציונלי בכל הארץ, על ידי מתקין מטעמנו בתיאום. אין מחיר התקנה קבוע: הצעת מחיר נפרדת אחרי בדיקת זמינות באזור ובדרך כלל בדיקת המקום. מחיר הציוד בקטלוג מחייב. רוב הקונים מתקינים בעצמם. לבקשת התקנה שלח לדף /installation#quote או לווצאפ.",
     ...deals.map((d) => {

@@ -9,6 +9,7 @@ import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
 import { AddToCart } from "../CartUI";
 import { dealForProduct } from "../../data/deals";
+import { BUSINESS } from "../../data/business";
 import { DealStrip } from "../../deals/DealStrip";
 import styles from "../store.module.css";
 
@@ -21,7 +22,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!p) return {};
   const a = attrsOf(p);
   const shortTitle = `${productName(p)} | ${kindLabel[a.kind]} | Site-Control`;
-  const desc = trim155(`${p.title}. ${p.highlights[0] || ""}. ${WARRANTY_TEXT}, משלוח או התקנה.`);
+  const desc = trim155(`${p.title}. ${p.highlights[0] || ""}. ${WARRANTY_TEXT}. משלוח UPS או התקנה, בתשלום נפרד.`);
   return {
     title: shortTitle.length <= 70 ? shortTitle : `${productName(p)} | Site-Control`,
     description: desc,
@@ -153,7 +154,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
           <div className={styles.buyBox}>
             {p.price ? (
-              <div className={styles.bigPrice}><strong>{nis(p.price)} ₪</strong><span>כולל מע״מ</span></div>
+              <div className={styles.bigPrice}><strong>{nis(p.price)} ₪</strong><span>כולל מע״מ, לא כולל משלוח</span></div>
             ) : (
               <div className={styles.bigPrice}><strong>מחיר לפי פנייה</strong><span>נחזור עם מחיר תוך שעות עבודה</span></div>
             )}
@@ -191,7 +192,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 צריך סים? חבילת {deal.sim.gb}GB ל-{deal.sim.months} חודשים ב-{nis(deal.sim.price)} ₪, תשלום חד-פעמי. מבקשים אותה בווצאפ יחד עם ההזמנה.
               </p>
             )}
-            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."}</p>
+            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link></p>
           </div>
 
           {p.specs.length > 0 && (

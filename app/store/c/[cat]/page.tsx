@@ -80,7 +80,7 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
           <div className={styles.trust}>
             <span>{WARRANTY_TEXT}</span>
             <span>ציוד מיבואן בישראל</span>
-            <span>משלוח לכל הארץ. התקנה בנפרד, בתיאום ולפי הצעת מחיר</span>
+            <span>משלוח לכל הארץ בתשלום נפרד, לפי הכתובת. התקנה בנפרד, בתיאום ולפי הצעת מחיר</span>
           </div>
         </div>
       </header>

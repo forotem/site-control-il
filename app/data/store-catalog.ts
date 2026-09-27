@@ -13,7 +13,7 @@ export const productName = (p: { brand: string; model: string }) =>
   p.model.toLowerCase().startsWith(p.brand.toLowerCase()) ? p.model : `${p.brand} ${p.model}`;
 
 export const deliveryOptions = [
-  { id: "courier", title: "משלוח עד הבית", desc: "שליח עד 3-5 ימי עסקים, בתוספת דמי משלוח" },
+  { id: "courier", title: "משלוח עד הבית", desc: "שליח UPS. לא כלול במחיר: דמי המשלוח נקבעים לפי הכתובת" },
   { id: "pickup", title: "איסוף עצמי", desc: "ללא עלות, בתיאום מראש" },
   { id: "install", title: "התקנה על ידי מתקין מטעמנו", desc: "בכל הארץ, בתיאום ולפי הצעת מחיר נפרדת" },
 ];

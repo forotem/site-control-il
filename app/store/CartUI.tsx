@@ -147,7 +147,7 @@ export function CartDrawer() {
                   <strong>{nis(total)} ₪{unknown ? ` + ${unknown} לפי פנייה` : ""}</strong>
                 </div>
                 {bulk && <p className={c.bulkNote}>כמות של קבלן: נחזור עם הצעת מחיר עם הנחת כמות במקום המחיר באתר.</p>}
-                <p className={styles.finderHint}>לא משלמים עכשיו. אנחנו מאשרים זמינות מול היבואן וחוזרים אליך עם מחיר סופי, משלוח ותשלום.</p>
+                <p className={styles.finderHint}>לא משלמים עכשיו. המחיר לא כולל משלוח: אנחנו מאשרים זמינות מול היבואן, מתמחרים את המשלוח לפי הכתובת שלך וחוזרים אליך עם המחיר הסופי. <Link href="/shipping" onClick={() => setOpen(false)}>על המשלוחים</Link></p>
                 <div className={styles.finderCtas}>
                   <button type="button" className={`${styles.cta} ${styles.ctaAccent}`} onClick={() => setStep("form")}>להזמנה ובדיקת זמינות</button>
                   <a className={`${styles.cta} ${styles.ctaPrimary}`} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשלוח בווצאפ</a>
@@ -169,7 +169,7 @@ export function CartDrawer() {
                     </label>
                   ))}
                 </fieldset>
-                <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כתובת למשלוח, מועד נוח, שאלה" /></label>
+                <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כתובת מלאה למשלוח (לפיה נקבע מחיר המשלוח), מועד נוח, שאלה" /></label>
                 <p style={{ fontSize: "0.82rem", color: "var(--muted)", margin: 0 }}>הפרטים משמשים רק לטיפול בהזמנה. <Link href="/privacy">מדיניות פרטיות</Link></p>
                 {err && <p className={c.formErr}>{err} <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
                 <div className={styles.finderCtas}>

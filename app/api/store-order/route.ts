@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     `סה"כ (כולל מע"מ, ללא משלוח): ${total.toLocaleString("he-IL")} ₪${unknown ? ` + ${unknown} פריטים לפי פנייה` : ""}`,
     body.note ? `\nהערה מהלקוח: ${String(body.note).slice(0, 500)}` : null,
     "",
-    "לעשות: לבדוק זמינות מול עידן (טלרן), לחזור ללקוח לאישור מחיר סופי ותשלום.",
+    "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");
 
   const sent = await notifyTeam(`הזמנה חדשה מהחנות ${ref}${bulk ? " (קבלן)" : ""}`, text);

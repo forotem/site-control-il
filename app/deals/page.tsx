@@ -119,7 +119,7 @@ export default function DealsPage() {
                   <b>רק המצלמה, מתקינים לבד</b>
                   <strong>{p.price ? <>{nis(p.price)} ₪ <small>כולל מע״מ</small></> : "מחיר לפי פנייה"}</strong>
                   <ul>
-                    <li>משלוח עד הבית או איסוף עצמי</li>
+                    <li>משלוח UPS בתשלום נפרד, או איסוף עצמי</li>
                     <li>נסביר בטלפון או בווצאפ איך מחברים ומגדירים</li>
                     <li>חבילת סים {d.sim.gb}GB ל-{d.sim.months} חודשים בתוספת {nis(d.sim.price)} ₪</li>
                     <li>כרטיס זיכרון קונים בנפרד</li>

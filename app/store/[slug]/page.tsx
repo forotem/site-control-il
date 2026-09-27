@@ -186,6 +186,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </div>
               ))}
             </div>
+            {deal && (
+              <p className={styles.stockNote}>
+                צריך סים? חבילת {deal.sim.gb}GB ל-{deal.sim.months} חודשים ב-{nis(deal.sim.price)} ₪, תשלום חד-פעמי. מבקשים אותה בווצאפ יחד עם ההזמנה.
+              </p>
+            )}
             <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."}</p>
           </div>
 

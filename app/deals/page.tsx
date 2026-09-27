@@ -109,7 +109,7 @@ export default function DealsPage() {
                   <ul>
                     <li>מצלמה, התקנה וחיבור לחשמל</li>
                     <li>כרטיס זיכרון {d.giftCardGb}GB במתנה</li>
-                    <li>סים מותקן ומוגדר, גלישה כ-{d.sim.monthly} ₪ לחודש</li>
+                    <li>התקנת סים והגדרה. חבילת {d.sim.gb}GB ל-{d.sim.months} חודשים בתוספת {nis(d.sim.price)} ₪</li>
                     <li>הגדרת האפליקציה והדרכה</li>
                     <li>בכל הארץ, בתיאום</li>
                   </ul>
@@ -121,7 +121,8 @@ export default function DealsPage() {
                   <ul>
                     <li>משלוח עד הבית או איסוף עצמי</li>
                     <li>נסביר בטלפון או בווצאפ איך מחברים ומגדירים</li>
-                    <li>סים וכרטיס זיכרון קונים בנפרד</li>
+                    <li>חבילת סים {d.sim.gb}GB ל-{d.sim.months} חודשים בתוספת {nis(d.sim.price)} ₪</li>
+                    <li>כרטיס זיכרון קונים בנפרד</li>
                     <li>{WARRANTY_TEXT}</li>
                   </ul>
                   <Link className={`${home.cta} ${home.ctaGhost}`} href={`/store/${p.slug}`}>לדף המוצר והמפרט</Link>

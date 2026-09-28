@@ -16,9 +16,14 @@ export type OfferTier = {
 };
 
 export const SITE_OFFER = {
-  /** התקנה למצלמה, לפני מע"מ: קיבוע המצלמה והפאנל על גדר/קונטיינר/עמוד קיים, סים, כרטיס זיכרון והגדרת האפליקציה.
-   *  הצעה של 28.9.2026 שממתינה לאישור רותם. לפני פרסום לעדכן כאן את המספר שהוא קובע. */
-  installPerCamera: 750,
+  /** התקנה = הערכה לפי ימי עבודה, לא מחיר סגור (רותם 28.9.2026: "ההתקנה תלויה במיקום, במורכבות ובכמות המצלמות.
+   *  יום עבודה של מתקין מקצועי עולה 2,500 ₪ בערך"). installDay לפני מע"מ. camsPerDay = כמה מצלמות סוללה+פאנל
+   *  מתקינים ביום באתר רגיל (גדר/קונטיינר/עמוד קיים); זו הערכה שלנו, המחיר הסופי אחרי ביקור באתר. */
+  installDay: 2500,
+  camsPerDay: 6,
+  /** איך מתחילים (רותם 28.9.2026): הלקוח שולח סרטון מהאתר ומייעצים מרחוק, או סיור מקצועי באתר שבו קובעים
+   *  את הנקודות והמיקום של כל מצלמה. מחיר הסיור כפי שרותם נקב ("400 שח") */
+  surveyPrice: 400,
   /** חבילת הסים של החנות (זהה למבצע) */
   sim: deals[0].sim,
   /** כרטיס זיכרון במתנה בהזמנה עם התקנה, כמו במבצע */
@@ -61,4 +66,5 @@ export const offerProduct = (slug: string | null): StoreProduct | undefined =>
 /** מחיר ציוד למצלמה אחת בחבילה, כולל מע"מ: מצלמה + פאנל */
 export const tierEquipment = (t: OfferTier) => (offerProduct(t.productSlug)?.price ?? 0) + (offerProduct(t.panelSlug)?.price ?? 0);
 
-export const installWithVat = () => Math.round(SITE_OFFER.installPerCamera * (1 + VAT_RATE));
+/** יום התקנה כולל מע"מ */
+export const installDayWithVat = () => Math.round(SITE_OFFER.installDay * (1 + VAT_RATE));

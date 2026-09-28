@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
 import { VAT_RATE } from "../../data/deals";
-import { SITE_OFFER, offerProduct, tierEquipment, installWithVat } from "../../data/site-offer";
+import { SITE_OFFER, offerProduct, tierEquipment, installDayWithVat } from "../../data/site-offer";
 import { BUSINESS } from "../../data/business";
 import { OfferCalculator, SiteOfferForm, type CalcTier } from "./OfferCalculator";
 import home from "../../home.module.css";
@@ -34,14 +34,17 @@ export default function ConstructionSitesOffer() {
     return { id: t.id, name: t.name, tagline: t.tagline, equipment: tierEquipment(t), image: p?.image ?? null, product: p ? productName(p) : t.productSlug, points: t.points };
   });
   const [value, best] = tiers;
-  const inst = installWithVat();
-  const perCamInstalled = (t: CalcTier) => t.equipment + inst + SITE_OFFER.sim.price;
-  const mix4 = perCamInstalled(best) + 3 * perCamInstalled(value);
+  const day = installDayWithVat();
+  const withSim = (t: CalcTier) => t.equipment + SITE_OFFER.sim.price;
+  const mix4 = withSim(best) + 3 * withSim(value) + day; // 4 מצלמות = יום התקנה אחד
   const plus = offerProduct("reolink-trackmix-lte-plus-solar");
   const hero = offerProduct(SITE_OFFER.tiers[1].productSlug);
-  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, אשמח להצעה למצלמות לאתרי בנייה. יש לנו ___ אתרים, בערך ___ מצלמות בכל אתר.")}`;
+  const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, אשמח לייעוץ על מצלמות לאתר בנייה. מצרפים סרטון מהאתר. האתר נמצא ב: ")}`;
+  const survey = nis(SITE_OFFER.surveyPrice);
 
   const faq = [
+    { q: "כמה עולה ההתקנה?", a: `זה תלוי במיקום, במורכבות ובכמות המצלמות. יום עבודה של מתקין מקצועי הוא כ-${nis(SITE_OFFER.installDay)} ₪ + מע״מ, ובאתר רגיל מתקינים ביום עד ${SITE_OFFER.camsPerDay} מצלמות על גדר, קונטיינר או עמוד קיים. צריך עמוד ייעודי, הרמה או עבודה בגובה? נגיד מראש. המחיר הסופי נסגר אחרי שרואים את האתר, בסרטון או בסיור, ולפני שמתחילים.` },
+    { q: "אפשר בלי שתגיעו לאתר קודם?", a: `כן. שולחים סרטון קצר מהאתר בווצאפ, לאורך הגדר והכניסות, ונייעץ מרחוק כמה מצלמות צריך ואיפה. רוצים שמישהו מקצועי יגיע? סיור באתר עולה ${survey} ₪, ובמהלכו קובעים את הנקודות והמיקום של כל מצלמה.` },
     { q: "המצלמות מקליטות כל הזמן?", a: `מצלמות סוללה מקליטות כשיש תנועה, וכך הסוללה מחזיקה עם הפאנל. צריך הקלטה רציפה 24/7, למשל על השער הראשי? יש ערכת ${plus ? productName(plus) : "TrackMix LTE Plus"} עם פאנל 66W${plus?.price ? ` ב-${nis(plus.price)} ₪` : ""} שמקליטה ברצף גם בלי חשמל.` },
     { q: "מה קורה בחורף או כשמעונן?", a: "הפאנל טוען גם ביום מעונן, והסוללה מחזיקה כמה ימים בלי שמש. בהתקנה מכוונים את הפאנל לדרום ובלי צל, וזה מה שקובע." },
     { q: "המצלמה מתקשרת למשטרה לבד?", a: "לא. היא שולחת לכם התראה עם תמונה, אתם רואים שידור חי ויכולים לדבר דרכה עם מי שנכנס. את ההחלטה אם להזעיק משטרה או שומר מקבלים אתם, כשכבר ברור מה קורה." },
@@ -63,11 +66,11 @@ export default function ConstructionSitesOffer() {
           </p>
           <div className={deal.price}>
             <strong>מ-{nis(value.equipment)} ₪ <small>למצלמה</small></strong>
-            <span>ציוד כולל מע״מ: מצלמה + פאנל סולארי. עם התקנה, סים וכרטיס: {nis(perCamInstalled(value))} ₪ למצלמה.</span>
+            <span>ציוד כולל מע״מ: מצלמה + פאנל סולארי. התקנה: יום עבודה של מתקין, כ-{nis(SITE_OFFER.installDay)} ₪ + מע״מ לאתר של עד {SITE_OFFER.camsPerDay} מצלמות.</span>
           </div>
           <div className={home.ctas}>
             <a className={`${home.cta} ${home.ctaAccent}`} href="#calc">לחשב חבילה לאתר</a>
-            <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לדבר עם רותם בווצאפ</a>
+            <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח סרטון מהאתר בווצאפ</a>
           </div>
           <div className={home.trust}>
             <span>{WARRANTY_TEXT}</span>
@@ -98,13 +101,13 @@ export default function ConstructionSitesOffer() {
       <section id="calc" className={styles.calcSection} aria-labelledby="calc-title">
         <div className={home.sectionHead}>
           <h2 id="calc-title">שתי חבילות, מחיר לאתר</h2>
-          <p>בוחרים כמה מצלמות בכל אתר, כמה אתרים, ואם להתקין. המחיר מתעדכן מיד. הציוד במחירי החנות, ההתקנה במחיר קבוע למצלמה.</p>
+          <p>בוחרים כמה מצלמות בכל אתר, כמה אתרים, ואם להתקין. הציוד במחירי החנות. ההתקנה מחושבת לפי ימי עבודה של מתקין, והיא הערכה עד שרואים את האתר.</p>
         </div>
-        <OfferCalculator tiers={tiers} installWithVat={inst} sim={SITE_OFFER.sim} camsOptions={SITE_OFFER.camsOptions}
+        <OfferCalculator tiers={tiers} installDay={SITE_OFFER.installDay} camsPerDay={SITE_OFFER.camsPerDay} sim={SITE_OFFER.sim} camsOptions={SITE_OFFER.camsOptions}
           sitesMax={SITE_OFFER.sitesMax} vatRate={VAT_RATE} giftCardGb={SITE_OFFER.giftCardGb} />
         <p className={styles.mix}>
           <b>מה שהכי נפוץ אצל קבלנים:</b> {best.name} אחת על הכניסה, שמתקרבת ועוקבת אחרי מי שנכנס, והחסכונית בהיקף.
-          ארבע מצלמות כאלה באתר, עם התקנה וסים: {nis(mix4)} ₪ כולל מע״מ ({nis(mix4 / (1 + VAT_RATE))} ₪ לפני מע״מ).
+          ארבע מצלמות כאלה באתר, עם סים ויום התקנה: כ-{nis(mix4)} ₪ כולל מע״מ ({nis(mix4 / (1 + VAT_RATE))} ₪ לפני מע״מ).
         </p>
       </section>
 
@@ -113,7 +116,7 @@ export default function ConstructionSitesOffer() {
         <div className={deal.includes}>
           {[
             { t: "מצלמה ופאנל סולארי", b: "ציוד Reolink חדש באריזה, עם אחריות שנה." },
-            { t: "התקנה באתר", b: "קיבוע המצלמה והפאנל על גדר, קונטיינר, עמוד או קיר קיים, וכיוון הפאנל לשמש." },
+            { t: "התקנה באתר", b: `מתקין מקצועי מקבע את המצלמות והפאנלים על גדר, קונטיינר, עמוד או קיר קיים ומכוון את הפאנלים לשמש. כ-${nis(SITE_OFFER.installDay)} ₪ + מע״מ ליום עבודה.` },
             { t: `כרטיס ${SITE_OFFER.giftCardGb}GB במתנה`, b: "מותקן בכל מצלמה, כך שהיא מקליטה מהרגע הראשון." },
             { t: "סים והגדרה", b: `הסים מותקן ומוגדר. חבילה שלנו ב-${nis(SITE_OFFER.sim.price)} ₪, או סים שלכם.` },
             { t: "אפליקציה והתראות", b: "מגדירים בנייד של כל מי שצריך: אזורי זיהוי, שעות התראה וגיבוי בענן." },
@@ -127,8 +130,8 @@ export default function ConstructionSitesOffer() {
         <div className={home.sectionHead}><h2 id="how">איך זה עובד</h2></div>
         <div className={home.ways}>
           {[
-            { t: "שולחים מיקום ותמונות", b: "איפה האתרים וכמה מצלמות בערך. תמונה של הגדר והכניסה עוזרת לתכנן." },
-            { t: "מתכננים נקודות", b: "איפה כל מצלמה, מה היא רואה ואיפה הפאנל מקבל שמש. בודקים קליטה." },
+            { t: "שולחים סרטון מהאתר", b: "מסתובבים עם הנייד לאורך הגדר והכניסות ושולחים בווצאפ. נייעץ מרחוק כמה מצלמות צריך ואיפה." },
+            { t: `או סיור מקצועי ב-${survey} ₪`, b: "מגיעים לאתר וקובעים יחד את הנקודות והמיקום של כל מצלמה, איפה הפאנל מקבל שמש, ובודקים קליטה." },
             { t: "מתקינים ומגדירים", b: "מתקינים את המצלמות באתר ומגדירים את האפליקציה אצל כל מי שצריך." },
             { t: "אתר נגמר? עוברים", b: "מורידים את המצלמות ומעבירים לאתר הבא. אפשר גם שנעביר אנחנו, בתיאום." },
           ].map((x, i) => (
@@ -148,13 +151,14 @@ export default function ConstructionSitesOffer() {
 
       <section id="order" className={deal.order} aria-labelledby="order-title" data-track="site_offer_form">
         <div>
-          <h2 id="order-title">לתאם ביקור ראשון באתר</h2>
-          <p>משאירים פרטים ורותם חוזר אליכם לתאם. לא משלמים כלום לפני שרואים יחד את האתר ומסכמים כמה מצלמות ואיפה.</p>
+          <h2 id="order-title">איך מתחילים: סרטון או סיור</h2>
+          <p><b>הכי מהיר:</b> שולחים סרטון קצר מהאתר בווצאפ, ונייעץ מרחוק כמה מצלמות צריך ואיפה.</p>
           <div className={home.ctas}>
-            <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">או ישר בווצאפ</a>
+            <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח סרטון בווצאפ</a>
           </div>
+          <p><b>רוצים שמישהו יגיע?</b> סיור מקצועי באתר ב-{survey} ₪. בסיור קובעים את הנקודות והמיקום של כל מצלמה, ואחריו מקבלים הצעה סגורה. משאירים פרטים ורותם חוזר לתאם.</p>
         </div>
-        <SiteOfferForm />
+        <SiteOfferForm surveyPrice={survey} />
       </section>
 
       <p className={styles.disc}>

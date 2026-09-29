@@ -20,6 +20,8 @@ const nextConfig = {
       // 23.9.2026: הטיימלאפס עבר כולו ל-timelapseit.co.il. העמוד והפוסטים מופנים לשם.
       { source: '/timelapse', destination: 'https://timelapseit.co.il/', permanent: true },
       // 23.9.2026: חבילות/מחירון של המצלמות הסולאריות מהאתר הישן הוסרו; החנות היא המחירון
+      // 29.9.2026: כתובת קצרה לדף ההצעה לאתרי בנייה (מופיעה בסרטון לקבלנים)
+      { source: '/sites', destination: '/offer/construction-sites', permanent: false },
       { source: '/packages', destination: '/store', permanent: true },
       { source: '/pricing', destination: '/store', permanent: true },
       // 24.9.2026: דפי האתר הישן (מצלמות סולאריות לאתרי בנייה) מופנים לדפים המקבילים בחנות.

@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
-import { VAT_RATE } from "../../data/deals";
-import { SITE_OFFER, offerProduct, tierEquipment, installDayWithVat } from "../../data/site-offer";
-import { BUSINESS } from "../../data/business";
+import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../data/store-catalog";
+import { VAT_RATE } from "../data/deals";
+import { SITE_OFFER, GUIDE, offerProduct, tierEquipment, installDayWithVat } from "../data/site-offer";
+import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
+import { DistanceGuide, type GuideCamera } from "./DistanceGuide";
+import { BUSINESS } from "../data/business";
 import { OfferCalculator, SiteOfferForm, type CalcTier } from "./OfferCalculator";
-import home from "../../home.module.css";
-import deal from "../../deals/deals.module.css";
+import home from "../home.module.css";
+import deal from "../deals/deals.module.css";
 import styles from "./offer.module.css";
 
-// דף הצעה שרותם שולח ללקוחות עם כמה אתרי בנייה. לא באינדקס ולא בתפריט (ראו site-offer.ts)
+// דף הקבלנים: מצלמות לאתרי בנייה בלי חשמל ובלי אינטרנט (רותם 29.9.2026: מדריך מרחקים, התקנה עצמית, הדרכה לאיש צוות,
+// מחיר לקבלנים בכמויות). הדף היחיד של האתר לכוונה "מצלמות לאתר בנייה"; /sites, /offer/construction-sites ו-/use-cases/construction מפנים לכאן.
 export const metadata: Metadata = {
-  title: "מצלמות לאתרי בנייה בלי חשמל: חבילה עם התקנה | Site-Control",
-  description: "חבילות מצלמות 4G סולאריות לאתרי בנייה: 4 עד 6 מצלמות לאתר, עם התקנה או בלי. התראה לנייד, צבע בלילה, דיבור דרך המצלמה וגיבוי בענן.",
-  robots: { index: false, follow: false },
+  title: "מצלמות לאתרי בנייה: 4G סולאריות, בלי חשמל ובלי מתקין | Site-Control",
+  description: "מצלמות אבטחה לאתרי בנייה שעובדות בלי חשמל ובלי אינטרנט: סוללה, פאנל סולארי וסים 4G. מדריך מרחקים לבחירת מצלמה, התקנה עצמית בליווי או מתקין מטעמנו, מחשבון מחיר לאתר ומחיר לקבלנים.",
+  alternates: { canonical: "/construction-sites" },
+  robots: { index: true, follow: true },
+  openGraph: { title: "מצלמות לאתרי בנייה, בלי חשמל ובלי מתקין | Site-Control", description: "מדריך מרחקים, מחשבון מחיר לאתר, התקנה עצמית בליווי שלנו.", url: "/construction-sites", type: "website", locale: "he_IL", images: ["/og-default.jpg"] },
 };
 
 const nis = (n: number) => Math.round(n).toLocaleString("he-IL");
@@ -28,7 +33,7 @@ const needs = [
   { q: "כמה אתרים, והם מתחלפים", a: "כל האתרים באפליקציה אחת בנייד. בסוף פרויקט מורידים את המצלמות מהגדר ומעבירים לאתר הבא, בלי חשמלאי ובלי תשתית." },
 ];
 
-export default function ConstructionSitesOffer() {
+export default function ConstructionSites() {
   const tiers: CalcTier[] = SITE_OFFER.tiers.map((t) => {
     const p = offerProduct(t.productSlug);
     return { id: t.id, name: t.name, tagline: t.tagline, equipment: tierEquipment(t), image: p?.image ?? null, product: p ? productName(p) : t.productSlug, points: t.points };
@@ -43,6 +48,10 @@ export default function ConstructionSitesOffer() {
   const survey = nis(SITE_OFFER.surveyPrice);
 
   const faq = [
+    { q: "באיזה מרחק המצלמה מזהה אדם או מספר רכב?", a: "זה תלוי ברזולוציה ובזווית. Go Ultra ב-4K רואה אדם עד כ-23 מטר, קוראת מספר רכב עד כ-7 מטרים ומזהה פנים עד כ-6 מטרים. TrackMix עם עדשת הזום מגיעה לקריאת מספר רכב עד כ-18 מטרים. חיישן התנועה של מצלמות הסוללה מתחיל הקלטה עד כ-10 מטרים, ולכן מציבים את המצלמה קרוב לשער, למחסן או לקונטיינר. במדריך המרחקים בדף הזה אפשר לבדוק כל מרחק." },
+    { q: "אפשר להתקין לבד, בלי מתקין?", a: "כן, וזה חוסך את רוב עלות ההתקנה. תולים את המצלמה ואת הפאנל על גדר, קונטיינר או עמוד, מכניסים סים וכרטיס זיכרון, וסורקים את הברקוד באפליקציה של Reolink. אין חיווט ואין חשמלאי. אנחנו מלווים בטלפון, בווצאפ או בשיחת וידאו עד שהמצלמה עובדת." },
+    { q: "יש לנו הרבה אתרים בכל הארץ. מה הכי משתלם?", a: "במקום לשלוח מתקין לכל אתר, אנחנו מדריכים איש צוות אחד מטעמכם, והוא מתקין ומעביר מצלמות בין האתרים. חבילת הדרכה בתיאום, בשיחת וידאו או באחד האתרים. רוצים בכל זאת מתקינים? יש לנו מתקינים שעובדים איתנו." },
+    { q: "יש מחיר לקבלנים?", a: "כן. על 5 מצלמות ומעלה, או כמה אתרים יחד, כתבו לנו כמה צריך ונחזור עם מחיר לקבלנים. המחירים בדף הם מחירי החנות למצלמה בודדת." },
     { q: "כמה עולה ההתקנה?", a: `זה תלוי במיקום, במורכבות ובכמות המצלמות. יום עבודה של מתקין מקצועי הוא כ-${nis(SITE_OFFER.installDay)} ₪ + מע״מ, ובאתר רגיל מתקינים ביום עד ${SITE_OFFER.camsPerDay} מצלמות על גדר, קונטיינר או עמוד קיים. צריך עמוד ייעודי, הרמה או עבודה בגובה? נגיד מראש. המחיר הסופי נסגר אחרי שרואים את האתר, בסרטון או בסיור, ולפני שמתחילים.` },
     { q: "אפשר בלי שתגיעו לאתר קודם?", a: `כן. שולחים סרטון קצר מהאתר בווצאפ, לאורך הגדר והכניסות, ונייעץ מרחוק כמה מצלמות צריך ואיפה. רוצים שמישהו מקצועי יגיע? סיור באתר עולה ${survey} ₪, ובמהלכו קובעים את הנקודות והמיקום של כל מצלמה.` },
     { q: "המצלמות מקליטות כל הזמן?", a: `מצלמות סוללה מקליטות כשיש תנועה, וכך הסוללה מחזיקה עם הפאנל. צריך הקלטה רציפה 24/7, למשל על השער הראשי? יש ערכת ${plus ? productName(plus) : "TrackMix LTE Plus"} עם פאנל 66W${plus?.price ? ` ב-${nis(plus.price)} ₪` : ""} שמקליטה ברצף גם בלי חשמל.` },
@@ -55,21 +64,30 @@ export default function ConstructionSitesOffer() {
     { q: "איפה אתם מתקינים?", a: `${BUSINESS.installAreaIn}. יש לכם אתרים במרכז, בצפון ובדרום? מתאמים לפי אזור.` },
   ];
 
+  const crumbs = [{ name: "חנות", url: "/store" }, { name: "מצלמות לאתרי בנייה", url: "/construction-sites" }];
+  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const guideCams: GuideCamera[] = GUIDE.cameras.map((c) => ({ ...c, image: offerProduct(c.slug)?.image ?? null }));
+
   return (
-    <main className={home.wrap} data-lead-page="offer_construction_sites">
+    <main className={home.wrap} data-lead-page="construction_sites">
+      <BreadcrumbSchema items={crumbs} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Breadcrumb items={crumbs} />
       <header className={deal.hero}>
         <div className={deal.heroText}>
-          <span className={deal.badge}>הצעה לחברות בנייה</span>
+          <span className={deal.badge}>לקבלנים ולמנהלי עבודה</span>
           <h1 className={deal.title}>מצלמות לאתרי בנייה, בלי חשמל ובלי אינטרנט</h1>
           <p className={deal.lead}>
-            סוללה, פאנל סולארי וסים 4G בכל מצלמה. מתריעות לנייד כשמישהו נכנס, מצלמות בצבע בלילה, ואפשר לדבר דרכן. 4 עד 6 מצלמות לאתר, עם התקנה או בלי.
+            סוללה, פאנל סולארי וסים 4G בכל מצלמה. מתריעות לנייד כשמישהו נכנס, מצלמות בצבע בלילה, ואפשר לדבר דרכן. לא חייבים מתקין: תולים, מכניסים סים וסורקים ברקוד באפליקציה, ואנחנו מלווים מרחוק.
           </p>
           <div className={deal.price}>
             <strong>מ-{nis(value.equipment)} ₪ <small>למצלמה</small></strong>
-            <span>ציוד כולל מע״מ: מצלמה + פאנל סולארי. התקנה: יום עבודה של מתקין, כ-{nis(SITE_OFFER.installDay)} ₪ + מע״מ לאתר של עד {SITE_OFFER.camsPerDay} מצלמות.</span>
+            <span>ציוד כולל מע״מ: מצלמה + פאנל סולארי. מתקינים בעצמכם בליווי שלנו, או מתקין מטעמנו: כ-{nis(SITE_OFFER.installDay)} ₪ + מע״מ ליום עבודה. 5 מצלמות ומעלה: מחיר לקבלנים.</span>
           </div>
           <div className={home.ctas}>
-            <a className={`${home.cta} ${home.ctaAccent}`} href="#calc">לחשב חבילה לאתר</a>
+            <a className={`${home.cta} ${home.ctaAccent}`} href="#guide">איזו מצלמה מתאימה לי?</a>
+            <a className={`${home.cta} ${home.ctaGhost}`} href="#calc">מחשבון מחיר לאתר</a>
             <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח סרטון מהאתר בווצאפ</a>
           </div>
           <div className={home.trust}>
@@ -98,10 +116,39 @@ export default function ConstructionSitesOffer() {
         </div>
       </section>
 
+      <section id="guide" className={styles.calcSection} aria-labelledby="guide-title">
+        <div className={home.sectionHead}>
+          <h2 id="guide-title">איזו מצלמה מתאימה למרחק שלכם?</h2>
+          <p>לכל אתר צורך אחר: יש מי שצריך לראות שמישהו נכנס בלילה, יש מי שצריך לקרוא מספר של משאית בשער, ויש מי שצריך לזהות פנים. בוחרים מה חשוב ובאיזה מרחק, ורואים מה כל מצלמה באמת תראה.</p>
+        </div>
+        <DistanceGuide goals={GUIDE.goals} cameras={guideCams} />
+      </section>
+
+      <section aria-labelledby="diy">
+        <div className={home.sectionHead}>
+          <h2 id="diy">לא חייבים מתקין</h2>
+          <p>אין חיווט, אין חשמלאי ואין תקשורת לפרוס. מי שיודע להחזיק מקדחה מתקין מצלמה כזאת, ואנחנו מלווים מרחוק עד שהיא עובדת.</p>
+        </div>
+        <div className={home.ways}>
+          {[
+            { t: "תולים", b: "את המצלמה ואת הפאנל הסולארי על גדר, קונטיינר, עמוד או קיר, עם הזרוע והברגים שבאריזה. הפאנל פונה לדרום, בלי צל." },
+            { t: "מכניסים סים וכרטיס", b: "סים עם גלישה מכל חברה, או החבילה שלנו, וכרטיס זיכרון להקלטה בתוך המצלמה." },
+            { t: "סורקים ברקוד", b: "באפליקציה של Reolink סורקים את הברקוד שעל המצלמה, נותנים לה שם, וזהו. מגדירים שעות התראה ומשתפים את מי שצריך." },
+          ].map((x, i) => (
+            <div key={x.t} className={home.way}><i>{i + 1}</i><b>{x.t}</b><p>{x.b}</p></div>
+          ))}
+        </div>
+        <div className={styles.split}>
+          <div><b>יש לכם כמה אתרים?</b><p>במקום לשלוח מתקין לכל אתר, מדריכים איש צוות אחד מטעמכם. הוא מתקין, מעביר מצלמות בין האתרים ומכיר את המערכת. חבילת הדרכה בתיאום, בשיחת וידאו או באחד האתרים.</p></div>
+          <div><b>צריכים בכל זאת מתקין?</b><p>יש לנו מתקינים שעובדים איתנו. יום עבודה של מתקין מקצועי הוא כ-{nis(SITE_OFFER.installDay)} ₪ + מע״מ, ובאתר רגיל מתקינים עד {SITE_OFFER.camsPerDay} מצלמות ביום.</p></div>
+          <div><b>מחיר לקבלנים</b><p>המחירים באתר פתוחים לכולם. על 5 מצלמות ומעלה, או כמה אתרים יחד, כתבו לנו כמה צריך ונחזור עם מחיר לקבלנים.</p></div>
+        </div>
+      </section>
+
       <section id="calc" className={styles.calcSection} aria-labelledby="calc-title">
         <div className={home.sectionHead}>
           <h2 id="calc-title">שתי חבילות, מחיר לאתר</h2>
-          <p>בוחרים כמה מצלמות בכל אתר, כמה אתרים, ואם להתקין. הציוד במחירי החנות. ההתקנה מחושבת לפי ימי עבודה של מתקין, והיא הערכה עד שרואים את האתר.</p>
+          <p>בוחרים כמה מצלמות בכל אתר, כמה אתרים, ואם מתקינים בעצמכם או עם מתקין מטעמנו. הציוד במחירי החנות. ההתקנה מחושבת לפי ימי עבודה של מתקין, והיא הערכה עד שרואים את האתר.</p>
         </div>
         <OfferCalculator tiers={tiers} installDay={SITE_OFFER.installDay} camsPerDay={SITE_OFFER.camsPerDay} sim={SITE_OFFER.sim} camsOptions={SITE_OFFER.camsOptions}
           sitesMax={SITE_OFFER.sitesMax} vatRate={VAT_RATE} giftCardGb={SITE_OFFER.giftCardGb} />
@@ -112,7 +159,7 @@ export default function ConstructionSitesOffer() {
       </section>
 
       <section aria-labelledby="includes">
-        <div className={home.sectionHead}><h2 id="includes">מה כלול כשאנחנו מתקינים</h2></div>
+        <div className={home.sectionHead}><h2 id="includes">מה כלול כשמתקין מטעמנו מגיע</h2></div>
         <div className={deal.includes}>
           {[
             { t: "מצלמה ופאנל סולארי", b: "ציוד Reolink חדש באריזה, עם אחריות שנה." },
@@ -132,7 +179,7 @@ export default function ConstructionSitesOffer() {
           {[
             { t: "שולחים סרטון מהאתר", b: "מסתובבים עם הנייד לאורך הגדר והכניסות ושולחים בווצאפ. נייעץ מרחוק כמה מצלמות צריך ואיפה." },
             { t: `או סיור מקצועי ב-${survey} ₪`, b: "מגיעים לאתר וקובעים יחד את הנקודות והמיקום של כל מצלמה, איפה הפאנל מקבל שמש, ובודקים קליטה." },
-            { t: "מתקינים ומגדירים", b: "מתקינים את המצלמות באתר ומגדירים את האפליקציה אצל כל מי שצריך." },
+            { t: "מתקינים ומגדירים", b: "בעצמכם בליווי שלנו, או עם מתקין מטעמנו. מגדירים את האפליקציה אצל כל מי שצריך." },
             { t: "אתר נגמר? עוברים", b: "מורידים את המצלמות ומעבירים לאתר הבא. אפשר גם שנעביר אנחנו, בתיאום." },
           ].map((x, i) => (
             <div key={x.t} className={home.way}><i>{i + 1}</i><b>{x.t}</b><p>{x.b}</p></div>

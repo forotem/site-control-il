@@ -1,4 +1,4 @@
-// הצעה לאתרי בנייה בלי חשמל יציב ובלי אינטרנט (דף /offer/construction-sites, לא באינדקס; רותם שולח אותו ללקוחות).
+// דף הקבלנים /construction-sites (לאינדקס; /sites ו-/offer/construction-sites מפנים אליו). מצלמות לאתרי בנייה בלי חשמל ובלי אינטרנט.
 // נבנתה 28.9.2026 לפי שיחה עם לקוחה שיש לה כמה אתרי בנייה, 4 עד 6 מצלמות לאתר: עובד בלי חשמל, מצלם טוב בלילה,
 // מתריע לנייד כשמישהו נכנס, אפשר לדבר דרך המצלמה, והחומר נשמר גם אם גונבים את המצלמה.
 // מחירי הציוד נקראים מהקטלוג (כוללים מע"מ), כך שההצעה מתעדכנת עם החנות. מחיר ההתקנה נקוב לפני מע"מ, כמו במבצעים.
@@ -58,6 +58,22 @@ export const SITE_OFFER = {
       ],
     },
   ] as OfferTier[],
+};
+
+/** מדריך המרחקים בדף. ppm = פיקסלים למטר שהתקן EN 62676-4 דורש (תצפית 62.5, זיהוי 250); לוחית רישוי: 200, מקובל לקריאה.
+ *  נתוני המצלמות מ-Reolink (נבדק 29.9.2026): Go Ultra 3840 פיקסלים, 105°; Go PT Ultra 3840, 90°; TrackMix LTE 4MP (2560),
+ *  עדשה רחבה כ-105° ועדשת זום 38°. חיישן התנועה במצלמות הסוללה: עד 10 מ'. */
+export const GUIDE = {
+  goals: [
+    { id: "see", label: "לראות שנכנס אדם ומה הוא עושה", short: "שמישהו נכנס", ppm: 62.5, object: "person" as const },
+    { id: "plate", label: "לקרוא מספר רכב", short: "מספר רכב", ppm: 200, object: "plate" as const },
+    { id: "face", label: "לזהות מי זה", short: "מי זה (פנים)", ppm: 250, object: "face" as const },
+  ],
+  cameras: [
+    { slug: "reolink-go-ultra", name: "Go Ultra", lenses: [{ label: "", hres: 3840, hfov: 105 }] },
+    { slug: "reolink-go-pt-ultra", name: "Go PT Ultra", lenses: [{ label: "", hres: 3840, hfov: 90 }] },
+    { slug: "reolink-trackmix-lte", name: "TrackMix LTE", lenses: [{ label: "עדשה רחבה", hres: 2560, hfov: 105 }, { label: "עדשת הזום", hres: 2560, hfov: 38 }] },
+  ],
 };
 
 export const offerProduct = (slug: string | null): StoreProduct | undefined =>

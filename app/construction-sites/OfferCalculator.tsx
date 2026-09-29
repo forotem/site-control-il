@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { track } from "../../lib/analytics";
-import { getAttribution } from "../../lib/attribution";
-import { WHATSAPP_NUMBER } from "../../data/store-catalog";
-import c from "../../store/commerce.module.css";
-import home from "../../home.module.css";
+import { track } from "../lib/analytics";
+import { getAttribution } from "../lib/attribution";
+import { WHATSAPP_NUMBER } from "../data/store-catalog";
+import c from "../store/commerce.module.css";
+import home from "../home.module.css";
 import styles from "./offer.module.css";
 
 export type CalcTier = { id: string; name: string; tagline: string; equipment: number; image: string | null; product: string; points: string[] };
@@ -21,7 +21,7 @@ export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOption
 }) {
   const [cams, setCams] = useState(camsOptions[0]);
   const [sites, setSites] = useState(1);
-  const [install, setInstall] = useState(true);
+  const [install, setInstall] = useState(false);
   const [withSim, setWithSim] = useState(true);
   const units = cams * sites;
   const days = Math.ceil(cams / camsPerDay) * sites;
@@ -53,8 +53,8 @@ export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOption
         <div className={styles.control}>
           <span>התקנה</span>
           <div className={styles.seg}>
-            <button type="button" aria-pressed={install} onClick={() => setInstall(true)}>אנחנו מתקינים</button>
-            <button type="button" aria-pressed={!install} onClick={() => setInstall(false)}>רק ציוד</button>
+            <button type="button" aria-pressed={!install} onClick={() => setInstall(false)}>מתקינים בעצמנו, בליווי</button>
+            <button type="button" aria-pressed={install} onClick={() => setInstall(true)}>מתקין מטעמכם</button>
           </div>
         </div>
         <div className={styles.control}>
@@ -101,7 +101,7 @@ export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOption
       <p className={styles.note}>
         {install
           ? `ההתקנה היא הערכה: יום עבודה של מתקין מקצועי הוא כ-${nis(installDay)} ₪ + מע״מ, ובאתר רגיל מתקינים עד ${camsPerDay} מצלמות ביום על גדר, קונטיינר או עמוד קיים. המחיר הסופי תלוי במיקום, במורכבות ובכמות, ונסגר אחרי שרואים את האתר.`
-          : "רק ציוד: משלוח בתשלום נפרד לפי הכתובת, או איסוף עצמי. כרטיס זיכרון קונים בנפרד, ונסביר בטלפון או בווצאפ איך מחברים ומגדירים."}
+          : "מתקינים בעצמכם: תולים, מכניסים סים וסורקים ברקוד באפליקציה, ואנחנו מלווים בטלפון, בווצאפ או בשיחת וידאו. משלוח בתשלום נפרד לפי הכתובת, או איסוף עצמי. 5 מצלמות ומעלה: כתבו לנו ונחזור עם מחיר לקבלנים."}
       </p>
     </div>
   );

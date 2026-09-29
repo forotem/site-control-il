@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/store"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.95 },
     { url: url("/installation"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.9 },
     { url: url("/deals"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.9 },
+    { url: url("/construction-sites"), lastModified: new Date("2026-09-29"), changeFrequency: "monthly", priority: 0.9 },
     { url: url("/store/finder"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.7 },
     { url: url("/about"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: url("/contact"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },

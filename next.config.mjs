@@ -21,7 +21,10 @@ const nextConfig = {
       { source: '/timelapse', destination: 'https://timelapseit.co.il/', permanent: true },
       // 23.9.2026: חבילות/מחירון של המצלמות הסולאריות מהאתר הישן הוסרו; החנות היא המחירון
       // 29.9.2026: כתובת קצרה לדף ההצעה לאתרי בנייה (מופיעה בסרטון לקבלנים)
-      { source: '/sites', destination: '/offer/construction-sites', permanent: false },
+      { source: '/sites', destination: '/construction-sites', permanent: false },
+      // 29.9.2026: דף ההצעה עבר לכתובת קבועה לאינדקס
+      { source: '/offer/construction-sites', destination: '/construction-sites', permanent: true },
+      { source: '/use-cases/construction', destination: '/construction-sites', permanent: true },
       { source: '/packages', destination: '/store', permanent: true },
       { source: '/pricing', destination: '/store', permanent: true },
       // 24.9.2026: דפי האתר הישן (מצלמות סולאריות לאתרי בנייה) מופנים לדפים המקבילים בחנות.

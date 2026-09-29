@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '62',
+    title: 'כמה עולה מערכת מצלמות לבית ב-2026: פירוט אמיתי לפי תקציב',
+    slug: 'home-cctv-system-cost-breakdown-2026',
+    excerpt: 'כמה עולה מערכת מצלמות לבית ב-2026? פירוט אמיתי עם מחירים מהחנות: ערכות מוכנות, מצלמות, מקליט ודיסק, התקנה, ומה עוד צריך לקחת בחשבון....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-09-29',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/home-cctv-system-cost-breakdown-2026/hero.webp',
+    seoTitle: 'כמה עולה מערכת מצלמות לבית ב-2026: פירוט אמיתי לפי תקציב | Site-Control',
+    seoDescription: 'כמה עולה מערכת מצלמות לבית ב-2026? פירוט אמיתי עם מחירים מהחנות: ערכות מוכנות, מצלמות, מקליט ודיסק, התקנה, ומה עוד צריך לקחת בחשבון.',
+    keywords: ["כמה עולה מערכת מצלמות לבית","מחיר מערכת מצלמות אבטחה לבית","מחיר ערכת מצלמות אבטחה 4 מצלמות","כמה עולה מצלמת אבטחה לבית","עלות התקנת מצלמות אבטחה","ערכת מצלמות Reolink מחיר","מקליט NVR עם PoE מחיר","מצלמות אבטחה לדירה מחיר"]
+  },
+  {
     id: '61',
     title: 'מניעת התרעות שווא במצלמות סולאריות 4G: AI חוסך זמן וכסף',
     slug: 'prevent-false-alarms-4g-solar-cameras-ai-2026',

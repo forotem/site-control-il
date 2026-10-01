@@ -6,6 +6,7 @@ import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
 import { notifyTeam, sendWhatsApp, israeliMobile } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
+import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
 
 export const runtime = "nodejs";
@@ -57,7 +58,8 @@ export async function POST(req: NextRequest) {
   const delivery = deliveryOptions.find((d) => d.id === body.delivery)?.title || "לא נבחר";
   let total = 0, unknown = 0, units = 0;
   const lines = items.map(({ p, qty }) => {
-    units += qty;
+    // אביזרים (זרוע, קופסת חיבורים) לא נספרים לכמות של קבלן
+    if (attrsOf(p!).kind !== "accessory") units += qty;
     if (p!.price) total += p!.price * qty; else unknown++;
     return `- ${qty} x ${p!.brand} ${p!.model}${p!.sku ? ` (מק"ט ${p!.sku})` : ""} | ${p!.price ? `${p!.price} ₪ ליח', ${p!.price * qty} ₪` : "לפי פנייה"} | /store/${p!.slug}`;
   });
@@ -73,7 +75,7 @@ export async function POST(req: NextRequest) {
     const tips = (n.tips || []).map((t) => `  להציע גם: ${t}`);
     return [`* ${p!.brand} ${p!.model}${n.history ? `: ${n.history}` : ""}`, ...alts, ...tips];
   });
-  const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5);
+  const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5 && attrsOf(l.p!).kind !== "accessory");
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;
 
   // הודעה אישית ללקוח מהמספר של רותם. רק לנייד ישראלי, ולא יותר מפעם ב-10 דקות לאותו מספר.

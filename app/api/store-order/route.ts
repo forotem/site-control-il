@@ -1,15 +1,49 @@
 // הזמנה מהעגלה: מאמתים מול הקטלוג, מחשבים סכום, שולחים לצוות (ווצאפ/מייל) ומחזירים אישור.
 // אין חיוב באתר: הצוות מאשר זמינות מול היבואן וחוזר ללקוח לתשלום.
+// בנוסף (רותם 1.10.2026): ללקוח יוצאת מיד הודעת ווצאפ אישית מהמספר העסקי של רותם, עם המוצר, המחיר והקישור.
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
-import { deliveryOptions } from "../../data/store-catalog";
-import { notifyTeam } from "../../lib/store-notify";
+import { deliveryOptions, productName } from "../../data/store-catalog";
+import { notifyTeam, sendWhatsApp, israeliMobile } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
 import { supplierNoteOf } from "../../data/supplier-notes";
 
 export const runtime = "nodejs";
 
 type Line = { slug: string; qty: number };
+type OrderItem = { p: NonNullable<ReturnType<typeof productBySlug>>; qty: number };
+
+const SITE = "https://www.site-control-il.com";
+const nis = (n: number) => n.toLocaleString("he-IL");
+
+// הגנה מהצפה: לא שולחים לאותו מספר יותר מהודעה אחת ב-10 דקות (בזיכרון של המופע)
+const lastSent = new Map<string, number>();
+
+/** ההודעה ללקוח, בקול של רותם: שם, מה הוזמן עם מחיר וקישור, מה קורה עכשיו, ושהוא זמין במספר הזה */
+function customerMessage(name: string, ref: string, items: OrderItem[], total: number, deliveryId: string | undefined): string {
+  const first = name.trim().split(/\s+/)[0];
+  const shown = items.slice(0, 3).map(({ p, qty }) =>
+    `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}\n  ${SITE}/store/${p.slug}`);
+  const more = items.length > 3 ? [`ועוד ${items.length - 3} פריטים`] : [];
+  const next =
+    deliveryId === "courier" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ומחיר משלוח. כדי לזרז, אפשר לשלוח לי כבר כתובת מלאה למשלוח."
+    : deliveryId === "pickup" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ותיאום איסוף."
+    : deliveryId === "install" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור, ונתאם יחד את ההתקנה."
+    : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור.";
+  return [
+    `שלום ${first} 👋`,
+    `כאן רותם מ-Site-Control. ראיתי שהזמנת אצלנו באתר (מס׳ הזמנה ${ref}):`,
+    "",
+    ...shown,
+    ...more,
+    "",
+    total ? `סה״כ ${nis(total)} ₪ כולל מע״מ${deliveryId === "courier" ? ", לא כולל משלוח" : ""}.` : null,
+    next,
+    "",
+    "יש שאלה? אני זמין כאן בווצאפ ובטלפון הזה.",
+    "רותם, Site-Control",
+  ].filter((x) => x !== null).join("\n");
+}
 
 export async function POST(req: NextRequest) {
   let body: { name?: string; phone?: string; delivery?: string; note?: string; items?: Line[]; email?: string; attribution?: unknown };
@@ -41,6 +75,15 @@ export async function POST(req: NextRequest) {
   });
   const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5);
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;
+
+  // הודעה אישית ללקוח מהמספר של רותם. רק לנייד ישראלי, ולא יותר מפעם ב-10 דקות לאותו מספר.
+  const mobile = israeliMobile(phone);
+  let customerWa = false;
+  if (mobile && Date.now() - (lastSent.get(mobile) || 0) > 10 * 60 * 1000) {
+    customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery));
+    if (customerWa) lastSent.set(mobile, Date.now());
+  }
+
   const text = [
     `מספר הזמנה: ${ref}`,
     `שם: ${name}`,
@@ -57,11 +100,12 @@ export async function POST(req: NextRequest) {
     body.note ? `\nהערה מהלקוח: ${String(body.note).slice(0, 500)}` : null,
     supplier.length ? `\nמהניסיון מול היבואן:\n${supplier.join("\n")}` : null,
     "",
+    customerWa ? "✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ממך (מוצר, מחיר, קישור, ושאתה בודק מלאי)." : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
     "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");
 
   const sent = await notifyTeam(`הזמנה חדשה מהחנות ${ref}${bulk ? " (קבלן)" : ""}`, text);
   // אם אף ערוץ לא עבד, לא מאשרים ללקוח הזמנה שאף אחד לא יראה: מחזירים שגיאה וה-UI מציע וואטסאפ.
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח את ההזמנה כרגע. אפשר לשלוח אותה בווצאפ ונטפל מיד." }, { status: 502 });
-  return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email });
+  return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email, customerWa });
 }

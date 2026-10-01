@@ -39,8 +39,11 @@ export function AddToCart({ slug }: { slug: string }) {
 export function CartDrawer() {
   const lines = useCart();
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState<"cart" | "form" | "done">("cart");
-  const [form, setForm] = useState({ name: "", phone: "", delivery: "courier", note: "" });
+  const [step, setStep] = useState<"cart" | "form" | "code" | "done">("cart");
+  const [form, setForm] = useState({ name: "", phone: "", delivery: "courier", address: "", note: "", website: "" });
+  const [otp, setOtp] = useState<{ token: string; to: string } | null>(null);
+  const [code, setCode] = useState("");
+  const needsAddress = form.delivery === "courier" || form.delivery === "install";
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [ref, setRef] = useState<string | null>(null);
@@ -69,13 +72,36 @@ export function CartDrawer() {
     ["היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים:", ...rows.map((r) => `- ${r.qty} x ${r.p!.brand} ${r.p!.model}${r.p!.sku ? ` (מק"ט ${r.p!.sku})` : ""}`), `סה"כ משוער: ${nis(total)} ₪`].join("\n")
   );
 
-  async function submit(e: React.FormEvent) {
+  /** שלב 1: שולחים קוד אימות בווצאפ למספר שהוזן. אם האימות לא פעיל בשרת, ממשיכים ישר להזמנה */
+  async function requestCode(e?: React.FormEvent) {
+    e?.preventDefault();
+    setBusy(true); setErr(null);
+    try {
+      const res = await fetch("/api/store-order/verify", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: form.phone, website: form.website }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "שגיאה");
+      if (data.skip) { await placeOrder(null, ""); return; }
+      setOtp({ token: data.token, to: data.to }); setCode(""); setStep("code");
+    } catch (ex) {
+      setErr(ex instanceof Error ? ex.message : "שגיאה בשליחת הקוד. אפשר לשלוח בווצאפ במקום.");
+    } finally { setBusy(false); }
+  }
+
+  /** שלב 2: ההזמנה עצמה, עם הקוד שהלקוח קיבל */
+  async function submitCode(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true); setErr(null);
+    try { await placeOrder(otp?.token || null, code); } finally { setBusy(false); }
+  }
+
+  async function placeOrder(otpToken: string | null, otpCode: string) {
     try {
       const res = await fetch("/api/store-order", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, items: rows.map((r) => ({ slug: r.slug, qty: r.qty })), attribution: getAttribution() }),
+        body: JSON.stringify({ ...form, otpToken, otpCode, items: rows.map((r) => ({ slug: r.slug, qty: r.qty })), attribution: getAttribution() }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "שגיאה");
@@ -83,7 +109,7 @@ export function CartDrawer() {
       setRef(data.ref); setWaSent(Boolean(data.customerWa)); setStep("done"); cart.clear();
     } catch (ex) {
       setErr(ex instanceof Error ? ex.message : "שגיאה בשליחה. אפשר לשלוח בווצאפ במקום.");
-    } finally { setBusy(false); }
+    }
   }
 
   return (
@@ -158,10 +184,11 @@ export function CartDrawer() {
             )}
 
             {step === "form" && rows.length > 0 && (
-              <form className={c.drawerBody} onSubmit={submit}>
+              <form className={c.drawerBody} onSubmit={requestCode}>
                 <p className={styles.finderIntro}>{units} פריטים, {nis(total)} ₪ משוער. השאירו פרטים ונחזור אליך לאישור.</p>
                 <label className={c.field}><span>שם</span><input id="order-name" required minLength={2} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} autoComplete="name" /></label>
-                <label className={c.field}><span>טלפון</span><input id="order-phone" required type="tel" inputMode="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} autoComplete="tel" dir="ltr" /></label>
+                <label className={c.field}><span>טלפון נייד (נשלח אליו קוד אימות בווצאפ)</span><input id="order-phone" required type="tel" inputMode="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} autoComplete="tel" dir="ltr" placeholder="05X-XXXXXXX" /></label>
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
                 <fieldset className={c.fieldset}>
                   <legend>איך לקבל?</legend>
                   {deliveryOptions.map((d) => (
@@ -171,13 +198,29 @@ export function CartDrawer() {
                     </label>
                   ))}
                 </fieldset>
-                <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="כתובת מלאה למשלוח (לפיה נקבע מחיר המשלוח), מועד נוח, שאלה" /></label>
+                {needsAddress && (
+                  <label className={c.field}><span>{form.delivery === "install" ? "כתובת ההתקנה" : "כתובת למשלוח"} (עיר, רחוב ומספר)</span><input id="order-address" required minLength={6} value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} autoComplete="street-address" placeholder="לפיה נקבע מחיר המשלוח" /></label>
+                )}
+                <label className={c.field}><span>הערה (לא חובה)</span><textarea id="order-note" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="מועד נוח, עדשה מועדפת, שאלה" /></label>
                 <p style={{ fontSize: "0.82rem", color: "var(--muted)", margin: 0 }}>הפרטים משמשים רק לטיפול בהזמנה. <Link href="/privacy">מדיניות פרטיות</Link></p>
                 {err && <p className={c.formErr}>{err} <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
                 <div className={styles.finderCtas}>
-                  <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : "שליחת ההזמנה"}</button>
+                  <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy}>{busy ? "שולח…" : "המשך: קוד אימות בווצאפ"}</button>
                   <button type="button" className={`${styles.cta} ${styles.ctaSecondary}`} onClick={() => setStep("cart")}>חזרה לעגלה</button>
                 </div>
+              </form>
+            )}
+
+            {step === "code" && rows.length > 0 && otp && (
+              <form className={c.drawerBody} onSubmit={submitCode}>
+                <p className={styles.finderIntro}>שלחנו קוד של 4 ספרות בווצאפ ל-<b dir="ltr">{otp.to}</b>. הזינו אותו כאן כדי לשלוח את ההזמנה.</p>
+                <label className={c.field}><span>קוד אימות</span><input id="order-code" required inputMode="numeric" pattern="[0-9]{4}" maxLength={4} autoComplete="one-time-code" autoFocus value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} dir="ltr" /></label>
+                {err && <p className={c.formErr}>{err} <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">לשליחה בווצאפ</a></p>}
+                <div className={styles.finderCtas}>
+                  <button type="submit" className={`${styles.cta} ${styles.ctaAccent}`} disabled={busy || code.length !== 4}>{busy ? "שולח…" : "שליחת ההזמנה"}</button>
+                  <button type="button" className={`${styles.cta} ${styles.ctaSecondary}`} disabled={busy} onClick={() => requestCode()}>שליחת קוד חדש</button>
+                </div>
+                <p className={styles.finderHint}>המספר לא נכון? <button type="button" className={styles.linkBtn} onClick={() => { setStep("form"); setErr(null); }}>חזרה לתיקון</button>. אין ווצאפ במספר הזה? <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`} target="_blank" rel="noopener noreferrer">שלחו את ההזמנה בווצאפ</a>.</p>
               </form>
             )}
           </aside>

@@ -1,6 +1,7 @@
 // הזמנה מהעגלה: מאמתים מול הקטלוג, מחשבים סכום, שולחים לצוות (ווצאפ/מייל) ומחזירים אישור.
 // אין חיוב באתר: הצוות מאשר זמינות מול היבואן וחוזר ללקוח לתשלום.
 // בנוסף (רותם 1.10.2026): ללקוח יוצאת מיד הודעת ווצאפ אישית מהמספר העסקי של רותם, עם המוצר, המחיר והקישור.
+// והזמנה נוצרת רק אחרי אימות הטלפון בקוד ווצאפ (/api/store-order/verify), וכתובת חובה למשלוח ולהתקנה.
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
@@ -8,6 +9,7 @@ import { notifyTeam, sendWhatsApp, israeliMobile } from "../../lib/store-notify"
 import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
+import { otpEnabled, checkCode } from "../../lib/order-otp";
 
 export const runtime = "nodejs";
 
@@ -21,15 +23,15 @@ const nis = (n: number) => n.toLocaleString("he-IL");
 const lastSent = new Map<string, number>();
 
 /** ההודעה ללקוח, בקול של רותם: שם, מה הוזמן עם מחיר וקישור, מה קורה עכשיו, ושהוא זמין במספר הזה */
-function customerMessage(name: string, ref: string, items: OrderItem[], total: number, deliveryId: string | undefined): string {
+function customerMessage(name: string, ref: string, items: OrderItem[], total: number, deliveryId: string | undefined, address: string): string {
   const first = name.trim().split(/\s+/)[0];
   const shown = items.slice(0, 3).map(({ p, qty }) =>
     `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}\n  ${SITE}/store/${p.slug}`);
   const more = items.length > 3 ? [`ועוד ${items.length - 3} פריטים`] : [];
   const next =
-    deliveryId === "courier" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ומחיר משלוח. כדי לזרז, אפשר לשלוח לי כבר כתובת מלאה למשלוח."
+    deliveryId === "courier" ? `אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ומחיר משלוח ל${address || "כתובת שלך"}.`
     : deliveryId === "pickup" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ותיאום איסוף."
-    : deliveryId === "install" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור, ונתאם יחד את ההתקנה."
+    : deliveryId === "install" ? `אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור, ונתאם יחד את ההתקנה${address ? ` ב${address}` : ""}.`
     : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור.";
   return [
     `שלום ${first} 👋`,
@@ -47,13 +49,25 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
 }
 
 export async function POST(req: NextRequest) {
-  let body: { name?: string; phone?: string; delivery?: string; note?: string; items?: Line[]; email?: string; attribution?: unknown };
+  let body: { name?: string; phone?: string; delivery?: string; address?: string; note?: string; items?: Line[]; email?: string; attribution?: unknown; otpToken?: string; otpCode?: string };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const name = String(body.name || "").trim().slice(0, 80);
   const phone = String(body.phone || "").replace(/[^\d+]/g, "").slice(0, 20);
   if (name.length < 2 || phone.replace(/\D/g, "").length < 9) return NextResponse.json({ error: "צריך שם וטלפון תקין כדי שנחזור אליך" }, { status: 400 });
   const items = (body.items || []).map((l) => ({ p: productBySlug(String(l.slug)), qty: Math.max(1, Math.min(200, Math.floor(Number(l.qty) || 1))) })).filter((l) => l.p);
   if (!items.length) return NextResponse.json({ error: "העגלה ריקה" }, { status: 400 });
+  const address = String(body.address || "").replace(/[\r\n\t]+/g, " ").trim().slice(0, 160);
+  if ((body.delivery === "courier" || body.delivery === "install") && address.length < 6) {
+    return NextResponse.json({ error: "צריך כתובת (עיר, רחוב ומספר) כדי לתמחר משלוח או התקנה" }, { status: 400 });
+  }
+  // אימות טלפון: רק מי שקיבל את הקוד בווצאפ למספר שהזין יכול לשלוח הזמנה
+  const verified = otpEnabled();
+  if (verified) {
+    const m = israeliMobile(phone);
+    if (!m || !checkCode(m, String(body.otpCode || ""), String(body.otpToken || ""))) {
+      return NextResponse.json({ error: "קוד האימות לא נכון או שפג תוקפו. אפשר לבקש קוד חדש.", code: "otp" }, { status: 400 });
+    }
+  }
 
   const delivery = deliveryOptions.find((d) => d.id === body.delivery)?.title || "לא נבחר";
   let total = 0, unknown = 0, units = 0;
@@ -82,7 +96,7 @@ export async function POST(req: NextRequest) {
   const mobile = israeliMobile(phone);
   let customerWa = false;
   if (mobile && Date.now() - (lastSent.get(mobile) || 0) > 10 * 60 * 1000) {
-    customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery));
+    customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery, address));
     if (customerWa) lastSent.set(mobile, Date.now());
   }
 
@@ -92,6 +106,8 @@ export async function POST(req: NextRequest) {
     `טלפון: ${phone}`,
     body.email ? `מייל: ${String(body.email).slice(0, 120)}` : null,
     `אספקה: ${delivery}`,
+    address ? `כתובת: ${address}` : null,
+    verified ? "✅ הטלפון אומת בקוד ווצאפ" : null,
     `מקור: ${attributionLabel(body.attribution)}`,
     bulk ? "כמות/סכום של קבלן: להכין הצעת מחיר עם הנחת כמות" : null,
     "",

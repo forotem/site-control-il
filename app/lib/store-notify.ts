@@ -12,23 +12,43 @@ export function israeliMobile(phone: string): string | null {
   return /^9725\d{8}$/.test(d) ? d : null;
 }
 
-/** הודעת ווצאפ מהמספר העסקי (GreenAPI). מחזיר true אם נשלחה */
-export async function sendWhatsApp(to: string, message: string): Promise<boolean> {
+/** עידן (טלרן, היבואן של Reolink): הזמנות מאומתות נשלחות אליו לבדיקת מלאי ו"תפירת" העסקה (רותם 1.10.2026) */
+export const IDAN_WA = process.env.SUPPLIER_WHATSAPP || "972544932440";
+
+/** קריאה ל-GreenAPI עם הפרטים שב-Vercel. null אם לא מוגדר או נכשל */
+export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown): Promise<T | null> {
   const id = process.env.GREEN_ID_INSTANCE;
   const token = process.env.GREEN_API_TOKEN;
-  if (!id || !token) return false;
+  if (!id || !token) return null;
   try {
-    const base = process.env.GREEN_API_URL || `https://${id.slice(0, 4)}.api.greenapi.com`;
-    const res = await fetch(`${base}/waInstance${id}/sendMessage/${token}`, {
+    const base = (process.env.GREEN_API_URL || `https://${id.slice(0, 4)}.api.greenapi.com`).replace(/\/$/, "");
+    const res = await fetch(`${base}/waInstance${id}/${method}/${token}`, body === undefined ? {} : {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chatId: `${to.replace(/\D/g, "")}@c.us`, message }),
+      body: JSON.stringify(body),
     });
-    return res.ok;
+    return res.ok ? ((await res.json()) as T) : null;
   } catch (e) {
-    console.error("store-notify whatsapp failed", e);
-    return false;
+    console.error(`greenapi ${method} failed`, e);
+    return null;
   }
+}
+
+/** הודעת ווצאפ מהמספר העסקי. מחזיר את מזהה ההודעה, או null אם לא נשלחה */
+export async function sendWhatsAppId(to: string, message: string): Promise<string | null> {
+  const r = await greenApi<{ idMessage?: string }>("sendMessage", { chatId: `${to.replace(/\D/g, "")}@c.us`, message });
+  return r?.idMessage || null;
+}
+
+/** הודעת ווצאפ מהמספר העסקי (GreenAPI). מחזיר true אם נשלחה */
+export async function sendWhatsApp(to: string, message: string): Promise<boolean> {
+  return Boolean(await sendWhatsAppId(to, message));
+}
+
+/** סטטוס הודעה יוצאת: sent / delivered / read, או null */
+export async function messageStatus(to: string, idMessage: string): Promise<string | null> {
+  const r = await greenApi<{ statusMessage?: string }>("getMessage", { chatId: `${to.replace(/\D/g, "")}@c.us`, idMessage });
+  return r?.statusMessage || null;
 }
 
 export async function notifyTeam(subject: string, text: string, opts?: { replyTo?: string }): Promise<{ whatsapp: boolean; email: boolean }> {

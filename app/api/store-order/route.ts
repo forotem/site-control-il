@@ -5,13 +5,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
-import { notifyTeam, sendWhatsApp, israeliMobile } from "../../lib/store-notify";
+import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, IDAN_WA } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
 import { otpEnabled, checkCode } from "../../lib/order-otp";
 
 export const runtime = "nodejs";
+// שליחה ללקוח, לעידן ובדיקה שההודעה לעידן נמסרה: עד כמה שניות נוספות
+export const maxDuration = 30;
 
 type Line = { slug: string; qty: number };
 type OrderItem = { p: NonNullable<ReturnType<typeof productBySlug>>; qty: number };
@@ -47,6 +49,26 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
     "רותם, Site-Control",
   ].filter((x) => x !== null).join("\n");
 }
+
+/** ההזמנה לעידן (היבואן), מהמספר של רותם: כל מה שצריך כדי לבדוק מלאי ולתפור את העסקה מול הלקוח */
+function supplierMessage(ref: string, name: string, phone: string, delivery: string, address: string, items: OrderItem[], total: number, note: string): string {
+  return [
+    "היי עידן, הזמנה חדשה מהאתר של Site-Control 🙏",
+    `מס׳ הזמנה: ${ref} (הטלפון של הלקוח אומת בקוד ווצאפ)`,
+    `לקוח: ${name}, ${phone}`,
+    `אספקה: ${delivery}${address ? `, ${address}` : ""}`,
+    "",
+    "פריטים:",
+    ...items.map(({ p, qty }) => `• ${qty} x ${p.brand} ${p.model}${p.sku ? ` (מק״ט ${p.sku})` : ""}${p.price ? `: ${nis(p.price)} ₪ ליח׳ באתר` : ""}`),
+    total ? `סה״כ באתר: ${nis(total)} ₪ כולל מע״מ, לא כולל משלוח` : null,
+    note ? `הערה מהלקוח: ${note}` : null,
+    "",
+    "תוכל לבדוק מלאי ולתפור את העסקה מולו? הלקוח כבר קיבל ממני הודעה שאני בודק מלאי וחוזר אליו.",
+    "תודה, רותם",
+  ].filter((x) => x !== null).join("\n");
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export async function POST(req: NextRequest) {
   let body: { name?: string; phone?: string; delivery?: string; address?: string; note?: string; items?: Line[]; email?: string; attribution?: unknown; otpToken?: string; otpCode?: string };
@@ -100,6 +122,26 @@ export async function POST(req: NextRequest) {
     if (customerWa) lastSent.set(mobile, Date.now());
   }
 
+  // הזמנה מאומתת עוברת לעידן, ובודקים כמה שניות אם ההודעה נמסרה לו
+  let idanStatus: string | null = null;
+  if (verified) {
+    const idanMsgId = await sendWhatsAppId(IDAN_WA, supplierMessage(ref, name, phone, delivery, address, items as OrderItem[], total, String(body.note || "").slice(0, 300)));
+    if (idanMsgId) {
+      idanStatus = "sent";
+      for (const wait of [3000, 4000]) {
+        await sleep(wait);
+        const st = await messageStatus(IDAN_WA, idanMsgId);
+        if (st) idanStatus = st;
+        if (st === "delivered" || st === "read") break;
+      }
+    }
+  }
+  const idanLine = !verified ? null
+    : idanStatus === "read" ? "✅✅ ההזמנה נשלחה לעידן והוא כבר קרא אותה."
+    : idanStatus === "delivered" ? "✅✅ ההזמנה נשלחה לעידן ונמסרה לו."
+    : idanStatus ? "📤 ההזמנה נשלחה לעידן (עדיין לא נמסרה, כנראה הטלפון שלו לא מחובר כרגע)."
+    : "⚠️ לא הצלחנו לשלוח את ההזמנה לעידן. להעביר לו ידנית.";
+
   const text = [
     `מספר הזמנה: ${ref}`,
     `שם: ${name}`,
@@ -119,11 +161,12 @@ export async function POST(req: NextRequest) {
     supplier.length ? `\nמהניסיון מול היבואן:\n${supplier.join("\n")}` : null,
     "",
     customerWa ? "✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ממך (מוצר, מחיר, קישור, ושאתה בודק מלאי)." : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
-    "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
+    idanLine,
+    idanStatus ? "לעשות: לוודא שעידן תופר את העסקה מול הלקוח (מלאי, תשלום, משלוח), ולעדכן אותי." : "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");
 
   const sent = await notifyTeam(`הזמנה חדשה מהחנות ${ref}${bulk ? " (קבלן)" : ""}`, text);
   // אם אף ערוץ לא עבד, לא מאשרים ללקוח הזמנה שאף אחד לא יראה: מחזירים שגיאה וה-UI מציע וואטסאפ.
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח את ההזמנה כרגע. אפשר לשלוח אותה בווצאפ ונטפל מיד." }, { status: 502 });
-  return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email, customerWa });
+  return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email, customerWa, supplier: idanStatus });
 }

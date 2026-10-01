@@ -3449,5 +3449,29 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/reolink-d20.webp",
     "datasheet": null,
     "oldStock": false
+  },
+  {
+    "slug": "dahua-pfb203w",
+    "brand": "Dahua",
+    "model": "PFB203W",
+    "sku": "DH-PFB203W",
+    "title": "זרוע קיר לבנה Dahua PFB203W למצלמות כיפה, הכבל עובר בתוך הזרוע",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 75,
+    "specs": [
+      "זרוע קיר עמידה במים למצלמות כיפה (טורט)",
+      "אלומיניום ופלדה מגולוונת (SECC), צבע לבן",
+      "מידות 160×122×76 מ\"מ, משקל 0.5 ק\"ג, עומס עד 1 ק\"ג",
+      "טמפרטורת עבודה ‎-40°C עד ‎+60°C",
+      "באריזה: ברגים, דיבלים ומפתח"
+    ],
+    "highlights": [
+      "המצלמה בולטת מהקיר, נראה מסודר, והכבל עובר בתוך הזרוע",
+      "היבואן ממליץ עליה לכיפות Reolink בערכות RLK8-1200D4-A, RLK8-820D4-A, NVS16-8MD8 ו-NVS16-12MD8"
+    ],
+    "image": "/store-images/dahua-pfb203w.webp",
+    "datasheet": "https://www.dahuasecurity.com/asset/upload/product/20180523/DH-PFB203W_datasheet.pdf",
+    "oldStock": false
   }
 ];

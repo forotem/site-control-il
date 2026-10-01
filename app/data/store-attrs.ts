@@ -154,6 +154,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-nvs16-12md8": {"kind":"kit","mp":12,"night":"color","range":30,"audio":"two-way","cams":8,"channels":16,"poePorts":8,"hdd":"4TB"},
   "reolink-b10": {"kind":"accessory"},
   "reolink-d20": {"kind":"accessory"},
+  "dahua-pfb203w": {"kind":"accessory"},
 };
 
 export const kindLabel: Record<Kind, string> = {

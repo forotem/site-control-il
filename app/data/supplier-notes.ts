@@ -6,7 +6,13 @@ export type SupplierNote = {
   history: string;
   /** חלופות שעידן הציע או שהיו במלאי, לפי סדר העדפה */
   alternatives?: { slug: string; why: string }[];
+  /** תוספות שעידן ממליץ להציע עם המוצר (אביזרים, שדרוג) */
+  tips?: string[];
 };
+
+// עידן 1.10.2026: עם מצלמות כיפה (turret) להציע זרוע קיר Dahua PFB203W: יוצא מאוד יפה והכבל עובר בתוך ההגבהה.
+// לבנה, אלומיניום, עמידה במים, 160x122x76 מ"מ, עד 1 ק"ג. מחיר והתאמה לבסיס של Reolink: לאשר מול עידן.
+const DOME_ARM_TIP = "עידן: להציע זרוע קיר Dahua PFB203W לכל כיפה. יוצא מאוד יפה, והכבל עובר בתוך ההגבהה (מחיר והתאמה: לאשר מול עידן)";
 
 export const SUPPLIER_NOTES: Record<string, SupplierNote> = {
   "reolink-rlk8-1200b4-a": {
@@ -18,7 +24,11 @@ export const SUPPLIER_NOTES: Record<string, SupplierNote> = {
   },
   "reolink-rlk8-1200d4-a": {
     history: "1.10.2026 עידן: במלאי בשתי עדשות, 2.8 מ\"מ ו-4 מ\"מ. לשאול את הלקוח איזו עדשה לפני אישור.",
+    tips: [DOME_ARM_TIP],
   },
+  "reolink-rlk8-820d4-a": { history: "", tips: [DOME_ARM_TIP] },
+  "reolink-nvs16-8md8": { history: "", tips: [DOME_ARM_TIP] },
+  "reolink-nvs16-12md8": { history: "", tips: [DOME_ARM_TIP] },
 };
 
 export const supplierNoteOf = (slug: string): SupplierNote | undefined => SUPPLIER_NOTES[slug];

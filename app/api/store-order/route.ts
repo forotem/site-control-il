@@ -33,9 +33,11 @@ export async function POST(req: NextRequest) {
     if (!n) return [];
     const alts = (n.alternatives || []).map((a) => {
       const ap = productBySlug(a.slug);
-      return `  חלופה: ${ap ? `${ap.brand} ${ap.model}${ap.price ? `, ${ap.price} ₪` : ""}` : a.slug} | /store/${a.slug} | ${a.why}`;
+      const altTips = supplierNoteOf(a.slug)?.tips || [];
+      return `  חלופה: ${ap ? `${ap.brand} ${ap.model}${ap.price ? `, ${ap.price} ₪` : ""}` : a.slug} | /store/${a.slug} | ${a.why}${altTips.length ? ` | ${altTips.join("; ")}` : ""}`;
     });
-    return [`* ${p!.brand} ${p!.model}: ${n.history}`, ...alts];
+    const tips = (n.tips || []).map((t) => `  להציע גם: ${t}`);
+    return [`* ${p!.brand} ${p!.model}${n.history ? `: ${n.history}` : ""}`, ...alts, ...tips];
   });
   const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5);
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;

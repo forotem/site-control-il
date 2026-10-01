@@ -1332,6 +1332,7 @@ export const storeProducts: StoreProduct[] = [
     "specs": [
       "8-channel PoE NVR with 2TB HDD",
       "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
+      "Also available with 4 mm lenses (RLK8-1200D4-A(4MM)): narrower view, sees farther",
       "Full-colour night vision with spotlights + 30 m IR",
       "Person/vehicle/pet detection, two-way audio",
       "IP67, PoE, 4 x 18 m cables, HDMI, mouse",
@@ -1341,7 +1342,7 @@ export const storeProducts: StoreProduct[] = [
     "datasheet": "https://www.telran.co.il/images/RLK8-1200D4-A(2.8MM)_Reolink_ENG_DS_2023_2.pdf",
     "highlights": [
       "8-channel PoE NVR with 2TB HDD",
-      "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
+      "4 כיפות 12MP בעדשה 2.8 מ״מ (זווית רחבה) או 4 מ״מ (רואה רחוק יותר), מציינים בהזמנה",
       "Full-colour night vision with spotlights + 30 m IR"
     ],
     "oldStock": false

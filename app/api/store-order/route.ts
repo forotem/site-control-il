@@ -5,6 +5,7 @@ import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
+import { supplierNoteOf } from "../../data/supplier-notes";
 
 export const runtime = "nodejs";
 
@@ -26,6 +27,16 @@ export async function POST(req: NextRequest) {
     if (p!.price) total += p!.price * qty; else unknown++;
     return `- ${qty} x ${p!.brand} ${p!.model}${p!.sku ? ` (מק"ט ${p!.sku})` : ""} | ${p!.price ? `${p!.price} ₪ ליח', ${p!.price * qty} ₪` : "לפי פנייה"} | /store/${p!.slug}`;
   });
+  // ניסיון קודם מול היבואן על הפריטים בהזמנה: מה קרה ומה הוצע במקום, כדי לא להתחיל מאפס
+  const supplier = items.flatMap(({ p }) => {
+    const n = supplierNoteOf(p!.slug);
+    if (!n) return [];
+    const alts = (n.alternatives || []).map((a) => {
+      const ap = productBySlug(a.slug);
+      return `  חלופה: ${ap ? `${ap.brand} ${ap.model}${ap.price ? `, ${ap.price} ₪` : ""}` : a.slug} | /store/${a.slug} | ${a.why}`;
+    });
+    return [`* ${p!.brand} ${p!.model}: ${n.history}`, ...alts];
+  });
   const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5);
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;
   const text = [
@@ -42,6 +53,7 @@ export async function POST(req: NextRequest) {
     "",
     `סה"כ (כולל מע"מ, ללא משלוח): ${total.toLocaleString("he-IL")} ₪${unknown ? ` + ${unknown} פריטים לפי פנייה` : ""}`,
     body.note ? `\nהערה מהלקוח: ${String(body.note).slice(0, 500)}` : null,
+    supplier.length ? `\nמהניסיון מול היבואן:\n${supplier.join("\n")}` : null,
     "",
     "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");

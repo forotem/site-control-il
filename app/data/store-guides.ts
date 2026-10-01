@@ -47,7 +47,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
       { term: "קושחה בעברית", explain: "הערכות שמגיעות מיבואן בישראל כוללות ממשק ואפליקציה בעברית ותמיכה בישראל." },
     ],
     compare: [
-      { title: "ערכות 4 מצלמות (8 ערוצים)", slugs: ["reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rlk8-1200b4-a", "reolink-rlk8-1200d4-a"] },
+      { title: "ערכות 4 מצלמות (8 ערוצים)", slugs: ["reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rlk8-1200d4-a"] },
       { title: "ערכות 8 מצלמות (16 ערוצים, דיסק 4TB)", slugs: ["reolink-nvs16-8mb8", "reolink-nvs16-8md8", "reolink-nvs16-12mb8", "reolink-nvs16-12md8"] },
     ],
   },

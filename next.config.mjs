@@ -17,6 +17,8 @@ const nextConfig = {
   redirects: async () => {
     // כתובות ישנות עם באג "undefined" בסלאג + עמודים כפולים שהוסרו
     return [
+      // 1.10.2026: ערכת הצינור "12MP" הוסרה (עידן: רק המקליט 12MP, המצלמות 8MP). מפנים לערכות.
+      { source: '/store/reolink-rlk8-1200b4-a', destination: '/store/c/kits', permanent: true },
       // 23.9.2026: הטיימלאפס עבר כולו ל-timelapseit.co.il. העמוד והפוסטים מופנים לשם.
       { source: '/timelapse', destination: 'https://timelapseit.co.il/', permanent: true },
       // 23.9.2026: חבילות/מחירון של המצלמות הסולאריות מהאתר הישן הוסרו; החנות היא המחירון

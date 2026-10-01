@@ -1295,32 +1295,6 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
-    "slug": "reolink-rlk8-1200b4-a",
-    "brand": "Reolink",
-    "model": "Reolink RLK8-1200B4-A (NVS8-12MB4)",
-    "sku": "RLK8-1200B4-A(2.8MM)",
-    "title": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-1212A עם זרקורים, קושחה בעברית",
-    "category": "kits",
-    "categoryName": "ערכות מצלמות מוכנות",
-    "price": 3570,
-    "specs": [
-      "8-channel PoE NVR with 2TB HDD",
-      "4 x RLC-1212A 12MP (4512x2512) bullet cameras, 2.8 mm lens",
-      "Built-in spotlights, colour night vision, two-way talk",
-      "Person/vehicle/pet smart detection",
-      "IP67, PoE single-cable install, 4 x 18 m cables",
-      "Hebrew firmware"
-    ],
-    "image": "/store-images/reolink-rlk8-1200b4-a.webp",
-    "datasheet": "https://www.telran.co.il/images/RLK8-1200B4-A(2.8MM)_Reolink_ENG_DS_2023_1.pdf",
-    "highlights": [
-      "8-channel PoE NVR with 2TB HDD",
-      "4 x RLC-1212A 12MP (4512x2512) bullet cameras, 2.8 mm lens",
-      "Built-in spotlights, colour night vision, two-way talk"
-    ],
-    "oldStock": false
-  },
-  {
     "slug": "reolink-rlk8-1200d4-a",
     "brand": "Reolink",
     "model": "Reolink RLK8-1200D4-A (NVS8-12MD4)",

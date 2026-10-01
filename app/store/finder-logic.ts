@@ -202,9 +202,8 @@ function pickHybridRecorder(n: number, priority?: Priority): RecItem {
 
 function pickKit(place: Place | undefined, priority: Priority | undefined, budget: Budget | undefined): RecItem {
   if (priority === "color" || budget === "high") {
-    return place === "business" || place === "building"
-      ? item("reolink-rlk8-1200d4-a", 1, "ערכה מוכנה", "4 כיפות 12MP עם זרקורים וצבע מלא בלילה, מקליט 8 ערוצים עם דיסק 2TB, קושחה בעברית")
-      : item("reolink-rlk8-1200b4-a", 1, "ערכה מוכנה", "4 מצלמות צינור 12MP עם זרקורים, שמע דו-כיווני, מקליט עם דיסק 2TB. הכי חדה בחנות");
+    // ערכת הצינור 12MP הוסרה מהחנות (1.10.2026, לפי עידן), אז גם לבית ממליצים על ערכת הכיפות
+    return item("reolink-rlk8-1200d4-a", 1, "ערכה מוכנה", "4 כיפות 12MP עם זרקורים וצבע מלא בלילה, מקליט 8 ערוצים עם דיסק 2TB, קושחה בעברית");
   }
   if (budget === "low" || priority === "cheap") {
     return item("reolink-rlk8-410b4-5mp", 1, "ערכה מוכנה", "4 מצלמות 5MP, מקליט 8 ערוצים PoE עם דיסק 2TB. הכל בקופסה אחת, מחברים ועובד");

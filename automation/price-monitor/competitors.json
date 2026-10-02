@@ -2140,10 +2140,10 @@
     ]
   },
   "reolink-rln8-410": {
-    "model": "RLN8-410",
+    "model": "NVS8 + 2TB",
     "brand": "Reolink",
     "policy": "undercut",
-    "floor": 0,
+    "floor": 1290,
     "urls": []
   },
   "reolink-rln16-410": {
@@ -2448,6 +2448,19 @@
         "url": "https://www.wisebuy.co.il/products.aspx?category=g-hiddencam&keyword=trackmix%20poe",
         "seller": "wisebuy.co.il",
         "note": "1,029 ב-2.10.2026"
+      }
+    ]
+  },
+  "reolink-p334": {
+    "model": "P334",
+    "brand": "Reolink",
+    "policy": "undercut",
+    "floor": 0,
+    "urls": [
+      {
+        "url": "https://kav-isr.com/cameras/ip-security-cameras/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-8mp-%D7%A2%D7%93%D7%A9%D7%94-4-reolink-rlc-820a.html",
+        "seller": "kav-isr.com",
+        "note": "379 ב-2.10.2026 (הכתובת הישנה של RLC-820A, הדף הוא P334)"
       }
     ]
   }

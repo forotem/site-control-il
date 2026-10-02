@@ -1025,7 +1025,8 @@ export const storeProducts: StoreProduct[] = [
       "Inner call / intercom between monitors supported",
       "Picture memory function",
       "Supports IP camera and call divert to mobile app via optional IPG module",
-      "Kit: monitor + outdoor camera door station + power supply"
+      "Kit: monitor + outdoor camera door station + power supply",
+      "אפשר להוסיף מסך נוסף (למשל אחד בסלון ואחד ליד המיטה): VisionNet 2TL-17, מק\"ט 560580"
     ],
     "image": "/store-images/visionnet-kitcom-2-wire-villa-kit-560789-v2.webp",
     "datasheet": null,
@@ -3041,6 +3042,32 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
+    "slug": "reolink-p334",
+    "brand": "Reolink",
+    "model": "P334",
+    "sku": "P334",
+    "title": "מצלמת כיפה IP PoE Reolink P334, 4K 8MP, ראיית לילה צבעונית, מיקרופון מובנה",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 369,
+    "specs": [
+      "4K 8MP (3840×2160) ב-25 פריימים, חיישן 1/2.7\"",
+      "עדשה 4 מ\"מ, זווית אופקית 87°",
+      "אינפרא עד 30 מ' וזרקור לצבע בלילה",
+      "זיהוי אדם/רכב/חיה, מיקרופון מובנה",
+      "PoE, microSD עד 256GB, מתאימה למקליטי Reolink",
+      "IP67"
+    ],
+    "highlights": [
+      "כיפה 4K במחיר של מצלמת צינור",
+      "צבע בלילה",
+      "PoE"
+    ],
+    "image": "/store-images/reolink-p334.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
     "slug": "reolink-p337",
     "brand": "Reolink",
     "model": "P337",
@@ -3194,24 +3221,24 @@ export const storeProducts: StoreProduct[] = [
   {
     "slug": "reolink-rln8-410",
     "brand": "Reolink",
-    "model": "RLN8-410",
-    "sku": null,
-    "title": "מקליט NVR Reolink RLN8-410, 8 ערוצים, 8 יציאות PoE, ללא דיסק",
+    "model": "NVS8 (מחליף את RLN8-410)",
+    "sku": "NVS8",
+    "title": "מקליט NVR Reolink NVS8, 8 יציאות PoE, כולל דיסק 2TB, מצלמות עד 16MP",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 779,
+    "price": 1319,
     "specs": [
-      "8 ערוצי IP עד 12MP, 8 יציאות PoE מובנות",
-      "מפרץ SATA אחד עד 12TB, מסופק ללא דיסק",
-      "יציאות HDMI ו-VGA, אפליקציה בעברית",
-      "מתאים לכל מצלמות ה-PoE של Reolink"
+      "8 יציאות PoE מובנות, עד 12 מצלמות (8 בכבל + 4 מצלמות סוללה Wi-Fi של Reolink)",
+      "דיסק Seagate 2TB מותקן, הרחבה עד 16TB (SATA + eSATA)",
+      "מצלמות עד 16MP, יציאות HDMI 4K ו-VGA לטלוויזיה או למסך",
+      "אפליקציה בעברית, מתאים לכל מצלמות ה-PoE של Reolink"
     ],
     "highlights": [
+      "דיסק 2TB כלול: מוכן להקלטה מהקופסה",
       "PoE מובנה: המצלמות מתחברות ישר למקליט",
-      "8 ערוצים",
-      "בלי דיסק, בוחרים לבד"
+      "מתחבר לטלוויזיה במסך מפוצל"
     ],
-    "image": "/store-images/reolink-rln8-410.webp",
+    "image": "/store-images/reolink-nvs8.webp",
     "datasheet": null,
     "oldStock": false
   },

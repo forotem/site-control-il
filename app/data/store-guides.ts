@@ -32,7 +32,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     compare: [
       { title: "ארבע מדרגות של מצלמת 2.8 מ\"מ לבית", note: "אותה זווית, אותו כבל. ההבדל הוא לילה, סינון והרתעה.", slugs: ["ipc2124lb-af28k-dl2", "ds-2cd1043g2-liu-2-8mm", "ds-2cd2t47g2h-li-2-8mm", "ds-2cd2387g2h-lisu-sl-2-8mm"] },
       { title: "4K לחניון ולחצר גדולה", slugs: ["ds-2cd1383g0-iuf-2-8mm", "ipc2318le-adf28km-wp", "ds-2cd2183g2-iu-2-8mm", "ds-2cd2t87g2h-lisu-sl-2-8mm"] },
-      { title: "מצלמות PoE של Reolink (למקליט Reolink)", slugs: ["reolink-cx410", "reolink-p330", "reolink-p337", "reolink-p340", "reolink-trackmix-poe", "reolink-p430", "reolink-duo-3-poe"] },
+      { title: "מצלמות PoE של Reolink (למקליט Reolink)", slugs: ["reolink-cx410", "reolink-p330", "reolink-p334", "reolink-p337", "reolink-p340", "reolink-trackmix-poe", "reolink-p430", "reolink-duo-3-poe"] },
     ],
   },
   kits: {
@@ -58,7 +58,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
       { title: "NVR או DVR/XVR", body: "מצלמות IP (כבל רשת) צריכות NVR. מצלמות אנלוגיות על קואקס צריכות DVR או XVR. המקליטים ההיברידיים מקבלים גם וגם, וזה מה שמאפשר לשדרג מערכת ישנה בהדרגה." },
       { title: "ערוצים", body: "קונים לפחות פי 1.5 ממה שצריך היום. מערכת של 6 מצלמות מקבלת מקליט 8 ערוצים, 10 מצלמות מקבלות 16." },
       { title: "PoE מובנה", body: "מקליט עם יציאות PoE (8P בשם) מזין את המצלמות ישירות, בלי מתג נפרד. פשוט יותר להתקנה, מתאים עד 8 מצלמות במרחק של עד 100 מטר." },
-      { title: "דיסק", body: "כל המקליטים נמכרים בלי דיסק. דיסק Surveillance 2TB מספיק לכשבועיים של 4 מצלמות, 4TB לחודש של 8 מצלמות. שני מפרצים = כפול זמן או גיבוי." },
+      { title: "דיסק", body: "מקליטי Hikvision ו-Uniview נמכרים בלי דיסק, ומקליטי Reolink NVS8 ו-NVS16 מגיעים עם דיסק מותקן (2TB או 4TB). דיסק Surveillance 2TB מספיק לכשבועיים של 4 מצלמות, 4TB לחודש של 8 מצלמות. שני מפרצים = כפול זמן או גיבוי." },
     ],
     terms: [
       { term: "AcuSense", explain: "מקליט שמסווג אדם ורכב בעצמו, גם למצלמות שאין להן את זה. מסנן התראות ומאפשר חיפוש חכם בהקלטות." },

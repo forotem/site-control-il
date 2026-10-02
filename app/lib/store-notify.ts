@@ -23,7 +23,10 @@ export async function greenApi<T = Record<string, unknown>>(method: string, body
   try {
     const base = (process.env.GREEN_API_URL || `https://${id.slice(0, 4)}.api.greenapi.com`).replace(/\/$/, "");
     const qs = query ? `?${new URLSearchParams(Object.entries(query).map(([k, v]) => [k, String(v)]))}` : "";
-    const res = await fetch(`${base}/waInstance${id}/${method}/${token}${qs}`, body === undefined ? {} : {
+    // cache: "no-store": בלי זה Next.js שומר תשובות GET (כמו lastIncomingMessages) ומחזיר אותן ישנות.
+    // כך נוצר באג ב-2.10: ליד חדש מהאתר לא נקלט לטבלה במשך שעתיים.
+    const res = await fetch(`${base}/waInstance${id}/${method}/${token}${qs}`, body === undefined ? { cache: "no-store" } : {
+      cache: "no-store",
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),

@@ -30,6 +30,15 @@ export async function GET(req: NextRequest) {
   if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
   if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
+  // ?ids=a,b: סטטוס הודעות שנשלחו (sent / delivered / read), לאימות אחרי שליחה
+  const ids = (req.nextUrl.searchParams.get("ids") || "").split(",").map((s) => s.trim()).filter(Boolean).slice(0, 10);
+  if (ids.length) {
+    const status = await Promise.all(ids.map(async (idMessage) => {
+      const r = await greenApi<Msg & { statusMessage?: string; timestamp?: number }>("getMessage", { chatId: `${phone}@c.us`, idMessage });
+      return { idMessage, status: r?.statusMessage || null, timestamp: r?.timestamp || null };
+    }));
+    return NextResponse.json({ phone, status }, { headers: { "Cache-Control": "no-store" } });
+  }
   const keep = ["idMessage", "timestamp", "type", "typeMessage", "textMessage", "caption", "fileName", "mimeType", "downloadUrl", "statusMessage", "senderName", "quotedMessage", "extendedTextMessage"];
   const messages = history.map((m) => Object.fromEntries(keep.filter((k) => m[k] !== undefined).map((k) => [k, m[k]])));
   return NextResponse.json({ phone, count: messages.length, messages }, { headers: { "Cache-Control": "no-store" } });

@@ -1,10 +1,4 @@
-/** @type {i      // 2.10.2026: פוסטים ישנים על מצלמות לאתר בנייה שהתחרו זה בזה ובדף הקבלנים, אוחדו אליו
-      { source: '/blog/cameras-security-construction-2026', destination: '/construction-sites', permanent: true },
-      { source: '/blog/cameras-sites-construction-2026', destination: '/construction-sites', permanent: true },
-      { source: '/blog/security-construction-2026', destination: '/construction-sites', permanent: true },
-      { source: '/blog/construction-2026', destination: '/construction-sites', permanent: true },
-      { source: '/blog/site-construction-2026', destination: '/construction-sites', permanent: true },
-mport('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     unoptimized: false,
@@ -23,6 +17,12 @@ const nextConfig = {
   redirects: async () => {
     // כתובות ישנות עם באג "undefined" בסלאג + עמודים כפולים שהוסרו
     return [
+      // 2.10.2026: פוסטים ישנים על מצלמות לאתר בנייה שהתחרו זה בזה ובדף הקבלנים, אוחדו אליו
+      { source: '/blog/cameras-security-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/cameras-sites-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/security-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/site-construction-2026', destination: '/construction-sites', permanent: true },
       // 1.10.2026: ערכת הצינור "12MP" הוסרה (עידן: רק המקליט 12MP, המצלמות 8MP). מפנים לערכות.
       { source: '/store/reolink-rlk8-1200b4-a', destination: '/store/c/kits', permanent: true },
       // 23.9.2026: הטיימלאפס עבר כולו ל-timelapseit.co.il. העמוד והפוסטים מופנים לשם.

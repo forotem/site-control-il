@@ -139,6 +139,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-p330m": {"kind":"pt","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},
   "reolink-p337": {"kind":"dome","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":125},
   "reolink-p330": {"kind":"bullet","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":105},
+  "reolink-trackmix-poe": {"kind":"pt","mp":8,"night":"hybrid","range":15,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},
   "reolink-p340": {"kind":"bullet","mp":12,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-p344": {"kind":"dome","mp":12,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-p430": {"kind":"bullet","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},

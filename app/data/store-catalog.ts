@@ -3092,6 +3092,31 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
+    "slug": "reolink-trackmix-poe",
+    "brand": "Reolink",
+    "model": "TrackMix PoE",
+    "sku": "TrackMix PoE",
+    "title": "מצלמת אבטחה ממונעת IP PoE Reolink TrackMix PoE, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי אחרי אדם ורכב",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 999,
+    "specs": [
+      "8MP 4K, שתי עדשות: רחבה 2.8 מ\"מ וטלה 8 מ\"מ, זום היברידי x6",
+      "מעקב אוטומטי: מסתובבת לבד אחרי אדם או רכב, 355° אופקי ו-90° אנכי",
+      "זרקורים לצבע בלילה ואינפרא עד 15 מ', שמע דו-כיווני",
+      "PoE 802.3af (מזרק PoE בקופסה) או ספק 12V, microSD עד 256GB",
+      "מתאימה למקליטי Reolink, עמידה לחוץ, ‎-10 עד 55 מעלות"
+    ],
+    "highlights": [
+      "עוקבת לבד אחרי מי שנכנס, בלי לגעת באפליקציה",
+      "רואים הכל ומתקרבים בזום x6",
+      "PoE בכבל: יציבה יותר מ-Wi-Fi"
+    ],
+    "image": "/store-images/reolink-trackmix-poe.webp",
+    "datasheet": "https://www.telran.co.il/images/Trackmix PoE_Reolink_ENG_DS_2022_2.pdf",
+    "oldStock": false
+  },
+  {
     "slug": "reolink-p340",
     "brand": "Reolink",
     "model": "P340",

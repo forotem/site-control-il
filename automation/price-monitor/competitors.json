@@ -2432,5 +2432,23 @@
         "note": ""
       }
     ]
+  },
+  "reolink-trackmix-poe": {
+    "model": "TrackMix PoE",
+    "brand": "Reolink",
+    "policy": "undercut",
+    "floor": 0,
+    "urls": [
+      {
+        "url": "https://www.zap.co.il/model.aspx?modelid=1190781",
+        "seller": "zap.co.il",
+        "note": "1,029 ב-2.10.2026"
+      },
+      {
+        "url": "https://www.wisebuy.co.il/products.aspx?category=g-hiddencam&keyword=trackmix%20poe",
+        "seller": "wisebuy.co.il",
+        "note": "1,029 ב-2.10.2026"
+      }
+    ]
   }
 }

@@ -76,6 +76,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     choose: [
       { title: "2 גידים", body: "רוב הבתים והבניינים בישראל מחווטים ב-2 גידים. מערכות VisionNet רצות על הכבל הקיים בלי לפתוח קירות: פנל בכניסה, מסך בכל דירה." },
       { title: "IP", body: "בבית חדש עם תשתית רשת, אינטרקום IP של Hikvision נותן מסך מגע, מענה מהנייד מכל מקום ותמונות של מי שצלצל. ערכת DS-KIS607-S כוללת הכל." },
+      { title: "להורים מבוגרים", body: "מסך פיזי ליד המיטה או בסלון, מחובר בכבל ולא אלחוטי, בלי אפליקציה ובלי אינטרנט: ערכת VisionNet KITCOM של 2 גידים. ההורה רואה מי בדלת ופותח בלחיצה, בלי טלפון. רוצים שגם הילדים יענו מהנייד? יש גרסה עם Wi-Fi. כדי לפתוח את הדלת מהמסך צריך מנעול חשמלי בדלת." },
       { title: "היברידי", body: "מסך DH של VisionNet מתחבר ל-2 הגידים הקיימים ומוסיף Wi-Fi ואפליקציה. הפתרון לדירה בבניין ישן שרוצה לענות מהנייד." },
       { title: "בקרת כניסה לעסק", body: "קודן: קוד ותג, בלי דוחות. מסוף טביעת אצבע: זיהוי אישי ודוח נוכחות. מסוף זיהוי פנים: כניסה בלי מגע בפחות מחצי שנייה. לכולם צריך מנעול חשמלי וספק." },
     ],
@@ -84,7 +85,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
       { term: "Mifare / EM", explain: "שני סוגי תגים. Mifare (13.56MHz) מאובטח יותר ונפוץ בבניינים חדשים, EM (125kHz) זול ונפוץ בשערים." },
     ],
     compare: [
-      { title: "ערכות לבית פרטי", slugs: ["ds-kis212", "visionnet-kitcom-2-wire-villa-kit-560789", "visionnet-dh-hybrid-kit-560171", "ds-kis607-s"] },
+      { title: "ערכות לבית פרטי", slugs: ["ds-kis212", "visionnet-kitcom-2-wire-villa-kit-560789", "visionnet-kitcom-wifi-2-wire-villa-kit-560791", "visionnet-dh-hybrid-kit-560171", "ds-kis607-s"] },
       { title: "בקרת כניסה לעסק", slugs: ["visionnet-k-560820", "ds-k1t502dbfwx-c", "ds-k1t323mbfwx-e1", "ds-k1t344ebfwx-e1", "ds-k1t671m"] },
     ],
   },

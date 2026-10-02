@@ -1030,9 +1030,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-kitcom-2-wire-villa-kit-560789-v2.webp",
     "datasheet": null,
     "highlights": [
-      "7\" colour TFT monitor with touch-sensor buttons and intuitive menu",
-      "2-wire non-polarised connection between panel and monitor (plug & play)",
-      "Inner call / intercom between monitors supported"
+      "מסך 7\" בבית ופנל עם מצלמה בדלת, 2 גידים בלבד",
+      "בלי אפליקציה ובלי אינטרנט: מתאים להורים מבוגרים",
+      "שיחה פנימית בין מסכים וזיכרון תמונות"
     ],
     "oldStock": false
   },
@@ -1056,9 +1056,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-kitcom-wifi-2-wire-villa-kit-560791.webp",
     "datasheet": "https://www.telran.co.il/images/560791_VisionNet_ENG_DS_2023_2.pdf",
     "highlights": [
-      "7\" high-resolution digital colour TFT monitor with touch-sensor buttons",
-      "Wi-Fi: call divert to mobile phone app (remote view & door open)",
-      "2-wire connection between panel and monitor (plug & play)"
+      "עונים ופותחים את הדלת גם מהנייד (Wi-Fi)",
+      "פנל מתכת עם מצלמה וקודן",
+      "2 גידים, Plug & Play"
     ],
     "oldStock": false
   },

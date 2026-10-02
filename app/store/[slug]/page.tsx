@@ -13,6 +13,9 @@ import { BUSINESS } from "../../data/business";
 import { DealStrip } from "../../deals/DealStrip";
 import styles from "../store.module.css";
 
+// כתובת שלא קיימת מחזירה 404 אמיתי (בלי זה loading.tsx שולח 200 ונוצר soft 404 בגוגל)
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return storeProducts.map((p) => ({ slug: p.slug }));
 }

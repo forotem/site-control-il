@@ -69,6 +69,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
+// כתובת שלא קיימת מחזירה 404 אמיתי (בלי זה loading.tsx שולח 200 ונוצר soft 404 בגוגל)
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,

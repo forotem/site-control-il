@@ -1,0 +1,36 @@
+// השיחה בווצאפ עם ליד של Site-Control, לתיעוד ומעקב בטבלת הלידים.
+// רותם 2.10.2026: "תבדוק בווצאפ שלי אם דיברתי עם הלקוחות האלו ומה אמרתי להם, הכול מתועד בשיחה".
+// פרטי GreenAPI קיימים רק ב-Vercel, אז הכלי המקומי (site-control-tools/lead-agent/lead-chats.js) קורא דרך כאן.
+// מוגן במפתח שנגזר מ-RESEND_API_KEY, ומחזיר שיחה רק אם היא פרטית ויש בה הודעה נכנסת מכפתור באתר:
+// כך זה לא כלי לקריאת כל שיחה בטלפון של רותם, רק של לידים שהגיעו מהאתר.
+import { NextRequest, NextResponse } from "next/server";
+import { createHash, timingSafeEqual } from "crypto";
+import { greenApi, IDAN_WA, israeliMobile } from "../../../lib/store-notify";
+import { siteSourceOf } from "../../../lib/site-wa-prefills";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+type Msg = Record<string, unknown> & { type?: string; textMessage?: string; extendedTextMessage?: { text?: string } };
+
+function authorized(req: NextRequest): boolean {
+  const base = process.env.RESEND_API_KEY;
+  const got = req.headers.get("x-sc-leads") || "";
+  if (!base || !got) return false;
+  const want = createHash("sha256").update(`site-leads:${base}`).digest("hex");
+  return got.length === want.length && timingSafeEqual(Buffer.from(got), Buffer.from(want));
+}
+
+export async function GET(req: NextRequest) {
+  if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const phone = israeliMobile(req.nextUrl.searchParams.get("phone") || "");
+  if (!phone || phone === IDAN_WA) return NextResponse.json({ error: "bad phone" }, { status: 400 });
+  const count = Math.min(300, Math.max(1, Number(req.nextUrl.searchParams.get("count")) || 200));
+  const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count });
+  if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
+  if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
+  const keep = ["idMessage", "timestamp", "type", "typeMessage", "textMessage", "caption", "fileName", "mimeType", "downloadUrl", "statusMessage", "senderName", "quotedMessage", "extendedTextMessage"];
+  const messages = history.map((m) => Object.fromEntries(keep.filter((k) => m[k] !== undefined).map((k) => [k, m[k]])));
+  return NextResponse.json({ phone, count: messages.length, messages }, { headers: { "Cache-Control": "no-store" } });
+}

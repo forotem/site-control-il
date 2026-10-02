@@ -15,14 +15,15 @@ export function israeliMobile(phone: string): string | null {
 /** עידן (טלרן, היבואן של Reolink): הזמנות מאומתות נשלחות אליו לבדיקת מלאי ו"תפירת" העסקה (רותם 1.10.2026) */
 export const IDAN_WA = process.env.SUPPLIER_WHATSAPP || "972544932440";
 
-/** קריאה ל-GreenAPI עם הפרטים שב-Vercel. null אם לא מוגדר או נכשל */
-export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown): Promise<T | null> {
+/** קריאה ל-GreenAPI עם הפרטים שב-Vercel. null אם לא מוגדר או נכשל. query: פרמטרים ל-GET (למשל minutes) */
+export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown, query?: Record<string, string | number>): Promise<T | null> {
   const id = process.env.GREEN_ID_INSTANCE;
   const token = process.env.GREEN_API_TOKEN;
   if (!id || !token) return null;
   try {
     const base = (process.env.GREEN_API_URL || `https://${id.slice(0, 4)}.api.greenapi.com`).replace(/\/$/, "");
-    const res = await fetch(`${base}/waInstance${id}/${method}/${token}`, body === undefined ? {} : {
+    const qs = query ? `?${new URLSearchParams(Object.entries(query).map(([k, v]) => [k, String(v)]))}` : "";
+    const res = await fetch(`${base}/waInstance${id}/${method}/${token}${qs}`, body === undefined ? {} : {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),

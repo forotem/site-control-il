@@ -1,5 +1,5 @@
 {
- "note": "סלאגים שאוחדו לפוסטים אחרים - הבוט לא ייצר אותם מחדש | 23.9.2026: נושאי טיימלאפס עברו ל-timelapseit.co.il ולא נכתבים כאן יותר",
+ "note": "סלאגים שאוחדו לפוסטים אחרים - הבוט לא ייצר אותם מחדש | 23.9.2026: נושאי טיימלאפס עברו ל-timelapseit.co.il ולא נכתבים כאן יותר | 2.10.2026: 5 פוסטי \"מצלמות לאתר בנייה\" אוחדו לדף /construction-sites (301)",
  "retired": [
   "cameras-monitoring-2026",
   "cameras-projects-2026",
@@ -23,6 +23,11 @@
   "photography-timelapse-construction-2026",
   "timelapse-marketing-advertising-projects-construction-2026",
   "monitoring-progress-project-construction-2026",
-  "documentation-construction-legal-2026"
+  "documentation-construction-legal-2026",
+  "cameras-security-construction-2026",
+  "cameras-sites-construction-2026",
+  "security-construction-2026",
+  "construction-2026",
+  "site-construction-2026"
  ]
 }

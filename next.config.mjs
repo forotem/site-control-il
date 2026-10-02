@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
+/** @type {i      // 2.10.2026: פוסטים ישנים על מצלמות לאתר בנייה שהתחרו זה בזה ובדף הקבלנים, אוחדו אליו
+      { source: '/blog/cameras-security-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/cameras-sites-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/security-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/site-construction-2026', destination: '/construction-sites', permanent: true },
+mport('next').NextConfig} */
 const nextConfig = {
   images: {
     unoptimized: false,

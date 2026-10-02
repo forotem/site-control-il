@@ -1245,26 +1245,26 @@ export const storeProducts: StoreProduct[] = [
   {
     "slug": "reolink-rlk8-810b4-a-rlk8-800b4",
     "brand": "Reolink",
-    "model": "Reolink RLK8-810B4-A / RLK8-800B4 (NVS8-8MB4)",
-    "sku": "RLK8-810B4-A",
-    "title": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור RLC-810A, קושחה בעברית",
+    "model": "Reolink NVS8-8MB4 (מחליפה את RLK8-810B4-A / RLK8-800B4)",
+    "sku": "NVS8-8MB4",
+    "title": "ערכת Reolink NVS8-8MB4 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור עם צבע בלילה, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
     "price": 2619,
     "specs": [
-      "8-channel PoE NVR (8 x 100 Mbps PoE ports) with 2TB HDD, max 12TB",
-      "4 x RLC-810A 4K 8MP bullet cameras, 4.0 mm, 87° HFOV",
-      "H.265/H.264, 3840x2160 @ 25fps",
-      "IR night vision 30 m (18 LEDs), IP66",
-      "Person/vehicle detection, Reolink app, Hebrew firmware",
-      "Working -10 to +45 C"
+      "מקליט NVR עם 8 ערוצים ו-8 יציאות PoE, דיסק Seagate 2TB בפנים, עד 12TB",
+      "4 מצלמות צינור 4K 8MP מהדור החדש (P330, שמחליפה את RLC-810A), עדשה 2.8 מ\"מ",
+      "אינפרא עד 30 מ' וזרקור לצבע בלילה",
+      "זיהוי אדם/רכב, הקלטה בתנועה, לפי לוח זמנים או 24/7",
+      "מצלמות IP67, יציאות HDMI/VGA, אפליקציית Reolink וקושחה בעברית",
+      "מקום ל-4 מצלמות Reolink נוספות"
     ],
-    "image": "/store-images/reolink-rlk8-810b4-a-rlk8-800b4.webp",
-    "datasheet": "https://www.telran.co.il/images/RLK8-810B4-A_Reolink_ENG 2021.pdf",
+    "image": "/store-images/reolink-nvs8-8mb4.webp",
+    "datasheet": "https://www.telran.co.il/images/NVS8-8MB4_Reolink_ENG_DS_2024.pdf",
     "highlights": [
-      "8-channel PoE NVR (8 x 100 Mbps PoE ports) with 2TB HDD, max 12TB",
-      "4 x RLC-810A 4K 8MP bullet cameras, 4.0 mm, 87° HFOV",
-      "H.265/H.264, 3840x2160 @ 25fps"
+      "4 מצלמות 4K + מקליט 8 ערוצים PoE",
+      "דיסק 2TB, מקום ל-4 מצלמות נוספות",
+      "צבע בלילה עם זרקור"
     ],
     "oldStock": false
   },
@@ -3063,6 +3063,32 @@ export const storeProducts: StoreProduct[] = [
     ],
     "image": "/store-images/reolink-p337.webp",
     "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p330",
+    "brand": "Reolink",
+    "model": "P330",
+    "sku": "P330",
+    "title": "מצלמת צינור IP PoE Reolink P330, 4K 8MP, ראיית לילה צבעונית ושמע דו-כיווני (מחליפה את RLC-810A)",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 369,
+    "specs": [
+      "4K 8MP (3840×2160) ב-25 פריימים, חיישן 1/2.7\"",
+      "עדשה 2.8 מ\"מ F1.6, זווית אופקית 105°",
+      "אינפרא עד 30 מ' וזרקור 700 לומן לצבע בלילה",
+      "שמע דו-כיווני (מיקרופון ורמקול), זיהוי אדם/רכב/חיה",
+      "PoE 802.3af או 12V, microSD עד 512GB, מתאימה למקליטי Reolink",
+      "IP67, מארז אלומיניום, עובדת בין ‎-10 ל-55 מעלות"
+    ],
+    "highlights": [
+      "הדור החדש של RLC-810A",
+      "צבע בלילה + שמע דו-כיווני",
+      "4K PoE"
+    ],
+    "image": "/store-images/reolink-p330.webp",
+    "datasheet": "https://www.telran.co.il/images/P330_Reolink_ENG_DS_2025.pdf",
     "oldStock": false
   },
   {

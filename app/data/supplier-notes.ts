@@ -19,6 +19,13 @@ export const SUPPLIER_NOTES: Record<string, SupplierNote> = {
     history: "1.10.2026 עידן: במלאי בשתי עדשות, 2.8 מ\"מ ו-4 מ\"מ. לשאול את הלקוח איזו עדשה לפני אישור.",
     tips: [DOME_ARM_TIP],
   },
+  "reolink-rlk8-810b4-a-rlk8-800b4": {
+    history: "1.10.2026 (הזמנת עלי): עידן אמר למכור NVS8-8MB4 ב-2,639 ₪. 2.10.2026 עידן: RLK8-800B4 ו-RLK8-810B4-A לא במלאי, NVS8-8MB4 במלאי, ולכן זה הדגם שמופיע בדף. לוודא מול עידן שהמצלמות בערכה הן P330 (מחליפה את RLC-810A).",
+    alternatives: [{ slug: "reolink-rlk8-1200d4-a", why: "ערכת כיפה 12MP, הייתה במלאי ב-1.10 בעדשה 2.8 או 4 מ\"מ" }],
+  },
+  "reolink-p330": {
+    history: "2.10.2026 עידן: RLC-810A לא במלאי, P330 היא הדגם המחליף החדש. מי ששואל על RLC-810A מקבל P330.",
+  },
   "reolink-rlk8-820d4-a": { history: "", tips: [DOME_ARM_TIP] },
   "reolink-nvs16-8md8": { history: "", tips: [DOME_ARM_TIP] },
   "reolink-nvs16-12md8": { history: "", tips: [DOME_ARM_TIP] },

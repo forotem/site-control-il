@@ -32,7 +32,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     compare: [
       { title: "ארבע מדרגות של מצלמת 2.8 מ\"מ לבית", note: "אותה זווית, אותו כבל. ההבדל הוא לילה, סינון והרתעה.", slugs: ["ipc2124lb-af28k-dl2", "ds-2cd1043g2-liu-2-8mm", "ds-2cd2t47g2h-li-2-8mm", "ds-2cd2387g2h-lisu-sl-2-8mm"] },
       { title: "4K לחניון ולחצר גדולה", slugs: ["ds-2cd1383g0-iuf-2-8mm", "ipc2318le-adf28km-wp", "ds-2cd2183g2-iu-2-8mm", "ds-2cd2t87g2h-lisu-sl-2-8mm"] },
-      { title: "מצלמות PoE של Reolink (למקליט Reolink)", slugs: ["reolink-cx410", "reolink-p337", "reolink-p340", "reolink-p430", "reolink-duo-3-poe"] },
+      { title: "מצלמות PoE של Reolink (למקליט Reolink)", slugs: ["reolink-cx410", "reolink-p330", "reolink-p337", "reolink-p340", "reolink-p430", "reolink-duo-3-poe"] },
     ],
   },
   kits: {

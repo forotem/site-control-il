@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/about"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: url("/contact"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.5 },
     { url: url("/shipping"), lastModified: CATALOG_UPDATED, changeFrequency: "monthly", priority: 0.4 },
+    { url: url("/returns"), lastModified: new Date("2026-10-03"), changeFrequency: "yearly", priority: 0.3 },
     { url: url("/privacy"), lastModified: CATALOG_UPDATED, changeFrequency: "yearly", priority: 0.2 },
     { url: url("/accessibility"), lastModified: CATALOG_UPDATED, changeFrequency: "yearly", priority: 0.2 },
     { url: url("/blog"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.6 },

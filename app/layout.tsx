@@ -246,6 +246,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     { href: '/store/c/wifi', label: 'מצלמות Wi-Fi' },
                     { href: '/deals', label: 'מבצעים' },
                     { href: '/shipping', label: 'משלוחים ואיסוף' },
+                    { href: '/returns', label: 'החזרות וביטולים' },
                   ].map((l) => (
                     <li key={l.href}><Link href={l.href} style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem' }}>{l.label}</Link></li>
                   ))}
@@ -275,6 +276,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(139, 163, 191, 0.6)' }}>© {new Date().getFullYear()} Site-Control - מצלמות אבטחה, התקנה וחנות. כל הזכויות שמורות.</p>
               <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', gap: '1rem' }}>
                 <Link href="/shipping" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>משלוחים</Link>
+                <Link href="/returns" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>החזרות</Link>
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
               </p>

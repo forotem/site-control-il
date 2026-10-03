@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
 import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder } from "../../data/store-attrs";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
-import { offerShippingDetails } from "../../components/Schema";
+import { offerShippingDetails, merchantReturnPolicy } from "../../components/Schema";
 import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
 import { AddToCart } from "../CartUI";
@@ -130,6 +130,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           seller: { "@type": "Organization", name: "Site-Control" },
           // משלוח בתשלום נפרד לפי כתובת (BUSINESS.shipping) — בסכמה כתקרה + ימי אספקה, כמו בדף /shipping
           shippingDetails: offerShippingDetails(p.category),
+          // 14 יום לפי חוק הגנת הצרכן (BUSINESS.returns), כמו בדף /returns
+          hasMerchantReturnPolicy: merchantReturnPolicy(),
         }
       : undefined,
   };
@@ -201,7 +203,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 צריך סים? חבילת {deal.sim.gb}GB ל-{deal.sim.months} חודשים ב-{nis(deal.sim.price)} ₪, תשלום חד-פעמי. מבקשים אותה בווצאפ יחד עם ההזמנה.
               </p>
             )}
-            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link></p>
+            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link></p>
           </div>
 
           {p.specs.length > 0 && (

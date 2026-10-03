@@ -39,9 +39,25 @@ export function LocalBusinessSchema() {
 }
 
 /**
+ * מדיניות החזרה לסכמת Offer (MerchantReturnPolicy), מקבילה לדף /returns ול-BUSINESS.returns.
+ * גוגל: applicableCountry + returnPolicyCategory חובה, merchantReturnDays חובה לחלון סופי;
+ * ReturnFeesCustomerResponsibility = הלקוח מחזיר על חשבונו (ואז לא מציינים returnShippingFeesAmount).
+ */
+export function merchantReturnPolicy() {
+  return {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'IL',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: BUSINESS.returns.days,
+    returnMethod: 'https://schema.org/ReturnByMail',
+    returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+    merchantReturnLink: `${BASE_URL}/returns`,
+  };
+}
+
+/**
  * פרטי משלוח לסכמת Offer (OfferShippingDetails) לפי קטגוריית המוצר בחנות.
  * המספרים ב-BUSINESS.shipping.schema: תקרת מחיר (גוגל דורשת value או maxValue) וימי אספקה.
- * אין כאן מדיניות החזרה (hasMerchantReturnPolicy): תתווסף רק אחרי שרותם יאשר נוסח ויהיה דף גלוי באתר.
  */
 export function offerShippingDetails(category: string) {
   const s = BUSINESS.shipping.schema;
@@ -95,8 +111,9 @@ export function ProductSchema({
         '@type': 'Organization',
         name: 'Site-Control',
       },
-      // בלי מדיניות החזרה ומשלוח בסכמה: הערכים הישנים (החזרה חינם 30 יום, משלוח חינם) לא נכונים,
-      // ונתון לא נכון בסכמה הוא הטעיה בעיני גוגל. יחזרו כשיהיו דפי /shipping ו-/returns אמיתיים.
+      // הערכים הישנים כאן (החזרה חינם 30 יום, משלוח חינם) לא היו נכונים; עכשיו מהמקור האחד ב-BUSINESS.
+      shippingDetails: offerShippingDetails('solar'),
+      hasMerchantReturnPolicy: merchantReturnPolicy(),
     } : undefined,
   };
   return <JsonLd json={json} />;

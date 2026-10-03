@@ -12,6 +12,7 @@ import { AddToCart } from "../CartUI";
 import { dealForProduct } from "../../data/deals";
 import { BUSINESS } from "../../data/business";
 import { DealStrip } from "../../deals/DealStrip";
+import { reviewsOf, ratingOf } from "../../data/reviews";
 import styles from "../store.module.css";
 
 // כתובת שלא קיימת מחזירה 404 אמיתי (בלי זה loading.tsx שולח 200 ונוצר soft 404 בגוגל)
@@ -73,7 +74,7 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
   } else if (isRecorder(a)) {
     out.push(`${kindLabel[a.kind]}, עד ${a.channels} מצלמות`);
     out.push(a.poePorts ? `${a.poePorts} יציאות PoE מובנות: המצלמות מתחברות ישר למקליט` : "נדרש מתג PoE להזנת המצלמות");
-    out.push(`${a.bays === 2 ? "שני מפרצי דיסק" : "מפרץ דיסק אחד"}, מסופק בלי דיסק`);
+    out.push(`${a.bays === 2 ? "שני מפרצי דיסק" : "מפרץ דיסק אחד"}, ${a.hdd ? `דיסק ${a.hdd} מותקן` : "מסופק בלי דיסק"}`);
     if (a.ai === "acusense") out.push("סינון אדם/רכב במקליט וחיפוש חכם בהקלטות");
   } else if (a.kind === "kit") {
     out.push(`${a.cams} מצלמות ומקליט ${a.channels} ערוצים עם דיסק ${a.hdd}, כבלים ואפליקציה בעברית`);
@@ -101,6 +102,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
   );
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+  // ביקורות של לקוחות שקנו (app/data/reviews.ts). בסכמה רק כשיש ביקורת אמיתית, אף פעם לא דירוג מומצא.
+  const reviews = reviewsOf(p.slug);
+  const rating = ratingOf(p.slug);
   const breadcrumbItems = [
     { name: "חנות", url: "/store" },
     { name: p.categoryName, url: `/store/c/${p.category}` },
@@ -119,6 +123,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     image: p.image ? `${BASE_URL}${encodeURI(p.image)}` : undefined,
     url: `${BASE_URL}/store/${p.slug}`,
     description: p.highlights.join(". "),
+    aggregateRating: rating ? { "@type": "AggregateRating", ratingValue: rating.value, reviewCount: rating.count, bestRating: 5, worstRating: 1 } : undefined,
+    review: reviews.length
+      ? reviews.slice(0, 10).map((r) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.name },
+          datePublished: r.date,
+          reviewBody: r.text,
+          reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+        }))
+      : undefined,
     offers: p.price
       ? {
           "@type": "Offer",
@@ -152,6 +166,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className={styles.info}>
           <span className={styles.eyebrow}>{p.categoryName} · {kindLabel[a.kind]}</span>
           <h1>{p.title}</h1>
+          {rating && (
+            <a href="#reviews" className={styles.ratingLine} aria-label={`דירוג ${rating.value} מתוך 5, ${rating.count} ביקורות`}>
+              <span aria-hidden>{"★".repeat(Math.round(rating.value))}{"☆".repeat(5 - Math.round(rating.value))}</span> {rating.value} · {rating.count} ביקורות של לקוחות
+            </a>
+          )}
           <div className={styles.meta}>
             <span>מותג: <b>{p.brand}</b></span>
             <span>דגם: <code>{p.model}</code></span>
@@ -203,7 +222,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 צריך סים? חבילת {deal.sim.gb}GB ל-{deal.sim.months} חודשים ב-{nis(deal.sim.price)} ₪, תשלום חד-פעמי. מבקשים אותה בווצאפ יחד עם ההזמנה.
               </p>
             )}
-            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי." : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link></p>
+            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link></p>
           </div>
 
           {p.specs.length > 0 && (
@@ -219,6 +238,25 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+
+      {reviews.length > 0 && (
+        <section id="reviews" className={styles.related}>
+          <h2>ביקורות של לקוחות שקנו ({reviews.length})</h2>
+          <ul className={styles.reviews}>
+            {reviews.map((r, i) => (
+              <li key={i}>
+                <div className={styles.reviewHead}>
+                  <span className={styles.reviewStars} aria-label={`${r.rating} מתוך 5`}>{"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}</span>
+                  <b>{r.name}</b>{r.city ? <span>, {r.city}</span> : null}
+                  <time dateTime={r.date}>{r.date.split("-").reverse().join("/")}</time>
+                </div>
+                <p>{r.text}</p>
+              </li>
+            ))}
+          </ul>
+          <p className={styles.compareNote}>רק לקוחות שקנו אצלנו יכולים לכתוב ביקורת, דרך קישור אישי אחרי ההזמנה. אנחנו מפרסמים כל ביקורת אמיתית, גם ביקורת שלילית.</p>
+        </section>
+      )}
 
       {compareSlugs.length > 1 && (
         <section className={styles.related}>

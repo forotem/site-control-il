@@ -2,7 +2,7 @@
 // רותם 2.10.2026, על טיוטות הפולואפ ללידים מהאתר: "כן תשלח להם מהטלפון שלי".
 // פרטי GreenAPI קיימים רק ב-Vercel, אז הכלי המקומי (site-control-tools/lead-agent/lead-send.js) שולח דרך כאן.
 // מוגן במפתח נפרד שנגזר מ-RESEND_API_KEY, ושולח רק למי שפנה לרותם מכפתור באתר (יש בשיחה הודעה נכנסת
-// עם טקסט של האתר). כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת.
+// עם טקסט של האתר), או ללקוח שקיבל מאיתנו הודעת הזמנה עם orderRef. כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { greenApi, IDAN_WA, israeliMobile, sendWhatsAppId } from "../../../lib/store-notify";
@@ -31,15 +31,18 @@ function isShabbat(now = new Date()): boolean {
 export async function POST(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   if (isShabbat()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
-  let body: { phone?: string; texts?: string[] };
+  let body: { phone?: string; texts?: string[]; orderRef?: string };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const phone = israeliMobile(body.phone || "");
   const texts = (body.texts || []).map((t) => String(t).trim()).filter(Boolean).slice(0, 3);
   if (!phone || phone === IDAN_WA || !texts.length) return NextResponse.json({ error: "bad request" }, { status: 400 });
   const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 });
   if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
-  if (!history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || "")))
-    return NextResponse.json({ error: "not a site lead" }, { status: 403 });
+  // מותר: מי שפנה מכפתור באתר, או לקוח שקיבל מאיתנו את הודעת ההזמנה עם מספר ההזמנה הזה (למשל בקשה לביקורת אחרי אספקה)
+  const ref = /^[A-Za-z0-9-]{3,40}$/.test(body.orderRef || "") ? String(body.orderRef) : "";
+  const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
+  const ourCustomer = Boolean(ref) && history.some((m) => m.type === "outgoing" && (m.textMessage || m.extendedTextMessage?.text || "").includes(ref));
+  if (!fromSite && !ourCustomer) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
   const ids: (string | null)[] = [];
   for (const t of texts) ids.push(await sendWhatsAppId(phone, t.slice(0, 4000)));
   return NextResponse.json({ ok: ids.every(Boolean), phone, ids });

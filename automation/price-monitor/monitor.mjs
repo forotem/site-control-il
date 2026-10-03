@@ -15,7 +15,8 @@ const only = (flag("--only") || "").split(",").filter(Boolean);
 const limit = Number(flag("--limit")) || Infinity;
 
 // RULES (עידן טלרן, 24/09/2026: לא אחוזים מתחת לשוק, אלא "כמה שקלים" מתחת לזול ביותר שנמצא ברשת)
-const GAP = (low) => (low < 300 ? 5 : low < 1500 ? 10 : 20); // כמה שקלים מתחת לזול ביותר, לפי גובה המחיר
+// 2.10.2026 עידן: "תוריד 5 שקל על המחיר שיש באינטרנט". רותם 3.10.2026 בחר: כל החנות לפי זה (קודם 5/10/20 לפי גובה המחיר).
+const GAP = (_low) => 5; // תמיד 5 ₪ מתחת לזול ביותר ברשת
 const MAX_AUTO_DROP = 0.25;   // הורדה אוטומטית של עד 25% מהמחיר הנוכחי; מעבר לזה: לבדיקה ידנית
 const MAX_AUTO_RAISE = 0.05;  // עם --realign: העלאה של עד 5%, רק כשאנחנו נמוכים ביותר מפי 2 מהפער ויש ראיה חזקה
 const REALIGN = args.includes("--realign");
@@ -150,7 +151,7 @@ for (const p of catalog) {
       else if (target < p.price * (1 - MAX_AUTO_DROP)) { action = "review"; reason = `ירידה של ${Math.round((1 - target / p.price) * 100)}% דורשת אישור`; }
       else action = APPLY ? "applied" : "lower";
     } else if (p.price > want) { action = "floor_blocks"; reason = `רצפה ${c.floor} לא מאפשרת לרדת ל-${want}`; }
-    else if (p.price < want - GAP(low)) {       // נמוכים ביותר מ"כמה שקלים": מוותרים על רווח בלי סיבה
+    else if (p.price < want) {                  // נמוכים מהיעד (רותם 3.10.2026: כל החנות בדיוק 5 ₪ מתחת לזול): מוותרים על רווח בלי סיבה
       target = want;
       // העלאה רק אם אחרי ההעלאה אנחנו עדיין כמה שקלים מתחת לכל מוכר שמזכיר את הדגם, גם כזה שסומן כווריאנט/ערכה (זהירות כפולה בכיוון למעלה)
       const anyModelLow = Math.min(...offers.filter((o) => o.ok && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen)).map((o) => o.price));

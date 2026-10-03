@@ -114,13 +114,13 @@
     "market_low_ils": 730,
     "market_typical_ils": 800,
     "price_basis": "exact",
-    "recommended_price_ils": 720,
+    "recommended_price_ils": 725,
     "estimated_cost_ils": 532,
     "estimated_margin_ils": 177,
     "foreign_prices_note": "EU: ~EUR 231 ex VAT (andi-bg).",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Closest Telran item is the older 1.3MP model DS-KV8202-IM (Telran product 6415, https://www.telran.co.il/product/6415/, image https://www.telran.co.il/images/DS-KV8202-IM.001.png, price shown as 0/not public). ZBM: regular 1,357, sale 797 (675 ex VAT). Hikvision page: https://www.hikvision.com/en/products/Video-Intercom-Products/IP-Series/Pro-Series/ds-kv8213-wme1-c-/",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 730 (com4tech.co.il), הוזל ל-720"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 730 (com4tech.co.il), הוזל ל-720 | סורק מתחרים 2026-10-03: הזול 730 (com4tech.co.il), הוזל ל-725"
   },
   {
     "cost_source": "estimate",
@@ -352,13 +352,13 @@
     "market_low_ils": 1350,
     "market_typical_ils": 1400,
     "price_basis": "exact",
-    "recommended_price_ils": 1340,
+    "recommended_price_ils": 1345,
     "estimated_cost_ils": 982,
     "estimated_margin_ils": 327,
     "foreign_prices_note": "EU: ~EUR 336 ex VAT (orbitadigital); Bangladesh ~BDT 21,000.",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Telran has only older face terminals (DS-K1T606MF, product 6398; DS-K1T8105E, product 6401). com4tech also lists DS-K1T344MBFWX-E1 at 1,395 and a 'DS-K1T344MBFWX-E1+' at 840. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Value-Series/ds-k1t344ebfwx-e1/",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1350 (com4tech.co.il), הוזל ל-1340"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1350 (com4tech.co.il), הוזל ל-1340 | סורק מתחרים 2026-10-03: הזול 1350 (com4tech.co.il), הוזל ל-1345"
   },
   {
     "cost_source": "estimate",
@@ -438,13 +438,13 @@
     "market_low_ils": 1890,
     "market_typical_ils": 2900,
     "price_basis": "exact",
-    "recommended_price_ils": 1873,
+    "recommended_price_ils": 1885,
     "estimated_cost_ils": 1784,
     "estimated_margin_ils": 595,
     "foreign_prices_note": "US: USD 560 (surveillance-video), USD 838 discounted from 1,261 (123securityproducts); Amazon US listing exists.",
     "notes": "Not listed on telran.co.il (searched www + heb site, full and partial model keywords). Low priority item. Closest Telran items: DS-K1T606M (product 6528) / DS-K1T606MF (product 6398), datasheet https://www.telran.co.il/images/DS-K1T606M(F)%20Series-1-2.pdf. Older Pro model. Hikvision page: https://www.hikvision.com/en/products/Access-Control-Products/Face-Recognition-Terminals/Pro-Series/ds-k1t671m/",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 23/09: הזול 1890 (com4tech.co.il), הוזל ל-1873 (נעצר ברצפת העלות המשוערת)"
+    "pricing_note": "סורק מתחרים 23/09: הזול 1890 (com4tech.co.il), הוזל ל-1873 (נעצר ברצפת העלות המשוערת) | סורק מתחרים 2026-10-03: הזול 1890 (com4tech.co.il), הוזל ל-1885"
   },
   {
     "cost_source": "estimate",
@@ -915,13 +915,13 @@
     "market_low_ils": 990,
     "market_typical_ils": 1070,
     "price_basis": "exact",
-    "recommended_price_ils": 980,
+    "recommended_price_ils": 985,
     "estimated_cost_ils": 719,
     "estimated_margin_ils": 240,
     "foreign_prices_note": "Techinn $332.49; AliExpress listing 1005006641731137; HIKD (price on page).",
     "notes": "Telran: not carried. zbm regular (pre-sale) price 1,926 ILS. technovision states 24-month warranty.",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 990 (technovision.co.il), הוזל ל-980"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 990 (technovision.co.il), הוזל ל-980 | סורק מתחרים 2026-10-03: הזול 990 (technovision.co.il), הוזל ל-985"
   },
   {
     "cost_source": "estimate",
@@ -1085,13 +1085,13 @@
     "market_low_ils": 540,
     "market_typical_ils": 540,
     "price_basis": "exact",
-    "recommended_price_ils": 530,
+    "recommended_price_ils": 535,
     "estimated_cost_ils": 389,
     "estimated_margin_ils": 130,
     "foreign_prices_note": "USD: uinview.com $175; kodicam.com $573.50; Alibaba bulk $80-90; Amazon US listing B0GGV88XDB (price varies).",
     "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEII_Series/IPC2318LE-ADF28KM-WP/ . Telran: not found on telran.co.il. Large spread between Com4Tech (540) and Senetic (1,222) - Com4Tech is the realistic street price.",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 540 (com4tech.co.il), הוזל ל-530"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 540 (com4tech.co.il), הוזל ל-530 | סורק מתחרים 2026-10-03: הזול 540 (com4tech.co.il), הוזל ל-535"
   },
   {
     "cost_source": "estimate",
@@ -1278,12 +1278,13 @@
     "market_low_ils": 345,
     "market_typical_ils": 345,
     "price_basis": "exact",
-    "recommended_price_ils": 329,
+    "recommended_price_ils": 340,
     "estimated_cost_ils": 247,
     "estimated_margin_ils": 82,
     "foreign_prices_note": "UK onlinesecurityproducts.co.uk, ES smartsecur.es / visiotech - dealer pricing not public.",
     "notes": "Official UNV page: https://www.uniview.com/Products/Network_Cameras/Owlview_Series/Owlview/IPC3524LE-ADF28K-WP/ . Telran: not found on telran.co.il.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 345 (com4tech.co.il (listed as IPC3524LE-ADF28(40)K-WP, in stock)), הוזל ל-340"
   },
   {
     "cost_source": "estimate",
@@ -1356,15 +1357,16 @@
         "comparable": false
       }
     ],
-    "market_low_ils": 912,
+    "market_low_ils": 899,
     "market_typical_ils": 912,
     "price_basis": "exact",
-    "recommended_price_ils": 879,
+    "recommended_price_ils": 894,
     "estimated_cost_ils": 659,
     "estimated_margin_ils": 220,
     "foreign_prices_note": "USA: networkcamerastore.com $609; cctvbestbuys.com $303.75 sale (reg. $759); Egypt 13,386 EGP.",
     "notes": "Series page: https://global.uniview.com/th/Products/NVR/Easy/NVR302-B-IQ-Series/ . Alt image: https://zbm.co.il/wp-content/uploads/2026/03/20250828_2009470_760b467b-32e4-41c4-a880-c91e36d1b5dc_1001936_651984_0.webp . Telran: not found on telran.co.il.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 899 (AllTechStore), הוזל ל-894"
   },
   {
     "cost_source": "estimate",
@@ -1662,13 +1664,13 @@
     "market_low_ils": 1399,
     "market_typical_ils": 1450,
     "price_basis": "comparable",
-    "recommended_price_ils": 1389,
+    "recommended_price_ils": 1394,
     "estimated_cost_ils": 1019,
     "estimated_margin_ils": 340,
     "foreign_prices_note": "Equivalent DT-series 2-wire 7\" kits (same OEM) sell for USD 120-180 abroad.",
     "notes": "No listing found quoting SKU 560789 explicitly; Israeli VisionNet 2-wire 7\" villa kits cluster at 1,399-1,429 ILS (kav-isr / Zap), up to 1,900 at smaller shops.",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1399 (kav-isr.com (VisionNet 2-wire kit: 7\" monitor + panel w/ keypad & camera)), הוזל ל-1389"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1399 (kav-isr.com (VisionNet 2-wire kit: 7\" monitor + panel w/ keypad & camera)), הוזל ל-1389 | סורק מתחרים 2026-10-03: הזול 1399 (kav-isr.com (VisionNet 2-wire kit: 7\" monitor + panel w/ keypad & camera)), הוזל ל-1394"
   },
   {
     "cost_source": "estimate",
@@ -1755,13 +1757,13 @@
     "market_low_ils": 1599,
     "market_typical_ils": 1750,
     "price_basis": "comparable",
-    "recommended_price_ils": 1579,
+    "recommended_price_ils": 1594,
     "estimated_cost_ils": 1162,
     "estimated_margin_ils": 387,
     "foreign_prices_note": "Same-OEM (DT/DX Wi-Fi) 2-wire app kits sell for USD 200-280 abroad.",
     "notes": "kav-isr 1,599 kit matches DH monitor specs (7\" IPS 1024x600, Wi-Fi app, SD 512GB) and bundles a lock; treat as near-identical. Monitor user manual: https://www.telran.co.il/images/260975_User_Manual_DH-ENG-473-English.pdf",
     "batch": 1,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1599 (kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touch monitor + panel w/ keypad + electric lock)), הוזל ל-1579"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 1599 (kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touch monitor + panel w/ keypad + electric lock)), הוזל ל-1579 | סורק מתחרים 2026-10-03: הזול 1599 (kav-isr.com (VisionNet Wi-Fi app kit: 7\" IPS touch monitor + panel w/ keypad + electric lock)), הוזל ל-1594"
   },
   {
     "cost_source": "estimate",
@@ -1805,12 +1807,13 @@
     "market_low_ils": 649,
     "market_typical_ils": 679,
     "price_basis": "exact",
-    "recommended_price_ils": 629,
+    "recommended_price_ils": 644,
     "estimated_cost_ils": 472,
     "estimated_margin_ils": 157,
     "foreign_prices_note": "DT17/DT-17 OEM monitors ~USD 60-80 abroad.",
     "notes": "Exact model found at 649-679 ILS (kav-isr / Zap); ZBM lists the same SKU 560580 at 1,009 ILS.",
-    "batch": 1
+    "batch": 1,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 649 (kav-isr.com), הוזל ל-644"
   },
   {
     "cost_source": "estimate",
@@ -1987,13 +1990,13 @@
     "market_low_ils": 45,
     "market_typical_ils": null,
     "price_basis": "comparable",
-    "recommended_price_ils": 39,
+    "recommended_price_ils": 40,
     "estimated_cost_ils": 37,
     "estimated_margin_ils": null,
     "foreign_prices_note": "Generic keypad rain covers USD 5-12 on AliExpress/Amazon.",
     "notes": "No Israeli listing with a visible price was retrievable (belshop page did not render). Suggested retail 59-89 ILS as a low-cost add-on; verify belshop price manually.",
     "batch": 1,
-    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49. | סורק מתחרים 23/09: הזול 45 (Belshop), הוזל ל-39"
+    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49. | סורק מתחרים 23/09: הזול 45 (Belshop), הוזל ל-39 | סורק מתחרים 2026-10-03: הזול 45 (Belshop), הוזל ל-40"
   },
   {
     "cost_source": "pricelist",
@@ -2268,13 +2271,13 @@
     "market_low_ils": 750,
     "market_typical_ils": 750,
     "price_basis": "exact",
-    "recommended_price_ils": 740,
+    "recommended_price_ils": 745,
     "estimated_cost_ils": 547,
     "estimated_margin_ils": 182,
     "foreign_prices_note": "Turkey ~3,859 TL (~$95); US dealers ~$110-130",
     "notes": "מחיר ישראלי יחיד מאומת (א.א. סיגמה, יקרן). דף zbm קיים אך לא נטען - מומלץ לתמחר בין המיני-צינור 1047G2-LUF (₪560-586) לסיגמה. גרסת T = גוף צינור גדול.",
     "batch": 2,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 750 (satsigma.co.il), הוזל ל-740"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 750 (satsigma.co.il), הוזל ל-740 | סורק מתחרים 2026-10-03: הזול 750 (satsigma.co.il), הוזל ל-745"
   },
   {
     "cost_source": "estimate",
@@ -2671,12 +2674,13 @@
     "market_low_ils": 320,
     "market_typical_ils": 470,
     "price_basis": "exact",
-    "recommended_price_ils": 309,
+    "recommended_price_ils": 315,
     "estimated_cost_ils": 232,
     "estimated_margin_ils": 77,
     "foreign_prices_note": "Getic €66 ללא מע\"מ; ICCTVZONE $76; Getic $85.60",
     "notes": "בישראל נמכרת בעיקר גרסת LIUF (F = גוף פלסטיק IK08) - זהה פונקציונלית. זאפ: 4 חנויות ₪470-669.",
-    "batch": 2
+    "batch": 2,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 320 (com4tech.co.il (LIUF)), הוזל ל-315"
   },
   {
     "cost_source": "estimate",
@@ -2767,12 +2771,13 @@
     "market_low_ils": 485,
     "market_typical_ils": 600,
     "price_basis": "exact",
-    "recommended_price_ils": 469,
+    "recommended_price_ils": 480,
     "estimated_cost_ils": 352,
     "estimated_margin_ils": 117,
     "foreign_prices_note": "Planet Security USA $115.49 (sold out); zap.co.il I(S): ZBM/AllTechStore ₪729",
     "notes": "מחיר zbm ₪658 (מבצע, מחיר מלא ₪889) נלקח מסניפט חיפוש - דף zbm לא נטען (timeout).",
-    "batch": 2
+    "batch": 2,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 485 (com4tech.co.il), הוזל ל-480"
   },
   {
     "cost_source": "estimate",
@@ -2948,13 +2953,13 @@
     "market_low_ils": 798,
     "market_typical_ils": 880,
     "price_basis": "exact",
-    "recommended_price_ils": 788,
+    "recommended_price_ils": 793,
     "estimated_cost_ils": 577,
     "estimated_margin_ils": 192,
     "foreign_prices_note": "US retail ~$195-275 (a1security.org $194.85 for 4mm; networkcamerastore $274.83 black 2.8mm).",
     "notes": "Widely stocked in Israel; typical retail 800-900 ILS incl. VAT. Senetic price converted from ex-VAT.",
     "batch": 2,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 798 (com4tech.co.il), הוזל ל-788"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 798 (com4tech.co.il), הוזל ל-788 | סורק מתחרים 2026-10-03: הזול 798 (com4tech.co.il), הוזל ל-793"
   },
   {
     "cost_source": "estimate",
@@ -3096,13 +3101,13 @@
     "market_low_ils": 945,
     "market_typical_ils": 1100,
     "price_basis": "exact",
-    "recommended_price_ils": 935,
+    "recommended_price_ils": 940,
     "estimated_cost_ils": 689,
     "estimated_margin_ils": 230,
     "foreign_prices_note": "US ~$280 (e-catalog / Amazon OEM listings); UK/EU via senetic / mayflex.",
     "notes": "Older search snippets showed com4tech at 865-910 ILS; current com4tech page shows 945 ILS. zbm lists it as 'mini fisheye 5MP' but page could not be fetched.",
     "batch": 2,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 945 (com4tech.co.il), הוזל ל-935"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 945 (com4tech.co.il), הוזל ל-935 | סורק מתחרים 2026-10-03: הזול 945 (com4tech.co.il), הוזל ל-940"
   },
   {
     "cost_source": "estimate",
@@ -3146,13 +3151,13 @@
     "market_low_ils": 408,
     "market_typical_ils": 520,
     "price_basis": "exact",
-    "recommended_price_ils": 398,
+    "recommended_price_ils": 403,
     "estimated_cost_ils": 299,
     "estimated_margin_ils": 100,
     "foreign_prices_note": "US $104-137 (planetsecurityusa, idscctv). EOL in some EU markets (replaced by DS-2CD1353G2-LIUF / G0-IUF).",
     "notes": "Zap comparison page exists (zap.co.il modelid=1118840). Older-generation model; confirm hardware revision (C) with distributor.",
     "batch": 2,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 408 (com4tech.co.il), הוזל ל-398"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 408 (com4tech.co.il), הוזל ל-398 | סורק מתחרים 2026-10-03: הזול 408 (com4tech.co.il), הוזל ל-403"
   },
   {
     "cost_source": "estimate",
@@ -3245,13 +3250,13 @@
     "market_low_ils": 3200,
     "market_typical_ils": 3500,
     "price_basis": "exact",
-    "recommended_price_ils": 3180,
+    "recommended_price_ils": 3195,
     "estimated_cost_ils": 2324,
     "estimated_margin_ils": 775,
     "foreign_prices_note": "EU ~EUR 1,520 ex-VAT (orbitadigital, 2.8-12mm); NZ/AU listings for 8-32mm exist. US G0 predecessor ~$900-1,100 (B&H).",
     "notes": "technovision 2.8-12mm at 3,450 ILS. Technovision page title says G2 but URL slug references G0 - verify revision. zbm stocks the G0 predecessor (iDS-2CD7A46G0/P-IZHS) but price not extractable.",
     "batch": 2,
-    "pricing_note": "סורק מתחרים 2026-09-24: הזול 3200 (com4tech.co.il (8-32mm)), הוזל ל-3180"
+    "pricing_note": "סורק מתחרים 2026-09-24: הזול 3200 (com4tech.co.il (8-32mm)), הוזל ל-3180 | סורק מתחרים 2026-10-03: הזול 3200 (com4tech.co.il (8-32mm)), הוזל ל-3195"
   },
   {
     "cost_source": "estimate",
@@ -3785,12 +3790,13 @@
     "market_low_ils": 199,
     "market_typical_ils": 230,
     "price_basis": "exact",
-    "recommended_price_ils": 189,
+    "recommended_price_ils": 194,
     "estimated_cost_ils": 142,
     "estimated_margin_ils": 47,
     "foreign_prices_note": "Amazon.com ASIN B0C4YLN1XK – מבצעים ישראליים (ZUZU Deals / SmartBuy) דיווחו על $17.90 (~₪55) לפני משלוח ומע\"מ; מחיר רגיל באמזון ~$30–40. דגם אח CP3 V3 נמכר ב-kstore.co.il ב-₪200.",
     "notes": "לא מופיע ב-telran.co.il (No products found), אך דף kav-isr מציין במפורש שהיבואן הרשמי הוא טלרן. הדף הישראלי מציין IR עד 12 מ' ו-microSD עד 256GB (גרסה ישנה יותר) לעומת 10 מ' ו-512GB במפרט היצרן V1.1; מתח ההזנה בדף הישראלי 9V DC לעומת USB-C 5V אצל היצרן – כנראה גרסת חומרה שונה, לוודא עם טלרן.",
-    "batch": 2
+    "batch": 2,
+    "pricing_note": "סורק מתחרים 2026-10-03: הזול 199 (kav-isr.com (קו ישראלי – יבואן רשמי טלרן, אחריות שנה)), הוזל ל-194"
   },
   {
     "cost_source": "pricelist",
@@ -4064,13 +4070,13 @@
     "market_low_ils": 1180,
     "market_typical_ils": 1199,
     "price_basis": "exact",
-    "recommended_price_ils": 1170,
+    "recommended_price_ils": 1175,
     "estimated_cost_ils": null,
     "estimated_margin_ils": null,
     "foreign_prices_note": "Reolink US: 219.99$",
     "notes": "נוסף 27/09/2026 לבקשת רותם. לא מופיע במחירון Reolink של טלרן מ-23/09: צריך מחיר עלות מעידן. משמש גם למבצע עם התקנה ב-3,000 ₪ (app/data/deals.ts).",
     "batch": "manual-2026-09-27",
-    "pricing_note": "UNDERCUT: הזול בשוק 1180 (satsigma), פער 10 ₪ -> 1170"
+    "pricing_note": "UNDERCUT: הזול בשוק 1180 (satsigma), פער 10 ₪ -> 1170 | סורק מתחרים 2026-10-03: הזול 1180 (satsigma.co.il), הוזל ל-1175"
   },
   {
     "cost_source": "pricelist",
@@ -4881,13 +4887,13 @@
     "market_low_ils": 449,
     "market_typical_ils": 549,
     "price_basis": "exact",
-    "recommended_price_ils": 439,
+    "recommended_price_ils": 444,
     "estimated_cost_ils": 502,
     "estimated_margin_ils": 47,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 549, מתקין לפני מע\"מ 425",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 449 (satsigma 449); מחיר מתקין טלרן+מע\"מ 502; מתחת לעלות מתקין (502) ב-63 ₪: עידן צריך להשלים",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 449 (satsigma 449); מחיר מתקין טלרן+מע\"מ 502; מתחת לעלות מתקין (502) ב-63 ₪: עידן צריך להשלים | סורק מתחרים 2026-10-03: הזול 449 (satsigma.co.il), הוזל ל-444",
     "telran_installer_incl_vat": 502
   },
   {
@@ -4955,13 +4961,13 @@
     "market_low_ils": 395,
     "market_typical_ils": 395,
     "price_basis": "exact",
-    "recommended_price_ils": 379,
+    "recommended_price_ils": 390,
     "estimated_cost_ils": 353,
     "estimated_margin_ils": 42,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 395, מתקין לפני מע\"מ 299",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 395 (kav-isr/satsigma 395); מחיר מתקין טלרן+מע\"מ 353; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 395 (kav-isr/satsigma 395); מחיר מתקין טלרן+מע\"מ 353; תחרותי | סורק מתחרים 2026-10-03: הזול 395 (kav-isr.com), הוזל ל-390",
     "telran_installer_incl_vat": 353
   },
   {
@@ -4992,13 +4998,13 @@
     "market_low_ils": 559,
     "market_typical_ils": 529,
     "price_basis": "exact",
-    "recommended_price_ils": 549,
+    "recommended_price_ils": 554,
     "estimated_cost_ils": 471,
     "estimated_margin_ils": 58,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 529, מתקין לפני מע\"מ 399",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 559 (kav-isr 559); מחיר מתקין טלרן+מע\"מ 471; תחרותי | סורק מתחרים 2026-09-24: הזול 559 (kav-isr.com (via zap)), הוזל ל-549",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 559 (kav-isr 559); מחיר מתקין טלרן+מע\"מ 471; תחרותי | סורק מתחרים 2026-09-24: הזול 559 (kav-isr.com (via zap)), הוזל ל-549 | סורק מתחרים 2026-10-03: הזול 559 (kav-isr.com (via zap)), הוזל ל-554",
     "telran_installer_incl_vat": 471
   },
   {
@@ -5066,13 +5072,13 @@
     "market_low_ils": 499,
     "market_typical_ils": 499,
     "price_basis": "exact",
-    "recommended_price_ils": 489,
+    "recommended_price_ils": 494,
     "estimated_cost_ils": 447,
     "estimated_margin_ils": 52,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 379",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 499 (satsigma 499); מחיר מתקין טלרן+מע\"מ 447; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 499 (satsigma 499); מחיר מתקין טלרן+מע\"מ 447; תחרותי | סורק מתחרים 2026-10-03: הזול 499 (satsigma.co.il), הוזל ל-494",
     "telran_installer_incl_vat": 447
   },
   {
@@ -5103,13 +5109,13 @@
     "market_low_ils": 589,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 579,
+    "recommended_price_ils": 584,
     "estimated_cost_ils": 518,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 589 (satsigma 589); מחיר מתקין טלרן+מע\"מ 518; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 589 (satsigma 589); מחיר מתקין טלרן+מע\"מ 518; תחרותי | סורק מתחרים 2026-10-03: הזול 589 (satsigma.co.il), הוזל ל-584",
     "telran_installer_incl_vat": 518
   },
   {
@@ -5140,13 +5146,13 @@
     "market_low_ils": 540,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 529,
+    "recommended_price_ils": 535,
     "estimated_cost_ils": 518,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 540 (satsigma 540); מחיר מתקין טלרן+מע\"מ 518; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 540 (satsigma 540); מחיר מתקין טלרן+מע\"מ 518; תחרותי | סורק מתחרים 2026-10-03: הזול 540 (satsigma.co.il), הוזל ל-535",
     "telran_installer_incl_vat": 518
   },
   {
@@ -5177,13 +5183,13 @@
     "market_low_ils": 639,
     "market_typical_ils": 639,
     "price_basis": "exact",
-    "recommended_price_ils": 629,
+    "recommended_price_ils": 634,
     "estimated_cost_ils": 577,
     "estimated_margin_ils": 62,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 639, מתקין לפני מע\"מ 489",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 639 (kav-isr 639); מחיר מתקין טלרן+מע\"מ 577; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 639 (kav-isr 639); מחיר מתקין טלרן+מע\"מ 577; תחרותי | סורק מתחרים 2026-10-03: הזול 639 (kav-isr.com), הוזל ל-634",
     "telran_installer_incl_vat": 577
   },
   {
@@ -5321,13 +5327,13 @@
     "market_low_ils": 1300,
     "market_typical_ils": 1399,
     "price_basis": "exact",
-    "recommended_price_ils": 1290,
+    "recommended_price_ils": 1295,
     "estimated_cost_ils": 1356,
     "estimated_margin_ils": 43,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1399, מתקין לפני מע\"מ 1149",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1300 (satsigma 1300 (RLN36, אותה חומרה)); מחיר מתקין טלרן+מע\"מ 1356; מתחת לעלות מתקין (1356) ב-77 ₪: עידן צריך להשלים | סורק מתחרים 2026-09-24: הזול 1300 (satsigma (via zap)), הוזל ל-1290",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1300 (satsigma 1300 (RLN36, אותה חומרה)); מחיר מתקין טלרן+מע\"מ 1356; מתחת לעלות מתקין (1356) ב-77 ₪: עידן צריך להשלים | סורק מתחרים 2026-09-24: הזול 1300 (satsigma (via zap)), הוזל ל-1290 | סורק מתחרים 2026-10-03: הזול 1300 (satsigma (via zap)), הוזל ל-1295",
     "telran_installer_incl_vat": 1356
   },
   {
@@ -5390,16 +5396,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 448,
+    "market_low_ils": 449,
     "market_typical_ils": 499,
     "price_basis": "exact",
-    "recommended_price_ils": 429,
+    "recommended_price_ils": 444,
     "estimated_cost_ils": 483,
     "estimated_margin_ils": 16,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 499, מתקין לפני מע\"מ 409",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 448 (Hashmal Neto 448 / bconnect 449); מחיר מתקין טלרן+מע\"מ 483; מתחת לעלות מתקין (483) ב-54 ₪: עידן צריך להשלים",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 448 (Hashmal Neto 448 / bconnect 449); מחיר מתקין טלרן+מע\"מ 483; מתחת לעלות מתקין (483) ב-54 ₪: עידן צריך להשלים | סורק מתחרים 2026-10-03: הזול 449 (bconnect.co.il), הוזל ל-444",
     "telran_installer_incl_vat": 483
   },
   {
@@ -5607,13 +5613,13 @@
     "market_low_ils": 85,
     "market_typical_ils": 89,
     "price_basis": "exact",
-    "recommended_price_ils": 79,
+    "recommended_price_ils": 80,
     "estimated_cost_ils": 77,
     "estimated_margin_ils": 12,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 89, מתקין לפני מע\"מ 65",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 85 (satsigma 85); מחיר מתקין טלרן+מע\"מ 77; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 85 (satsigma 85); מחיר מתקין טלרן+מע\"מ 77; תחרותי | סורק מתחרים 2026-10-03: הזול 85 (satsigma.co.il), הוזל ל-80",
     "telran_installer_incl_vat": 77
   }
 ]

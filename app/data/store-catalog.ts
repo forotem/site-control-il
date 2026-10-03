@@ -113,7 +113,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פנל אינטרקום IP לוילה Hikvision DS-KV8213-WME1(C) - 2 לחצנים, מצלמת 2MP, Wi-Fi/PoE, קורא כרטיסים",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 720,
+    "price": 725,
     "specs": [
       "מצלמת 2MP HD עם תאורת IR, זווית 124° אופקי / 75° אנכי",
       "2 לחצני קריאה פיזיים - מתאים לבית דו-משפחתי / 2 יחידות דיור",
@@ -139,7 +139,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פנל אינטרקום IP לוילה Hikvision DS-KV8413-WME1(C) - 4 לחצנים, מצלמת 2MP, Wi-Fi/PoE, קורא כרטיסים",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 839,
+    "price": 890,
     "specs": [
       "מצלמת 2MP HD עם תאורת IR וזווית רחבה",
       "4 לחצני קריאה - מתאים לבניין/כניסה עם עד 4 יחידות דיור",
@@ -216,7 +216,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסוף בקרת כניסה ואינטרקום Hikvision DS-K1T502DBFWX-C - טביעת אצבע, כרטיס Mifare/DESFire, קוד, QR, מצלמה ו",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1069,
+    "price": 1150,
     "specs": [
       "אימות בטביעת אצבע, כרטיס Mifare / MF DESFire, קוד PIN וקוד QR",
       "מצלמת 2MP מובנית - אינטרקום וידאו, צפייה חיה מרחוק ו-SIP",
@@ -241,7 +241,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסוף זיהוי פנים ונוכחות Hikvision DS-K1T344EBFWX-E1 - מסך 4.3\", פנים/טביעת אצבע/כרטיס EM/קוד, Wi",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1340,
+    "price": 1345,
     "specs": [
       "זיהוי פנים ב-Deep Learning, מהירות זיהוי כ-0.2 שניות, מרחק 0.3-1.5 מ'",
       "עדשה כפולה 2MP רחבת זווית - עובד גם בתאורה חלשה/אפס",
@@ -291,7 +291,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסוף זיהוי פנים Pro Hikvision DS-K1T671M - מסך מגע 7\", 6,000 פנים, כרטיס Mifare, IP65",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1873,
+    "price": 1885,
     "specs": [
       "מסך מגע LCD 7\" ועדשה כפולה 2MP רחבת זווית - זיהוי גם בתאורה חלשה",
       "מרחק זיהוי פנים 0.3-3 מ', קיבולת 6,000 פנים ו-6,000 כרטיסי Mifare (גרסת MF מוסיפה 5,000 טביעות אצבע)",
@@ -550,7 +550,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת מיני-צינור Hikvision IP 8MP ColorVu Smart Hybrid Light עם שמע דו-כיווני והתראה, 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 980,
+    "price": 985,
     "specs": [
       "חיישן 1/1.8\" CMOS, 8MP (3840x2160), עדשה קבועה 2.8 מ\"מ F1.0",
       "Smart Hybrid Light: אינפרא-אדום + אור לבן עד 40 מ', צבע 24/7 (ColorVu)",
@@ -654,7 +654,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP צינור 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview IPC2318LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 530,
+    "price": 535,
     "specs": [
       "8MP (3840x2160) @20fps, חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
       "עדשה קבועה 2.8 מ\"מ F1.0, זווית 111°",
@@ -784,7 +784,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP כיפה אנטי-ונדלית IK10 4MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3524LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 329,
+    "price": 340,
     "specs": [
       "4MP (2688x1520) חיישן CMOS 1/1.8\" Wise-ISP ColorHunter",
       "עדשה קבועה 2.8 מ\"מ F1.0, זווית רחבה 124.3°",
@@ -836,7 +836,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה NVR 32 ערוצים 4K עד 12MP 2 דיסקים קשיחים AI Uniview NVR302",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 879,
+    "price": 894,
     "specs": [
       "32 ערוצי IP, רזולוציה עד 12MP, Ultra 265/H.265/H.264",
       "רוחב פס כניסה 160Mbps / יציאה 128Mbps",
@@ -1018,7 +1018,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת אינטרקום וידאו 2 גידים לבית פרטי VisionNet KITCOM - מסך 7\" + פנל מצלמה, Plug & Play",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1389,
+    "price": 1394,
     "specs": [
       "7\" colour TFT monitor with touch-sensor buttons and intuitive menu",
       "2-wire non-polarised connection between panel and monitor (plug & play)",
@@ -1071,7 +1071,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת אינטרקום היברידית 2 גידים + IP VisionNet DH - מסך מגע 7\" Wi-Fi עם אפליקציה + פנל S4 + ספק",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 1579,
+    "price": 1594,
     "specs": [
       "Hybrid system: 2-wire bus plus IP/Wi-Fi connectivity",
       "7\" IPS touch monitor (1024x600), metal design, Wi-Fi with mobile app (remote view & door open)",
@@ -1097,7 +1097,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מסך אינטרקום 7\" 2 גידים VisionNet 2TL-17 לבית פרטי/בניין, לבן עם לחצני כסף",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 629,
+    "price": 644,
     "specs": [
       "7\" digital colour LCD, 800x480",
       "2-wire non-polarised bus, DC 20-28V",
@@ -1201,7 +1201,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "גגון הגנה מגשם לקודן בקרת כניסה (מתאים לקודנים 560596/560597)",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 39,
+    "price": 40,
     "specs": [
       "ABS plastic rain/sun shield for surface-mounted keypads",
       "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
@@ -1355,7 +1355,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 740,
+    "price": 745,
     "specs": [
       "רזולוציה 4MP (2560×1440), H.265+, זיהוי אדם/רכב",
       "עדשה קבועה 4mm F1.0 (~75° אופקי)",
@@ -1580,7 +1580,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה Hikvision DS-2CD1143G2-LIU 4MP Smart Hybrid Light עד 30 מ' + מיקרופון עדשה 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 309,
+    "price": 315,
     "specs": [
       "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS",
       "עדשה קבועה 2.8 מ\"מ, שדה ראייה אופקי ~110°",
@@ -1630,7 +1630,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה Hikvision DS-2CD2143G2-I 4MP AcuSense IR עד 30 מ' IK10 עדשה 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 469,
+    "price": 480,
     "specs": [
       "רזולוציה 4MP (2688×1520) חיישן 1/3\" Progressive Scan CMOS",
       "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
@@ -1730,7 +1730,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP חסינת ונדליזם Hikvision AcuSense 8MP 4K עם מיקרופון DS-2CD2183G2-IU 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 788,
+    "price": 793,
     "specs": [
       "רזולוציה 8MP / 4K (3840×2160), חיישן 1/2.8\" CMOS, WDR 120dB",
       "עדשה קבועה 2.8 מ\"מ, זווית אופקית כ-102°",
@@ -1808,7 +1808,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת עין דג פנורמית 180° Hikvision 5MP עם מיקרופון DS-2CD2955G0-ISU 1.05 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 935,
+    "price": 940,
     "specs": [
       "רזולוציה 5MP (2560×1920), חיישן 1/2.7\" CMOS, WDR 120dB",
       "עדשה 1.05 מ\"מ, שדה ראייה 180° (אופקי/אנכי/אלכסוני)",
@@ -1834,7 +1834,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת טורט IP Hikvision 5MP אינפרא עד 30 מ' DS-2CD1353G0-I 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 398,
+    "price": 403,
     "specs": [
       "רזולוציה 5MP (2560×1920), חיישן 1/2.7\" CMOS, WDR 120dB",
       "עדשה קבועה 2.8 מ\"מ",
@@ -1886,7 +1886,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת LPR לזיהוי לוחיות רישוי Hikvision DeepinView 4MP עדשה ממונעת 8-32 מ\"מ עד 100 מ' iDS",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 3180,
+    "price": 3195,
     "specs": [
       "רזולוציה 4MP (2688×1520), חיישן 1/1.8\" גדול, DarkFighter 2.0, AWDR 150dB",
       "עדשה ממונעת (Motorized varifocal) 8-32 מ\"מ, זום אופטי 4x - לכבישים/כניסות מרוחקות",
@@ -2187,7 +2187,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Tenda CP3 Pro 2K ממונעת 360° Wi-Fi 6 עם זיהוי בכי תינוק וחיות מחמד",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 189,
+    "price": 194,
     "specs": [
       "רזולוציה 2K / 3MP (2304x1296), חיישן CMOS 1/3\", עדשה 4mm F2.0, זווית 78° אופקי / 95° אלכסוני; קידוד H.265",
       "Pan/Tilt ממונע 355° אופקי, 155° אנכי (‎-65° עד +90°) עם מעקב אוטומטי אחר אדם (Human Tracking)",
@@ -2393,7 +2393,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה 4G ממונעת Reolink TrackMix Wired LTE עם חיבור קבוע לחשמל, שתי עדשות, זום x6 ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1170,
+    "price": 1175,
     "specs": [
       "שתי עדשות: רחבה 2.8 מ\"מ + טלה 8 מ\"מ, זום היברידי x6, שתי התמונות מוצגות יחד באפליקציה",
       "4MP 2K (2560x1440), מעקב אוטומטי אחרי אדם, רכב או בעל חיים",
@@ -2447,7 +2447,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת שבילים 4G Reolink Talon Pro, 4K, GPS, סוללה, לשטח ולמטע",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1210,
+    "price": 1294,
     "specs": [
       "4K, חיישן Starlight לתמונה בלילה",
       "חיבור 4G LTE עם כרטיס סים, GPS מובנה",
@@ -2874,7 +2874,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת עין דג 360° Wi-Fi Reolink FE-W, 6MP, לתקרה, חיבור לחשמל",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 739,
+    "price": 794,
     "specs": [
       "6MP, עדשת עין דג 360° לתקרה: כל החדר במצלמה אחת",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2924,7 +2924,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE Reolink CX410, 4MP, ColorX צבע 24/7 בלי זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 439,
+    "price": 444,
     "specs": [
       "4MP 2K, חיישן F1.0 גדול: תמונה צבעונית בלילה גם בלי אור לבן (ColorX)",
       "PoE: חשמל ותקשורת בכבל רשת אחד",
@@ -2974,7 +2974,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE אנטי-ונדלית Reolink P327, 5MP, IK10, IP67",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 379,
+    "price": 390,
     "specs": [
       "5MP, כיפה עמידה למכות IK10",
       "PoE, זיהוי אדם/רכב",
@@ -2999,7 +2999,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE פנורמית ממונעת Reolink P330P, 4K, 180° ומעקב אוטומטי",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 549,
+    "price": 554,
     "specs": [
       "8MP 4K, כיסוי 180° עם מנוע Pan ומעקב אוטומטי",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3075,7 +3075,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE Reolink P337, 4K 8MP, זווית 125°, ראיית לילה צבעונית",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 489,
+    "price": 494,
     "specs": [
       "8MP 4K, עדשה רחבה 125°",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3100,7 +3100,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P330, 4K 8MP, ראיית לילה צבעונית ושמע דו-כיווני (מחליפה את RLC-810A)",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 369,
+    "price": 374,
     "specs": [
       "4K 8MP (3840×2160) ב-25 פריימים, חיישן 1/2.7\"",
       "עדשה 2.8 מ\"מ F1.6, זווית אופקית 105°",
@@ -3126,7 +3126,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ממונעת IP PoE Reolink TrackMix PoE, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי אחרי אדם ורכב",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 999,
+    "price": 1024,
     "specs": [
       "8MP 4K, שתי עדשות: רחבה 2.8 מ\"מ וטלה 8 מ\"מ, זום היברידי x6",
       "מעקב אוטומטי: מסתובבת לבד אחרי אדם או רכב, 355° אופקי ו-90° אנכי",
@@ -3151,7 +3151,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P340, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 579,
+    "price": 584,
     "specs": [
       "12MP (4512×2512), עדשה קבועה",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3176,7 +3176,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE Reolink P344, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 529,
+    "price": 535,
     "specs": [
       "12MP (4512×2512), כיפה",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3201,7 +3201,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P430, 4K 8MP, זום אופטי x5, זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 629,
+    "price": 634,
     "specs": [
       "8MP 4K, עדשה ממונעת עם זום אופטי x5",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3226,7 +3226,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink NVS8, 8 יציאות PoE, כולל דיסק 2TB, מצלמות עד 16MP",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1319,
+    "price": 1344,
     "specs": [
       "8 יציאות PoE מובנות, עד 12 מצלמות (8 בכבל + 4 מצלמות סוללה Wi-Fi של Reolink)",
       "דיסק Seagate 2TB מותקן, הרחבה עד 16TB (SATA + eSATA)",
@@ -3274,7 +3274,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink NVS16, 16 ערוצים, כולל דיסק 4TB",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1599,
+    "price": 1795,
     "specs": [
       "16 ערוצי IP עד 16MP, 8 יציאות PoE מובנות",
       "דיסק 4TB כלול",
@@ -3298,7 +3298,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink NVS36, 36 ערוצים, ללא דיסק",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1290,
+    "price": 1295,
     "specs": [
       "36 ערוצי IP עד 12MP",
       "2 מפרצי SATA, מסופק ללא דיסק",
@@ -3346,7 +3346,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "רכזת אבטחה ביתית Reolink Home Hub, אחסון מקומי לעד 8 מצלמות Reolink",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 429,
+    "price": 444,
     "specs": [
       "מרכזת עד 8 מצלמות Reolink (Wi-Fi ובסוללה) להקלטה מקומית",
       "2 חריצי microSD, ללא מנוי ענן",
@@ -3488,7 +3488,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "קופסת חיבורים Reolink D20 למצלמות כיפה, להסתרת הכבל והחיבור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 79,
+    "price": 80,
     "specs": [
       "קופסת חיבורים למצלמות כיפה של Reolink",
       "מסתירה את חיבור הכבל ומגינה עליו מגשם",

@@ -88,7 +88,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת אינטרקום וידאו אנלוגי 4 גידים Hikvision DS-KIS212 - פנל HD-TVI ומסך 7\"",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 869,
+    "price": 895,
     "specs": [
       "ערכה 4 גידים Plug & Play: פנל חיצוני DS-KB2412T-IM עם מצלמת HD-TVI ומסך פנימי DS-KH2230T 7\" TFT עם לחצנים פיזיים",
       "איכות וידאו HD-TVI (720p/1080p) - חיווט פשוט ללא רשת",
@@ -420,7 +420,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision DVR היברידית ל-32 ערוצים AcuSense, 2 דיסקים",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 3159,
+    "price": 3214,
     "specs": [
       "32 ערוצים אנלוגיים (HDTVI/AHD/CVI/CVBS) + עד 8 ערוצי IP, סה\"כ עד 40 ערוצים",
       "הקלטה 1080p בכל הערוצים, קלט IP עד 8MP",
@@ -524,7 +524,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור Hikvision IP 8MP ColorVu Smart Hybrid Light עם סטרובוסקופ וסירנה, 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1309,
+    "price": 1345,
     "specs": [
       "חיישן 1/1.8\" CMOS, 8MP (3840x2160), עדשה קבועה 2.8 מ\"מ F1.0",
       "Smart Hybrid Light: אינפרא-אדום + אור לבן עד 60 מ', צבע 24/7 (ColorVu)",
@@ -680,7 +680,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP טורט 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3626LE",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 789,
+    "price": 813,
     "specs": [
       "6MP (3072x2048) חיישן CMOS 1/1.8\" Wise-ISP, ColorHunter צבע מלא בלילה",
       "עדשה קבועה 2.8 מ\"מ F1.0, זווית 110°",
@@ -1251,7 +1251,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink NVS8-8MB4 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות צינור עם צבע בלילה, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 2619,
+    "price": 2694,
     "specs": [
       "מקליט NVR עם 8 ערוצים ו-8 יציאות PoE, דיסק Seagate 2TB בפנים, עד 12TB",
       "4 מצלמות צינור 4K 8MP מהדור החדש (P330, שמחליפה את RLC-810A), עדשה 2.8 מ\"מ",
@@ -1303,7 +1303,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 12MP 4K+ - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-1224A צבע מלא עם זרקורים, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 3519,
+    "price": 3585,
     "specs": [
       "8-channel PoE NVR with 2TB HDD",
       "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
@@ -1405,7 +1405,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP Hikvision 4MP ColorVu Hybrid Light עם סטרובוסקופ ורמקול DS",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 809,
+    "price": 835,
     "specs": [
       "רזולוציה 4MP (2688×1520), חיישן גדול 1/1.8\" CMOS, H.265+",
       "עדשה קבועה 2.8mm (~111° אופקי)",
@@ -1530,7 +1530,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור Hikvision DS-2CD2T47G2H-LI 4MP ColorVu Smart Hybrid Light עד 60 מ' עדשה 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 849,
+    "price": 926,
     "specs": [
       "רזולוציה 4MP (2688×1520) חיישן 1/1.8\" Progressive Scan CMOS, צמצם F1.0",
       "עדשה קבועה 2.8 מ\"מ (קיימות גם 4/6 מ\"מ)",
@@ -1605,7 +1605,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת טורט Hikvision DS-2CD1347G2-LUF 4MP ColorVu צבע 24/7 עד 30 מ' + מיקרופון עדשה 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 409,
+    "price": 414,
     "specs": [
       "רזולוציה 4MP (2560×1440) חיישן 1/3\" Progressive Scan CMOS, צמצם F1.0",
       "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
@@ -1655,7 +1655,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה Hikvision DS-2CD2143G2-IU 4MP AcuSense IR עד 30 מ' + מיקרופון IK10 עדשה 2.8 מ\"מ",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 639,
+    "price": 654,
     "specs": [
       "רזולוציה 4MP (2688×1520) חיישן 1/3\" Progressive Scan CMOS",
       "עדשה קבועה 2.8 מ\"מ (קיימת גם 4 מ\"מ)",
@@ -2624,7 +2624,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 729,
+    "price": 734,
     "specs": [
       "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
       "Wi-Fi דו-ערוצי",
@@ -2724,7 +2724,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E1 Zoom, 5MP, ממונעת עם זום אופטי x3, Wi-Fi",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 319,
+    "price": 299,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2899,7 +2899,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פעמון וידאו Wi-Fi Reolink Video Doorbell, 4MP, שמע דו-כיווני, בלי מנוי",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 369,
+    "price": 374,
     "specs": [
       "4MP, עדשה 2.2 מ\"מ בזווית רחבה, רואים את כל מי שבדלת",
       "Wi-Fi 2.4/5GHz, חיבור לחיווט פעמון קיים",
@@ -2949,7 +2949,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE פנורמית Reolink Duo 3 PoE, שתי עדשות 180°, 16MP",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1059,
+    "price": 1084,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 16MP UHD",
       "PoE, זיהוי אדם/רכב/חיה, מעקב תנועה",
@@ -3024,7 +3024,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE Reolink P330M, 4K, שתי עדשות: רחבה + תקריב",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 549,
+    "price": 594,
     "specs": [
       "8MP 4K, שתי עדשות: תצוגה רחבה ותקריב באותו זמן",
       "PoE, זיהוי אדם/רכב/חיה, מעקב אוטומטי",

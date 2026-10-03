@@ -38,6 +38,27 @@ export function LocalBusinessSchema() {
   return <JsonLd json={json} />;
 }
 
+/**
+ * פרטי משלוח לסכמת Offer (OfferShippingDetails) לפי קטגוריית המוצר בחנות.
+ * המספרים ב-BUSINESS.shipping.schema: תקרת מחיר (גוגל דורשת value או maxValue) וימי אספקה.
+ * אין כאן מדיניות החזרה (hasMerchantReturnPolicy): תתווסף רק אחרי שרותם יאשר נוסח ויהיה דף גלוי באתר.
+ */
+export function offerShippingDetails(category: string) {
+  const s = BUSINESS.shipping.schema;
+  const size = (s.largeCategories as readonly string[]).includes(category) ? 'large' : 'small';
+  const qty = (range: readonly [number, number]) => ({ '@type': 'QuantitativeValue', minValue: range[0], maxValue: range[1], unitCode: 'DAY' });
+  return {
+    '@type': 'OfferShippingDetails',
+    shippingRate: { '@type': 'MonetaryAmount', maxValue: s.maxNis[size], currency: 'ILS' },
+    shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'IL' },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: qty(s.handlingDays),
+      transitTime: qty(s.transitDays),
+    },
+  };
+}
+
 export function ProductSchema({
   name,
   description,

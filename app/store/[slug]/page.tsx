@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
 import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder } from "../../data/store-attrs";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
+import { offerShippingDetails } from "../../components/Schema";
 import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
 import { AddToCart } from "../CartUI";
@@ -105,13 +106,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     { name: p.categoryName, url: `/store/c/${p.category}` },
     { name: p.model, url: `/store/${p.slug}` },
   ];
+  // גוגל: sku בלי רווחים (עדיף ASCII), אחרת "Invalid value in field sku". כשאין מק"ט מהספק, הסלאג הוא המזהה שלנו.
+  // mpn רק כשהדגם הוא מק"ט יצרן נקי (בלי רווחים), לא כשהוא תיאור כמו "Reolink Go Ultra / G340".
+  const cleanModel = /^[A-Za-z0-9][A-Za-z0-9._()/-]*$/.test(p.model) ? p.model : undefined;
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: p.title,
     brand: { "@type": "Brand", name: p.brand },
-    mpn: p.model,
-    sku: p.sku || p.model,
+    mpn: cleanModel,
+    sku: p.sku && !/\s/.test(p.sku) ? p.sku : p.slug,
     image: p.image ? `${BASE_URL}${encodeURI(p.image)}` : undefined,
     url: `${BASE_URL}/store/${p.slug}`,
     description: p.highlights.join(". "),
@@ -124,6 +128,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           itemCondition: "https://schema.org/NewCondition",
           availability: p.oldStock ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
           seller: { "@type": "Organization", name: "Site-Control" },
+          // משלוח בתשלום נפרד לפי כתובת (BUSINESS.shipping) — בסכמה כתקרה + ימי אספקה, כמו בדף /shipping
+          shippingDetails: offerShippingDetails(p.category),
         }
       : undefined,
   };

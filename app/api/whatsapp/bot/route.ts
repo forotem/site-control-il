@@ -128,7 +128,8 @@ export async function POST(req: NextRequest) {
   while (conv.length && conv[0].role !== "user") conv.shift();
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });
 
-  const ctx: string[] = [`הלקוח פנה מהאתר (${siteSourceOf(textOf(prefill))}).`];
+  const nowIL = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date());
+  const ctx: string[] = [`השעה עכשיו בישראל: ${nowIL}.`, `הלקוח פנה מהאתר (${siteSourceOf(textOf(prefill))}).`];
   const fromPage = storeProducts.find((p) => textOf(prefill).includes(p.title));
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
   const waitedH = (now - (last.timestamp || now)) / 3600;

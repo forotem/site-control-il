@@ -79,7 +79,9 @@ const WHATSAPP_RULES = `
 
 export async function POST(req: NextRequest) {
   const dry = req.nextUrl.searchParams.get("dry") === "1" && adminAuthorized(req); // בדיקה ידנית: מחזיר את התשובה בלי לשלוח
-  if (!dry && !authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // kick: לפתוח שיחה עם ליד שכבר מחכה (webhook נשלח רק על הודעות חדשות). כל כללי הבטיחות חלים, בלי המתנה.
+  const kick = req.nextUrl.searchParams.get("kick") === "1" && adminAuthorized(req);
+  if (!dry && !kick && !authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string } };
   try { n = await req.json(); } catch { return NextResponse.json({ ok: true }); }
   if (BOT_MODE === "off" && !dry) return NextResponse.json({ ok: true, skip: "off" });
@@ -89,7 +91,7 @@ export async function POST(req: NextRequest) {
   if (!/^\d{11,13}@c\.us$/.test(chatId) || phone === IDAN_WA || phone === ROTEM) return NextResponse.json({ ok: true, skip: "chat" });
   if (restDay() && !dry) return NextResponse.json({ ok: true, skip: "shabbat" });
 
-  if (!dry) await new Promise((r) => setTimeout(r, DEBOUNCE_MS));
+  if (!dry && !kick) await new Promise((r) => setTimeout(r, DEBOUNCE_MS));
   const history = await greenApi<H[]>("getChatHistory", { chatId, count: 40 });
   if (!history?.length) return NextResponse.json({ ok: true, skip: "no history" });
   const msgs = [...history].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
@@ -100,7 +102,7 @@ export async function POST(req: NextRequest) {
   // 4. עונים רק כשההודעה האחרונה בשיחה היא נכנסת (אין עדיין תשובה אחריה)
   const last = msgs[msgs.length - 1];
   if (last.type !== "incoming") return NextResponse.json({ ok: true, skip: "already answered" });
-  if (!dry && n.idMessage && last.idMessage !== n.idMessage) return NextResponse.json({ ok: true, skip: "newer message pending" });
+  if (!dry && !kick && n.idMessage && last.idMessage !== n.idMessage) return NextResponse.json({ ok: true, skip: "newer message pending" });
   // 2. רותם פעיל בשיחה
   const now = Date.now() / 1000;
   const rotemRecent = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && now - (m.timestamp || 0) < ROTEM_ACTIVE_HOURS * 3600);
@@ -125,6 +127,8 @@ export async function POST(req: NextRequest) {
   const ctx: string[] = [`הלקוח פנה מהאתר (${siteSourceOf(textOf(prefill))}).`];
   const fromPage = storeProducts.find((p) => textOf(prefill).includes(p.title));
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
+  const waitedH = (now - (last.timestamp || now)) / 3600;
+  if (waitedH > 3) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);
   const introduced = msgs.some((m) => m.type === "outgoing" && textOf(m).includes(INTRO_MARK));
   ctx.push(introduced ? "כבר הצגת את עצמך בשיחה הזאת, אל תציג שוב." : "עוד לא הצגת את עצמך בשיחה הזאת.");
   if (n.senderData?.senderName) ctx.push(`השם שלו בווצאפ: ${n.senderData.senderName} (אפשר לפנות בשם הפרטי אם נראה כמו שם אמיתי).`);

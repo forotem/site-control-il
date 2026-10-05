@@ -142,7 +142,7 @@ export async function POST(req: NextRequest) {
   const fromPage = storeProducts.find((p) => textOf(prefill).includes(p.title));
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
   const waitedH = (now - (last.timestamp || now)) / 3600;
-  if (waitedH > 3) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);
+  if (waitedH > 3 && last.type === "incoming" && !proactive) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);
   if (followUp) {
     const steps: Record<number, string> = {
       1: "פולואפ ראשון, יומיים אחרי ההצעה: לוודא בקצרה שההצעה התקבלה ושהכול ברור, ולהציע לענות על שאלות. הודעה קצרה וחמה, בלי לחץ.",

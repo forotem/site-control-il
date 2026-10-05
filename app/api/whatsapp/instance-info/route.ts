@@ -18,6 +18,12 @@ function authorized(req: NextRequest): boolean {
 
 export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // ?groups=1: רשימת הקבוצות (מזהה ושם בלבד), כדי למצוא את קבוצת Site-Control שרותם פתח (5.10.2026)
+  if (req.nextUrl.searchParams.get("groups") === "1") {
+    const chats = await greenApi<{ id: string; name?: string }[]>("getChats");
+    const groups = (chats || []).filter((c) => /@g\.us$/.test(c.id)).map((c) => ({ id: c.id, name: c.name || "" }));
+    return NextResponse.json({ groups }, { headers: { "Cache-Control": "no-store" } });
+  }
   const s = await greenApi<Record<string, unknown>>("getSettings");
   const state = await greenApi<{ stateInstance?: string }>("getStateInstance");
   if (!s) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });

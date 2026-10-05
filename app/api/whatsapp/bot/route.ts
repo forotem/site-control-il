@@ -88,10 +88,13 @@ export async function POST(req: NextRequest) {
   // kick: לפתוח שיחה עם ליד שכבר מחכה (webhook נשלח רק על הודעות חדשות). כל כללי הבטיחות חלים, בלי המתנה.
   const kick = req.nextUrl.searchParams.get("kick") === "1" && adminAuthorized(req);
   if (!dry && !kick && !authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string }; stockResult?: { slug?: string; answer?: string } };
+  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string }; stockResult?: { slug?: string; answer?: string }; followUp?: { step?: number; note?: string } };
   try { n = await req.json(); } catch { return NextResponse.json({ ok: true }); }
   // תוצאת בדיקת מלאי מהכלי המקומי (רק עם מפתח admin): טל ממשיך את השיחה עם תשובת עידן
   const stockResult = kick && n.stockResult && typeof n.stockResult.answer === "string" ? n.stockResult : undefined;
+  // פולואפ יזום אחרי הצעת מחיר (מהכלי המקומי followups.js): {step: 1|2|3, note: "..."}. טל כותב את הפולואפ לפי השיחה.
+  const followUp = kick && n.followUp && typeof n.followUp.step === "number" ? n.followUp : undefined;
+  const proactive = Boolean(stockResult || followUp);
   if (BOT_MODE === "off" && !dry) return NextResponse.json({ ok: true, skip: "off" });
   if (n.typeWebhook !== "incomingMessageReceived") return NextResponse.json({ ok: true });
   const chatId = String(n.senderData?.chatId || "");
@@ -109,12 +112,13 @@ export async function POST(req: NextRequest) {
   if (!prefill) return NextResponse.json({ ok: true, skip: "not a site lead" });
   // 4. עונים רק כשההודעה האחרונה בשיחה היא נכנסת (אין עדיין תשובה אחריה)
   const last = msgs[msgs.length - 1];
-  if (last.type !== "incoming" && !stockResult) return NextResponse.json({ ok: true, skip: "already answered" });
+  if (last.type !== "incoming" && !proactive) return NextResponse.json({ ok: true, skip: "already answered" });
+  if (followUp && last.type === "incoming") return NextResponse.json({ ok: true, skip: "customer replied, no follow-up needed" });
   if (!dry && !kick && n.idMessage && last.idMessage !== n.idMessage) return NextResponse.json({ ok: true, skip: "newer message pending" });
   // 2. רותם פעיל בשיחה
   const now = Date.now() / 1000;
   const rotemRecent = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && now - (m.timestamp || 0) < ROTEM_ACTIVE_HOURS * 3600);
-  if (rotemRecent && !dry && !stockResult) return NextResponse.json({ ok: true, skip: "rotem active" });
+  if (rotemRecent && !dry && !proactive) return NextResponse.json({ ok: true, skip: "rotem active" });
   // 5. תקרה יומית
   const botToday = msgs.filter((m) => m.type === "outgoing" && m.sendByApi && textOf(m) && now - (m.timestamp || 0) < 24 * 3600).length;
   if (botToday >= MAX_BOT_REPLIES_PER_DAY && !dry) return NextResponse.json({ ok: true, skip: "daily cap" });
@@ -130,7 +134,7 @@ export async function POST(req: NextRequest) {
     else conv.push({ role, content: t.slice(0, 1500) });
   }
   while (conv.length && conv[0].role !== "user") conv.shift();
-  if (stockResult && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: "(ממתין לתשובה על המלאי)" });
+  if (proactive && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: stockResult ? "(ממתין לתשובה על המלאי)" : "(הלקוח לא ענה מאז ההודעה האחרונה שלנו)" });
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });
 
   const nowIL = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date());
@@ -139,6 +143,14 @@ export async function POST(req: NextRequest) {
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
   const waitedH = (now - (last.timestamp || now)) / 3600;
   if (waitedH > 3) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);
+  if (followUp) {
+    const steps: Record<number, string> = {
+      1: "פולואפ ראשון, יומיים אחרי ההצעה: לוודא בקצרה שההצעה התקבלה ושהכול ברור, ולהציע לענות על שאלות. הודעה קצרה וחמה, בלי לחץ.",
+      2: "פולואפ שני, כמה ימים אחרי: לשאול אם עבר על ההצעה, אם משהו חסר או שרוצה לשנות משהו (כמות, דגם, התקנה), ולהזכיר שאפשר לדבר עם רותם.",
+      3: "פולואפ אחרון: הודעה קצרה ומכבדת. אם זה לא מתאים כרגע, בסדר גמור, ההצעה נשארת בתוקף ואפשר לחזור מתי שנוח. לא שולחים אחרי זה יותר.",
+    };
+    ctx.push(`זה פולואפ יזום (${steps[followUp.step ?? 2] || steps[2]})${followUp.note ? ` מה שהוצע: ${String(followUp.note).slice(0, 300)}.` : ""} לא ממציאים שינויים בהצעה, לא מורידים מחיר. השדה stock_check ריק.`);
+  }
   if (stockResult) {
     const sp = stockResult.slug ? productBySlug(stockResult.slug) : undefined;
     ctx.push(`תוצאת בדיקת מלאי מעידן היבואן${sp ? ` על ${productName(sp)} [${sp.slug}]` : ""}: "${String(stockResult.answer).slice(0, 400)}". תעביר ללקוח ותתקדם למכירה.`);
@@ -157,11 +169,11 @@ export async function POST(req: NextRequest) {
     .map((p) => `${productName(p!)}${p!.price ? `, ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
   const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").replace(/^\s*[*-]\s+/gm, "• ").trim();
   const text = [body, ...links].filter(Boolean).join("\n\n").slice(0, 3500);
-  if (dry) return NextResponse.json({ ok: true, dry: true, text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check });
+  if (dry) return NextResponse.json({ ok: true, dry: true, text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step });
   // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
   const stockProduct = data.stock_check ? productBySlug(data.stock_check.trim().replace(/^\[|\]$/g, "")) : undefined;
-  if (stockProduct && !stockResult) {
+  if (stockProduct && !proactive) {
     await sendWhatsAppId(ROTEM, `${STOCK_MARK} ${phone} ${stockProduct.slug}
 לקוח: ${n.senderData?.senderName || phone.replace(/^972/, "0")}
 מוצר: ${productName(stockProduct)}${stockProduct.sku ? ` (מק"ט ${stockProduct.sku})` : ""}, ${stockProduct.price ? `${stockProduct.price} ₪` : "לפי פנייה"}

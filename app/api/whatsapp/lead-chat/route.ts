@@ -39,7 +39,7 @@ export async function GET(req: NextRequest) {
     }));
     return NextResponse.json({ phone, status }, { headers: { "Cache-Control": "no-store" } });
   }
-  const keep = ["idMessage", "timestamp", "type", "typeMessage", "textMessage", "caption", "fileName", "mimeType", "downloadUrl", "statusMessage", "senderName", "quotedMessage", "extendedTextMessage"];
+  const keep = ["idMessage", "timestamp", "type", "typeMessage", "textMessage", "caption", "fileName", "mimeType", "downloadUrl", "statusMessage", "senderName", "quotedMessage", "extendedTextMessage", "sendByApi"];
   const messages = history.map((m) => Object.fromEntries(keep.filter((k) => m[k] !== undefined).map((k) => [k, m[k]])));
   return NextResponse.json({ phone, count: messages.length, messages }, { headers: { "Cache-Control": "no-store" } });
 }

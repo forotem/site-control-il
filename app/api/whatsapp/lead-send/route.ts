@@ -31,7 +31,7 @@ function isShabbat(now = new Date()): boolean {
 export async function POST(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   if (isShabbat()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
-  let body: { phone?: string; texts?: string[]; orderRef?: string };
+  let body: { phone?: string; texts?: string[]; orderRef?: string; rotemApproved?: boolean };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const phone = israeliMobile(body.phone || "");
   const texts = (body.texts || []).map((t) => String(t).trim()).filter(Boolean).slice(0, 3);
@@ -42,7 +42,10 @@ export async function POST(req: NextRequest) {
   const ref = /^[A-Za-z0-9-]{3,40}$/.test(body.orderRef || "") ? String(body.orderRef) : "";
   const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
   const ourCustomer = Boolean(ref) && history.some((m) => m.type === "outgoing" && (m.textMessage || m.extendedTextMessage?.text || "").includes(ref));
-  if (!fromSite && !ourCustomer) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
+  // rotemApproved: רותם ביקש בצ'אט לשלוח ללקוח שפנה אליו ישירות (לא מכפתור באתר). מותר רק אם רותם עצמו כבר כתב
+  // בשיחה הזאת מהטלפון (sendByApi=false), כלומר זו שיחה אמיתית שלו ולא מספר זר.
+  const rotemChat = Boolean(body.rotemApproved) && history.some((m) => m.type === "outgoing" && (m as { sendByApi?: boolean }).sendByApi === false);
+  if (!fromSite && !ourCustomer && !rotemChat) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
   const ids: (string | null)[] = [];
   for (const t of texts) ids.push(await sendWhatsAppId(phone, t.slice(0, 4000)));
   return NextResponse.json({ ok: ids.every(Boolean), phone, ids });

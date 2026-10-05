@@ -5,7 +5,7 @@
 // כך זה לא כלי לקריאת כל שיחה בטלפון של רותם, רק של לידים שהגיעו מהאתר.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { greenApi, IDAN_WA, israeliMobile } from "../../../lib/store-notify";
+import { greenApi, IDAN_WA, israeliMobile, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -23,12 +23,15 @@ function authorized(req: NextRequest): boolean {
 
 export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  const phone = israeliMobile(req.nextUrl.searchParams.get("phone") || "");
+  const raw = req.nextUrl.searchParams.get("phone") || "";
+  // self=1: קבוצת site-control-il (ההתראות של המערכת, כולל בקשות בדיקת מלאי של טל), או הצ'אט של רותם עם עצמו.
+  const isGroup = raw === SC_GROUP;
+  const phone = isGroup ? raw : israeliMobile(raw);
   if (!phone || phone === IDAN_WA) return NextResponse.json({ error: "bad phone" }, { status: 400 });
-  // self=1: הצ'אט של רותם עם עצמו (ההתראות של המערכת, כולל בקשות בדיקת מלאי של טל). רק המספר של רותם.
-  const self = req.nextUrl.searchParams.get("self") === "1" && phone === (process.env.STORE_ALERT_WHATSAPP || "972502256866");
+  const self = req.nextUrl.searchParams.get("self") === "1" && (isGroup || phone === (process.env.STORE_ALERT_WHATSAPP || "972502256866"));
+  if (isGroup && !self) return NextResponse.json({ error: "bad phone" }, { status: 400 });
   const count = Math.min(300, Math.max(1, Number(req.nextUrl.searchParams.get("count")) || 200));
-  const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count });
+  const history = await greenApi<Msg[]>("getChatHistory", { chatId: isGroup ? phone : `${phone}@c.us`, count });
   if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   const fromSite = self || history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
   if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
@@ -36,7 +39,7 @@ export async function GET(req: NextRequest) {
   const ids = (req.nextUrl.searchParams.get("ids") || "").split(",").map((s) => s.trim()).filter(Boolean).slice(0, 10);
   if (ids.length) {
     const status = await Promise.all(ids.map(async (idMessage) => {
-      const r = await greenApi<Msg & { statusMessage?: string; timestamp?: number }>("getMessage", { chatId: `${phone}@c.us`, idMessage });
+      const r = await greenApi<Msg & { statusMessage?: string; timestamp?: number }>("getMessage", { chatId: isGroup ? phone : `${phone}@c.us`, idMessage });
       return { idMessage, status: r?.statusMessage || null, timestamp: r?.timestamp || null };
     }));
     return NextResponse.json({ phone, status }, { headers: { "Cache-Control": "no-store" } });

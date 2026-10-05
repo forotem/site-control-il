@@ -2,6 +2,9 @@
 // ערוץ ראשי: ווצאפ דרך GreenAPI (אם מוגדרים GREEN_ID_INSTANCE + GREEN_API_TOKEN ב-Vercel).
 // בנוסף תמיד: מייל דרך Resend (RESEND_API_KEY) כארכיון וכגיבוי. אם אין אף אחד, נכתב ללוג בלבד.
 
+// רותם 5.10.2026: "פתחתי קבוצה בווצאפ. כל מה שקשור ל-Site-Control רק לשם". ההתראות לקבוצה "site-control-il"
+// (רותם + המספר העסקי), ולא לצ'אט של רותם עם עצמו. ALERT_WA (המספר של רותם) נשאר לזיהוי "רותם כתב".
+export const SC_GROUP = process.env.STORE_ALERT_GROUP || "120363430960512323@g.us";
 const ALERT_WA = process.env.STORE_ALERT_WHATSAPP || "972502256866"; // המספר העסקי של רותם
 const ALERT_EMAIL = process.env.STORE_ALERT_EMAIL || "info@site-control-il.com";
 
@@ -40,7 +43,8 @@ export async function greenApi<T = Record<string, unknown>>(method: string, body
 
 /** הודעת ווצאפ מהמספר העסקי. מחזיר את מזהה ההודעה, או null אם לא נשלחה */
 export async function sendWhatsAppId(to: string, message: string): Promise<string | null> {
-  const r = await greenApi<{ idMessage?: string }>("sendMessage", { chatId: `${to.replace(/\D/g, "")}@c.us`, message });
+  const chatId = /@g\.us$/.test(to) ? to : `${to.replace(/\D/g, "")}@c.us`;
+  const r = await greenApi<{ idMessage?: string }>("sendMessage", { chatId, message });
   return r?.idMessage || null;
 }
 
@@ -57,7 +61,7 @@ export async function messageStatus(to: string, idMessage: string): Promise<stri
 
 export async function notifyTeam(subject: string, text: string, opts?: { replyTo?: string }): Promise<{ whatsapp: boolean; email: boolean }> {
   const out = { whatsapp: false, email: false };
-  out.whatsapp = await sendWhatsApp(ALERT_WA, `${subject}\n\n${text}`);
+  out.whatsapp = Boolean(await sendWhatsAppId(SC_GROUP, `${subject}\n\n${text}`));
   // מייל תמיד (לא רק כגיבוי): ארכיון של כל ליד ב-info@, גם כשהווצאפ עבד
   if (process.env.RESEND_API_KEY) {
     try {

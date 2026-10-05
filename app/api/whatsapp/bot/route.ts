@@ -15,7 +15,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { botToken } from "../../../lib/wa-bot-token";
-import { greenApi, sendWhatsAppId, IDAN_WA, notifyTeam } from "../../../lib/store-notify";
+import { greenApi, sendWhatsAppId, IDAN_WA, notifyTeam, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 import { SYSTEM, askGemini, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
   const stockProduct = data.stock_check ? productBySlug(data.stock_check.trim().replace(/^\[|\]$/g, "")) : undefined;
   if (stockProduct && !proactive) {
-    await sendWhatsAppId(ROTEM, `${STOCK_MARK} ${phone} ${stockProduct.slug}
+    await sendWhatsAppId(SC_GROUP, `${STOCK_MARK} ${phone} ${stockProduct.slug}
 לקוח: ${n.senderData?.senderName || phone.replace(/^972/, "0")}
 מוצר: ${productName(stockProduct)}${stockProduct.sku ? ` (מק"ט ${stockProduct.sku})` : ""}, ${stockProduct.price ? `${stockProduct.price} ₪` : "לפי פנייה"}
 (טל שואל את עידן בשעות העבודה שלו, ומחזיר ללקוח)`);
@@ -182,7 +182,7 @@ export async function POST(req: NextRequest) {
 
   // מצב dry: לרותם בלבד
   if (BOT_MODE === "dry") {
-    await sendWhatsAppId(ROTEM, `🤖 טל היה עונה ל-${phone.replace(/^972/, "0")}:\n\n${text}`);
+    await sendWhatsAppId(SC_GROUP, `🤖 טל היה עונה ל-${phone.replace(/^972/, "0")}:\n\n${text}`);
     return NextResponse.json({ ok: true, mode: "dry" });
   }
   const id = await sendWhatsAppId(phone, text);

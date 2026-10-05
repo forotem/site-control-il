@@ -5,6 +5,7 @@ import { attrsOf, fitLine, kindLabel, nightLabel, audioLabel, aiLabel, isCamera,
 import { storeGuides } from "./store-guides";
 import { deals, dealProduct, withVat } from "./deals";
 import { BUSINESS } from "./business";
+import { SUPPLIER_NOTES } from "./supplier-notes";
 
 function productLine(p: (typeof storeProducts)[number]): string {
   const a = attrsOf(p);
@@ -96,7 +97,20 @@ export function buildKnowledge(): string {
     "לקוח שמעדיף שיחת טלפון ולא ווצאפ או צ'אט: מבקשים שם, טלפון ושעה נוחה, ומסמנים escalate, ורותם או נציג יתקשר. הרבה לקוחות, במיוחד מבוגרים, רוצים לדבר עם אדם אמיתי ולא עונים להודעות.",
     "איפה אתם: חנות אינטרנטית שעובדת בכל הארץ, עם משלוח לכל הארץ ומתקינים קבועים מטעמנו בכל הארץ. איסוף עצמי אפשרי בתיאום מראש.",
   ].join("\n");
-  return `# מדיניות ושירות\n${policies}\n\n# מדריך מכירה: איזה סוג מערכת מתאים ללקוח\n${playbook}\n\n# מה למדנו משיחות עם לקוחות\n${fromCalls}\n\n# קטלוג\n${cats.join("\n\n")}\n\n# מצלמות סולאריות 4G וחבילות שירות\n${solar}`;
+  // הטיפים של עידן (היבואן) מהווצאפ, מ-app/data/supplier-notes.ts: מה לשאול, מה להציע במקום, מה להוסיף
+  const supplier = Object.entries(SUPPLIER_NOTES)
+    .map(([slug, n]) => {
+      const p = storeProducts.find((x) => x.slug === slug);
+      if (!p) return null;
+      const bits = [n.history, ...(n.alternatives || []).map((a) => `חלופה: [${a.slug}], ${a.why}`), ...(n.tips || []).map((t) => `טיפ: ${t}`)].filter(Boolean);
+      return bits.length ? `- ${productName(p)} [${slug}]: ${bits.join(" | ")}` : null;
+    })
+    .filter(Boolean)
+    .join("\n");
+  const supplierSection = supplier
+    ? `\n\n# הטיפים של עידן, היבואן (ניסיון מהזמנות קודמות)\nמלאי משתנה: לא אומרים ללקוח "אזל", אלא שבודקים זמינות. מה שכן, אפשר להציע את מה שעידן המליץ:\n${supplier}`
+    : "";
+  return `# מדיניות ושירות\n${policies}\n\n# מדריך מכירה: איזה סוג מערכת מתאים ללקוח\n${playbook}\n\n# מה למדנו משיחות עם לקוחות\n${fromCalls}${supplierSection}\n\n# קטלוג\n${cats.join("\n\n")}\n\n# מצלמות סולאריות 4G וחבילות שירות\n${solar}`;
 }
 
 export const STORE_KNOWLEDGE = buildKnowledge();

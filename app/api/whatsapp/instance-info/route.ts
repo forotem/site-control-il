@@ -24,6 +24,10 @@ export async function GET(req: NextRequest) {
   const url = String(s.webhookUrl || "");
   let host = "";
   try { host = url ? new URL(url).host : ""; } catch { host = "(invalid)"; }
+  // הצצה לראש תור ההתראות, בלי deleteNotification (לא צורך כלום): אם ההתראה בראש התור ישנה, אף אחד לא קורא
+  // את התור (מערכת TimelapseIT עובדת בשיטה אחרת). מחזירים רק זמן וסוג, בלי תוכן ובלי מספרים.
+  const head = await greenApi<{ receiptId?: number; body?: { typeWebhook?: string; timestamp?: number } } | null>("receiveNotification", undefined, { receiveTimeout: 5 });
+  const queueHead = head && head.body ? { typeWebhook: head.body.typeWebhook || null, ageMinutes: head.body.timestamp ? Math.round((Date.now() / 1000 - head.body.timestamp) / 60) : null } : null;
   const flags = Object.fromEntries(Object.entries(s).filter(([k]) => /Webhook$|delaySendMessagesMilliseconds|markIncomingMessagesReaded|keepOnlineStatus/.test(k)));
-  return NextResponse.json({ webhookUrlSet: Boolean(url), webhookHost: host, stateInstance: state?.stateInstance || null, ...flags }, { headers: { "Cache-Control": "no-store" } });
+  return NextResponse.json({ webhookUrlSet: Boolean(url), webhookHost: host, stateInstance: state?.stateInstance || null, queueHead, ...flags }, { headers: { "Cache-Control": "no-store" } });
 }

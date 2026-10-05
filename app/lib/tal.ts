@@ -7,7 +7,7 @@ export const MODEL = process.env.STORE_CHAT_MODEL || "gemini-2.5-flash";
 export const ASSISTANT_NAME = "טל";
 
 export type Msg = { role: "user" | "assistant"; content: string };
-export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string };
+export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string; stock_check: string };
 
 export const SYSTEM = `אתה ${ASSISTANT_NAME}, עוזר מכירות דיגיטלי (AI) בחנות של Site-Control, חברת התקנות ישראלית שמוכרת מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. אתה מדבר עברית פשוטה וחמה, כמו מתקין מנוסה שמסביר ללקוח, בלי ז'רגון מיותר ובלי לחץ מכירתי.
 
@@ -42,8 +42,9 @@ const responseSchema = {
     lead_phone: { type: "STRING", description: "טלפון הלקוח אם נמסר, אחרת ריק" },
     lead_summary: { type: "STRING", description: "משפט: מה הלקוח רוצה. ריק אם אין ליד" },
     intent: { type: "STRING", enum: ["browse", "ready", "support"] },
+    stock_check: { type: "STRING", description: "slug של מוצר אחד מהקטלוג שהלקוח שאל אם יש במלאי או רוצה לקנות, כדי שהמערכת תבדוק מול היבואן. ריק אם אין" },
   },
-  required: ["reply", "products", "escalate", "lead_name", "lead_phone", "lead_summary", "intent"],
+  required: ["reply", "products", "escalate", "lead_name", "lead_phone", "lead_summary", "intent", "stock_check"],
 };
 
 export async function askGemini(apiKey: string, system: string, messages: Msg[]): Promise<Out> {
@@ -68,11 +69,11 @@ export async function askGemini(apiKey: string, system: string, messages: Msg[])
     return {
       reply: String(o.reply || ""), products: Array.isArray(o.products) ? o.products.map(String) : [],
       escalate: String(o.escalate || ""), lead_name: String(o.lead_name || ""), lead_phone: String(o.lead_phone || ""), lead_summary: String(o.lead_summary || ""),
-      intent: String(o.intent || "browse"),
+      intent: String(o.intent || "browse"), stock_check: String(o.stock_check || ""),
     };
   } catch {
     const m = text.match(/"reply"\s*:\s*"((?:[^"\\]|\\.)*)/);
-    return { reply: m ? m[1].replace(/\\n/g, "\n").replace(/\\"/g, '"') : "סליחה, לא הצלחתי לנסח תשובה. אפשר לנסח את השאלה קצת אחרת?", products: [], escalate: "", lead_name: "", lead_phone: "", lead_summary: "", intent: "browse" };
+    return { reply: m ? m[1].replace(/\\n/g, "\n").replace(/\\"/g, '"') : "סליחה, לא הצלחתי לנסח תשובה. אפשר לנסח את השאלה קצת אחרת?", products: [], escalate: "", lead_name: "", lead_phone: "", lead_summary: "", intent: "browse", stock_check: "" };
   }
 }
 

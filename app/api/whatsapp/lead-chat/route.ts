@@ -25,10 +25,12 @@ export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   const phone = israeliMobile(req.nextUrl.searchParams.get("phone") || "");
   if (!phone || phone === IDAN_WA) return NextResponse.json({ error: "bad phone" }, { status: 400 });
+  // self=1: הצ'אט של רותם עם עצמו (ההתראות של המערכת, כולל בקשות בדיקת מלאי של טל). רק המספר של רותם.
+  const self = req.nextUrl.searchParams.get("self") === "1" && phone === (process.env.STORE_ALERT_WHATSAPP || "972502256866");
   const count = Math.min(300, Math.max(1, Number(req.nextUrl.searchParams.get("count")) || 200));
   const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count });
   if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
-  const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
+  const fromSite = self || history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
   if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
   // ?ids=a,b: סטטוס הודעות שנשלחו (sent / delivered / read), לאימות אחרי שליחה
   const ids = (req.nextUrl.searchParams.get("ids") || "").split(",").map((s) => s.trim()).filter(Boolean).slice(0, 10);

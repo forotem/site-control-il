@@ -32,6 +32,7 @@ const DEBOUNCE_MS = 12_000;
 const ROTEM_ACTIVE_HOURS = 12;
 const MAX_BOT_REPLIES_PER_DAY = 10;
 const INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
+const STOCK_MARK = "📦 בדיקת מלאי:";
 
 type H = { idMessage?: string; timestamp?: number; type?: string; typeMessage?: string; textMessage?: string; extendedTextMessage?: { text?: string }; caption?: string; sendByApi?: boolean };
 const textOf = (m: H) => m.textMessage || m.extendedTextMessage?.text || m.caption || "";
@@ -74,7 +75,8 @@ const WHATSAPP_RULES = `
 - משתמשים בטיפים של עידן היבואן ובמה שלמדנו משיחות (בידע למטה): למשל חלופה שבמלאי, זרוע לכיפה, מסך נוסף לאינטרקום, מצלמה שעוקבת לבד למי שלא מסתדר עם אפליקציה. זה מה שמבדיל בין בוט למוכר טוב.
 - אין כרטיסי מוצר בווצאפ. מוצרים שאתה ממליץ עליהם מחזירים ב-products, והמערכת מוסיפה את הקישורים לבד. לא כותבים כתובות בעצמך.
 - הלקוח כבר בווצאפ: לא מבקשים ממנו טלפון ולא שולחים קישור wa.me. מותר לבקש שם.
-- מלאי וזמן אספקה: אף פעם לא מבטיחים שיש במלאי. אומרים שרותם מאשר זמינות מול היבואן לפני כל חיוב, ושבדרך כלל האספקה 3 עד 5 ימי עסקים.
+- מלאי: אף פעם לא מבטיחים מהראש שיש במלאי. כשהלקוח שואל אם מוצר מסוים במלאי, או רוצה לקנות אותו, מחזירים את ה-slug שלו בשדה stock_check, והמערכת שואלת את עידן היבואן. ללקוח אומרים: בשעות העבודה של היבואן (א'-ה' 08:00-17:00, ו' עד 13:00) "אני בודק עכשיו מול היבואן וחוזר אליך תוך זמן קצר"; מחוץ לשעות האלה "היבואן כבר לא זמין בשעה כזאת, אני בודק מחר בבוקר וחוזר אליך". לא ממציאים תשובת מלאי. אם בשיחה כבר כתוב שבדקנו ("בדקנו מול היבואן"), לא בודקים שוב את אותו מוצר, אלא ממשיכים משם.
+- כשההקשר אומר "תוצאת בדיקת מלאי": זו התשובה של עידן. מעבירים אותה ללקוח בפשטות ("בדקנו, יש במלאי ואספקה מיידית" / "לא במלאי כרגע, ועידן ממליץ על..."), ומתקדמים למכירה: איך נוח לו לקבל, איסוף עצמי בתיאום או משלוח לכתובת (המשלוח בתשלום לפי כתובת), ואיך מזמינים.
 - איך קונים: מזמינים מדף המוצר באתר (הוספה לעגלה ושליחת הזמנה עם קוד אימות בווצאפ). ההזמנה לא מחייבת: לא גובים כלום עד שרותם מאשר מלאי ומחיר משלוח. אפשר גם פשוט לכתוב כאן מה רוצים להזמין ולאיזו כתובת, ורותם יאשר.
 - מחיר שרותם כבר כתב ללקוח בשיחה הזאת מחייב, גם אם במחירון כתוב אחרת. לא סותרים אותו.
 - אתה גם מתאם שיחות של רותם. לקוח שרוצה לדבר עם בן אדם, או שהשאלה שלו דורשת את רותם (הנחה, כמות, התקנה, משהו שאתה לא בטוח בו): מציעים שרותם יחזור אליו מהטלפון הזה, ושואלים מתי נוח. אומרים בכנות מתי רותם זמין לפי השעה עכשיו (שעות הפעילות: ${"א'-ה' 08:00-18:00, ו' 08:00-14:00"}). למשל באחת בלילה: "בשעה כזאת רותם עוד לא זמין, בסביבות 9-10 בבוקר הוא כבר יהיה, ואני מוסר לו שיחזור אליך מהטלפון הזה". אחרי שהלקוח אישר: כותבים בשדה escalate "לחזור ל{שם} ב{שעה שביקש}: {מה הוא רוצה}", כדי שרותם יקבל תזכורת.
@@ -86,8 +88,10 @@ export async function POST(req: NextRequest) {
   // kick: לפתוח שיחה עם ליד שכבר מחכה (webhook נשלח רק על הודעות חדשות). כל כללי הבטיחות חלים, בלי המתנה.
   const kick = req.nextUrl.searchParams.get("kick") === "1" && adminAuthorized(req);
   if (!dry && !kick && !authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string } };
+  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string }; stockResult?: { slug?: string; answer?: string } };
   try { n = await req.json(); } catch { return NextResponse.json({ ok: true }); }
+  // תוצאת בדיקת מלאי מהכלי המקומי (רק עם מפתח admin): טל ממשיך את השיחה עם תשובת עידן
+  const stockResult = kick && n.stockResult && typeof n.stockResult.answer === "string" ? n.stockResult : undefined;
   if (BOT_MODE === "off" && !dry) return NextResponse.json({ ok: true, skip: "off" });
   if (n.typeWebhook !== "incomingMessageReceived") return NextResponse.json({ ok: true });
   const chatId = String(n.senderData?.chatId || "");
@@ -105,12 +109,12 @@ export async function POST(req: NextRequest) {
   if (!prefill) return NextResponse.json({ ok: true, skip: "not a site lead" });
   // 4. עונים רק כשההודעה האחרונה בשיחה היא נכנסת (אין עדיין תשובה אחריה)
   const last = msgs[msgs.length - 1];
-  if (last.type !== "incoming") return NextResponse.json({ ok: true, skip: "already answered" });
+  if (last.type !== "incoming" && !stockResult) return NextResponse.json({ ok: true, skip: "already answered" });
   if (!dry && !kick && n.idMessage && last.idMessage !== n.idMessage) return NextResponse.json({ ok: true, skip: "newer message pending" });
   // 2. רותם פעיל בשיחה
   const now = Date.now() / 1000;
   const rotemRecent = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && now - (m.timestamp || 0) < ROTEM_ACTIVE_HOURS * 3600);
-  if (rotemRecent && !dry) return NextResponse.json({ ok: true, skip: "rotem active" });
+  if (rotemRecent && !dry && !stockResult) return NextResponse.json({ ok: true, skip: "rotem active" });
   // 5. תקרה יומית
   const botToday = msgs.filter((m) => m.type === "outgoing" && m.sendByApi && textOf(m) && now - (m.timestamp || 0) < 24 * 3600).length;
   if (botToday >= MAX_BOT_REPLIES_PER_DAY && !dry) return NextResponse.json({ ok: true, skip: "daily cap" });
@@ -126,6 +130,7 @@ export async function POST(req: NextRequest) {
     else conv.push({ role, content: t.slice(0, 1500) });
   }
   while (conv.length && conv[0].role !== "user") conv.shift();
+  if (stockResult && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: "(ממתין לתשובה על המלאי)" });
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });
 
   const nowIL = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date());
@@ -134,6 +139,10 @@ export async function POST(req: NextRequest) {
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
   const waitedH = (now - (last.timestamp || now)) / 3600;
   if (waitedH > 3) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);
+  if (stockResult) {
+    const sp = stockResult.slug ? productBySlug(stockResult.slug) : undefined;
+    ctx.push(`תוצאת בדיקת מלאי מעידן היבואן${sp ? ` על ${productName(sp)} [${sp.slug}]` : ""}: "${String(stockResult.answer).slice(0, 400)}". תעביר ללקוח ותתקדם למכירה.`);
+  }
   const introduced = msgs.some((m) => m.type === "outgoing" && textOf(m).includes(INTRO_MARK));
   ctx.push(introduced ? "כבר הצגת את עצמך בשיחה הזאת, אל תציג שוב." : "עוד לא הצגת את עצמך בשיחה הזאת.");
   if (n.senderData?.senderName) ctx.push(`השם שלו בווצאפ: ${n.senderData.senderName} (אפשר לפנות בשם הפרטי אם נראה כמו שם אמיתי).`);
@@ -148,7 +157,16 @@ export async function POST(req: NextRequest) {
     .map((p) => `${productName(p!)}${p!.price ? `, ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
   const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").replace(/^\s*[*-]\s+/gm, "• ").trim();
   const text = [body, ...links].filter(Boolean).join("\n\n").slice(0, 3500);
-  if (dry) return NextResponse.json({ ok: true, dry: true, text, escalate: data.escalate, intent: data.intent });
+  if (dry) return NextResponse.json({ ok: true, dry: true, text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check });
+  // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
+  // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
+  const stockProduct = data.stock_check ? productBySlug(data.stock_check.trim().replace(/^\[|\]$/g, "")) : undefined;
+  if (stockProduct && !stockResult) {
+    await sendWhatsAppId(ROTEM, `${STOCK_MARK} ${phone} ${stockProduct.slug}
+לקוח: ${n.senderData?.senderName || phone.replace(/^972/, "0")}
+מוצר: ${productName(stockProduct)}${stockProduct.sku ? ` (מק"ט ${stockProduct.sku})` : ""}, ${stockProduct.price ? `${stockProduct.price} ₪` : "לפי פנייה"}
+(טל שואל את עידן בשעות העבודה שלו, ומחזיר ללקוח)`);
+  }
 
   // מצב dry: לרותם בלבד
   if (BOT_MODE === "dry") {

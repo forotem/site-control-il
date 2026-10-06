@@ -13,7 +13,7 @@ export type OfferTier = {
   /** פאנל סולארי שנמכר בנפרד ונכנס לכל מצלמה בחבילה (null כשהפאנל כלול באריזה) */
   panelSlug: string | null;
   /** תמונה של המצלמה עם הפאנל (רותם 6.10.2026: כשהמחיר כולל פאנל, רואים אותו גם בתמונה). נבנתה מתמונות המוצרים
-   *  בסקריפט scratchpad/kitimg/compose.py; בלי שדה זה מוצגת תמונת המצלמה לבד */
+   *  בסקריפט automation/kit-images/compose.py; בלי שדה זה מוצגת תמונת המצלמה לבד */
   kitImage?: string;
   points: string[];
 };

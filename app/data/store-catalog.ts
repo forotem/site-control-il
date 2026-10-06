@@ -2381,7 +2381,7 @@ export const storeProducts: StoreProduct[] = [
       "פאנל 66W כלול",
       "זום ומעקב אוטומטי"
     ],
-    "image": "/store-images/reolink-trackmix-lte-plus-solar-v2.webp",
+    "image": "/store-images/reolink-trackmix-lte-plus-solar-kit.webp",
     "datasheet": null,
     "oldStock": false
   },

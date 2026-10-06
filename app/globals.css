@@ -653,3 +653,58 @@ body.sc-chat-open .scroll-top, body.sc-cart-open .scroll-top { display: none !im
 
 /* דפי טופס לידים (התקנה, יצירת קשר): עגלה ריקה לא מוצגת כדי לא להסיח מהטופס. הדף מסמן את עצמו ב-data-lead-page. */
 body:has([data-lead-page]) #store-cart-button[data-empty="true"] { display: none; }
+
+/* ===== FLOATING MENU (רותם 6.10.2026: בחירת נושא לפני ווצאפ + שיחה חוזרת) ===== */
+.cta-panel {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 0;
+  width: min(340px, calc(100vw - 32px));
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  color: var(--text);
+  direction: rtl;
+  text-align: right;
+}
+.cta-panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.cta-panel-head b { font-size: 1.05rem; color: var(--text-bright); }
+.cta-close { background: none; border: 0; color: var(--muted); font-size: 1rem; cursor: pointer; padding: 6px; }
+.cta-sub { color: var(--muted); font-size: 0.88rem; line-height: 1.5; margin: 0 0 10px; }
+.cta-list { list-style: none; padding: 0; margin: 0 0 10px; display: grid; gap: 8px; }
+.cta-list li { display: flex; align-items: stretch; gap: 6px; }
+.cta-choice {
+  flex: 1; display: flex; align-items: center; gap: 8px;
+  padding: 11px 12px; border-radius: 12px; text-decoration: none;
+  background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.35);
+  color: var(--text-bright); font-weight: 600; font-size: 0.95rem;
+}
+.cta-choice:hover { background: rgba(37, 211, 102, 0.22); }
+.cta-browse {
+  display: flex; align-items: center; padding: 0 10px; border-radius: 12px; text-decoration: none;
+  border: 1px solid var(--glass-border); color: var(--muted); font-size: 0.8rem; white-space: nowrap;
+}
+.cta-browse:hover { color: var(--text); }
+.cta-callback-btn, .cta-back {
+  width: 100%; background: none; border: 1px dashed var(--glass-border); color: var(--text);
+  border-radius: 12px; padding: 10px; cursor: pointer; font-size: 0.9rem; font-family: inherit;
+}
+.cta-back { border: 0; color: var(--muted); padding: 6px; }
+.cta-form { display: grid; gap: 10px; }
+.cta-form label { display: grid; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+.cta-form input, .cta-form select {
+  background: var(--bg-secondary); border: 1px solid var(--glass-border); color: var(--text);
+  border-radius: 10px; padding: 10px; font-size: 1rem; font-family: inherit;
+}
+.cta-submit {
+  background: var(--accent-gradient); color: white; border: 0; border-radius: 12px;
+  padding: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; font-family: inherit;
+}
+.cta-err { color: #ff8a80; font-size: 0.85rem; margin: 0; }
+@media (max-width: 480px) {
+  .cta-panel { width: calc(100vw - 32px); }
+}

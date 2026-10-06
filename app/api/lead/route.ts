@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 const clean = (v: unknown, n: number) => String(v ?? "").replace(/[<>]/g, "").trim().slice(0, n);
 // שדה של שורה אחת: בלי ירידות שורה, כדי שאי אפשר יהיה לזייף שורות בהתראה או בנושא המייל
 const line = (v: unknown, n: number) => clean(v, n).replace(/[\r\n\t]+/g, " ");
-const FORMS: Record<string, string> = { install: "ליד התקנה", category: "ליד מדף קטגוריה", contact: "פנייה מיצירת קשר", deal: "ליד מבצע" };
+const FORMS: Record<string, string> = { install: "ליד התקנה", category: "ליד מדף קטגוריה", contact: "פנייה מיצירת קשר", deal: "ליד מבצע", callback: "📞 בקשת שיחה חוזרת" };
 
 export async function POST(req: NextRequest) {
   let body: Record<string, unknown>;

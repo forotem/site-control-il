@@ -91,13 +91,16 @@ export async function POST(req: NextRequest) {
   // kick: לפתוח שיחה עם ליד שכבר מחכה (webhook נשלח רק על הודעות חדשות). כל כללי הבטיחות חלים, בלי המתנה.
   const kick = req.nextUrl.searchParams.get("kick") === "1" && adminAuthorized(req);
   if (!dry && !kick && !authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string }; stockResult?: { slug?: string; answer?: string }; followUp?: { step?: number; note?: string } };
+  let n: { typeWebhook?: string; senderData?: { chatId?: string; senderName?: string }; idMessage?: string; messageData?: { typeMessage?: string }; stockResult?: { slug?: string; answer?: string }; followUp?: { step?: number; note?: string }; trustedLead?: { source?: string } };
   try { n = await req.json(); } catch { return NextResponse.json({ ok: true }); }
   // תוצאת בדיקת מלאי מהכלי המקומי (רק עם מפתח admin): טל ממשיך את השיחה עם תשובת עידן
   const stockResult = kick && n.stockResult && typeof n.stockResult.answer === "string" ? n.stockResult : undefined;
   // פולואפ יזום אחרי הצעת מחיר (מהכלי המקומי followups.js): {step: 1|2|3, note: "..."}. טל כותב את הפולואפ לפי השיחה.
   const followUp = kick && n.followUp && typeof n.followUp.step === "number" ? n.followUp : undefined;
   const proactive = Boolean(stockResult || followUp);
+  // ליד שרשום בטבלת הלידים אבל ההודעה הראשונה שלו לא בהיסטוריה (הגיע בזמן ניתוק GreenAPI, 6.10.2026). רק מהכלים
+  // המקומיים (מפתח admin), שמפעילים את זה רק לשורות מהטבלה.
+  const trustedLead = kick && n.trustedLead ? n.trustedLead : undefined;
   // החיבור לווצאפ נותק (6.10.2026: נותק יום שלם בלי שאף אחד ידע): התראה במייל, כי בווצאפ אי אפשר לשלוח
   if (n.typeWebhook === "stateInstanceChanged") {
     const state = String((n as { stateInstance?: string }).stateInstance || "");
@@ -125,7 +128,7 @@ export async function POST(req: NextRequest) {
 
   // 1. רק לידים מהאתר של Site-Control
   const prefill = msgs.find((m) => m.type === "incoming" && siteSourceOf(textOf(m)));
-  if (!prefill) return NextResponse.json({ ok: true, skip: "not a site lead" });
+  if (!prefill && !trustedLead) return NextResponse.json({ ok: true, skip: "not a site lead" });
   // 4. עונים רק כשההודעה האחרונה בשיחה היא נכנסת (אין עדיין תשובה אחריה)
   const last = msgs[msgs.length - 1];
   if (last.type !== "incoming" && !proactive) return NextResponse.json({ ok: true, skip: "already answered" });
@@ -154,8 +157,8 @@ export async function POST(req: NextRequest) {
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });
 
   const nowIL = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date());
-  const ctx: string[] = [`השעה עכשיו בישראל: ${nowIL}.`, `הלקוח פנה מהאתר (${siteSourceOf(textOf(prefill))}).`];
-  const fromPage = storeProducts.find((p) => textOf(prefill).includes(p.title));
+  const ctx: string[] = [`השעה עכשיו בישראל: ${nowIL}.`, `הלקוח פנה מהאתר (${prefill ? siteSourceOf(textOf(prefill)) : trustedLead?.source || "כפתור ווצאפ"}).`];
+  const fromPage = prefill ? storeProducts.find((p) => textOf(prefill).includes(p.title)) : undefined;
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
   const waitedH = (now - (last.timestamp || now)) / 3600;
   if (waitedH > 3 && last.type === "incoming" && !proactive) ctx.push(`ההודעה האחרונה של הלקוח חיכתה ${Math.round(waitedH)} שעות בלי מענה: פתח בהתנצלות קצרה על העיכוב.`);

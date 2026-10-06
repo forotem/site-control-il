@@ -24,6 +24,22 @@ export async function GET(req: NextRequest) {
     const groups = (chats || []).filter((c) => /@g\.us$/.test(c.id)).map((c) => ({ id: c.id, name: c.name || "" }));
     return NextResponse.json({ groups }, { headers: { "Cache-Control": "no-store" } });
   }
+  // ?queue=1: הודעות יוצאות שממתינות בתור (6.10.2026: הווצאפ התנתק, וכל מה שבתור יוצא מיד כשרותם מחבר מחדש,
+  // אז בודקים קודם שאין שם הודעה ישנה ללקוח). יעד, סוג ותחילת הטקסט בלבד.
+  if (req.nextUrl.searchParams.get("queue") === "1") {
+    const obj = (x: unknown): Record<string, unknown> => (x && typeof x === "object" ? (x as Record<string, unknown>) : {});
+    const q = await greenApi<unknown>("showMessagesQueue");
+    const list = Array.isArray(q) ? q.map(obj) : [];
+    const items = list.map((m) => {
+      const b = obj(m.body);
+      return {
+        chatId: String(b.chatId || m.chatId || ""),
+        type: String(m.type || m.typeMessage || ""),
+        preview: String(b.message || b.caption || b.fileName || m.message || "").replace(/\s+/g, " ").slice(0, 80),
+      };
+    });
+    return NextResponse.json({ count: items.length, items, keys: list[0] ? Object.keys(list[0]) : [], ...(Array.isArray(q) ? {} : { raw: q }) }, { headers: { "Cache-Control": "no-store" } });
+  }
   const s = await greenApi<Record<string, unknown>>("getSettings");
   const state = await greenApi<{ stateInstance?: string }>("getStateInstance");
   if (!s) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });

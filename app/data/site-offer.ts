@@ -12,6 +12,9 @@ export type OfferTier = {
   productSlug: string;
   /** פאנל סולארי שנמכר בנפרד ונכנס לכל מצלמה בחבילה (null כשהפאנל כלול באריזה) */
   panelSlug: string | null;
+  /** תמונה של המצלמה עם הפאנל (רותם 6.10.2026: כשהמחיר כולל פאנל, רואים אותו גם בתמונה). נבנתה מתמונות המוצרים
+   *  בסקריפט scratchpad/kitimg/compose.py; בלי שדה זה מוצגת תמונת המצלמה לבד */
+  kitImage?: string;
   points: string[];
 };
 
@@ -37,6 +40,7 @@ export const SITE_OFFER = {
       tagline: "4K קבועה עם זרקור. הכי הרבה מצלמות לכל שקל",
       productSlug: "reolink-go-ultra",
       panelSlug: "reolink-solar-panel-2",
+      kitImage: "/store-images/reolink-go-ultra-solar-kit.webp",
       points: [
         "תמונה 4K חדה, זרקור וצבע גם בלילה",
         "זיהוי אדם והתראה לנייד",
@@ -50,6 +54,7 @@ export const SITE_OFFER = {
       tagline: "שתי עדשות, זום x6 ומעקב אוטומטי אחרי מי שנכנס",
       productSlug: "reolink-trackmix-lte",
       panelSlug: "reolink-solar-panel-2",
+      kitImage: "/store-images/reolink-trackmix-lte-solar-kit.webp",
       points: [
         "עדשה רחבה שרואה את כל האתר ועדשת זום שמתקרבת",
         "מסתובבת לבד אחרי אדם או רכב, ואפשר לסובב ולעשות זום מהנייד",

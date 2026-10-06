@@ -2304,7 +2304,7 @@ export const storeProducts: StoreProduct[] = [
       "פאנל סולארי כלול: פותחים ומתקינים",
       "4G LTE עם סים, בלי תשתית"
     ],
-    "image": "/store-images/reolink-go-pt-ultra-v2.webp",
+    "image": "/store-images/reolink-go-pt-ultra-solar-kit.webp",
     "datasheet": null,
     "oldStock": false
   },

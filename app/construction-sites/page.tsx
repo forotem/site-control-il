@@ -36,7 +36,7 @@ const needs = [
 export default function ConstructionSites() {
   const tiers: CalcTier[] = SITE_OFFER.tiers.map((t) => {
     const p = offerProduct(t.productSlug);
-    return { id: t.id, name: t.name, tagline: t.tagline, equipment: tierEquipment(t), image: p?.image ?? null, product: p ? productName(p) : t.productSlug, points: t.points };
+    return { id: t.id, name: t.name, tagline: t.tagline, equipment: tierEquipment(t), image: t.kitImage ?? p?.image ?? null, product: `${p ? productName(p) : t.productSlug}${t.panelSlug ? " + פאנל סולארי" : ""}`, points: t.points };
   });
   const [value, best] = tiers;
   const day = installDayWithVat();
@@ -99,8 +99,8 @@ export default function ConstructionSites() {
         </div>
         {hero?.image && (
           <Link href={`/store/${hero.slug}`} className={deal.shot} aria-label={`לדף המוצר ${productName(hero)}`}>
-            <img src={hero.image} alt={hero.title} />
-            <em>{productName(hero)}</em>
+            <img src={SITE_OFFER.tiers[1].kitImage ?? hero.image} alt={`${hero.title}${SITE_OFFER.tiers[1].kitImage ? ", עם פאנל סולארי" : ""}`} />
+            <em>{productName(hero)}{SITE_OFFER.tiers[1].kitImage ? " + פאנל סולארי" : ""}</em>
           </Link>
         )}
       </header>

@@ -6,7 +6,7 @@
 // כללי בטיחות (האינסטנס משותף גם למערכת הלידים של TimelapseIT, ובטלפון של רותם יש שיחות אחרות):
 // 1. רק שיחה פרטית שיש בה הודעה נכנסת מכפתור באתר של Site-Control (site-wa-prefills). לא TimelapseIT,
 //    לא עידן, לא קבוצות, לא אנשי קשר אחרים.
-// 2. רותם כתב בשיחה מהטלפון (sendByApi=false) ב-12 השעות האחרונות: הבוט שותק. רותם "לוקח" שיחה פשוט כשהוא כותב בה.
+// 2. רותם כתב בשיחה מהטלפון (sendByApi=false) ב-10 הדקות האחרונות: הבוט שותק (רותם 6.10.2026: "הלקוח ממשיך לדבר איתי, למה הבוט לא עונה לו?" = טל ממשיך כשרותם לא באמצע שיחה). רותם "לוקח" שיחה פשוט כשהוא כותב בה.
 // 3. לא בשבת ובחג (שישי/ערב חג מ-16:00 עד מוצאי שבת/חג 20:00).
 // 4. עונה רק על ההודעה הנכנסת האחרונה, אחרי המתנה קצרה (לקוחות שולחים כמה הודעות ברצף), ורק אם עוד לא
 //    נענתה. כך גם שליחה חוזרת של אותו webhook (GreenAPI מנסה שוב אחרי דקה) לא יוצרת תשובה כפולה.
@@ -29,7 +29,7 @@ const BOT_MODE: "live" | "dry" | "off" = "live";
 const ROTEM = process.env.STORE_ALERT_WHATSAPP || "972502256866";
 const SITE = "https://www.site-control-il.com";
 const DEBOUNCE_MS = 12_000;
-const ROTEM_ACTIVE_HOURS = 12;
+const ROTEM_ACTIVE_MINUTES = 10;
 const MAX_BOT_REPLIES_PER_DAY = 10;
 const INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
 const STOCK_MARK = "📦 בדיקת מלאי:";
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
   if (!dry && !kick && n.idMessage && last.idMessage !== n.idMessage) return NextResponse.json({ ok: true, skip: "newer message pending" });
   // 2. רותם פעיל בשיחה
   const now = Date.now() / 1000;
-  const rotemRecent = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && now - (m.timestamp || 0) < ROTEM_ACTIVE_HOURS * 3600);
+  const rotemRecent = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && now - (m.timestamp || 0) < ROTEM_ACTIVE_MINUTES * 60);
   if (rotemRecent && !dry && !proactive) return NextResponse.json({ ok: true, skip: "rotem active" });
   // 5. תקרה יומית
   const botToday = msgs.filter((m) => m.type === "outgoing" && m.sendByApi && textOf(m) && now - (m.timestamp || 0) < 24 * 3600).length;
@@ -207,7 +207,7 @@ export async function POST(req: NextRequest) {
     const lastIn = textOf(last).slice(0, 300);
     await notifyTeam(
       data.intent === "ready" ? `🟢 טל: לקוח מוכן לקנות (${phone.replace(/^972/, "0")})` : `❓ טל צריך אותך (${phone.replace(/^972/, "0")})`,
-      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. הבוט שותק 12 שעות אחרי הודעה שלך.`,
+      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`,
     ).catch(() => undefined);
   }
   return NextResponse.json({ ok: Boolean(id), sent: Boolean(id) });

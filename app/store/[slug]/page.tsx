@@ -219,7 +219,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
             {deal && (
               <p className={styles.stockNote}>
-                צריך סים? חבילת {deal.sim.gb}GB ל-{deal.sim.months} חודשים ב-{nis(deal.sim.price)} ₪, תשלום חד-פעמי. מבקשים אותה בווצאפ יחד עם ההזמנה.
+                צריך סים? סים וגלישה ב-{nis(deal.sim.price)} ₪ לשנה. מבקשים בווצאפ יחד עם ההזמנה.
               </p>
             )}
             <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>

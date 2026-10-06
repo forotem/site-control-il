@@ -1602,42 +1602,114 @@
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.lastprice.co.il/p/100058956",
+        "seller": "lastprice.co.il",
+        "note": "camera alone, 1189 on 6/10/2026"
+      },
+      {
+        "url": "https://www.satsigma.co.il/?p=16984",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 1189"
+      }
+    ],
+    "gap": 10
   },
   "reolink-go-ultra": {
     "model": "Reolink Go Ultra / G340",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.satsigma.co.il/?p=23250",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 830 on its own page (zap listing still 1095)"
+      },
+      {
+        "url": "https://ksp.co.il/web/item/385310",
+        "seller": "ksp.co.il",
+        "note": "camera alone, 895"
+      },
+      {
+        "url": "https://www.wallashops.co.il/item/137346",
+        "seller": "wallashops.co.il",
+        "note": "camera alone, 895"
+      }
+    ],
+    "gap": 10
   },
   "reolink-go-pt-plus": {
     "model": "Reolink Go PT Plus",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://kav-isr.com/cameras/home-cameras/reolink-go-pt-plus-w.html",
+        "seller": "kav-isr.com",
+        "note": "camera alone, 1279; note: sigma sells camera+panel at 1120, so we stay at 1109"
+      }
+    ],
+    "gap": 10
   },
   "reolink-go-pt-ultra": {
     "model": "Reolink Go PT Ultra",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.satsigma.co.il/?p=20626",
+        "seller": "satsigma.co.il",
+        "note": "same config as ours: camera + Solar Panel 2, 1150"
+      }
+    ],
+    "gap": 10
   },
   "reolink-duo-2-lte": {
     "model": "Reolink Duo 2 LTE",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.securegroup.co.il/product/reolink-duo-2-lte/",
+        "seller": "securegroup.co.il",
+        "note": "camera alone, 1540"
+      },
+      {
+        "url": "https://www.lastprice.co.il/p/100058959",
+        "seller": "lastprice.co.il",
+        "note": "camera alone, 1599"
+      },
+      {
+        "url": "https://zbm.co.il/product/reolink-duo-2-lte/",
+        "seller": "zbm.co.il",
+        "note": "camera alone, 1599"
+      }
+    ],
+    "gap": 10
   },
   "reolink-trackmix-lte": {
     "model": "Reolink TrackMix LTE",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://zbm.co.il/product/reolink-trackmix-lte/",
+        "seller": "zbm.co.il",
+        "note": "4MP camera alone, 1800 (+50)"
+      },
+      {
+        "url": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
+        "seller": "vsale.co.il",
+        "note": "4MP camera alone (page title says Plus), 1790"
+      }
+    ],
+    "gap": 10
   },
   "reolink-trackmix-wired-lte": {
     "model": "TrackMix Wired LTE",
@@ -1660,7 +1732,8 @@
         "seller": "zbm.co.il",
         "note": "1,199 (27/09/2026), +50 shipping"
       }
-    ]
+    ],
+    "gap": 10
   },
   "reolink-trackmix-lte-plus-solar": {
     "model": "TrackMix LTE Plus + Solar Panel",
@@ -1687,15 +1760,33 @@
         "url": "https://zbm.co.il/product/reolink-trackmix-lte-plus-2/",
         "seller": "zbm.co.il",
         "note": "price hidden (call); bundle with Solar Panel 2"
+      },
+      {
+        "url": "https://www.tomo.co.il/items/8953441",
+        "seller": "tomo.co.il",
+        "note": "same config as ours: TrackMix LTE Plus with the 66W panel, 4199 free shipping"
       }
-    ]
+    ],
+    "gap": 10
   },
   "reolink-go-ranger-pt": {
     "model": "Go Ranger + Solar Panel 2",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.olsale.co.il/items/8326413",
+        "seller": "olsale.co.il",
+        "note": "same config as ours: camera + Solar Panel 2, 1599"
+      },
+      {
+        "url": "https://www.satsigma.co.il/?p=24465",
+        "seller": "satsigma.co.il",
+        "note": "same config as ours, 1700"
+      }
+    ],
+    "gap": 10
   },
   "reolink-talon-pro": {
     "model": "Talon Pro",
@@ -1717,50 +1808,133 @@
         "url": "https://www.zap.co.il/fs.aspx?pid=1214174850",
         "seller": "satsigma (via zap)",
         "note": "incl. shipping"
+      },
+      {
+        "url": "https://www.tomo.co.il/items/8533552",
+        "seller": "tomo.co.il",
+        "note": "1299 free shipping"
       }
-    ]
+    ],
+    "gap": 10
   },
   "reolink-solar-panel-2": {
     "model": "Solar Panel 2-W",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.x-press.co.il/product.asp?Pid=SOLARPANEL2",
+        "seller": "x-press.co.il",
+        "note": "white panel, 78 (+20 shipping)"
+      },
+      {
+        "url": "https://ksp.co.il/web/item/384985",
+        "seller": "ksp.co.il",
+        "note": "white panel, 95"
+      },
+      {
+        "url": "https://www.netoneto.co.il/catalog/product/view/id/26953",
+        "seller": "netoneto.co.il",
+        "note": "white panel, 99"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-eco": {
     "model": "Argus Eco / B320",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.dailysale.co.il/95955",
+        "seller": "dailysale.co.il",
+        "note": "camera alone, 278 (sale to 10/10)"
+      },
+      {
+        "url": "https://www.netoneto.co.il/catalog/product/view/id/26949",
+        "seller": "netoneto.co.il",
+        "note": "camera alone, 299"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-eco-pro": {
     "model": "Argus Eco PRO / B340",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.satsigma.co.il/?p=24432",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 549"
+      },
+      {
+        "url": "https://www.lastprice.co.il/p/100058988",
+        "seller": "lastprice.co.il",
+        "note": "camera alone, 549"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-3e": {
     "model": "Argus 3E",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.satsigma.co.il/?p=31629",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 270"
+      },
+      {
+        "url": "https://www.dailysale.co.il/95963",
+        "seller": "dailysale.co.il",
+        "note": "camera alone, 278"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-3-pro": {
     "model": "Argus 3 Pro",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.dailysale.co.il/103227",
+        "seller": "dailysale.co.il",
+        "note": "camera alone, 344"
+      },
+      {
+        "url": "https://www.satsigma.co.il/?p=28685",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 349"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-3-ultra": {
     "model": "Argus 3 Ultra",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.satsigma.co.il/?p=22104",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 485"
+      },
+      {
+        "url": "https://katom.shop/?p=183406",
+        "seller": "katom.shop",
+        "note": "camera alone, 489"
+      }
+    ],
+    "gap": 10
   },
   "reolink-argus-track": {
     "model": "Argus Track",
@@ -1777,15 +1951,38 @@
         "url": "https://www.lastprice.co.il/p/100052928",
         "seller": "LastPrice",
         "note": "listed but page did not render price"
+      },
+      {
+        "url": "https://zbm.co.il/product/argus-track/",
+        "seller": "zbm.co.il",
+        "note": "camera alone, 689 (+50)"
+      },
+      {
+        "url": "https://www.satsigma.co.il/?p=25320",
+        "seller": "satsigma.co.il",
+        "note": "camera alone, 820"
       }
-    ]
+    ],
+    "gap": 10
   },
   "reolink-argus-pt-lite": {
     "model": "Argus PT Lite",
     "brand": "Reolink",
     "policy": "undercut",
     "floor": 0,
-    "urls": []
+    "urls": [
+      {
+        "url": "https://www.dailysale.co.il/95960",
+        "seller": "dailysale.co.il",
+        "note": "camera alone, 378"
+      },
+      {
+        "url": "https://katom.shop/?p=183375",
+        "seller": "katom.shop",
+        "note": "camera alone, 389"
+      }
+    ],
+    "gap": 10
   },
   "reolink-e1-pro": {
     "model": "E1 Pro",

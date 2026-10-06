@@ -12,11 +12,13 @@ import styles from "./offer.module.css";
 export type CalcTier = { id: string; name: string; tagline: string; equipment: number; image: string | null; product: string; points: string[] };
 
 const nis = (n: number) => Math.round(n).toLocaleString("he-IL");
+/** כמו simLabel ב-data/deals.ts (לא מייבאים משם כדי לא למשוך את הקטלוג לדפדפן) */
+const simLabel = (s: { months: number }) => `סים וגלישה ל${s.months === 12 ? "שנה" : `-${s.months} חודשים`}`;
 
 /** מחשבון החבילה: מצלמות לאתר, מספר אתרים, עם או בלי התקנה, סים. כל המחירים שמוצגים כוללים מע"מ, ולצידם הסכום לפני מע"מ.
  *  ההתקנה היא הערכה לפי ימי עבודה של מתקין (installDay לפני מע"מ, camsPerDay מצלמות ליום), לא מחיר סגור */
 export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOptions, sitesMax, vatRate, giftCardGb }: {
-  tiers: CalcTier[]; installDay: number; camsPerDay: number; sim: { gb: number; months: number; price: number };
+  tiers: CalcTier[]; installDay: number; camsPerDay: number; sim: { months: number; price: number };
   camsOptions: number[]; sitesMax: number; vatRate: number; giftCardGb: number;
 }) {
   const [cams, setCams] = useState(camsOptions[0]);
@@ -58,7 +60,7 @@ export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOption
           </div>
         </div>
         <div className={styles.control}>
-          <span>סים {sim.gb}GB ל-{sim.months} חודשים</span>
+          <span>{simLabel(sim)}</span>
           <div className={styles.seg}>
             <button type="button" aria-pressed={withSim} onClick={() => setWithSim(true)}>מהחנות</button>
             <button type="button" aria-pressed={!withSim} onClick={() => setWithSim(false)}>יש לנו סים</button>
@@ -83,7 +85,7 @@ export function OfferCalculator({ tiers, installDay, camsPerDay, sim, camsOption
               <ul>{t.points.map((p) => <li key={p}>{p}</li>)}</ul>
               <dl className={styles.lines}>
                 <div><dt>ציוד למצלמה (מצלמה + פאנל סולארי)</dt><dd>{nis(t.equipment)} ₪</dd></div>
-                {withSim && <div><dt>סים {sim.gb}GB ל-{sim.months} חודשים</dt><dd>{nis(sim.price)} ₪</dd></div>}
+                {withSim && <div><dt>{simLabel(sim)}</dt><dd>{nis(sim.price)} ₪</dd></div>}
                 <div className={styles.perCam}><dt>למצלמה</dt><dd>{nis(perCam(t))} ₪</dd></div>
                 {install && <div><dt>התקנה: {days} {days === 1 ? "יום עבודה" : "ימי עבודה"} של מתקין, כולל כרטיס {giftCardGb}GB לכל מצלמה (הערכה)</dt><dd>{nis(installTotal)} ₪</dd></div>}
               </dl>

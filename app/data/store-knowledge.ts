@@ -3,7 +3,7 @@
 import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT, productName } from "./store-catalog";
 import { attrsOf, fitLine, kindLabel, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
 import { storeGuides } from "./store-guides";
-import { deals, dealProduct, withVat } from "./deals";
+import { deals, dealProduct, withVat, simLabel } from "./deals";
 import { BUSINESS } from "./business";
 import { SUPPLIER_NOTES } from "./supplier-notes";
 
@@ -60,7 +60,7 @@ export function buildKnowledge(): string {
     "התקנה: שירות נפרד ואופציונלי בכל הארץ, על ידי מתקין מטעמנו בתיאום. אין מחיר התקנה קבוע: הצעת מחיר נפרדת אחרי בדיקת זמינות באזור ובדרך כלל בדיקת המקום. מחיר הציוד בקטלוג מחייב. רוב הקונים מתקינים בעצמם. לבקשת התקנה שלח לדף /installation#quote או לווצאפ.",
     ...deals.map((d) => {
       const p = dealProduct(d);
-      return `מבצע עם התקנה במחיר סגור (החריג היחיד לכלל "אין מחיר התקנה קבוע"): ${p ? productName(p) : d.name} ב-${d.price} ₪ + מע"מ למצלמה (${withVat(d.price)} ₪ כולל מע"מ). שים לב: זה המחיר היחיד באתר שנקוב לפני מע"מ, תמיד לציין גם את המחיר כולל מע"מ. כולל את המצלמה, התקנה וחיבור לחשמל, התקנת סים והגדרתו, כרטיס זיכרון ${d.giftCardGb}GB במתנה (רק למי שמזמין עם התקנה), הגדרת האפליקציה והדרכה. לא כולל את הסים עצמו: אפשר להוסיף חבילת סים שלנו, ${d.sim.gb}GB ל-${d.sim.months} חודשים ב-${d.sim.price} ₪ כולל מע"מ (תשלום חד-פעמי, בלי חיוב חודשי), או להביא סים של הלקוח. אותה חבילת סים מוצעת גם למי שקונה את המצלמה הזאת בלי התקנה. בכל הארץ. תנאים: ${d.conditions.join(" ")} בלי התקנה המצלמה נמכרת במחיר הקטלוג. המבצע לא חל על מוצרים אחרים. פרטים והזמנה: /deals#${d.id}.`;
+      return `מבצע עם התקנה במחיר סגור (החריג היחיד לכלל "אין מחיר התקנה קבוע"): ${p ? productName(p) : d.name} ב-${d.price} ₪ + מע"מ למצלמה (${withVat(d.price)} ₪ כולל מע"מ). שים לב: זה המחיר היחיד באתר שנקוב לפני מע"מ, תמיד לציין גם את המחיר כולל מע"מ. כולל את המצלמה, התקנה וחיבור לחשמל, התקנת סים והגדרתו, כרטיס זיכרון ${d.giftCardGb}GB במתנה (רק למי שמזמין עם התקנה), הגדרת האפליקציה והדרכה. לא כולל את הסים עצמו: אפשר להוסיף ${simLabel(d.sim)} שלנו ב-${d.sim.price} ₪ כולל מע"מ למצלמה, או להביא סים של הלקוח. אותו סים מוצע גם למי שקונה את המצלמה הזאת בלי התקנה, ולכל מצלמת 4G בחנות. בכל הארץ. תנאים: ${d.conditions.join(" ")} בלי התקנה המצלמה נמכרת במחיר הקטלוג. המבצע לא חל על מוצרים אחרים. פרטים והזמנה: /deals#${d.id}.`;
     }),
     "תשלום: כרגע ההזמנה נסגרת בווצאפ או בטלפון מול נציג, אחרי אישור זמינות. אין תשלום אונליין באתר בשלב זה.",
     "קישורים: תקנון ותנאי רכישה /terms, חנות /store, מבצעים /deals, שאלון התאמה /store/finder, דף מוצר /store/<slug>, התקנה והצעת מחיר /installation#quote, יצירת קשר /contact, ווצאפ https://wa.me/972502256866.",

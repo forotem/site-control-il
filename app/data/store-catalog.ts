@@ -2212,7 +2212,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Plus, 4MP, סוללה וסים, בלי חשמל ובלי אינטרנט",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1109,
+    "price": 1179,
     "specs": [
       "4MP (2560×1440), עדשה קבועה רחבה",
       "חיבור 4G LTE עם כרטיס סים, לא צריך Wi-Fi או כבל רשת",
@@ -2238,7 +2238,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 809,
+    "price": 820,
     "specs": [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2290,7 +2290,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1079,
+    "price": 1134,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2316,7 +2316,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G פנורמית Reolink Duo 2 LTE, שתי עדשות 180°, 6MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1509,
+    "price": 1530,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 6MP (4608×1728)",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2342,7 +2342,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1299,
+    "price": 1780,
     "specs": [
       "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
       "4MP, חיבור 4G LTE עם כרטיס סים",
@@ -2368,7 +2368,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink TrackMix LTE Plus עם פאנל סולארי 66W, הקלטה רציפה 24/7 על 4G",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 3960,
+    "price": 4188,
     "specs": [
       "כמו TrackMix LTE (שתי עדשות, זום x6, מעקב אוטומטי) עם הקלטה רציפה 24/7",
       "פאנל סולארי 66W כלול, לאתרים שצריכים הקלטה רציפה ולא רק לפי תנועה",
@@ -2393,7 +2393,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה 4G ממונעת Reolink TrackMix Wired LTE עם חיבור קבוע לחשמל, שתי עדשות, זום x6 ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1175,
+    "price": 1170,
     "specs": [
       "שתי עדשות: רחבה 2.8 מ\"מ + טלה 8 מ\"מ, זום היברידי x6, שתי התמונות מוצגות יחד באפליקציה",
       "4MP 2K (2560x1440), מעקב אוטומטי אחרי אדם, רכב או בעל חיים",
@@ -2421,7 +2421,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go Ranger PT בצבע הסוואה, 4K, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1599,
+    "price": 1589,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt, גוף בצבע הסוואה לשטח, שדה ומטע",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2447,7 +2447,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת שבילים 4G Reolink Talon Pro, 4K, GPS, סוללה, לשטח ולמטע",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1294,
+    "price": 1289,
     "specs": [
       "4K, חיישן Starlight לתמונה בלילה",
       "חיבור 4G LTE עם כרטיס סים, GPS מובנה",
@@ -2472,7 +2472,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 79,
+    "price": 68,
     "specs": [
       "הספק 6W, חיבור Type-C",
       "מתאים למצלמות Reolink בסוללה: Go Plus, Go Ultra, Go PT Plus, Argus, Duo 2, TrackMix",
@@ -2495,7 +2495,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 259,
+    "price": 268,
     "specs": [
       "3MP, עדשה קבועה",
       "Wi-Fi 2.4GHz, בלי כבלים",
@@ -2521,7 +2521,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 349,
+    "price": 539,
     "specs": [
       "5MP, עדשה קבועה",
       "Wi-Fi 2.4/5GHz",
@@ -2547,7 +2547,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 289,
+    "price": 260,
     "specs": [
       "3MP, עדשה רחבה 115°",
       "Wi-Fi 2.4GHz, 100% אלחוטית",
@@ -2572,7 +2572,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 329,
+    "price": 334,
     "specs": [
       "5MP (2560×1920)",
       "Wi-Fi 2.4/5GHz",
@@ -2598,7 +2598,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 489,
+    "price": 468,
     "specs": [
       "8MP 4K",
       "Wi-Fi 6 דו-ערוצי",
@@ -2624,7 +2624,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 734,
+    "price": 679,
     "specs": [
       "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
       "Wi-Fi דו-ערוצי",
@@ -2649,7 +2649,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 359,
+    "price": 368,
     "specs": [
       "3MP, מנוע Pan/Tilt 355°/140°",
       "Wi-Fi 2.4GHz",

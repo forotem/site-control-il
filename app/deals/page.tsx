@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
 import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../data/store-catalog";
-import { deals, dealProduct, withVat } from "../data/deals";
+import { deals, dealProduct, withVat, simLabel } from "../data/deals";
 import { InstallForm } from "../installation/InstallForm";
 import home from "../home.module.css";
 import styles from "./deals.module.css";
@@ -109,7 +109,7 @@ export default function DealsPage() {
                   <ul>
                     <li>מצלמה, התקנה וחיבור לחשמל</li>
                     <li>כרטיס זיכרון {d.giftCardGb}GB במתנה</li>
-                    <li>התקנת סים והגדרה. חבילת {d.sim.gb}GB ל-{d.sim.months} חודשים בתוספת {nis(d.sim.price)} ₪</li>
+                    <li>התקנת סים והגדרה. {simLabel(d.sim)} בתוספת {nis(d.sim.price)} ₪</li>
                     <li>הגדרת האפליקציה והדרכה</li>
                     <li>בכל הארץ, בתיאום</li>
                   </ul>
@@ -121,7 +121,7 @@ export default function DealsPage() {
                   <ul>
                     <li>משלוח UPS בתשלום נפרד, או איסוף עצמי</li>
                     <li>נסביר בטלפון או בווצאפ איך מחברים ומגדירים</li>
-                    <li>חבילת סים {d.sim.gb}GB ל-{d.sim.months} חודשים בתוספת {nis(d.sim.price)} ₪</li>
+                    <li>{simLabel(d.sim)} בתוספת {nis(d.sim.price)} ₪</li>
                     <li>כרטיס זיכרון קונים בנפרד</li>
                     <li>{WARRANTY_TEXT}</li>
                   </ul>

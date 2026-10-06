@@ -23,7 +23,9 @@ const REALIGN = args.includes("--realign");
 const FROM_CACHE = args.includes("--from-cache"); // להשתמש במחירים מהסריקה האחרונה (reports/latest.json) בלי לסרוק שוב; להערכה מהירה אחרי שינוי כלל
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36";
 
-const undercut = (low) => Math.max(low - GAP(low), 5);
+// מוצר יכול לקבוע הפרש משלו ב-competitors.json ("gap"). רותם 6.10.2026 על המצלמות הסולאריות, בשם עידן:
+// "אם מישהו מוכר במחיר הזה, אתה תמיד תמחור ב-10 שקלים מתחת", ולהשוות אותה תצורה (עם פאנל או בלי).
+const undercut = (low, gap) => Math.max(low - (gap ?? GAP(low)), 5);
 const nis = (n) => n.toLocaleString("he-IL");
 
 const catPath = path.join(root, "app/data/store-catalog.ts");
@@ -144,7 +146,7 @@ for (const p of catalog) {
   let action = "no_data", target = null, reason = "";
   if (low != null) {
     const strongEvidence = good.some((o) => o.method === "structured" || o.method === "near-model-repeated") || good.length >= 2;
-    const want = undercut(low);                 // היעד: כמה שקלים מתחת לזול ביותר
+    const want = undercut(low, c.gap);          // היעד: כמה שקלים מתחת לזול ביותר
     target = Math.max(want, c.floor || 0);
     if (p.price > target) {                     // יקרים מהיעד: להוריד
       if (!strongEvidence) { action = "review"; reason = "ראיה חלשה (מחיר בודד מטקסט)"; }
@@ -155,7 +157,7 @@ for (const p of catalog) {
       target = want;
       // העלאה רק אם אחרי ההעלאה אנחנו עדיין כמה שקלים מתחת לכל מוכר שמזכיר את הדגם, גם כזה שסומן כווריאנט/ערכה (זהירות כפולה בכיוון למעלה)
       const anyModelLow = Math.min(...offers.filter((o) => o.ok && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen)).map((o) => o.price));
-      const safeRaise = want <= anyModelLow - GAP(anyModelLow);
+      const safeRaise = want <= anyModelLow - (c.gap ?? GAP(anyModelLow));
       if (REALIGN && strongEvidence && safeRaise && want <= p.price * (1 + MAX_AUTO_RAISE)) action = APPLY ? "applied" : "raise";
       else { action = "room_to_raise"; reason = !REALIGN ? "הרצה עם --realign תיישר למעלה" : !strongEvidence ? "ראיה חלשה" : !safeRaise ? `מוכר בדגם דומה/ערכה ב-${anyModelLow}, לא מעלים` : `העלאה של ${Math.round((want / p.price - 1) * 100)}% דורשת אישור`; }
     } else { action = "ok"; target = null; }

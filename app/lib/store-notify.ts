@@ -43,7 +43,10 @@ export async function greenApi<T = Record<string, unknown>>(method: string, body
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    return res.ok ? ((await res.json()) as T) : null;
+    if (res.ok) return (await res.json()) as T;
+    // 7.10.2026: getChatHistory של קבוצת ההזמנות נכשל בלי שום סימן למה. ללוג: הסטטוס ותחילת התשובה (בלי ה-URL, יש בו טוקן)
+    console.warn(`greenapi ${method} HTTP ${res.status}`, (await res.text().catch(() => "")).slice(0, 300));
+    return null;
   } catch (e) {
     console.error(`greenapi ${method} failed`, e);
     return null;

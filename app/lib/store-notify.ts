@@ -59,22 +59,28 @@ export async function messageStatus(to: string, idMessage: string): Promise<stri
   return r?.statusMessage || null;
 }
 
+/** מייל לצוות בלבד (Resend ל-info@), בלי ווצאפ: רשומות שהכלים המקומיים קוראים אחר כך מ-Gmail (למשל wa-ref,
+ *  7.10.2026), ולא דברים שרותם צריך לראות בקבוצה. true אם נשלח */
+export async function sendTeamEmail(subject: string, text: string, opts?: { replyTo?: string }): Promise<boolean> {
+  if (!process.env.RESEND_API_KEY) return false;
+  try {
+    const { Resend } = await import("resend");
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    for (const from of ["Site-Control <noreply@site-control-il.com>", "onboarding@resend.dev"]) {
+      const r = await resend.emails.send({ from, to: ALERT_EMAIL, subject, text, ...(opts?.replyTo ? { replyTo: opts.replyTo } : {}) });
+      if (!r.error) return true;
+    }
+  } catch (e) {
+    console.error("store-notify email failed", e);
+  }
+  return false;
+}
+
 export async function notifyTeam(subject: string, text: string, opts?: { replyTo?: string }): Promise<{ whatsapp: boolean; email: boolean }> {
   const out = { whatsapp: false, email: false };
   out.whatsapp = Boolean(await sendWhatsAppId(SC_GROUP, `${subject}\n\n${text}`));
   // מייל תמיד (לא רק כגיבוי): ארכיון של כל ליד ב-info@, גם כשהווצאפ עבד
-  if (process.env.RESEND_API_KEY) {
-    try {
-      const { Resend } = await import("resend");
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      for (const from of ["Site-Control <noreply@site-control-il.com>", "onboarding@resend.dev"]) {
-        const r = await resend.emails.send({ from, to: ALERT_EMAIL, subject, text, ...(opts?.replyTo ? { replyTo: opts.replyTo } : {}) });
-        if (!r.error) { out.email = true; break; }
-      }
-    } catch (e) {
-      console.error("store-notify email failed", e);
-    }
-  }
+  out.email = await sendTeamEmail(subject, text, opts);
   if (!out.whatsapp && !out.email) console.warn("store-notify: no channel configured", subject, text.slice(0, 200));
   return out;
 }

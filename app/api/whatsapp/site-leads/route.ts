@@ -5,7 +5,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { greenApi, IDAN_WA } from "../../../lib/store-notify";
-import { siteSourceOf } from "../../../lib/site-wa-prefills";
+import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -41,6 +41,8 @@ export async function GET(req: NextRequest) {
       phone: (m.chatId || "").replace(/@c\.us$/, ""),
       name: m.senderContactName || m.senderName || "",
       source,
+      // קוד הפנייה מהכפתור (7.10.2026): הכלי המקומי מחפש לפיו את המייל "wa-ref SCW-XXXXXX" עם המקור (gclid/UTM/דף)
+      ref: waRefOf(text),
       text: text.slice(0, 1500),
     }));
   return NextResponse.json({ minutes, scanned: incoming.length, leads }, { headers: { "Cache-Control": "no-store" } });

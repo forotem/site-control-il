@@ -1,5 +1,5 @@
 {
- "date": "2026-10-04",
+ "date": "2026-10-07",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 499,
+     "price": 659,
      "method": "text-anywhere"
     },
     {
@@ -128,9 +128,13 @@
      "url": "https://www.zap.co.il/fs.aspx?pid=1396903598&sog=h-intercom&indicator=20",
      "seller": "zbm.co.il (via zap.co.il)",
      "note": "",
-     "ok": false,
-     "status": 403,
-     "error": ""
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.zap.co.il/",
+     "price": 659,
+     "method": "text-anywhere"
     },
     {
      "url": "https://www.zap.co.il/fs.aspx?pid=1141071069&sog=h-intercom&indicator=20",
@@ -175,7 +179,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 281,
+     "price": 315,
      "method": "text-anywhere"
     },
     {
@@ -367,12 +371,12 @@
    "model": "DS-7632NXI-K2(D)",
    "brand": "Hikvision",
    "ours": 1063,
-   "low": 796,
+   "low": 738,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
    "target": 1063,
    "action": "floor_blocks",
-   "reason": "רצפה 1063 לא מאפשרת לרדת ל-791",
+   "reason": "רצפה 1063 לא מאפשרת לרדת ל-733",
    "offers": [
     {
      "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
@@ -403,7 +407,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 796,
+     "price": 738,
      "method": "structured+vat"
     }
    ]
@@ -449,7 +453,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 2590,
+     "price": 2149,
      "method": "near-model-repeated"
     }
    ]
@@ -459,12 +463,12 @@
    "model": "DS-7616NXI-K1(D)",
    "brand": "Hikvision",
    "ours": 708,
-   "low": 508,
+   "low": 502,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
    "target": 708,
    "action": "floor_blocks",
-   "reason": "רצפה 708 לא מאפשרת לרדת ל-503",
+   "reason": "רצפה 708 לא מאפשרת לרדת ל-497",
    "offers": [
     {
      "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
@@ -487,7 +491,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 508,
+     "price": 502,
      "method": "structured+vat"
     }
    ]
@@ -497,12 +501,12 @@
    "model": "DS-7608NXI-K1/8P(D)",
    "brand": "Hikvision",
    "ours": 786,
-   "low": 572,
+   "low": 565,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
    "target": 786,
    "action": "floor_blocks",
-   "reason": "רצפה 786 לא מאפשרת לרדת ל-567",
+   "reason": "רצפה 786 לא מאפשרת לרדת ל-560",
    "offers": [
     {
      "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
@@ -513,7 +517,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 572,
+     "price": 565,
      "method": "structured+vat"
     },
     {
@@ -525,7 +529,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 853,
+     "price": 855,
      "method": "structured+vat"
     }
    ]
@@ -601,7 +605,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 2150,
+     "price": 1659,
      "method": "near-model-repeated"
     }
    ]
@@ -627,8 +631,8 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
-     "price": 1300,
-     "method": "near-model-repeated"
+     "price": 949,
+     "method": "near-model"
     }
    ]
   },
@@ -755,7 +759,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1231,
+     "price": 1217,
      "method": "structured+vat"
     },
     {
@@ -799,10 +803,10 @@
    "model": "IPC2318LE-ADF28KM-WP",
    "brand": "Uniview",
    "ours": 535,
-   "low": 1231,
+   "low": 1217,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-   "target": 1226,
+   "target": 1212,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -823,7 +827,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 1231,
+     "price": 1217,
      "method": "structured+vat"
     }
    ]
@@ -833,12 +837,12 @@
    "model": "IPC3626LE-ADF28K-WP",
    "brand": "Uniview",
    "ours": 813,
-   "low": 818,
+   "low": 809,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-   "target": null,
-   "action": "ok",
-   "reason": "",
+   "target": 804,
+   "action": "review",
+   "reason": "ראיה חלשה (מחיר בודד מטקסט)",
    "offers": [
     {
      "url": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
@@ -849,7 +853,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 818,
+     "price": 809,
      "method": "structured+vat"
     }
    ]
@@ -1071,7 +1075,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 520,
+     "price": 514,
      "method": "structured+vat"
     }
    ]
@@ -2077,7 +2081,7 @@
    "model": "DS-2CD1743G2-LIZU 2.8-12mm",
    "brand": "Hikvision",
    "ours": 1129,
-   "low": 533,
+   "low": 525,
    "lowSeller": "Senetic (senetic.co.il)",
    "lowUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
    "target": 889,
@@ -2105,7 +2109,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 533,
+     "price": 525,
      "method": "structured+vat"
     }
    ]
@@ -2411,7 +2415,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 932,
+     "price": 831,
      "method": "structured+vat"
     }
    ]
@@ -2457,7 +2461,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1193,
+     "price": 1283,
      "method": "structured+vat"
     }
    ]
@@ -2533,7 +2537,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1286,
+     "price": 1271,
      "method": "structured+vat"
     },
     {
@@ -2989,16 +2993,220 @@
    ]
   },
   {
+   "slug": "reolink-go-plus",
+   "model": "Reolink Go PLUS / G-330c",
+   "brand": "",
+   "ours": 1179,
+   "low": 1189,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=16984",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.lastprice.co.il/p/100058956",
+     "seller": "lastprice.co.il",
+     "note": "camera alone, 1189 on 6/10/2026",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.satsigma.co.il/?p=16984",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 1189",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%97%d7%99%d7%a6%d7%95%d7%a0%d7%99%d7%aa-reolink-go-plus-4mp-4g/",
+     "price": 1189,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-go-ultra",
+   "model": "Reolink Go Ultra / G340",
+   "brand": "",
+   "ours": 820,
+   "low": 830,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=23250",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.satsigma.co.il/?p=23250",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 830 on its own page (zap listing still 1095)",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a2%d7%9d-%d7%a4%d7%90%d7%a0%d7%9c-%d7%a1%d7%95%d7%9c%d7%90%d7%a8%d7%99-reolink-go-plus-ultra-8mp/",
+     "price": 830,
+     "method": "structured"
+    },
+    {
+     "url": "https://ksp.co.il/web/item/385310",
+     "seller": "ksp.co.il",
+     "note": "camera alone, 895",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.wallashops.co.il/item/137346",
+     "seller": "wallashops.co.il",
+     "note": "camera alone, 895",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-go-pt-plus",
+   "model": "Reolink Go PT Plus",
+   "brand": "",
+   "ours": 1109,
+   "low": 1279,
+   "lowSeller": "kav-isr.com",
+   "lowUrl": "https://kav-isr.com/cameras/home-cameras/reolink-go-pt-plus-w.html",
+   "target": 1269,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://kav-isr.com/cameras/home-cameras/reolink-go-pt-plus-w.html",
+     "seller": "kav-isr.com",
+     "note": "camera alone, 1279; note: sigma sells camera+panel at 1120, so we stay at 1109",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://kav-isr.com/cameras/home-cameras/reolink-go-pt-plus-w.html",
+     "price": 1279,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-go-pt-ultra",
+   "model": "Reolink Go PT Ultra",
+   "brand": "",
+   "ours": 1134,
+   "low": 1150,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=20626",
+   "target": 1140,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.satsigma.co.il/?p=20626",
+     "seller": "satsigma.co.il",
+     "note": "same config as ours: camera + Solar Panel 2, 1150",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a2%d7%9d-%d7%a4%d7%90%d7%a0%d7%9c-%d7%a1%d7%95%d7%9c%d7%90%d7%a8%d7%99-reolink-go-pt-ultra-8mp/",
+     "price": 1150,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-duo-2-lte",
+   "model": "Reolink Duo 2 LTE",
+   "brand": "",
+   "ours": 1530,
+   "low": 1540,
+   "lowSeller": "securegroup.co.il",
+   "lowUrl": "https://www.securegroup.co.il/product/reolink-duo-2-lte/",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.securegroup.co.il/product/reolink-duo-2-lte/",
+     "seller": "securegroup.co.il",
+     "note": "camera alone, 1540",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.securegroup.co.il/product/reolink-duo-2-lte/",
+     "price": 1540,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.lastprice.co.il/p/100058959",
+     "seller": "lastprice.co.il",
+     "note": "camera alone, 1599",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://zbm.co.il/product/reolink-duo-2-lte/",
+     "seller": "zbm.co.il",
+     "note": "camera alone, 1599",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-trackmix-lte",
+   "model": "Reolink TrackMix LTE",
+   "brand": "",
+   "ours": 1780,
+   "low": 1790,
+   "lowSeller": "vsale.co.il",
+   "lowUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://zbm.co.il/product/reolink-trackmix-lte/",
+     "seller": "zbm.co.il",
+     "note": "4MP camera alone, 1800 (+50)",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
+     "seller": "vsale.co.il",
+     "note": "4MP camera alone (page title says Plus), 1790",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
+     "price": 1790,
+     "method": "structured"
+    }
+   ]
+  },
+  {
    "slug": "reolink-trackmix-lte-plus-solar",
    "model": "TrackMix LTE Plus + Solar Panel",
    "brand": "Reolink",
-   "ours": 3960,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
-   "target": null,
-   "action": "no_comparable",
-   "reason": "נמצאו רק דגמים דומים/ערכות, לא אותו דגם",
+   "ours": 4188,
+   "low": 4199,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8953441",
+   "target": 4189,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://www.com4tech.co.il/product/trackmix-lte-plus-solar-panel/",
@@ -3017,7 +3225,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 4158,
+     "price": 4208,
      "method": "text-anywhere"
     },
     {
@@ -3039,6 +3247,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8953441",
+     "seller": "tomo.co.il",
+     "note": "same config as ours: TrackMix LTE Plus with the 66W panel, 4199 free shipping",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8953441",
+     "price": 4199,
+     "method": "structured"
     }
    ]
   },
@@ -3046,7 +3266,7 @@
    "slug": "reolink-trackmix-wired-lte",
    "model": "TrackMix Wired LTE",
    "brand": "Reolink",
-   "ours": 1175,
+   "ours": 1170,
    "low": 1180,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-4mp-4g-ptz-wired-lte/",
@@ -3089,10 +3309,48 @@
    ]
   },
   {
+   "slug": "reolink-go-ranger-pt",
+   "model": "Go Ranger + Solar Panel 2",
+   "brand": "Reolink",
+   "ours": 1589,
+   "low": 1599,
+   "lowSeller": "olsale.co.il",
+   "lowUrl": "https://www.olsale.co.il/items/8326413",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.olsale.co.il/items/8326413",
+     "seller": "olsale.co.il",
+     "note": "same config as ours: camera + Solar Panel 2, 1599",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.olsale.co.il/items/8326413",
+     "price": 1599,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.satsigma.co.il/?p=24465",
+     "seller": "satsigma.co.il",
+     "note": "same config as ours, 1700",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a2%d7%9d-%d7%a4%d7%90%d7%a0%d7%9c-%d7%a1%d7%95%d7%9c%d7%90%d7%a8%d7%99-reolink-go-ranger-pt-8mp/",
+     "price": 1700,
+     "method": "structured"
+    }
+   ]
+  },
+  {
    "slug": "reolink-talon-pro",
    "model": "Talon Pro",
    "brand": "Reolink",
-   "ours": 1294,
+   "ours": 1289,
    "low": 1299,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A9%D7%91%D7%99%D7%9C-reolink-camovue-talon-pro-4k-4g/",
@@ -3131,6 +3389,230 @@
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%a9%d7%91%d7%99%d7%9c-reolink-camovue-talon-pro-4k-4g/",
      "price": 1299,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8533552",
+     "seller": "tomo.co.il",
+     "note": "1299 free shipping",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8533552",
+     "price": 1299,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-solar-panel-2",
+   "model": "Solar Panel 2-W",
+   "brand": "Reolink",
+   "ours": 68,
+   "low": null,
+   "lowSeller": null,
+   "lowUrl": null,
+   "target": null,
+   "action": "fetch_failed",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.x-press.co.il/product.asp?Pid=SOLARPANEL2",
+     "seller": "x-press.co.il",
+     "note": "white panel, 78 (+20 shipping)",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.x-press.co.il/product/%D7%A4%D7%90%D7%A0%D7%9C%2D%D7%A1%D7%95%D7%9C%D7%90%D7%A8%D7%99%2D%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA%2D%D7%90%D7%91%D7%98%D7%97%D7%94%2Dreolink%2D%D7%93%D7%92%D7%9D%2Dsolar%2Dpanel%2D2",
+     "price": 78,
+     "method": "text-anywhere"
+    },
+    {
+     "url": "https://ksp.co.il/web/item/384985",
+     "seller": "ksp.co.il",
+     "note": "white panel, 95",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.netoneto.co.il/catalog/product/view/id/26953",
+     "seller": "netoneto.co.il",
+     "note": "white panel, 99",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-eco",
+   "model": "Argus Eco / B320",
+   "brand": "Reolink",
+   "ours": 268,
+   "low": null,
+   "lowSeller": null,
+   "lowUrl": null,
+   "target": null,
+   "action": "fetch_failed",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.dailysale.co.il/95955",
+     "seller": "dailysale.co.il",
+     "note": "camera alone, 278 (sale to 10/10)",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.netoneto.co.il/catalog/product/view/id/26949",
+     "seller": "netoneto.co.il",
+     "note": "camera alone, 299",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-eco-pro",
+   "model": "Argus Eco PRO / B340",
+   "brand": "Reolink",
+   "ours": 539,
+   "low": 549,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=24432",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.satsigma.co.il/?p=24432",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 549",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%9c%d7%97%d7%95%d7%98%d7%99%d7%aa-%d7%97%d7%99%d7%a6%d7%95%d7%a0%d7%99%d7%aa-5-%d7%9e%d7%92%d7%94-%d7%a4%d7%99%d7%a7%d7%a1%d7%9c-reolink-argus-b340-wifi/",
+     "price": 549,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.lastprice.co.il/p/100058988",
+     "seller": "lastprice.co.il",
+     "note": "camera alone, 549",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-3e",
+   "model": "Argus 3E",
+   "brand": "Reolink",
+   "ours": 260,
+   "low": 270,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=31629",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.satsigma.co.il/?p=31629",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 270",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%91%d7%98%d7%a8%d7%99%d7%99%d7%94-reolink-argus-3e-3mp-wifi/",
+     "price": 270,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.dailysale.co.il/95963",
+     "seller": "dailysale.co.il",
+     "note": "camera alone, 278",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-3-pro",
+   "model": "Argus 3 Pro",
+   "brand": "Reolink",
+   "ours": 334,
+   "low": 349,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=28685",
+   "target": 339,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.dailysale.co.il/103227",
+     "seller": "dailysale.co.il",
+     "note": "camera alone, 344",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.satsigma.co.il/?p=28685",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 349",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%91%d7%98%d7%a8%d7%99%d7%99%d7%94-reolink-argus-3-pro-5mp-wifi/",
+     "price": 349,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-3-ultra",
+   "model": "Argus 3 Ultra",
+   "brand": "Reolink",
+   "ours": 468,
+   "low": 485,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=22104",
+   "target": 475,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.satsigma.co.il/?p=22104",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 485",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-reolink-argus-3-ultra-8mp-wifi-%d7%a2%d7%9d-%d7%a4%d7%a0%d7%a1-%d7%90%d7%9c%d7%97%d7%95%d7%98%d7%99%d7%aa-%d7%a0%d7%98%d7%a2%d7%a0%d7%aa/",
+     "price": 485,
+     "method": "structured"
+    },
+    {
+     "url": "https://katom.shop/?p=183406",
+     "seller": "katom.shop",
+     "note": "camera alone, 489",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://katom.shop/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%91%d7%98%d7%97%d7%94-reolink-argus-3-ultra-4k-8mp-2-4-5ghz-wifi/",
+     "price": 489,
+     "method": "near-model-repeated"
     }
    ]
   },
@@ -3138,13 +3620,13 @@
    "slug": "reolink-argus-track",
    "model": "Argus Track",
    "brand": "Reolink",
-   "ours": 734,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
-   "target": null,
-   "action": "no_comparable",
-   "reason": "נמצאו רק דגמים דומים/ערכות, לא אותו דגם",
+   "ours": 679,
+   "low": 820,
+   "lowSeller": "satsigma.co.il",
+   "lowUrl": "https://www.satsigma.co.il/?p=25320",
+   "target": 810,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://www.zap.co.il/model.aspx?modelid=1262564",
@@ -3165,6 +3647,60 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://zbm.co.il/product/argus-track/",
+     "seller": "zbm.co.il",
+     "note": "camera alone, 689 (+50)",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://www.satsigma.co.il/?p=25320",
+     "seller": "satsigma.co.il",
+     "note": "camera alone, 820",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-reolink-argus-track-dual-lens-wifi/",
+     "price": 820,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-argus-pt-lite",
+   "model": "Argus PT Lite",
+   "brand": "Reolink",
+   "ours": 368,
+   "low": 389,
+   "lowSeller": "katom.shop",
+   "lowUrl": "https://katom.shop/?p=183375",
+   "target": 379,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.dailysale.co.il/95960",
+     "seller": "dailysale.co.il",
+     "note": "camera alone, 378",
+     "ok": false,
+     "status": 403,
+     "error": ""
+    },
+    {
+     "url": "https://katom.shop/?p=183375",
+     "seller": "katom.shop",
+     "note": "camera alone, 389",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://katom.shop/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%91%d7%98%d7%97%d7%94-%d7%97%d7%99%d7%a6%d7%95%d7%a0%d7%99%d7%aa-reolink-argus-pt-lite-3mp-2-4ghz-wifi/",
+     "price": 389,
+     "method": "near-model-repeated"
     }
    ]
   },
@@ -3857,7 +4393,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 278,
+     "price": 249,
      "method": "text-anywhere"
     },
     {
@@ -3910,9 +4446,13 @@
      "url": "https://www.zap.co.il/fs.aspx?pid=1398091353",
      "seller": "zap.co.il (single store)",
      "note": "RLN16-410 no disk",
-     "ok": false,
-     "status": 403,
-     "error": ""
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.zap.co.il/",
+     "price": 659,
+     "method": "text-anywhere"
     },
     {
      "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-%D7%A2%D7%9D-16-poe-%D7%AA%D7%95%D7%9E%D7%9B%D7%AA-%D7%A2%D7%93-16-%D7%9E%D7%92%D7%94-reolink-rln16-410/",
@@ -4158,9 +4698,13 @@
      "url": "https://www.zap.co.il/fs.aspx?pid=1398091357",
      "seller": "zap.co.il (single store)",
      "note": "NVS36 no disk",
-     "ok": false,
-     "status": 403,
-     "error": ""
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": false,
+     "finalUrl": "https://www.zap.co.il/",
+     "price": 659,
+     "method": "text-anywhere"
     },
     {
      "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-%D7%A2%D7%9D-36-%D7%A2%D7%A8%D7%95%D7%A6%D7%99%D7%9D-%D7%91%D7%A2%D7%93-12-%D7%9E%D7%92%D7%94-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C-reolink/",

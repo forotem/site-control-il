@@ -5,7 +5,7 @@
 // מקבל webhook של GreenAPI (incomingMessageReceived). המוח: app/lib/tal.ts, אותו ידע כמו הצ'אט באתר.
 // כללי בטיחות (האינסטנס משותף גם למערכת הלידים של TimelapseIT, ובטלפון של רותם יש שיחות אחרות):
 // 1. רק שיחה פרטית שיש בה הודעה נכנסת מכפתור באתר של Site-Control (site-wa-prefills). לא TimelapseIT,
-//    לא עידן, לא קבוצות, לא אנשי קשר אחרים.
+//    לא עידן ולא אלי (טלרן, מ-7.10.2026), לא קבוצות (כולל קבוצת ההזמנות מול הספק), לא אנשי קשר אחרים.
 // 2. רותם כתב בשיחה מהטלפון (sendByApi=false) ב-10 הדקות האחרונות: הבוט שותק (רותם 6.10.2026: "הלקוח ממשיך לדבר איתי, למה הבוט לא עונה לו?" = טל ממשיך כשרותם לא באמצע שיחה). רותם "לוקח" שיחה פשוט כשהוא כותב בה.
 // 3. לא בשבת ובחג (שישי/ערב חג מ-16:00 עד מוצאי שבת/חג 20:00).
 // 4. עונה רק על ההודעה הנכנסת האחרונה, אחרי המתנה קצרה (לקוחות שולחים כמה הודעות ברצף), ורק אם עוד לא
@@ -18,7 +18,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { botToken } from "../../../lib/wa-bot-token";
-import { greenApi, sendWhatsAppId, IDAN_WA, notifyTeam, SC_GROUP } from "../../../lib/store-notify";
+import { greenApi, sendWhatsAppId, IDAN_WA, ELI_WA, notifyTeam, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 import { SYSTEM, askGemini, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
@@ -169,7 +169,8 @@ export async function POST(req: NextRequest) {
   if (n.typeWebhook !== "incomingMessageReceived") return NextResponse.json({ ok: true });
   const chatId = String(n.senderData?.chatId || "");
   const phone = chatId.replace(/@c\.us$/, "");
-  if (!/^\d{11,13}@c\.us$/.test(chatId) || phone === IDAN_WA || phone === ROTEM) return NextResponse.json({ ok: true, skip: "chat" });
+  // קבוצות (גם קבוצת ההזמנות SUPPLIER_GROUP) נופלות כבר בבדיקת @c.us. אלי נוסף 7.10.2026: הוא עונה במקום עידן, לא ליד
+  if (!/^\d{11,13}@c\.us$/.test(chatId) || phone === IDAN_WA || phone === ELI_WA || phone === ROTEM) return NextResponse.json({ ok: true, skip: "chat" });
   if (restDay(nowDate) && !dry) return NextResponse.json({ ok: true, skip: "shabbat" });
 
   if (!dry && !kick) await new Promise((r) => setTimeout(r, DEBOUNCE_MS));
@@ -261,6 +262,8 @@ export async function POST(req: NextRequest) {
   if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", ctx });
   // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
+  // 7.10.2026: הסימון נשאר בקבוצה הפנימית (SC_GROUP), לא בקבוצת ההזמנות מול הספק. לספק יוצאת רק השאלה המנוסחת
+  // של הכלי המקומי, דרך /api/whatsapp/to-idan (שמעכשיו שולח לקבוצת ההזמנות).
   const stockProduct = data.stock_check ? productBySlug(data.stock_check.trim().replace(/^\[|\]$/g, "")) : undefined;
   if (stockProduct && !proactive) {
     await sendWhatsAppId(SC_GROUP, `${STOCK_MARK} ${phone} ${stockProduct.slug}

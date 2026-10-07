@@ -5,7 +5,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
-import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, IDAN_WA } from "../../lib/store-notify";
+import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, SUPPLIER_GROUP } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
@@ -50,10 +50,11 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
   ].filter((x) => x !== null).join("\n");
 }
 
-/** ההזמנה לעידן (היבואן), מהמספר של רותם: כל מה שצריך כדי לבדוק מלאי ולתפור את העסקה מול הלקוח */
+/** ההזמנה לספק (טלרן, היבואן), מהמספר של רותם: כל מה שצריך כדי לבדוק מלאי ולתפור את העסקה מול הלקוח.
+ *  מ-7.10.2026 לקבוצת ההזמנות (עידן ואלי). רותם: "כל מה שקשור לשאלות מלאי, מחירים וכו'" לקבוצה */
 function supplierMessage(ref: string, name: string, phone: string, delivery: string, address: string, items: OrderItem[], total: number, note: string): string {
   return [
-    "היי עידן, הזמנה חדשה מהאתר של Site-Control 🙏",
+    "היי עידן ואלי, הזמנה חדשה מהאתר של Site-Control 🙏",
     `מס׳ הזמנה: ${ref} (הטלפון של הלקוח אומת בקוד ווצאפ)`,
     `לקוח: ${name}, ${phone}`,
     `אספקה: ${delivery}${address ? `, ${address}` : ""}`,
@@ -63,7 +64,7 @@ function supplierMessage(ref: string, name: string, phone: string, delivery: str
     total ? `סה״כ באתר: ${nis(total)} ₪ כולל מע״מ, לא כולל משלוח` : null,
     note ? `הערה מהלקוח: ${note}` : null,
     "",
-    "תוכל לבדוק מלאי ולתפור את העסקה מולו? הלקוח כבר קיבל ממני הודעה שאני בודק מלאי וחוזר אליו.",
+    "תוכלו לבדוק מלאי ולתפור את העסקה מולו? הלקוח כבר קיבל ממני הודעה שאני בודק מלאי וחוזר אליו.",
     "תודה, רותם",
   ].filter((x) => x !== null).join("\n");
 }
@@ -122,25 +123,26 @@ export async function POST(req: NextRequest) {
     if (customerWa) lastSent.set(mobile, Date.now());
   }
 
-  // הזמנה מאומתת עוברת לעידן, ובודקים כמה שניות אם ההודעה נמסרה לו
+  // הזמנה מאומתת עוברת לספק, ובודקים כמה שניות אם ההודעה נמסרה. מ-7.10.2026 לקבוצת ההזמנות (עידן ואלי) ולא לצ'אט
+  // הפרטי של עידן: רותם פתח את הקבוצה "שיהיה מסודר", ולפעמים עידן לא עונה ואלי כן
   let idanStatus: string | null = null;
   if (verified) {
-    const idanMsgId = await sendWhatsAppId(IDAN_WA, supplierMessage(ref, name, phone, delivery, address, items as OrderItem[], total, String(body.note || "").slice(0, 300)));
+    const idanMsgId = await sendWhatsAppId(SUPPLIER_GROUP, supplierMessage(ref, name, phone, delivery, address, items as OrderItem[], total, String(body.note || "").slice(0, 300)));
     if (idanMsgId) {
       idanStatus = "sent";
       for (const wait of [3000, 4000]) {
         await sleep(wait);
-        const st = await messageStatus(IDAN_WA, idanMsgId);
+        const st = await messageStatus(SUPPLIER_GROUP, idanMsgId);
         if (st) idanStatus = st;
         if (st === "delivered" || st === "read") break;
       }
     }
   }
   const idanLine = !verified ? null
-    : idanStatus === "read" ? "✅✅ ההזמנה נשלחה לעידן והוא כבר קרא אותה."
-    : idanStatus === "delivered" ? "✅✅ ההזמנה נשלחה לעידן ונמסרה לו."
-    : idanStatus ? "📤 ההזמנה נשלחה לעידן (עדיין לא נמסרה, כנראה הטלפון שלו לא מחובר כרגע)."
-    : "⚠️ לא הצלחנו לשלוח את ההזמנה לעידן. להעביר לו ידנית.";
+    : idanStatus === "read" ? "✅✅ ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי) וכבר נקראה."
+    : idanStatus === "delivered" ? "✅✅ ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי) ונמסרה."
+    : idanStatus ? "📤 ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי), עדיין לא סומנה כנמסרה."
+    : "⚠️ לא הצלחנו לשלוח את ההזמנה לקבוצת ההזמנות. להעביר לעידן/אלי ידנית.";
 
   const text = [
     `מספר הזמנה: ${ref}`,

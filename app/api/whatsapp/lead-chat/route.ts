@@ -5,7 +5,7 @@
 // כך זה לא כלי לקריאת כל שיחה בטלפון של רותם, רק של לידים שהגיעו מהאתר.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { greenApi, IDAN_WA, israeliMobile, SC_GROUP } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, israeliMobile, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -27,7 +27,8 @@ export async function GET(req: NextRequest) {
   // self=1: קבוצת site-control-il (ההתראות של המערכת, כולל בקשות בדיקת מלאי של טל), או הצ'אט של רותם עם עצמו.
   const isGroup = raw === SC_GROUP;
   const phone = isGroup ? raw : israeliMobile(raw);
-  if (!phone || phone === IDAN_WA) return NextResponse.json({ error: "bad phone" }, { status: 400 });
+  // הצ'אטים עם הספק (עידן, ומ-7.10.2026 גם אלי) נקראים רק דרך idan-history
+  if (!phone || phone === IDAN_WA || phone === ELI_WA) return NextResponse.json({ error: "bad phone" }, { status: 400 });
   const self = req.nextUrl.searchParams.get("self") === "1" && (isGroup || phone === (process.env.STORE_ALERT_WHATSAPP || "972502256866"));
   if (isGroup && !self) return NextResponse.json({ error: "bad phone" }, { status: 400 });
   const count = Math.min(300, Math.max(1, Number(req.nextUrl.searchParams.get("count")) || 200));

@@ -17,6 +17,15 @@ export function israeliMobile(phone: string): string | null {
 
 /** עידן (טלרן, היבואן של Reolink): הזמנות מאומתות נשלחות אליו לבדיקת מלאי ו"תפירת" העסקה (רותם 1.10.2026) */
 export const IDAN_WA = process.env.SUPPLIER_WHATSAPP || "972544932440";
+/** אלי ("אלי בית המתקין", מכירות בסניף פ"ת של טלרן). רותם 7.10.2026: "לפעמים עידן לא עונה אז אלי עונה לי" */
+export const ELI_WA = "972522507900";
+/** קבוצת ההזמנות מול הספק ("רותם גולן הזמנות - site -control": רותם, עידן ואלי). רותם 7.10.2026: "זה קבוצה שיהיה
+ *  מסודר לעבודה, כאן אני ישאל על דברים באתר שלי. כל מה שקשור לשאלות מלאי, מחירים וכו'". מעכשיו שאלות מלאי/מחיר
+ *  והזמנות לספק יוצאות לכאן ולא לצ'אט הפרטי של עידן. זו לא SC_GROUP (הקבוצה הפנימית של רותם עם המספר העסקי). */
+export const SUPPLIER_GROUP = process.env.SUPPLIER_GROUP || "120363414108578558@g.us";
+
+/** מספר בפורמט בינלאומי או קבוצה (@g.us) -> chatId של GreenAPI */
+const chatIdOf = (to: string) => (/@g\.us$/.test(to) ? to : `${to.replace(/\D/g, "")}@c.us`);
 
 /** קריאה ל-GreenAPI עם הפרטים שב-Vercel. null אם לא מוגדר או נכשל. query: פרמטרים ל-GET (למשל minutes) */
 export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown, query?: Record<string, string | number>): Promise<T | null> {
@@ -43,8 +52,7 @@ export async function greenApi<T = Record<string, unknown>>(method: string, body
 
 /** הודעת ווצאפ מהמספר העסקי. מחזיר את מזהה ההודעה, או null אם לא נשלחה */
 export async function sendWhatsAppId(to: string, message: string): Promise<string | null> {
-  const chatId = /@g\.us$/.test(to) ? to : `${to.replace(/\D/g, "")}@c.us`;
-  const r = await greenApi<{ idMessage?: string }>("sendMessage", { chatId, message });
+  const r = await greenApi<{ idMessage?: string }>("sendMessage", { chatId: chatIdOf(to), message });
   return r?.idMessage || null;
 }
 
@@ -53,9 +61,9 @@ export async function sendWhatsApp(to: string, message: string): Promise<boolean
   return Boolean(await sendWhatsAppId(to, message));
 }
 
-/** סטטוס הודעה יוצאת: sent / delivered / read, או null */
+/** סטטוס הודעה יוצאת: sent / delivered / read, או null. to: מספר או קבוצה (@g.us, הזמנות לקבוצת הספק מ-7.10.2026) */
 export async function messageStatus(to: string, idMessage: string): Promise<string | null> {
-  const r = await greenApi<{ statusMessage?: string }>("getMessage", { chatId: `${to.replace(/\D/g, "")}@c.us`, idMessage });
+  const r = await greenApi<{ statusMessage?: string }>("getMessage", { chatId: chatIdOf(to), idMessage });
   return r?.statusMessage || null;
 }
 

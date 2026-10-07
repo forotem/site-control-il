@@ -4,7 +4,7 @@
 // מוגן במפתח שנגזר מ-RESEND_API_KEY, ומחזיר רק הודעות פרטיות שמתחילות בטקסט של האתר (לא שיחות אחרות בטלפון).
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { greenApi, IDAN_WA } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -29,7 +29,8 @@ export async function GET(req: NextRequest) {
   const incoming = await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes });
   if (!incoming) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   const leads = incoming
-    .filter((m) => m.chatId?.endsWith("@c.us") && m.chatId !== `${IDAN_WA}@c.us`)
+    // הספק (עידן, ומ-7.10.2026 גם אלי) הוא לא ליד
+    .filter((m) => m.chatId?.endsWith("@c.us") && m.chatId !== `${IDAN_WA}@c.us` && m.chatId !== `${ELI_WA}@c.us`)
     .map((m) => {
       const text = m.textMessage || m.extendedTextMessage?.text || m.caption || "";
       return { m, text, source: siteSourceOf(text) };

@@ -5,7 +5,7 @@
 // עם טקסט של האתר), או ללקוח שקיבל מאיתנו הודעת הזמנה עם orderRef. כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { greenApi, IDAN_WA, israeliMobile, sendWhatsAppId } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, israeliMobile, sendWhatsAppId } from "../../../lib/store-notify";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -35,7 +35,8 @@ export async function POST(req: NextRequest) {
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const phone = israeliMobile(body.phone || "");
   const texts = (body.texts || []).map((t) => String(t).trim()).filter(Boolean).slice(0, 3);
-  if (!phone || phone === IDAN_WA || !texts.length) return NextResponse.json({ error: "bad request" }, { status: 400 });
+  // הספק (עידן, ומ-7.10.2026 גם אלי) הוא לא ליד: הודעות אליו רק דרך to-idan
+  if (!phone || phone === IDAN_WA || phone === ELI_WA || !texts.length) return NextResponse.json({ error: "bad request" }, { status: 400 });
   const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 });
   if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   // מותר: מי שפנה מכפתור באתר, או לקוח שקיבל מאיתנו את הודעת ההזמנה עם מספר ההזמנה הזה (למשל בקשה לביקורת אחרי אספקה)

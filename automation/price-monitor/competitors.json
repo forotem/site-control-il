@@ -224,11 +224,6 @@
     "floor": 874,
     "urls": [
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-nvr-hikvision-ds-7616nxi-k2",
-        "seller": "technovision.co.il (DS-7616NXI-K2-1T, incl. 1TB HDD)",
-        "note": ""
-      },
-      {
         "url": "https://zbm.co.il/product/hikvision-ds-7616nxi-k2-std-2t/",
         "seller": "zbm.co.il (DS-7616NXI-K2(STD)-2T, incl. 2TB HDD, sale price)",
         "note": ""
@@ -283,11 +278,6 @@
     "floor": 2638,
     "urls": [
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7232hqhi-m2s",
-        "seller": "technovision.co.il (iDS-7232HQHI-M2/XT 4T, incl. 4TB HDD)",
-        "note": ""
-      },
-      {
         "url": "https://www.zap.co.il/search.aspx?keyword=iDS-7232HQHI",
         "seller": "AllTechStore via zap",
         "note": ""
@@ -300,11 +290,6 @@
     "policy": "undercut-with-floor",
     "floor": 1441,
     "urls": [
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7216hqhi-m1s",
-        "seller": "technovision.co.il (iDS-7216HQHI-M1/XT 2T, incl. 2TB HDD)",
-        "note": ""
-      },
       {
         "url": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
         "seller": "zap.co.il (iDS-7216HQHI-M1/XT-2T)",
@@ -335,11 +320,6 @@
         "url": "https://zbm.co.il/product/ids-7204hqhi-m1-xt-2t/",
         "seller": "zbm.co.il (iDS-7204HQHI-M1/XT-2T, incl. 2TB HDD, sale price)",
         "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-dvr-hikvision-ids-7204hqhi-m1s",
-        "seller": "technovision.co.il (iDS-7204HQHI-M1/S, incl. 1TB HDD)",
-        "note": ""
       }
     ]
   },
@@ -367,11 +347,6 @@
     "policy": "undercut-with-floor",
     "floor": 755,
     "urls": [
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-8-mp-colorvu-ds-2cd2087g2h-liusl",
-        "seller": "technovision.co.il",
-        "note": ""
-      },
       {
         "url": "https://zbm.co.il/product/ds-2cd2087g2h-liu-sl/",
         "seller": "zbm.co.il (sale price)",
@@ -927,11 +902,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-ds-2cd1343g2-liuf-28m-smart-hybrid-light--mic-4mp",
-        "seller": "technovision.co.il (LIUF)",
-        "note": ""
-      },
-      {
         "url": "https://zbm.co.il/product/ds-2cd1343g2-liuf-2-8m/",
         "seller": "zbm.co.il (LIUF)",
         "note": ""
@@ -963,11 +933,6 @@
     "floor": 448,
     "urls": [
       {
-        "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8",
-        "seller": "technovision.co.il (רשימת קטגוריה)",
-        "note": ""
-      },
-      {
         "url": "https://www.zap.co.il/model.aspx?modelid=1134126",
         "seller": "zap.co.il (DS-2CD2043G2-I ללא מיקרופון, סקיור גרופ)",
         "note": ""
@@ -980,11 +945,6 @@
     "policy": "undercut-with-floor",
     "floor": 637,
     "urls": [
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-colorvu-ds-2cd2047g2h-liusl",
-        "seller": "technovision.co.il",
-        "note": ""
-      },
       {
         "url": "https://www.zap.co.il/model.aspx?modelid=1262802",
         "seller": "zap.co.il (DS-2CD2047G2H-LIU ללא SL, זד.בי.אם)",
@@ -1022,11 +982,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-4-mp-smart-hybrid-light-ds-2cd1043g2-liuf",
-        "seller": "technovision.co.il (LIUF, אזל)",
-        "note": ""
-      },
-      {
         "url": "https://www.zap.co.il/model.aspx?modelid=1236307",
         "seller": "zap.co.il (זד.בי.אם כולל משלוח)",
         "note": ""
@@ -1058,18 +1013,8 @@
     "floor": 496,
     "urls": [
       {
-        "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8",
-        "seller": "technovision.co.il (DS-2CD2T43G2-2LI2U, IR 60 מ', רשימת קטגוריה)",
-        "note": ""
-      },
-      {
         "url": "https://www.com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/ip-camera/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-ip-4mp-%D7%A9%D7%9C-hikvision/",
         "seller": "com4tech.co.il (DS-2CD2T43G2-2LI2U, רשימת קטגוריה)",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-acusense-4-mp-ds-2cd2t43g2-2i",
-        "seller": "technovision.co.il (DS-2CD2T43G2-2I, IR בלבד ללא אודיו)",
         "note": ""
       }
     ]
@@ -1088,11 +1033,6 @@
       {
         "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-ds-2cd2t47g2h-lisu-sl-hikvision-smart-hybrid-light/",
         "seller": "com4tech.co.il (DS-2CD2T47G2H-LISU/SL2 - גרסה עם מיקרופון/סטרובוסקופ)",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-acusense-4mp-ds-2cd2t47g2-l",
-        "seller": "technovision.co.il (DS-2CD2T47G2-L - דור קודם)",
         "note": ""
       }
     ]
@@ -1127,11 +1067,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-acusense-ds-2cd1143g2-liuf",
-        "seller": "technovision.co.il (LIUF)",
-        "note": ""
-      },
-      {
         "url": "https://www.zap.co.il/model.aspx?modelid=1216153",
         "seller": "zap.co.il (סקיור גרופ ₪470 / AllTechStore ₪485 / ZBM ₪517 כולל משלוח)",
         "note": ""
@@ -1150,11 +1085,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-colorvu-ds-2cd1347g2-luf",
-        "seller": "technovision.co.il",
-        "note": ""
-      },
-      {
         "url": "https://www.securegroup.co.il/product/ds-2cd1347g2-luf/",
         "seller": "securegroup.co.il",
         "note": ""
@@ -1170,11 +1100,6 @@
       {
         "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%94-hikvision-4mp-ds-2cd2143g2-i-acusense/",
         "seller": "com4tech.co.il",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%9B%D7%99%D7%A4%D7%AA%D7%99%D7%AA-hikvision-4mp-acusense-2cd2143g2-i",
-        "seller": "technovision.co.il",
         "note": ""
       },
       {
@@ -1214,11 +1139,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-%D7%98%D7%95%D7%A8%D7%98-hikvision-4mp-colorvu-ds-2cd2347g2-lu",
-        "seller": "technovision.co.il (DS-2CD2347G2H-LISU/SL)",
-        "note": ""
-      },
-      {
         "url": "https://www.zap.co.il/model.aspx?modelid=1134394",
         "seller": "zap.co.il (DS-2CD2347G2-L(U) - לא זמין כרגע, היסטורית ₪869-920)",
         "note": ""
@@ -1255,11 +1175,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-hikvision-8mp-acusense-ds-2cd2183g2-iu",
-        "seller": "technovision.co.il",
-        "note": ""
-      },
-      {
         "url": "https://www.signal-tec.co.il/product/ds-2cd2183g2-iu/",
         "seller": "signal-tec.co.il",
         "note": ""
@@ -1280,11 +1195,6 @@
       {
         "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-hikvision-smart-hybrid-light-ds-2cd2t87g3-lis2uy-sr/",
         "seller": "com4tech.co.il (DS-2CD2T87G3-LIS2UY/SR - same camera without strobe/Live-Guard)",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-8-mp-colorvu-ds-2cd2t87g3-lis2uysr",
-        "seller": "technovision.co.il (DS-2CD2T87G3-LIS2UY/SR)",
         "note": ""
       },
       {
@@ -1378,11 +1288,6 @@
         "url": "https://zbm.co.il/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%9E%D7%A9%D7%95%D7%9C%D7%91%D7%95%D7%AA-%D7%90%D7%95%D7%A8-%D7%9E%D7%94%D7%91%D7%94%D7%91/",
         "seller": "zbm.co.il (DS-2CD2387G2H-LISU/SL2, sale; list 2,211) - from search snippet, strobe-camera category page",
         "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/category/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-hikvision",
-        "seller": "technovision.co.il (DS-2CD2387G3-LIS2UY/SR - newer G3 sibling, Hikvision category page)",
-        "note": ""
       }
     ]
   },
@@ -1395,11 +1300,6 @@
       {
         "url": "https://www.com4tech.co.il/product/lpr-hikvision-4mp-ids-2cd7a46g2-p-izhsy8-32-100m/",
         "seller": "com4tech.co.il (8-32mm)",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9C%D7%96%D7%99%D7%94%D7%95%D7%99-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%A8%D7%9B%D7%91--hikvision-lpr-anpr-2cd7a46g0p-izhs8-32",
-        "seller": "technovision.co.il (8-32mm variant)",
         "note": ""
       },
       {
@@ -1439,11 +1339,6 @@
         "note": ""
       },
       {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
-        "seller": "technovision.co.il (DS-2CE12KF0T-FS, גוף גדול 40 מ')",
-        "note": ""
-      },
-      {
         "url": "https://www.satsigma.co.il/product/ds-2ce56h0t-itpf-2-8mm/",
         "seller": "satsigma.co.il (DS-2CE12KF0T-FS 3.6mm)",
         "note": ""
@@ -1459,11 +1354,6 @@
       {
         "url": "https://www.com4tech.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-3k-colorvu-audio-ds-2ce12kf0t-lfs-%D7%9E%D7%99%D7%A7%D7%A8%D7%A4%D7%95%D7%9F-%D7%9E%D7%95%D7%91%D7%A0%D7%94/",
         "seller": "com4tech.co.il",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
-        "seller": "technovision.co.il (DS-2CE12KF0T-FS, ללא IR)",
         "note": ""
       },
       {
@@ -1526,11 +1416,6 @@
       {
         "url": "https://com4tech.co.il/product-category/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F-hikvision-2024/hikvision-%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%95%D7%AA",
         "seller": "com4tech.co.il (DS-2CE18U8T-IT3, 8MP Ultra-Low-Light 60 מ')",
-        "note": ""
-      },
-      {
-        "url": "https://www.technovision.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%A0%D7%9C%D7%95%D7%92%D7%99%D7%AA-tvi-%D7%9E%D7%99%D7%A0%D7%99-%D7%A6%D7%99%D7%A0%D7%95%D7%A8-hikvision-colorvu-ds-2ce12kf0t-fs-5mp",
-        "seller": "technovision.co.il (DS-2CE18U8T-IT3 8MP, מוצר קשור)",
         "note": ""
       },
       {

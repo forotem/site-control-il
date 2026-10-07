@@ -14,6 +14,7 @@ const flag = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : und
 const only = (flag("--only") || "").split(",").filter(Boolean);
 const limit = Number(flag("--limit")) || Infinity;
 
+// עידן 7.10.2026: "טכנוויז׳ן לא מחזיק מלאי, אל תקח דוגמא ממנו, חוץ ממנו כולם אותו מחיר" → technovision.co.il הוסר מ-competitors.json.
 // RULES (עידן טלרן, 24/09/2026: לא אחוזים מתחת לשוק, אלא "כמה שקלים" מתחת לזול ביותר שנמצא ברשת)
 // 2.10.2026 עידן: "תוריד 5 שקל על המחיר שיש באינטרנט". רותם 3.10.2026 בחר: כל החנות לפי זה (קודם 5/10/20 לפי גובה המחיר).
 const GAP = (_low) => 5; // תמיד 5 ₪ מתחת לזול ביותר ברשת

@@ -55,7 +55,8 @@ function rowsFor(a: Attrs): Row[] {
     { label: "סוג", value: (_, a) => kindLabel[a.kind] },
     { label: "חיווט", value: (_, a) => wiring[a.wiring || "other"] },
     { label: "מענה מהנייד", value: (_, a) => yes(a.app) },
-    { label: "פתיחה באמצעות", value: (_, a) => (a.auth || []).map((x) => auth[x] || x).join(", ") || "לחצן" },
+    // פעמון Wi-Fi (wiring "wifi", עבר לאינטרקום בשלב 1א) לא פותח דלת, ולכן לא "לחצן"
+    { label: "פתיחה באמצעות", value: (_, a) => (a.auth || []).map((x) => auth[x] || x).join(", ") || (a.wiring === "wifi" ? "לא פותח דלת" : "לחצן") },
     { label: "מתאים ל", value: (p) => fitLine(p) },
   ];
 }

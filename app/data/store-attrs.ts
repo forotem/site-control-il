@@ -240,6 +240,7 @@ const B10_FOR = new Set(["reolink-cx410", "reolink-p340", "reolink-p430"]);
 const D20_FOR = new Set(["reolink-p334", "reolink-p337", "reolink-p344"]);
 // זרוע PFB203W לכיפות וטורטים של Hikvision ו-Uniview [לבדיקה מול עידן: התאמה לכל דגם]
 const PFB203W_BRANDS = new Set(["Hikvision", "HiWatch by Hikvision", "Uniview"]);
+const PFB203W_VERIFIED = false;
 // מקליט היברידי מאותו יצרן למצלמה אנלוגית. המקליטים בקטלוג מקליטים עד 5MP Lite, ולכן לא למצלמות 4K (8MP).
 const DVR_BY_BRAND: Record<string, string[]> = {
   Hikvision: ["ids-7204hqhi-m1-xt", "ids-7208hqhi-m1-xt"],
@@ -253,14 +254,15 @@ export function complementsOf(p: StoreProduct): { slugs: string[]; only: boolean
   const list = (slugs: string[], only = false) => ({ slugs: slugs.filter((s) => s !== p.slug), only });
   if (p.slug === CAMPAIGN_SLUG) return list([]);
   // Argus: פאנל סולארי ורכזת
-  if (a.battery && a.wifi) return list(["reolink-solar-panel-2", "reolink-home-hub"]);
+  if (a.battery && a.wifi) return list(["reolink-solar-panel-2", "reolink-home-hub"], true); // only: אחרת ההשלמה האוטומטית מ-wifi מוסיפה מצלמות Tenda
   // Home Hub ו-NVS12W: רק Argus 3E, שההתאמה שלה מאומתת. שאר ה-Argus וה-E1 אחרי אישור עידן
   if (isRecorder(a) && a.wifi) return list(["reolink-argus-3e"], true);
   // Go ו-TrackMix LTE בלי פאנל בקופסה: Solar Panel 2 (הדגמים ברשימת ההתאמה שלו)
   if (a.lte && a.battery && a.solar && !a.panelIncluded) return list(["reolink-solar-panel-2"]);
   if (B10_FOR.has(p.slug)) return list(["reolink-b10"]);
   if (D20_FOR.has(p.slug)) return list(["reolink-d20"]);
-  if (p.category === "ip" && PFB203W_BRANDS.has(p.brand) && (a.kind === "dome" || a.kind === "turret")) return list(["dahua-pfb203w"]);
+  // זרוע Dahua על כיפות של יצרן אחר: ההתאמה לא מאומתת (ייתכן שצריך פלטת מתאם). כבוי עד אישור עידן (9.10.2026)
+  if (PFB203W_VERIFIED && p.category === "ip" && PFB203W_BRANDS.has(p.brand) && (a.kind === "dome" || a.kind === "turret")) return list(["dahua-pfb203w"]);
   if (p.category === "analog" && isCamera(a) && (a.mp || 0) <= 5) return list(DVR_BY_BRAND[p.brand] || []);
   return list([]);
 }

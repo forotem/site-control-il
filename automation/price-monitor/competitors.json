@@ -163,6 +163,39 @@
       }
     ]
   },
+  "ds-k1t344mbfwx-e1": {
+    "model": "DS-K1T344MBFWX-E1",
+    "brand": "Hikvision",
+    "policy": "undercut-with-floor",
+    "floor": 1250,
+    "urls": [
+      {
+        "url": "https://sivim.co.il/product/ds-k1t344mbfwx-e1/",
+        "seller": "sivim.co.il",
+        "note": ""
+      },
+      {
+        "url": "https://zbm.co.il/product/ds-k1t344mbfwx-e1/",
+        "seller": "zbm.co.il",
+        "note": ""
+      },
+      {
+        "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a1%d7%95%d7%a3-%d7%96%d7%99%d7%94%d7%95%d7%99-%d7%a4%d7%a0%d7%99%d7%9d-hikvision-ds-k1t344mbfwx-e1/",
+        "seller": "com4tech.co.il",
+        "note": ""
+      },
+      {
+        "url": "https://abq.co.il/products/%D7%9E%D7%A1%D7%95%D7%A3-%D7%9B%D7%A0%D7%99%D7%A1%D7%94-%D7%91%D7%99%D7%95%D7%9E%D7%98%D7%A8%D7%99-%D7%9B%D7%95%D7%9C%D7%9C-%D7%93%D7%92%D7%9D-ds-k1t344mbfwx-e1",
+        "seller": "abq.co.il",
+        "note": ""
+      },
+      {
+        "url": "https://www.zap.co.il/fs.aspx?pid=1141071057&sog=h-intercom&indicator=20",
+        "seller": "AllTechStore via zap.co.il",
+        "note": ""
+      }
+    ]
+  },
   "ds-k1t323mbfwx-e1": {
     "model": "DS-K1T323MBFWX-E1",
     "brand": "Hikvision",

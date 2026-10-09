@@ -86,7 +86,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     ],
     compare: [
       { title: "ערכות לבית פרטי", slugs: ["ds-kis212", "visionnet-kitcom-2-wire-villa-kit-560789", "visionnet-kitcom-wifi-2-wire-villa-kit-560791", "visionnet-dh-hybrid-kit-560171", "ds-kis607-s"] },
-      { title: "בקרת כניסה לעסק", slugs: ["visionnet-k-560820", "ds-k1t502dbfwx-c", "ds-k1t323mbfwx-e1", "ds-k1t344ebfwx-e1", "ds-k1t671m"] },
+      { title: "בקרת כניסה לעסק", slugs: ["visionnet-k-560820", "ds-k1t502dbfwx-c", "ds-k1t323mbfwx-e1", "ds-k1t344mbfwx-e1", "ds-k1t344ebfwx-e1", "ds-k1t671m"] },
     ],
   },
   wifi: {

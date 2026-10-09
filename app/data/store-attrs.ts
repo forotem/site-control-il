@@ -28,6 +28,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "ds-kh6350-wte1": {"kind":"monitor","wiring":"ip","app":true,"auth":[]},
   "ds-k1t502dbfwx-c": {"kind":"terminal","wiring":"ip","app":true,"auth":["finger","card","code","qr"]},
   "ds-k1t344ebfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code"]},
+  "ds-k1t344mbfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code","qr"]},
   "ds-k1t323mbfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code"]},
   "ds-k1t671m": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","card"]},
   "ds-7632nxi-k2": {"kind":"nvr","mp":8,"channels":32,"bays":2,"poePorts":0,"maxMp":12,"ai":"acusense"},

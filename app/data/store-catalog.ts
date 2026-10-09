@@ -259,6 +259,32 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
+    "slug": "ds-k1t344mbfwx-e1",
+    "brand": "Hikvision",
+    "model": "DS-K1T344MBFWX-E1",
+    "sku": null,
+    "title": "מסוף זיהוי פנים ונוכחות Hikvision DS-K1T344MBFWX-E1 - מסך 4.5\", פנים/טביעת אצבע/כרטיס Mifare/קוד, Wi-Fi, PoE",
+    "category": "intercom",
+    "categoryName": "אינטרקום ובקרת כניסה",
+    "price": 1250,
+    "specs": [
+      "זיהוי פנים ב-Deep Learning: פחות מ-0.2 שניות למשתמש, דיוק מעל 99%, מרחק 0.3-1.5 מ', עם הגנה מפני זיוף בתמונה",
+      "פתיחה בפנים, טביעת אצבע, כרטיס Mifare (13.56MHz), קוד PIN או קוד QR; עד 3,000 משתמשים, 3,000 פנים, 3,000 טביעות ו-3,000 כרטיסים",
+      "הזנה בכבל רשת אחד (PoE 802.3at) שמזין גם את המנעול ב-12VDC/1A, או ספק 12VDC; רשת קווית, Wi-Fi ו-Bluetooth",
+      "מסך מגע LCD 4.5\" (480x854) ועדשה כפולה 2MP רחבת זווית; שמע דו-כיווני מול מסך פנימי, תוכנה ואפליקציית Hik-Connect",
+      "ממסר מנעול, לחצן יציאה, מגע דלת, 2 כניסות ויציאת אזעקה, RS-485, כניסת Wiegand ו-USB; יומן של 150,000 אירועים לדוח נוכחות",
+      "IP65, טמפ' -30 עד +60°C, 165x76x25 מ\"מ, התקנה על הקיר (מגן גשם DS-KAB344-S1 נמכר בנפרד)"
+    ],
+    "image": "/store-images/ds-k1t344mbfwx-e1.webp",
+    "datasheet": "https://assets.hikvision.com/prd/normal/all/doc/m000126764/DS-K1T344MBFWX-E1_Datasheet_20250725.pdf",
+    "highlights": [
+      "זיהוי פנים ב-Deep Learning: פחות מ-0.2 שניות למשתמש, דיוק מעל 99%, מרחק 0.3-1.5 מ', עם הגנה מפני זיוף בתמונה",
+      "פתיחה בפנים, טביעת אצבע, כרטיס Mifare (13.56MHz), קוד PIN או קוד QR; עד 3,000 משתמשים, 3,000 פנים, 3,000 טביעות ו-3,000 כרטיסים",
+      "הזנה בכבל רשת אחד (PoE 802.3at) שמזין גם את המנעול ב-12VDC/1A, או ספק 12VDC; רשת קווית, Wi-Fi ו-Bluetooth"
+    ],
+    "oldStock": false
+  },
+  {
     "slug": "ds-k1t323mbfwx-e1",
     "brand": "Hikvision",
     "model": "DS-K1T323MBFWX-E1",

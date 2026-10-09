@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { storeProducts, type StoreProduct } from "../data/store-catalog";
-import { attrsOf, audioLabel, aiLabel, kindLabel, mpLabel, nightShort, isCamera, isRecorder, fitLine, type Attrs } from "../data/store-attrs";
+import { attrsOf, audioLabel, aiLabel, kindLabel, kindText, mpLabel, nightShort, isCamera, isRecorder, fitLine, type Attrs } from "../data/store-attrs";
 import styles from "./store.module.css";
 
 const nis = (v: number | null) => (v ? `${v.toLocaleString("he-IL")} ₪` : "לפי פנייה");
@@ -28,10 +28,10 @@ function rowsFor(a: Attrs): Row[] {
   if (isRecorder(a)) {
     return [
       { label: "מחיר", value: (p) => nis(p.price) },
-      { label: "סוג", value: (_, a) => kindLabel[a.kind] },
+      { label: "סוג", value: (_, a) => kindText(a) },
       { label: "ערוצים", value: (_, a) => (a.channels ? `${a.channels}` : "") },
-      { label: "PoE מובנה", value: (_, a) => (a.poePorts ? `${a.poePorts} יציאות` : "לא, נדרש מתג") },
-      { label: "דיסקים", value: (_, a) => `${a.bays || 1}` },
+      { label: "PoE מובנה", value: (_, a) => (a.poePorts ? `${a.poePorts} יציאות` : a.wifi ? "לא צריך, המצלמות ב-Wi-Fi" : "לא, נדרש מתג") },
+      { label: "דיסקים", value: (_, a) => (a.bays === 0 ? "אין, כרטיס microSD" : `${a.bays || 1}`) },
       { label: "רזולוציה מקסימלית", value: (_, a) => (a.maxMp ? `${a.maxMp}MP` : "") },
       { label: "סינון אדם/רכב", value: (_, a) => (a.ai === "acusense" ? "כן" : "לא") },
       { label: "מתאים ל", value: (p) => fitLine(p) },
@@ -48,7 +48,7 @@ function rowsFor(a: Attrs): Row[] {
     ];
   }
   // אינטרקום ובקרת כניסה
-  const wiring: Record<string, string> = { ip: "IP (כבל רשת)", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi", standalone: "עצמאי", other: "" };
+  const wiring: Record<string, string> = { ip: "IP (כבל רשת)", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi", standalone: "עצמאי", wifi: "Wi-Fi", other: "" };
   const auth: Record<string, string> = { face: "פנים", finger: "טביעת אצבע", card: "כרטיס/תג", code: "קוד", qr: "QR" };
   return [
     { label: "מחיר", value: (p) => nis(p.price) },

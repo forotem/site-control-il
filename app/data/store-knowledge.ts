@@ -1,7 +1,7 @@
 // בסיס הידע של עוזר המכירות: טקסט קומפקטי שנבנה פעם אחת מהקטלוג, מהמאפיינים ומהמדריכים.
 // נטען רק בצד השרת (API route). אין כאן מידע סודי.
 import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT, productName } from "./store-catalog";
-import { attrsOf, fitLine, kindLabel, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
+import { attrsOf, fitLine, kindText, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
 import { storeGuides } from "./store-guides";
 import { deals, dealProduct, withVat, simLabel } from "./deals";
 import { BUSINESS } from "./business";
@@ -11,7 +11,7 @@ import { SITE_OFFER } from "./site-offer";
 function productLine(p: (typeof storeProducts)[number]): string {
   const a = attrsOf(p);
   const bits: string[] = [];
-  bits.push(kindLabel[a.kind]);
+  bits.push(kindText(a));
   if (isCamera(a)) {
     if (a.mp) bits.push(mpLabel(a.mp));
     if (a.night) bits.push(nightLabel[a.night] + (a.range ? ` עד ${a.range} מ'` : ""));
@@ -24,13 +24,13 @@ function productLine(p: (typeof storeProducts)[number]): string {
     if (a.sd) bits.push("כרטיס זיכרון");
     if (a.wifi) bits.push("Wi-Fi");
   } else if (isRecorder(a)) {
-    bits.push(`${a.channels} ערוצים`, a.poePorts ? `${a.poePorts} PoE מובנה` : "בלי PoE (נדרש מתג)", `${a.bays || 1} דיסקים`, `עד ${a.maxMp || 8}MP`);
+    bits.push(`${a.channels} ערוצים`, a.poePorts ? `${a.poePorts} PoE מובנה` : a.wifi ? "מצלמות Wi-Fi, בלי מתג" : "בלי PoE (נדרש מתג)", a.bays === 0 ? "בלי דיסק, כרטיס microSD" : `${a.bays || 1} דיסקים`, `עד ${a.maxMp || 8}MP`);
     if (a.ai === "acusense") bits.push("AcuSense");
   } else if (a.kind === "kit") {
     bits.push(`${a.cams} מצלמות ${mpLabel(a.mp)}`, `מקליט ${a.channels} ערוצים PoE`, `דיסק ${a.hdd}`);
     if (a.night) bits.push(nightLabel[a.night]);
   } else {
-    const wiring: Record<string, string> = { ip: "IP", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi", standalone: "עצמאי", other: "" };
+    const wiring: Record<string, string> = { ip: "IP", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi", standalone: "עצמאי", wifi: "Wi-Fi", other: "" };
     if (a.wiring && wiring[a.wiring]) bits.push(wiring[a.wiring]);
     if (a.app) bits.push("אפליקציה");
     if (a.auth?.length) bits.push("פתיחה: " + a.auth.join("/"));

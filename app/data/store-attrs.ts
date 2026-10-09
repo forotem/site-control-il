@@ -15,7 +15,8 @@ export type Attrs = {
   kind: Kind; mp?: number; night?: Night; range?: number; audio?: Audio; ai?: Ai;
   deter?: boolean; varifocal?: boolean; sd?: boolean; wideSensor?: boolean; angle?: number; ik10?: boolean; wifi?: boolean;
   channels?: number; bays?: number; poePorts?: number; maxMp?: number; hdd?: string; cams?: number;
-  wiring?: "ip" | "2wire" | "4wire" | "hybrid" | "standalone" | "other"; app?: boolean; buttons?: number; auth?: string[];
+  wiring?: "ip" | "2wire" | "4wire" | "hybrid" | "standalone" | "wifi" | "other"; app?: boolean; buttons?: number; auth?: string[];
+  /** לאביזר: למה הוא מתאים. קובע את שורת "מתאים ל" (fitLine) */ accessoryFor?: "keypad" | "reolink-bullet" | "reolink-dome" | "dome-turret";
   /** קו הסוללה של Reolink */ solar?: boolean; lte?: boolean; battery?: boolean; panelIncluded?: boolean;
 };
 
@@ -65,7 +66,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "visionnet-dh-wi-fi-monitor-560975": {"kind":"monitor","wiring":"hybrid","app":true,"auth":["card"]},
   "visionnet-2tl-821-t5-560892": {"kind":"door-panel","wiring":"2wire","app":false,"auth":["face","card","code"]},
   "visionnet-2tl-607fe-id-s2-560075": {"kind":"door-panel","wiring":"2wire","app":false,"buttons":2,"auth":["card"]},
-  "rain-roof-for-keypads-560878": {"kind":"accessory","wiring":"other","app":false,"auth":[]},
+  "rain-roof-for-keypads-560878": {"kind":"accessory","wiring":"other","app":false,"auth":[],"accessoryFor":"keypad"},
   "reolink-rlk8-820d4-a": {"kind":"kit","mp":8,"night":"ir","range":30,"audio":"none","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
   "reolink-rlk8-810b4-a-rlk8-800b4": {"kind":"kit","mp":8,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":105,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
   "reolink-rlk8-410b4-5mp": {"kind":"kit","mp":5,"night":"ir","range":30,"audio":"mic","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
@@ -132,7 +133,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-e1-outdoor-pro-e560": {"kind":"wifi-pt","mp":8,"night":"hybrid","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-duo-2-wifi": {"kind":"fisheye","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":180},
   "reolink-fe-w": {"kind":"fisheye","mp":6,"night":"ir","range":8,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":360},
-  "reolink-video-doorbell-wifi": {"kind":"door-panel","wiring":"ip","app":true,"auth":[],"mp":4,"wifi":true,"audio":"two-way"},
+  "reolink-video-doorbell-wifi": {"kind":"door-panel","wiring":"wifi","app":true,"auth":[],"mp":4,"wifi":true,"audio":"two-way"},
   "reolink-cx410": {"kind":"bullet","mp":4,"night":"color","range":20,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-duo-3-poe": {"kind":"fisheye","mp":16,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":180},
   "reolink-p327": {"kind":"dome","mp":5,"night":"ir","range":30,"audio":"mic","ai":"human-vehicle","sd":true,"ik10":true},
@@ -155,9 +156,9 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-nvs16-8md8": {"kind":"kit","mp":8,"night":"ir","range":30,"audio":"none","cams":8,"channels":16,"poePorts":8,"hdd":"4TB"},
   "reolink-nvs16-12mb8": {"kind":"kit","mp":12,"night":"color","range":30,"audio":"two-way","cams":8,"channels":16,"poePorts":8,"hdd":"4TB"},
   "reolink-nvs16-12md8": {"kind":"kit","mp":12,"night":"color","range":30,"audio":"two-way","cams":8,"channels":16,"poePorts":8,"hdd":"4TB"},
-  "reolink-b10": {"kind":"accessory"},
-  "reolink-d20": {"kind":"accessory"},
-  "dahua-pfb203w": {"kind":"accessory"},
+  "reolink-b10": {"kind":"accessory","accessoryFor":"reolink-bullet"},
+  "reolink-d20": {"kind":"accessory","accessoryFor":"reolink-dome"},
+  "dahua-pfb203w": {"kind":"accessory","accessoryFor":"dome-turret"},
 };
 
 export const kindLabel: Record<Kind, string> = {
@@ -201,7 +202,10 @@ export function fitLine(p: StoreProduct): string {
     case "lpr": return "חניון, שער ומחסום: קריאת לוחיות רישוי";
     case "wifi-pt": return a.mp && a.mp <= 3 ? "פנים הבית: סלון, חדר ילדים, חיות מחמד" : "חצר של בית פרטי בלי כבלים, חשמל בלבד";
     case "wifi-bullet": return "נקודה אחת בחוץ בלי מקליט, חשמל בלבד";
-    case "nvr": return a.poePorts ? `עד ${a.channels} מצלמות IP, בלי מתג נפרד` : `עד ${a.channels} מצלמות IP (נדרש מתג PoE)`;
+    case "nvr":
+      // Home Hub ו-NVS12W: מקליטים למצלמות Wi-Fi, בלי כבל רשת למצלמה ובלי מתג
+      if (a.wifi) return `עד ${a.channels} מצלמות Wi-Fi של Reolink, בלי מתג`;
+      return a.poePorts ? `עד ${a.channels} מצלמות IP, בלי מתג נפרד` : `עד ${a.channels} מצלמות IP (נדרש מתג PoE)`;
     case "dvr": case "xvr": return `שדרוג מערכת קואקס קיימת, עד ${a.channels} מצלמות`;
     case "kit": return `${(a.cams || 4) >= 8 ? "בית גדול או עסק" : "בית או עסק קטן"}: ${a.cams || 4} מצלמות, מקליט ודיסק, מוכן להתקנה`;
     case "intercom-kit": return a.wiring === "ip" ? "בית פרטי חדש: תשתית רשת, מענה מהנייד" : a.wiring === "hybrid" ? "בית פרטי: 2 גידים קיימים + מענה מהנייד" : a.wiring === "4wire" ? "החלפת אינטרקום ישן: 4 גידים קיימים" : "החלפת אינטרקום ישן: אותם 2 גידים";
@@ -209,9 +213,56 @@ export function fitLine(p: StoreProduct): string {
     case "monitor": return "מסך נוסף לדירה או להחלפה";
     case "terminal": return a.auth?.includes("face") ? "עסק: כניסת עובדים ונוכחות בזיהוי פנים" : "עסק: דלת עובדים באצבע, כרטיס או קוד";
     case "keypad": return "שער או דלת: קוד ותג, עמיד לחוץ";
-    case "accessory": return "משלים לקודן חיצוני: הגנה מגשם ושמש";
+    case "accessory":
+      switch (a.accessoryFor) {
+        case "reolink-bullet": return "מצלמות צינור של Reolink, להסתרת חיבור הכבל ולהגנה מגשם";
+        case "reolink-dome": return "מצלמות כיפה של Reolink, להסתרת חיבור הכבל ולהגנה מגשם";
+        case "dome-turret": return "מצלמות כיפה וטורט על קיר: המצלמה בולטת מהקיר והכבל עובר בתוך הזרוע";
+        case "keypad": return "משלים לקודן חיצוני: הגנה מגשם ושמש";
+        default: return "אביזר התקנה";
+      }
     default: return "";
   }
+}
+
+/** תווית הסוג לטקסטים בדף (שורה מעל הכותרת, "בקצרה", טבלת השוואה, הידע של טל).
+ *  Home Hub ו-NVS12W נשארים kind "nvr": kindLabel נכנס ל-<title> של דף המוצר ולא משנים אותו (תוכנית IA, תיקון ביקורת 4). */
+export function kindText(a: Attrs): string {
+  if (a.kind === "nvr" && a.wifi) return a.bays === 0 ? "רכזת הקלטה למצלמות Wi-Fi" : "מקליט NVR למצלמות Wi-Fi";
+  return kindLabel[a.kind];
+}
+
+// דף מצלמת ההרתעה (Deterrence): דף הנחיתה של המודעה המנצחת במטא. לא מקבל משלים חדש.
+const CAMPAIGN_SLUG = "ds-2cd2047g2h-liu-sl-2-8mm";
+// קופסאות חיבורים של Reolink: B10 לצינורות PoE ו-D20 לכיפות (תוכנית IA, סעיף 6.5).
+// P330 לא ברשימת הדגמים במפרט של B10, ולכן היא לא כאן עד שעידן מאשר התאמה.
+const B10_FOR = new Set(["reolink-cx410", "reolink-p340", "reolink-p430"]);
+const D20_FOR = new Set(["reolink-p334", "reolink-p337", "reolink-p344"]);
+// זרוע PFB203W לכיפות וטורטים של Hikvision ו-Uniview [לבדיקה מול עידן: התאמה לכל דגם]
+const PFB203W_BRANDS = new Set(["Hikvision", "HiWatch by Hikvision", "Uniview"]);
+// מקליט היברידי מאותו יצרן למצלמה אנלוגית. המקליטים בקטלוג מקליטים עד 5MP Lite, ולכן לא למצלמות 4K (8MP).
+const DVR_BY_BRAND: Record<string, string[]> = {
+  Hikvision: ["ids-7204hqhi-m1-xt", "ids-7208hqhi-m1-xt"],
+  Uniview: ["xvr301-04g3", "xvr301-08g3"],
+};
+
+/** מפת המשלימים המפורשת לדף המוצר (תוכנית IA 9.10.2026, סעיף 6.5). מוצגת לפני הבחירה האוטומטית מאותה קטגוריה.
+ *  only: רק הרשימה, בלי השלמה אוטומטית. ברכזות Wi-Fi ההשלמה האוטומטית הייתה מציגה מצלמות Tenda, שלא עובדות איתן. */
+export function complementsOf(p: StoreProduct): { slugs: string[]; only: boolean } {
+  const a = attrsOf(p);
+  const list = (slugs: string[], only = false) => ({ slugs: slugs.filter((s) => s !== p.slug), only });
+  if (p.slug === CAMPAIGN_SLUG) return list([]);
+  // Argus: פאנל סולארי ורכזת
+  if (a.battery && a.wifi) return list(["reolink-solar-panel-2", "reolink-home-hub"]);
+  // Home Hub ו-NVS12W: רק Argus 3E, שההתאמה שלה מאומתת. שאר ה-Argus וה-E1 אחרי אישור עידן
+  if (isRecorder(a) && a.wifi) return list(["reolink-argus-3e"], true);
+  // Go ו-TrackMix LTE בלי פאנל בקופסה: Solar Panel 2 (הדגמים ברשימת ההתאמה שלו)
+  if (a.lte && a.battery && a.solar && !a.panelIncluded) return list(["reolink-solar-panel-2"]);
+  if (B10_FOR.has(p.slug)) return list(["reolink-b10"]);
+  if (D20_FOR.has(p.slug)) return list(["reolink-d20"]);
+  if (p.category === "ip" && PFB203W_BRANDS.has(p.brand) && (a.kind === "dome" || a.kind === "turret")) return list(["dahua-pfb203w"]);
+  if (p.category === "analog" && isCamera(a) && (a.mp || 0) <= 5) return list(DVR_BY_BRAND[p.brand] || []);
+  return list([]);
 }
 
 /** רמת המוצר בתוך הסוג שלו, לצורך תצוגת "בסיסי / משודרג / פרימיום" */

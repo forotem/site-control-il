@@ -7,9 +7,10 @@ const issues = [];
 
 // transpile the TS modules once with tsc -> CJS in S/tsout
 const { execSync } = require("child_process");
-execSync(`npx tsc app/store/finder-logic.ts app/data/store-knowledge.ts --outDir "${S}/tsout" --module commonjs --target es2020 --esModuleInterop --skipLibCheck --moduleResolution node --jsx react`, { cwd: W, stdio: "pipe" });
+execSync(`npx tsc app/store/finder-logic.ts app/data/store-knowledge.ts app/data/store-category-seo.ts --outDir "${S}/tsout" --module commonjs --target es2020 --esModuleInterop --skipLibCheck --moduleResolution node --jsx react`, { cwd: W, stdio: "pipe" });
 const { storeProducts, storeCategories } = require(S + "/tsout/data/store-catalog.js");
-const { storeAttrs, attrsOf, fitLine } = require(S + "/tsout/data/store-attrs.js");
+const { storeAttrs, attrsOf, fitLine, complementsOf } = require(S + "/tsout/data/store-attrs.js");
+const { categorySeo } = require(S + "/tsout/data/store-category-seo.js");
 const { recommend, totalOf, questions } = require(S + "/tsout/store/finder-logic.js");
 const { STORE_KNOWLEDGE } = require(S + "/tsout/data/store-knowledge.js");
 const { storeGuides } = require(S + "/tsout/data/store-guides.js");
@@ -30,6 +31,19 @@ for (const p of storeProducts) {
 }
 const slugs = new Set(storeProducts.map((p) => p.slug));
 if (slugs.size !== storeProducts.length) issues.push(["catalog", "-", "duplicate slugs"]);
+
+// 1.5) קטגוריות (שלב 1א, 9.10.2026): לכל קטגוריה יש categorySeo (אחרת /store/c/<id> מחזיר 404) ומחלקה
+const DEPTS = ["offgrid", "wifi", "wired", "entry"];
+for (const c of storeCategories) {
+  if (!categorySeo[c.id]) issues.push(["category-seo", c.id, "no categorySeo entry"]);
+  if (!DEPTS.includes(c.dept)) issues.push(["category-dept", c.id, "missing/unknown dept " + c.dept]);
+  const n = storeProducts.filter((p) => p.category === c.id).length;
+  if (!n) issues.push(["category", c.id, "empty category"]);
+  if (categorySeo[c.id] && categorySeo[c.id].noindex && n >= 6) issues.push(["category-noindex", c.id, `${n} products: time to drop noindex and add to sitemap`]);
+}
+// מפת המשלימים: כל slug קיים, ודף ה-Deterrence של הקמפיין לא מקבל משלים
+for (const p of storeProducts) for (const s of complementsOf(p).slugs) if (!slugs.has(s)) issues.push(["complements", p.slug, "unknown slug " + s]);
+if (complementsOf(storeProducts.find((p) => p.slug === "ds-2cd2047g2h-liu-sl-2-8mm")).slugs.length) issues.push(["complements", "ds-2cd2047g2h-liu-sl-2-8mm", "campaign page must not get complements"]);
 
 // 2) guides reference real slugs
 for (const g of Object.values(storeGuides)) for (const c of g.compare) for (const s of c.slugs) if (!slugs.has(s)) issues.push(["guide", g.id, "unknown slug " + s]);

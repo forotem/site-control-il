@@ -205,9 +205,8 @@ function pickKit(place: Place | undefined, priority: Priority | undefined, budge
     // ערכת הצינור 12MP הוסרה מהחנות (1.10.2026, לפי עידן), אז גם לבית ממליצים על ערכת הכיפות
     return item("reolink-rlk8-1200d4-a", 1, "ערכה מוכנה", "4 כיפות 12MP עם זרקורים וצבע מלא בלילה, מקליט 8 ערוצים עם דיסק 2TB, קושחה בעברית");
   }
-  if (budget === "low" || priority === "cheap") {
-    return item("reolink-rlk8-410b4-5mp", 1, "ערכה מוכנה", "4 מצלמות 5MP, מקליט 8 ערוצים PoE עם דיסק 2TB. הכל בקופסה אחת, מחברים ועובד");
-  }
+  // RLK8-410B4-5MP לא מומלצת: היא בנויה על RLN8 שהופסק, ועידן עוד לא אמר מה בקופסה היום (תוכנית IA, 9.10.2026).
+  // תקציב נמוך מקבל את אותה ערכה כמו כולם, ובשאלון יש חלופת "הרכבה עצמית, יותר זול".
   return place === "business" || place === "building"
     ? item("reolink-rlk8-820d4-a", 1, "ערכה מוכנה", "4 כיפות 4K לתקרות ופנים, מקליט 8 ערוצים PoE עם דיסק 2TB, אפליקציה בעברית")
     : item("reolink-rlk8-810b4-a-rlk8-800b4", 1, "ערכה מוכנה", "4 מצלמות צינור 4K לחוץ, מקליט 8 ערוצים PoE עם דיסק 2TB, אפליקציה בעברית");
@@ -223,7 +222,7 @@ export function recommend(a: Answers): Recommendation {
     const big = n >= 5 || a.priority === "ai";
     const cam = big
       ? item("reolink-go-pt-ultra", Math.max(1, Math.ceil(n / 2)), "מצלמה סולארית 4G ממונעת", "4K ממונעת עם מעקב אוטומטי, פאנל סולארי כלול: מצלמה אחת מכסה חצי אתר")
-      : item("reolink-go-plus", n, "מצלמה סולארית 4G", "4MP עם סים 4G וסוללה: נקודה קבועה על שער, מכולה או ציוד");
+      : item("reolink-go-ultra", n, "מצלמה סולארית 4G", "4K עם סים 4G, סוללה וצבע בלילה: נקודה קבועה על שער, מכולה או ציוד");
     const items = [cam];
     if (!big) items.push(item("reolink-solar-panel-2", n, "פאנל סולארי", "טעינה רציפה, בלי להוריד את המצלמה כל כמה שבועות"));
     const wired: RecItem[] = [pickIpCamera("home", "deter"), pickNvr(n)];

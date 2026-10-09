@@ -3,7 +3,7 @@ import { BASE_URL } from "../../config";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
-import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel } from "../../data/store-attrs";
+import { attrsOf, fitLine, kindLabel, kindText, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel, complementsOf } from "../../data/store-attrs";
 import { FULL_KIT_PREFILL } from "../../lib/site-wa-prefills";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { offerShippingDetails, merchantReturnPolicy } from "../../components/Schema";
@@ -58,6 +58,12 @@ function neighbours(p: (typeof storeProducts)[number]) {
   return [cheaper?.slug, p.slug, pricier?.slug].filter(Boolean) as string[];
 }
 
+/** שם הקטגוריה בשורה מעל הכותרת. TrackMix Wired LTE יושבת ב-solar אבל היא לא סולארית ולא בסוללה (חשמל קבוע וסים) */
+function eyebrowCategory(p: (typeof storeProducts)[number]) {
+  const a = attrsOf(p);
+  return p.category === "solar" && a.lte && !a.battery ? "מצלמות 4G לחשמל קבוע" : p.categoryName;
+}
+
 /** "בקצרה" בשפה של לקוח: מה המצלמה הזאת עושה, לפני המפרט */
 function plainSummary(p: (typeof storeProducts)[number]): string[] {
   const a = attrsOf(p);
@@ -73,18 +79,20 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
     else if (a.wifi) out.push("חיבור Wi-Fi והקלטה לכרטיס זיכרון, בלי מקליט");
     else if (a.kind !== "kit") out.push("הזנה בכבל רשת אחד (PoE) ממתג או ממקליט עם PoE");
   } else if (isRecorder(a)) {
-    out.push(`${kindLabel[a.kind]}, עד ${a.channels} מצלמות`);
-    out.push(a.poePorts ? `${a.poePorts} יציאות PoE מובנות: המצלמות מתחברות ישר למקליט` : "נדרש מתג PoE להזנת המצלמות");
-    out.push(`${a.bays === 2 ? "שני מפרצי דיסק" : "מפרץ דיסק אחד"}, ${a.hdd ? `דיסק ${a.hdd} מותקן` : "מסופק בלי דיסק"}`);
+    // Home Hub ו-NVS12W (a.wifi): בלי "נדרש מתג PoE", וב-Home Hub אין מפרץ דיסק (bays: 0) אלא כרטיס microSD
+    out.push(`${kindText(a)}${a.wifi ? " של Reolink" : ""}, עד ${a.channels} מצלמות`);
+    out.push(a.poePorts ? `${a.poePorts} יציאות PoE מובנות: המצלמות מתחברות ישר למקליט` : a.wifi ? "המצלמות מתחברות ב-Wi-Fi, בלי כבל רשת ובלי מתג PoE" : "נדרש מתג PoE להזנת המצלמות");
+    out.push(a.bays === 0 ? "שומר את ההקלטות לכרטיס microSD, בלי דיסק" : `${a.bays === 2 ? "שני מפרצי דיסק" : "מפרץ דיסק אחד"}, ${a.hdd ? `דיסק ${a.hdd} מותקן` : "מסופק בלי דיסק"}`);
     if (a.ai === "acusense") out.push("סינון אדם/רכב במקליט וחיפוש חכם בהקלטות");
   } else if (a.kind === "kit") {
     out.push(`${a.cams} מצלמות ומקליט ${a.channels} ערוצים עם דיסק ${a.hdd}, כבלים ואפליקציה בעברית`);
     if (a.night) out.push(nightLabel[a.night]);
     if (a.audio && a.audio !== "none") out.push(audioLabel[a.audio]);
   } else {
-    const wiring: Record<string, string> = { ip: "מתחבר בכבל רשת (IP)", "2wire": "עובד על 2 הגידים הקיימים", "4wire": "חיווט 4 גידים פשוט", hybrid: "2 גידים קיימים + Wi-Fi ואפליקציה", standalone: "עצמאי, בלי מערכת מאחור" };
+    const wiring: Record<string, string> = { ip: "מתחבר בכבל רשת (IP)", "2wire": "עובד על 2 הגידים הקיימים", "4wire": "חיווט 4 גידים פשוט", hybrid: "2 גידים קיימים + Wi-Fi ואפליקציה", standalone: "עצמאי, בלי מערכת מאחור", wifi: "מתחבר ל-Wi-Fi של הבית, בלי כבל רשת" };
     if (a.wiring && wiring[a.wiring]) out.push(wiring[a.wiring]);
-    if (a.app) out.push("מענה ופתיחת דלת מהנייד");
+    // פעמון Wi-Fi לא פותח דלת: רואים ומדברים בלבד
+    if (a.app) out.push(a.wiring === "wifi" ? "רואים ומדברים עם מי שבדלת מהנייד" : "מענה ופתיחת דלת מהנייד");
   }
   const fit = fitLine(p);
   if (fit) out.push(`מתאים ל: ${fit}`);
@@ -118,7 +126,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) notFound();
   const a = attrsOf(p);
-  const related = storeProducts.filter((x) => x.category === p.category && x.slug !== p.slug && attrsOf(x).kind !== a.kind).slice(0, 4);
+  // משלימים: קודם המפה המפורשת (store-attrs.ts, complementsOf), ואחריה הבחירה האוטומטית מאותה קטגוריה.
+  // מוצר בלי מפה (כמו דף ה-Deterrence) מקבל בדיוק את מה שקיבל קודם.
+  const comp = complementsOf(p);
+  const explicit = comp.slugs.map((s) => storeProducts.find((x) => x.slug === s)).filter((x): x is (typeof storeProducts)[number] => !!x);
+  const auto = comp.only ? [] : storeProducts.filter((x) => x.category === p.category && x.slug !== p.slug && attrsOf(x).kind !== a.kind && !comp.slugs.includes(x.slug));
+  const related = [...explicit, ...auto].slice(0, 4);
   const compareSlugs = neighbours(p);
   const summary = plainSummary(p);
   const deal = dealForProduct(p.slug);
@@ -169,7 +182,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           availability: p.oldStock ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
           seller: { "@type": "Organization", name: "Site-Control" },
           // משלוח בתשלום נפרד לפי כתובת (BUSINESS.shipping) — בסכמה כתקרה + ימי אספקה, כמו בדף /shipping
-          shippingDetails: offerShippingDetails(p.category),
+          shippingDetails: offerShippingDetails(p.category, p.slug),
           // 14 יום לפי חוק הגנת הצרכן (BUSINESS.returns), כמו בדף /returns
           hasMerchantReturnPolicy: merchantReturnPolicy(),
         }
@@ -190,7 +203,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         <div className={styles.info}>
-          <span className={styles.eyebrow}>{p.categoryName} · {kindLabel[a.kind]}</span>
+          <span className={styles.eyebrow}>{eyebrowCategory(p)} · {kindText(a)}</span>
           <h1>{p.title}</h1>
           {rating && (
             <a href="#reviews" className={styles.ratingLine} aria-label={`דירוג ${rating.value} מתוך 5, ${rating.count} ביקורות`}>
@@ -248,7 +261,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 צריך סים? סים וגלישה ב-{nis(deal.sim.price)} ₪ לשנה. מבקשים בווצאפ יחד עם ההזמנה.
               </p>
             )}
-            <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>
+            <p className={styles.note}>{WARRANTY_TEXT}. {isRecorder(a) ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : a.bays === 0 ? "הרכזת שומרת את ההקלטות לכרטיס microSD, בלי דיסק. אם יש כרטיס בקופסה, נאשר בווצאפ לפני חיוב." : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>
           </div>
 
           {fullKit && (
@@ -330,7 +343,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
       {related.length > 0 && (
         <section className={styles.related}>
-          <h2>משלימים מאותה קטגוריה</h2>
+          <h2>{explicit.length ? "מוצרים משלימים" : "משלימים מאותה קטגוריה"}</h2>
           <div className={styles.grid}>{related.map((r) => <ProductCard key={r.slug} p={r} />)}</div>
         </section>
       )}

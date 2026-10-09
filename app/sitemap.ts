@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/blog"), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.6 },
   ];
   const categories: MetadataRoute.Sitemap = storeCategories
-    .filter((c) => categorySeo[c.id])
+    .filter((c) => categorySeo[c.id] && !categorySeo[c.id].noindex) // accessories: noindex עד 6 מוצרים
     .map((c) => ({ url: url(`/store/c/${c.id}`), lastModified: CATALOG_UPDATED, changeFrequency: "weekly", priority: 0.9 }));
   const products: MetadataRoute.Sitemap = storeProducts.map((p) => ({
     url: url(`/store/${p.slug}`),

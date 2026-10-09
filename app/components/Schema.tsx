@@ -56,12 +56,13 @@ export function merchantReturnPolicy() {
 }
 
 /**
- * פרטי משלוח לסכמת Offer (OfferShippingDetails) לפי קטגוריית המוצר בחנות.
+ * פרטי משלוח לסכמת Offer (OfferShippingDetails) לפי קטגוריית המוצר בחנות, או לפי ה-slug כשהמוצר ב-largeSlugs.
  * המספרים ב-BUSINESS.shipping.schema: תקרת מחיר (גוגל דורשת value או maxValue) וימי אספקה.
  */
-export function offerShippingDetails(category: string) {
+export function offerShippingDetails(category: string, slug?: string) {
   const s = BUSINESS.shipping.schema;
-  const size = (s.largeCategories as readonly string[]).includes(category) ? 'large' : 'small';
+  const large = (s.largeCategories as readonly string[]).includes(category) || (!!slug && (s.largeSlugs as readonly string[]).includes(slug));
+  const size = large ? 'large' : 'small';
   const qty = (range: readonly [number, number]) => ({ '@type': 'QuantitativeValue', minValue: range[0], maxValue: range[1], unitCode: 'DAY' });
   return {
     '@type': 'OfferShippingDetails',

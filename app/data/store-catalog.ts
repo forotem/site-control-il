@@ -5,7 +5,10 @@ export type StoreProduct = {
   category: string; categoryName: string; price: number | null;
   specs: string[]; highlights: string[]; image: string | null; datasheet: string | null; oldStock: boolean;
 };
-export type StoreCategory = { id: string; name: string; blurb: string };
+/** מחלקה = שכבת תצוגה מעל הקטגוריות (תוכנית IA 9.10.2026): offgrid בלי חשמל ואינטרנט, wifi, wired מערכת בכבלים עם מקליט, entry אינטרקום.
+ *  ה-id של קטגוריה לא משתנה אף פעם (כתובת, קישורים בבלוג, item_category באנליטיקס). */
+export type StoreDept = "offgrid" | "wifi" | "wired" | "entry";
+export type StoreCategory = { id: string; name: string; blurb: string; dept: StoreDept };
 export const WHATSAPP_NUMBER = "972502256866";
 export const WARRANTY_TEXT = "אחריות שנה על כל המוצרים";
 /** שם תצוגה: מותג + דגם, בלי לכפול את המותג כשהדגם כבר מתחיל בו ("Reolink Go PT Ultra"). */
@@ -21,37 +24,51 @@ export const storeCategories: StoreCategory[] = [
   {
     "id": "ip",
     "name": "מצלמות IP",
-    "blurb": "מצלמות רשת PoE של Hikvision ו-UNV, מ-4MP ועד 8MP, עם ראיית לילה צבעונית וזיהוי אדם/רכב."
+    "blurb": "מצלמות רשת PoE של Hikvision, Uniview ו-Reolink, 4MP עד 16MP. מתחברות בכבל רשת למקליט NVR.",
+    "dept": "wired"
   },
   {
     "id": "kits",
     "name": "ערכות מצלמות מוכנות",
-    "blurb": "ערכות Reolink עם מקליט, 4 עד 8 מצלמות, כבלים ודיסק. מחברים ועובד."
+    "blurb": "מקליט עם דיסק ו-4 עד 8 מצלמות. כבל רשת אחד לכל מצלמה, הכול עובד מהקופסה.",
+    "dept": "wired"
   },
   {
     "id": "recorders",
     "name": "מקליטים NVR / DVR",
-    "blurb": "מקליטי רשת ומקליטים היברידיים, 4 עד 32 ערוצים. נמכרים ללא דיסק, מתאימים לכל דיסק סטנדרטי."
+    "blurb": "NVR למצלמות IP ו-DVR/XVR לקואקס. רוב המקליטים נמכרים בלי דיסק. ב-Reolink NVS8 ו-NVS16 הדיסק כבר מותקן.",
+    "dept": "wired"
   },
   {
     "id": "intercom",
     "name": "אינטרקום ובקרת כניסה",
-    "blurb": "אינטרקום וידאו לוילה ולבניין, קודנים, מסופי זיהוי פנים וטביעת אצבע."
+    "blurb": "אינטרקום וידאו לוילה ולבניין, פעמון וידאו, קודנים, מסופי זיהוי פנים וטביעת אצבע.",
+    "dept": "entry"
   },
   {
     "id": "wifi",
     "name": "מצלמות Wi-Fi לבית ולעסק",
-    "blurb": "מצלמות Tenda עצמאיות, חיבור חשמל בלבד, מעקב אוטומטי וראיית לילה צבעונית."
+    "blurb": "מצלמות Reolink ו-Tenda שמתחברות ל-Wi-Fi של הבית: לשקע, או על סוללה בלי כבלים. עם Home Hub ההקלטות נשמרות בבית.",
+    "dept": "wifi"
   },
   {
     "id": "solar",
     "name": "סולארי 4G ובסוללה",
-    "blurb": "מצלמות Reolink עם סוללה: 4G עם סים לאתרים בלי חשמל ואינטרנט, או Wi-Fi לבית בלי כבלים. פאנל סולארי נמכר בנפרד אלא אם צוין אחרת. יש חשמל ואין אינטרנט? TrackMix Wired LTE."
+    "blurb": "מצלמות Reolink עם סים 4G למקום בלי אינטרנט: על סוללה ופאנל סולארי, או לשקע חשמל. הפאנל נמכר בנפרד, אלא אם צוין אחרת.",
+    "dept": "offgrid"
   },
   {
     "id": "analog",
     "name": "מצלמות אנלוגיות",
-    "blurb": "מצלמות Turbo HD ו-TVI לשדרוג מערכות קיימות על כבל קואקס, כולל ColorVu 3K ו-4K."
+    "blurb": "מצלמות Turbo HD ו-TVI לשדרוג מערכות קיימות על כבל קואקס, כולל ColorVu 3K ו-4K.",
+    "dept": "wired"
+  },
+  {
+    // חדש (שלב 1א, 9.10.2026): קופסאות וזרועות שעברו מ-ip. noindex עד שיהיו בדף 6 מוצרים (store-category-seo.ts)
+    "id": "accessories",
+    "name": "אביזרי התקנה",
+    "blurb": "קופסאות חיבורים וזרועות קיר למצלמות שבחנות.",
+    "dept": "wired"
   }
 ];
 export const storeProducts: StoreProduct[] = [
@@ -2519,8 +2536,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus Eco / B320",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco, 3MP, Wi-Fi, סולארית",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 268,
     "specs": [
       "3MP, עדשה קבועה",
@@ -2545,8 +2562,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus Eco PRO / B340",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Eco Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 539,
     "specs": [
       "5MP, עדשה קבועה",
@@ -2571,8 +2588,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus 3E",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 260,
     "specs": [
       "3MP, עדשה רחבה 115°",
@@ -2596,8 +2613,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus 3 Pro",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 334,
     "specs": [
       "5MP (2560×1920)",
@@ -2622,8 +2639,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus 3 Ultra",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 468,
     "specs": [
       "8MP 4K",
@@ -2648,8 +2665,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus Track",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus Track, 4K, שתי עדשות, מעקב אוטומטי, Wi-Fi",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 679,
     "specs": [
       "4K, שתי עדשות: רחבה + טלה ממונעת עם מעקב אוטומטי",
@@ -2673,8 +2690,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Argus PT Lite",
     "sku": null,
     "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
-    "category": "solar",
-    "categoryName": "סולארי 4G ובסוללה",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 368,
     "specs": [
       "3MP, מנוע Pan/Tilt 355°/140°",
@@ -2923,8 +2940,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Doorbell WiFi",
     "sku": null,
     "title": "פעמון וידאו Wi-Fi Reolink Video Doorbell, 4MP, שמע דו-כיווני, בלי מנוי",
-    "category": "wifi",
-    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
+    "category": "intercom",
+    "categoryName": "אינטרקום ובקרת כניסה",
     "price": 374,
     "specs": [
       "4MP, עדשה 2.2 מ\"מ בזווית רחבה, רואים את כל מי שבדלת",
@@ -3346,8 +3363,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "NVS12W",
     "sku": null,
     "title": "מקליט NVR אלחוטי Reolink NVS12W, 12 ערוצים Wi-Fi 6, ללא דיסק",
-    "category": "recorders",
-    "categoryName": "מקליטים NVR / DVR",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 1139,
     "specs": [
       "12 ערוצים למצלמות Wi-Fi של Reolink (גם בסוללה), Wi-Fi 6 מובנה",
@@ -3370,8 +3387,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "Reolink Home Hub",
     "sku": null,
     "title": "רכזת אבטחה ביתית Reolink Home Hub, אחסון מקומי לעד 8 מצלמות Reolink",
-    "category": "recorders",
-    "categoryName": "מקליטים NVR / DVR",
+    "category": "wifi",
+    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
     "price": 444,
     "specs": [
       "מרכזת עד 8 מצלמות Reolink (Wi-Fi ובסוללה) להקלטה מקומית",
@@ -3490,8 +3507,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "B10",
     "sku": null,
     "title": "קופסת חיבורים Reolink B10 למצלמות צינור, להסתרת הכבל והחיבור",
-    "category": "ip",
-    "categoryName": "מצלמות IP",
+    "category": "accessories",
+    "categoryName": "אביזרי התקנה",
     "price": 45,
     "specs": [
       "קופסת חיבורים למצלמות צינור של Reolink",
@@ -3512,8 +3529,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "D20",
     "sku": null,
     "title": "קופסת חיבורים Reolink D20 למצלמות כיפה, להסתרת הכבל והחיבור",
-    "category": "ip",
-    "categoryName": "מצלמות IP",
+    "category": "accessories",
+    "categoryName": "אביזרי התקנה",
     "price": 80,
     "specs": [
       "קופסת חיבורים למצלמות כיפה של Reolink",
@@ -3534,8 +3551,8 @@ export const storeProducts: StoreProduct[] = [
     "model": "PFB203W",
     "sku": "DH-PFB203W",
     "title": "זרוע קיר לבנה Dahua PFB203W למצלמות כיפה, הכבל עובר בתוך הזרוע",
-    "category": "ip",
-    "categoryName": "מצלמות IP",
+    "category": "accessories",
+    "categoryName": "אביזרי התקנה",
     "price": 75,
     "specs": [
       "זרוע קיר עמידה במים למצלמות כיפה (טורט)",

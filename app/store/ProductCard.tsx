@@ -24,7 +24,8 @@ export function SpecChips({ p, max = 5 }: { p: StoreProduct; max?: number }) {
     if (a.wifi && !a.battery) chips.push({ text: "Wi-Fi" });
   } else if (a.kind === "nvr" || a.kind === "dvr" || a.kind === "xvr") {
     if (a.channels) chips.push({ text: `${a.channels} ערוצים` });
-    chips.push({ text: a.kind === "nvr" ? "למצלמות IP" : "קואקס + IP" });
+    // Home Hub ו-NVS12W נשארים kind "nvr", אבל הם למצלמות Wi-Fi
+    chips.push({ text: a.kind === "nvr" ? (a.wifi ? "למצלמות Wi-Fi" : "למצלמות IP") : "קואקס + IP" });
     if (a.poePorts) chips.push({ text: "PoE מובנה" });
     if (a.bays === 2) chips.push({ text: "2 דיסקים" });
     if (a.ai === "acusense") chips.push({ text: "AcuSense" });
@@ -33,7 +34,7 @@ export function SpecChips({ p, max = 5 }: { p: StoreProduct; max?: number }) {
     chips.push({ text: `דיסק ${a.hdd}` });
     if (a.night === "color") chips.push({ text: "צבע בלילה", cls: styles.chipColor });
   } else {
-    const wiring: Record<string, string> = { ip: "IP", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi" };
+    const wiring: Record<string, string> = { ip: "IP", "2wire": "2 גידים", "4wire": "4 גידים", hybrid: "2 גידים + Wi-Fi", wifi: "Wi-Fi" };
     if (a.wiring && wiring[a.wiring]) chips.push({ text: wiring[a.wiring] });
     if (a.app) chips.push({ text: "מענה מהנייד" });
     if (a.auth?.includes("face")) chips.push({ text: "זיהוי פנים" });

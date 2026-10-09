@@ -31,6 +31,8 @@ export function generateMetadata({ params }: { params: { cat: string } }): Metad
     title: seo.title,
     description: seo.description,
     alternates: { canonical: url },
+    // קטגוריה דלה (accessories): noindex,follow עד שיהיו בה 6 מוצרים. גם מחוץ למפת האתר (sitemap.ts)
+    ...(seo.noindex ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } } : {}),
     openGraph: { title: seo.h1, description: seo.description, url, type: "website", locale: "he_IL", siteName: "Site-Control", images: ["/og-default.jpg"] },
     twitter: { card: "summary_large_image", title: seo.h1, description: seo.description },
   };
@@ -71,6 +73,9 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
         <div className={styles.heroText}>
           <h1>{seo.h1}</h1>
           <p>{seo.intro}</p>
+          {seo.also?.map((l) => (
+            <p key={l.href} className={styles.finderSmall}><Link href={l.href}>{l.text}</Link></p>
+          ))}
           <div className={styles.heroCtas} data-track={`category_${cat.id}`}>
             <a className={`${styles.cta} ${styles.ctaAccent}`} href="#products">ל-{items.length} המוצרים עם מחיר</a>
             {withQuote

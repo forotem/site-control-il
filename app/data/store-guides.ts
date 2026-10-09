@@ -1,5 +1,10 @@
 // תוכן הדרכה לכל קטגוריה בחנות: איך לבחור, מונחים, ואילו דגמים להשוות זה מול זה.
 // כתוב בקול של מתקין שמסביר ללקוח, לא של קטלוג.
+import { storeProducts } from "./store-catalog";
+
+// מחיר הפאנל מהקטלוג ולא מספר קבוע בטקסט (היה כתוב 149 ₪ כשבקטלוג 68)
+const panelPrice = storeProducts.find((p) => p.slug === "reolink-solar-panel-2")?.price;
+const panelPriceText = panelPrice ? ` (${panelPrice.toLocaleString("he-IL")} ₪)` : "";
 
 export type Term = { term: string; explain: string };
 export type CompareSet = { title: string; note?: string; slugs: string[] };
@@ -91,24 +96,27 @@ export const storeGuides: Record<string, CategoryGuide> = {
   },
   wifi: {
     id: "wifi",
-    lead: "מצלמת Wi-Fi נכונה כשצריך נקודה אחת או שתיים בלי מקליט: היא מקליטה לכרטיס זיכרון ושולחת התראה לנייד. צריך רק שקע חשמל ו-Wi-Fi טוב במקום.",
+    lead: "מצלמת Wi-Fi נכונה כשרוצים להתקין בלי כבלי רשת: היא מקליטה לכרטיס זיכרון ושולחת התראה לנייד. צריך Wi-Fi טוב במקום, ושקע חשמל או מצלמת סוללה.",
     choose: [
+      { title: "שקע או סוללה", body: `יש שקע ליד הנקודה? מצלמה לשקע לא צריכה טעינה. אין שקע? מצלמות Argus עובדות על סוללה נטענת ומקליטות כשיש תנועה, ועם פאנל סולארי Solar Panel 2${panelPriceText} הן נטענות לבד.` },
       { title: "פנים או חוץ", body: "CP3 Pro לפנים הבית: מסתובבת, עוקבת אחרי אדם, מזהה בכי. CT3, CH9 ו-CH10 לחוץ, עמידות לגשם ועם ראיית לילה צבעונית." },
       { title: "עדשה אחת או שתיים", body: "CH9 ו-CH10 משלבות עדשה רחבה קבועה ועדשת זום מסתובבת: רואים את כל החצר וגם מתקרבים למי שנכנס, באותה מצלמה." },
+      { title: "רכזת", body: "Home Hub (או המקליט NVS12W) שומר בבית את ההקלטות של מצלמות Reolink, גם אם מצלמה נגנבת. התאמה לדגם מסוים נאשר בווצאפ לפני חיוב." },
       { title: "מתי לא", body: "מעל 3 נקודות, או כשחשובה הקלטה רציפה לשבועות אחורה, ערכת Reolink עם מקליט זולה יותר לטווח ארוך ואמינה יותר." },
     ],
     terms: [{ term: "Wi-Fi 6", explain: "תקן אלחוט חדש שמחזיק יותר מכשירים באותו ראוטר בלי קיטועים. דורש ראוטר תואם כדי ליהנות מזה, אבל עובד גם עם ראוטר ישן." }],
     compare: [
       { title: "לפנים הבית: Tenda מול Reolink", slugs: ["cp3-pro", "reolink-e1-pro", "reolink-e330", "reolink-e1-zoom"] },
       { title: "לחצר בלי מקליט", slugs: ["ct3", "ch10", "reolink-e1-outdoor-e540", "reolink-trackmix-wifi", "reolink-duo-2-wifi"] },
+      { title: "Wi-Fi בסוללה לבית", slugs: ["reolink-argus-eco", "reolink-argus-3-pro", "reolink-argus-3-ultra", "reolink-argus-pt-lite"] },
     ],
   },
   solar: {
     id: "solar",
-    lead: "מצלמת סוללה של Reolink היא הפתרון כשאין חשמל בנקודה. שתי משפחות: 4G עם כרטיס סים לאתרי בנייה ושטחים בלי אינטרנט, ו-Wi-Fi לבית ולחצר בלי כבל חשמל. הדבר החשוב ביותר לבדוק: האם הפאנל הסולארי כלול.",
+    lead: "מצלמת 4G של Reolink עם כרטיס סים היא הפתרון כשאין במקום אינטרנט: על סוללה ופאנל סולארי כשאין גם חשמל, או לשקע כשיש. הדבר החשוב ביותר לבדוק: האם הפאנל הסולארי כלול.",
     choose: [
-      { title: "4G או Wi-Fi", body: "אין אינטרנט במקום (אתר בנייה, שדה, מגרש)? רק 4G עם סים. יש Wi-Fi של הבית בטווח? Argus ב-Wi-Fi זולה משמעותית." },
-      { title: "פאנל סולארי", body: "רוב הדגמים נמכרים בלי פאנל: הסוללה מחזיקה שבועות לפי כמות התנועה, ועם Solar Panel 2 (149 ₪) היא נטענת לבד. Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל." },
+      { title: "4G או Wi-Fi", body: "אין אינטרנט במקום (אתר בנייה, שדה, מגרש)? רק 4G עם סים. יש Wi-Fi של הבית בטווח? מצלמות Argus בסוללה עם Wi-Fi זולות משמעותית, והן בקטגוריית מצלמות Wi-Fi." },
+      { title: "פאנל סולארי", body: `רוב הדגמים נמכרים בלי פאנל: הסוללה מחזיקה שבועות לפי כמות התנועה, ועם Solar Panel 2${panelPriceText} היא נטענת לבד. Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל.` },
       { title: "קבועה, ממונעת או פנורמית", body: "Go Plus / Go Ultra מסתכלות לכיוון אחד. Go PT מסתובבות מהאפליקציה ומכסות חצר. Duo 2 נותנת 180° בתמונה אחת. TrackMix רואה רחב ומתקרבת אוטומטית למי שנכנס." },
       { title: "סים ונתונים", body: "צריך סים עם חבילת גלישה (כ-10 עד 30GB בחודש לפי צפייה). אנחנו עוזרים לבחור חבילה ולהגדיר." },
       { title: "הקלטה", body: "מצלמות הסוללה מקליטות לכרטיס microSD לפי תנועה (PIR). הקלטה רציפה 24/7 יש ב-TrackMix LTE Plus עם פאנל 66W, וב-TrackMix Wired LTE שמחוברת לחשמל." },
@@ -120,7 +128,6 @@ export const storeGuides: Record<string, CategoryGuide> = {
     ],
     compare: [
       { title: "4G עם סים: מקבועה ועד מעקב אוטומטי", slugs: ["reolink-go-plus", "reolink-go-ultra", "reolink-go-pt-ultra", "reolink-trackmix-lte"] },
-      { title: "Wi-Fi בסוללה לבית", slugs: ["reolink-argus-eco", "reolink-argus-3-pro", "reolink-argus-3-ultra", "reolink-argus-pt-lite"] },
     ],
   },
   analog: {
@@ -133,5 +140,17 @@ export const storeGuides: Record<string, CategoryGuide> = {
     ],
     terms: [{ term: "HD-TVI / AHD / CVI", explain: "שלושה תקנים של וידאו אנלוגי HD. המצלמות והמקליטים בחנות תומכים בכולם, אז אין חשש מאי-התאמה." }],
     compare: [{ title: "צינור אנלוגי, ארבע מדרגות", slugs: ["uac-b125-af28lm", "ds-2ce10kf0t-lpfs-2-8mm", "ds-2ce12kf0t-lfs-2-8mm", "ds-2ce12uf3t-ls-2-8mm"] }],
+  },
+  // חדש (שלב 1א): הקופסאות והזרוע שעברו מ-ip
+  accessories: {
+    id: "accessories",
+    lead: "אביזר קטן שעושה את ההבדל בין התקנה מסודרת להתקנה עם כבל חשוף: קופסת חיבורים מסתירה את החיבור מאחורי המצלמה, וזרוע קיר מרחיקה את המצלמה מהקיר.",
+    choose: [
+      { title: "קופסת חיבורים", body: "יושבת בין הקיר למצלמה. החיבור של כבל הרשת נכנס לתוכה ומוגן מגשם. B10 למצלמות צינור של Reolink, D20 למצלמות כיפה של Reolink." },
+      { title: "זרוע קיר", body: "למצלמת כיפה או טורט שצריכה לבלוט מהקיר, למשל כדי לראות לאורך החזית. הכבל עובר בתוך הזרוע." },
+      { title: "התאמה", body: "בכל מוצר כתוב לאילו מצלמות הוא מתאים. לא בטוחים? שלחו בווצאפ את דגם המצלמה, ונאשר לפני חיוב." },
+    ],
+    terms: [],
+    compare: [],
   },
 };

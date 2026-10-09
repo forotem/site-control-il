@@ -232,7 +232,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><Link href="/contact" style={{ color: 'rgba(139, 163, 191, 0.9)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: '6px' }}><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> צור קשר</Link></li>
                 </ul>
               </div>
-              {/* 2.10.2026: קישורים קבועים לדפים שגוגל עוד לא סרק (קטגוריות, קבלנים, מבצעים, משלוחים) */}
+              {/* 2.10.2026: קישורים קבועים לדפים שגוגל עוד לא סרק (קטגוריות, קבלנים, מבצעים, משלוחים). 9.10.2026 (שלב 1א): נוספו אנלוגיות ואביזרים */}
               <div>
                 <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'white' }}>קטגוריות ופתרונות</h4>
                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -242,6 +242,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     { href: '/store/c/kits', label: 'ערכות מצלמות מוכנות' },
                     { href: '/store/c/ip', label: 'מצלמות IP' },
                     { href: '/store/c/recorders', label: 'מקליטים NVR / DVR' },
+                    { href: '/store/c/analog', label: 'מצלמות אנלוגיות' },
+                    { href: '/store/c/accessories', label: 'אביזרי התקנה' },
                     { href: '/store/c/intercom', label: 'אינטרקום ובקרת כניסה' },
                     { href: '/store/c/wifi', label: 'מצלמות Wi-Fi' },
                     { href: '/deals', label: 'מבצעים' },

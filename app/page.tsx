@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { storeProducts, storeCategories, WHATSAPP_NUMBER, WARRANTY_TEXT } from "./data/store-catalog";
+import { categorySeo } from "./data/store-category-seo";
 import { ProductCard } from "./store/ProductCard";
 import { BlogList } from "./components/BlogList";
 import { LocalBusinessSchema, OrganizationSchema, WebSiteSchema } from "./components/Schema";
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
 };
 
 const bySlug = (slug: string) => storeProducts.find((p) => p.slug === slug)!;
+
+// אריחי "מה מחפשים?": בלי קטגוריה עם noindex (accessories, שלב 1א), כדי ששלב 1א לא יוסיף אריח לדף הבית
+const homeCats = storeCategories.filter((c) => !categorySeo[c.id]?.noindex);
 
 // מוצר מייצג לכל קטגוריה, לתמונת האריח
 const catImage: Record<string, string> = {
@@ -102,10 +106,10 @@ export default function Page() {
         <section aria-labelledby="cats">
           <div className={styles.sectionHead}>
             <h2 id="cats">מה מחפשים?</h2>
-            <p>{storeCategories.length} קטגוריות, ובכל אחת הסבר קצר איך בוחרים נכון והשוואה בין הדגמים.</p>
+            <p>{homeCats.length} קטגוריות, ובכל אחת הסבר קצר איך בוחרים נכון והשוואה בין הדגמים.</p>
           </div>
           <div className={styles.cats}>
-            {storeCategories.map((c) => {
+            {homeCats.map((c) => {
               const n = storeProducts.filter((p) => p.category === c.id).length;
               // אם אין מיפוי ידני לקטגוריה (למשל קטגוריה חדשה), לוקחים את המוצר הראשון עם תמונה, כדי שלא יישאר אריח ריק
               const img = bySlug(catImage[c.id])?.image || storeProducts.find((p) => p.category === c.id && p.image)?.image;

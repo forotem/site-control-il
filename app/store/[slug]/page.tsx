@@ -3,7 +3,8 @@ import { BASE_URL } from "../../config";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
-import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder } from "../../data/store-attrs";
+import { attrsOf, fitLine, kindLabel, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel } from "../../data/store-attrs";
+import { FULL_KIT_PREFILL } from "../../lib/site-wa-prefills";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { offerShippingDetails, merchantReturnPolicy } from "../../components/Schema";
 import { ProductCard, SpecChips } from "../ProductCard";
@@ -90,6 +91,29 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
   return out;
 }
 
+// "רוצים ערכה מלאה עם התקנה?" (סקירת הקמפיין 9.10.2026): המודעה המנצחת מפנה לדף מצלמת Hikvision בודדת, 7 מתוך 21 לידים
+// שאלו על התקנה, ו-SC-021 עזב כי המצלמה צריכה מקליט ומתקין. הבלוק מציע ערכה מוכנה ומקליט מתאים מהקטלוג, ואת ההתקנה דרך תמונה בווצאפ.
+// רק מחירים שכבר קיימים בקטלוג: אין כאן מחיר התקנה (רותם 24.9: "מחירון התקנה בלי מספרים", ההתקנה בהצעת מחיר, ראו business.ts).
+const FULL_KIT_SLUG = "reolink-rlk8-810b4-a-rlk8-800b4";
+/** מקליט עם יציאות PoE מאותו מותג, למי שרוצה להישאר עם המצלמה שבדף. ל-Uniview אין בקטלוג מקליט עם PoE, אז שם רק הערכה */
+const POE_NVR_BY_BRAND: Record<string, string> = {
+  Hikvision: "ds-7608nxi-k1-8p",
+  "HiWatch by Hikvision": "ds-7608nxi-k1-8p",
+  Reolink: "reolink-rln8-410",
+};
+
+/** הערכה והמקליט להצעה, או null כשהבלוק לא מתאים: רק מצלמות IP בכבל רשת (PoE) שצריכות מקליט.
+ *  לא מצלמות סוללה, 4G או Wi-Fi (מקליטות לכרטיס), ולא מצלמת LPR המקצועית (ערכה ביתית לא רלוונטית לה). */
+function fullKitOffer(p: (typeof storeProducts)[number]) {
+  const a = attrsOf(p);
+  if (p.category !== "ip" || !isCamera(a) || a.kind === "lpr" || a.battery || a.lte || a.wifi) return null;
+  const kit = storeProducts.find((x) => x.slug === FULL_KIT_SLUG && x.price);
+  const nvrSlug = POE_NVR_BY_BRAND[p.brand];
+  const nvr = nvrSlug ? storeProducts.find((x) => x.slug === nvrSlug && x.price) : undefined;
+  if (!kit && !nvr) return null;
+  return { kit: kit && { p: kit, a: attrsOf(kit) }, nvr: nvr && { p: nvr, a: attrsOf(nvr) } };
+}
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) notFound();
@@ -102,6 +126,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
   );
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+  const fullKit = fullKitOffer(p);
+  const kitWaHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`${FULL_KIT_PREFILL}. ראיתי באתר את ${productName(p)}. מצרף תמונה של המקום:`)}`;
   // ביקורות של לקוחות שקנו (app/data/reviews.ts). בסכמה רק כשיש ביקורת אמיתית, אף פעם לא דירוג מומצא.
   const reviews = reviewsOf(p.slug);
   const rating = ratingOf(p.slug);
@@ -224,6 +250,42 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             )}
             <p className={styles.note}>{WARRANTY_TEXT}. {p.category === "recorders" ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>
           </div>
+
+          {fullKit && (
+            <section className={styles.fullKit} data-track="product_full_kit" aria-labelledby="full-kit-title">
+              <h2 id="full-kit-title">רוצים ערכה מלאה עם התקנה?</h2>
+              <p className={styles.fullKitLead}>
+                מצלמת IP מקבלת חשמל ונתונים בכבל רשת (PoE), אז בדרך כלל צריך איתה גם מקליט עם יציאות PoE, כבלים ומישהו שיתקין. אפשר לקבל הכל מאיתנו:
+              </p>
+              <div className={styles.kitOpts}>
+                {fullKit.kit && (
+                  <Link href={`/store/${fullKit.kit.p.slug}`} className={styles.kitOpt}>
+                    <span className={styles.kitOptTag}>ערכה מוכנה</span>
+                    <b>{fullKit.kit.a.cams} מצלמות {mpLabel(fullKit.kit.a.mp)} + מקליט עם דיסק {fullKit.kit.a.hdd}</b>
+                    <span className={styles.kitOptSub}>{fullKit.kit.p.brand} {fullKit.kit.p.sku || fullKit.kit.p.model}: הכל באריזה אחת, עם כבלים ואפליקציה בעברית</span>
+                    <strong>{nis(fullKit.kit.p.price || 0)} ₪</strong>
+                  </Link>
+                )}
+                {fullKit.nvr && (
+                  <Link href={`/store/${fullKit.nvr.p.slug}`} className={styles.kitOpt}>
+                    <span className={styles.kitOptTag}>להישאר עם המצלמה הזאת</span>
+                    <b>מקליט {fullKit.nvr.p.brand} עם {fullKit.nvr.a.poePorts} יציאות PoE</b>
+                    <span className={styles.kitOptSub}>
+                      המצלמות מתחברות ישר למקליט, בלי מתג. עד {fullKit.nvr.a.channels} מצלמות, {fullKit.nvr.a.hdd ? `דיסק ${fullKit.nvr.a.hdd} מותקן` : "הדיסק נקנה בנפרד"}.
+                    </span>
+                    <strong>{nis(fullKit.nvr.p.price || 0)} ₪</strong>
+                  </Link>
+                )}
+              </div>
+              <div className={styles.kitInstall}>
+                <p><b>צריכים התקנה?</b> שלחו תמונה של המקום בווצאפ ונחזור עם מחיר.</p>
+                <a className={`${styles.cta} ${styles.ctaPrimary}`} href={kitWaHref} target="_blank" rel="noopener noreferrer">שליחת תמונה בווצאפ</a>
+              </div>
+              <p className={styles.fullKitNote}>
+                המחירים כוללים מע״מ. ההתקנה בהצעת מחיר נפרדת, אחרי שרואים את המקום. <Link href="/installation">איך עובדת ההתקנה</Link>
+              </p>
+            </section>
+          )}
 
           {p.specs.length > 0 && (
             <div className={styles.specs}>

@@ -43,7 +43,7 @@ export function reportWaRef(code: string, originalHref: string, button: string) 
   if (typeof window === 'undefined') return;
   try {
     const q = new URL(window.location.href).searchParams;
-    const pick = (k: string) => q.get(k)?.slice(0, 200) || undefined;
+    const pick = (k: string, n = 200) => q.get(k)?.slice(0, n) || undefined;
     let text = '';
     try { text = (new URL(originalHref).searchParams.get('text') || '').slice(0, 300); } catch {}
     const payload = {
@@ -56,7 +56,7 @@ export function reportWaRef(code: string, originalHref: string, button: string) 
       utm_campaign: pick('utm_campaign'),
       utm_content: pick('utm_content'),
       gclid: pick('gclid') || pick('gbraid') || pick('wbraid'),
-      fbclid: pick('fbclid'),
+      fbclid: pick('fbclid', 500), // fbclid מגיע גם ל-200+ תווים, וחיתוך שובר את ההתאמה ב-CAPI
       ref: (document.referrer || '').slice(0, 300),
       attribution: getAttribution(),
     };

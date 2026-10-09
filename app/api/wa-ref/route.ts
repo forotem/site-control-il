@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
       at: typeof a.at === "number" ? a.at : undefined,
     } : undefined,
     attributionLabel: attributionLabel(a).replace(/\n/g, " | "),
-    ua: opt(req.headers.get("user-agent"), 160),
+    ua: opt(req.headers.get("user-agent"), 400), // CAPI משווה user agent מלא
   };
   const ok = await sendTeamEmail(`wa-ref ${code}`, JSON.stringify(rec));
   if (!ok) console.warn("wa-ref not stored", JSON.stringify(rec));

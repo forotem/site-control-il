@@ -160,7 +160,8 @@ export async function POST(req: NextRequest) {
   // החיבור לווצאפ נותק (6.10.2026: נותק יום שלם בלי שאף אחד ידע): התראה במייל, כי בווצאפ אי אפשר לשלוח
   if (n.typeWebhook === "stateInstanceChanged") {
     const state = String((n as { stateInstance?: string }).stateInstance || "");
-    if (state && state !== "authorized") {
+    // "starting" = הפעלה מחדש של כמה שניות אצל GreenAPI, לא ניתוק (9.10.2026: 10 התראות שווא בלילה אחד)
+    if (state && state !== "authorized" && state !== "starting") {
       await notifyTeam(`⚠️ הווצאפ של Site-Control התנתק (${state})`, `החיבור של GreenAPI למספר 050-2256866 התנתק. עד שמחברים מחדש: טל לא עונה, לידים לא נקלטים, פולואפים ובדיקות מלאי לא יוצאים. גם מערכת הלידים של TimelapseIT משתמשת באותו חיבור.\n\nלחיבור מחדש מהטלפון: לבקש מקלוד קוד חיבור, ואז בווצאפ: הגדרות > מכשירים מקושרים > קישור מכשיר > קישור עם מספר טלפון במקום.`).catch(() => undefined);
     }
     return NextResponse.json({ ok: true });

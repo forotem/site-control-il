@@ -212,6 +212,19 @@
 .fullKitNote { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 .fullKitNote a { color: var(--link-color); text-decoration: none; border-bottom: 1px solid rgba(126, 224, 255, 0.3); }
 
+/* "חשוב לדעת לפני שקונים" במצלמות PoE (11.10.2026) */
+.needBox { display: grid; gap: 0.55rem; padding: 0.95rem 1rem; border-radius: 12px; border: 1px solid rgba(255, 184, 0, 0.45); background: rgba(255, 184, 0, 0.07); font-size: 0.9rem; line-height: 1.55; color: var(--text); }
+.needBox p { margin: 0; }
+.needBox ul { margin: 0; padding-inline-start: 1.1rem; display: grid; gap: 0.35rem; }
+.needBox a { color: var(--accent, #4fa3ff); text-decoration: underline; text-underline-offset: 3px; }
+.needTitle { color: var(--text-bright); font-size: 0.98rem; }
+.needAlts { display: grid; gap: 0.45rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.needBox a.needAlt { display: grid; gap: 0.15rem; padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: 10px; background: var(--card); text-decoration: none; color: var(--text-bright); }
+.needAlt:hover { border-color: var(--border-accent); }
+.needAlt small { color: var(--muted); font-size: 0.78rem; }
+.needAlt strong { color: var(--accent); }
+.needAsk { font-size: 0.84rem; color: var(--muted); }
+
 /* sticky buy bar on phones */
 .stickyBar { display: none; }
 @media (max-width: 860px) {

@@ -122,6 +122,12 @@ function fullKitOffer(p: (typeof storeProducts)[number]) {
   return { kit: kit && { p: kit, a: attrsOf(kit) }, nvr: nvr && { p: nvr, a: attrsOf(nvr) } };
 }
 
+// "חשוב לדעת לפני שקונים" (רותם 11.10.2026): הקמפיין מביא אנשים לדף מצלמת ה-Hikvision ב-835 (6 מתוך 10 הלידים האחרונים),
+// והם חושבים שקונים מצלמה שעובדת לבד. מצלמת PoE צריכה כבל רשת ומקליט (או מזין PoE + כרטיס זיכרון). מציגים את זה ליד כפתור הקנייה,
+// עם קישור לערכה/מקליט ועם מצלמות עצמאיות (Wi-Fi/סוללה, מקליטות לכרטיס) כחלופה.
+const STANDALONE_ALTS = ["reolink-argus-3-ultra", "reolink-e1-outdoor-pro-e560", "reolink-trackmix-wifi"];
+const standaloneAlts = () => STANDALONE_ALTS.map((s) => storeProducts.find((x) => x.slug === s && x.price)).filter((x): x is (typeof storeProducts)[number] => !!x);
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) notFound();
@@ -240,6 +246,32 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </p>
             ) : null}
             {deal && <DealStrip deal={deal} />}
+            {fullKit && (
+              <div className={styles.needBox} data-track="product_need_box">
+                <b className={styles.needTitle}>חשוב לדעת לפני שקונים: זו מצלמה למערכת קווית</b>
+                <p>אין בה Wi-Fi ואין בה סוללה. היא מקבלת חשמל ואינטרנט בכבל רשת אחד (PoE). מה צריך כדי שתעבוד:</p>
+                <ul>
+                  <li><b>יש לכם כבר מקליט (NVR)?</b> המצלמה מתחברת אליו בכבל, וזה כל מה שצריך.</li>
+                  <li><b>מקימים מערכת חדשה?</b> צריך גם מקליט עם יציאות PoE, כבלים והתקנה. <a href="#full-kit-title">ערכה מלאה או מקליט מתאים</a></li>
+                  <li><b>רק מצלמה אחת?</b> היא יכולה להקליט לכרטיס זיכרון בתוכה, אבל עדיין צריך כבל רשת עד הראוטר ומזין PoE או ספק כוח.</li>
+                </ul>
+                {standaloneAlts().length > 0 && (
+                  <>
+                    <p><b>מחפשים מצלמה שעובדת לבד, בלי כבלים ובלי מקליט?</b> המצלמות האלה מתחברות ל-Wi-Fi ומקליטות לכרטיס זיכרון:</p>
+                    <div className={styles.needAlts}>
+                      {standaloneAlts().map((x) => (
+                        <Link key={x.slug} href={`/store/${x.slug}`} className={styles.needAlt}>
+                          <span>{x.brand} {x.model}</span>
+                          <small>{attrsOf(x).battery ? "סוללה + Wi-Fi" : "Wi-Fi, חיבור לשקע"}</small>
+                          <strong>{nis(x.price || 0)} ₪</strong>
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+                <p className={styles.needAsk}>לא בטוחים מה מתאים לכם? כתבו לנו בווצאפ מה רוצים לצלם, ונמליץ.</p>
+              </div>
+            )}
             <AddToCart slug={p.slug} />
             <a className={`${styles.cta} ${styles.ctaPrimary}`} href={waHref} target="_blank" rel="noopener noreferrer">
               בדיקת זמינות והזמנה בווצאפ

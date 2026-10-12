@@ -15,6 +15,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '64',
+    title: 'שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים',
+    slug: 'upgrade-old-analog-cctv-same-cables-2026',
+    excerpt: 'רוצים לשדרג את מערכת האבטחה הישנה שלכם לרזולוציה גבוהה ופיצ\'רים חכמים? גלו איך אפשר לעשות זאת בקלות בלי להחליף את הכבלים הקיימים, עם פתרונות מתקדמים ש...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-10-12',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/upgrade-old-analog-cctv-same-cables-2026/hero.webp',
+    seoTitle: 'שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים | Site-Control',
+    seoDescription: 'רוצים לשדרג את מערכת האבטחה הישנה שלכם לרזולוציה גבוהה ופיצ\'רים חכמים? גלו איך אפשר לעשות זאת בקלות בלי להחליף את הכבלים הקיימים, עם פתרונות מתקדמים של Site-Control.',
+    keywords: []
+  },
+  {
     id: '63',
     title: 'אבטחת חוות סולאריות: מצלמות 4G סולאריות לשדה בלי תשתית',
     slug: 'solar-farm-security-cameras-2026',

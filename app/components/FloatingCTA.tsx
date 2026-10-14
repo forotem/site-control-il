@@ -5,6 +5,7 @@
 // כל אפשרות היא קישור wa.me, ולכן המדידה (SiteTracking, contact_whatsapp) ממשיכה לעבוד, עם location לפי הבחירה.
 // טקסט חדש כאן = להוסיף גם ל-app/lib/site-wa-prefills.ts, אחרת טל וקליטת הלידים לא יזהו אותו.
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { track } from '../lib/analytics';
 import { getAttribution } from '../lib/attribution';
 
@@ -28,6 +29,7 @@ export function FloatingCTA() {
   const [state, setState] = useState<'idle' | 'sending' | 'done'>('idle');
   const [err, setErr] = useState<string | null>(null);
   const panel = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -57,6 +59,9 @@ export function FloatingCTA() {
       setErr('אין חיבור, נסו שוב'); setState('idle');
     }
   }
+
+  // בדף המשרה (/jobs) מגיעים מועמדים, לא לקוחות: בלי הכפתור הצף, כדי שלא יפתחו שיחת מכירה עם טל
+  if (pathname?.startsWith('/jobs')) return null;
 
   return (
     <div className="floating-cta">

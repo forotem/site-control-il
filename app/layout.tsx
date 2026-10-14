@@ -283,6 +283,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/terms" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>תקנון</Link>
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
+                <Link href="/jobs" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>דרושים</Link>
               </p>
               <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.6)', flexBasis: '100%' }}>Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId} · <a href={`tel:${BUSINESS.phoneE164}`} style={{ color: 'rgba(139, 163, 191, 0.8)' }}>{BUSINESS.phoneDisplay}</a> · {BUSINESS.hours} · התקנות {BUSINESS.installAreaIn}, משלוחים לכל הארץ בתשלום נפרד</p>
             </div>

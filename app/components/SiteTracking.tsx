@@ -18,7 +18,14 @@ export function SiteTracking() {
       const href = a.getAttribute('href') || '';
       const tagged = a.closest('[data-track]')?.getAttribute('data-track');
       const location = tagged || window.location.pathname;
-      if (/^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i.test(href)) {
+      // 14.10.2026: בדף המשרה (/jobs) הלחיצה היא מועמד/ת לעבודה ולא ליד. לא נספרת כ-contact_whatsapp/Contact (המרות של
+      // קמפייני המכירות), ובלי קוד פנייה. נמדדת בנפרד כ-job_apply.
+      const isWa = /^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i.test(href);
+      if (window.location.pathname.startsWith('/jobs') && (isWa || href.startsWith('tel:'))) {
+        track.jobApply(isWa ? 'whatsapp' : 'phone');
+        return;
+      }
+      if (isWa) {
         track.whatsapp(location);
         const code = makeWaRef();
         const next = hrefWithWaRef(href, code);

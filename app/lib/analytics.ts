@@ -56,6 +56,11 @@ export const track = {
     trackEvent('add_to_cart', { currency: 'ILS', value: total, items });
     metaEvent('AddToCart', { currency: 'ILS', value: total, ...metaContents(items) });
   },
+  /** מועמד/ת לעבודה לחץ/ה על ווצאפ או טלפון בדף המשרה (/jobs). לא המרה של מכירות: אירוע נפרד ב-GA, ובמטא אירוע מותאם JobApply */
+  jobApply: (method: string) => {
+    trackEvent('job_apply', { method });
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') window.fbq('trackCustom', 'JobApply', { method });
+  },
   /** הלקוח השאיר טלפון בצ'אט של העוזר בחנות */
   chatLead: (intent?: string) => {
     trackEvent('chat_lead', { method: 'store_chat', intent: intent || '' });

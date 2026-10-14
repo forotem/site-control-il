@@ -77,7 +77,7 @@ export function StoreChat() {
   // התוכן תלוי בדף: על מצלמה היברידית טל מציע להסביר לילה, על מקליט לבדוק ערוצים וכו'.
   useEffect(() => {
     if (open) return;
-    if (/^\/(installation|contact)(\/|$)/.test(pathname || "")) { setNudge(null); return; } // דפי טופס לידים: לא מסיחים מהטופס
+    if (/^\/(installation|contact|jobs)(\/|$)/.test(pathname || "")) { setNudge(null); return; } // דפי טופס לידים ודף המשרה: לא מסיחים
     let seen = 0, shown = false;
     try { seen = Number(sessionStorage.getItem("sc-pages") || 0) + 1; sessionStorage.setItem("sc-pages", String(seen)); shown = sessionStorage.getItem("sc-chat-nudged") === "1"; } catch {}
     if (shown) return;
@@ -127,6 +127,9 @@ export function StoreChat() {
   }
 
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("היי, דיברתי עם העוזר באתר ויש לי שאלה:")}`;
+
+  // דף המשרה (/jobs): מגיעים מועמדים לעבודה, לא לקוחות. טל לא מופיע שם
+  if (pathname?.startsWith("/jobs")) return null;
 
   return (
     <>

@@ -1,5 +1,5 @@
 {
- "date": "2026-10-11",
+ "date": "2026-10-14",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 798,
+     "price": 498,
      "method": "text-anywhere"
     },
     {
@@ -133,7 +133,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 798,
+     "price": 398,
      "method": "text-anywhere"
     },
     {
@@ -179,7 +179,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 290,
+     "price": 277,
      "method": "text-anywhere"
     },
     {
@@ -433,12 +433,12 @@
    "model": "DS-7632NXI-K2(D)",
    "brand": "Hikvision",
    "ours": 1063,
-   "low": 788,
+   "low": 740,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
    "target": 1063,
    "action": "floor_blocks",
-   "reason": "רצפה 1063 לא מאפשרת לרדת ל-783",
+   "reason": "רצפה 1063 לא מאפשרת לרדת ל-735",
    "offers": [
     {
      "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
@@ -469,7 +469,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 788,
+     "price": 740,
      "method": "structured+vat"
     }
    ]
@@ -503,7 +503,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1769,
+     "price": 1690,
      "method": "near-model-repeated"
     }
    ]
@@ -513,12 +513,12 @@
    "model": "DS-7616NXI-K1(D)",
    "brand": "Hikvision",
    "ours": 708,
-   "low": 503,
+   "low": 504,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
    "target": 708,
    "action": "floor_blocks",
-   "reason": "רצפה 708 לא מאפשרת לרדת ל-498",
+   "reason": "רצפה 708 לא מאפשרת לרדת ל-499",
    "offers": [
     {
      "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
@@ -541,7 +541,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 503,
+     "price": 504,
      "method": "structured+vat"
     }
    ]
@@ -551,12 +551,12 @@
    "model": "DS-7608NXI-K1/8P(D)",
    "brand": "Hikvision",
    "ours": 786,
-   "low": 566,
+   "low": 568,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
    "target": 786,
    "action": "floor_blocks",
-   "reason": "רצפה 786 לא מאפשרת לרדת ל-561",
+   "reason": "רצפה 786 לא מאפשרת לרדת ל-563",
    "offers": [
     {
      "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
@@ -567,7 +567,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 566,
+     "price": 568,
      "method": "structured+vat"
     },
     {
@@ -579,7 +579,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 865,
+     "price": 894,
      "method": "structured+vat"
     }
    ]
@@ -761,7 +761,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1218,
+     "price": 1224,
      "method": "structured+vat"
     },
     {
@@ -805,10 +805,10 @@
    "model": "IPC2318LE-ADF28KM-WP",
    "brand": "Uniview",
    "ours": 535,
-   "low": 1218,
+   "low": 1224,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-   "target": 1213,
+   "target": 1219,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -829,7 +829,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 1218,
+     "price": 1224,
      "method": "structured+vat"
     }
    ]
@@ -839,10 +839,10 @@
    "model": "IPC3626LE-ADF28K-WP",
    "brand": "Uniview",
    "ours": 813,
-   "low": 809,
+   "low": 813,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-   "target": 804,
+   "target": 808,
    "action": "review",
    "reason": "ראיה חלשה (מחיר בודד מטקסט)",
    "offers": [
@@ -855,7 +855,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 809,
+     "price": 813,
      "method": "structured+vat"
     }
    ]
@@ -1077,7 +1077,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 514,
+     "price": 517,
      "method": "structured+vat"
     }
    ]
@@ -1317,7 +1317,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
-     "price": 629,
+     "price": 530,
      "method": "text-anywhere"
     },
     {
@@ -1367,7 +1367,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
-     "price": 629,
+     "price": 590,
      "method": "text-anywhere"
     }
    ]
@@ -1405,7 +1405,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136",
-     "price": 629,
+     "price": 590,
      "method": "text-anywhere"
     },
     {
@@ -1451,7 +1451,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
-     "price": 399,
+     "price": 530,
      "method": "text-anywhere"
     },
     {
@@ -1485,7 +1485,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
-     "price": 399,
+     "price": 530,
      "method": "text-anywhere"
     },
     {
@@ -2277,7 +2277,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 842,
+     "price": 845,
      "method": "structured+vat"
     }
    ]
@@ -2311,7 +2311,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1280,
+     "price": 1186,
      "method": "structured+vat"
     }
    ]
@@ -2387,7 +2387,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1272,
+     "price": 1196,
      "method": "structured+vat"
     },
     {
@@ -2437,7 +2437,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://uriel-system.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%98%D7%95%D7%A8%D7%98-5-%D7%9E%D7%92%D7%94-%D7%97%D7%91%D7%A8%D7%AA-hikvision-%D7%93%D7%92%D7%9Dds-2cd1353g0-i/",
-     "price": 762,
+     "price": 452,
      "method": "text-anywhere"
     }
    ]
@@ -3017,7 +3017,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 3788,
+     "price": 4208,
      "method": "text-anywhere"
     },
     {
@@ -3217,7 +3217,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.x-press.co.il/product/%D7%A4%D7%90%D7%A0%D7%9C%2D%D7%A1%D7%95%D7%9C%D7%90%D7%A8%D7%99%2D%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA%2D%D7%90%D7%91%D7%98%D7%97%D7%94%2Dreolink%2D%D7%93%D7%92%D7%9D%2Dsolar%2Dpanel%2D2",
-     "price": 78,
+     "price": 128,
      "method": "text-anywhere"
     },
     {
@@ -3577,12 +3577,12 @@
    "model": "Lumus / E430",
    "brand": "Reolink",
    "ours": 147,
-   "low": 152,
+   "low": 254,
    "lowSeller": "zap (Zap Shop/Bug/Hashmal Neto/GameStorm)",
    "lowUrl": "https://www.zap.co.il/model.aspx?modelid=1093883",
-   "target": null,
-   "action": "ok",
-   "reason": "",
+   "target": 249,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://bconnect.co.il/product/reolink-lumus-2k-security-camera/",
@@ -3613,7 +3613,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1093883",
-     "price": 152,
+     "price": 254,
      "method": "near-model-repeated"
     }
    ]
@@ -3779,7 +3779,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1209389",
-     "price": 449,
+     "price": 599,
      "method": "near-model"
     }
    ]
@@ -4243,7 +4243,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 798,
+     "price": 398,
      "method": "text-anywhere"
     },
     {
@@ -4495,7 +4495,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 798,
+     "price": 459,
      "method": "text-anywhere"
     },
     {

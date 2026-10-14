@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: "Site-Control מגייסת רכז/ת מכירות ותפעול למשרד בקריית שמונה: מכירות, תיאום התקנות ואנשי שטח, הזמנות מול ספקים ועבודה מסודרת בטבלאות. משרה מלאה, שכר בסיס ובונוסים, התחלה מיידית.",
   alternates: { canonical: "/jobs" },
   robots: { index: true, follow: true },
+  openGraph: { images: [{ url: "/images/jobs/hiring-feed-4x5.png", width: 1080, height: 1350, alt: "דרושים: רכז/ת מכירות ותפעול בקריית שמונה" }] },
 };
 
 const h2 = { fontSize: "1.3rem", color: "var(--text-bright)", marginBottom: "0.6rem" } as const;

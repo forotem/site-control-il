@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
   try {
     const data = await askGemini(apiKey, system, messages);
     // הבודק (רותם 16.10.2026). בצ'אט באתר הלקוח מחכה, לכן timeout קצר יותר; כשנגמר, הטיוטה יוצאת כמו שהיא.
-    const check = await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: 15_000 });
+    const check = await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: 20_000 });
     if (!check.ok) {
       data.reply = check.reply;
       if (check.escalate && !data.escalate.includes(check.escalate)) data.escalate = [data.escalate, check.escalate].filter(Boolean).join(" | ");

@@ -51,6 +51,8 @@ const SYNTH_SYSTEM = `אתה מנהל המכירות של Site-Control ומנס�
 - רק דרך עבודה: פתיחה, סדר השאלות, אורך ההודעה, עיתוי, טון, מתי להציע שיחה, מתי לשתוק, פולואפ. אסור: מחירים, הנחות, מפרטים, מדיניות משלוח או תשלום (אלה בידע ובהנחיות, לא כאן).
 - כשהמדגם קטן, לומר את זה בלקח עצמו ("בינתיים, על מדגם קטן") ולא להמציא דפוס. לקח שמבוסס על שיחה אחת מסומן "דוגמה אחת".
 - לקח שסותר את ההנחיות הקבועות (שאלה אחת בכל הודעה, בלי לחץ, אין לינק תשלום) לא נכתב.
+- לקח חייב להיות משהו ש-${ASSISTANT_NAME} יכול לעשות בתוך הודעה: מה לכתוב, מה לשאול, מתי, באיזה אורך, מה לא להציע. לא לקחים על תיאום בין טל לרותם, על המערכת, על עידן או על רותם (אלה לא בידיים של טל).
+- לא לחזור על כלל שכבר קיים בהנחיות (שאלה אחת בהודעה, לא מציעים תוספות לא רלוונטיות, בלי לחץ) אלא אם הנתונים מראים שהוא מופר בפועל, ואז לנסח אותו כתזכורת עם הדוגמה.
 - summary_he: 3 עד 5 שורות לרותם: מה המספרים אומרים השבוע, מה השתנה, ומה הלקח החשוב ביותר.`;
 
 const synthSchema = {
@@ -67,7 +69,7 @@ async function gemini(apiKey: string, system: string, user: string, schema: obje
   const body = {
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: [{ text: user }] }],
-    generationConfig: { temperature: 0.2, maxOutputTokens, responseMimeType: "application/json", responseSchema: schema, ...(VERIFY_MODEL.startsWith("gemini-2.5") ? { thinkingConfig: { thinkingBudget: 2048 } } : {}) },
+    generationConfig: { temperature: 0.2, maxOutputTokens, responseMimeType: "application/json", responseSchema: schema, ...(VERIFY_MODEL.startsWith("gemini-2.5") ? { thinkingConfig: { thinkingBudget: 1024 } } : {}) },
   };
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 50_000);
@@ -96,12 +98,12 @@ export async function POST(req: NextRequest) {
       if (!turns.length) return NextResponse.json({ error: "no transcript" }, { status: 400 });
       const transcript = turns.map((t) => `${t.at ? `[${t.at}] ` : ""}${t.who}: ${t.text.slice(0, 800)}`).join("\n");
       const lead = b.lead ? Object.entries(b.lead).filter(([, v]) => v !== "" && v != null).map(([k, v]) => `${k}: ${String(v).slice(0, 200)}`).join("\n") : "";
-      const tags = await gemini(apiKey, TAG_SYSTEM, `# הליד (מהטבלה)\n${lead}\n\n# השיחה\n${transcript}\n\nתייג והחזר JSON.`, tagSchema, 1500);
+      const tags = await gemini(apiKey, TAG_SYSTEM, `# הליד (מהטבלה)\n${lead}\n\n# השיחה\n${transcript}\n\nתייג והחזר JSON.`, tagSchema, 4000);
       return NextResponse.json({ ok: true, tags });
     }
     if (b.mode === "synthesize") {
       const user = `# סטטיסטיקה\n${JSON.stringify(b.stats || {}, null, 1).slice(0, 12000)}\n\n# תיוגי שיחות (מה עבד, מה הפריע, לקח)\n${JSON.stringify((b.cases || []).slice(0, 120), null, 0).slice(0, 40000)}\n\n# הלקחים הקודמים (אפשר לשמור, לעדכן או להסיר)\n${(b.previous || []).map((l) => `- ${l}`).join("\n") || "(אין)"}\n\nנסח את הלקחים ואת הסיכום לרותם, והחזר JSON.`;
-      const out = await gemini(apiKey, SYNTH_SYSTEM, user, synthSchema, 4000);
+      const out = await gemini(apiKey, SYNTH_SYSTEM, user, synthSchema, 8000);
       return NextResponse.json({ ok: true, ...(out as object) });
     }
     return NextResponse.json({ error: "mode" }, { status: 400 });

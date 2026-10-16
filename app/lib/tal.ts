@@ -12,8 +12,9 @@ export const ASSISTANT_NAME = "טל";
 export type Msg = { role: "user" | "assistant"; content: string };
 export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string; stock_check: string };
 export type Issue = { kind: "fact" | "policy" | "missing" | "style"; what: string; fix: string };
-/** תוצאת הבודק. ok = הטיוטה יצאה כמו שהיא. reply = הטקסט הסופי ללקוח (מתוקן או מקורי). error = הבודק נכשל והטיוטה יצאה בלי בדיקה. */
-export type Verdict = { ok: boolean; reply: string; escalate: string; issues: Issue[]; model: string; ms: number; error?: string };
+/** תוצאת הבודק. verified = הבדיקה רצה (false = הבודק נכשל או לא היה זמן, והטיוטה יצאה בלי בדיקה; ראו error).
+ *  ok = הבודק לא מצא בעיה. changed = הטקסט שונה. reply = הטקסט הסופי ללקוח (מתוקן או מקורי). issues נשמרות גם כשהטקסט לא שונה. */
+export type Verdict = { ok: boolean; verified: boolean; changed: boolean; reply: string; escalate: string; issues: Issue[]; products?: string[]; model: string; ms: number; error?: string };
 
 export const SYSTEM = `אתה ${ASSISTANT_NAME}, עוזר מכירות דיגיטלי (AI) בחנות של Site-Control, חברת התקנות ישראלית שמוכרת מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. אתה מדבר עברית פשוטה וחמה, כמו מתקין מנוסה שמסביר ללקוח, בלי ז'רגון מיותר ובלי לחץ מכירתי.
 
@@ -71,13 +72,14 @@ const VERIFY_SYSTEM = `אתה הבודק של ${ASSISTANT_NAME}, עוזר המכ
 - מדיניות: אין לינק תשלום, לא נוקבים סכום סופי, לא מבטיחים זמן אספקה, לא ממציאים מבצע, לא ממליצים על מוצר שלא בקטלוג.
 - התקנה (missing): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית), אם מהשיחה עדיין לא ברור אם הלקוח מתקין לבד או רוצה מתקין מטעמנו, ו-${ASSISTANT_NAME} לא שאל, מוסיפים בסוף שאלה קצרה אחת: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?". לא כשהלקוח כבר ענה, ולא במוצר שמתקינים לבד (מצלמת Wi-Fi, מצלמת סוללה).
 - סגנון בודקים רק אם התשובה סותרת הנחיה מפורשת (markdown, אימוג'י, אורך, הצגה עצמית כפולה).
+- שורה בשיחה שמתחילה ב-"[רותם מהטלפון]" היא של רותם עצמו, לא של ${ASSISTANT_NAME}: מחיר, הנחה או הבטחה שכתובים שם מחייבים, ולא מתקנים אותם.
 
 איך מתקנים:
 - שינוי מינימלי. שומרים על הקול, האורך והמבנה של ${ASSISTANT_NAME}: עברית פשוטה, שורות קצרות, בלי markdown ובלי אימוג'י.
 - לא מוסיפים המלצות על מוצרים חדשים ולא קישורים.
 - תשובה נכונה מחזירים בדיוק כמו שהיא, עם ok=true ו-issues ריק.
 
-פלט JSON: ok (true אם לא היה צריך לשנות כלום), reply (התשובה הסופית ללקוח: המתוקנת, או המקורית מילה במילה כשהכול נכון), escalate (שאלה לצוות שנוספה בגלל התיקון, או ריק), issues (רשימה: kind = fact / policy / missing / style, what = מה היה לא נכון, fix = מה שונה). what ו-fix תמיד בעברית, משפט קצר כל אחד, כי רותם קורא אותם בווצאפ.`;
+פלט JSON: ok (true אם לא היה צריך לשנות כלום), reply (התשובה הסופית ללקוח: המתוקנת, או המקורית מילה במילה כשהכול נכון), escalate (שאלה לצוות שנוספה בגלל התיקון, או ריק), issues (רשימה: kind = fact / policy / missing / style, what = מה היה לא נכון, fix = מה שונה). what ו-fix תמיד בעברית, משפט קצר כל אחד, כי רותם קורא אותם בווצאפ. products: רשימת ה-slugs מהטיוטה שעדיין נכונים אחרי התיקון (המערכת מוסיפה להם קישור ומחיר מתחת לתשובה): בדרך כלל זהה לרשימה בטיוטה; מסירים רק מוצר שהתיקון ביטל את ההמלצה עליו. לא מוסיפים מוצרים.`;
 
 const verifySchema = {
   type: "OBJECT",
@@ -86,8 +88,9 @@ const verifySchema = {
     reply: { type: "STRING" },
     escalate: { type: "STRING" },
     issues: { type: "ARRAY", items: { type: "OBJECT", properties: { kind: { type: "STRING", enum: ["fact", "policy", "missing", "style"] }, what: { type: "STRING" }, fix: { type: "STRING" } }, required: ["kind", "what", "fix"] } },
+    products: { type: "ARRAY", items: { type: "STRING" } },
   },
-  required: ["ok", "reply", "escalate", "issues"],
+  required: ["ok", "reply", "escalate", "issues", "products"],
 };
 
 /** הבודק: מקבל את הטיוטה של טל, את השיחה, ההקשר והעובדות המאומתות, ומחזיר את התשובה הסופית. כשהבודק נכשל (מודל לא
@@ -95,9 +98,12 @@ const verifySchema = {
 export async function verifyReply(apiKey: string, o: { system: string; context: string; facts: string; messages: Msg[]; draft: Out; timeoutMs?: number }): Promise<Verdict> {
   const started = Date.now();
   const model = VERIFY_MODEL;
+  const timeoutMs = o.timeoutMs ?? 25_000;
+  // הנתיב כבר קרוב ל-maxDuration של Vercel (debounce, היסטוריה, הטיוטה): עדיף טיוטה בלי בדיקה מאשר לקוח בלי תשובה
+  if (timeoutMs < 5_000) return { ok: true, verified: false, changed: false, reply: o.draft.reply, escalate: "", issues: [], model, ms: 0, error: "no time budget" };
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const transcript = o.messages.map((m) => `${m.role === "user" ? "לקוח" : ASSISTANT_NAME}: ${m.content}`).join("\n\n");
-  const user = `# השיחה עד עכשיו\n${transcript}\n\n# ההקשר הנוכחי\n${o.context}\n\n${o.facts ? `${o.facts}\n\n` : ""}# הטיוטה של ${ASSISTANT_NAME} (עוד לא נשלחה)\n${o.draft.reply}\n${o.draft.escalate ? `escalate: ${o.draft.escalate}\n` : ""}\nבדוק והחזר JSON.`;
+  const user = `# השיחה עד עכשיו\n${transcript}\n\n# ההקשר הנוכחי\n${o.context}\n\n${o.facts ? `${o.facts}\n\n` : ""}# הטיוטה של ${ASSISTANT_NAME} (עוד לא נשלחה)\n${o.draft.reply}\n${o.draft.escalate ? `escalate: ${o.draft.escalate}\n` : ""}${o.draft.products.length ? `products: ${o.draft.products.join(", ")}\n` : ""}\nבדוק והחזר JSON.`;
   const body = {
     systemInstruction: { parts: [{ text: `${VERIFY_SYSTEM}\n\n# ההנחיות והידע של ${ASSISTANT_NAME} (לבדיקה מולם)\n${o.system}` }] },
     contents: [{ role: "user", parts: [{ text: user }] }],
@@ -110,7 +116,7 @@ export async function verifyReply(apiKey: string, o: { system: string; context: 
     },
   };
   const ctl = new AbortController();
-  const timer = setTimeout(() => ctl.abort(), o.timeoutMs ?? 25_000);
+  const timer = setTimeout(() => ctl.abort(), timeoutMs);
   try {
     const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey }, body: JSON.stringify(body), signal: ctl.signal });
     if (!res.ok) throw new Error(`${model} ${res.status}: ${(await res.text()).slice(0, 300)}`);
@@ -120,11 +126,18 @@ export async function verifyReply(apiKey: string, o: { system: string; context: 
     const issues: Issue[] = (Array.isArray(v.issues) ? v.issues : [])
       .filter((i: Partial<Issue>) => i && typeof i.what === "string")
       .map((i: Partial<Issue>) => ({ kind: (["fact", "policy", "missing", "style"].includes(String(i.kind)) ? i.kind : "fact") as Issue["kind"], what: String(i.what).slice(0, 300), fix: String(i.fix || "").slice(0, 300) }));
+    const norm = (s: string) => s.replace(/\s+/g, " ").trim();
     const reply = String(v.reply || "").trim();
-    const changed = Boolean(reply) && reply !== o.draft.reply.trim();
-    return { ok: !changed, reply: changed ? reply : o.draft.reply, escalate: changed ? String(v.escalate || "").trim() : "", issues: changed ? issues : [], model, ms: Date.now() - started };
+    const changed = Boolean(reply) && norm(reply) !== norm(o.draft.reply);
+    // בעיה שהבודק דיווח בלי לשנות את הטקסט (קורה: הוא מתאר את התיקון ולא מבצע אותו) לא נעלמת: ok=false, ה-issues
+    // וה-escalate נשמרים, כדי שרותם יראה אותם בקבוצה ויקבל את השאלה
+    const serious = issues.filter((i) => i.kind !== "style");
+    const ok = v.ok !== false && serious.length === 0 && !changed;
+    // הבודק יכול רק להסיר מוצר מהרשימה של הטיוטה (קישור למוצר שהתיקון ביטל), לא להוסיף
+    const products = Array.isArray(v.products) ? v.products.map(String).filter((s: string) => o.draft.products.includes(s)) : undefined;
+    return { ok, verified: true, changed, reply: changed ? reply : o.draft.reply, escalate: String(v.escalate || "").trim(), issues, products, model, ms: Date.now() - started };
   } catch (e) {
-    return { ok: true, reply: o.draft.reply, escalate: "", issues: [], model, ms: Date.now() - started, error: e instanceof Error ? e.message : String(e) };
+    return { ok: true, verified: false, changed: false, reply: o.draft.reply, escalate: "", issues: [], model, ms: Date.now() - started, error: e instanceof Error ? e.message : String(e) };
   } finally {
     clearTimeout(timer);
   }

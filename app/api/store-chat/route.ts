@@ -21,6 +21,7 @@ function limited(ip: string) {
 }
 
 export async function POST(req: NextRequest) {
+  const t0 = Date.now(); // תקציב הזמן של הנתיב (maxDuration 30): הבודק מקבל רק את מה שנשאר
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "העוזר לא זמין כרגע. אפשר לכתוב לנו בווצאפ." }, { status: 503 });
 
@@ -45,7 +46,7 @@ export async function POST(req: NextRequest) {
     if (lines.length) ctx.push(`בעגלה של הלקוח: ${lines.join(", ")}.`);
   }
   // המפרט המלא של המוצרים שבשיחה (דף נוכחי, עגלה, דגמים שהוזכרו), כמו בווצאפ (16.10.2026)
-  const inPlay = [body.page ? productBySlug(body.page) : undefined, ...(body.cart || []).map((c) => productBySlug(c.slug)), ...productsMentioned(messages.map((m) => m.content).join("\n"))]
+  const inPlay = [...productsMentioned(messages.map((m) => m.content).join("\n")), body.page ? productBySlug(body.page) : undefined, ...(body.cart || []).map((c) => productBySlug(c.slug))]
     .filter((p, i, arr) => p && arr.findIndex((q) => q?.slug === p.slug) === i)
     .slice(0, 4) as NonNullable<ReturnType<typeof productBySlug>>[];
   const facts = productFacts(inPlay);
@@ -54,12 +55,16 @@ export async function POST(req: NextRequest) {
   try {
     const data = await askGemini(apiKey, system, messages);
     // הבודק (רותם 16.10.2026). בצ'אט באתר הלקוח מחכה, לכן timeout קצר יותר; כשנגמר, הטיוטה יוצאת כמו שהיא.
-    const check = await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: 20_000 });
+    // הבודק רץ רק כשיש מה לבדוק (מוצר בשיחה, או מספר בתשובה: מחיר, מפרט): הצ'אט באתר ציבורי וכל קריאה ל-Pro עולה כסף
+    const check = facts || /\d/.test(data.reply)
+      ? await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000) })
+      : { ok: true, verified: false, changed: false, reply: data.reply, escalate: "", issues: [], model: "skipped", ms: 0 };
     if (!check.ok) {
       data.reply = check.reply;
+      if (check.changed && check.products) data.products = check.products;
       if (check.escalate && !data.escalate.includes(check.escalate)) data.escalate = [data.escalate, check.escalate].filter(Boolean).join(" | ");
     }
-    console.log("store chat verify", JSON.stringify({ ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
+    console.log("store chat verify", JSON.stringify({ ok: check.ok, verified: check.verified, changed: check.changed, ms: check.ms, model: check.model, kinds: check.issues.map((i) => i.kind), error: check.error?.slice(0, 120) }));
 
     const products = data.products
       .map((s) => productBySlug(s.trim().replace(/^\[|\]$/g, "")))

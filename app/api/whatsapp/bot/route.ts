@@ -41,6 +41,8 @@ const INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
 const STOCK_MARK = "📦 בדיקת מלאי:";
 const READY_MARK = "🟢 טל: לקוח מוכן לקנות";
 const ASK_MARK = "❓ טל צריך אותך";
+const VERIFY_FAIL_MARK = "בלי בדיקה של הבודק";
+const VERIFY_MARK = "🔎 הבודק";
 const NOTIFY_COOLDOWN_MS = 60 * 60 * 1000;
 
 type H = { idMessage?: string; timestamp?: number; type?: string; typeMessage?: string; textMessage?: string; extendedTextMessage?: { text?: string }; caption?: string; sendByApi?: boolean };
@@ -120,7 +122,8 @@ const WHATSAPP_RULES = `
 - הזמינות של רותם: רק כשההקשר אומר שרותם לא כתב בשיחה הזאת ב-30 הדקות האחרונות אומרים מתי הוא יהיה זמין. אם רותם כתב כאן לאחרונה, הוא כאן: "רותם כאן ויענה לך", בלי "רותם יהיה זמין ב-".
 - לא חוזרים על מה שכבר נאמר בשיחה, ולא שואלים שוב שאלה שהלקוח כבר ענה עליה.
 - כשרותם חוזר לשיחה, הוא כותב מהטלפון בעצמו. אתה לא מתחזה לרותם ולא מדבר בשמו בגוף ראשון.
-- מפרט (16.10.2026): על יכולת טכנית של דגם (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) עונים רק לפי "עובדות מאומתות על המוצרים שבשיחה" שבהקשר. מה שלא כתוב שם: "אני לא בטוח, אבדוק ואחזור אליך", והשאלה בשדה escalate. לא מסיקים מהסוג הכללי של המוצר (טל כתב שפנל אינטרקום "לא מקליט בעצמו", והמפרט אמר הפוך).
+- מפרט (16.10.2026): על יכולת טכנית של דגם (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) עונים לפי סדר עדיפות: קודם "עובדות מאומתות על המוצרים שבשיחה" שבהקשר, אם הדגם מופיע שם; אם הדגם לא מופיע שם, שורת הקטלוג שלו היא המקור. מה שלא כתוב באף אחד מהם: "אני לא בטוח, אבדוק ואחזור אליך", והשאלה בשדה escalate. אסור להסיק מהסוג הכללי של המוצר (טל כתב שפנל אינטרקום "לא מקליט בעצמו", והמפרט אמר הפוך).
+- שורה שמתחילה ב-"[רותם מהטלפון]" היא הודעה שרותם כתב בעצמו מהטלפון, לא אתה: מה שכתוב שם מחייב (מחיר, הנחה, הבטחה), ולא סותרים אותו.
 - התקנה (רותם 16.10.2026: "צריך להבין אם היא רוצה בכלל התקנה"): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית) שואלים פעם אחת, לפני שמדברים על משלוח או תשלום: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?" זה משנה את ההצעה. מתקין: שואלים באיזה יישוב, ובשדה escalate כותבים "התקנה: {מוצר}, {יישוב}, {מה צריך}" כדי שרותם ייתן הצעת מחיר להתקנה. לבד: אומרים במשפט מה צריך כדי שזה יעבוד (לפנל אינטרקום: חשמל 12V או PoE בנקודה, מנעול חשמלי בדלת או בשער אם רוצים לפתוח ממנו, ו-Wi-Fi טוב בכניסה) ושאנחנו מלווים בהגדרה מרחוק. לא שואלים שוב אם הלקוח כבר ענה.`;
 
 // הלקוח כתב ששילם או סגר: טל מודה ולא ממשיך למכור (7.10.2026: אחרי "שילמתי כבר" טל המשיך עם "הסכום הסופי")
@@ -141,6 +144,7 @@ async function alertedRecently(phone: string, marker: string, nowMs: number): Pr
 }
 
 export async function POST(req: NextRequest) {
+  const t0 = Date.now(); // תקציב הזמן של הנתיב (maxDuration): הבודק מקבל רק את מה שנשאר
   const dry = req.nextUrl.searchParams.get("dry") === "1" && adminAuthorized(req); // בדיקה ידנית: מחזיר את התשובה בלי לשלוח
   // kick: לפתוח שיחה עם ליד שכבר מחכה (webhook נשלח רק על הודעות חדשות). כל כללי הבטיחות חלים, בלי המתנה.
   const kick = req.nextUrl.searchParams.get("kick") === "1" && adminAuthorized(req);
@@ -209,9 +213,11 @@ export async function POST(req: NextRequest) {
     const t = textOf(m) || (m.typeMessage === "audioMessage" ? "[הודעה קולית]" : m.typeMessage === "imageMessage" ? "[תמונה]" : m.typeMessage ? `[${m.typeMessage}]` : "");
     if (!t) continue;
     const role: Msg["role"] = m.type === "incoming" ? "user" : "assistant";
+    // רותם כותב מהטלפון (sendByApi=false): מסומן, כדי שטל והבודק ידעו שזה לא טל (מחיר שרותם כתב מחייב)
+    const line = role === "assistant" && m.sendByApi === false ? `[רותם מהטלפון] ${t}` : t;
     const prev = conv[conv.length - 1];
-    if (prev && prev.role === role) prev.content = `${prev.content}\n${t}`.slice(-1500);
-    else conv.push({ role, content: t.slice(0, 1500) });
+    if (prev && prev.role === role) prev.content = `${prev.content}\n${line}`.slice(-1500);
+    else conv.push({ role, content: line.slice(0, 1500) });
   }
   while (conv.length && conv[0].role !== "user") conv.shift();
   if (proactive && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: stockResult ? "(ממתין לתשובה על המלאי)" : "(הלקוח לא ענה מאז ההודעה האחרונה שלנו)" });
@@ -258,12 +264,15 @@ export async function POST(req: NextRequest) {
   try { data = await askGemini(apiKey, `${SYSTEM}${WHATSAPP_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}${facts ? `\n\n${facts}` : ""}`, conv); }
   catch (e) { console.error("wa bot gemini", e instanceof Error ? e.message : e); return NextResponse.json({ ok: false, error: "gemini" }, { status: 200 }); }
   // הבודק (רותם 16.10.2026): מודל חזק יותר בודק כל עובדה בטיוטה מול המפרט, הקטלוג וההקשר, ומתקן לפני השליחה.
-  const check = await verifyReply(apiKey, { system: `${SYSTEM}${WHATSAPP_RULES}`, context: ctx.join("\n"), facts, messages: conv, draft: data, timeoutMs: 25_000 });
+  // תקציב: 25 שניות, אבל לא יותר ממה שנשאר עד maxDuration פחות 10 שניות לשליחה ולהתראות (אחרי debounce, היסטוריה וטיוטה)
+  const check = await verifyReply(apiKey, { system: `${SYSTEM}${WHATSAPP_RULES}`, context: ctx.join("\n"), facts, messages: conv, draft: data, timeoutMs: Math.min(25_000, maxDuration * 1000 - (Date.now() - t0) - 10_000) });
   if (!check.ok) {
     data.reply = check.reply;
-    if (check.escalate && !data.escalate.includes(check.escalate)) data.escalate = [data.escalate, check.escalate].filter(Boolean).join(" | ");
+    if (check.changed && check.products) data.products = check.products;
   }
-  console.log("wa bot verify", JSON.stringify({ phone: localPhone(phone), ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
+  // השאלה של הבודק נשארת בשדה נפרד: data.escalate עובר כמו שהוא לעידן (handoff.js) כשהוא מתחיל ב"תשלום:"
+  const verifierAsk = check.escalate.replace(/\s+/g, " ").trim();
+  console.log("wa bot verify", JSON.stringify({ ok: check.ok, verified: check.verified, changed: check.changed, ms: check.ms, model: check.model, kinds: check.issues.map((i) => i.kind), error: check.error?.slice(0, 120) }));
 
   const links = data.products.map((s) => productBySlug(s.trim().replace(/^\[|\]$/g, ""))).filter(Boolean).slice(0, 3)
     .map((p) => `${productName(p!)}${p!.price ? `, ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
@@ -271,11 +280,11 @@ export async function POST(req: NextRequest) {
   const text = [body, ...links].filter(Boolean).join("\n\n").slice(0, 3500);
 
   // התראה לרותם: שאלה שצריך אותו, או לקוח שמוכן לקנות. כלל 6: לא אותה התראה פעמיים בשעה, אלא אם יש עובדה חדשה.
-  const wantAlert = Boolean(data.escalate.trim()) || data.intent === "ready";
+  const wantAlert = Boolean(data.escalate.trim()) || Boolean(verifierAsk) || data.intent === "ready";
   const marker = data.intent === "ready" ? READY_MARK : ASK_MARK;
   const newFact = NEW_FACT_RE.test(lastUserText);
   const suppressed = wantAlert && !newFact && (await alertedRecently(phone, marker, nowDate.getTime()));
-  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", verify: check, facts, ctx });
+  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", verifierAsk, verify: check, facts, ctx });
   // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
   // 7.10.2026: הסימון נשאר בקבוצה הפנימית (SC_GROUP), לא בקבוצת ההזמנות מול הספק. לספק יוצאת רק השאלה המנוסחת
@@ -295,16 +304,26 @@ export async function POST(req: NextRequest) {
   }
   const id = await sendWhatsAppId(phone, text);
   // רותם רואה בקבוצה מה הבודק תיקן (עובדה או מדיניות), וגם כשהבודק נכשל והתשובה יצאה בלי בדיקה
+  // תיקון עובדה או מדיניות: אם יוצאת עכשיו התראה (❓ / 🟢) הוא נכנס לתוכה; אחרת הודעה נפרדת, פעם בשעה ללקוח (כלל 6)
   const corrections = check.issues.filter((i) => i.kind === "fact" || i.kind === "policy");
-  if (corrections.length) await sendWhatsAppId(SC_GROUP, `🔎 הבודק תיקן את טל (${localPhone(phone)}):\n${corrections.map((i) => `• ${i.what}${i.fix ? ` ← ${i.fix}` : ""}`).join("\n")}`).catch(() => undefined);
-  else if (check.error) await sendWhatsAppId(SC_GROUP, `⚠️ טל ענה ל-${localPhone(phone)} בלי בדיקה של הבודק (${check.error.slice(0, 160)})`).catch(() => undefined);
+  const correctionsText = corrections.map((i) => `• ${i.what}${i.fix ? ` ← ${i.fix}` : ""}`).join("\n");
+  const verifierVerb = check.changed ? "תיקן את טל" : "סימן בעיה אצל טל (בלי לשנות את התשובה)";
+  if (corrections.length && !(wantAlert && !suppressed) && !(await alertedRecently(phone, VERIFY_MARK, nowDate.getTime()))) {
+    recentAlerts.set(`${phone}:${VERIFY_MARK}`, nowDate.getTime());
+    await sendWhatsAppId(SC_GROUP, `${VERIFY_MARK} ${verifierVerb} (${localPhone(phone)}):\n${correctionsText}`).catch(() => undefined);
+  } else if (check.error && !(await alertedRecently("", VERIFY_FAIL_MARK, nowDate.getTime()))) {
+    // פעם בשעה לכל היותר (כלל 6), אחרת מודל לא זמין או timeout שגרתי מציפים את הקבוצה
+    recentAlerts.set(`:${VERIFY_FAIL_MARK}`, nowDate.getTime());
+    const reason = /abort/i.test(check.error) ? "הבודק לא הספיק בזמן" : check.error === "no time budget" ? "לא נשאר זמן לבדיקה" : `שגיאה: ${check.error.slice(0, 160)}`;
+    await sendWhatsAppId(SC_GROUP, `⚠️ טל ענה ל-${localPhone(phone)} ${VERIFY_FAIL_MARK} (${reason}). התראה אחת בשעה.`).catch(() => undefined);
+  }
   if (wantAlert && !suppressed) {
     recentAlerts.set(`${phone}:${marker}`, nowDate.getTime());
     const lastIn = textOf(last).slice(0, 300);
     const ref = prefill ? waRefOf(textOf(prefill)) : null;
     await notifyTeam(
       `${marker} (${localPhone(phone)})`,
-      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}${ref ? `מס' פנייה: ${ref}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`,
+      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${verifierAsk ? `הבודק שואל: ${verifierAsk}\n` : ""}${corrections.length ? `הבודק ${verifierVerb}:\n${correctionsText}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}${ref ? `מס' פנייה: ${ref}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`,
     ).catch(() => undefined);
   }
   return NextResponse.json({ ok: Boolean(id), sent: Boolean(id), alert: wantAlert ? (suppressed ? "suppressed" : "sent") : "none" });

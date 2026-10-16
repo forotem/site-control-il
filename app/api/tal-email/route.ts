@@ -7,7 +7,7 @@ import { SYSTEM, askGemini, verifyReply, type Msg } from "../../lib/tal";
 import { productFacts, productsMentioned } from "../../data/store-knowledge";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60; // נתיב פנימי (followups.js), אף לקוח לא מחכה: מקום לטיוטה ולבודק
 
 function authorized(req: NextRequest): boolean {
   const base = process.env.RESEND_API_KEY;
@@ -29,6 +29,7 @@ const EMAIL_RULES = `
 - products, escalate, lead_name, lead_phone, stock_check: ריקים.`;
 
 export async function POST(req: NextRequest) {
+  const t0 = Date.now();
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "no gemini key" }, { status: 503 });
@@ -41,15 +42,15 @@ export async function POST(req: NextRequest) {
     2: "פולואפ שני: לשאול אם עברו על ההצעה, אם משהו חסר או שרוצים לשנות (כמויות, דגמים, התקנה, מוקד), ולהציע שיחה.",
     3: "פולואפ אחרון, מכבד: אם לא מתאים כרגע, ההצעה בתוקף ואפשר לחזור מתי שנוח. לא שולחים אחרי זה.",
   };
-  const ctx = [`${steps[b.step ?? 1] || steps[1]}`, b.name ? `שם הלקוח: ${b.name}.` : "", b.note ? `מה שהוצע: ${String(b.note).slice(0, 400)}.` : "", "אם ההודעה האחרונה בתמליל היא של הלקוח (ולא שלנו), כתוב תשובה עניינית להודעה שלו במקום פולואפ."].filter(Boolean);
+  const ctx = [`${steps[b.step ?? 1] || steps[1]}`, b.name ? `שם הלקוח: ${b.name}.` : "", b.note ? `מה שהוצע: ${String(b.note).slice(0, 400)}.` : "", "ההודעות של הצד שלנו בתמליל הן מיילים שרותם שלח (לא טל): מחיר או תנאי שכתובים בהם מחייבים.", "אם ההודעה האחרונה בתמליל היא של הלקוח (ולא שלנו), כתוב תשובה עניינית להודעה שלו במקום פולואפ."].filter(Boolean);
   if (transcript[transcript.length - 1].role !== "user") transcript.push({ role: "user", content: "(הלקוח לא ענה מאז המייל האחרון שלנו)" });
   // המפרט המלא של הדגמים שהוזכרו בשרשור, והבודק לפני השליחה (16.10.2026), כמו בווצאפ ובצ'אט באתר
   const facts = productFacts(productsMentioned(transcript.map((m) => m.content).join("\n")));
   try {
     const data = await askGemini(apiKey, `${SYSTEM}${EMAIL_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}${facts ? `\n\n${facts}` : ""}`, transcript);
-    const check = await verifyReply(apiKey, { system: `${SYSTEM}${EMAIL_RULES}`, context: ctx.join("\n"), facts, messages: transcript, draft: data, timeoutMs: 20_000 });
+    const check = await verifyReply(apiKey, { system: `${SYSTEM}${EMAIL_RULES}`, context: ctx.join("\n"), facts, messages: transcript, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000) });
     if (!check.ok) data.reply = check.reply;
-    console.log("tal-email verify", JSON.stringify({ ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
+    console.log("tal-email verify", JSON.stringify({ ok: check.ok, verified: check.verified, changed: check.changed, ms: check.ms, model: check.model, kinds: check.issues.map((i) => i.kind), error: check.error?.slice(0, 120) }));
     const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").trim();
     return NextResponse.json({ subject: (data.lead_summary || "בהמשך להצעת המחיר").slice(0, 120), body, intent: data.intent });
   } catch (e) {

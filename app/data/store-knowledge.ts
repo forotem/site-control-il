@@ -118,15 +118,33 @@ export const STORE_KNOWLEDGE = buildKnowledge();
 export const productBySlug = (slug: string) => storeProducts.find((p) => p.slug === slug);
 
 type Product = (typeof storeProducts)[number];
-const modelKeys = (p: Product): string[] => {
-  const full = p.model.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
-  const first = full.split(" ")[0] || "";
-  return [full, first].filter((k, i) => k.length >= (i ? 7 : 5));
+/** כינויי הדגם לזיהוי בטקסט: "Go Ultra / G340" נותן "go ultra" ו-"g340"; "Reolink Go PT Ultra" בלי המותג; בלי סיומת עדשה (2.8mm). */
+const aliasKeys = (p: Product): string[] => {
+  const brand = p.brand.toLowerCase();
+  const keys = new Set<string>();
+  for (const raw of p.model.toLowerCase().replace(/\(.*?\)/g, " ").split(/\s+\/\s+|\s+\+\s+|,\s*|\s*מחליפה את\s*/)) {
+    let part = raw.replace(/\b\d+(?:\.\d+)?\s*mm\b/g, " ").replace(/\s+/g, " ").trim();
+    if (part.startsWith(`${brand} `)) part = part.slice(brand.length + 1);
+    if (part.length >= 3 && part !== brand) keys.add(part);
+  }
+  return [...keys];
+};
+// כינוי שמשותף ליותר משני מוצרים ("reolink", "trackmix", "argus") לא מזהה כלום; שניים = גרסאות עדשה של אותה מצלמה
+const keyCount = new Map<string, number>();
+for (const p of storeProducts) for (const k of aliasKeys(p)) keyCount.set(k, (keyCount.get(k) || 0) + 1);
+const uniqueKeys = (p: Product) => aliasKeys(p).filter((k) => (keyCount.get(k) || 0) <= 2);
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** המיקום האחרון של הכינוי בטקסט, על גבולות מילה: ct3 לא תופס ct30, e1 לא תופס e1 outdoor */
+const lastMatch = (t: string, key: string): number => {
+  const re = new RegExp(`(^|[^a-z0-9])${escapeRe(key)}(?![a-z0-9])`, "g");
+  let at = -1;
+  for (let m = re.exec(t); m; m = re.exec(t)) at = m.index;
+  return at;
 };
 /** המוצרים שמוזכרים בטקסט של שיחה: קישור /store/<slug>, [slug] או שם הדגם (DS-KV6124-WBE1, Argus 3 Ultra). האחרון שהוזכר ראשון. */
 export function productsMentioned(text: string, max = 4): Product[] {
   const t = text.toLowerCase();
-  const pos = (p: Product) => Math.max(t.lastIndexOf(`/store/${p.slug}`), t.lastIndexOf(`[${p.slug}]`), ...modelKeys(p).map((k) => t.lastIndexOf(k)));
+  const pos = (p: Product) => Math.max(t.lastIndexOf(`/store/${p.slug}`), t.lastIndexOf(`[${p.slug}]`), ...uniqueKeys(p).map((k) => lastMatch(t, k)));
   return storeProducts.map((p) => ({ p, at: pos(p) })).filter((x) => x.at >= 0).sort((a, b) => b.at - a.at).slice(0, max).map((x) => x.p);
 }
 /** עובדות מאומתות על המוצרים שבשיחה: כל המפרט מדף המוצר (לפי היצרן). הקטלוג שטל מקבל מקוצר לשתי נקודות למוצר, ולכן
@@ -137,5 +155,5 @@ export function productFacts(products: Product[]): string {
   const lines = products.map((p) => `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""}, ${p.price ? `${p.price} ₪` : "מחיר לפי פנייה"}${p.datasheet ? " (יש דאטהשיט של היצרן בדף המוצר)" : ""}. מפרט: ${p.specs.join("; ")}`);
   return `# עובדות מאומתות על המוצרים שבשיחה (מדף המוצר באתר, לפי היצרן)
 ${lines.join("\n")}
-על יכולת טכנית של דגם שלא כתובה כאן (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) לא עונים מהראש ולא מסיקים מהסוג הכללי של המוצר: אומרים בכנות "אני לא בטוח, אבדוק ואחזור", וכותבים את השאלה בשדה escalate.`;
+למוצרים שמופיעים כאן זה המקור, והוא גובר על שורת הקטלוג. יכולת טכנית שלא כתובה כאן ולא בשורת הקטלוג (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) לא ממציאים ולא מסיקים מהסוג הכללי של המוצר: אומרים בכנות "אני לא בטוח, אבדוק ואחזור", וכותבים את השאלה בשדה escalate.`;
 }

@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   const facts = productFacts(productsMentioned(transcript.map((m) => m.content).join("\n")));
   try {
     const data = await askGemini(apiKey, `${SYSTEM}${EMAIL_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}${facts ? `\n\n${facts}` : ""}`, transcript);
-    const check = await verifyReply(apiKey, { system: `${SYSTEM}${EMAIL_RULES}`, context: ctx.join("\n"), facts, messages: transcript, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000) });
+    const check = await verifyReply(apiKey, { system: `${SYSTEM}${EMAIL_RULES}`, context: ctx.join("\n"), facts, messages: transcript, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000), channel: "email" });
     if (!check.ok) data.reply = check.reply;
     console.log("tal-email verify", JSON.stringify({ ok: check.ok, verified: check.verified, changed: check.changed, ms: check.ms, model: check.model, kinds: check.issues.map((i) => i.kind), error: check.error?.slice(0, 120) }));
     const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").trim();

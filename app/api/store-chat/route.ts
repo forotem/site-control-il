@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     // הבודק (רותם 16.10.2026). בצ'אט באתר הלקוח מחכה, לכן timeout קצר יותר; כשנגמר, הטיוטה יוצאת כמו שהיא.
     // הבודק רץ רק כשיש מה לבדוק (מוצר בשיחה, או מספר בתשובה: מחיר, מפרט): הצ'אט באתר ציבורי וכל קריאה ל-Pro עולה כסף
     const check = facts || /\d/.test(data.reply)
-      ? await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000) })
+      ? await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: Math.min(20_000, maxDuration * 1000 - (Date.now() - t0) - 8_000), channel: "site" })
       : { ok: true, verified: false, changed: false, reply: data.reply, escalate: "", issues: [], model: "skipped", ms: 0 };
     if (!check.ok) {
       data.reply = check.reply;

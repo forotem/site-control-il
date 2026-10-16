@@ -20,7 +20,7 @@ import { createHash, timingSafeEqual } from "crypto";
 import { botToken } from "../../../lib/wa-bot-token";
 import { greenApi, sendWhatsAppId, IDAN_WA, ELI_WA, notifyTeam, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
-import { SYSTEM, askGemini, verifyReply, type Msg } from "../../../lib/tal";
+import { SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
 import { productBySlug, productFacts, productsMentioned } from "../../../data/store-knowledge";
 import { SITE_OFFER } from "../../../data/site-offer";
@@ -124,7 +124,7 @@ const WHATSAPP_RULES = `
 - כשרותם חוזר לשיחה, הוא כותב מהטלפון בעצמו. אתה לא מתחזה לרותם ולא מדבר בשמו בגוף ראשון.
 - מפרט (16.10.2026): על יכולת טכנית של דגם מסוים שהלקוח שאל עליו בשם או מהדף שלו (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) עונים לפי סדר עדיפות: קודם "עובדות מאומתות על המוצרים שבשיחה" שבהקשר, אם הדגם מופיע שם; אם הדגם לא מופיע שם, שורת הקטלוג שלו היא המקור. מה שלא כתוב באף אחד מהם: "אני לא בטוח, אבדוק ואחזור אליך", והשאלה בשדה escalate. אסור להסיק מהסוג הכללי של המוצר (טל כתב שפנל אינטרקום "לא מקליט בעצמו", והמפרט אמר הפוך). שאלות כלליות על סוג מערכת (איך Wi-Fi, PoE או סוללה עובדים) עונים מהמדריכים בידע כרגיל.
 - שורה שמתחילה ב-"[רותם מהטלפון]" היא הודעה שרותם כתב בעצמו מהטלפון, לא אתה: מה שכתוב שם מחייב (מחיר, הנחה, הבטחה), ולא סותרים אותו.
-- התקנה (רותם 16.10.2026: "צריך להבין אם היא רוצה בכלל התקנה"): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית) שואלים פעם אחת, כשמגיעים לשלב המכירה (מלאי אושר, משלוח, איסוף, תשלום) ולפני שמדברים על משלוח או תשלום: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?" זה משנה את ההצעה. שאלה אחת בהודעה: אם יש כבר שאלת בירור אחרת (למשל "יש לך מקליט?"), שאלת ההתקנה מחכה להודעה הבאה. מתקין: שואלים באיזה יישוב, ובשדה escalate כותבים "התקנה: {מוצר}, {יישוב}, {מה צריך}" כדי שרותם ייתן הצעת מחיר להתקנה. לבד: אומרים במשפט מה צריך כדי שזה יעבוד, רק מתוך "עובדות מאומתות" של הדגם שבשיחה (לפנל IP של Hikvision למשל: חשמל 12V או PoE בנקודה, מנעול חשמלי עם ספק אם רוצים לפתוח ממנו, Wi-Fi טוב בכניסה; לערכת 2 גידים: כבל בין הפנל למסך, הספק כלול) ושאנחנו מלווים בהגדרה מרחוק. מצלמות סולארי/4G ואתרי בנייה: לפי כלל 7 (לא חייבים מתקין; לאתר: הערכת יום עבודה, escalate ריק), ו-TrackMix Wired LTE עם התקנה במחיר המבצע הסגור מ-/deals. לא שואלים שוב אם הלקוח כבר ענה.`;
+- אפיון והתקנה בווצאפ (רותם 16.10.2026, כלל 12): בתשובה הראשונה או השנייה, כשלא ברור, שאלה אחת: "יש לך מי שיתקין, או שתרצה שנטפל גם בהתקנה?". בליד מדף מוצר ("יש במלאי?") אפשר לשלב אותה עם תשובת המלאי. איש מקצוע: ישר לעניין, מלאי מול עידן, מחיר האתר, כמות, איסוף מפתח תקווה, בלי הסברים למתחילים. לקוח קצה שרוצה התקנה: שואלים באיזה יישוב, ובשדה escalate כותבים "התקנה: {מוצר}, {יישוב}, {מה צריך}" כדי שעידן או רותם יתקשרו עם הצעה. לבד: אומרים במשפט מה צריך כדי שזה יעבוד, רק מתוך "עובדות מאומתות" של הדגם שבשיחה (לפנל IP של Hikvision למשל: חשמל 12V או PoE בנקודה, מנעול חשמלי עם ספק אם רוצים לפתוח ממנו, Wi-Fi טוב בכניסה; לערכת 2 גידים: כבל בין הפנל למסך, הספק כלול) ושאנחנו מלווים בהגדרה מרחוק. שאלה אחת בהודעה: אם יש כבר שאלת בירור אחרת, שאלת ההתקנה מחכה להודעה הבאה. מצלמות סולארי/4G ואתרי בנייה: לפי כלל 7 (לא חייבים מתקין; לאתר: הערכת יום עבודה, escalate ריק), ו-TrackMix Wired LTE עם התקנה במחיר המבצע הסגור מ-/deals. לא שואלים שוב אם הלקוח כבר ענה.`;
 
 // הלקוח כתב ששילם או סגר: טל מודה ולא ממשיך למכור (7.10.2026: אחרי "שילמתי כבר" טל המשיך עם "הסכום הסופי")
 const PAID_RE = /שילמתי|שלמתי|שילמנו|שולם|חויבתי|חייבו אותי|חייבת אותי|העברתי (לך|לכם|את ה)|סגרתי|שלחתי ביט|ביט נשלח|הכסף (עבר|נשלח|הועבר)/;
@@ -286,7 +286,7 @@ export async function POST(req: NextRequest) {
   const marker = data.intent === "ready" ? READY_MARK : ASK_MARK;
   const newFact = NEW_FACT_RE.test(lastUserText);
   const suppressed = wantAlert && !newFact && (await alertedRecently(phone, marker, nowDate.getTime()));
-  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", verifierAsk, verify: check, facts, ctx, build: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || "local" });
+  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", verifierAsk, lead_type: data.lead_type, install: data.install, verify: check, facts, ctx, build: process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || "local" });
   // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
   // 7.10.2026: הסימון נשאר בקבוצה הפנימית (SC_GROUP), לא בקבוצת ההזמנות מול הספק. לספק יוצאת רק השאלה המנוסחת
@@ -325,7 +325,7 @@ export async function POST(req: NextRequest) {
     const ref = prefill ? waRefOf(textOf(prefill)) : null;
     await notifyTeam(
       `${marker} (${localPhone(phone)})`,
-      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${verifierAsk ? `הבודק שואל: ${verifierAsk}\n` : ""}${corrections.length ? `הבודק ${verifierVerb}:\n${correctionsText}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}${ref ? `מס' פנייה: ${ref}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`,
+      `${data.escalate ? `שאלה: ${data.escalate}\n` : ""}${verifierAsk ? `הבודק שואל: ${verifierAsk}\n` : ""}${corrections.length ? `הבודק ${verifierVerb}:\n${correctionsText}\n` : ""}${data.lead_summary ? `סיכום: ${data.lead_summary}\n` : ""}אפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\n${ref ? `מס' פנייה: ${ref}\n` : ""}הלקוח כתב: ${lastIn}\n\nטל ענה:\n${text}\n\nכדי לקחת את השיחה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`,
     ).catch(() => undefined);
   }
   return NextResponse.json({ ok: Boolean(id), sent: Boolean(id), alert: wantAlert ? (suppressed ? "suppressed" : "sent") : "none" });

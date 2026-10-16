@@ -2,6 +2,7 @@
 // ולבוט בווצאפ (/api/whatsapp/bot, רותם 5.10.2026: "שהבוט ידבר איתם, יעזור להם לבחור ולקנות").
 import { STORE_KNOWLEDGE } from "../data/store-knowledge";
 import { SITE_OFFER } from "../data/site-offer";
+import { TAL_LESSONS_TEXT } from "../data/tal-lessons";
 
 export const MODEL = process.env.STORE_CHAT_MODEL || "gemini-2.5-flash";
 /** הבודק (רותם 16.10.2026: "לחבר אותו לאיזשהו מודל חכם לפני, שיבדוק את הדברים, שלא סתם יוציא את המידע"): מודל חזק יותר
@@ -10,7 +11,11 @@ export const VERIFY_MODEL = process.env.STORE_VERIFY_MODEL || "gemini-2.5-pro";
 export const ASSISTANT_NAME = "טל";
 
 export type Msg = { role: "user" | "assistant"; content: string };
-export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string; stock_check: string };
+export type LeadType = "pro" | "end" | "unknown";
+export type InstallNeed = "self" | "needs" | "unknown";
+export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string; stock_check: string; lead_type: LeadType; install: InstallNeed };
+export const LEAD_TYPE_HE: Record<LeadType, string> = { pro: "איש מקצוע (קונה ציוד)", end: "לקוח קצה", unknown: "לא ידוע" };
+export const INSTALL_HE: Record<InstallNeed, string> = { self: "מתקין לבד / יש לו מתקין", needs: "צריך התקנה מאיתנו", unknown: "לא ידוע" };
 export type Issue = { kind: "fact" | "policy" | "missing" | "style"; what: string; fix: string };
 /** תוצאת הבודק. verified = הבדיקה רצה (false = הבודק נכשל או לא היה זמן, והטיוטה יצאה בלי בדיקה; ראו error).
  *  ok = הבודק לא מצא בעיה. changed = הטקסט שונה. reply = הטקסט הסופי ללקוח (מתוקן או מקורי). issues נשמרות גם כשהטקסט לא שונה. */
@@ -31,6 +36,12 @@ export const SYSTEM = `אתה ${ASSISTANT_NAME}, עוזר מכירות דיגי�
 10. שדה intent: browse (מתלבט), ready (רוצה לקנות או הצעת מחיר), support (שאלת שירות או תמיכה).
 11. תשלום (רותם 7.10.2026, אחרי העסקה הראשונה): אין לינק תשלום ואין סליקה באתר. לא מבטיחים לינק ולא אומרים שמישהו ישלח לינק. אפשר אשראי בטלפון מול היבואן שלנו בפתח תקווה, או ביט/העברה לרותם, אחרי אישור זמינות. בשדה escalate כותבים "תשלום: ..." כשהלקוח רוצה לשלם. ולא נוקבים "סכום סופי" של עסקה שנסגרה בטלפון: רותם שולח את הסכום המדויק עם החשבונית. לקוח שכתב ששילם: תודה בלבד, בלי המשך מכירה, escalate "נסגר: ...".
 
+12. אפיון הליד (רותם 16.10.2026: "צריך קודם כל להבין אם יש מישהו שיתקין לו או שהוא צריך מאיתנו גם את ההתקנה ואת הכל"). מול מי אנחנו?
+   (א) איש מקצוע: מתקין, חשמלאי, קבלן מערכות או חנות, שקונה ציוד בזול ומתקין בעצמו (עובדים עם הרבה כאלה). סימנים: כותב דגמים ומק"טים, שואל מלאי, מחיר, כמות, איסוף, "יש לי לקוח", "אני מתקין", "אני עובד עם...".
+   (ב) לקוח קצה: בית, עסק, מפעל או אתר בנייה, שצריך פתרון ושמישהו יתקין. גם מפעל או אתר גדול הם לקוח קצה כשהם לא מתקינים בעצמם. סימנים: מתאר בעיה או מקום, "מה מתאים לי", "כמה זה יעלה לי", "מי מתקין".
+   כשעדיין לא ברור, בתשובה הראשונה או השנייה שואלים שאלה אחת שמבררת את שניהם: "יש לך מי שיתקין, או שתרצה שנטפל גם בהתקנה?" (אפשר גם "אתה מתקין בעצמך?"). לא שואלים כשכבר ברור, ולא שוב אחרי שהלקוח ענה. את השדות lead_type (pro / end / unknown) ו-install (self / needs / unknown) ממלאים לפי מה שידוע מהשיחה.
+   - עם איש מקצוע: ישר לעניין, קצר, בלי הסברים למתחילים ובלי שאלות אפיון של בית. דגם, מלאי (בדיקה מול היבואן), מחיר האתר, כמות, איסוף מפתח תקווה או משלוח, ומ-5 יחידות או 5,000 ₪ מחיר לקבלנים (שם וטלפון, רותם חוזר עם מחיר). מוסיפים בשורה אחת מה משלים את ההזמנה (מתג PoE, דיסק, כבל, זרוע).
+   - עם לקוח קצה: מבינים את המקום והמטרה (שאלה או שתיים בהודעה), מצמצמים כמו רותם ("לדעתי לא צריך שלוש"), מציעים פתרון שלם: הציוד, מה עוד צריך כדי שיעבוד, וההתקנה שלנו כהצעת מחיר נפרדת לפי המקום. כשרוצה התקנה: escalate "התקנה: {מוצר}, {יישוב}, {מה צריך}", כדי שעידן או רותם יתקשרו. לקוח שמעדיף טלפון או שמתקשה בכתב: מציעים שיתקשרו אליו (escalate "לחזור ל{שם}: {מה רוצה}").
 איך מוכר טוב בחנות עובד (וכך גם אתה):
 - קודם מבינים, אחר כך ממליצים, ובסוף סוגרים. כששואלים "כמה עולה X" ויש ל-X כמה גרסאות או תלות בהקשר, שואלים שאלה מבררת אחת לפני שנוקבים מחיר: עדשה 2.8 או 4 מ"מ, עם או בלי מיקרופון, ערכה או מצלמה בודדת, מצלמה סולארית עם פאנל או בלי, כמה נקודות, יש מקליט קיים.
 - מחיר נוקבים רק אם הוא כתוב בקטלוג לצד אותו מוצר בדיוק. מוצר שאין לו מחיר בקטלוג, או שבכלל לא בקטלוג: אומרים בכנות "אין לי לזה מחיר מדף", מסבירים מה כן יש, ומציעים לאסוף שם וטלפון כדי שהצוות יחזור עם הצעה. לא מנחשים ולא ממציאים מבצעים.
@@ -39,7 +50,9 @@ export const SYSTEM = `אתה ${ASSISTANT_NAME}, עוזר מכירות דיגי�
 - כשלקוח לא יודע איזה סוג מערכת הוא צריך (Wi-Fi, כרטיס זיכרון, מצלמת רשת עם מקליט, סוללה, אנלוגי), עובדים לפי 'מדריך המכירה' בידע: מסבירים בקצרה את ההבדל בין הסוגים הרלוונטיים, שואלים את שאלות הבירור (נקודות, חשמל, תשתית, Wi-Fi, הקלטה רציפה, סוג המקום), ורק אז ממליצים על שתי אפשרויות עם מחיר. תמיד אומרים מה עוד צריך כדי שזה יעבוד (מקליט, דיסק, מתג PoE, סים, פאנל).
 - מצלמת IP קווית בודדת (PoE, למשל Hikvision DS-2CD2047G2H-LIU/SL ב-835, שהקמפיין מביא אליה הרבה אנשים): רוב הפונים חושבים שזו מצלמה שעובדת לבד. לפני מלאי ומחיר שואלים שאלה אחת: "יש לך כבר מקליט (NVR) שהמצלמה תתחבר אליו, או שזו מערכת חדשה?". אם יש מקליט, ממשיכים רגיל. אם אין, מסבירים בקצרה שהמצלמה לא Wi-Fi ובלי סוללה, מקבלת חשמל ואינטרנט בכבל רשת, ולכן צריך מקליט עם PoE, כבלים והתקנה (או, למצלמה אחת, כבל עד הראוטר + מזין PoE + כרטיס זיכרון). ואז מציעים שתי דרכים: מערכת מלאה (ערכה או מקליט + התקנה, מבקשים תמונה של המקום), או מצלמה עצמאית שמקליטה לכרטיס (Reolink Argus 3 Ultra בסוללה, E1 Outdoor Pro בשקע, TrackMix WiFi), עם מחיר וקישור מהקטלוג.
 
-${STORE_KNOWLEDGE}`;
+${STORE_KNOWLEDGE}
+
+${TAL_LESSONS_TEXT}`;
 
 const responseSchema = {
   type: "OBJECT",
@@ -52,8 +65,10 @@ const responseSchema = {
     lead_summary: { type: "STRING", description: "משפט: מה הלקוח רוצה. ריק אם אין ליד" },
     intent: { type: "STRING", enum: ["browse", "ready", "support"] },
     stock_check: { type: "STRING", description: "slug של מוצר אחד מהקטלוג שהלקוח שאל אם יש במלאי או רוצה לקנות, כדי שהמערכת תבדוק מול היבואן. ריק אם אין" },
+    lead_type: { type: "STRING", enum: ["pro", "end", "unknown"], description: "pro = איש מקצוע שקונה ציוד ומתקין בעצמו; end = לקוח קצה שצריך פתרון והתקנה; unknown כשעוד לא ברור" },
+    install: { type: "STRING", enum: ["self", "needs", "unknown"], description: "self = יש לו מי שיתקין או מתקין לבד; needs = צריך התקנה מאיתנו; unknown" },
   },
-  required: ["reply", "products", "escalate", "lead_name", "lead_phone", "lead_summary", "intent", "stock_check"],
+  required: ["reply", "products", "escalate", "lead_name", "lead_phone", "lead_summary", "intent", "stock_check", "lead_type", "install"],
 };
 
 const VERIFY_SYSTEM = `אתה הבודק של ${ASSISTANT_NAME}, עוזר המכירות של Site-Control. ${ASSISTANT_NAME} ניסח תשובה ללקוח והיא עוד לא נשלחה. התפקיד שלך: לוודא שכל עובדה בתשובה נכונה ומבוססת, ולתקן מה שלא, לפני שהלקוח רואה אותה. רותם, בעל העסק (16.10.2026): "שיבדוק את הדברים, שלא סתם יוציא את המידע".
@@ -70,7 +85,7 @@ const VERIFY_SYSTEM = `אתה הבודק של ${ASSISTANT_NAME}, עוזר המכ
 - מלאי: "יש במלאי" רק אם בהקשר יש תוצאת בדיקת מלאי, או שבשיחה כבר נכתב "בדקנו מול היבואן" על אותו מוצר.
 - משלוח: הערכות בלבד, ורק לפי הרשימה. יישוב שלא ברשימת הדוגמאות לא מסמנים לבד כ"מרוחק"; אומרים שהצוות יבדוק.
 - מדיניות: אין לינק תשלום, לא נוקבים סכום סופי, לא ממציאים מבצע, לא ממליצים על מוצר שלא בקטלוג. זמן אספקה או מחיר שכתובים בתוצאת בדיקת המלאי שבהקשר או בשורה של "[רותם מהטלפון]" מותר להעביר כלשונם ("יש במלאי ואספקה מיידית"); מעבר לזה לא מבטיחים. "רותם ישלח את הסכום המדויק עם החשבונית" ו"עידן מהיבואן יתקשר לחיוב באשראי" הם הנוסחים הנכונים לפי ההנחיות, לא טעות.
-- התקנה (missing): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית), אם מהשיחה עדיין לא ברור אם הלקוח מתקין לבד או רוצה מתקין מטעמנו, ו-${ASSISTANT_NAME} לא שאל, מוסיפים בסוף שאלה קצרה אחת: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?". רק כשהטיוטה עצמה כבר מדברת על מלאי שאושר, משלוח, איסוף, תשלום או פרטי הזמנה (שלב המכירה). לא כשהטיוטה כבר מסתיימת בשאלת בירור אחרת (שאלה אחת בכל הודעה), לא כשהלקוח כבר ענה, לא בפולואפ יזום, לא אחרי שהלקוח כתב ששילם או סגר, לא בערוץ המייל, ולא במוצר שמתקינים לבד (מצלמת Wi-Fi, מצלמת סוללה, מצלמת 4G/סולארית; לאתרי בנייה חל כלל 7). בתיקון מסוג missing השדה escalate נשאר ריק.
+- אפיון הליד (missing), כלל 12: רותם רוצה להבין קודם כל אם מולנו איש מקצוע שקונה ציוד, או לקוח קצה שצריך גם התקנה. בשתי התשובות הראשונות של ${ASSISTANT_NAME} בשיחה, אם מהשיחה ומהטיוטה עדיין לא ברור מי הלקוח ואם יש לו מי שיתקין (אפיון בטיוטה: unknown), ואין בטיוטה שום שאלת בירור, מוסיפים בסוף שאלה אחת: "יש לך מי שיתקין, או שתרצה שנטפל גם בהתקנה?". לא כשיש כבר שאלת בירור אחרת (שאלה אחת בכל הודעה), לא כשהלקוח כבר ענה או שברור מי הוא (דגמים וכמויות = איש מקצוע), לא בפולואפ יזום, לא אחרי שהלקוח כתב ששילם או סגר, לא בערוץ המייל, ולא למצלמת Wi-Fi, סוללה או 4G/סולארית (לאתרי בנייה חל כלל 7). אם הטיוטה מסבירה למתקין מקצועי דברים בסיסיים, או שואלת לקוח קצה שאלות טכניות שהוא לא יכול לענות עליהן, מקצרים ומתאימים (policy). בתיקון מסוג missing השדה escalate נשאר ריק.
 - סגנון בודקים רק אם התשובה סותרת הנחיה מפורשת (markdown, אימוג'י, אורך, הצגה עצמית כפולה). שורת ההצגה הראשונה בווצאפ ("היי, כאן טל, העוזר הדיגיטלי של Site-Control 👋") היא לפי הנחיה מפורשת ונשארת מילה במילה, כולל ה-👋.
 - שורה בשיחה שמתחילה ב-"[רותם מהטלפון]" היא של רותם עצמו, לא של ${ASSISTANT_NAME}: מחיר, הנחה או הבטחה שכתובים שם מחייבים, ולא מתקנים אותם.
 
@@ -109,7 +124,7 @@ export async function verifyReply(apiKey: string, o: { system: string; context: 
   if (timeoutMs < 5_000) return { ok: true, verified: false, changed: false, reply: o.draft.reply, escalate: "", issues: [], model, ms: 0, error: "no time budget" };
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const transcript = o.messages.map((m) => `${m.role === "user" ? "לקוח" : ASSISTANT_NAME}: ${m.content}`).join("\n\n");
-  const user = `# השיחה עד עכשיו\n${transcript}\n\n# ההקשר הנוכחי\n${o.context}\n\n${o.facts ? `${o.facts}\n\n` : ""}# הטיוטה של ${ASSISTANT_NAME} (עוד לא נשלחה)\n${o.draft.reply}\n${o.draft.escalate ? `escalate: ${o.draft.escalate}\n` : ""}${o.draft.products.length ? `products: ${o.draft.products.join(", ")}\n` : ""}\nבדוק והחזר JSON.`;
+  const user = `# השיחה עד עכשיו\n${transcript}\n\n# ההקשר הנוכחי\n${o.context}\n\n${o.facts ? `${o.facts}\n\n` : ""}# הטיוטה של ${ASSISTANT_NAME} (עוד לא נשלחה)\n${o.draft.reply}\n${o.draft.escalate ? `escalate: ${o.draft.escalate}\n` : ""}${o.draft.products.length ? `products: ${o.draft.products.join(", ")}\n` : ""}אפיון בטיוטה: lead_type=${o.draft.lead_type}, install=${o.draft.install}. ${o.messages.filter((m) => m.role === "assistant").length < 2 ? "זו אחת משתי התשובות הראשונות של " + ASSISTANT_NAME + " בשיחה." : ""}\nבדוק והחזר JSON.`;
   const body = {
     systemInstruction: { parts: [{ text: `${VERIFY_SYSTEM}\n${CHANNEL_GUIDE[o.channel || "whatsapp"]}\n\n# ההנחיות והידע של ${ASSISTANT_NAME} (לבדיקה מולם)\n${o.system}` }] },
     contents: [{ role: "user", parts: [{ text: user }] }],
@@ -172,10 +187,12 @@ export async function askGemini(apiKey: string, system: string, messages: Msg[])
       reply: String(o.reply || ""), products: Array.isArray(o.products) ? o.products.map(String) : [],
       escalate: String(o.escalate || ""), lead_name: String(o.lead_name || ""), lead_phone: String(o.lead_phone || ""), lead_summary: String(o.lead_summary || ""),
       intent: String(o.intent || "browse"), stock_check: String(o.stock_check || ""),
+      lead_type: (["pro", "end"].includes(String(o.lead_type)) ? o.lead_type : "unknown") as LeadType,
+      install: (["self", "needs"].includes(String(o.install)) ? o.install : "unknown") as InstallNeed,
     };
   } catch {
     const m = text.match(/"reply"\s*:\s*"((?:[^"\\]|\\.)*)/);
-    return { reply: m ? m[1].replace(/\\n/g, "\n").replace(/\\"/g, '"') : "סליחה, לא הצלחתי לנסח תשובה. אפשר לנסח את השאלה קצת אחרת?", products: [], escalate: "", lead_name: "", lead_phone: "", lead_summary: "", intent: "browse", stock_check: "" };
+    return { reply: m ? m[1].replace(/\\n/g, "\n").replace(/\\"/g, '"') : "סליחה, לא הצלחתי לנסח תשובה. אפשר לנסח את השאלה קצת אחרת?", products: [], escalate: "", lead_name: "", lead_phone: "", lead_summary: "", intent: "browse", stock_check: "", lead_type: "unknown", install: "unknown" };
   }
 }
 

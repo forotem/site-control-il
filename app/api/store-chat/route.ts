@@ -5,7 +5,7 @@ import { productBySlug, productFacts, productsMentioned } from "../../data/store
 import { productName } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
-import { ASSISTANT_NAME, SYSTEM, askGemini, verifyReply, type Msg } from "../../lib/tal";
+import { ASSISTANT_NAME, SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../lib/tal";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
       tasks.push(notifyTeam("שאלה מהצ'אט בחנות שצריך תשובה מהצוות", `שאלה: ${data.escalate}\n${body.page ? `דף: /store/${body.page}\n` : ""}${leadCaptured ? `לקוח: ${data.lead_name || "-"} ${data.lead_phone}\n` : "הלקוח עדיין לא השאיר טלפון.\n"}\nשיחה:\n${transcript}`));
     }
     if (leadCaptured) {
-      tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
+      tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nאפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
     }
     if (tasks.length) await Promise.allSettled(tasks);
 

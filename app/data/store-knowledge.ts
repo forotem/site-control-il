@@ -53,7 +53,7 @@ export function buildKnowledge(): string {
     `אחריות: ${WARRANTY_TEXT}.`,
     "מדיניות מחיר: המטרה שלנו להיות הזולים בישראל לאותו דגם, בכמה שקלים מתחת לזול ביותר (לא בהנחות של אחוזים). אם לקוח אומר שמצא זול יותר באתר ישראלי, בקש קישור, אמור שנשווה את המחיר, וסמן escalate כדי שרותם יאשר. אל תבטיח בעצמך מחיר נמוך מזה שבקטלוג.",
     `אספקה: ${deliveryOptions.map((d) => `${d.title} (${d.desc})`).join("; ")}.`,
-    `משלוח: ${BUSINESS.shipping.rule} אף מחיר באתר לא כולל משלוח, גם לא מחירי מבצע. כשלקוח שואל כמה עולה משלוח: לא נוקבים מחיר מחייב. אומרים שהמחיר נקבע לפי הכתובת והמשקל, מבקשים יישוב או כתובת, ומוסרים שהצוות יחזור עם מחיר מדויק.${BUSINESS.shipping.estimates.length ? ` אפשר לתת הערכה בלבד, ולהדגיש שזו הערכה: ${BUSINESS.shipping.estimates.map((e) => `${e.what}: ${e.price}`).join("; ")}.` : ""} איסוף עצמי ללא עלות, בתיאום מראש. פרטים: /shipping.`,
+    `משלוח: ${BUSINESS.shipping.rule} אף מחיר באתר לא כולל משלוח, גם לא מחירי מבצע. כשלקוח שואל כמה עולה משלוח: לא נוקבים מחיר מחייב. אומרים שהמחיר נקבע לפי הכתובת והמשקל, מבקשים יישוב או כתובת, ומוסרים שהצוות יחזור עם מחיר מדויק.${BUSINESS.shipping.estimates.length ? ` אפשר לתת הערכה בלבד, ולהדגיש שזו הערכה: ${BUSINESS.shipping.estimates.map((e) => `${e.what}: ${e.price}`).join("; ")}.` : ""} "יישוב מרוחק" הוא רק מה שברשימת הדוגמאות; יישוב אחר לא מסמנים לבד כמרוחק, אומרים שהצוות יבדוק את התוספת. איסוף עצמי ללא עלות, בתיאום מראש. פרטים: /shipping.`,
     `החזרות וביטולים: ${BUSINESS.returns.summary} ${BUSINESS.returns.feeRule}. ${BUSINESS.returns.returnShipping} ${BUSINESS.returns.defective} פרטים: /returns.`,
     "מלאי: המוצרים מגיעים ציוד מיבואן בישראל. לפני חיוב מאשרים זמינות ומועד אספקה בווצאפ, כך שאף אחד לא משלם על מוצר שאין במלאי.",
     "מחירים: כוללים מע\"מ, לא כוללים משלוח, לא כוללים התקנה ולא כוללים דיסק קשיח למקליטים.",
@@ -116,3 +116,26 @@ export function buildKnowledge(): string {
 
 export const STORE_KNOWLEDGE = buildKnowledge();
 export const productBySlug = (slug: string) => storeProducts.find((p) => p.slug === slug);
+
+type Product = (typeof storeProducts)[number];
+const modelKeys = (p: Product): string[] => {
+  const full = p.model.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+  const first = full.split(" ")[0] || "";
+  return [full, first].filter((k, i) => k.length >= (i ? 7 : 5));
+};
+/** המוצרים שמוזכרים בטקסט של שיחה: קישור /store/<slug>, [slug] או שם הדגם (DS-KV6124-WBE1, Argus 3 Ultra). האחרון שהוזכר ראשון. */
+export function productsMentioned(text: string, max = 4): Product[] {
+  const t = text.toLowerCase();
+  const pos = (p: Product) => Math.max(t.lastIndexOf(`/store/${p.slug}`), t.lastIndexOf(`[${p.slug}]`), ...modelKeys(p).map((k) => t.lastIndexOf(k)));
+  return storeProducts.map((p) => ({ p, at: pos(p) })).filter((x) => x.at >= 0).sort((a, b) => b.at - a.at).slice(0, max).map((x) => x.p);
+}
+/** עובדות מאומתות על המוצרים שבשיחה: כל המפרט מדף המוצר (לפי היצרן). הקטלוג שטל מקבל מקוצר לשתי נקודות למוצר, ולכן
+ *  16.10.2026 טל כתב ללקוחה שפנל DS-KV6124-WBE1 "לא מקליט בעצמו" כשהדאטהשיט אומר הפוך. המפרט המלא נכנס להקשר רק למוצרים
+ *  שבשיחה, וגם הבודק (verifyReply) בודק מולו. */
+export function productFacts(products: Product[]): string {
+  if (!products.length) return "";
+  const lines = products.map((p) => `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""}, ${p.price ? `${p.price} ₪` : "מחיר לפי פנייה"}${p.datasheet ? " (יש דאטהשיט של היצרן בדף המוצר)" : ""}. מפרט: ${p.specs.join("; ")}`);
+  return `# עובדות מאומתות על המוצרים שבשיחה (מדף המוצר באתר, לפי היצרן)
+${lines.join("\n")}
+על יכולת טכנית של דגם שלא כתובה כאן (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) לא עונים מהראש ולא מסיקים מהסוג הכללי של המוצר: אומרים בכנות "אני לא בטוח, אבדוק ואחזור", וכותבים את השאלה בשדה escalate.`;
+}

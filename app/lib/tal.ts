@@ -4,10 +4,16 @@ import { STORE_KNOWLEDGE } from "../data/store-knowledge";
 import { SITE_OFFER } from "../data/site-offer";
 
 export const MODEL = process.env.STORE_CHAT_MODEL || "gemini-2.5-flash";
+/** הבודק (רותם 16.10.2026: "לחבר אותו לאיזשהו מודל חכם לפני, שיבדוק את הדברים, שלא סתם יוציא את המידע"): מודל חזק יותר
+ *  שבודק כל עובדה בטיוטה של טל מול המפרט, הקטלוג וההקשר, ומתקן לפני השליחה. */
+export const VERIFY_MODEL = process.env.STORE_VERIFY_MODEL || "gemini-2.5-pro";
 export const ASSISTANT_NAME = "טל";
 
 export type Msg = { role: "user" | "assistant"; content: string };
 export type Out = { reply: string; products: string[]; escalate: string; lead_name: string; lead_phone: string; lead_summary: string; intent: string; stock_check: string };
+export type Issue = { kind: "fact" | "policy" | "missing" | "style"; what: string; fix: string };
+/** תוצאת הבודק. ok = הטיוטה יצאה כמו שהיא. reply = הטקסט הסופי ללקוח (מתוקן או מקורי). error = הבודק נכשל והטיוטה יצאה בלי בדיקה. */
+export type Verdict = { ok: boolean; reply: string; escalate: string; issues: Issue[]; model: string; ms: number; error?: string };
 
 export const SYSTEM = `אתה ${ASSISTANT_NAME}, עוזר מכירות דיגיטלי (AI) בחנות של Site-Control, חברת התקנות ישראלית שמוכרת מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. אתה מדבר עברית פשוטה וחמה, כמו מתקין מנוסה שמסביר ללקוח, בלי ז'רגון מיותר ובלי לחץ מכירתי.
 
@@ -48,6 +54,81 @@ const responseSchema = {
   },
   required: ["reply", "products", "escalate", "lead_name", "lead_phone", "lead_summary", "intent", "stock_check"],
 };
+
+const VERIFY_SYSTEM = `אתה הבודק של ${ASSISTANT_NAME}, עוזר המכירות של Site-Control. ${ASSISTANT_NAME} ניסח תשובה ללקוח והיא עוד לא נשלחה. התפקיד שלך: לוודא שכל עובדה בתשובה נכונה ומבוססת, ולתקן מה שלא, לפני שהלקוח רואה אותה. רותם, בעל העסק (16.10.2026): "שיבדוק את הדברים, שלא סתם יוציא את המידע".
+
+מקורות האמת, לפי סדר עדיפות:
+1. "עובדות מאומתות על המוצרים שבשיחה" (מפרט היצרן), כשיש.
+2. ההנחיות, הקטלוג והמדיניות של ${ASSISTANT_NAME} (למטה).
+3. "ההקשר הנוכחי" של השיחה (תוצאת בדיקת מלאי, שעות, מה רותם כתב).
+מה שלא נמצא באף אחד מהם הוא לא ידוע, גם אם הוא נשמע הגיוני לסוג המוצר. במיוחד יכולת טכנית של דגם מסוים: האם מקליט ולאן, כרטיס זיכרון, Wi-Fi, PoE, הספק, תאימות, מה כלול באריזה. במקרה כזה התשובה המתוקנת אומרת בכנות "אני לא בטוח, אבדוק ואחזור אליך", והשאלה המדויקת נכנסת ל-escalate.
+
+מה בודקים:
+- עובדות על מוצרים, מול המפרט המאומת. סתירה או המצאה = fact.
+- מחירים: רק כפי שכתובים בקטלוג לאותו מוצר בדיוק. מחיר שרותם כתב בשיחה גובר.
+- מלאי: "יש במלאי" רק אם בהקשר יש תוצאת בדיקת מלאי, או שבשיחה כבר נכתב "בדקנו מול היבואן" על אותו מוצר.
+- משלוח: הערכות בלבד, ורק לפי הרשימה. יישוב שלא ברשימת הדוגמאות לא מסמנים לבד כ"מרוחק"; אומרים שהצוות יבדוק.
+- מדיניות: אין לינק תשלום, לא נוקבים סכום סופי, לא מבטיחים זמן אספקה, לא ממציאים מבצע, לא ממליצים על מוצר שלא בקטלוג.
+- התקנה (missing): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית), אם מהשיחה עדיין לא ברור אם הלקוח מתקין לבד או רוצה מתקין מטעמנו, ו-${ASSISTANT_NAME} לא שאל, מוסיפים בסוף שאלה קצרה אחת: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?". לא כשהלקוח כבר ענה, ולא במוצר שמתקינים לבד (מצלמת Wi-Fi, מצלמת סוללה).
+- סגנון בודקים רק אם התשובה סותרת הנחיה מפורשת (markdown, אימוג'י, אורך, הצגה עצמית כפולה).
+
+איך מתקנים:
+- שינוי מינימלי. שומרים על הקול, האורך והמבנה של ${ASSISTANT_NAME}: עברית פשוטה, שורות קצרות, בלי markdown ובלי אימוג'י.
+- לא מוסיפים המלצות על מוצרים חדשים ולא קישורים.
+- תשובה נכונה מחזירים בדיוק כמו שהיא, עם ok=true ו-issues ריק.
+
+פלט JSON: ok (true אם לא היה צריך לשנות כלום), reply (התשובה הסופית ללקוח: המתוקנת, או המקורית מילה במילה כשהכול נכון), escalate (שאלה לצוות שנוספה בגלל התיקון, או ריק), issues (רשימה: kind = fact / policy / missing / style, what = מה היה לא נכון, fix = מה שונה).`;
+
+const verifySchema = {
+  type: "OBJECT",
+  properties: {
+    ok: { type: "BOOLEAN" },
+    reply: { type: "STRING" },
+    escalate: { type: "STRING" },
+    issues: { type: "ARRAY", items: { type: "OBJECT", properties: { kind: { type: "STRING", enum: ["fact", "policy", "missing", "style"] }, what: { type: "STRING" }, fix: { type: "STRING" } }, required: ["kind", "what", "fix"] } },
+  },
+  required: ["ok", "reply", "escalate", "issues"],
+};
+
+/** הבודק: מקבל את הטיוטה של טל, את השיחה, ההקשר והעובדות המאומתות, ומחזיר את התשובה הסופית. כשהבודק נכשל (מודל לא
+ *  זמין, timeout) הטיוטה יוצאת כמו שהיא, עם error, כדי שהלקוח לא יישאר בלי מענה. */
+export async function verifyReply(apiKey: string, o: { system: string; context: string; facts: string; messages: Msg[]; draft: Out; timeoutMs?: number }): Promise<Verdict> {
+  const started = Date.now();
+  const model = VERIFY_MODEL;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  const transcript = o.messages.map((m) => `${m.role === "user" ? "לקוח" : ASSISTANT_NAME}: ${m.content}`).join("\n\n");
+  const user = `# השיחה עד עכשיו\n${transcript}\n\n# ההקשר הנוכחי\n${o.context}\n\n${o.facts ? `${o.facts}\n\n` : ""}# הטיוטה של ${ASSISTANT_NAME} (עוד לא נשלחה)\n${o.draft.reply}\n${o.draft.escalate ? `escalate: ${o.draft.escalate}\n` : ""}\nבדוק והחזר JSON.`;
+  const body = {
+    systemInstruction: { parts: [{ text: `${VERIFY_SYSTEM}\n\n# ההנחיות והידע של ${ASSISTANT_NAME} (לבדיקה מולם)\n${o.system}` }] },
+    contents: [{ role: "user", parts: [{ text: user }] }],
+    generationConfig: {
+      temperature: 0.1,
+      maxOutputTokens: 4000,
+      responseMimeType: "application/json",
+      responseSchema: verifySchema,
+      ...(model.startsWith("gemini-2.5") ? { thinkingConfig: { thinkingBudget: 1024 } } : {}),
+    },
+  };
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), o.timeoutMs ?? 25_000);
+  try {
+    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey }, body: JSON.stringify(body), signal: ctl.signal });
+    if (!res.ok) throw new Error(`${model} ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const json = await res.json();
+    const text: string = json?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("") || "";
+    const v = JSON.parse(text);
+    const issues: Issue[] = (Array.isArray(v.issues) ? v.issues : [])
+      .filter((i: Partial<Issue>) => i && typeof i.what === "string")
+      .map((i: Partial<Issue>) => ({ kind: (["fact", "policy", "missing", "style"].includes(String(i.kind)) ? i.kind : "fact") as Issue["kind"], what: String(i.what).slice(0, 300), fix: String(i.fix || "").slice(0, 300) }));
+    const reply = String(v.reply || "").trim();
+    const changed = Boolean(reply) && reply !== o.draft.reply.trim();
+    return { ok: !changed, reply: changed ? reply : o.draft.reply, escalate: changed ? String(v.escalate || "").trim() : "", issues: changed ? issues : [], model, ms: Date.now() - started };
+  } catch (e) {
+    return { ok: true, reply: o.draft.reply, escalate: "", issues: [], model, ms: Date.now() - started, error: e instanceof Error ? e.message : String(e) };
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export async function askGemini(apiKey: string, system: string, messages: Msg[]): Promise<Out> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;

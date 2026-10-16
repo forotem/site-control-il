@@ -1,11 +1,11 @@
 // עוזר המכירות של החנות: Gemini (REST) עם בסיס ידע מהקטלוג. מחזיר תשובה + מוצרים להצגה,
 // ומעביר לצוות (ווצאפ/מייל) שאלות שאין עליהן תשובה ולידים שהשאירו טלפון.
 import { NextRequest, NextResponse } from "next/server";
-import { productBySlug } from "../../data/store-knowledge";
+import { productBySlug, productFacts, productsMentioned } from "../../data/store-knowledge";
 import { productName } from "../../data/store-catalog";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
-import { ASSISTANT_NAME, SYSTEM, askGemini, type Msg } from "../../lib/tal";
+import { ASSISTANT_NAME, SYSTEM, askGemini, verifyReply, type Msg } from "../../lib/tal";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -44,10 +44,22 @@ export async function POST(req: NextRequest) {
     const lines = body.cart.map((c) => { const p = productBySlug(c.slug); return p ? `${c.qty} x ${p.model} (${p.price ? p.price * c.qty + " ₪" : "לפי פנייה"})` : null; }).filter(Boolean);
     if (lines.length) ctx.push(`בעגלה של הלקוח: ${lines.join(", ")}.`);
   }
-  const system = SYSTEM + (ctx.length ? `\n\n# הקשר נוכחי\n${ctx.join("\n")}` : "");
+  // המפרט המלא של המוצרים שבשיחה (דף נוכחי, עגלה, דגמים שהוזכרו), כמו בווצאפ (16.10.2026)
+  const inPlay = [body.page ? productBySlug(body.page) : undefined, ...(body.cart || []).map((c) => productBySlug(c.slug)), ...productsMentioned(messages.map((m) => m.content).join("\n"))]
+    .filter((p, i, arr) => p && arr.findIndex((q) => q?.slug === p.slug) === i)
+    .slice(0, 4) as NonNullable<ReturnType<typeof productBySlug>>[];
+  const facts = productFacts(inPlay);
+  const system = SYSTEM + (ctx.length ? `\n\n# הקשר נוכחי\n${ctx.join("\n")}` : "") + (facts ? `\n\n${facts}` : "");
 
   try {
     const data = await askGemini(apiKey, system, messages);
+    // הבודק (רותם 16.10.2026). בצ'אט באתר הלקוח מחכה, לכן timeout קצר יותר; כשנגמר, הטיוטה יוצאת כמו שהיא.
+    const check = await verifyReply(apiKey, { system: SYSTEM, context: ctx.join("\n"), facts, messages, draft: data, timeoutMs: 15_000 });
+    if (!check.ok) {
+      data.reply = check.reply;
+      if (check.escalate && !data.escalate.includes(check.escalate)) data.escalate = [data.escalate, check.escalate].filter(Boolean).join(" | ");
+    }
+    console.log("store chat verify", JSON.stringify({ ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
 
     const products = data.products
       .map((s) => productBySlug(s.trim().replace(/^\[|\]$/g, "")))

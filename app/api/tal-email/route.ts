@@ -3,7 +3,8 @@
 // של השרשור, מקבל נושא וגוף, ושולח דרך Gmail API (gmail.js) כתשובה באותו שרשור. מוגן במפתח admin.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { SYSTEM, askGemini, type Msg } from "../../lib/tal";
+import { SYSTEM, askGemini, verifyReply, type Msg } from "../../lib/tal";
+import { productFacts, productsMentioned } from "../../data/store-knowledge";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -42,8 +43,13 @@ export async function POST(req: NextRequest) {
   };
   const ctx = [`${steps[b.step ?? 1] || steps[1]}`, b.name ? `שם הלקוח: ${b.name}.` : "", b.note ? `מה שהוצע: ${String(b.note).slice(0, 400)}.` : "", "אם ההודעה האחרונה בתמליל היא של הלקוח (ולא שלנו), כתוב תשובה עניינית להודעה שלו במקום פולואפ."].filter(Boolean);
   if (transcript[transcript.length - 1].role !== "user") transcript.push({ role: "user", content: "(הלקוח לא ענה מאז המייל האחרון שלנו)" });
+  // המפרט המלא של הדגמים שהוזכרו בשרשור, והבודק לפני השליחה (16.10.2026), כמו בווצאפ ובצ'אט באתר
+  const facts = productFacts(productsMentioned(transcript.map((m) => m.content).join("\n")));
   try {
-    const data = await askGemini(apiKey, `${SYSTEM}${EMAIL_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}`, transcript);
+    const data = await askGemini(apiKey, `${SYSTEM}${EMAIL_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}${facts ? `\n\n${facts}` : ""}`, transcript);
+    const check = await verifyReply(apiKey, { system: `${SYSTEM}${EMAIL_RULES}`, context: ctx.join("\n"), facts, messages: transcript, draft: data, timeoutMs: 20_000 });
+    if (!check.ok) data.reply = check.reply;
+    console.log("tal-email verify", JSON.stringify({ ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
     const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").trim();
     return NextResponse.json({ subject: (data.lead_summary || "בהמשך להצעת המחיר").slice(0, 120), body, intent: data.intent });
   } catch (e) {

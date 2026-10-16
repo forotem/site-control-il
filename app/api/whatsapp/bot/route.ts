@@ -20,9 +20,9 @@ import { createHash, timingSafeEqual } from "crypto";
 import { botToken } from "../../../lib/wa-bot-token";
 import { greenApi, sendWhatsAppId, IDAN_WA, ELI_WA, notifyTeam, SC_GROUP } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
-import { SYSTEM, askGemini, type Msg } from "../../../lib/tal";
+import { SYSTEM, askGemini, verifyReply, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
-import { productBySlug } from "../../../data/store-knowledge";
+import { productBySlug, productFacts, productsMentioned } from "../../../data/store-knowledge";
 import { SITE_OFFER } from "../../../data/site-offer";
 
 export const runtime = "nodejs";
@@ -119,7 +119,9 @@ const WHATSAPP_RULES = `
 - אתה גם מתאם שיחות של רותם. לקוח שרוצה לדבר עם בן אדם, או שהשאלה שלו דורשת את רותם (הנחה, כמות, התקנה, משהו שאתה לא בטוח בו): מציעים שרותם יחזור אליו מהטלפון הזה, ושואלים מתי נוח. אומרים בכנות מתי רותם זמין לפי השעה עכשיו (שעות הפעילות: ${"א'-ה' 08:00-18:00, ו' 08:00-14:00"}). למשל באחת בלילה: "בשעה כזאת רותם עוד לא זמין, בסביבות 9-10 בבוקר הוא כבר יהיה, ואני מוסר לו שיחזור אליך מהטלפון הזה". אחרי שהלקוח אישר: כותבים בשדה escalate "לחזור ל{שם} ב{שעה שביקש}: {מה הוא רוצה}", כדי שרותם יקבל תזכורת.
 - הזמינות של רותם: רק כשההקשר אומר שרותם לא כתב בשיחה הזאת ב-30 הדקות האחרונות אומרים מתי הוא יהיה זמין. אם רותם כתב כאן לאחרונה, הוא כאן: "רותם כאן ויענה לך", בלי "רותם יהיה זמין ב-".
 - לא חוזרים על מה שכבר נאמר בשיחה, ולא שואלים שוב שאלה שהלקוח כבר ענה עליה.
-- כשרותם חוזר לשיחה, הוא כותב מהטלפון בעצמו. אתה לא מתחזה לרותם ולא מדבר בשמו בגוף ראשון.`;
+- כשרותם חוזר לשיחה, הוא כותב מהטלפון בעצמו. אתה לא מתחזה לרותם ולא מדבר בשמו בגוף ראשון.
+- מפרט (16.10.2026): על יכולת טכנית של דגם (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) עונים רק לפי "עובדות מאומתות על המוצרים שבשיחה" שבהקשר. מה שלא כתוב שם: "אני לא בטוח, אבדוק ואחזור אליך", והשאלה בשדה escalate. לא מסיקים מהסוג הכללי של המוצר (טל כתב שפנל אינטרקום "לא מקליט בעצמו", והמפרט אמר הפוך).
+- התקנה (רותם 16.10.2026: "צריך להבין אם היא רוצה בכלל התקנה"): למוצר שדורש התקנה או חיווט (פנל אינטרקום, מסך פנימי, מצלמת IP/PoE, ערכה עם מקליט, מסוף כניסה, קודן, מצלמה אנלוגית) שואלים פעם אחת, לפני שמדברים על משלוח או תשלום: "מתקינים לבד, או שתרצו שמתקין מטעמנו יגיע?" זה משנה את ההצעה. מתקין: שואלים באיזה יישוב, ובשדה escalate כותבים "התקנה: {מוצר}, {יישוב}, {מה צריך}" כדי שרותם ייתן הצעת מחיר להתקנה. לבד: אומרים במשפט מה צריך כדי שזה יעבוד (לפנל אינטרקום: חשמל 12V או PoE בנקודה, מנעול חשמלי בדלת או בשער אם רוצים לפתוח ממנו, ו-Wi-Fi טוב בכניסה) ושאנחנו מלווים בהגדרה מרחוק. לא שואלים שוב אם הלקוח כבר ענה.`;
 
 // הלקוח כתב ששילם או סגר: טל מודה ולא ממשיך למכור (7.10.2026: אחרי "שילמתי כבר" טל המשיך עם "הסכום הסופי")
 const PAID_RE = /שילמתי|שלמתי|שילמנו|שולם|חויבתי|חייבו אותי|חייבת אותי|העברתי (לך|לכם|את ה)|סגרתי|שלחתי ביט|ביט נשלח|הכסף (עבר|נשלח|הועבר)/;
@@ -243,12 +245,25 @@ export async function POST(req: NextRequest) {
   const introduced = msgs.some((m) => m.type === "outgoing" && textOf(m).includes(INTRO_MARK));
   ctx.push(introduced ? "כבר הצגת את עצמך בשיחה הזאת: אל תציג שוב, ואל תתחיל ב\"היי, כאן טל\"." : "עוד לא הצגת את עצמך בשיחה הזאת.");
   if (n.senderData?.senderName) ctx.push(`השם שלו בווצאפ: ${n.senderData.senderName} (אפשר לפנות בשם הפרטי אם נראה כמו שם אמיתי).`);
+  // המוצרים שבשיחה (דף המוצר שממנו פנה, המוצר בבדיקת המלאי, וכל דגם או קישור שהוזכר): המפרט המלא שלהם נכנס להקשר, כי
+  // הקטלוג אצל טל מקוצר (16.10.2026: טל כתב ללקוחה שפנל DS-KV6124-WBE1 "לא מקליט בעצמו", והדאטהשיט אומר הפוך).
+  const inPlay = [fromPage, stockResult?.slug ? productBySlug(stockResult.slug) : undefined, ...productsMentioned(conv.map((m) => m.content).join("\n"))]
+    .filter((p, i, arr) => p && arr.findIndex((q) => q?.slug === p.slug) === i)
+    .slice(0, 4) as NonNullable<typeof fromPage>[];
+  const facts = productFacts(inPlay);
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return NextResponse.json({ ok: false, error: "no gemini key" }, { status: 503 });
 
   let data;
-  try { data = await askGemini(apiKey, `${SYSTEM}${WHATSAPP_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}`, conv); }
+  try { data = await askGemini(apiKey, `${SYSTEM}${WHATSAPP_RULES}\n\n# הקשר נוכחי\n${ctx.join("\n")}${facts ? `\n\n${facts}` : ""}`, conv); }
   catch (e) { console.error("wa bot gemini", e instanceof Error ? e.message : e); return NextResponse.json({ ok: false, error: "gemini" }, { status: 200 }); }
+  // הבודק (רותם 16.10.2026): מודל חזק יותר בודק כל עובדה בטיוטה מול המפרט, הקטלוג וההקשר, ומתקן לפני השליחה.
+  const check = await verifyReply(apiKey, { system: `${SYSTEM}${WHATSAPP_RULES}`, context: ctx.join("\n"), facts, messages: conv, draft: data, timeoutMs: 25_000 });
+  if (!check.ok) {
+    data.reply = check.reply;
+    if (check.escalate && !data.escalate.includes(check.escalate)) data.escalate = [data.escalate, check.escalate].filter(Boolean).join(" | ");
+  }
+  console.log("wa bot verify", JSON.stringify({ phone: localPhone(phone), ok: check.ok, ms: check.ms, model: check.model, error: check.error, issues: check.issues }));
 
   const links = data.products.map((s) => productBySlug(s.trim().replace(/^\[|\]$/g, ""))).filter(Boolean).slice(0, 3)
     .map((p) => `${productName(p!)}${p!.price ? `, ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
@@ -260,7 +275,7 @@ export async function POST(req: NextRequest) {
   const marker = data.intent === "ready" ? READY_MARK : ASK_MARK;
   const newFact = NEW_FACT_RE.test(lastUserText);
   const suppressed = wantAlert && !newFact && (await alertedRecently(phone, marker, nowDate.getTime()));
-  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", ctx });
+  if (dry) return NextResponse.json({ ok: true, dry: true, simulated: Boolean(sim), text, escalate: data.escalate, intent: data.intent, stock_check: data.stock_check, followUp: followUp?.step, alert: wantAlert ? (suppressed ? "suppressed (sent in the last hour)" : "would send") : "none", verify: check, facts, ctx });
   // בקשת בדיקת מלאי: הודעה מסומנת לווצאפ של רותם (לעצמו). הכלי המקומי (stock-check.js) קורא אותה, שואל את עידן
   // בשעות העבודה שלו, ומחזיר את התשובה לכאן עם stockResult. רותם 5.10.2026: "לא להציק לו סתם, רק בשעות עבודה".
   // 7.10.2026: הסימון נשאר בקבוצה הפנימית (SC_GROUP), לא בקבוצת ההזמנות מול הספק. לספק יוצאת רק השאלה המנוסחת
@@ -279,6 +294,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, mode: "dry" });
   }
   const id = await sendWhatsAppId(phone, text);
+  // רותם רואה בקבוצה מה הבודק תיקן (עובדה או מדיניות), וגם כשהבודק נכשל והתשובה יצאה בלי בדיקה
+  const corrections = check.issues.filter((i) => i.kind === "fact" || i.kind === "policy");
+  if (corrections.length) await sendWhatsAppId(SC_GROUP, `🔎 הבודק תיקן את טל (${localPhone(phone)}):\n${corrections.map((i) => `• ${i.what}${i.fix ? ` ← ${i.fix}` : ""}`).join("\n")}`).catch(() => undefined);
+  else if (check.error) await sendWhatsAppId(SC_GROUP, `⚠️ טל ענה ל-${localPhone(phone)} בלי בדיקה של הבודק (${check.error.slice(0, 160)})`).catch(() => undefined);
   if (wantAlert && !suppressed) {
     recentAlerts.set(`${phone}:${marker}`, nowDate.getTime());
     const lastIn = textOf(last).slice(0, 300);

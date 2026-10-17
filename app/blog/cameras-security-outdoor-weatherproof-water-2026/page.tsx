@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const SLUG = 'cameras-security-outdoor-weatherproof-water-2026';
 const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
-const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero-v2.webp`;
 const SEO_TITLE = 'מצלמות אבטחה חיצוניות עמידות למים: IP66, IP67 ו-IK10';
 const SHARE_TITLE = SEO_TITLE;
 const H1 = 'מצלמות אבטחה חיצוניות עמידות למים: מה באמת אומרים IP66, IP67 ו-IK10, ומה חשוב יותר מהדירוג';
@@ -19,7 +19,7 @@ const KEYWORDS = [
 ];
 const PUBLISHED = '2026-01-31';
 const MODIFIED = '2026-10-17';
-const HERO_ALT = 'מצלמות אבטחה חיצוניות על קיר אבן של בית פרטי, עם טיפות מים על גוף המצלמה, בשעת שקיעה';
+const HERO_ALT = 'מצלמת אבטחה חיצונית על קיר בגשם חזק, עם טיפות מים על גוף המצלמה';
 
 export const metadata: Metadata = {
   title: SEO_TITLE,
@@ -321,7 +321,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src={`/blog-images/${SLUG}/hero.webp`}
+            src={`/blog-images/${SLUG}/hero-v2.webp`}
             alt={HERO_ALT}
             width={1200}
             height={593}

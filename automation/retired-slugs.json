@@ -1,5 +1,5 @@
 {
- "note": "סלאגים שאוחדו לפוסטים אחרים - הבוט לא ייצר אותם מחדש | 23.9.2026: נושאי טיימלאפס עברו ל-timelapseit.co.il ולא נכתבים כאן יותר | 2.10.2026: 5 פוסטי \"מצלמות לאתר בנייה\" אוחדו לדף /construction-sites (301)",
+ "note": "סלאגים שאוחדו לפוסטים אחרים - הבוט לא ייצר אותם מחדש | 23.9.2026: נושאי טיימלאפס עברו ל-timelapseit.co.il ולא נכתבים כאן יותר | 2.10.2026: 5 פוסטי \"מצלמות לאתר בנייה\" אוחדו לדף /construction-sites (301) | 17.10.2026: smart-agriculture-monitoring אוחד לפוסט החקלאות (301)",
  "retired": [
   "cameras-monitoring-2026",
   "cameras-projects-2026",
@@ -28,6 +28,7 @@
   "cameras-sites-construction-2026",
   "security-construction-2026",
   "construction-2026",
-  "site-construction-2026"
+  "site-construction-2026",
+  "smart-agriculture-monitoring"
  ]
 }

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const SLUG = 'cameras-security-with-detection-face-2026';
 const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
-const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero-v2.webp`;
 const SEO_TITLE = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות | Site-Control';
 const SHARE_TITLE = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות';
 const H1 = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות, מה צריך כדי שזה יעבוד ומה החוק אומר';
@@ -19,7 +19,7 @@ const KEYWORDS = [
 ];
 const PUBLISHED = '2026-01-27';
 const MODIFIED = '2026-10-17';
-const HERO_ALT = 'מצלמות אבטחה בלובי של בניין משרדים, ומסך שמציג פנים מסומנות בתוכנת ניהול המצלמות';
+const HERO_ALT = 'מסוף בקרת כניסה ליד דלת זכוכית בלובי משרדים, ומצלמת כיפה בתקרה';
 
 export const metadata: Metadata = {
   title: SEO_TITLE,
@@ -273,7 +273,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src={`/blog-images/${SLUG}/hero.webp`}
+            src={`/blog-images/${SLUG}/hero-v2.webp`}
             alt={HERO_ALT}
             width={1200}
             height={593}

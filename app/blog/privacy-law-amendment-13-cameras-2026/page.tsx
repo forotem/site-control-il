@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const SLUG = 'privacy-law-amendment-13-cameras-2026';
 const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
-const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero-v2.webp`;
 const SEO_TITLE = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה | Site-Control';
 const SHARE_TITLE = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה';
 const H1 = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה: מה זה אומר בפועל לבית ולעסק';
@@ -19,7 +19,7 @@ const KEYWORDS = [
 ];
 const PUBLISHED = '2026-01-27';
 const MODIFIED = '2026-10-17';
-const HERO_ALT = 'מצלמת אבטחה על מעקה מרפסת, מסך עם הכיתוב חוק הגנת הפרטיות תיקון 13, ובנייני מגורים ומשרדים בעיר';
+const HERO_ALT = 'מצלמת כיפה מעל דלת הכניסה של בניין מגורים, מכוונת לכניסה ולשביל בלבד';
 
 const GUIDE_13 = 'https://www.gov.il/BlobFolder/reports/guide_tikon13_professional/he/tikun%2013%20_170825.pdf';
 const GUIDE_CAMERAS = 'https://www.gov.il/BlobFolder/legalinfo/surveillance_cameras_guidelines/he/The%20use%20of%20security%20cameras_2025.pdf';
@@ -292,7 +292,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src={`/blog-images/${SLUG}/hero.webp`}
+            src={`/blog-images/${SLUG}/hero-v2.webp`}
             alt={HERO_ALT}
             width={1200}
             height={593}

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 const CANONICAL = 'https://www.site-control-il.com/blog/cameras-security-agriculture-2027';
-const HERO = 'https://www.site-control-il.com/blog-images/cameras-security-agriculture-2027/hero.webp';
+const HERO = 'https://www.site-control-il.com/blog-images/cameras-security-agriculture-2027/hero-v2.webp';
 const SEO_TITLE = 'מצלמות אבטחה לחקלאות: שדה, מטע, לול ומחסן';
 const H1 = 'מצלמות אבטחה לחקלאות: מדריך מעשי לשדה, למטע, ללול ולמחסן הציוד';
 const DESCRIPTION =
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: HERO,
         width: 1200,
         height: 593,
-        alt: 'מצלמת אבטחה על עמוד מתכת מול חממות ושדה ירקות',
+        alt: 'מצלמת אבטחה סולארית על עמוד בקצה מטע, עם טרקטור ומחסן ציוד ברקע',
       },
     ],
   },
@@ -307,8 +307,8 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src="/blog-images/cameras-security-agriculture-2027/hero.webp"
-            alt="מצלמת אבטחה על עמוד מתכת מול חממות ושדה ירקות, ולידה מסך שמציג נתונים מהמערכת"
+            src="/blog-images/cameras-security-agriculture-2027/hero-v2.webp"
+            alt="מצלמת אבטחה סולארית על עמוד בקצה מטע, עם טרקטור ומחסן ציוד ברקע"
             width={1200}
             height={593}
             fetchPriority="high"

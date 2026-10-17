@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 const CANONICAL = 'https://www.site-control-il.com/blog/installation-cameras-security-home-2026';
-const HERO_URL = 'https://www.site-control-il.com/blog-images/installation-cameras-security-home-2026/hero.webp';
+const HERO_URL = 'https://www.site-control-il.com/blog-images/installation-cameras-security-home-2026/hero-v2.webp';
 const SEO_TITLE = 'התקנת מצלמות אבטחה בבית: מדריך מעשי | Site-Control';
 const SHARE_TITLE = 'התקנת מצלמות אבטחה בבית: מדריך מעשי';
 const H1 = 'התקנת מצלמות אבטחה בבית: איך מתכננים, מתקינים ומגדירים נכון';
@@ -16,7 +16,7 @@ const KEYWORDS = [
   'הגדרת אפליקציה למצלמות אבטחה',
   'מתקין מצלמות אבטחה',
 ];
-const HERO_ALT = 'מתקין מרכיב מצלמת אבטחה מסוג כיפה על קיר אבן חיצוני ליד מרפסת';
+const HERO_ALT = 'מתקין על סולם מרכיב מצלמת אבטחה צינור על קיר אבן של בית פרטי, עם הכבל בתוך תעלה';
 const PUBLISHED = '2026-01-27';
 const MODIFIED = '2026-10-17';
 
@@ -305,7 +305,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src="/blog-images/installation-cameras-security-home-2026/hero.webp"
+            src="/blog-images/installation-cameras-security-home-2026/hero-v2.webp"
             alt={HERO_ALT}
             width={1200}
             height={593}

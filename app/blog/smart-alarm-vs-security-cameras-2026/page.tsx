@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const SLUG = 'smart-alarm-vs-security-cameras-2026';
 const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
-const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero-v2.webp`;
 const SEO_TITLE = 'אזעקה או מצלמות אבטחה: מה עדיף לבית ולעסק? | Site-Control';
 const SHARE_TITLE = 'אזעקה או מצלמות אבטחה: מה עדיף לבית ולעסק?';
 const H1 = 'אזעקה או מצלמות אבטחה: מה עדיף לבית ולעסק, ומתי כדאי לשלב את שתיהן';
@@ -19,7 +19,7 @@ const KEYWORDS = [
 ];
 const PUBLISHED = '2026-01-27';
 const MODIFIED = '2026-10-17';
-const HERO_ALT = 'מצלמת אבטחה על קיר בסלון, ליד טאבלט ורכזת של מערכת אבטחה ביתית';
+const HERO_ALT = 'לוח מקשים של אזעקה ליד דלת הכניסה, ומצלמת אבטחה עם זרקור בכניסה לבית';
 
 export const metadata: Metadata = {
   title: SEO_TITLE,
@@ -330,7 +330,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src={`/blog-images/${SLUG}/hero.webp`}
+            src={`/blog-images/${SLUG}/hero-v2.webp`}
             alt={HERO_ALT}
             width={1200}
             height={593}

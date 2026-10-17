@@ -51,7 +51,10 @@ const nextConfig = {
       { source: '/blog/documentation-project-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/photography-timelapse-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/timelapse-marketing-advertising-projects-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
-      { source: '/blog/monitoring-progress-project-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
+      // 17.10.2026 (רותם): השאילתות של הפוסט הזה הן מצלמות אבטחה לבנייה ("מצלמות בנייה" במקום 18), לא טיימלאפס
+      { source: '/blog/monitoring-progress-project-construction-2026', destination: '/construction-sites', permanent: true },
+      // 17.10.2026 (רותם): פוסט חקלאות כפול עם הייפ וטענות לא מבוססות, אוחד לפוסט העוגן
+      { source: '/blog/smart-agriculture-monitoring', destination: '/blog/cameras-security-agriculture-2027', permanent: true },
       { source: '/blog/documentation-construction-legal-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/construction-professional-undefined', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/construction-undefined', destination: 'https://timelapseit.co.il/', permanent: true },

@@ -2215,7 +2215,7 @@ export const storeProducts: StoreProduct[] = [
       "Wi-Fi 802.11 b/g/n 2.4GHz עד 300Mbps עם שתי אנטנות חיצוניות (טווח משופר ב-50%)",
       "אחסון microSD עד 256GB / ענן / NVR (ONVIF); הזנה 12V DC 1A; עמידות IP66; 72x72x175 מ\"מ"
     ],
-    "image": "/store-images/ct3.webp",
+    "image": "/store-images/ct3-v2.webp",
     "datasheet": "https://static.tenda.com.cn/tdeweb/download/CT3/CT3V1.0%20Datasheet.pdf",
     "highlights": [
       "רזולוציה 1080P Full HD (1920x1080), חיישן CMOS 1/2.9\", עדשה קבועה 4mm F1.6, זווית 85.6° אופקי / 93.1° אלכסוני – מצלמת צינור (Bullet), ללא Pan/Tilt",

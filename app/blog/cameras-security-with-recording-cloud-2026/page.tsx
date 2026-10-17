@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 
 const SLUG = 'cameras-security-with-recording-cloud-2026';
 const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
-const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero-v2.webp`;
 const SEO_TITLE = 'מצלמות אבטחה עם הקלטה בענן: איפה לשמור הקלטות | Site-Control';
 const OG_TITLE = 'מצלמות אבטחה עם הקלטה בענן: איפה לשמור הקלטות';
 const H1 = 'מצלמות אבטחה עם הקלטה בענן: ענן, כרטיס זיכרון או מקליט? מדריך לבחירה לבית ולעסק';
 const DESCRIPTION =
   'איפה לשמור הקלטות של מצלמות אבטחה: ענן, כרטיס זיכרון, מקליט NVR או שילוב. יתרונות וחסרונות, מה מציעות Reolink ו-Hikvision וכמה נפח צריך.';
-const HERO_ALT = 'שולחן עבודה עם מצלמות אבטחה ביתיות, מחשב נייד עם מסך ניהול הקלטות בענן וטאבלט שמנגן הקלטה';
+const HERO_ALT = 'מקליט עם דיסק קשיח ליד ראוטר, וטלפון שמציג תמונה ממצלמה בגינה';
 const DATE_PUBLISHED = '2026-01-29';
 const DATE_MODIFIED = '2026-10-17';
 const KEYWORDS = [
@@ -309,7 +309,7 @@ export default function Page() {
             {H1}
           </h1>
           <img
-            src={`/blog-images/${SLUG}/hero.webp`}
+            src={`/blog-images/${SLUG}/hero-v2.webp`}
             alt={HERO_ALT}
             width={1200}
             height={593}

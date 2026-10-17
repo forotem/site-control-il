@@ -1,0 +1,37 @@
+name: Catalog dates - lastmod למפת האתר
+
+# 17.10.2026 (בדיקת SEO): כל שינוי בקטלוג (עריכה ידנית או סשן) מעדכן את app/data/catalog-dates.json,
+# כדי שה-lastmod במפת האתר יהיה התאריך האמיתי שבו המוצר השתנה. price-monitor.yml מריץ את אותו סקריפט בעצמו.
+on:
+  push:
+    branches: [master]
+    paths: ['app/data/store-catalog.ts']
+  workflow_dispatch:
+
+concurrency:
+  group: catalog-dates
+  cancel-in-progress: false
+
+jobs:
+  dates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: עדכון תאריכים
+        run: node automation/catalog-dates.mjs
+      - name: Commit and push
+        run: |
+          git config user.name "Catalog Dates"
+          git config user.email "bot@site-control-il.com"
+          git add app/data/catalog-dates.json
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "catalog-dates: lastmod למוצרים שהשתנו $(date -u +%Y-%m-%d)"
+            git pull --rebase origin master && git push
+          fi

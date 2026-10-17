@@ -232,7 +232,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-K1T502DBFWX-C",
     "sku": null,
-    "title": "מסוף בקרת כניסה ואינטרקום Hikvision DS-K1T502DBFWX-C - טביעת אצבע, כרטיס Mifare/DESFire, קוד, QR, מצלמה ו",
+    "title": "מסוף בקרת כניסה ואינטרקום Hikvision DS-K1T502DBFWX-C - טביעת אצבע, כרטיס Mifare/DESFire, קוד ו-QR, מצלמה ו-SIP",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
     "price": 1150,
@@ -308,14 +308,14 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-K1T323MBFWX-E1",
     "sku": null,
-    "title": "מסוף זיהוי פנים קומפקטי Hikvision DS-K1T323MBFWX-E1 - מסך 2.4\", פנים/טביעת אצבע/כרטיס Mifare/קוד, Wi",
+    "title": "מסוף זיהוי פנים קומפקטי Hikvision DS-K1T323MBFWX-E1 - מסך 2.4\", פנים, טביעת אצבע וכרטיס Mifare, Wi-Fi",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
     "price": 949,
     "specs": [
       "מסוף זיהוי פנים מסדרת Value במארז צר - מסך LCD 2.4\"",
       "עדשה רחבת זווית 2MP, זיהוי פנים מהיר ומדויק (Deep Learning)",
-      "אימות: פנים, טביעת אצבע, כרטיס Mifare, קוד PIN; קיבולת ~1,000 פנים / 3,000 כרטיסים / 3,000 טביעות אצבע",
+      "אימות: פנים, טביעת אצבע וכרטיס Mifare; קיבולת ~1,000 פנים / 3,000 כרטיסים / 3,000 טביעות אצבע",
       "TCP/IP, Wi-Fi, RS-485, Wiegand; ממסר דלת ולחצן יציאה",
       "IP65, מיועד למשרדים, בנייני מגורים ומוסדות חינוך"
     ],
@@ -324,7 +324,7 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "מסוף זיהוי פנים מסדרת Value במארז צר - מסך LCD 2.4\"",
       "עדשה רחבת זווית 2MP, זיהוי פנים מהיר ומדויק (Deep Learning)",
-      "אימות: פנים, טביעת אצבע, כרטיס Mifare, קוד PIN; קיבולת ~1,000 פנים / 3,000 כרטיסים / 3,000 טביעות אצבע"
+      "אימות: פנים, טביעת אצבע וכרטיס Mifare; קיבולת ~1,000 פנים / 3,000 כרטיסים / 3,000 טביעות אצבע"
     ],
     "oldStock": false
   },
@@ -670,7 +670,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC3628LE-ADF28K-WP",
     "sku": null,
-    "title": "מצלמת אבטחה IP טורט 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3628LE",
+    "title": "מצלמת אבטחה IP טורט 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3628LE-ADF28K-WP",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 937,
@@ -696,7 +696,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC2318LE-ADF28KM-WP",
     "sku": null,
-    "title": "מצלמת אבטחה IP צינור 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview IPC2318LE",
+    "title": "מצלמת אבטחה IP צינור 8MP 4K עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview IPC2318LE-ADF28KM-WP",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 535,
@@ -722,7 +722,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC3626LE-ADF28K-WP",
     "sku": null,
-    "title": "מצלמת אבטחה IP טורט 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3626LE",
+    "title": "מצלמת אבטחה IP טורט 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3626LE-ADF28K-WP",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 813,
@@ -748,7 +748,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC2316LE-ADF28KM-WP",
     "sku": null,
-    "title": "מצלמת אבטחה IP צינור 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview OwlView IPC2316LE",
+    "title": "מצלמת אבטחה IP צינור 6MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' מיקרופון מובנה Uniview OwlView IPC2316LE-ADF28KM-WP",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 599,
@@ -774,7 +774,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC3614LB-AF28K-DL2",
     "sku": null,
-    "title": "מצלמת אבטחה IP טורט 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC3614LB",
+    "title": "מצלמת אבטחה IP טורט 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC3614LB-AF28K-DL2",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 259,
@@ -800,7 +800,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC2124LB-AF28K-DL2",
     "sku": null,
-    "title": "מצלמת אבטחה IP צינור 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC2124LB",
+    "title": "מצלמת אבטחה IP צינור 4MP עדשה 2.8 מ\"מ תאורה כפולה IR + לבנה 30 מ' מיקרופון Uniview IPC2124LB-AF28K-DL2",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 259,
@@ -826,7 +826,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC3524LE-ADF28K-WP",
     "sku": null,
-    "title": "מצלמת אבטחה IP כיפה אנטי-ונדלית IK10 4MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3524LE",
+    "title": "מצלמת אבטחה IP כיפה אנטי-ונדלית IK10 4MP עדשה 2.8 מ\"מ תאורה לבנה 30 מ' Uniview OwlView IPC3524LE-ADF28K-WP",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 340,
@@ -852,7 +852,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "IPC3615LE-ADF28K-G",
     "sku": null,
-    "title": "מצלמת אבטחה IP טורט 5MP עדשה 2.8 מ\"מ IR 30 מ' מיקרופון מובנה Uniview IPC3615LE",
+    "title": "מצלמת אבטחה IP טורט 5MP עדשה 2.8 מ\"מ IR 30 מ' מיקרופון מובנה Uniview IPC3615LE-ADF28K-G",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 329,
@@ -878,7 +878,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "NVR302-32B-IQ",
     "sku": null,
-    "title": "מערכת הקלטה NVR 32 ערוצים 4K עד 12MP 2 דיסקים קשיחים AI Uniview NVR302",
+    "title": "מערכת הקלטה NVR 32 ערוצים 4K עד 12MP 2 דיסקים קשיחים AI Uniview NVR302-32B-IQ",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
     "price": 894,
@@ -887,7 +887,7 @@ export const storeProducts: StoreProduct[] = [
       "רוחב פס כניסה 160Mbps / יציאה 128Mbps",
       "2 מפרצי SATA, עד 20TB (10TB לדיסק), ללא דיסק",
       "יציאות HDMI (4K) + VGA",
-      "AI: זיהוי/השוואת פנים, זיהוי רכב, חדירה, מעקב אובייקט, מפת חום, חיפוש חכם",
+      "AI: גילוי פנים (בלי השוואה למאגר), זיהוי רכב, חדירה, מעקב אובייקט, מפת חום, חיפוש חכם",
       "ONVIF, תמיכה במצלמות צד ג', NDAA"
     ],
     "image": "/store-images/nvr302-32b-iq.webp",
@@ -904,7 +904,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "NVR301-08S3",
     "sku": null,
-    "title": "מערכת הקלטה NVR 8 ערוצים 4K עד 8MP דיסק קשיח אחד Uniview NVR301",
+    "title": "מערכת הקלטה NVR 8 ערוצים 4K עד 8MP דיסק קשיח אחד Uniview NVR301-08S3",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
     "price": 456,
@@ -930,7 +930,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "UAC-B125-AF28LM",
     "sku": null,
-    "title": "מצלמת אבטחה אנלוגית צינור 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC",
+    "title": "מצלמת אבטחה אנלוגית צינור 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC-B125-AF28LM",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 109,
@@ -956,7 +956,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "UAC-T125-AF28LM",
     "sku": null,
-    "title": "מצלמת אבטחה אנלוגית טורט 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC",
+    "title": "מצלמת אבטחה אנלוגית טורט 5MP LightHunter עדשה 2.8 מ\"מ IR 40 מ' מיקרופון Uniview UAC-T125-AF28LM",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 139,
@@ -982,7 +982,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "XVR301-04G3",
     "sku": null,
-    "title": "מערכת הקלטה XVR היברידית 4 ערוצים 5MP Lite + 2 IP דיסק אחד Uniview XVR301",
+    "title": "מערכת הקלטה XVR היברידית 4 ערוצים 5MP Lite + 2 IP דיסק אחד Uniview XVR301-04G3",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
     "price": 679,
@@ -1008,7 +1008,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Uniview",
     "model": "XVR301-08G3",
     "sku": null,
-    "title": "מערכת הקלטה XVR היברידית 8 ערוצים 5MP Lite + 4 IP דיסק אחד Uniview XVR301",
+    "title": "מערכת הקלטה XVR היברידית 8 ערוצים 5MP Lite + 4 IP דיסק אחד Uniview XVR301-08G3",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
     "price": 1069,
@@ -1049,9 +1049,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-k-560820.webp",
     "datasheet": "https://heb.telran.co.il/images/VisionNet_K_HEB_Spec_User_Manual_2025_560820.pdf",
     "highlights": [
-      "Square metal anti-vandal housing, IP68 waterproof",
-      "Built-in 125 kHz EM proximity reader (card/tag)",
-      "Up to 2000 users; open by code, card, or card+code"
+      "מארז מתכת מרובע נגד ונדליזם, עמיד במים IP68",
+      "קורא קרבה מובנה 125 kHz EM (כרטיס או תג)",
+      "עד 2,000 משתמשים, פתיחה בקוד, בכרטיס או בכרטיס וקוד"
     ],
     "oldStock": false
   },
@@ -1128,9 +1128,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-dh-hybrid-kit-560171-v2.webp",
     "datasheet": "https://www.telran.co.il/images/560171-one page brochure-Telran.pdf",
     "highlights": [
-      "Hybrid system: 2-wire bus plus IP/Wi-Fi connectivity",
-      "7\" IPS touch monitor (1024x600), metal design, Wi-Fi with mobile app (remote view & door open)",
-      "S4 door station with HD wide-angle camera"
+      "מערכת היברידית: באס 2 גידים עם חיבור IP ו-Wi-Fi",
+      "מסך מגע IPS בגודל 7 אינץ' (1024x600), עיצוב מתכת, Wi-Fi עם אפליקציה לצפייה ולפתיחת דלת מרחוק",
+      "פנל כניסה S4 עם מצלמת HD רחבת זווית"
     ],
     "oldStock": false
   },
@@ -1154,9 +1154,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-2tl-17-560580-v2.webp",
     "datasheet": "https://www.telran.co.il/images/560580DF_URBAN_ENG_User%20Manual_2024.pdf",
     "highlights": [
-      "7\" digital colour LCD, 800x480",
-      "2-wire non-polarised bus, DC 20-28V",
-      "Standby 6.6 mA / working 240 mA"
+      "מסך LCD צבעוני דיגיטלי בגודל 7 אינץ', 800x480",
+      "באס 2 גידים ללא קוטביות, DC 20-28V",
+      "צריכה 6.6mA בהמתנה ו-240mA בפעולה"
     ],
     "oldStock": false
   },
@@ -1180,9 +1180,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-dh-wi-fi-monitor-560975.webp",
     "datasheet": "https://www.telran.co.il/images/560975-one page brochure-Telran.pdf",
     "highlights": [
-      "7\" IPS capacitive touch screen, 1024x600",
-      "Hybrid: 2-wire bus + Wi-Fi/IP, mobile app for remote view and door release",
-      "Exclusive metal-frame design, 131x225x18 mm"
+      "מסך מגע קיבולי IPS בגודל 7 אינץ', 1024x600",
+      "היברידי: באס 2 גידים עם Wi-Fi ו-IP, אפליקציה לצפייה ולפתיחת דלת מרחוק",
+      "עיצוב עם מסגרת מתכת, 131x225x18 מ״מ"
     ],
     "oldStock": false
   },
@@ -1206,9 +1206,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-2tl-821-t5-560892.webp",
     "datasheet": "https://www.telran.co.il/images/560892_ENG_DS_1_2022.pdf",
     "highlights": [
-      "5\" TFT full-glass touch screen with customisable menu",
-      "2-wire building bus, module for 2TL-821 series",
-      "Hebrew/English name list, direct dial by apartment"
+      "מסך מגע TFT בגודל 5 אינץ' עם חזית זכוכית ותפריט מותאם",
+      "מודול לבאס בניין 2 גידים, לסדרת 2TL-821",
+      "רשימת שמות בעברית ובאנגלית, חיוג ישיר לפי מספר דירה"
     ],
     "oldStock": false
   },
@@ -1232,9 +1232,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/visionnet-2tl-607fe-id-s2-560075-v2.webp",
     "datasheet": "https://www.telran.co.il/images/DT-ENG-DT607-V1.pdf",
     "highlights": [
-      "1/2.7\" CMOS colour camera, 170° fisheye lens, auto night illumination",
-      "2 call buttons (up to 4 users), built-in ID card reader",
-      "2-wire non-polarised, DC 24V; standby 25 mA / working 160 mA"
+      "מצלמה צבעונית עם חיישן CMOS בגודל 1/2.7 אינץ', עדשת עין דג 170° ותאורת לילה אוטומטית",
+      "2 לחצני חיוג (עד 4 משתמשים) וקורא כרטיסים מובנה",
+      "2 גידים ללא קוטביות, DC 24V, צריכה 25mA בהמתנה ו-160mA בפעולה"
     ],
     "oldStock": false
   },
@@ -1256,9 +1256,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/rain-roof-for-keypads-560878.webp",
     "datasheet": "https://www.telran.co.il/images/560878_DS_ENG 2021.pdf",
     "highlights": [
-      "ABS plastic rain/sun shield for surface-mounted keypads",
-      "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
-      "Weight 250 g"
+      "גגון פלסטיק ABS נגד גשם ושמש למקלדת בהתקנה על הקיר",
+      "מידות חיצוניות 150x104x90 מ״מ, פנימיות 135x89x84 מ״מ",
+      "משקל 250 גרם"
     ],
     "oldStock": false
   },
@@ -1282,9 +1282,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/reolink-rlk8-820d4-a.webp",
     "datasheet": "https://www.telran.co.il/images/RLK8-820D4-A_Reolink_ENG 2021.pdf",
     "highlights": [
-      "8-channel PoE NVR (8 x 802.3at ports) with 2TB SATA HDD, max 12TB",
-      "4 x RLC-820A 4K 8MP dome cameras, 1/2.49\" CMOS, 4.0 mm lens",
-      "H.265, 3840x2160 @ 25fps, 4-ch synchronous playback"
+      "מקליט PoE ל-8 ערוצים (8 יציאות 802.3at) עם דיסק 2TB, עד 12TB",
+      "4 מצלמות כיפה RLC-820A ברזולוציית 4K (8MP), חיישן 1/2.49 אינץ' ועדשה 4 מ״מ",
+      "דחיסת H.265, ‏3840x2160 ב-25 פריימים לשנייה, ניגון סינכרוני של 4 ערוצים"
     ],
     "oldStock": false
   },
@@ -1334,9 +1334,9 @@ export const storeProducts: StoreProduct[] = [
     "image": "/store-images/reolink-rlk8-410b4-5mp.webp",
     "datasheet": "https://www.telran.co.il/images/RLK8-410B4-5MP_Reolink_ENG_DS_2023_2.pdf",
     "highlights": [
-      "8-channel 4K-capable PoE NVR (RLN8-410) with 2TB HDD",
-      "4 x RLC-510A 5MP (2560x1920) bullet cameras",
-      "IR night vision 30 m (18 LEDs), IP66"
+      "מקליט PoE ל-8 ערוצים (RLN8-410) שתומך ב-4K, עם דיסק 2TB",
+      "4 מצלמות צינור RLC-510A ברזולוציה 5MP (2560x1920)",
+      "ראיית לילה IR עד 30 מ׳ (18 נוריות), עמידות IP66"
     ],
     "oldStock": false
   },
@@ -1350,20 +1350,20 @@ export const storeProducts: StoreProduct[] = [
     "categoryName": "ערכות מצלמות מוכנות",
     "price": 3585,
     "specs": [
-      "8-channel PoE NVR with 2TB HDD",
-      "4 x RLC-1224A 12MP (4512x2512) dome cameras, 2.8 mm lens",
-      "Also available with 4 mm lenses (RLK8-1200D4-A(4MM)): narrower view, sees farther",
-      "Full-colour night vision with spotlights + 30 m IR",
-      "Person/vehicle/pet detection, two-way audio",
-      "IP67, PoE, 4 x 18 m cables, HDMI, mouse",
-      "Hebrew firmware"
+      "מקליט PoE ל-8 ערוצים עם דיסק 2TB",
+      "4 מצלמות כיפה RLC-1224A ברזולוציה 12MP (4512x2512), עדשה 2.8 מ״מ",
+      "קיימת גם בעדשות 4 מ״מ (RLK8-1200D4-A(4MM)): זווית צרה יותר, רואה רחוק יותר",
+      "ראיית לילה בצבע עם זרקורים, ואינפרא-אדום עד 30 מ׳",
+      "זיהוי אדם, רכב וחיית מחמד, אודיו דו-כיווני",
+      "עמידות IP67, PoE, 4 כבלים באורך 18 מ׳, יציאת HDMI ועכבר",
+      "קושחה בעברית"
     ],
     "image": "/store-images/reolink-rlk8-1200d4-a.webp",
     "datasheet": "https://www.telran.co.il/images/RLK8-1200D4-A(2.8MM)_Reolink_ENG_DS_2023_2.pdf",
     "highlights": [
-      "8-channel PoE NVR with 2TB HDD",
+      "מקליט PoE ל-8 ערוצים עם דיסק 2TB",
       "4 כיפות 12MP בעדשה 2.8 מ״מ (זווית רחבה) או 4 מ״מ (רואה רחוק יותר), מציינים בהזמנה",
-      "Full-colour night vision with spotlights + 30 m IR"
+      "ראיית לילה בצבע עם זרקורים, ואינפרא-אדום עד 30 מ׳"
     ],
     "oldStock": false
   },
@@ -1372,7 +1372,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1343G2-LIU 2.8mm",
     "sku": null,
-    "title": "מצלמת כיפה IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS",
+    "title": "מצלמת כיפה IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1343G2-LIU",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 339,
@@ -1397,7 +1397,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1T47G2-LUF 4mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS",
+    "title": "מצלמת צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS-2CD1T47G2-LUF",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 745,
@@ -1422,7 +1422,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD2043G2-IU 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP AcuSense עם מיקרופון IR 40 מ' DS",
+    "title": "מצלמת צינור IP Hikvision 4MP AcuSense עם מיקרופון IR 40 מ' DS-2CD2043G2-IU",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 569,
@@ -1447,7 +1447,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD2047G2H-LIU/SL 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP ColorVu Hybrid Light עם סטרובוסקופ ורמקול DS",
+    "title": "מצלמת צינור IP Hikvision 4MP ColorVu Hybrid Light עם סטרובוסקופ ורמקול DS-2CD2047G2H-LIU/SL",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 835,
@@ -1472,7 +1472,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1047G2-LUF 2.8mm",
     "sku": null,
-    "title": "מצלמת מיני צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS",
+    "title": "מצלמת מיני צינור IP Hikvision 4MP ColorVu צבע 24/7 עם מיקרופון DS-2CD1047G2-LUF",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 539,
@@ -1497,7 +1497,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1043G2-LIU 2.8mm",
     "sku": null,
-    "title": "מצלמת מיני צינור IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS",
+    "title": "מצלמת מיני צינור IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1043G2-LIU",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 339,
@@ -1522,7 +1522,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1643G2-LIZU 2.8-12mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP ווריפוקל ממונע 2.8-12mm Smart Hybrid Light עם מיקרופון DS",
+    "title": "מצלמת צינור IP Hikvision 4MP ווריפוקל ממונע 2.8-12mm Smart Hybrid Light עם מיקרופון DS-2CD1643G2-LIZU",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 699,
@@ -1547,7 +1547,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD2T43G2-4LI2U 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP AcuSense Smart Hybrid Light IR 80 מ' אודיו דו-כיווני DS",
+    "title": "מצלמת צינור IP Hikvision 4MP AcuSense Smart Hybrid Light IR 80 מ' אודיו דו-כיווני DS-2CD2T43G2-4LI2U",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 629,
@@ -1808,7 +1808,7 @@ export const storeProducts: StoreProduct[] = [
       "Smart Hybrid Light: אור לבן ColorVu 3.0 + אינפרא-אדום, טווח עד 60 מ' (IR) / 40 מ' (אור לבן)",
       "אודיו 2.0: 2 מיקרופונים + רמקול מובנה, אור מהבהב (Strobe) ואזעקה קולית, Live-Guard",
       "AcuSense 3.0 + HikAI-ISP: סיווג אדם/רכב, תפיסת פנים",
-      "PoE 802.3af / DC 12V, IP67, IK10, NEMA 4X - ציפוי עמיד בקורוזיה (Y), microSD עד 512GB"
+      "PoE 802.3at (Class 4) / DC 12V, IP67, NEMA 4X - ציפוי עמיד בקורוזיה (Y), microSD עד 512GB"
     ],
     "image": "/store-images/ds-2cd2t87g3-lis2uy-sl-2-8mm.webp",
     "datasheet": "https://assets.hikvision.com/prd/public/all/doc/m000144460/DS-2CD2T87G3-LIS2UY_SLRB_Datasheet_20250411.pdf",
@@ -1909,9 +1909,9 @@ export const storeProducts: StoreProduct[] = [
     "specs": [
       "רזולוציה 8MP / 4K (3840×2160), חיישן 1/1.8\" CMOS, צמצם F1.0, WDR 130dB",
       "עדשה קבועה 2.8 מ\"מ (זווית אופקית כ-109°)",
-      "Smart Hybrid Light: אור לבן ColorVu + אינפרא-אדום, טווח עד 60 מ' (IR) / 40 מ' (אור לבן)",
+      "Smart Hybrid Light: אור לבן ColorVu + אינפרא-אדום, טווח תאורה עד 30 מ'",
       "מיקרופון ורמקול מובנים, אור מהבהב (Strobe) + אזעקה קולית, כניסה/יציאת אזעקה ואודיו",
-      "AcuSense: סיווג אדם/רכב, זיהוי פנים; H.265+",
+      "AcuSense: סיווג אדם/רכב, לכידת פנים (Face Capture); H.265+",
       "PoE 802.3af / DC 12V, IP67, microSD עד 512GB"
     ],
     "image": "/store-images/ds-2cd2387g2h-lisu-sl-2-8mm.webp",
@@ -1919,7 +1919,7 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "רזולוציה 8MP / 4K (3840×2160), חיישן 1/1.8\" CMOS, צמצם F1.0, WDR 130dB",
       "עדשה קבועה 2.8 מ\"מ (זווית אופקית כ-109°)",
-      "Smart Hybrid Light: אור לבן ColorVu + אינפרא-אדום, טווח עד 60 מ' (IR) / 40 מ' (אור לבן)"
+      "Smart Hybrid Light: אור לבן ColorVu + אינפרא-אדום, טווח תאורה עד 30 מ'"
     ],
     "oldStock": false
   },
@@ -1928,7 +1928,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "iDS-2CD7A46G2/P-IZHSY 8-32mm",
     "sku": null,
-    "title": "מצלמת LPR לזיהוי לוחיות רישוי Hikvision DeepinView 4MP עדשה ממונעת 8-32 מ\"מ עד 100 מ' iDS",
+    "title": "מצלמת LPR לזיהוי לוחיות רישוי Hikvision DeepinView 4MP עדשה ממונעת 8-32 מ\"מ עד 100 מ' iDS-2CD7A46G2/P-IZHSY",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 3195,
@@ -1954,7 +1954,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE10KF0T-LPFS 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS",
+    "title": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS-2CE10KF0T-LPFS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 209,
@@ -1979,7 +1979,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE10KF0T-FS 3.6mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 3K ColorVu 3.6mm אור לבן 20 מ' מיקרופון מובנה DS",
+    "title": "מצלמת צינור Hikvision 3K ColorVu 3.6mm אור לבן 20 מ' מיקרופון מובנה DS-2CE10KF0T-FS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 245,
@@ -2004,7 +2004,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE12KF0T-LFS 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS",
+    "title": "מצלמת צינור Hikvision 3K ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS-2CE12KF0T-LFS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 255,
@@ -2029,7 +2029,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE70KF0T-LPFS 2.8mm",
     "sku": null,
-    "title": "מצלמת כיפה טורט Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS",
+    "title": "מצלמת כיפה טורט Hikvision 3K ColorVu Smart Hybrid Light 2.8mm מיקרופון מובנה DS-2CE70KF0T-LPFS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 199,
@@ -2054,7 +2054,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE10DF0T-PFS 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 2MP ColorVu 2.8mm אור לבן 20 מ' מיקרופון מובנה DS",
+    "title": "מצלמת צינור Hikvision 2MP ColorVu 2.8mm אור לבן 20 מ' מיקרופון מובנה DS-2CE10DF0T-PFS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 199,
@@ -2079,7 +2079,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE12UF3T-LS 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 4K 8MP ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS",
+    "title": "מצלמת צינור Hikvision 4K 8MP ColorVu Smart Hybrid Light 40 מ' 2.8mm מיקרופון מובנה DS-2CE12UF3T-LS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 439,
@@ -2104,7 +2104,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE16U1T-ITF 3.6mm",
     "sku": null,
-    "title": "מצלמת צינור Hikvision 4K 8MP EXIR 30 מ' 3.6mm DS",
+    "title": "מצלמת צינור Hikvision 4K 8MP EXIR 30 מ' 3.6mm DS-2CE16U1T-ITF",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 179,
@@ -2129,7 +2129,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CC52H1T-FITS 1.1mm",
     "sku": null,
-    "title": "מצלמת עין דג פנורמית Hikvision 5MP TVI 180° 1.1mm IR מיקרופון מובנה DS",
+    "title": "מצלמת עין דג פנורמית Hikvision 5MP TVI 180° 1.1mm IR מיקרופון מובנה DS-2CC52H1T-FITS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 679,

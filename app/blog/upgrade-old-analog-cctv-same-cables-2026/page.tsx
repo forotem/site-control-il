@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים","description":"רוצים לשדרג את מערכת האבטחה הישנה שלכם לרזולוציה גבוהה ופיצ'רים חכמים? גלו איך אפשר לעשות זאת בקלות בלי להחליף את הכבלים הקיימים, עם פתרונות מתקדמים של Site-Control.","image":"https://www.site-control-il.com/blog-images/upgrade-old-analog-cctv-same-cables-2026/hero.webp","datePublished":"2026-10-12","dateModified":"2026-10-12","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/upgrade-old-analog-cctv-same-cables-2026"},"keywords":"","articleSection":"מדריכי קנייה","url":"https://www.site-control-il.com/blog/upgrade-old-analog-cctv-same-cables-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים","description":"רוצים לשדרג את מערכת האבטחה הישנה שלכם לרזולוציה גבוהה ופיצ'רים חכמים? גלו איך אפשר לעשות זאת בקלות בלי להחליף את הכבלים הקיימים, עם פתרונות מתקדמים של Site-Control.","image":"https://www.site-control-il.com/blog-images/upgrade-old-analog-cctv-same-cables-2026/hero.webp","datePublished":"2026-10-12","dateModified":"2026-10-12","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/upgrade-old-analog-cctv-same-cables-2026"},"keywords":"","articleSection":"מדריכי קנייה","url":"https://www.site-control-il.com/blog/upgrade-old-analog-cctv-same-cables-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       
       <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
@@ -63,7 +63,7 @@ export default function Page() {
               src="/blog-images/upgrade-old-analog-cctv-same-cables-2026/hero.webp"
               alt="שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -267,7 +267,7 @@ export default function Page() {
 <p>כן, בהחלט! זו למעשה נקודת המפתח של הפוסט הזה. בין אם אתם משדרגים למצלמות HD-אנלוגיות חדשות (TVI/CVI/AHD) או למצלמות IP על גבי ממירים ייעודיים (EoC), במרבית המקרים ניתן לנצל את הכבלים הקואקסיאליים הקיימים. זה חוסך המון עבודה, בלאגן וכסף.</p>
 
 <h3 id="faq2">מה ההבדל בין DVR ל-NVR ולמה זה חשוב לי?</h3>
-<p><strong>DVR (Digital Video Recorder)</strong> מיועד למצלמות אנלוגיות (כולל ה-HD-אנלוגיות המתקדמות). הוא ממיר את האות האנלוגי לדיגיטלי ומקליט. <strong>NVR (Network Video Recorder)</strong> מיועד למצלמות IP (רשתיות). מצלמות IP כבר משדרות אות דיגיטלי דרך כבל רשת. אם אתם נשארים עם HD-אנלוגיות, תצטרכו DVR/XVR. אם אתם עוברים ל-IP (גם אם על הכבלים הישנים עם ממירים), תצטרכו NVR כמו ה-<a href="/store/uniview-nvr301-08s3">Uniview NVR301-08S3</a>.</p>
+<p><strong>DVR (Digital Video Recorder)</strong> מיועד למצלמות אנלוגיות (כולל ה-HD-אנלוגיות המתקדמות). הוא ממיר את האות האנלוגי לדיגיטלי ומקליט. <strong>NVR (Network Video Recorder)</strong> מיועד למצלמות IP (רשתיות). מצלמות IP כבר משדרות אות דיגיטלי דרך כבל רשת. אם אתם נשארים עם HD-אנלוגיות, תצטרכו DVR/XVR. אם אתם עוברים ל-IP (גם אם על הכבלים הישנים עם ממירים), תצטרכו NVR כמו ה-<a href="/store/nvr301-08s3">Uniview NVR301-08S3</a>.</p>
 
 <h3 id="faq3">האם שווה לשדרג מ-HD-אנלוג ל-IP, גם אם זה דורש ממירים?</h3>
 <p>זה תלוי בצרכים ובתקציב שלכם. מערכות IP מציעות לרוב גמישות רבה יותר, יכולות אנליטיקה חכמות יותר (כמו AcuSense ב-<a href="/store/ds-7616nxi-k2">Hikvision DS-7616NXI-K2(D)</a>) ואיכות תמונה גבוהה יותר בדרך כלל. אם התכונות האלה חשובות לכם, ושדרוג הכבלים יקר מדי, אז כן - שימוש בממירים הוא פתרון מעולה שמאפשר לכם ליהנות מהטכנולוגיה המתקדמת ביותר על התשתית הקיימת.</p>
@@ -280,7 +280,7 @@ export default function Page() {
 
 <h2 id="conclusion">לסיכום: בואו נשדרג אתכם!</h2>
 <p>שדרוג מערכת מצלמות אבטחה אנלוגית ישנה הוא כבר לא פרויקט מסובך ויקר כמו פעם. עם הטכנולוגיות המתקדמות של היום, תוכלו ליהנות מתמונה חדה, ראיית לילה צבעונית, זיהוי חכם והתראות מדויקות – והכל על גבי תשתית הכבלים הקיימת שלכם. זה חוסך לכם זמן, כסף וטרחה, ומעניק לכם שקט נפשי אמיתי.</p>
-<p>ב-Site-Control, אנחנו מומחים באבטחה ונדאג להתאים לכם את הפתרון המושלם. רוצים לדעת איזו מערכת הכי מתאימה לכם? מלאו את <a href="/store/finder">שאלון ההתאמה הקצר בחנות</a> שלנו, או פשוט <a href="https://wa.me/YOUR_WHATSAPP_NUMBER">שלחו לנו שאלה בוואטסאפ</a>! הצוות המקצועי שלנו זמין לבדיקת זמינות, ייעוץ והתקנה.<br>אל תחכו, שדרגו את הביטחון שלכם כבר היום! בקרו <a href="/store">בחנות של Site-Control</a> כדי לראות את כל האפשרויות, כולל <a href="/store#analog">מצלמות אנלוגיות בחנות</a> ו<a href="/store#recorders">מקליטים בחנות</a>.</p>` }} />
+<p>ב-Site-Control, אנחנו מומחים באבטחה ונדאג להתאים לכם את הפתרון המושלם. רוצים לדעת איזו מערכת הכי מתאימה לכם? מלאו את <a href="/store/finder">שאלון ההתאמה הקצר בחנות</a> שלנו, או פשוט <a href="https://wa.me/972502256866">שלחו לנו שאלה בוואטסאפ</a>! הצוות המקצועי שלנו זמין לבדיקת זמינות, ייעוץ והתקנה.<br>אל תחכו, שדרגו את הביטחון שלכם כבר היום! בקרו <a href="/store">בחנות של Site-Control</a> כדי לראות את כל האפשרויות, כולל <a href="/store#analog">מצלמות אנלוגיות בחנות</a> ו<a href="/store#recorders">מקליטים בחנות</a>.</p>` }} />
           
           <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים איזה דגם מתאים לכם?</h3>

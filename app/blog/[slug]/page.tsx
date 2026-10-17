@@ -5,6 +5,8 @@ import { blogPosts } from '../../data/blog';
 import { notFound } from 'next/navigation';
 import styles from './BlogPost.module.css';
 import { JsonLd, BreadcrumbSchema } from '../../components/Schema';
+import { existsSync } from 'fs';
+import { join } from 'path';
 
 interface Params {
   slug: string;
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   const ogImage = post.image
     ? `${BASE_URL}${post.image}`
-    : `${BASE_URL}/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif`;
+    : `${BASE_URL}/og-default.jpg`;
 
   return {
     title: post.seoTitle || post.title,
@@ -33,6 +35,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.modified || post.date,
       authors: [post.author],
       locale: 'he_IL',
       siteName: 'Site-Control',
@@ -72,10 +75,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 // כתובת שלא קיימת מחזירה 404 אמיתי (בלי זה loading.tsx שולח 200 ונוצר soft 404 בגוגל)
 export const dynamicParams = false;
 
+// 17.10.2026: לפוסט שיש לו תיקייה משלו (app/blog/<slug>/page.tsx) הדף הסטטי הוא המקור. בלי הסינון הזה Next בנה
+// גם את גרסת [slug] מ-blog.ts, ו-/blog/4g-solar-security-cameras-remote-sites-2026 הוגש עם גוף ריק.
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
+  return blogPosts
+    .filter((post) => !existsSync(join(process.cwd(), 'app', 'blog', post.slug, 'page.tsx')))
+    .map((post) => ({ slug: post.slug }));
 }
 
 export default function BlogPostPage({ params }: { params: Params }) {
@@ -91,7 +96,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
   const postImage = post.image
     ? `${BASE_URL}${post.image}`
-    : `${BASE_URL}/optimized-variants/תמונת הירו ראשית/reolink-go-plus-security-camera.optimized-w1920.avif`;
+    : `${BASE_URL}/og-default.jpg`;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -105,13 +110,13 @@ export default function BlogPostPage({ params }: { params: Params }) {
       url: BASE_URL,
     },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.modified || post.date,
     publisher: {
       '@type': 'Organization',
       name: 'Site-Control',
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif`,
+        url: `${BASE_URL}/images/site-control-logo.webp`,
       },
     },
     mainEntityOfPage: {
@@ -133,7 +138,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
   };
 
   const breadcrumbItems = [
-    { name: 'בעמוד הבית', url: '/' },
+    { name: 'דף הבית', url: '/' },
     { name: 'בלוג', url: '/blog' },
     { name: post.title, url: `/blog/${params.slug}` },
   ];
@@ -144,7 +149,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
       <BreadcrumbSchema items={breadcrumbItems} />
       <main className={styles.blogPostContainer}>
       <div className={styles.breadcrumb}>
-        <Link href="/">בעמוד הבית</Link>
+        <Link href="/">דף הבית</Link>
         <span> / </span>
         <Link href="/blog">בלוג</Link>
         <span> / </span>

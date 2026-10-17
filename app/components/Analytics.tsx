@@ -13,11 +13,9 @@ export function Analytics() {
 
   return (
     <>
-      {/* Google Analytics (GA4) */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
+      {/* Google Analytics (GA4). 17.10.2026 (בדיקת SEO): gtag/js (191KB) היה כ-חצי מחסימת הדפדפן בכל דף. הוא נטען עכשיו
+          בלחיצה/גלילה הראשונה, כשהדפדפן פנוי אחרי הטעינה, או כשהלשונית מוסתרת. ה-dataLayer וה-gtag נשארים מיד, כך שאירועים לא הולכים לאיבוד.
+          כניסה ממודעה (gclid/gbraid/wbraid/gad_source/fbclid/utm_) טוענת מיד: הספרייה קוראת את הפרמטרים מהכתובת, ולחיצה על קישור פנימי משנה אותה. */}
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -29,6 +27,7 @@ export function Analytics() {
             send_page_view: true
           });${ADS_ID ? `
           gtag('config', '${ADS_ID}');` : ''}
+          (function(){var done=!1,go=function(){if(done)return;done=!0;var s=document.createElement('script');s.async=!0;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';document.head.appendChild(s)};if(/[?&](gclid|gbraid|wbraid|gad_source|fbclid|utm_[a-z]+)=/i.test(location.search)){go()}['pointerdown','keydown','touchstart','scroll'].forEach(function(x){window.addEventListener(x,go,{once:!0,passive:!0})});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')go()});var idle=function(){(window.requestIdleCallback||function(c){return setTimeout(c,1)})(go,{timeout:3000})};document.readyState==='complete'?setTimeout(idle,2500):window.addEventListener('load',function(){setTimeout(idle,2500)});})();
         `}
       </Script>
     </>

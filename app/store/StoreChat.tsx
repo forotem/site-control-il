@@ -15,7 +15,7 @@ type Product = { slug: string; brand: string; model: string; title: string; pric
 type Msg = { role: "user" | "assistant"; content: string; products?: Product[] };
 
 const NAME = "טל";
-const AVATAR = "/store-images/assistant-avatar.png";
+const AVATAR = "/store-images/assistant-avatar.webp";
 const GREETING: Msg = {
   role: "assistant",
   content: `היי, אני ${NAME}, העוזר הדיגיטלי של החנות. אני מכיר את כל המוצרים כאן ואפשר לשאול אותי הכל: מה ההבדל בין שתי מצלמות, מה מתאים לבית שלך, או כמה מצלמות צריך. במה לעזור?`,
@@ -143,7 +143,7 @@ export function StoreChat() {
             </button>
           )}
           <button type="button" className={c.chatFab} onClick={() => setOpen(true)} aria-label={`פתיחת צ'אט עם ${NAME}${unread ? `, ${unread} הודעה חדשה` : ""}`} id="store-chat-button">
-            <img src={AVATAR} alt="" width="44" height="44" />
+            <img src={AVATAR} alt="" width="44" height="44" loading="lazy" decoding="async" />
             {unread > 0 && <i className={c.unread}>{unread}</i>}
             <span>שאלו את {NAME}</span>
           </button>
@@ -153,7 +153,7 @@ export function StoreChat() {
       {open && (
         <section className={c.chat} role="dialog" aria-label={`צ'אט עם ${NAME}`}>
           <header className={c.chatHead}>
-            <img src={AVATAR} alt="" width="40" height="40" />
+            <img src={AVATAR} alt="" width="40" height="40" loading="lazy" decoding="async" />
             <div>
               <b>{NAME}</b>
               <span>עוזר AI של Site-Control · עונה מיד</span>

@@ -14,8 +14,8 @@ import styles from "./offer.module.css";
 // דף הקבלנים: מצלמות לאתרי בנייה בלי חשמל ובלי אינטרנט (רותם 29.9.2026: מדריך מרחקים, התקנה עצמית, הדרכה לאיש צוות,
 // מחיר לקבלנים בכמויות). הדף היחיד של האתר לכוונה "מצלמות לאתר בנייה"; /sites, /offer/construction-sites ו-/use-cases/construction מפנים לכאן.
 export const metadata: Metadata = {
-  title: "מצלמות לאתרי בנייה: 4G סולאריות, בלי חשמל ובלי מתקין | Site-Control",
-  description: "מצלמות אבטחה לאתרי בנייה שעובדות בלי חשמל ובלי אינטרנט: סוללה, פאנל סולארי וסים 4G. מדריך מרחקים לבחירת מצלמה, התקנה עצמית בליווי או מתקין מטעמנו, מחשבון מחיר לאתר ומחיר לקבלנים.",
+  title: "מצלמות אבטחה לאתרי בנייה ולקבלנים: 4G בלי חשמל | Site-Control",
+  description: "מצלמות אבטחה לאתרי בנייה בלי חשמל ובלי אינטרנט: סוללה, פאנל סולארי וסים 4G. מחיר לקבלנים, מחשבון לאתר, והתקנה עצמית בליווי או מתקין מטעמנו.",
   alternates: { canonical: "/construction-sites" },
   robots: { index: true, follow: true },
   openGraph: { title: "מצלמות לאתרי בנייה, בלי חשמל ובלי מתקין | Site-Control", description: "מדריך מרחקים, מחשבון מחיר לאתר, התקנה עצמית בליווי שלנו.", url: "/construction-sites", type: "website", locale: "he_IL", images: ["/og-default.jpg"] },

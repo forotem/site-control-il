@@ -1,27 +1,17 @@
 import { MetadataRoute } from "next";
 import { BASE_URL } from "./config";
 
+// 17.10.2026 (בדיקת SEO): קבוצה אחת לכל הבוטים. קודם קבוצות Googlebot ו-Bingbot עם Allow בלבד ביטלו להם את כל ה-Disallow,
+// ובוטים אחרים היו חסומים מ-/_next/ (ה-CSS וה-JS). /seo-dashboard ו-/health לא חסומים כאן אלא מסומנים noindex בדף עצמו.
 export default function robots(): MetadataRoute.Robots {
-  const host = BASE_URL;
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/', '/private/', '/seo-dashboard/', '/health'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        crawlDelay: 0,
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        crawlDelay: 0,
+        disallow: ['/api/', '/admin/', '/private/'],
       },
     ],
-    sitemap: `${host}/sitemap.xml`,
-    host,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

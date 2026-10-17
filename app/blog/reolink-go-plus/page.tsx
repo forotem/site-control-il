@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B","description":"ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.","image":"https://www.site-control-il.com/blog-images/reolink-go-plus/hero.webp","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/reolink-go-plus"},"keywords":"Reolink GO Plus ביקורת בעברית, מצלמת אבטחה סולארית 4G, Reolink GO Plus לאתרי בנייה, מצלמות אבטחה לחקלאים, אבטחת אתרים מבודדים, מצלמת סים Reolink, Reolink PTZ Solar B2B, פתרונות אבטחה ללא חשמל, מצלמות סולאריות B2B, אבטחה לשטחים מנותקים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/reolink-go-plus","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B","description":"ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.","image":"https://www.site-control-il.com/blog-images/reolink-go-plus/hero.webp","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/reolink-go-plus"},"keywords":"Reolink GO Plus ביקורת בעברית, מצלמת אבטחה סולארית 4G, Reolink GO Plus לאתרי בנייה, מצלמות אבטחה לחקלאים, אבטחת אתרים מבודדים, מצלמת סים Reolink, Reolink PTZ Solar B2B, פתרונות אבטחה ללא חשמל, מצלמות סולאריות B2B, אבטחה לשטחים מנותקים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/reolink-go-plus","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/reolink-go-plus/hero.webp"
               alt="Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -198,11 +198,11 @@ export default function Page() {
 
   <h3 id="subsection5_1">קבלני בנייה ומנהלי פרויקטים: אבטחה ופיקוח ללא פשרות</h3>
   <p><strong>הבעיה:</strong> קבלן בנייה באזור עמק חפר, שהקים פרויקט מגורים חדש, סבל מגניבות חוזרות של כלי עבודה יקרים וחומרי גלם מאתר הבנייה בשעות הלילה ובסופי שבוע. האתר היה מרוחק יחסית, ללא חיבור קבוע לחשמל או אינטרנט. נזקי הגניבות הגיעו לעשרות אלפי שקלים וגרמו לעיכובים משמעותיים. העסקת שומר 24/7 הייתה יקרה מדי.</p>
-  <p><strong>הפתרון עם Reolink GO Plus:</strong> הקבלן פנה ל-Site-Control, והתקין מספר מצלמות <a href="/use-cases/construction">Reolink GO Plus לאתרי בנייה</a> בנקודות אסטרטגיות באתר – בכניסות, ליד ערימות הברזל והמלט, ובאזור המחסן הזמני. המצלמות הותקנו תוך דקות, וחובר אליהן פאנל סולארי. הקבלן קיבל התראות מיידיות לטלפון שלו בכל פעם שאדם או רכב נכנסו לשטח בשעות החשכה. באחד הלילות, המצלמה תיעדה ניסיון פריצה. בזכות ההתראה והראיות הברורות ב-4K, המשטרה הוזעקה במהירות, והפורצים נתפסו על חם.</p>
+  <p><strong>הפתרון עם Reolink GO Plus:</strong> הקבלן פנה ל-Site-Control, והתקין מספר מצלמות <a href="/construction-sites">Reolink GO Plus לאתרי בנייה</a> בנקודות אסטרטגיות באתר – בכניסות, ליד ערימות הברזל והמלט, ובאזור המחסן הזמני. המצלמות הותקנו תוך דקות, וחובר אליהן פאנל סולארי. הקבלן קיבל התראות מיידיות לטלפון שלו בכל פעם שאדם או רכב נכנסו לשטח בשעות החשכה. באחד הלילות, המצלמה תיעדה ניסיון פריצה. בזכות ההתראה והראיות הברורות ב-4K, המשטרה הוזעקה במהירות, והפורצים נתפסו על חם.</p>
   <p><strong>התוצאה:</strong> הפסקת הגניבות, חיסכון כספי אדיר, ושקט נפשי מוחלט. המצלמות הפכו לכלי אבטחה וניהול קריטי עבור הפרויקט.</p>
 
   <h3 id="subsection5_2">בעלי משקים חקלאיים: הגנה על היבול והרכוש</h3>
-  <p><strong>הבעיה:</strong> חקלאי באזור הנגב גידל ירקות עונתיים על שטח נרחב. הוא סבל מפורצים שהגיעו בלילה, גנבו יבולים, השחיתו ציוד השקיה ופגעו במערכות גידול. השטח היה מנותק לחלוטין מכל תשתית. הפסדים עונתיים נאמדו בעשרות אלפי שקלים. <a href="/use-cases/agriculture">מצלמות לחקלאות</a> היו צורך קריטי.</p>
+  <p><strong>הבעיה:</strong> חקלאי באזור הנגב גידל ירקות עונתיים על שטח נרחב. הוא סבל מפורצים שהגיעו בלילה, גנבו יבולים, השחיתו ציוד השקיה ופגעו במערכות גידול. השטח היה מנותק לחלוטין מכל תשתית. הפסדים עונתיים נאמדו בעשרות אלפי שקלים. <a href="/blog/cameras-security-agriculture-2027">מצלמות לחקלאות</a> היו צורך קריטי.</p>
   <p><strong>הפתרון עם Reolink GO Plus:</strong> החקלאי התקין שתי מצלמות Reolink GO Plus בשילוב פאנלים סולאריים בקצוות השדה, ואחת נוספת ליד מחסן הציוד הקטן. המצלמות הופעלו עם כרטיסי סים וסיפקו לו תמונות וסרטונים חדים של כל תנועה חשודה. בזכות חיישני זיהוי האדם/רכב, הוא קיבל רק התראות רלוונטיות, ולא על חיות בר. באחד המקרים, המצלמה תיעדה רכב חקלאי שאינו שייך לו נכנס לשדה. באמצעות שידור התמונה בזמן אמת, הוא הזעיק את המשטרה והחשודים נתפסו לפני שהספיקו לגרום נזק.</p>
   <p><strong>התוצאה:</strong> עצירת הגניבות, הגנה על ההשקעה העצומה בגידולים, והיכולת לנטר את השדה מכל מקום, גם כשהוא לא נמצא בו פיזית.</p>
 

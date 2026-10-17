@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"כמה עולה מערכת מצלמות לבית ב-2026: פירוט אמיתי לפי תקציב","description":"כמה עולה מערכת מצלמות לבית ב-2026? פירוט אמיתי עם מחירים מהחנות: ערכות מוכנות, מצלמות, מקליט ודיסק, התקנה, ומה עוד צריך לקחת בחשבון.","image":"https://www.site-control-il.com/blog-images/home-cctv-system-cost-breakdown-2026/hero.webp","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/home-cctv-system-cost-breakdown-2026"},"keywords":"כמה עולה מערכת מצלמות לבית, מחיר מערכת מצלמות אבטחה לבית, מחיר ערכת מצלמות אבטחה 4 מצלמות, כמה עולה מצלמת אבטחה לבית, עלות התקנת מצלמות אבטחה, ערכת מצלמות Reolink מחיר, מקליט NVR עם PoE מחיר, מצלמות אבטחה לדירה מחיר","articleSection":"מדריכי קנייה","url":"https://www.site-control-il.com/blog/home-cctv-system-cost-breakdown-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"כמה עולה מערכת מצלמות לבית ב-2026: פירוט אמיתי לפי תקציב","description":"כמה עולה מערכת מצלמות לבית ב-2026? פירוט אמיתי עם מחירים מהחנות: ערכות מוכנות, מצלמות, מקליט ודיסק, התקנה, ומה עוד צריך לקחת בחשבון.","image":"https://www.site-control-il.com/blog-images/home-cctv-system-cost-breakdown-2026/hero.webp","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/home-cctv-system-cost-breakdown-2026"},"keywords":"כמה עולה מערכת מצלמות לבית, מחיר מערכת מצלמות אבטחה לבית, מחיר ערכת מצלמות אבטחה 4 מצלמות, כמה עולה מצלמת אבטחה לבית, עלות התקנת מצלמות אבטחה, ערכת מצלמות Reolink מחיר, מקליט NVR עם PoE מחיר, מצלמות אבטחה לדירה מחיר","articleSection":"מדריכי קנייה","url":"https://www.site-control-il.com/blog/home-cctv-system-cost-breakdown-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/home-cctv-system-cost-breakdown-2026/hero.webp"
               alt="כמה עולה מערכת מצלמות לבית ב-2026: פירוט אמיתי לפי תקציב"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>

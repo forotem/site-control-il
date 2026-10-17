@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G | Site-Control',
+  title: 'מצלמות סולאריות 4G לאתר מרוחק: רווחיות ויעילות',
   description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.',
   keywords: ["מקסום רווחיות באתרים מרוחקים","מצלמות אבטחה סולאריות 4G","אבטחה סולארית B2B ישראל","מצלמות לאתרי בנייה","מצלמות לחקלאות","Reolink GO Plus","Reolink PTZ Solar","מניעת גניבות באתר מרוחק","פתרונות אבטחה ללא חשמל"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G","description":"שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.","image":"https://www.site-control-il.com/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026"},"keywords":"מקסום רווחיות באתרים מרוחקים, מצלמות אבטחה סולאריות 4G, אבטחה סולארית B2B ישראל, מצלמות לאתרי בנייה, מצלמות לחקלאות, Reolink GO Plus, Reolink PTZ Solar, מניעת גניבות באתר מרוחק, פתרונות אבטחה ללא חשמל","articleSection":"פתרונות אבטחה B2B","url":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G","description":"שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.","image":"https://www.site-control-il.com/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026"},"keywords":"מקסום רווחיות באתרים מרוחקים, מצלמות אבטחה סולאריות 4G, אבטחה סולארית B2B ישראל, מצלמות לאתרי בנייה, מצלמות לחקלאות, Reolink GO Plus, Reolink PTZ Solar, מניעת גניבות באתר מרוחק, פתרונות אבטחה ללא חשמל","articleSection":"פתרונות אבטחה B2B","url":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp"
               alt="מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -75,7 +75,7 @@ export default function Page() {
           <div dangerouslySetInnerHTML={{ __html: `<div style="direction:rtl;">
     <h2>מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G</h2>
 
-    <p>ברוכים הבאים ל-<a href="https://site-control.co.il">Site-Control</a>, המומחים המובילים בישראל לפתרונות אבטחה סולאריים 4G. במדריך המקיף הזה, נצלול לעומק עולם מצלמות האבטחה הסולאריות 4G ונחשוף כיצד טכנולוגיה פורצת דרך זו יכולה לחולל מהפכה בדרך שבה אתם מאבטחים, מנהלים ומתעדים אתרים מרוחקים – ולהפוך אתגרים ליתרונות תחרותיים משמעותיים. אם אתם קבלני בנייה, בעלי משקים חקלאיים או מנהלי אתרים מבודדים, הגעתם למקום הנכון.</p>
+    <p>ברוכים הבאים ל-<a href="/">Site-Control</a>, המומחים המובילים בישראל לפתרונות אבטחה סולאריים 4G. במדריך המקיף הזה, נצלול לעומק עולם מצלמות האבטחה הסולאריות 4G ונחשוף כיצד טכנולוגיה פורצת דרך זו יכולה לחולל מהפכה בדרך שבה אתם מאבטחים, מנהלים ומתעדים אתרים מרוחקים – ולהפוך אתגרים ליתרונות תחרותיים משמעותיים. אם אתם קבלני בנייה, בעלי משקים חקלאיים או מנהלי אתרים מבודדים, הגעתם למקום הנכון.</p>
 
     <h2>תוכן עניינים</h2>
     <ul>
@@ -96,8 +96,8 @@ export default function Page() {
     <p>הדמיינו את זה: אתם מנהלים פרויקט בנייה בפריפריה, מפקחים על שדה חקלאי עצום או אחראים על מחסן מבודד בקצה העיר. השמש שוקעת, העובדים עוזבים, ואתם נשארים עם תחושת אי-שקט. אתרים אלו, מעצם טבעם, מהווים יעד מועדף לגניבות, ונדליזם ופלישות. ללא חיבור יציב לחשמל ואינטרנט, האבטחה הופכת למשימה כמעט בלתי אפשרית, והעלויות הכרוכות בהצבת שמירה אנושית או פריסת תשתיות יקרות הופכות את הפרויקט ללא כדאי.</p>
 
     <ul>
-        <li><strong>קבלני בנייה ומנהלי פרויקטים:</strong> ציוד יקר, חומרי גלם וחפצים אישיים נשארים חשופים. גניבת כלי עבודה, ציוד כבד או חומרי בנייה יכולה לגרום לעיכובים קריטיים, פגיעה בלוחות זמנים, קנסות, ועלויות השלמה מטורפות. על פי הערכות, גניבות באתרי בנייה בישראל נאמדות במיליוני שקלים בשנה, כאשר רק אחוז קטן מהרכוש הגנוב מושב לבעליו. מעבר לנזק הישיר, ישנה פגיעה במוניטין, בביטוחים ובתזרים המזומנים. <a href="/use-cases/construction">מצלמות לאתרי בנייה</a> הן כבר לא מותרות, אלא הכרח.</p>
-        <li><strong>בעלי משקים חקלאיים:</strong> שטחי גידול עצומים, ציוד השקיה, טרקטורים, משאבות מים ואף בעלי חיים – כולם פגיעים. פריצות לשדות, גניבת יבולים לפני קציר או פגיעה בתשתיות חקלאיות גורמות הפסדים כבדים לחקלאים. לעיתים קרובות, הפגיעה מתגלה רק ביום שלמחרת, לאחר שכבר מאוחר מדי לתפוס את העבריינים. <a href="/use-cases/agriculture">מצלמות לחקלאות</a> מאפשרות שקט נפשי ופעולה מהירה.</li>
+        <li><strong>קבלני בנייה ומנהלי פרויקטים:</strong> ציוד יקר, חומרי גלם וחפצים אישיים נשארים חשופים. גניבת כלי עבודה, ציוד כבד או חומרי בנייה יכולה לגרום לעיכובים קריטיים, פגיעה בלוחות זמנים, קנסות, ועלויות השלמה מטורפות. על פי הערכות, גניבות באתרי בנייה בישראל נאמדות במיליוני שקלים בשנה, כאשר רק אחוז קטן מהרכוש הגנוב מושב לבעליו. מעבר לנזק הישיר, ישנה פגיעה במוניטין, בביטוחים ובתזרים המזומנים. <a href="/construction-sites">מצלמות לאתרי בנייה</a> הן כבר לא מותרות, אלא הכרח.</p>
+        <li><strong>בעלי משקים חקלאיים:</strong> שטחי גידול עצומים, ציוד השקיה, טרקטורים, משאבות מים ואף בעלי חיים – כולם פגיעים. פריצות לשדות, גניבת יבולים לפני קציר או פגיעה בתשתיות חקלאיות גורמות הפסדים כבדים לחקלאים. לעיתים קרובות, הפגיעה מתגלה רק ביום שלמחרת, לאחר שכבר מאוחר מדי לתפוס את העבריינים. <a href="/blog/cameras-security-agriculture-2027">מצלמות לחקלאות</a> מאפשרות שקט נפשי ופעולה מהירה.</li>
         <li><strong>מנהלי אתרים מרוחקים (מחסנים, שדות, תשתיות):</strong> מחסני לוגיסטיקה מרוחקים, שדות סולאריים, אתרי תקשורת, משאבות מים – כל אלו סובלים מחוסר פיקוח. נזקים כתוצאה מוונדליזם, חבלה או גניבת דלק וציוד יכולים להשבית מערכות קריטיות ולגרור עלויות תיקון ותחזוקה אדירות. <a href="/store/c/solar">ניהול אתרים מבודדים</a> דורש פתרון אבטחה עצמאי ואמין.</li>
     </ul>
 

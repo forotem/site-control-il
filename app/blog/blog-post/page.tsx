@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G","description":"אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל.","image":"https://www.site-control-il.com/blog-images/blog-post/hero.webp","datePublished":"2026-03-26","dateModified":"2026-03-26","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/blog-post"},"keywords":"אבטחת שטחים חקלאיים, מצלמות אבטחה סולאריות 4G, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאים, ניהול אתרים מרוחקים, מניעת גניבות ציוד, אבטחה ללא חשמל אינטרנט","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/blog-post","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G","description":"אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל.","image":"https://www.site-control-il.com/blog-images/blog-post/hero.webp","datePublished":"2026-03-26","dateModified":"2026-03-26","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/blog-post"},"keywords":"אבטחת שטחים חקלאיים, מצלמות אבטחה סולאריות 4G, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, מצלמות לחקלאים, ניהול אתרים מרוחקים, מניעת גניבות ציוד, אבטחה ללא חשמל אינטרנט","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/blog-post","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/blog-post/hero.webp"
               alt="אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -125,7 +125,7 @@ export default function Page() {
   <p>כל אלה מדגישים את הצורך בפתרון חכם, עצמאי, נייד וחסכוני, שיענה על הדרישות הספציפיות שלכם.</p>
 
   <h2 id="solar-revolution">מהפכת האבטחה הסולארית 4G: הפתרון המקיף מבית Site-Control</h2>
-  <p>Site-Control מציעה את הדור הבא של פתרונות אבטחה: מצלמות סולאריות 4G מבית Reolink. אלו מצלמות שתוכננו במיוחד עבור אתגרים כמו <a href="/use-cases/agriculture">אבטחת שטחים חקלאיים</a>, <a href="/use-cases/construction">אבטחת אתרי בנייה</a> ו-<a href="/store/c/solar">ניהול אתרים מבודדים</a>, ומספקות מענה מושלם לדרישות השטח:</p>
+  <p>Site-Control מציעה את הדור הבא של פתרונות אבטחה: מצלמות סולאריות 4G מבית Reolink. אלו מצלמות שתוכננו במיוחד עבור אתגרים כמו <a href="/blog/cameras-security-agriculture-2027">אבטחת שטחים חקלאיים</a>, <a href="/construction-sites">אבטחת אתרי בנייה</a> ו-<a href="/store/c/solar">ניהול אתרים מבודדים</a>, ומספקות מענה מושלם לדרישות השטח:</p>
   <ul>
     <li><strong>עצמאות מלאה:</strong> המצלמות אינן דורשות חיבור לחשמל או לאינטרנט קווי. הן נטענות באמצעות פאנל סולארי מובנה/חיצוני ומעבירות נתונים דרך רשת סלולרית 4G LTE (באמצעות כרטיס SIM רגיל).</li>
     <li><strong>התקנה פשוטה ומהירה:</strong> פשוט מצמידים, מכוונים ומפעילים. ללא צורך בחיווט מורכב או בצוותי התקנה יקרים. ניתן להעביר את המצלמה ממקום למקום בקלות בהתאם לצרכים המשתנים של הפרויקט או הגידול החקלאי.</li>
@@ -175,7 +175,7 @@ export default function Page() {
   <p>פתרונות האבטחה הסולאריים של Site-Control מיועדים במיוחד למגזרי B2B ספציפיים, המאופיינים בצורך באבטחה ללא תלות בתשתית קיימת:</p>
 
   <h3 id="agriculture">חקלאים: הגנה על יבול, ציוד ובעלי חיים</h3>
-  <p>עבור חקלאים, מצלמות 4G סולאריות הן לא פחות ממהפכה. הן מאפשרות <a href="/use-cases/agriculture">אבטחה חקלאית</a> מקיפה ללא צורך במשיכת כבלי חשמל ואינטרנט יקרים לשדות המרוחקים:</p>
+  <p>עבור חקלאים, מצלמות 4G סולאריות הן לא פחות ממהפכה. הן מאפשרות <a href="/blog/cameras-security-agriculture-2027">אבטחה חקלאית</a> מקיפה ללא צורך במשיכת כבלי חשמל ואינטרנט יקרים לשדות המרוחקים:</p>
   <ul>
     <li><strong>מניעת גניבת יבול וציוד:</strong> פיקוח על שדות ויבולים מפני גנבים, ועל ציוד חקלאי יקר כגון טרקטורים, כלי עבודה ומערכות השקיה.</li>
     <li><strong>ניטור בעלי חיים:</strong> במרעה פתוח או לולים מרוחקים, המצלמות מספקות פיקוח על מצב בעלי החיים וזיהוי חיות טרף.</li>
@@ -184,7 +184,7 @@ export default function Page() {
   </ul>
 
   <h3 id="construction">קבלני בנייה ומנהלי פרויקטים: הגנה על אתרים ופיקוח מרחוק</h3>
-  <p>אתרי בנייה הם מוקד משיכה לגנבים וונדלים, והגנה עליהם חיונית. פתרונות <a href="/use-cases/construction">מצלמות לאתרי בנייה</a> סולאריות 4G הם התשובה המושלמת:</p>
+  <p>אתרי בנייה הם מוקד משיכה לגנבים וונדלים, והגנה עליהם חיונית. פתרונות <a href="/construction-sites">מצלמות לאתרי בנייה</a> סולאריות 4G הם התשובה המושלמת:</p>
   <ul>
     <li><strong>אבטחת ציוד וחומרי גלם:</strong> מניעת גניבת ציוד כבד (טרקטורים, מחפרים), כלי עבודה, גנרטורים, כבלי נחושת וחומרי בנייה יקרים.</li>
     <li><strong>פיקוח על התקדמות העבודה:</strong> צפייה חיה מרחוק במתרחש באתר, ללא צורך להגיע פיזית לשטח.</li>

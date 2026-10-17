@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים","description":"מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים מבודדים על התקנה נכונה של מצלמות אבטחה סולאריות 4G. אבטח את השטח שלך עם Site-Control.","image":"https://www.site-control-il.com/blog-images/solar-4g-security-camera-remote-site-installation-2026/hero.webp","datePublished":"2026-09-12","dateModified":"2026-09-12","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/solar-4g-security-camera-remote-site-installation-2026"},"keywords":"מצלמות אבטחה סולאריות 4G, התקנת מצלמות אבטחה B2B, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, אבטחת משקים חקלאיים, מצלמות לאתרים מבודדים, ניטור מרחוק","articleSection":"מדריכים ופתרונות B2B","url":"https://www.site-control-il.com/blog/solar-4g-security-camera-remote-site-installation-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים","description":"מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים מבודדים על התקנה נכונה של מצלמות אבטחה סולאריות 4G. אבטח את השטח שלך עם Site-Control.","image":"https://www.site-control-il.com/blog-images/solar-4g-security-camera-remote-site-installation-2026/hero.webp","datePublished":"2026-09-12","dateModified":"2026-09-12","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/solar-4g-security-camera-remote-site-installation-2026"},"keywords":"מצלמות אבטחה סולאריות 4G, התקנת מצלמות אבטחה B2B, Reolink GO Plus, Reolink PTZ Solar, אבטחת אתרי בנייה, אבטחת משקים חקלאיים, מצלמות לאתרים מבודדים, ניטור מרחוק","articleSection":"מדריכים ופתרונות B2B","url":"https://www.site-control-il.com/blog/solar-4g-security-camera-remote-site-installation-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/solar-4g-security-camera-remote-site-installation-2026/hero.webp"
               alt="התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -235,14 +235,14 @@ export default function Page() {
   <p>מצלמות האבטחה הסולאריות 4G של Site-Control מציעות פתרון מדויק למגוון רחב של אתגרים בסביבות עסקיות שונות.</p>
 
   <h3>קבלני בנייה ומנהלי פרויקטים: אבטחה ופיקוח מרחוק</h3>
-  <p>ענף הבנייה בישראל חשוף באופן תדיר לגניבות ולוונדליזם. <a href="/use-cases/construction">מצלמות לאתרי בנייה</a> הן הפתרון המושלם.</p>
+  <p>ענף הבנייה בישראל חשוף באופן תדיר לגניבות ולוונדליזם. <a href="/construction-sites">מצלמות לאתרי בנייה</a> הן הפתרון המושלם.</p>
   <ul>
     <li><strong>דוגמה 1: אתר בנייה בתל אביב:</strong> קבלן בונה מגדל מגורים חדש במרכז העיר. הציוד היקר (מכונות, חומרי גלם) נשאר חשוף בלילה. לאחר גניבה של כלי עבודה יקרים ממחסן באתר, הקבלן התקין מספר מצלמות Reolink GO Plus בנקודות אסטרטגיות – כניסות, מחסנים ואזורים בהם אוחסנו כלי צמ"ה. בנוסף, מוקמה מצלמת Reolink PTZ Solar אחת בנקודה גבוהה שכיסתה את כל האתר. התוצאה: שקט נפשי ואפס גניבות נוספות.</li>
     <li><strong>דוגמה 2: פרויקט תשתיות בכביש 6:</strong> חברת תשתיות עובדת על הרחבת כביש 6, באזור מרוחק ללא תשתית קיימת. הם זקוקים לניטור של ציוד כבד וכלי עבודה הפזורים לאורך קילומטרים. מצלמות Reolink GO Plus ניידות, המותקנות על עמודי תאורה זמניים לאורך תוואי העבודה, מאפשרות למנהלי הפרויקט לנטר את השטח מרחוק, לקבל התראות על תנועה חשודה ולתעד אירועים, וכל זאת ללא צורך בהטמעת תשתיות חשמל או אינטרנט יקרות.</li>
   </ul>
 
   <h3>חקלאים ובעלי משקים חקלאיים: ניטור והגנה על יבולים וציוד</h3>
-  <p>השטחים הפתוחים, הציוד היקר והיעדר תשתיות הופכים את החקלאות למטרה קלה לגנבים וונדלים. <a href="/use-cases/agriculture">מצלמות לחקלאות</a> משנות את התמונה.</p>
+  <p>השטחים הפתוחים, הציוד היקר והיעדר תשתיות הופכים את החקלאות למטרה קלה לגנבים וונדלים. <a href="/blog/cameras-security-agriculture-2027">מצלמות לחקלאות</a> משנות את התמונה.</p>
   <ul>
     <li><strong>דוגמה 3: כרם זיתים בעמק האלה:</strong> כרם זיתים גדול מתפרס על פני שטח נרחב. החקלאי סבל מגניבות חוזרות ונשנות של ציוד השקיה. הפתרון היה התקנת Reolink PTZ Solar במרכז הכרם, שמאפשרת סריקה רחבה של השטח בזווית של 360 מעלות. היכולת לסובב את המצלמה מרחוק ולקבל התראות בזמן אמת, בשילוב עם איכות וידאו 2K (4MP) המסייעת בזיהוי פורצים, עצרה את הגניבות והגבירה את תחושת הביטחון.</li>
     <li><strong>דוגמה 4: דיר עיזים ברמת הגולן:</strong> בעל דיר עיזים נתקל בקושי בניטור בריאות העדר ובטחונן מפני פגיעות חיצוניות או חיות טרף. עם מצלמת Reolink GO Plus הוא יכול לעקוב אחר העדר, לוודא שהן מקבלות מזון ומים, ולזהות התנהגויות חריגות, כל זאת מטלפון הנייד שלו. גם אם אין חשמל או אינטרנט קווי בדיר, המצלמה הסולארית 4G מספקת פתרון אמין.</li>

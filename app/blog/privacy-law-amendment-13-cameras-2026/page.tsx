@@ -1,175 +1,330 @@
 import { Metadata } from 'next';
 
+const SLUG = 'privacy-law-amendment-13-cameras-2026';
+const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const SEO_TITLE = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה | Site-Control';
+const SHARE_TITLE = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה';
+const H1 = 'תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה: מה זה אומר בפועל לבית ולעסק';
+const DESCRIPTION =
+  'מה תיקון 13 לחוק הגנת הפרטיות שינה למי שמפעיל מצלמות אבטחה בבית או בעסק, מה הנחיית הרשות דורשת, ואיך מגדירים מיסוך פרטיות, שילוט ומשך שמירה.';
+const KEYWORDS = [
+  'תיקון 13 לחוק הגנת הפרטיות',
+  'חוק הגנת הפרטיות מצלמות אבטחה',
+  'מצלמות אבטחה ושכנים',
+  'שילוט מצלמות אבטחה',
+  'כמה זמן לשמור הקלטות מצלמות',
+  'מצלמות במקום העבודה',
+  'מיסוך פרטיות במצלמה',
+];
+const PUBLISHED = '2026-01-27';
+const MODIFIED = '2026-10-17';
+const HERO_ALT = 'מצלמת אבטחה על מעקה מרפסת, מסך עם הכיתוב חוק הגנת הפרטיות תיקון 13, ובנייני מגורים ומשרדים בעיר';
+
+const GUIDE_13 = 'https://www.gov.il/BlobFolder/reports/guide_tikon13_professional/he/tikun%2013%20_170825.pdf';
+const GUIDE_CAMERAS = 'https://www.gov.il/BlobFolder/legalinfo/surveillance_cameras_guidelines/he/The%20use%20of%20security%20cameras_2025.pdf';
+const GUIDE_WORKPLACE = 'https://www.gov.il/BlobFolder/policy/workplace_camera/he/3-17.pdf';
+
 export const metadata: Metadata = {
-  title: 'חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך המלא למצלמות אבטחה | Site-Control',
-  description: 'תיקון 13 לחוק הגנת הפרטיות: כל מה שצריך לדעת על מצלמות אבטחה בבניין משותף ובעסק. חובות חדשות, קנסות ואיך להימנע מהם.',
-  keywords: 'חוק הגנת הפרטיות מצלמות אבטחה, תיקון 13 לחוק הגנת הפרטיות מצלמות אבטחה, חוק הגנת הפרטיות מצלמות, מצלמות אבטחה בבניין משותף',
-  alternates: { canonical: 'https://www.site-control-il.com/blog/privacy-law-amendment-13-cameras-2026' },
+  title: SEO_TITLE,
+  description: DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
+  openGraph: {
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+    locale: 'he_IL',
+    siteName: 'Site-Control',
+    url: CANONICAL,
+    images: [
+      {
+        url: HERO,
+        width: 1200,
+        height: 593,
+        alt: HERO_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    images: [HERO],
+  },
+  alternates: {
+    canonical: CANONICAL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 };
 
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: 'מותר להתקין מצלמת אבטחה שרואה את הרחוב או את השכנים?',
+    a: 'הדבר שצריך להיזהר ממנו הוא פגיעה בפרטיות של אחרים. סעיף 2 לחוק הגנת הפרטיות מונה, בין היתר, צילום אדם כשהוא ברשות היחיד, ובילוש או התחקות אחרי אדם העלולים להטרידו. לכן כדאי לכוון כל מצלמה לשטח שלכם, לצמצם ככל האפשר את מה שנקלט מהרחוב, ולהסתיר במיסוך פרטיות כל חלק של חצר, חלון או מרפסת של שכן. זה מידע כללי ולא ייעוץ משפטי.',
+  },
+  {
+    q: 'מה השתנה בתיקון 13 למי שיש לו מצלמות בבית?',
+    a: 'רוב השינויים נוגעים למאגרי מידע של עסקים וגופים, ולפי הרשות להגנת הפרטיות ההוראות על מאגרי מידע לא חלות על אוסף לשימוש אישי שאינו למטרות עסק. שינוי אחד נוגע לכולם: ההתיישנות המקוצרת של שנתיים לתביעה אזרחית לפי חוק הגנת הפרטיות בוטלה, ועל עילות שנוצרו אחרי שהתיקון נכנס לתוקף ב-14.8.2025 חלה תקופת ההתיישנות הכללית, שבדרך כלל היא שבע שנים. האיסור לפגוע בפרטיות של אחרים היה בחוק גם לפני התיקון.',
+  },
+  {
+    q: 'כמה זמן מותר לשמור הקלטות של מצלמות אבטחה בעסק?',
+    a: 'אין מספר ימים אחד שקבוע בחוק לכל העסקים. לפי הנחיית הרשות להגנת הפרטיות, קובעים את משך השמירה לפי המטרה של המצלמה ולפי רגישות המידע, לא שומרים צילומים אחרי שהם כבר לא נחוצים, ומומלץ שהמערכת תמחק אותם אוטומטית בסוף התקופה. באותה הנחיה הרשות כתבה שבמאגר הקלטות שלא עובד לחיפוש לפי זהות המצולמים, ושנשמר עד 30 יום, בדרך כלל לא יהיה צורך לתת זכות עיון.',
+  },
+  {
+    q: 'חייבים לתלות שלט שהמקום מצולם?',
+    a: 'לפי הנחיית הרשות, מי שמציב מצלמת מעקב צריך ליידע את הציבור, והאמצעי המינימלי הוא שלט קריא וברור ליד המצלמה, ובכניסה לאזור שהיא מכסה אם הכניסה רחוקה ממנה. ההנחיה ממליצה לכלול בשלט ציור של מצלמה, את שם הגורם האחראי, את מטרת הצילום ודרך ליצור קשר. בעסק כדאי להתייחס לזה כחובה. גם בבית פרטי שלט ליד השער הוא רעיון טוב.',
+  },
+  {
+    q: 'מותר להקליט קול במצלמת אבטחה?',
+    a: 'לפי הנחיית הרשות להגנת הפרטיות, אין להשתמש במצלמות מעקב להקלטת קול, אלא לפי הוראות חוק האזנת סתר. בהנחיה למקומות עבודה הרשות מוסיפה שמצלמה נסתרת שמקליטה גם קול עלולה לסתור את חוק האזנת סתר, שהפרתו היא עבירה פלילית חמורה. ההמלצה שלנו: לכבות את הקלטת השמע בהגדרות המצלמה או המקליט, בעיקר בעסק ובשטחים משותפים.',
+  },
+  {
+    q: 'מותר להתקין מצלמות שמצלמות עובדים?',
+    a: 'לפי הנחיה 5/17 של הרשות, רק למטרה לגיטימית שקשורה לעסק או לחובה חוקית, עם מדיניות ברורה שמוצגת לעובדים ובידיעתם. ככלל אסור לצלם עובדים בסתר. צילום בשירותים ובמלתחות הוא פגיעה חמורה שקשה להצדיק. במשרד או בעמדת עבודה אישית, וגם במטבחון או בחדר אוכל, צריך הצדקה חזקה במיוחד. בנוסף, בדרך כלל אין להשתמש בצילומים למטרה אחרת, למשל למדוד הפסקות של עובד במצלמה שהותקנה לבקרת כניסה.',
+  },
+];
+
+const BODY_HTML = `<nav style="background: rgba(15,52,96,0.05); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 2rem;"><strong>תוכן העניינים</strong><ul style="margin-top: 0.5rem;"><li><a href="#short">בקצרה: מה צריך לדעת</a></li><li><a href="#amendment">תיקון 13: מה השתנה בחוק</a></li><li><a href="#who">בית פרטי, בניין משותף ועסק: מה חל על מי</a></li><li><a href="#guidance">מה הנחיית הרשות למצלמות אבטחה אומרת</a></li><li><a href="#employees">מצלמות שמצלמות עובדים</a></li><li><a href="#practical">איך מתקינים ומגדירים מצלמות לפי הכללים</a></li><li><a href="#checklist">רשימת בדיקה קצרה</a></li><li><a href="#sources">מקורות</a></li></ul></nav>
+
+<p>מי שמתקין מצלמות אבטחה בבית או בעסק שואל היום שתי שאלות: מה מותר לצלם, ומה השתנה עם תיקון 13 לחוק הגנת הפרטיות. המדריך הזה עונה על שתיהן לפי המקורות הרשמיים של הרשות להגנת הפרטיות, ומפריד בין מה שכתוב בחוק ובהנחיות לבין ההמלצות המעשיות שלנו, שמסומנות ככאלה.</p>
+
+<div style="border-right: 4px solid #e94560; background: rgba(233,69,96,0.06); padding: 1rem 1.25rem; border-radius: 8px; margin: 1.5rem 0;"><strong>חשוב לדעת:</strong> זה מידע כללי ממקורות רשמיים, ולא ייעוץ משפטי. כל מקרה תלוי בנסיבות שלו. לפני החלטה במקרה מסוים, למשל מצלמה שתופסת שטח של שכן או מצלמות שמצלמות עובדים, התייעצו עם עורך דין ובדקו את הנוסח העדכני באתר הרשות להגנת הפרטיות.</div>
+
+<h2 id="short">בקצרה: מה צריך לדעת</h2>
+<ul>
+<li><strong>תיקון 13</strong> אושר בכנסת ב-5.8.2024 ונכנס לתוקף ב-14.8.2025. הוא עדכן את ההגדרות בחוק, צמצם את רישום מאגרי המידע, חייב חלק מהגופים למנות ממונה על הגנת הפרטיות, ונתן לרשות סמכות להטיל עיצומים כספיים.</li>
+<li><strong>בבית פרטי</strong>, ההוראות על מאגרי מידע לא חלות על אוסף לשימוש אישי שאינו למטרות עסק. אבל האיסור לפגוע בפרטיות של אחרים, למשל לצלם שכן ברשות היחיד שלו, חל על כולם.</li>
+<li><strong>בעסק</strong>, לפי הנחיית הרשות למצלמות, חלק ניכר מההקלטות של מצלמות מעקב נכנס להגדרה של מאגר מידע, וההנחיות שלה רלוונטיות במלואן: מטרה, שילוט, משך שמירה, הרשאות ואבטחה.</li></ul>
+
+<h2 id="amendment">תיקון 13: מה השתנה בחוק</h2>
+
+<p>לפי הרשות, זה העדכון המקיף ביותר לדיני הגנת הפרטיות מאז שהחוק נחקק ב-1981. אלה השינויים שנוגעים למי שמפעיל מצלמות.</p>
+
+<h3>הגדרות חדשות ורחבות יותר</h3>
+<p>"מידע אישי" מוגדר עכשיו ככל נתון שנוגע לאדם מזוהה או לאדם שאפשר לזהות במאמץ סביר, במישרין או בעקיפין. "מאגר מידע" הוא אוסף של פרטי מידע אישי שמעובד באמצעי דיגיטלי, למעט אוסף לשימוש אישי שאינו למטרות עסק. בעסק, הקלטה במקליט דיגיטלי שבה אפשר לזהות אנשים מתאימה בדרך כלל לתיאור הזה.</p>
+<p>"מידע בעל רגישות מיוחדת" כולל, בין היתר, מזהה ביומטרי שמשמש או מיועד לשמש לזיהוי אדם או לאימות זהותו באופן ממוחשב. כלומר, מערכת שמזהה מי האדם לפי הפנים שלו (ולא רק מגלה שיש פנים בתמונה), או מסוף שפותח דלת לפי פנים או טביעת אצבע, עוסקת במידע מהסוג הזה. גם הנחיית הרשות למצלמות קובעת שזיהוי פנים דורש תשומת לב מיוחדת למידתיות. על מסופים כאלה הרחבנו ב<a href="/blog/smart-biometric-locks-2026">מדריך למנעולים ביומטריים</a>.</p>
+
+<h3>פחות רישום, אותן חובות</h3>
+<p>חובת רישום מאגרי מידע צומצמה מאוד. לפי המדריך של הרשות, במגזר הפרטי היא בוטלה כמעט לגמרי, ונשארה בעיקר למאגרים של גופים ציבוריים ולמאגרים שמטרתם העיקרית היא מסירת מידע לאחרים כעיסוק, עם מידע על 10,000 איש ומעלה. במקומה נוספה חובה להודיע לרשות תוך 30 יום על מאגר שיש בו מידע בעל רגישות מיוחדת על יותר מ-100,000 איש.</p>
+<p>הרשות מדגישה שמאגר שלא חייב ברישום עדיין חייב בכל שאר החובות שבחוק ובתקנות. כלומר, גם בלי רישום, עסק שמקליט צריך לאבטח את ההקלטות ולהשתמש בהן רק למטרה שלשמה הותקנו המצלמות.</p>
+
+<h3>ממונה על הגנת הפרטיות</h3>
+<p>התיקון מחייב למנות ממונה על הגנת הפרטיות (DPO) בגופים ציבוריים, בגופים שעיקר עיסוקם הוא איסוף מידע אישי כדי למסור אותו לאחרים ויש במאגר שלהם מידע על יותר מ-10,000 איש, ובגופים שעיסוקם העיקרי מחייב ניטור שוטף ושיטתי של בני אדם או עיבוד של מידע בעל רגישות מיוחדת, בהיקף ניכר. בקבוצה האחרונה החוק מזכיר במפורש בנקים, חברות ביטוח, בתי חולים וקופות חולים.</p>
+<p>בגוף פרטי, הקריטריון הוא העיסוק העיקרי של הארגון, ולא עצם העובדה שיש בו מצלמות. מי שלא בטוח יכול לעיין בגילוי הדעת של הרשות בנושא.</p>
+
+<h3>עיצומים כספיים, פיצויים והתיישנות</h3>
+<p>הרשות קיבלה סמכות להטיל עיצומים כספיים על הפרות של החוק ושל תקנות אבטחת המידע, במקום מנגנון הקנסות המנהליים הקודם. בהפרות מסוימות במאגרים גדולים הסכומים יכולים להגיע למיליוני שקלים. לעסקים קטנים וזעירים נקבעו תקרות, ובכל מקרה העיצום הכולל לא יעלה על 5% מהמחזור השנתי של המפר. למאגרים ברמת אבטחה בסיסית ולמאגרים שמנהל יחיד נקבעו עיצומים של 1,000 עד 2,000 ₪ על הפרות מסוימות של תקנות אבטחת המידע.</p>
+<p>בנוסף, בית משפט יכול לפסוק פיצוי של עד 10,000 ₪ בלי הוכחת נזק על הפרות מסוימות, ובהן אי-מתן זכות עיון למי שביקש לעיין במידע עליו. וההתיישנות המקוצרת של שנתיים לתביעה אזרחית לפי חוק הגנת הפרטיות בוטלה: על עילות שנוצרו אחרי שהתיקון נכנס לתוקף חלה תקופת ההתיישנות הכללית, שבדרך כלל היא שבע שנים. זה נוגע גם לבעלי בתים, למשל בתביעה של שכן על פגיעה בפרטיות.</p>
+
+<h2 id="who">בית פרטי, בניין משותף ועסק: מה חל על מי</h2>
+
+<h3>בית פרטי</h3>
+<p>לפי הרשות, החוק חל על כל מי שאוסף או מעבד מידע אישי, אבל ההוראות על מאגרי מידע לא חלות על אוסף לשימוש אישי שאינו למטרות עסק. מצלמה שמשפחה מתקינה רק כדי לשמור על הבית שלה תיחשב בדרך כלל שימוש אישי כזה, אבל זה תלוי בנסיבות.</p>
+<p>מה כן חל על כולם: סעיף 2 לחוק מונה מעשים שנחשבים פגיעה בפרטיות, ובהם בילוש או התחקות אחרי אדם העלולים להטרידו, וצילום אדם כשהוא ברשות היחיד. מצלמה שמכוונת לחצר של השכן, לחלון שלו או לדלת הבית שלו עלולה להיכנס לזה. פגיעה בפרטיות חושפת לתביעה אזרחית, ולפי המדריך של הרשות, סעיף 5 לחוק קובע עבירה פלילית על פגיעה במזיד ברוב המצבים שבסעיף 2.</p>
+<p><strong>ההמלצה שלנו:</strong> לכוון כל מצלמה לשטח שלכם, ואם אי אפשר בלי לתפוס חלק מהשכנים, להסתיר את החלק הזה במיסוך פרטיות. ככה נמנעים מסכסוך, ויש לכם תשובה פשוטה כששכן שואל מה המצלמה רואה: מראים לו את התמונה.</p>
+
+<h3>בניין משותף</h3>
+<p>מצלמה בלובי, בחדר המדרגות או בחניון מצלמת את כל הדיירים והאורחים שלהם. ההמלצה שלנו: להחליט עליה יחד עם הדיירים, לכוון אותה לכניסות ולא לדלתות של דירות, לתלות שלט ולקבוע מראש מי רשאי לצפות בהקלטות. ופעמון וידאו ליד הדלת שלכם לא צריך לכסות את הדלת של השכן ממול.</p>
+
+<h3>עסק, חנות ומשרד</h3>
+<p>כאן ההקלטות כוללות לקוחות, עובדים, ספקים ועוברים ושבים, והן משמשות את העסק. שתי הנחיות של הרשות רלוונטיות: 4/2012 למצלמות אבטחה ומעקב, ו-5/17 למצלמות במקום העבודה. ועם תיקון 13 יש לרשות כלים חזקים יותר לאכוף את החוק שעליו הן מבוססות.</p>
+
+<h2 id="guidance">מה הנחיית הרשות למצלמות אבטחה אומרת</h2>
+
+<p>ההנחיה פורסמה ב-21.10.2012, והיא מתייחסת למצלמות בשטחים ציבוריים ובמתחמים פרטיים, ומשקפת את הפרשנות שהרשות משתמשת בה כשהיא מפקחת. אלה העקרונות המרכזיים בה:</p>
+<ul>
+<li><strong>מטרה מוגדרת.</strong> לפני ההתקנה מגדירים בצורה ספציפית למה המצלמה נועדה, ולא משתמשים בצילומים למטרה אחרת.</li>
+<li><strong>מידתיות.</strong> בודקים שהמצלמה היא אמצעי מתאים, שאין אמצעי שפוגע פחות בפרטיות, ושהתועלת גדולה מהפגיעה.</li>
+<li><strong>מיקום וזווית.</strong> מציבים את המצלמה כך שתכסה ככל האפשר רק את השטח הרלוונטי. כשאי אפשר להימנע מצילום שטח רחב מהנדרש, ההנחיה מציעה לשקול הסוואה או ערבול של החלק העודף, או להגביל את יכולת ההתמקדות של המצלמה.</li>
+<li><strong>מינימום מצלמות, זמנים ואיכות.</strong> מספר המצלמות המינימלי שצריך, צילום רק בזמנים שבהם הוא רלוונטי (ההנחיה מזכירה הפעלה לפי תנועה), ואיכות תמונה שמתאימה למטרה.</li>
+<li><strong>שמע, שילוט, משך שמירה והרשאות.</strong> פירטנו כל אחד מאלה <a href="#practical">בחלק המעשי</a>.</li>
+<li><strong>לא מעבירים הלאה.</strong> לא מוסרים צילומים לגורמים שלא קשורים לארגון או למטרה המקורית, ולתקשורת רק במקרים חריגים עם נימוקים מיוחדים. על מסירה למשטרה, ראו סעיף 7 בהמשך.</li>
+</ul>
+
+<h3>מישהו מבקש לראות את ההקלטה</h3>
+<p>אדם שצולם רשאי לבקש לעיין במידע עליו לפי סעיף 13 לחוק. לפי ההנחיה, מזהים אותו גם לפי תמונה, אפשר לבקש ממנו תאריך ושעה מדויקים, וכשמופיעים בקטע אנשים נוספים אפשר לטשטש אותם או לאפשר לו לצפות במקום בלי למסור עותק. הרשות גם כתבה שבדרך כלל לא יהיה צורך לתת זכות עיון במאגר הקלטות שלא עובד לחיפוש לפי זהות, אם ההקלטות לא נשמרות יותר מ-30 יום.</p>
+<p>שימו לב: אי-מתן זכות עיון הוא אחת ההפרות שבגינן תיקון 13 מאפשר לתבוע פיצוי בלי הוכחת נזק.</p>
+
+<h2 id="employees">מצלמות שמצלמות עובדים</h2>
+
+<p>הנחיה 5/17 של הרשות מחמירה יותר, כי עובדים נמצאים מול המצלמה שעות ביום. העיקרים:</p>
+<ul>
+<li>מתקינים מצלמה רק למטרה לגיטימית שקשורה לעסק או לחובה חוקית, ולא משתמשים בצילומים למטרה אחרת. הדוגמה של הרשות: הקלטות ממצלמה שהותקנה לבקרת כניסה לא אמורות לשמש למדידת משך ההפסקות של עובד.</li>
+<li>לפני ההתקנה מגבשים מדיניות ברורה ומפורטת על אופן השימוש במצלמות ועל מטרותיהן, מציגים אותה לעובדים ובודקים מעת לעת אם צריך לרענן אותה.</li>
+<li>ככלל אסור להתקין מצלמות סתר או לצלם עובד בלי ידיעתו.</li>
+<li>שירותים ומלתחות: צילום בהם הוא פגיעה חמורה שקשה להצדיק. מטבחון וחדר אוכל: רק למטרה חיונית מאוד ובמתכונת מצומצמת. משרד או עמדת עבודה אישית: רק כשיש הצדקה חזקה במיוחד, ובכל מקרה בידיעת העובד ובהסכמתו. מסדרונות, כניסות ואזורים פתוחים ללקוחות: סביר יותר, במידתיות ועם יידוע העובדים.</li>
+</ul>
+<p><strong>ההמלצה שלנו בתכנון מערכת לעסק:</strong> לכוון את המצלמות לכניסות, לאזור הקופה, למחסן ולחניה, ולא לעמדות העבודה או לפינת הקפה. אלה בדיוק המקומות שצריך לראות כשיש פריצה או גניבה.</p>
+
+<h2 id="practical">איך מתקינים ומגדירים מצלמות לפי הכללים</h2>
+
+<h3>1. מיקום וזווית</h3>
+<p>הצעד הכי משמעותי נעשה עוד לפני שקונים: מחליטים מה כל מצלמה צריכה לראות. בבית זה בדרך כלל השער, דלת הכניסה, החניה והחצר. מצלמה מעל דלת הכניסה שמכוונת מעט כלפי מטה רואה את מי שעומד בדלת, ולא את הבית ממול.</p>
+<p>עדשה רחבה של 2.8 מ״מ רואה הרבה לצדדים, לפעמים גם את גדר השכנים, ולכן שווה קודם לנסות להזיז את המצלמה או לשנות זווית. כשצריך לצמצם את שדה הראייה רק לשער, עדשה ממונעת עוזרת: ב-<a href="/store/ds-2cd1643g2-lizu-2-8-12mm">Hikvision DS-2CD1643G2-LIZU</a> זווית הצילום משתנה בין 96.7° ל-29.7°.</p>
+
+<h3>2. מיסוך פרטיות (Privacy Mask)</h3>
+<p>מיסוך פרטיות הוא אזור שמסמנים בהגדרות, והמצלמה מסתירה אותו בתמונה. זה הכלי המעשי למה שההנחיה מכנה הסוואה של שטח עודף. דוגמאות מהחנות, לפי מסמכי היצרן:</p>
+<ul>
+<li>בכיפה <a href="/store/ds-2cd1143g2-liu-2-8mm">Hikvision DS-2CD1143G2-LIU</a> ובמצלמה <a href="/store/ds-2cd2047g2h-liu-sl-2-8mm">Hikvision DS-2CD2047G2H-LIU/SL</a>: לפי דף המפרט של Hikvision, 4 אזורי מיסוך בצורת מצולע שאפשר לתכנת.</li>
+<li>במצלמות Reolink: לפי מרכז התמיכה של Reolink, מגדירים מיסוך פרטיות באפליקציה או במקליט, בצורת מלבנים שחורים, והמלבן מסתיר את האזור גם בצפייה החיה וגם בהקלטות. מספר האזורים משתנה לפי הדגם.</li>
+<li>בתוך הבית: לפי מרכז התמיכה של Reolink, ל-<a href="/store/reolink-e1-pro">Reolink E1 Pro</a> יש מצב פרטיות (Privacy Mode) שחוסם את התמונה ומפסיק את הצפייה החיה, את ההקלטה ואת השמע. מפעילים אותו מהאפליקציה, רק בחשבון המנהל הראשי ובקושחה עדכנית. נוח כשכולם בבית ואין סיבה שהמצלמה בסלון תצלם.</li>
+</ul>
+
+<h3>3. שמע</h3>
+<p>בחלק מהמצלמות יש מיקרופון מובנה, למשל בכיפת ה-Hikvision שהזכרנו ובמצלמות שבערכת Reolink 5MP. לפי הנחיית הרשות, אין להקליט קול במצלמות מעקב אלא לפי חוק האזנת סתר. <strong>ההמלצה שלנו:</strong> לוודא בהגדרות המצלמה או המקליט שהקלטת השמע כבויה, בעסק, בשטח משותף ובמצלמות החיצוניות בבית.</p>
+
+<h3>4. שלט</h3>
+<p>לפי ההנחיה, השלט צריך להיות קריא וברור, גם מבחינת הגודל, ורצוי שיכלול ציור של מצלמה או סמל מקובל אחר, את שם הגורם האחראי (לא צריך כשזה ברור מהנסיבות, למשל בתוך חנות), תיאור קצר של מטרת הצילום, ודרך ליצור קשר בשאלות על המצלמות. דוגמה לנוסח לעסק:</p>
+<div style="border: 2px solid #0f3460; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; background: rgba(15,52,96,0.04);"><p style="margin: 0;"><strong>(ציור של מצלמה)</strong></p><p style="margin: 0.5rem 0 0;"><strong>המקום מצולם במצלמות אבטחה.</strong><br />מטרת הצילום: אבטחה ומניעת עבירות.<br />המצלמות מופעלות על ידי: [שם העסק].<br />לשאלות על השימוש במצלמות: [טלפון או מייל].</p></div>
+<p>לפי ההנחיה, השלט נתלה ליד המצלמה, וגם בכניסה לאזור המצולם אם היא רחוקה ממנה. גם בבית פרטי שלט קטן ליד השער הוא רעיון טוב: הוא מודיע לאורחים שיש מצלמה, וגם מרתיע.</p>
+
+<h3>5. כמה זמן לשמור הקלטות</h3>
+<p>החוק וההנחיה לא קובעים מספר ימים אחד לכולם. לפי ההנחיה, קודם בודקים אם צריך בכלל להקליט או שמספיקה צפייה חיה. אם צריך, קובעים את התקופה לפי המטרה ולפי רגישות המידע, לא שומרים צילומים שכבר לא נחוצים, ועדיף שהמערכת תמחק אותם לבד בסוף התקופה או תכתוב עליהם הקלטות חדשות.</p>
+<p>בפועל, משך השמירה במקליט נקבע לפי גודל הדיסק והגדרות ההקלטה: כשהדיסק מתמלא ומוגדרת כתיבה מחדש, ההקלטות החדשות נכתבות מעל הישנות ביותר. אם במקליט יש הגדרה של מחיקה אחרי מספר ימים, קבעו בה את התקופה שבחרתם. אם אין, בחרו דיסק ומצב הקלטה שמתאימים לה. כמה זמן הקלטה נותן דיסק בערך, כתבנו במדריך <a href="/blog/home-cctv-system-cost-breakdown-2026">כמה עולה מערכת מצלמות לבית</a>, ומקליטים בגדלים שונים יש ב<a href="/store/c/recorders">קטגוריית המקליטים</a>. כשקורה אירוע, שומרים את הקטע הרלוונטי בנפרד לפני שהוא נמחק.</p>
+
+<h3>6. משתמשים והרשאות</h3>
+<p>ההנחיה דורשת הגנה פיזית ולוגית על המערכת, רשימת מורשי גישה ותיעוד של ניסיונות הגישה. היא מפרטת סוגים שונים של הרשאות: צפייה חיה, צפייה בהקלטות, העתקה, שליטה בזום ובכיוון המצלמה, ומחיקה או עריכה, וכל אחד מקבל רק את מה שהוא צריך. בציוד שבחנות יש לזה כלים מובנים:</p>
+<ul>
+<li>בכיפה DS-2CD1143G2-LIU ובמצלמה DS-2CD2047G2H-LIU/SL של Hikvision, לפי דף המפרט: עד 32 משתמשים בשלוש רמות (מנהל, מפעיל ומשתמש), ויומן ביקורת אבטחה.</li>
+<li>בערכה <a href="/store/reolink-rlk8-410b4-5mp">Reolink RLK8-410B4-5MP</a>, לפי דף המפרט: עד 20 משתמשים, חשבון מנהל אחד ו-19 חשבונות משתמש.</li>
+</ul>
+<p><strong>ההמלצה שלנו:</strong> לא לתת לכולם את סיסמת המנהל. לעובד במשמרת מספיקה צפייה חיה. מי שמטפל באירועים צריך גם צפייה בהקלטות ושמירת קטעים. מחיקה ושינוי הגדרות נשארים אצל בעל העסק. מחליפים סיסמאות ברירת מחדל, מעדכנים קושחה, ומבטלים את המשתמש של מי שעזב.</p>
+<p>ההנחיה מזכירה גם שגישה מרחוק דרך האינטרנט יוצרת סיכוני אבטחה. לכן סיסמה חזקה, ואימות דו-שלבי אם האפליקציה מציעה אותו, הם חלק מההתקנה.</p>
+
+<h3>7. כשמבקשים מכם צילומים</h3>
+<p>לפי ההנחיה, לא מוסרים צילומים לגורמים שלא קשורים למטרה, אבל המגבלה לא חלה על מסירה לגופים שמוסמכים לחקור, לגורמים שמוסמכים לקבל אותם לפי דין, או לפי צו שיפוטי. <strong>ההמלצה שלנו:</strong> לא להעלות קטעים לרשתות חברתיות, לרשום מתי ולמי נמסר קטע, ובמקרה של ספק לשאול עורך דין.</p>
+
+<h2 id="checklist">רשימת בדיקה קצרה</h2>
+
+<h3>לבית פרטי</h3>
+<ul>
+<li>כל מצלמה מכוונת לשטח שלכם, ומה שנתפס אצל השכנים מוסתר במיסוך פרטיות.</li>
+<li>הקלטת השמע כבויה במצלמות החיצוניות.</li>
+<li>סיסמה חזקה, וחשבון נפרד לכל מי שצופה.</li>
+<li>שלט קטן בשער (מומלץ).</li>
+</ul>
+
+<h3>לעסק</h3>
+<ul>
+<li>מטרה כתובה לכל מצלמה, ומספר מצלמות שמתאים לה.</li>
+<li>שלט בכניסה ובאזורים המצולמים.</li>
+<li>משך שמירה שהוחלט עליו, ומקליט שמוגדר בהתאם.</li>
+<li>הקלטת השמע כבויה.</li>
+<li>רשימת משתמשים והרשאות, וסיסמת המנהל אצל אדם אחד.</li>
+<li>מדיניות מצלמות ברורה שהוצגה לעובדים, ואין מצלמות בשירותים, במלתחות או בפינת המנוחה.</li>
+<li>נוהל קצר: מה עושים כשמבקשים צילום או עיון בהקלטה.</li>
+</ul>
+
+<p>רוב מה שתיארנו נקבע ביום ההתקנה. אם מזמינים <a href="/installation">התקנה על ידי מתקין מטעמנו</a>, אפשר לבקש שיגדיר גם מיסוך פרטיות, שמע כבוי, משתמשים נפרדים ומשך שמירה. ההתקנה היא שירות נפרד בכל הארץ, בתיאום, וההצעה ניתנת אחרי שרואים את המקום בתמונות או בסרטון קצר ב<a href="https://wa.me/972502256866">ווצאפ</a>. מי שבוחר ציוד לבד יכול להתחיל ב<a href="/store/c/ip">מצלמות IP</a>, והמחיר העדכני מופיע בדף המוצר.</p>
+
+<h2 id="sources">מקורות</h2>
+<ul>
+<li><a href="${GUIDE_13}" target="_blank" rel="noopener noreferrer">מדריך: תיקון מס׳ 13 לחוק הגנת הפרטיות</a>, הרשות להגנת הפרטיות, מאי 2025.</li>
+<li><a href="${GUIDE_CAMERAS}" target="_blank" rel="noopener noreferrer">הנחיה 4/2012: שימוש במצלמות אבטחה ומעקב ובמאגרי התמונות הנקלטות בהן</a>, הרשות להגנת הפרטיות, 2012.</li>
+<li><a href="${GUIDE_WORKPLACE}" target="_blank" rel="noopener noreferrer">הנחיה 5/17: שימוש במצלמות מעקב במקום העבודה ובמסגרת יחסי עבודה</a>, הרשות להגנת הפרטיות, 2017.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--muted);">המידע נכון ליום העדכון ואינו ייעוץ משפטי.</p>`;
+
 export default function Page() {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: H1,
+    description: DESCRIPTION,
+    image: HERO,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { '@type': 'Organization', name: 'צוות Site-Control', url: 'https://www.site-control-il.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: { '@type': 'ImageObject', url: 'https://www.site-control-il.com/images/site-control-logo.webp' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    url: CANONICAL,
+    inLanguage: 'he-IL',
+    keywords: KEYWORDS.join(', '),
+    isPartOf: { '@type': 'Blog', '@id': 'https://www.site-control-il.com/blog', name: 'בלוג Site-Control' },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'דף הבית', item: 'https://www.site-control-il.com' },
+      { '@type': 'ListItem', position: 2, name: 'בלוג', item: 'https://www.site-control-il.com/blog' },
+      { '@type': 'ListItem', position: 3, name: SHARE_TITLE, item: CANONICAL },
+    ],
+  };
+
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
-      <article 
-        style={{ lineHeight: '1.8', color: 'var(--text)' }}
-        dangerouslySetInnerHTML={{ __html: `<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--text); margin-top: 2rem;">חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך המלא למצלמות אבטחה</h1>
-<picture>
-        <source srcset="/blog-images/privacy-law-amendment-13-cameras-2026/hero.avif" type="image/avif" />
-        <source srcset="/blog-images/privacy-law-amendment-13-cameras-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/privacy-law-amendment-13-cameras-2026/hero.webp" alt="חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך המלא למצלמות אבטחה" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-
-<p style="margin: 1rem 0; font-style: italic; color: #666;">*מעודכן ל27.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">האם שאלת עצמך פעם איך להגן על הנכס שלך בצורה החכמה והמתקדמת ביותר ב-2026? או אולי תהיתה מה ההבדל בין מערכות האבטחה המסורתיות לטכנולוגיות החדשות שמציעות הגנה של דור הבא? במדריך מקיף זה תקבל תשובות לכל השאלות החשובות ותלמד איך לבחור את המערכת המושלמת לצרכים שלך.</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">תוכן העניינים</h2>
-<picture>
-        <source srcset="/blog-images/privacy-law-amendment-13-cameras-2026/infographic.avif" type="image/avif" />
-        <source srcset="/blog-images/privacy-law-amendment-13-cameras-2026/infographic.webp" type="image/webp" />
-        <img src="/blog-images/privacy-law-amendment-13-cameras-2026/infographic.webp" alt="אינפוגרפיק - חוק הגנת הפרטיות החדש 2026 (תיקון 13) - המדריך המלא למצלמות אבטחה" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. יתרונות מדהימים שלא ידעת עליהם</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. איך לבחור את המערכת הנכונה לבית או עסק שלך</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">5. מדריך התקנה ותחזוקה מקצועי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">6. עלויות אמיתיות ותשואה על השקעה</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">7. שאלות נפוצות ותשובות מקצועיות</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">ההגדרה המקצועית</h3>
-<strong style="font-weight: bold; color: #0070f3;">מערכות אבטחה חכמות</strong> הן פתרונות אבטחה מתקדמים המשלבים בינה מלאכותית, למידת מכונה וטכנולוגיות IoT (אינטרנט הדברים) כדי לספק הגנה אוטונומית, חכמה ויעילה. בניגוד למערכות מסורתיות שרק מקליטות ומתריעות, המערכות החכמות <strong style="font-weight: bold; color: #0070f3;">מנתחות, מבינות ומגיבות</strong> בזמן אמת.
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">השוואה מפורטת: מסורתי מול חכם</h3>
-
-<table style="width: 100%; border-collapse: collapse; margin: 2rem 0; direction: rtl;"><tbody><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">תכונה</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">מערכת מסורתית</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">מערכת חכמה</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">זיהוי איומים</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">גילוי תנועה בסיסי</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">זיהוי אובייקטים ספציפיים, פנים, רכבים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">אזעקות שווא</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">90% מהאזעקות שווא</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">פחות מ-5% אזעקות שווא</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">תגובה</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">התראה בסיסית</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">פעולות אוטומטיות מותאמות</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">ניטוח מרחוק</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">הקלטה פשוטה</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">ניתוח חכם ודוחות מפורטים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">אינטגרציה</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">עצמאית</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">משולבת עם כל המערכות החכמות בבית</td></tr><tr><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; "><strong style="font-weight: bold; color: #0070f3;">עדכונים</strong></td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">לא קיימים</td><td style="padding: 0.75rem; border: 1px solid #ddd; text-align: right; ">עדכוני תוכנה אוטומטיים</td></tr></tbody></table>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">הטכנולוגיות המהפכניות ב-2026</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">1. בינה מלאכותית מתקדמת (Advanced AI)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">החידוש הגדול ב-2026 הוא <strong style="font-weight: bold; color: #0070f3;">בינה מלאכותית שלומדת את ההרגלים שלך</strong>. המערכת לומדת מי הם בני הבית, מתי הם בדרך כלל נמצאים בבית, ומה הם הדפוסים הרגילים. כך היא יכולה לזהות חריגות אמיתיות ולמנוע אזעקות שווא.</p>
-
-<strong style="font-weight: bold; color: #0070f3;">דוגמאות מעשיות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי הבדל בין חתול שמסתובב בגינה לפורץ אמיתי</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הבחנה בין בן משפחה שחוזר בלילה לגנב</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי רכבים מוכרים מול רכבים חשודים</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">2. ראייה ממוחשבת חכמה (Computer Vision)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">טכנולוגיית הראייה ב-2026 מתקדמת מאוד ומסוגלת לבצע ניתוח מורכב של מה שקורה בזמן אמת:</p>
-
-<strong style="font-weight: bold; color: #0070f3;">יכולות מתקדמות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">ספירה אוטומטית של אנשים</strong> - כמה אנשים נכנסו ויצאו</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">זיהוי התנהגות חשודה</strong> - התנהגות לא טבעית או חשודה</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">מעקב אחרי אובייקטים</strong> - מעקב אחרי אנשים או רכבים ברחבי הנכס</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">זיהוי עישון ואש</strong> - מניעה מוקדמת של שריפות</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">3. אינטגרציה מלאה עם בתים חכמים</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">ב-2026, מערכת האבטחה לא עומדת לבד - היא חלק ממערכת אקולוגית חכמה שמחברת את כל הבית:</p>
-
-<strong style="font-weight: bold; color: #0070f3;">תרחישים אוטומטיים:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">כשהמערכת מזהה שיצאת מהבית, היא מפעילה מצב אבטחה מלא</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי פריצה, היא מדליקה את כל האורות ומפעילה צופרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי אש, היא מפעילה מתזים ומתריעה למכבי האש</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזמן שינה, היא מפעילה מצב לילה עם רגישות מתואמת</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">4. אחסון ענן חכם עם חיזוי</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">המערכות החדשות לא רק מאחסנות בענן, אלא גם <strong style="font-weight: bold; color: #0070f3;">מנתחות דפוסים ומחזות התנהגויות עתידיות</strong>:</p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">חיזוי זמני פעילות חשודה לפי דפוסים היסטוריים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי מגמות בפעילות סביב הבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">התראות חכמות על שינויים בדפוסי התנועה השכונתיים</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">יתרונות מדהימים שלא ידעת עליהם</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">יתרון #1: חיסכון של אלפי שקלים בשנה</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">לא רק שהמערכת מגנה מפני גניבות - <strong style="font-weight: bold; color: #0070f3;">היא גם מחסכת הוצאות בדרכים שלא חשבת עליהן:</strong></p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">ביטוח זול יותר</strong>: חברות ביטוח נותנות הנחות של עד 30% לבעלי מערכות חכמות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">מניעת נזקים</strong>: זיהוי מוקדם של דליפות מים, אש או פריצות חוסך תיקונים יקרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: #0070f3;">חיסכון באנרגיה</strong>: אינטגרציה עם מערכת החימום והמיזוג חוסכת עד 25% בחשמל</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">יתרון #2: שקט נפשי אמיתי</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">עם מערכת חכמה, <strong style="font-weight: bold; color: #0070f3;">אתה תמיד יודע בדיוק מה קורה בבית</strong>, גם כשאתה בחו"ל:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הודעות בזמן אמת על כל פעילות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיחת וידאו ישירה עם מי שנמצא בבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">יכולת לראות ולדבר עם ילדים שחזרו מבית הספר</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">יתרון #3: עדכונים וחידושים כל הזמן</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">בניגוד למערכות מסורתיות שמתיישנות, <strong style="font-weight: bold; color: #0070f3;">המערכות החכמות משתפרות כל הזמן</strong>:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">עדכוני תוכנה אוטומטיים עם יכולות חדשות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיפורים באלגוריתמי הזיהוי מבוססי נתונים מכל העולם</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הוספת תכונות חדשות ללא צורך בהחלפת חומרה</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">איך לבחור את המערכת הנכונה לבית או עסק שלך</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">שלב 1: הערכת הצרכים שלך</h3>
-
-<strong style="font-weight: bold; color: #0070f3;">שאלות חיוניות שכדאי לשאול עצמך:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: #0070f3;">איזה סוג נכס יש לי?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בית פרטי: התמקדות בהגנה על המשפחה ונוחות יומיומית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- דירה: מערכת קומפקטית ודיסקרטית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עסק קטן: הגנה על ציוד ומלאי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- משרד: אבטחת מידע ושליטה בגישות</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: #0070f3;">מה רמת האבטחה הנדרשת?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בסיסית: מניעת פריצות והגנה על רכוש</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בינונית: ניטור פעילות והקלטות איכותיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- מתקדמת: ניתוח התנהגות וחיזוי איומים</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: #0070f3;">איזה תקציב אני מוכן להשקיע?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- כלל ישראלי: מערכת אבטחה חכמה איכותית עולה כמו חופשה משפחתית אחת, אבל מגנה שנים רבות</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">שלב 2: בחירת הרכיבים החיוניים</h3>
-
-<strong style="font-weight: bold; color: #0070f3;">רכיבים חובה במערכת חכמה:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: #0070f3;">מצלמות חכמות עם ראיית לילה צבעונית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- רזולוציה: לפחות 4K לזיהוי ברור של פנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- זוויות רחבות: 120 מעלות או יותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עמידות: IP66 לעמידות בגשם וחום</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: #0070f3;">יחידת בקרה מרכזית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עיבוד מקומי: לא תלויה באינטרנט לפעולות בסיסיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- חיבורי יות: תמיכה בעשרות מצלמות וחיישנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- גיבוי כפול: אחסון מקומי וענן</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: #0070f3;">אפליקציה מתקדמת</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- ממשק עברי פשוט ואינטואיטיבי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- התראות חכמות ומותאמות אישית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- שיתוף גישה עם בני משפחה</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: #0070f3; border-bottom: 2px solid #0070f3; padding-bottom: 0.5rem;">סיכום והמלצות</h2>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מערכות אבטחה חכמות ב-2026 אינן עוד מותרות - הן הפכו לצורך בסיסי לכל בית ועסק מתקדם. <strong style="font-weight: bold; color: #0070f3;">השילוב של בינה מלאכותית, ראיית מחשב וחיבור לאינטרנט הדברים יוצר פתרון אבטחה שלא היה אפשרי בעבר</strong>.</p>
-
-<strong style="font-weight: bold; color: #0070f3;">ההמלצות המקצועיות שלנו:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: #0070f3;">אל תדחו את ההחלטה</strong> - כל חודש שעובר בלי מערכת הוא חודש של חשיפת סיכון מיותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: #0070f3;">השקיעו במערכת איכותית</strong> - ההבדל במחיר קטן, ההבדל ביכולות עצום</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: #0070f3;">התעקשו על התקנה מקצועית</strong> - מערכת טובה עם התקנה גרועה = כשלון מובטח</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. <strong style="font-weight: bold; color: #0070f3;">תכננו להרחבה עתידית</strong> - התחילו קטן אבל עם תשתית שמאפשרת גדילה</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #333;">הצעד הבא - ייעוץ מקצועי חינם</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: #0070f3;">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
-
-<strong style="font-weight: bold; color: #0070f3;">📞 צרו קשר עוד היום</strong>: 050-225-6866
-<strong style="font-weight: bold; color: #0070f3;">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: #0070f3; text-decoration: underline;">www.site-control-il.com/contact</a>
-
-<p style="margin: 1rem 0; font-style: italic; color: #666;">---</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">*מאמר זה נכתב על ידי המומחים של Site-Control, החברה המובילה בישראל להתקנת מערכות אבטחה חכמות. עם מעל 10 שנות ניסיון ומאות לקוחות מרוצים, אנחנו מתמחים בפתרונות מתקדמים המותאמים לשוק הישראלי.*</p>
-
-<strong style="font-weight: bold; color: #0070f3;">תגיות:</strong> חוק הגנת הפרטיות מצלמות, תיקון 13 חוק הגנת הפרטיות, מצלמות אבטחה בבניין משותף, רישום מאגר מידע מצלמות, הנחיות רמו"ט מצלמות, התקנת מצלמות בעסק חוק
-` }}
-      />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+        <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>
+          <a href="/" style={{ color: '#007bff', textDecoration: 'none' }}>דף הבית</a>
+          <span> / </span>
+          <a href="/blog" style={{ color: '#007bff', textDecoration: 'none' }}>בלוג</a>
+          <span> / </span>
+          <span>{SHARE_TITLE}</span>
+        </nav>
+        <article style={{ lineHeight: '1.8', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text)', marginTop: '2rem' }}>
+            {H1}
+          </h1>
+          <img
+            src={`/blog-images/${SLUG}/hero.webp`}
+            alt={HERO_ALT}
+            width={1200}
+            height={593}
+            fetchPriority="high"
+            decoding="async"
+            style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px' }}
+          />
+          <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
+            מעודכן ל-17.10.2026 | צוות Site-Control
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
+          <section style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(15,52,96,0.05)', borderRadius: '12px' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--accent, #e94560)' }}>שאלות נפוצות</h2>
+            {FAQS.map((f) => (
+              <details
+                key={f.q}
+                style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--card, #fff)', borderRadius: '8px', border: '1px solid var(--border, #eee)' }}
+              >
+                <summary style={{ fontWeight: 'bold', cursor: 'pointer', color: 'var(--text, #333)', fontSize: '1.1rem' }}>{f.q}</summary>
+                <p style={{ marginTop: '0.75rem', lineHeight: '1.8', color: 'var(--text, #555)' }}>{f.a}</p>
+              </details>
+            ))}
+          </section>
+          <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים אילו מצלמות מתאימות לכם?</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>כמה שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת, או שאלו אותנו בווצאפ</p>
+            <a href="/store/finder" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              לשאלון ההתאמה בחנות
+            </a>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }

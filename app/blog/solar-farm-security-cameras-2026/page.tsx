@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"אבטחת חוות סולאריות: מצלמות 4G סולאריות לשדה בלי תשתית","description":"אבטחת חוות סולאריות בלי לחפור תעלות: מצלמות 4G סולאריות לשער, לחדר הממירים ולתעלות הכבלים. איפה לשים, מה לקנות וכמה זה עולה.","image":"https://www.site-control-il.com/blog-images/solar-farm-security-cameras-2026/hero.webp","datePublished":"2026-10-02","dateModified":"2026-10-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/solar-farm-security-cameras-2026"},"keywords":"אבטחת חוות סולאריות, אבטחת שדה סולארי, מצלמות אבטחה לשדה סולארי, גניבת כבלים משדה סולארי, מצלמת 4G סולארית לשטח פתוח, מצלמה סולארית עם הקלטה רציפה, אבטחת חדר ממירים, מצלמות אבטחה בלי חשמל ואינטרנט","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/solar-farm-security-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"אבטחת חוות סולאריות: מצלמות 4G סולאריות לשדה בלי תשתית","description":"אבטחת חוות סולאריות בלי לחפור תעלות: מצלמות 4G סולאריות לשער, לחדר הממירים ולתעלות הכבלים. איפה לשים, מה לקנות וכמה זה עולה.","image":"https://www.site-control-il.com/blog-images/solar-farm-security-cameras-2026/hero.webp","datePublished":"2026-10-02","dateModified":"2026-10-02","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/solar-farm-security-cameras-2026"},"keywords":"אבטחת חוות סולאריות, אבטחת שדה סולארי, מצלמות אבטחה לשדה סולארי, גניבת כבלים משדה סולארי, מצלמת 4G סולארית לשטח פתוח, מצלמה סולארית עם הקלטה רציפה, אבטחת חדר ממירים, מצלמות אבטחה בלי חשמל ואינטרנט","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/solar-farm-security-cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/solar-farm-security-cameras-2026/hero.webp"
               alt="אבטחת חוות סולאריות: מצלמות 4G סולאריות לשדה בלי תשתית"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>

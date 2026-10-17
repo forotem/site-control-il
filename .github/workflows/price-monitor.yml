@@ -48,6 +48,10 @@ jobs:
       - name: בדיקת נתונים אחרי שינוי מחירים
         run: node automation/qa/data.cjs
 
+      - name: תאריכי עדכון למפת האתר (lastmod)
+        continue-on-error: true
+        run: node automation/catalog-dates.mjs
+
       - name: Commit and push
         run: |
           git config user.name "Price Monitor"

@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Article (17.10.2026, בדיקת SEO: לפוסט לא הייתה סכמת Article)
+const ARTICLE_LD = {"@context": "https://schema.org", "@type": "Article", "headline": "מנעולים חכמים ביומטריים 2026 - המדריך המלא לדלת הכניסה", "description": "מדריך מקיף ועדכני ל-2026: איך בוחרים מנעול חכם ביומטרי? השוואת דגמים, יתרונות אבטחה, זיהוי פנים לעומת טביעת אצבע, ומדריך התקנה מלא.", "image": "https://www.site-control-il.com/blog-images/smart-biometric-locks-2026/hero.webp", "datePublished": "2026-01-27", "dateModified": "2026-01-27", "author": {"@type": "Organization", "name": "צוות Site-Control", "url": "https://www.site-control-il.com"}, "publisher": {"@type": "Organization", "@id": "https://www.site-control-il.com/#org", "name": "Site-Control", "logo": {"@type": "ImageObject", "url": "https://www.site-control-il.com/images/site-control-logo.webp"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.site-control-il.com/blog/smart-biometric-locks-2026"}, "url": "https://www.site-control-il.com/blog/smart-biometric-locks-2026", "inLanguage": "he-IL", "isPartOf": {"@type": "Blog", "@id": "https://www.site-control-il.com/blog", "name": "בלוג Site-Control"}};
+
 export default function BlogPage() {
   return (
     <div style={{
@@ -22,6 +25,7 @@ export default function BlogPage() {
       lineHeight: '1.6',
       color: '#333'
     }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_LD) }} />
       <article>
         {/* Hero Image */}
         <div style={{ marginBottom: '3rem' }}>

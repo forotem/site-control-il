@@ -76,7 +76,8 @@ function isStoreQuery(query) {
 }
 
 /** בוחר נושא חנות שעדיין אין עליו פוסט. isDuplicateSlug מגיע מ-blog-bot כדי לא לשכפל לוגיקה. */
-function pickStoreTopic(existingSlugs, isDuplicateSlug, gscQueries = []) {
+// 17.10.2026: isExcluded (מ-blog-bot) מדלג על נושאים שיש להם דף עוגן, למשל זיהוי פנים, כדי לא לכתוב פוסט שמתחרה בו
+function pickStoreTopic(existingSlugs, isDuplicateSlug, gscQueries = [], isExcluded = () => false) {
   const year = new Date().getFullYear();
   // 1) שאילתות אמיתיות מ-GSC שנוגעות לחנות ועדיין לא מכוסות
   const fromGsc = gscQueries
@@ -84,13 +85,14 @@ function pickStoreTopic(existingSlugs, isDuplicateSlug, gscQueries = []) {
     .sort((a, b) => b.impressions - a.impressions);
   for (const q of fromGsc) {
     const t = STORE_TOPICS.find((s) => s.query.includes(q.query) || q.query.includes(s.query.split(':')[0]));
-    if (t) {
+    if (t && !isExcluded(t.query)) {
       const slug = `${t.slug}-${year}`;
       if (!isDuplicateSlug(slug, existingSlugs)) return { ...t, slug, impressions: q.impressions, clicks: q.clicks, position: q.position, score: 0, focus: 'store' };
     }
   }
   // 2) רשימת הנושאים לפי הסדר
   for (const t of STORE_TOPICS) {
+    if (isExcluded(t.query)) continue;
     const slug = `${t.slug}-${year}`;
     if (!isDuplicateSlug(slug, existingSlugs)) return { ...t, slug, impressions: 0, clicks: 0, position: 0, score: 0, focus: 'store' };
   }

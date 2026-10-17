@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים","description":"גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.","image":"https://www.site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.webp","datePublished":"2026-04-23","dateModified":"2026-04-23","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026"},"keywords":"מצלמות אבטחה זיהוי פנים, מצלמות סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, זיהוי תנועה חכם","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים","description":"גלו איך מצלמות אבטחה סולאריות 4G עם זיהוי תנועה חכם, מבית Site-Control, מהוות את הפתרון האולטימטיבי לקבלנים, חקלאים ומנהלי אתרים מבודדים בישראל. אבטחה ללא חשמל ואינטרנט.","image":"https://www.site-control-il.com/blog-images/cameras-security-detection-face-2026/hero.webp","datePublished":"2026-04-23","dateModified":"2026-04-23","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026"},"keywords":"מצלמות אבטחה זיהוי פנים, מצלמות סולאריות 4G, אבטחה לאתרי בנייה, מצלמות לחקלאות, אבטחת אתרים מבודדים, Reolink GO Plus 4G, Reolink PTZ Solar, זיהוי תנועה חכם","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-security-detection-face-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"
@@ -66,7 +66,7 @@ export default function Page() {
               src="/blog-images/cameras-security-detection-face-2026/hero.webp"
               alt="מצלמות אבטחה זיהוי פנים: פתרונות אבטחה חכמים לאתרים מרוחקים"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={670} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -100,7 +100,7 @@ export default function Page() {
     </ul>
 
     <h2 id="intro">האתגר הגדול: אבטחה באזורים מרוחקים ופתרונות מסורתיים</h2>
-    <p>בישראל, כמו בכל מקום בעולם, גניבות, ונדליזם ופלישות לשטחים פרטיים ועסקיים הם מכה כלכלית וכאב ראש ניהולי. עשרות מיליוני שקלים נגנבים מדי שנה מאתרי בנייה, ציוד חקלאי נגנב, יבול נפגע ושדות נהרסים. אחוז גבוה של <a href="/use-cases/construction">אתרי בנייה</a> בישראל סובלים מאירועי גניבה וונדליזם, ולעיתים קרובות הנזקים נאמדים בעשרות ומאות אלפי שקלים לאירוע בודד. רק ב-2023, ההערכות מדברות על נזקים של למעלה מ-300 מיליון ש"ח לענף הבנייה בלבד כתוצאה מפריצות וגניבות.</p>
+    <p>בישראל, כמו בכל מקום בעולם, גניבות, ונדליזם ופלישות לשטחים פרטיים ועסקיים הם מכה כלכלית וכאב ראש ניהולי. עשרות מיליוני שקלים נגנבים מדי שנה מאתרי בנייה, ציוד חקלאי נגנב, יבול נפגע ושדות נהרסים. אחוז גבוה של <a href="/construction-sites">אתרי בנייה</a> בישראל סובלים מאירועי גניבה וונדליזם, ולעיתים קרובות הנזקים נאמדים בעשרות ומאות אלפי שקלים לאירוע בודד. רק ב-2023, ההערכות מדברות על נזקים של למעלה מ-300 מיליון ש"ח לענף הבנייה בלבד כתוצאה מפריצות וגניבות.</p>
 
     <p>עבור רבים מלקוחותינו – קבלני בנייה, חקלאים, ומנהלי אתרים מבודדים – האתגר חמור עוד יותר: אתרי העבודה והשטחים שלהם נמצאים לרוב באזורים מרוחקים, ללא גישה יציבה לחשמל או תשתית אינטרנט קווית. הפתרונות המסורתיים כמו שומרים אנושיים יקרים מדי ולא תמיד יעילים, גדרות ניתנות לפריצה, ומערכות אבטחה מורכבות מצריכות תשתית יקרה וקבועה שפשוט אינה קיימת בשטח. אז מה עושים?</p>
 
@@ -222,7 +222,7 @@ export default function Page() {
     <ul>
         <li><strong>לפני:</strong> אלי היה מגלה את הנזק רק בבוקר, ללא כל קצה חוט או ראיה. הוא לא יכול היה למנוע את הגניבות.</li>
         <li><strong>אחרי:</strong> לילה אחד קיבל אלי התראה על תנועת רכב חשודה בשדה. הוא פתח את האפליקציה בטלפון, צפה ברכב מסחרי נכנס לשטחיו ומתחיל להעמיס ארגזי ירקות. אלי הפעיל את הסירנה המובנית במצלמה ודיבר עם הפורצים דרך הרמקול הדו-כיווני, מה שגרם להם להימלט בבהלה ולהשאיר את הסחורה. ההקלטה הועברה למשטרה, והפורצים נתפסו זמן קצר לאחר מכן.</li>
-        <li><strong>יתרונות נוספים:</strong> אלי משתמש כעת במצלמות גם לפיקוח על עובדים בשדה ולוודא שההשקיה עובדת תקין, וזאת בזכות ה<a href="/use-cases/agriculture">מצלמות לחקלאות</a> המותאמות לתנאי שטח.</li>
+        <li><strong>יתרונות נוספים:</strong> אלי משתמש כעת במצלמות גם לפיקוח על עובדים בשדה ולוודא שההשקיה עובדת תקין, וזאת בזכות ה<a href="/blog/cameras-security-agriculture-2027">מצלמות לחקלאות</a> המותאמות לתנאי שטח.</li>
     </ul>
 
     <h3 id="remote_sites">מנהלי אתרים מרוחקים ותשתיות מבודדות</h3>

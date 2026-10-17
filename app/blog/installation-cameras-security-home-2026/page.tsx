@@ -1,175 +1,340 @@
 import { Metadata } from 'next';
 
+const CANONICAL = 'https://www.site-control-il.com/blog/installation-cameras-security-home-2026';
+const HERO_URL = 'https://www.site-control-il.com/blog-images/installation-cameras-security-home-2026/hero.webp';
+const SEO_TITLE = 'התקנת מצלמות אבטחה בבית: מדריך מעשי | Site-Control';
+const SHARE_TITLE = 'התקנת מצלמות אבטחה בבית: מדריך מעשי';
+const H1 = 'התקנת מצלמות אבטחה בבית: איך מתכננים, מתקינים ומגדירים נכון';
+const DESCRIPTION =
+  'איך מתקינים מצלמות אבטחה בבית: איפה למקם, באיזה גובה, כבל או Wi-Fi, איפה לשים את המקליט, הגנה מגשם, הגדרת האפליקציה ומתי כדאי מתקין.';
+const KEYWORDS = [
+  'התקנת מצלמות אבטחה בבית',
+  'איפה למקם מצלמות אבטחה',
+  'באיזה גובה להתקין מצלמת אבטחה',
+  'התקנה עצמית של מצלמות אבטחה',
+  'מצלמות PoE או Wi-Fi',
+  'הגדרת אפליקציה למצלמות אבטחה',
+  'מתקין מצלמות אבטחה',
+];
+const HERO_ALT = 'מתקין מרכיב מצלמת אבטחה מסוג כיפה על קיר אבן חיצוני ליד מרפסת';
+const PUBLISHED = '2026-01-27';
+const MODIFIED = '2026-10-17';
+
 export const metadata: Metadata = {
-  title: 'התקנת מצלמות אבטחה לבית 2026 - המדריך המלא לפני הרכישה | Site-Control',
-  description: 'מדריך מקיף להתקנת מצלמות אבטחה לבית: מיקום אופטימלי, בחירת מצלמה, עלויות, חיבור לאפליקציה וטיפים מקצועיים. כל מה שצריך לדעת ב-2026.',
-  keywords: 'התקנת מצלמות אבטחה לבית, איזה מצלמות אבטחה לקנות, מצלמות אבטחה לבית מחיר, מצלמות אבטחה לבית המלצות',
-  alternates: { canonical: 'https://www.site-control-il.com/blog/installation-cameras-security-home-2026' },
+  title: SEO_TITLE,
+  description: DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
+  openGraph: {
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+    locale: 'he_IL',
+    siteName: 'Site-Control',
+    url: CANONICAL,
+    images: [
+      {
+        url: HERO_URL,
+        width: 1200,
+        height: 593,
+        alt: HERO_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    images: [HERO_URL],
+  },
+  alternates: {
+    canonical: CANONICAL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 };
 
+const faq: { q: string; a: string }[] = [
+  {
+    q: 'באיזה גובה מתקינים מצלמת אבטחה בבית?',
+    a: 'כנקודת מוצא, 2.5 עד 3 מטרים מהקרקע: מספיק גבוה כדי שלא יהיה קל להגיע למצלמה ביד, ומספיק נמוך כדי לראות פנים. ליד דלתות ושערים עדיף החלק הנמוך של הטווח. מטים את המצלמה מעט כלפי מטה, ולא מכוונים אותה ישר אל הקרקע. את פעמון הווידאו שלה Reolink ממליצה להתקין בגובה 1.2 מטר.',
+  },
+  {
+    q: 'אפשר להתקין מערכת מצלמות לבד?',
+    a: 'כן, בהרבה בתים. במערכת PoE כל מצלמה מתחברת בכבל רשת אחד למקליט, בלי שקע חשמל ליד המצלמה, וערכות מוכנות מגיעות עם הכבלים בקופסה. כדאי מתקין כשיש עבודה בגובה, כבלים שעוברים בין קומות או אל שער רחוק, קירות שקשה לקדוח בהם, או מערכת ישנה שרוצים לשדרג.',
+  },
+  {
+    q: 'מה עדיף בבית פרטי: מצלמות בכבל או Wi-Fi?',
+    a: 'בבית פרטי עם כמה נקודות בחוץ, מערכת בכבל עם מקליט יציבה יותר: היא לא תלויה בראוטר, לא צריכה שקע ליד המצלמה, וההקלטות נשמרות בבית גם אם מישהו מוריד מצלמה מהקיר. Wi-Fi מתאים לדירה, למרפסת או לנקודה קרובה לבית שבה האות חזק, ולמקום שאי אפשר להעביר אליו כבל.',
+  },
+  {
+    q: 'איפה הכי טוב לשים את המקליט?',
+    a: 'בתוך הבית, במקום מוסתר ומאוורר כמו ארון או מחסן פנימי, ולא במקום גלוי שבו פורץ יכול לקחת אותו. המקליט מתחבר לראוטר בכבל רשת, ומיקום מרכזי בבית מקצר את הכבלים לכל המצלמות. אל-פסק קטן למקליט ולראוטר שומר על המערכת עובדת בהפסקת חשמל קצרה.',
+  },
+  {
+    q: 'איך מצלמים בלי לפגוע בפרטיות של השכנים?',
+    a: 'מכוונים כל מצלמה רק לשטח שלכם, ובודקים באפליקציה מה עוד נכנס לתמונה. אם חלון או חצר של שכן נמצאים בפריים, משנים זווית או מסמנים מיסוך פרטיות. במצלמות Reolink האזור הממוסך מוסתר גם בצפייה החיה וגם בהקלטות. על מצלמה בשטח משותף של בניין כדאי להחליט מראש יחד עם השכנים והוועד.',
+  },
+  {
+    q: 'כמה עולה התקנה ואיך מקבלים הצעת מחיר?',
+    a: 'ההתקנה היא שירות נפרד ממחיר הציוד, בכל הארץ בתיאום, והמחיר שלה נקבע אחרי שרואים את המקום: מספר הנקודות, הגובה, המרחקים ומה שכבר קיים בבית. שולחים בווצאפ סרטון קצר של הבית, תמונה של המקום שבו יעמוד המקליט ופירוט של מה שכבר קיים, ומקבלים הצעת מחיר.',
+  },
+];
+
+const bodyHtml = `<nav style="background: rgba(15,52,96,0.05); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 2rem;"><strong>תוכן העניינים</strong><ul style="margin-top: 0.5rem;"><li><a href="#plan">לפני שקונים: סיבוב אחד מסביב לבית</a></li><li><a href="#points">איפה לשים מצלמות</a></li><li><a href="#height">גובה וזווית</a></li><li><a href="#cable-or-wifi">כבל רשת (PoE) או Wi-Fi</a></li><li><a href="#recorder">איפה לשים את המקליט והראוטר</a></li><li><a href="#weather">חשמל, גשם וקופסאות חיבורים</a></li><li><a href="#neighbors">לא לצלם את השכנים</a></li><li><a href="#app">הגדרת האפליקציה</a></li><li><a href="#diy-or-pro">להתקין לבד או עם מתקין</a></li><li><a href="#quote">מה לשלוח בווצאפ להצעת מחיר</a></li><li><a href="#mistakes">טעויות נפוצות</a></li></ul></nav>
+
+<p>מצלמת אבטחה טובה שהותקנה במקום הלא נכון לא עוזרת הרבה. מצלמה גבוהה מדי רואה קודקודים, מצלמה מול השמש מסתנוורת כל ערב, ומצלמת Wi-Fi בשער הרחוק מתנתקת בדיוק בלילה שצריך אותה. את רוב הבעיות האלה פותרים לפני שקונים ציוד, בתכנון של חצי שעה.</p>
+
+<p>המדריך הזה מיועד לבעלי בתים פרטיים ודירות שרוצים להתקין לבד, או להבין מה המתקין אמור לעשות. על המחירים כתבנו מדריך נפרד, <a href="/blog/home-cctv-system-cost-breakdown-2026">כמה עולה מערכת מצלמות לבית</a>, ולכן לא נחזור עליהם כאן.</p>
+
+<h2 id="plan">לפני שקונים: סיבוב אחד מסביב לבית</h2>
+
+<p>עושים סיבוב מסביב לבית עם הטלפון ביד. בכל מקום שאפשר להיכנס דרכו, או שרוצים לראות בו מה קורה, עוצרים, מצלמים תמונה ורושמים שלושה דברים:</p>
+<ul>
+<li><strong>מה צריך לראות בנקודה הזו.</strong> פנים של מי שנכנס, רכב שנכנס לחניה, או רק תמונה כללית של החצר. זה קובע איפה המצלמה תעמוד ואיזו מצלמה צריך.</li>
+<li><strong>כמה רחוק היא מהמקום של המקליט.</strong> מספיק להעריך בצעדים. המספר הזה יקבע אם הכבלים שבערכה מספיקים, ואם Wi-Fi בכלל רלוונטי שם.</li>
+<li><strong>מה יש שם בלילה.</strong> תאורת רחוב, פנס בחצר או חושך מוחלט.</li>
+</ul>
+<p>ההבחנה החשובה ביותר בשלב הזה היא בין "לראות שמישהו עבר" לבין "לזהות מי זה". מצלמה רחבה בפינת הבית תראה את כל החצר, אבל הפנים של מי שעומד בקצה השני של החצר יהיו בה קטנות מדי לזיהוי. לכן בכניסות שמים מצלמה קרובה, ובשטחים פתוחים מצלמה רחבה שנותנת תמונה כללית. בית מכוסה היטב משלב את שתיהן.</p>
+
+<h2 id="points">איפה לשים מצלמות: הנקודות שכל בית צריך</h2>
+
+<p>כלל פשוט: כל פתח שאפשר להיכנס דרכו מגובה הקרקע צריך כיסוי, ומי שמגיע לבית צריך לעבור לפחות מול מצלמה אחת שרואה את הפנים שלו.</p>
+
+<h3>דלת הכניסה</h3>
+<p>זו הנקודה הראשונה בכל תוכנית. המצלמה צריכה לראות את מי שעומד בדלת מלפנים, ממרחק של מטרים בודדים, ולא רק מלמעלה. אם יש ליד הדלת חיווט של פעמון, פעמון וידאו הוא פתרון נוח: רואים את מי שבדלת ומדברים איתו מהנייד. את פעמון הווידאו שלה Reolink ממליצה להתקין בגובה 1.2 מטר מהקרקע.</p>
+
+<h3>שער וחניה</h3>
+<p>בשער רוצים לראות מי נכנס ובאיזה רכב. מכוונים את המצלמה לאורך השביל או החניה, כך שמי שנכנס הולך לכיוון המצלמה ולא חוצה את התמונה מצד לצד. במצלמת סוללה זה קצת אחרת: לפי Reolink, חיישן התנועה (PIR) שלה רגיש יותר לתנועה מצד לצד מאשר לתנועה ישר לכיוון המצלמה, ולכן כדאי לבדוק שההתראה באמת מגיעה כשנכנסים מהשער. אם חשוב לקרוא לוחית רישוי, המצלמה צריכה להיות קרובה יחסית לנקודה שבה הרכב עוצר או מאט, כמו השער עצמו. מצלמה רחבה על קיר הבית, עשרים מטר מהשער, תראה שנכנס רכב, אבל בדרך כלל לא תקרא את המספר.</p>
+
+<h3>חצר אחורית ודלתות צדדיות</h3>
+<p>יציאה לגינה, דלת מטבח או דלת של מחסן הן פתחים שקל לשכוח בתכנון. מצלמה רחבה על פינת הבית יכולה לכסות חצר שלמה ואת הדלת האחורית יחד. אם יש בחצר חלון שאפשר להגיע אליו מהקרקע, כדאי שגם הוא ייכנס לתמונה.</p>
+
+<h3>שבילים בצדי הבית</h3>
+<p>שביל צר לאורך קיר צדדי הוא מקום שבו אפשר לעבור בלי שרואים מהרחוב. מצלמה בקצה אחד של השביל, שמסתכלת לאורכו, מכסה אותו כולו. בשביל ארוך עדשה צרה יותר עובדת טוב יותר: למשל <a href="/store/reolink-rlk8-1200d4-a">ערכת ה-12MP של Reolink</a> מגיעה גם בגרסה עם עדשות 4 מ״מ, שרואות פחות לרוחב ורחוק יותר לעומק.</p>
+
+<h3>ובתוך הבית?</h3>
+<p>ברוב הבתים מתחילים בחוץ. מצלמה בפנים, למשל בסלון מול דלת הכניסה, מתעדת גם את מי שכבר הצליח להיכנס. מצלמת Wi-Fi לשקע מספיקה לזה, בלי להעביר כבלים.</p>
+
+<h2 id="height">גובה וזווית: מה שקובע אם רואים פנים</h2>
+
+<p>כנקודת מוצא, גובה של 2.5 עד 3 מטרים מתאים לרוב המצלמות החיצוניות בבית פרטי. זה מספיק גבוה כדי שלא יהיה קל להגיע למצלמה ביד, ומספיק נמוך כדי לראות פנים. מעל זה, ובמיוחד במצלמה רחבה, רואים בעיקר קודקוד וכתפיים. ליד דלתות ושערים, שבהם הזיהוי חשוב, עדיף לרדת לחלק הנמוך של הטווח.</p>
+<ul>
+<li><strong>הטיה קלה כלפי מטה, לא ישר למטה.</strong> זיהוי אדם ורכב עובד טוב יותר כשהמצלמה רואה את הדמות מלפנים או בזווית, ולא מלמעלה. גם <a href="https://support.reolink.com/hc/en-us/articles/360006379253-Reolink-Camera-Installation-Tips/" target="_blank" rel="noopener noreferrer">הנחיות ההתקנה של Reolink</a> ממליצות לא לכוון את המצלמה אנכית אל הקרקע, וזה מופיע אצלה גם ברשימת הסיבות לפספוס בזיהוי אדם ורכב.</li>
+<li><strong>לא מול השמש ולא מול אור חזק.</strong> מצלמה נמוכה שמסתכלת מזרחה או מערבה תסתנוור בשעות הזריחה או השקיעה. גם פנס חזק בתוך התמונה מחשיך את כל השאר.</li>
+<li><strong>כמה שפחות שמיים בתמונה.</strong> שמיים בהירים גורמים למצלמה להחשיך את התמונה כדי לפצות, ואז הקרקע, שבה קורה הכול, יוצאת כהה.</li>
+<li><strong>לא מאחורי זכוכית.</strong> בלילה האינפרא-אדום של המצלמה משתקף מהזכוכית, והתמונה הופכת לכתם לבן. גם Reolink ממליצה לא להתקין מצלמה מול זכוכית או מראה.</li>
+<li><strong>מרווח מהקיר ומהמרזב.</strong> מצלמה שצמודה מדי לתקרת המרפסת, למרזב או לקיר בולט מחזירה לעצמה את האינפרא-אדום, ובלילה רואים הילה לבנה. Reolink ממליצה לכוון את המצלמה כך שהאינפרא-אדום לא יוחזר מהקיר. אם שינוי זווית לא מספיק, זרוע קיר מרחיקה את המצלמה מהקיר.</li>
+</ul>
+<p>ועוד דבר: לפני שמהדקים את הברגים, פותחים את התמונה בנייד ומכוונים לפיה.</p>
+
+<h2 id="cable-or-wifi">כבל רשת (PoE) או Wi-Fi</h2>
+
+<p><strong>מצלמת PoE</strong> מקבלת חשמל ותקשורת בכבל רשת אחד שמגיע מהמקליט. אין צורך בשקע ליד המצלמה, החיבור לא תלוי בראוטר, וההקלטות נשמרות על הדיסק שבמקליט, בתוך הבית. גם אם מישהו מוריד מצלמה מהקיר, מה שהיא צילמה עד אותו רגע כבר שמור. לפי <a href="https://support.reolink.com/hc/en-us/articles/12964120024089-Reolink-Ethernet-Cable-FAQ/" target="_blank" rel="noopener noreferrer">Reolink</a>, הכבל בין המצלמה למקליט או למתג יכול להגיע ל-100 מטר אם הוא Cat5e ומעלה, ול-80 מטר בכבל Cat5. בבית פרטי זה כמעט תמיד מספיק. החיסרון: צריך להעביר כבל לכל מצלמה.</p>
+
+<p><strong>מצלמת Wi-Fi</strong> מתחברת לרשת האלחוטית של הבית. מצלמה לשקע צריכה חשמל בקרבת מקום. מצלמת סוללה לא צריכה שום כבל, אבל צריך לטעון אותה או לחבר לה פאנל סולארי, והיא מקליטה בעיקר כשיש תנועה, כדי לחסוך בסוללה. ההקלטה נשמרת בכרטיס זיכרון בתוך המצלמה, או ברכזת כמו <a href="/store/reolink-home-hub">Reolink Home Hub</a>, שמרכזת עד 8 מצלמות Reolink ומקליטה אותן בבית, בלי מנוי.</p>
+
+<p>הנקודה החלשה של Wi-Fi היא המרחק. Reolink ממליצה להתקין מצלמה אלחוטית במקום שהרשת האלחוטית מכסה היטב, ולהרחיק אותה לפחות מטר מהראוטר ומטלפונים. לפני שקודחים, עומדים עם הטלפון בדיוק במקום של המצלמה ובודקים כמה חזק ה-Wi-Fi שם. קיר בטון או ממ״ד בדרך יכולים להחליש את האות מאוד. בתדר 2.4GHz האות עובר קירות טוב יותר, ו-5GHz מהיר יותר אבל מגיע פחות רחוק.</p>
+
+<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr style="background: #0f3460; color: #fff;"><th style="padding: 10px; text-align: right;"></th><th style="padding: 10px; text-align: right;">PoE בכבל</th><th style="padding: 10px; text-align: right;">Wi-Fi</th></tr></thead><tbody>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>חשמל ליד המצלמה</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">לא צריך, החשמל מגיע בכבל הרשת</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">שקע, או סוללה שצריך לטעון</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>יציבות</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">לא תלויה בראוטר</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">תלויה בעוצמת האות בנקודה</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>איפה ההקלטות</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">בדיסק שבמקליט, בתוך הבית</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">בכרטיס במצלמה, או ברכזת</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>עבודת התקנה</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">כבל לכל מצלמה</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">כמעט בלי חיווט</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>מתאים במיוחד ל</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">בית פרטי, חצר, חניה ושער רחוק</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">דירה, מרפסת, נקודה קרובה לבית</td></tr>
+</tbody></table></div>
+
+<p>בבית פרטי עם 4 נקודות ומעלה, <a href="/store/c/kits">ערכה מוכנה בכבל</a> היא בדרך כלל הדרך הפשוטה: מקליט עם יציאות PoE ודיסק, מצלמות מאותו יצרן וכבלים, הכול בקופסה אחת. בדירה, או כשאי אפשר להעביר כבל, <a href="/store/c/wifi">מצלמות Wi-Fi</a> חוסכות את כל החיווט. אפשר גם לשלב: מערכת בכבל בחוץ ומצלמת Wi-Fi אחת בפנים. מקליט Reolink NVS8, למשל, מקבל נוסף על 8 מצלמות בכבל גם 4 מצלמות סוללה של Reolink ב-Wi-Fi.</p>
+
+<h2 id="recorder">איפה לשים את המקליט והראוטר</h2>
+
+<p>במערכת בכבל, כל מצלמה מקבלת כבל משלה שחוזר למקליט. לכן המיקום של המקליט קובע את האורך של כל הכבלים בבית, וכדאי להחליט עליו לפני שמתחילים לקדוח.</p>
+<ul>
+<li><strong>בפנים, מוסתר ומאוורר.</strong> ארון, מחסן פנימי או ארון תקשורת. לא על מדף בסלון, שם פורץ יראה אותו ויוכל לקחת אותו. הדיסק שבתוכו מתחמם, אז לא סוגרים אותו בתא בלי אוויר.</li>
+<li><strong>קרוב לראוטר, או עם כבל רשת אליו.</strong> המקליט מתחבר לראוטר בכבל, וכך האפליקציה בנייד רואה את המצלמות מכל מקום.</li>
+<li><strong>במרכז הבית, אם אפשר.</strong> מקליט באמצע הבית מקצר את הכבלים לכל הכיוונים. בערכה כמו <a href="/store/reolink-rlk8-410b4-5mp">Reolink RLK8-410B4-5MP</a> מגיעים 4 כבלים של 18 מטר. נקודה רחוקה יותר צריכה כבל ארוך יותר, שקונים בנפרד.</li>
+<li><strong>שקע חשמל ואל-פסק.</strong> המקליט צריך שקע רגיל. במערכת PoE הוא גם מזין את המצלמות, ולכן אל-פסק קטן למקליט ולראוטר שומר על המערכת עובדת בהפסקת חשמל קצרה.</li>
+</ul>
+<p>כשבוחרים <a href="/store/c/recorders">מקליט</a>, בודקים שני דברים. הראשון: האם יש בו יציאות PoE מובנות, כך שהמצלמות מתחברות אליו ישירות. למקליט בלי PoE, כמו Uniview NVR301-08S3, צריך להוסיף מתג PoE. השני: האם הדיסק כלול. במקליטי Hikvision ו-Uniview הדיסק נמכר בנפרד, ובמקליטי Reolink NVS8 ו-NVS16 ובערכות המוכנות הוא כבר בפנים. כמה זמן הקלטה נותן כל דיסק, פירטנו ב<a href="/blog/home-cctv-system-cost-breakdown-2026">מדריך העלויות</a>.</p>
+
+<h2 id="weather">חשמל, גשם וקופסאות חיבורים</h2>
+
+<p>מצלמות חיצוניות בנויות לעבוד בחוץ, ובדף של כל מצלמה כתוב תקן העמידות שלה, למשל IP66 או IP67. הנקודה החלשה היא בדרך כלל לא המצלמה אלא החיבור: המקום שבו כבל הרשת מתחבר לזנב של המצלמה, והחור בקיר שדרכו הכבל נכנס.</p>
+<ul>
+<li><strong>לאטום את המחבר.</strong> לפי Reolink, כבל הרשת שלה מצופה במעטפת פלסטיק ועמיד למים לכל אורכו, חוץ מהקצוות, ואת המחברים צריך לאטום בכיסוי אטום למים או בסרט איטום. אם למצלמה יש כיסוי לחיבור הרשת, משתמשים בו.</li>
+<li><strong>קופסת חיבורים.</strong> קופסה שיושבת מאחורי המצלמה מסתירה את החיבור ומגינה עליו מגשם, והתוצאה נראית מסודרת. <a href="/store/reolink-b10">Reolink B10</a> מתאימה לרוב מצלמות הצינור של Reolink, ו-Reolink D20 לרוב מצלמות הכיפה.</li>
+<li><strong>לולאת טפטוף.</strong> לפני שהכבל נכנס לקיר, נותנים לו לרדת מעט מתחת לחור ואז לעלות אליו. ככה מים שזורמים על הכבל נוטפים מהנקודה הנמוכה ולא נכנסים פנימה. את החור עצמו אוטמים בסיליקון.</li>
+<li><strong>כבל חשוף בחוץ.</strong> כבל שעובר לאורך קיר חיצוני כדאי להעביר בצינור או בתעלה. זה מגן עליו מהשמש ומהמכות, וגם מקשה לחתוך אותו.</li>
+</ul>
+<p>לגבי חשמל: במערכת PoE לא צריך שקע ליד אף מצלמה, וזה אחד היתרונות הגדולים שלה. מצלמת Wi-Fi לשקע צריכה שקע בקרבת מקום. אם צריך שקע חדש בקיר חיצוני, זו עבודה לחשמלאי ולא חלק מהתקנת המצלמות.</p>
+
+<h2 id="neighbors">לא לצלם את השכנים</h2>
+
+<p>מצלמה שמכוונת לחצר של השכן, לחלון שלו או לכניסה לבית שלו היא מתכון לסכסוך, גם אם הכוונה הייתה רק לכסות את השער. לכן בודקים כל מצלמה באפליקציה אחרי ההתקנה ושואלים: מה עוד נכנס לתמונה חוץ מהשטח שלי?</p>
+<ul>
+<li><strong>לשנות זווית.</strong> לרוב הטיה של כמה מעלות מוציאה את החצר השכנה מהתמונה.</li>
+<li><strong>מיסוך פרטיות.</strong> במצלמות Reolink אפשר לסמן באפליקציה מלבן על אזור בתמונה (Privacy Mask). האזור הזה מוסתר גם בצפייה החיה וגם בהקלטות. במצלמות של יצרנים אחרים כדאי לבדוק בהגדרות אם יש אפשרות דומה.</li>
+<li><strong>קול.</strong> אם למצלמה יש מיקרופון והיא פונה לרחוב או לשכנים, כדאי לכבות בה את הקלטת הקול.</li>
+<li><strong>שטח משותף.</strong> על מצלמה בחדר מדרגות, בחניה משותפת או בחצר של בית משותף כדאי להחליט מראש יחד עם השכנים והוועד. על ההיבטים של פרטיות כתבנו ב<a href="/blog/privacy-law-amendment-13-cameras-2026">מדריך על תיקון 13 לחוק הגנת הפרטיות ומצלמות אבטחה</a>.</li>
+</ul>
+
+<h2 id="app">הגדרת האפליקציה: עשר דקות שלא כדאי לדלג עליהן</h2>
+
+<p>כל יצרן עובד עם אפליקציה משלו: Reolink עם אפליקציית Reolink, Hikvision עם Hik-Connect, ו-Uniview עם EZView. הסדר דומה בכולן:</p>
+<ol>
+<li><strong>מחברים את המקליט</strong> לחשמל ולראוטר, ואת המצלמות למקליט. בערכה מוכנה המצלמות בדרך כלל מופיעות במקליט לבד.</li>
+<li><strong>מוסיפים את המקליט לאפליקציה</strong>, בדרך כלל בסריקת הברקוד שעל המקליט או על המסך שלו.</li>
+<li><strong>בוחרים סיסמה חזקה</strong> ולא נותנים את סיסמת המנהל לכל המשפחה. אם המערכת מאפשרת, פותחים משתמש נפרד לכל מי שצריך גישה.</li>
+<li><strong>בודקים תאריך, שעה ואזור זמן.</strong> כשמחפשים אירוע מלפני שבוע, שעה לא נכונה הופכת את החיפוש לניחוש.</li>
+<li><strong>בוחרים מצב הקלטה לכל מצלמה:</strong> רציפה, לפי תנועה או לפי לוח זמנים. בערכת NVS8-8MB4 של Reolink, למשל, יש את שלושת המצבים. הקלטה לפי תנועה חוסכת מקום בדיסק.</li>
+<li><strong>מגדירים התראות לפי אדם ורכב</strong>, ומסמנים אזור זיהוי שלא כולל את המדרכה, את הכביש ועצים שזזים ברוח. אחרת מגיעה התראה על כל מכונית שעוברת, ובסוף מכבים את ההתראות.</li>
+<li><strong>בודקים בפועל:</strong> עוברים מול כל מצלמה, מוודאים שהגיעה התראה לנייד, ומוצאים את ההקלטה בהשמעה. בלילה הראשון בודקים שוב את התמונה בחושך.</li>
+<li><strong>מעדכנים קושחה</strong> כשהאפליקציה מציעה עדכון.</li>
+</ol>
+
+<h2 id="diy-or-pro">להתקין לבד או עם מתקין</h2>
+
+<p>מערכת PoE היא לא עבודת חשמל: כבל רשת אחד לכל מצלמה, והמקליט מתחבר לראוטר. ערכות מוכנות מגיעות עם הכבלים בקופסה.</p>
+
+<h3>מתי אפשר לבד</h3>
+<ul>
+<li>בית בקומה אחת, והמצלמות בגובה שמגיעים אליו בסולם רגיל.</li>
+<li>יש דרך נוחה להעביר כבלים: עליית גג, תקרה מונמכת, צנרת ריקה או תעלה לאורך הקיר.</li>
+<li>המרחקים מתאימים לכבלים שבערכה, או שאין בעיה לקנות כבלים ארוכים יותר.</li>
+<li>יש מקדחה, סבלנות ויום פנוי.</li>
+</ul>
+
+<h3>מתי כדאי מתקין</h3>
+<ul>
+<li>מצלמות מעל קומה אחת, מתחת לגג משופע, או בכל מקום שדורש עבודה בגובה.</li>
+<li>כבלים שצריכים לעבור בין קומות, בתוך קירות קיימים או אל שער רחוק.</li>
+<li>חיפוי אבן או קיר בטון שקשה לקדוח בהם בצורה נקייה.</li>
+<li>מערכת ישנה עם כבלי קואקס. לפעמים אפשר להשאיר את הכבלים ולהחליף רק מצלמות ומקליט, כמו שהסברנו ב<a href="/blog/upgrade-old-analog-cctv-same-cables-2026">מדריך לשדרוג מערכת אנלוגית על אותם כבלים</a>.</li>
+<li>רוצים תוצאה מסודרת בלי כבלים גלויים, או פשוט לא רוצים להתעסק עם זה.</li>
+</ul>
+
+<h3>מה מתקין עושה</h3>
+<p>אצלנו <a href="/installation">ההתקנה</a> היא שירות נפרד מקניית הציוד, בכל הארץ, בתיאום. המתקין מתכנן איתכם את הנקודות, מעביר כבלים, מתקין את המצלמות ואת המקליט, מגדיר את האפליקציה בנייד של כל מי שצריך, ובסוף מסביר איך צופים, מחפשים הקלטה ומקבלים התראות. המחיר נקבע בהצעה נפרדת אחרי שרואים את המקום, כי הוא תלוי במספר הנקודות, בגובה, במרחקים ובמה שכבר קיים בבית. מחיר הציוד הוא המחיר שבחנות.</p>
+
+<h2 id="quote">מה לשלוח בווצאפ כדי לקבל הצעת מחיר</h2>
+
+<p>ככל שהמידע הראשון מלא יותר, ההצעה מדויקת יותר. זה מה שכדאי לשלוח:</p>
+<ul>
+<li><strong>סרטון קצר מסביב לבית</strong> שעובר על כל נקודה שבה אתם רוצים מצלמה. אפשר לדבר בסרטון ולהגיד מה חשוב לראות בכל נקודה.</li>
+<li><strong>תמונה של המקום שבו יעמוד המקליט</strong>, ושל הראוטר או ארון התקשורת.</li>
+<li><strong>מה כבר קיים:</strong> מצלמות ישנות, כבלי קואקס או רשת, צנרת ריקה, שקעים בחוץ.</li>
+<li><strong>כמה קומות יש בבית</strong>, ובאיזה גובה בערך כל נקודה.</li>
+<li><strong>היישוב</strong>, כדי לבדוק זמינות של מתקין באזור.</li>
+<li><strong>ציוד שכבר בחרתם</strong>, אם בחרתם. קישור לדף המוצר מספיק.</li>
+</ul>
+<p>את כל זה שולחים <a href="https://wa.me/972502256866" target="_blank" rel="noopener noreferrer">בווצאפ</a>, או דרך הטופס בדף ההתקנה. המחירים בחנות לא כוללים משלוח: דמי המשלוח נקבעים לפי הכתובת, ואפשר גם לאסוף בעצמכם בתיאום מראש. המחיר העדכני של כל פריט מופיע בדף המוצר.</p>
+
+<h2 id="mistakes">טעויות נפוצות בהתקנה</h2>
+
+<h3>מצלמה גבוהה ורחבה מדי מעל הדלת</h3>
+<p>רואים את כל השביל, אבל את מי שעומד בדלת רואים מלמעלה, בלי פנים. בדלת הכניסה עדיף נמוך וקרוב.</p>
+
+<h3>מצלמת Wi-Fi בשער הרחוק</h3>
+<p>היא עובדת ביום הבדיקה ומתנתקת בדיוק כשצריך אותה. לנקודה רחוקה, מאחורי קירות, מעבירים כבל.</p>
+
+<h3>חיבור פתוח לגשם</h3>
+<p>מחבר רשת שנשאר חשוף, בלי איטום ובלי קופסה, הוא בדיוק המקום שבו מים נכנסים. מצלמה שעבדה כל הקיץ יכולה להפסיק לעבוד בחורף הראשון.</p>
+
+<h3>בדיקה רק ביום</h3>
+<p>השתקפות של אינפרא-אדום, פנס שמסנוור או חצר חשוכה מדי מתגלים רק בלילה. עוברים על כל המצלמות בלילה הראשון ומתקנים זווית אם צריך.</p>`;
+
 export default function Page() {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: H1,
+    description: DESCRIPTION,
+    image: HERO_URL,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { '@type': 'Organization', name: 'צוות Site-Control', url: 'https://www.site-control-il.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: { '@type': 'ImageObject', url: 'https://www.site-control-il.com/images/site-control-logo.webp' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    url: CANONICAL,
+    inLanguage: 'he-IL',
+    isPartOf: { '@type': 'Blog', '@id': 'https://www.site-control-il.com/blog', name: 'בלוג Site-Control' },
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'דף הבית', item: 'https://www.site-control-il.com' },
+      { '@type': 'ListItem', position: 2, name: 'בלוג', item: 'https://www.site-control-il.com/blog' },
+      { '@type': 'ListItem', position: 3, name: H1, item: CANONICAL },
+    ],
+  };
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
-      <article 
-        style={{ lineHeight: '1.8', color: 'var(--text)' }}
-        dangerouslySetInnerHTML={{ __html: `<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--text); margin-top: 2rem;">התקנת מצלמות אבטחה לבית 2026 - כל מה שצריך לדעת לפני הרכישה</h1>
-<picture>
-        <source srcset="/blog-images/installation-cameras-security-home-2026/hero.avif" type="image/avif" />
-        <source srcset="/blog-images/installation-cameras-security-home-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/installation-cameras-security-home-2026/hero.webp" alt="התקנת מצלמות אבטחה לבית 2026 - כל מה שצריך לדעת לפני הרכישה" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל27.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">האם שאלת עצמך פעם איך להגן על הנכס שלך בצורה החכמה והמתקדמת ביותר ב-2026? או אולי תהיתה מה ההבדל בין מערכות האבטחה המסורתיות לטכנולוגיות החדשות שמציעות הגנה של דור הבא? במדריך מקיף זה תקבל תשובות לכל השאלות החשובות ותלמד איך לבחור את המערכת המושלמת לצרכים שלך.</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">תוכן העניינים</h2>
-<picture>
-        <source srcset="/blog-images/installation-cameras-security-home-2026/infographic.avif" type="image/avif" />
-        <source srcset="/blog-images/installation-cameras-security-home-2026/infographic.webp" type="image/webp" />
-        <img src="/blog-images/installation-cameras-security-home-2026/infographic.webp" alt="אינפוגרפיק - התקנת מצלמות אבטחה לבית 2026 - כל מה שצריך לדעת לפני הרכישה" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. יתרונות מדהימים שלא ידעת עליהם</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. איך לבחור את המערכת הנכונה לבית או עסק שלך</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">5. מדריך התקנה ותחזוקה מקצועי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">6. עלויות אמיתיות ותשואה על השקעה</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">7. שאלות נפוצות ותשובות מקצועיות</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">ההגדרה המקצועית</h3>
-<strong style="font-weight: bold; color: var(--accent);">מערכות אבטחה חכמות</strong> הן פתרונות אבטחה מתקדמים המשלבים בינה מלאכותית, למידת מכונה וטכנולוגיות IoT (אינטרנט הדברים) כדי לספק הגנה אוטונומית, חכמה ויעילה. בניגוד למערכות מסורתיות שרק מקליטות ומתריעות, המערכות החכמות <strong style="font-weight: bold; color: var(--accent);">מנתחות, מבינות ומגיבות</strong> בזמן אמת.
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">השוואה מפורטת: מסורתי מול חכם</h3>
-
-<table style="width: 100%; border-collapse: collapse; margin: 2rem 0; direction: rtl; background: var(--card);"><tbody><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">תכונה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת מסורתית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת חכמה</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">זיהוי איומים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">גילוי תנועה בסיסי</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">זיהוי אובייקטים ספציפיים, פנים, רכבים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אזעקות שווא</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">90% מהאזעקות שווא</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פחות מ-5% אזעקות שווא</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">תגובה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">התראה בסיסית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פעולות אוטומטיות מותאמות</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">ניטוח מרחוק</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">הקלטה פשוטה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">ניתוח חכם ודוחות מפורטים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אינטגרציה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עצמאית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">משולבת עם כל המערכות החכמות בבית</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">עדכונים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">לא קיימים</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עדכוני תוכנה אוטומטיים</td></tr></tbody></table>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">הטכנולוגיות המהפכניות ב-2026</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">1. בינה מלאכותית מתקדמת (Advanced AI)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">החידוש הגדול ב-2026 הוא <strong style="font-weight: bold; color: var(--accent);">בינה מלאכותית שלומדת את ההרגלים שלך</strong>. המערכת לומדת מי הם בני הבית, מתי הם בדרך כלל נמצאים בבית, ומה הם הדפוסים הרגילים. כך היא יכולה לזהות חריגות אמיתיות ולמנוע אזעקות שווא.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">דוגמאות מעשיות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי הבדל בין חתול שמסתובב בגינה לפורץ אמיתי</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הבחנה בין בן משפחה שחוזר בלילה לגנב</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי רכבים מוכרים מול רכבים חשודים</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">2. ראייה ממוחשבת חכמה (Computer Vision)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">טכנולוגיית הראייה ב-2026 מתקדמת מאוד ומסוגלת לבצע ניתוח מורכב של מה שקורה בזמן אמת:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">יכולות מתקדמות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ספירה אוטומטית של אנשים</strong> - כמה אנשים נכנסו ויצאו</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי התנהגות חשודה</strong> - התנהגות לא טבעית או חשודה</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מעקב אחרי אובייקטים</strong> - מעקב אחרי אנשים או רכבים ברחבי הנכס</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי עישון ואש</strong> - מניעה מוקדמת של שריפות</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">3. אינטגרציה מלאה עם בתים חכמים</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">ב-2026, מערכת האבטחה לא עומדת לבד - היא חלק ממערכת אקולוגית חכמה שמחברת את כל הבית:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תרחישים אוטומטיים:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">כשהמערכת מזהה שיצאת מהבית, היא מפעילה מצב אבטחה מלא</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי פריצה, היא מדליקה את כל האורות ומפעילה צופרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי אש, היא מפעילה מתזים ומתריעה למכבי האש</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזמן שינה, היא מפעילה מצב לילה עם רגישות מתואמת</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">4. אחסון ענן חכם עם חיזוי</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">המערכות החדשות לא רק מאחסנות בענן, אלא גם <strong style="font-weight: bold; color: var(--accent);">מנתחות דפוסים ומחזות התנהגויות עתידיות</strong>:</p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">חיזוי זמני פעילות חשודה לפי דפוסים היסטוריים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי מגמות בפעילות סביב הבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">התראות חכמות על שינויים בדפוסי התנועה השכונתיים</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">יתרונות מדהימים שלא ידעת עליהם</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #1: חיסכון של אלפי שקלים בשנה</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">לא רק שהמערכת מגנה מפני גניבות - <strong style="font-weight: bold; color: var(--accent);">היא גם מחסכת הוצאות בדרכים שלא חשבת עליהן:</strong></p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ביטוח זול יותר</strong>: חברות ביטוח נותנות הנחות של עד 30% לבעלי מערכות חכמות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מניעת נזקים</strong>: זיהוי מוקדם של דליפות מים, אש או פריצות חוסך תיקונים יקרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">חיסכון באנרגיה</strong>: אינטגרציה עם מערכת החימום והמיזוג חוסכת עד 25% בחשמל</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #2: שקט נפשי אמיתי</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">עם מערכת חכמה, <strong style="font-weight: bold; color: var(--accent);">אתה תמיד יודע בדיוק מה קורה בבית</strong>, גם כשאתה בחו"ל:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הודעות בזמן אמת על כל פעילות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיחת וידאו ישירה עם מי שנמצא בבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">יכולת לראות ולדבר עם ילדים שחזרו מבית הספר</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #3: עדכונים וחידושים כל הזמן</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">בניגוד למערכות מסורתיות שמתיישנות, <strong style="font-weight: bold; color: var(--accent);">המערכות החכמות משתפרות כל הזמן</strong>:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">עדכוני תוכנה אוטומטיים עם יכולות חדשות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיפורים באלגוריתמי הזיהוי מבוססי נתונים מכל העולם</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הוספת תכונות חדשות ללא צורך בהחלפת חומרה</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">איך לבחור את המערכת הנכונה לבית או עסק שלך</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 1: הערכת הצרכים שלך</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">שאלות חיוניות שכדאי לשאול עצמך:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">איזה סוג נכס יש לי?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בית פרטי: התמקדות בהגנה על המשפחה ונוחות יומיומית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- דירה: מערכת קומפקטית ודיסקרטית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עסק קטן: הגנה על ציוד ומלאי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- משרד: אבטחת מידע ושליטה בגישות</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">מה רמת האבטחה הנדרשת?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בסיסית: מניעת פריצות והגנה על רכוש</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בינונית: ניטור פעילות והקלטות איכותיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- מתקדמת: ניתוח התנהגות וחיזוי איומים</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">איזה תקציב אני מוכן להשקיע?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- כלל ישראלי: מערכת אבטחה חכמה איכותית עולה כמו חופשה משפחתית אחת, אבל מגנה שנים רבות</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 2: בחירת הרכיבים החיוניים</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">רכיבים חובה במערכת חכמה:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">מצלמות חכמות עם ראיית לילה צבעונית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- רזולוציה: לפחות 4K לזיהוי ברור של פנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- זוויות רחבות: 120 מעלות או יותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עמידות: IP66 לעמידות בגשם וחום</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">יחידת בקרה מרכזית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עיבוד מקומי: לא תלויה באינטרנט לפעולות בסיסיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- חיבורי יות: תמיכה בעשרות מצלמות וחיישנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- גיבוי כפול: אחסון מקומי וענן</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">אפליקציה מתקדמת</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- ממשק עברי פשוט ואינטואיטיבי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- התראות חכמות ומותאמות אישית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- שיתוף גישה עם בני משפחה</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">סיכום והמלצות</h2>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מערכות אבטחה חכמות ב-2026 אינן עוד מותרות - הן הפכו לצורך בסיסי לכל בית ועסק מתקדם. <strong style="font-weight: bold; color: var(--accent);">השילוב של בינה מלאכותית, ראיית מחשב וחיבור לאינטרנט הדברים יוצר פתרון אבטחה שלא היה אפשרי בעבר</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">ההמלצות המקצועיות שלנו:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">אל תדחו את ההחלטה</strong> - כל חודש שעובר בלי מערכת הוא חודש של חשיפת סיכון מיותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">השקיעו במערכת איכותית</strong> - ההבדל במחיר קטן, ההבדל ביכולות עצום</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">התעקשו על התקנה מקצועית</strong> - מערכת טובה עם התקנה גרועה = כשלון מובטח</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. <strong style="font-weight: bold; color: var(--accent);">תכננו להרחבה עתידית</strong> - התחילו קטן אבל עם תשתית שמאפשרת גדילה</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">הצעד הבא - ייעוץ מקצועי חינם</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: var(--accent);">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-225-6866
-<strong style="font-weight: bold; color: var(--accent);">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: var(--link-color); text-decoration: underline;">www.site-control-il.com/contact</a>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">---</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">*מאמר זה נכתב על ידי המומחים של Site-Control, החברה המובילה בישראל להתקנת מערכות אבטחה חכמות. עם מעל 10 שנות ניסיון ומאות לקוחות מרוצים, אנחנו מתמחים בפתרונות מתקדמים המותאמים לשוק הישראלי.*</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תגיות:</strong> התקנת מצלמות אבטחה לבית, התקנת מצלמות אבטחה לבית 2026, התקנת מצלמות אבטחה לבית למכירה, התקנת מצלמות אבטחה לבית מחיר, התקנת מצלמות אבטחה לבית המלצות, התקנת מצלמות אבטחה לבית ביקורות
-` }}
-      />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+        <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>
+          <a href="/" style={{ color: '#007bff', textDecoration: 'none' }}>דף הבית</a>
+          <span> / </span>
+          <a href="/blog" style={{ color: '#007bff', textDecoration: 'none' }}>בלוג</a>
+          <span> / </span>
+          <span>{H1}</span>
+        </nav>
+        <article style={{ lineHeight: '1.8', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text)', marginTop: '2rem' }}>
+            {H1}
+          </h1>
+          <img
+            src="/blog-images/installation-cameras-security-home-2026/hero.webp"
+            alt={HERO_ALT}
+            width={1200}
+            height={593}
+            fetchPriority="high"
+            decoding="async"
+            style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px' }}
+          />
+          <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
+            מעודכן ל-17.10.2026 | צוות Site-Control
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <section style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(15,52,96,0.05)', borderRadius: '12px' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--accent, #e94560)' }}>שאלות נפוצות</h2>
+            {faq.map((f) => (
+              <details key={f.q} style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--card, #fff)', borderRadius: '8px', border: '1px solid var(--border, #eee)' }}>
+                <summary style={{ fontWeight: 'bold', cursor: 'pointer', color: 'var(--text, #333)', fontSize: '1.1rem' }}>{f.q}</summary>
+                <p style={{ marginTop: '0.75rem', lineHeight: '1.8', color: 'var(--text, #555)' }}>{f.a}</p>
+              </details>
+            ))}
+          </section>
+          <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים איזה ציוד מתאים לבית שלכם?</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>כמה שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת, או שלחו לנו סרטון של הבית בווצאפ</p>
+            <a href="/store/finder" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              לשאלון ההתאמה בחנות
+            </a>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }

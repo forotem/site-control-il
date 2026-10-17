@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "חנות מצלמות אבטחה עם שירות התקנה: Hikvision, Uniview, Reolink ו-VisionNet ציוד מיבואן בישראל. מצלמות IP, מקליטים, אינטרקום ובקרת כניסה. אחריות שנה.",
   alternates: { canonical: BASE_URL },
   openGraph: {
+    url: BASE_URL,
     title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
     description: "חנות מצלמות אבטחה עם שירות התקנה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.",
     type: "website",
@@ -197,7 +198,7 @@ export default function Page() {
           </div>
         </section>
 
-        <BlogList slugs={["installation-cameras-security-home-2026", "privacy-law-amendment-13-cameras-2026", "smart-alarm-vs-security-cameras-2026", "cameras-security-with-detection-face-2026", "cameras-security-outdoor-weatherproof-water-2026", "smart-security-ai-2026"]} />
+        <BlogList slugs={["home-cctv-system-cost-breakdown-2026", "installation-cameras-security-home-2026", "privacy-law-amendment-13-cameras-2026", "upgrade-old-analog-cctv-same-cables-2026", "cameras-security-outdoor-weatherproof-water-2026", "smart-alarm-vs-security-cameras-2026"]} />
 
         <section className={styles.closing}>
           <h2>לא בטוחים מאיפה להתחיל?</h2>

@@ -8,6 +8,8 @@ export const BUSINESS = {
   phoneDisplay: "050-2256866",
   phoneE164: "+972502256866",
   email: "info@site-control-il.com",
+  /** הרשתות של Site-Control (דף פייסבוק 1316019568263008, אינסטגרם @sitecontrol.il). בסכמה (sameAs) ובפוטר. 17.10.2026 */
+  social: { facebook: "https://www.facebook.com/61594917474102", instagram: "https://www.instagram.com/sitecontrol.il/" },
   /** אזור ההתקנה (החלטת רותם 24.9.2026): שירות נפרד בכל הארץ, בתיאום ולפי הצעת מחיר. מחיר הציוד מחייב, ההתקנה בהצעה. */
   installArea: "כל הארץ, בתיאום ולפי הצעת מחיר",
   installAreaIn: "בכל הארץ, בתיאום ולפי הצעת מחיר",

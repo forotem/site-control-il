@@ -39,8 +39,80 @@ const FOCUS = (process.env.BLOG_FOCUS || (IS_FIRST_THURSDAY ? 'solar' : 'store')
 
 // נושאים שאינם חלק מהעסק (טיימלאפס/תיעוד שייכים לאתר האחות timelapseit.co.il)
 const EXCLUDED_TOPIC_RE = /טיימלאפס|טיים[- ]?לאפס|time[- ]?lapse|תיעוד/i;
+// 17.10.2026 (בדיקת SEO): נושאים שיש להם כבר דף עוגן. פוסט חדש עליהם רק מתחרה בדף העוגן (קניבליזציה), ובדיקת הכפילות
+// לפי מילים באנגלית בסלאג לא תופסת את זה. עוגנים: /construction-sites, /blog/cameras-security-agriculture-2027,
+// /blog/solar-farm-security-cameras-2026, /blog/cameras-2026 (ללא אינטרנט), /store/c/solar (ללא חשמל),
+// /blog/cameras-security-with-detection-face-2026, /blog/privacy-law-amendment-13-cameras-2026.
+const OWNED_TOPIC_RE = /(^|[\s-])(ל|ב|ה)?בני(ה|יה)(?![א-ת])|קבל(ן|נ)|חקלא|כר(ם|מים)(?![א-ת])|מטע|חוו(ת|ה) סולארי|זיהוי פנים|(ללא|בלי) (חשמל|אינטרנט)(?![א-ת])|תיקון 13|הגנת הפרטיות/;
 function isExcludedTopic(text) {
-  return EXCLUDED_TOPIC_RE.test(String(text || ''));
+  const s = String(text || '');
+  return EXCLUDED_TOPIC_RE.test(s) || OWNED_TOPIC_RE.test(s);
+}
+
+/** כותרת SEO: " | Site-Control" רק אם הכל נכנס ב-60 תווים */
+function seoTitleOf(blogData) {
+  const withBrand = `${blogData.title} | Site-Control`;
+  return withBrand.length <= 60 ? withBrand : blogData.title;
+}
+/** תיאור meta עד 155 תווים, נחתך בגבול מילה */
+function trimDesc(s) {
+  const t = String(s || '').replace(/\s+/g, ' ').trim();
+  if (t.length <= 155) return t;
+  const cut = t.slice(0, 152);
+  return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+}
+
+/** קישורים בתוכן לפני כתיבה (17.10.2026: פוסט מ-12/10 יצא עם מוצר שלא קיים ועם wa.me/YOUR_WHATSAPP_NUMBER) */
+async function sanitizeLinks(html) {
+  const src = fs.readFileSync(path.join(PROJECT_ROOT, 'app', 'data', 'store-catalog.ts'), 'utf8');
+  const slugs = new Set([...src.matchAll(/"slug": "([^"]+)"/g)].map((m) => m[1]));
+  const cats = new Set([...src.matchAll(/"id": "([a-z]+)",\s*"name":/g)].map((m) => m[1]));
+  const posts = new Set([
+    ...[...fs.readFileSync(BLOG_DATA_PATH, 'utf8').matchAll(/slug: '([^']+)'/g)].map((m) => m[1]),
+    ...fs.readdirSync(BLOG_DIR).filter((d) => fs.existsSync(path.join(BLOG_DIR, d, 'page.tsx'))),
+  ]);
+  let redirects = [];
+  try {
+    const { pathToFileURL } = require('url');
+    const cfg = (await import(pathToFileURL(path.join(PROJECT_ROOT, 'next.config.mjs')).href)).default;
+    redirects = typeof cfg.redirects === 'function' ? await cfg.redirects() : [];
+  } catch (e) { console.warn(`⚠️ לא נטענו ההפניות מ-next.config.mjs: ${e.message}`); }
+  const redirectOf = (p) => {
+    for (const r of redirects) {
+      const wild = r.source.match(/^(.*)\/:path\*$/);
+      if (wild ? p === wild[1] || p.startsWith(`${wild[1]}/`) : p === r.source) return r.destination;
+    }
+    return null;
+  };
+  const fixes = [];
+  const out = String(html || '').replace(/<a\s+([^>]*?)href=("|')([^"']*)\2([^>]*)>([\s\S]*?)<\/a>/g, (all, pre, _q, href, post, text) => {
+    const keep = (h) => `<a ${pre}href="${h}"${post}>${text}</a>`;
+    if (/YOUR_|example\.com/i.test(href)) {
+      fixes.push(`placeholder ${href}`);
+      return /wa\.me/.test(href) ? keep('https://wa.me/972502256866') : text;
+    }
+    const wa = href.match(/^https?:\/\/(api\.whatsapp\.com|wa\.me)\/(\d*)/i);
+    if (wa && wa[2] !== '972502256866') { fixes.push(`whatsapp number ${href}`); return keep('https://wa.me/972502256866'); }
+    let h = href;
+    const abs = h.match(/^https?:\/\/([^/?#]+)(\/[^"]*)?$/i);
+    if (abs && /site-control/i.test(abs[1])) {
+      if (/^(www\.)?site-control-il\.com$/i.test(abs[1])) h = abs[2] || '/';
+      else { fixes.push(`foreign domain ${href}`); return text; }
+    }
+    if (!h.startsWith('/')) return keep(h);
+    const p = h.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+    const dest = redirectOf(p);
+    if (dest) { fixes.push(`redirect ${h} -> ${dest}`); return /^https?:/.test(dest) ? text : keep(dest); }
+    const m = p.match(/^\/store\/([^/]+)$/);
+    if (m && m[1] !== 'finder' && !slugs.has(m[1])) { fixes.push(`unknown product ${h}`); return text; }
+    const c = p.match(/^\/store\/c\/([^/]+)$/);
+    if (c && cats.size && !cats.has(c[1])) { fixes.push(`unknown category ${h}`); return keep('/store'); }
+    const bp = p.match(/^\/blog\/([^/]+)$/);
+    if (bp && !posts.has(bp[1])) { fixes.push(`unknown post ${h}`); return text; }
+    return h === href ? all : keep(h);
+  });
+  if (fixes.length) console.log(`🔗 תוקנו ${fixes.length} קישורים: ${fixes.join(' | ')}`);
+  return out;
 }
 
 // Gemini models
@@ -315,18 +387,8 @@ function findOpportunity(queries) {
   }
 
   // Fallback topics - focused on B2B target audience (construction, agriculture, remote sites)
+  // 17.10.2026: נושאי בנייה וחקלאות הוסרו. יש להם דפי עוגן (/construction-sites, פוסט החקלאות), ופוסט נוסף רק מתחרה בהם.
   const fallbackTopics = [
-    // Construction site monitoring - high commercial intent
-    'מצלמות אבטחה לאתר בנייה ללא חשמל',
-    'ניטור אתר בנייה מרחוק 24/7',
-    'מצלמות מעקב לקבלן בנין',
-    'מניעת גניבות ציוד באתר בנייה',
-    'פיקוח על עובדים באתר בנייה מצלמות',
-    // Agriculture - high commercial intent
-    'מצלמות אבטחה לשדה חקלאי ללא חשמל',
-    'ניטור ציוד חקלאי מרחוק 4G',
-    'אבטחת מחסן חקלאי מבודד',
-    'מצלמות לכרם ומטע ללא אינטרנט',
     // Remote sites - core use case
     'מצלמות אבטחה לאתר מבודד ללא חשמל',
     'פתרון אבטחה ללא תשתיות חשמל ואינטרנט',
@@ -643,6 +705,18 @@ async function saveCompressedHero(imageDir, imageBuffer) {
   }
 }
 
+/** מידות תמונת ה-hero (width/height ל-<img>, בלי קפיצת עימוד). 17.10.2026 */
+async function heroSize(slug) {
+  try {
+    const sharp = require('sharp');
+    for (const ext of ['webp', 'png', 'jpg', 'jpeg', 'avif']) {
+      const p = path.join(IMAGES_DIR, slug, `hero.${ext}`);
+      if (fs.existsSync(p)) { const m = await sharp(p).metadata(); if (m.width && m.height) return [m.width, m.height]; }
+    }
+  } catch { /* svg או בלי sharp */ }
+  return [1200, 630];
+}
+
 function createPlaceholderImage(imageDir, title) {
   // Create a simple SVG placeholder
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
@@ -668,7 +742,7 @@ function createPlaceholderImage(imageDir, title) {
 
 // ---------- WRITE BLOG FILES ----------
 
-function writeBlogPage(slug, blogData, topic) {
+function writeBlogPage(slug, blogData, topic, heroDims = [1200, 630]) {
   const blogDir = path.join(BLOG_DIR, slug);
   fs.mkdirSync(blogDir, { recursive: true });
 
@@ -731,7 +805,7 @@ function writeBlogPage(slug, blogData, topic) {
       name: 'Site-Control',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.site-control-il.com/optimized-variants/הלוגו שלי/site-control-logo.optimized-w480.avif',
+        url: 'https://www.site-control-il.com/images/site-control-logo.webp',
       },
     },
     mainEntityOfPage: {
@@ -751,7 +825,7 @@ function writeBlogPage(slug, blogData, topic) {
   const pageContent = `import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '${blogData.title.replace(/'/g, "\\'")} | Site-Control',
+  title: '${seoTitleOf(blogData).replace(/'/g, "\\'")}',
   description: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
   keywords: ${JSON.stringify(blogData.keywords || [])},
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
@@ -816,7 +890,7 @@ export default function Page() {
               src="/blog-images/${slug}/hero.${imageExt}"
               alt="${blogData.title.replace(/"/g, '&quot;')}"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={${heroDims[0]}} height={${heroDims[1]}} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
@@ -869,7 +943,7 @@ function addBlogEntry(slug, blogData) {
     date: '${today}',
     category: '${(blogData.category || 'מצלמות אבטחה').replace(/'/g, "\\'")}',
     image: '/blog-images/${slug}/hero.${imageExt}',
-    seoTitle: '${blogData.title.replace(/'/g, "\\'")} | Site-Control',
+    seoTitle: '${seoTitleOf(blogData).replace(/'/g, "\\'")}',
     seoDescription: '${(blogData.metaDescription || '').replace(/'/g, "\\'")}',
     keywords: ${JSON.stringify(blogData.keywords || [])}
   },`;
@@ -912,13 +986,13 @@ async function main() {
   console.log(`🎯 פוקוס הריצה: ${FOCUS}`);
   let opportunity = null;
   if (FOCUS === 'store') {
-    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries);
+    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries, isExcludedTopic);
     if (opportunity) console.log(`🛒 נושא חנות: "${opportunity.query}" (${opportunity.slug})`);
     else console.log('🛒 כל נושאי החנות כבר כוסו, עובר למסלול הרגיל');
   }
   if (!opportunity) opportunity = findOpportunity(queries);
   if (!opportunity && FOCUS !== 'store') {
-    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries);
+    opportunity = store.pickStoreTopic(getExistingSlugs(), isDuplicateSlug, queries, isExcludedTopic);
     if (opportunity) console.log(`🛒 אין הזדמנות סולארית חדשה, לוקח נושא חנות: "${opportunity.query}"`);
   }
   if (!opportunity) {
@@ -935,8 +1009,11 @@ async function main() {
   // Step 4: Generate image
   await generateBlogImage(opportunity, opportunity.slug);
 
-  // Step 5: Write files
-  writeBlogPage(opportunity.slug, blogData, opportunity);
+  // Step 5: Write files (17.10.2026: תיאור עד 155 תווים, קישורים נבדקים מול הקטלוג וההפניות)
+  blogData.metaDescription = trimDesc(blogData.metaDescription);
+  blogData.content = await sanitizeLinks(blogData.content);
+  if (Array.isArray(blogData.faq)) for (const f of blogData.faq) if (f && f.answer) f.answer = await sanitizeLinks(f.answer);
+  writeBlogPage(opportunity.slug, blogData, opportunity, await heroSize(opportunity.slug));
   addBlogEntry(opportunity.slug, blogData);
 
   console.log(`\n🎉 בלוג חדש נוצר בהצלחה!`);

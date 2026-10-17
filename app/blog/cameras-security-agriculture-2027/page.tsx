@@ -1,174 +1,342 @@
 import { Metadata } from 'next';
 
+const CANONICAL = 'https://www.site-control-il.com/blog/cameras-security-agriculture-2027';
+const HERO = 'https://www.site-control-il.com/blog-images/cameras-security-agriculture-2027/hero.webp';
+const SEO_TITLE = 'מצלמות אבטחה לחקלאות: שדה, מטע, לול ומחסן';
+const H1 = 'מצלמות אבטחה לחקלאות: מדריך מעשי לשדה, למטע, ללול ולמחסן הציוד';
+const DESCRIPTION =
+  'מצלמות אבטחה לחקלאות בלי חשמל ובלי אינטרנט: מצלמות סולאריות עם סים 4G לשדה, למטע ולכרם, מקליט ללול ולמחסן, ואיך מתקינים אותן נכון.';
+const KEYWORDS = [
+  'מצלמות אבטחה לחקלאות',
+  'מצלמה סולארית לשדה',
+  'מצלמת 4G למטע',
+  'מצלמות אבטחה ללול ולרפת',
+  'מצלמה לחממה',
+  'מצלמות למחסן ציוד חקלאי',
+  'מצלמת אבטחה בלי חשמל ובלי אינטרנט',
+];
+const PUBLISHED = '2026-02-01';
+const MODIFIED = '2026-10-17';
+
+const FAQ: { q: string; a: string }[] = [
+  {
+    q: 'איזו מצלמה מתאימה לשדה בלי חשמל ובלי אינטרנט?',
+    a: 'מצלמה סולארית עם סים 4G. היא נטענת מפאנל סולארי, מקליטה לכרטיס זיכרון שבתוכה, ושולחת התראות ושידור חי לנייד דרך הרשת הסלולרית. לנקודה אחת, כמו משאבה או שער, מספיקה מצלמה עם עדשה קבועה. לשטח רחב עדיפה מצלמה ממונעת עם מעקב אוטומטי, כמו Reolink Go PT Ultra, שמגיעה עם פאנל סולארי באריזה.',
+  },
+  {
+    q: 'מצלמה סולארית מקליטה 24 שעות ביממה?',
+    a: 'רוב המצלמות הסולאריות על סוללה מקליטות רק כשיש תנועה, כדי לחסוך בסוללה, ושומרות קטע וידאו על כל אירוע. מי שצריך הקלטה רציפה בשטח בלי חשמל יכול לבחור בערכת TrackMix LTE Plus עם פאנל 66W, שבנויה להקלטה 24/7. אם יש במקום שקע חשמל ואין אינטרנט, TrackMix Wired LTE מקליטה 24/7 על חשמל קבוע וסים 4G.',
+  },
+  {
+    q: 'כמה גלישה צורכת מצלמת 4G במשק?',
+    a: 'ההקלטה לכרטיס הזיכרון לא צורכת גלישה. הגלישה משמשת להתראות, לצפייה חיה ולצפייה בהקלטות מרחוק. לפי ההערכה של Reolink, בשימוש קל (בעיקר התראות) רוב הדגמים שבחנות צורכים בסביבות 2 ג׳יגה בחודש, וב-Duo 2 LTE בגרסת 6MP כ-5 ג׳יגה. צפייה חיה מעלה את הצריכה מהר, ולכן לחבילה אנחנו ממליצים על 10 עד 30 ג׳יגה בחודש למצלמה, או על הסים שלנו עם חבילה שנתית.',
+  },
+  {
+    q: 'המצלמה לא תתריע כל לילה על חזירי בר ותנים?',
+    a: 'אם מגדירים אותה נכון, לא. במצלמות עם זיהוי חכם בוחרים לקבל התראה רק על אדם ורכב, מסמנים אזורי זיהוי שכוללים רק את השער או את הדרך, ומורידים את הרגישות של חיישן ה-PIR בנקודות שיש בהן הרבה תנועה של בעלי חיים. זה גם חוסך בסוללה.',
+  },
+  {
+    q: 'אתם מתקינים מצלמות בשטח חקלאי?',
+    a: 'כן. ההתקנה היא שירות נפרד, בכל הארץ ובתיאום. שולחים בווצאפ כמה תמונות או סרטון קצר של השטח ושל הנקודות, ומקבלים הצעת מחיר להתקנה. אפשר גם לקנות את המצלמות בחנות ולהתקין לבד: מצלמה סולארית עם סוללה לא צריכה חשמלאי, ואנחנו מסבירים בטלפון או בווצאפ איך מחברים ומגדירים.',
+  },
+];
+
 export const metadata: Metadata = {
-  title: 'מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות | מדריך מקצועי 2026',
-  description: 'מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות - מדריך מקיף ומעודכן. מצלמות אבטחה לחקלאות, מצלמות אבטחה לחקלאות 2027, מצלמות אבטחה לחקלאות למכירה עם ייעוץ מקצועי והתקנה ברמה הגבוהה ביותר בישראל.',
-  keywords: 'מצלמות אבטחה לחקלאות, מצלמות אבטחה לחקלאות 2027, מצלמות אבטחה לחקלאות למכירה, מצלמות אבטחה לחקלאות מחיר, מצלמות אבטחה לחקלאות המלצות, מצלמות אבטחה לחקלאות ביקורות',
+  title: SEO_TITLE + ' | Site-Control',
+  description: DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
+  openGraph: {
+    title: SEO_TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+    locale: 'he_IL',
+    siteName: 'Site-Control',
+    url: CANONICAL,
+    images: [
+      {
+        url: HERO,
+        width: 1200,
+        height: 593,
+        alt: 'מצלמת אבטחה על עמוד מתכת מול חממות ושדה ירקות',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SEO_TITLE,
+    description: DESCRIPTION,
+    images: [HERO],
+  },
+  alternates: {
+    canonical: CANONICAL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 };
 
+const BODY = `<nav style="background: rgba(15,52,96,0.05); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 2rem;"><strong>תוכן העניינים</strong><ul style="margin-top: 0.5rem;"><li><a href="#losses">מה באמת נעלם מהמשק</a></li><li><a href="#why-fail">למה מצלמה רגילה לא עובדת בשדה</a></li><li><a href="#solar-4g">מצלמה סולארית עם סים 4G: איך זה עובד</a></li><li><a href="#which-camera">איזו מצלמה לאיזה שטח</a></li><li><a href="#detection">אדם, רכב או חזיר בר: זיהוי והתראות</a></li><li><a href="#night">ראיית לילה בשטח פתוח</a></li><li><a href="#recording">איפה ההקלטות נשמרות</a></li><li><a href="#mounting">איך מתקינים: גובה, עמוד ושמש לפאנל</a></li><li><a href="#data">סים וחבילת גלישה</a></li><li><a href="#by-farm">לפי סוג המשק</a></li><li><a href="#hybrid">מקליט בבית המשק, 4G בשטח</a></li><li><a href="#checklist">רשימת בדיקה לפני שקונים</a></li></ul></nav>
+
+<p>מצלמות אבטחה לחקלאות צריכות לעבוד בדיוק במקומות שבהם רוב המצלמות נכשלות: שדה בלי שקע חשמל, מטע בלי קו אינטרנט, לול בקצה המשק ומחסן ציוד שאף אחד לא נמצא בו בלילה. מצלמה ביתית שמתחברת ל-Wi-Fi לא תעזור שם, ולא משנה כמה התמונה שלה חדה.</p>
+
+<p>במדריך הזה נעבור על מה שחקלאים באמת מאבדים, איזו מצלמה מתאימה לכל חלק במשק, איך מתקינים מצלמה סולארית עם סים, ומתי עדיף מקליט קווי בבית המשק. לשדה פוטו-וולטאי יש לנו <a href="/blog/solar-farm-security-cameras-2026">מדריך נפרד לאבטחת חוות סולאריות</a>.</p>
+
+<h2 id="losses">מה באמת נעלם מהמשק</h2>
+
+<p>לפני שבוחרים מצלמה, כדאי לרשום מה בדיוק רוצים לשמור. התשובה קובעת איפה המצלמה תעמוד, לאן היא תסתכל וכמה פרטים היא צריכה לראות.</p>
+<ul>
+<li><strong>ציוד וכלי עבודה:</strong> טרקטורונים, מרססים, גנרטורים וכלים שנשארים במחסן או בחצר. המצלמה צריכה לראות את דלת המחסן ואת הדרך שבה רכב מגיע.</li>
+<li><strong>השקיה:</strong> משאבות, ראשי מערכת, מסננים, צנרת וכבלי חשמל, לרוב רחוק מכל תשתית. זה המקום הקלאסי למצלמה סולארית.</li>
+<li><strong>דלק:</strong> מכל סולר בחצר המשק או ליד הכלים.</li>
+<li><strong>תוצרת:</strong> פרי לפני קטיף, ארגזים מלאים בשולי החלקה, יבול במחסן. כאן חשובים בעיקר הכניסה לחלקה ונתיב היציאה של רכב.</li>
+<li><strong>בעלי חיים:</strong> צאן, בקר ועופות. מעבר לגניבה, מצלמה בלול או ברפת עוזרת לראות מה קורה בלילה בלי לצאת מהבית.</li>
+</ul>
+<p>כלל שעובד כמעט בכל משק: מי שבא לגנוב צריך להיכנס ולצאת, ובדרך כלל עם רכב. מצלמה אחת טובה על השער או על דרך הגישה שווה יותר משלוש מצלמות שמסתכלות על שורות עצים.</p>
+
+<h2 id="why-fail">למה מצלמה רגילה לא עובדת בשדה</h2>
+
+<p>מערכת מצלמות רגילה בנויה על שתי הנחות: יש חשמל ליד המצלמה, ויש אינטרנט שדרכו רואים אותה בנייד. בשטח חקלאי בדרך כלל אין אף אחד מהם.</p>
+<ul>
+<li><strong>אין חשמל:</strong> למשוך כבל חשמל לשדה או לראש מערכת השקיה זו עבודה יקרה, ולפעמים היא לא אפשרית בכלל.</li>
+<li><strong>אין אינטרנט:</strong> ה-Wi-Fi של הבית מגיע לכמה עשרות מטרים, לא לחלקה שנמצאת קילומטר משם. גם לכבל רשת יש גבול: כבל רשת רגיל מוגבל לכ-100 מטר בין שני רכיבים.</li>
+<li><strong>שטח גדול:</strong> מצלמה עם עדשה קבועה רואה זווית אחת, ובחלקה של כמה דונמים היא תכסה רק חלק קטן.</li>
+<li><strong>תנאי שטח:</strong> שמש חזקה, אבק, גשם ורוח. צריך מצלמה שהיצרן הגדיר לשימוש בחוץ, עם דירוג עמידות שמופיע בדף המוצר.</li>
+</ul>
+<p>הפתרון לרוב הנקודות האלה הוא מצלמה שמביאה איתה גם את החשמל וגם את התקשורת: פאנל סולארי וסוללה במקום חשמל, וסים סלולרי במקום אינטרנט.</p>
+
+<h2 id="solar-4g">מצלמה סולארית עם סים 4G: איך זה עובד</h2>
+
+<p>ב<a href="/store/c/solar">מצלמות הסולאריות עם 4G</a> יש שלושה חלקים: סוללה נטענת בתוך המצלמה, פאנל סולארי קטן שטוען אותה ביום, ומודם סלולרי עם כרטיס סים. המצלמה מקליטה לכרטיס microSD שבתוכה, ושולחת התראות ושידור חי לאפליקציה דרך הרשת הסלולרית.</p>
+
+<p>כדי שהסוללה תחזיק, מצלמות כאלה לא מקליטות כל הזמן. הן נמצאות במצב חיסכון ומתעוררות כשחיישן התנועה מזהה משהו. בפועל מקבלים קטע וידאו על כל אירוע, ולא הקלטה רציפה של 24 שעות. למי שצריך הקלטה רציפה בשטח בלי חשמל יש את <a href="/store/reolink-trackmix-lte-plus-solar">ערכת TrackMix LTE Plus עם פאנל 66W</a>, שבנויה בדיוק לזה.</p>
+
+<p>Reolink מציינת שהפאנל צריך רק כמה שעות של שמש ישירה ביום כדי לטעון את המצלמה. מה שגוזל את הסוללה הוא השימוש: צפייה חיה ארוכה וחוזרת, הרבה אירועי תנועה ביום, והדלקה של זרקור או סירנה בכל אירוע. ושימו לב: בחלק מהדגמים הפאנל כלול באריזה ובאחרים קונים אותו בנפרד, וזה כתוב בדף המוצר.</p>
+
+<h2 id="which-camera">איזו מצלמה לאיזה שטח</h2>
+
+<p>ההחלטה החשובה היא לא הרזולוציה, אלא איך המצלמה מכסה את השטח. יש כמה סוגים, ולכל אחד יש מקום במשק.</p>
+
+<h3>עדשה קבועה: לנקודה אחת שחייבים לראות</h3>
+<p>שער, דלת מחסן, משאבה, מכל דלק. מצלמה כמו Reolink Go Ultra (4K עם זרקור) מסתכלת כל הזמן לאותו כיוון, ולכן לא מפספסת את מי שעובר בנקודה.</p>
+
+<h3>ממונעת (PTZ): שטח רחב ממצלמה אחת</h3>
+<p>מצלמה ממונעת מסתובבת לצדדים ונוטה למעלה ולמטה, ואפשר להזיז אותה מהאפליקציה. <a href="/store/reolink-go-pt-ultra">Reolink Go PT Ultra</a> מסתובבת 355° לרוחב ו-140° לגובה, עוקבת אוטומטית אחרי תנועה ומגיעה עם פאנל סולארי. מצלמה אחת כזאת על עמוד במרכז חצר המשק או בפינת חלקה יכולה לכסות שטח שהיה דורש כמה מצלמות קבועות.</p>
+<p>החיסרון: בכל רגע היא מסתכלת לכיוון אחד בלבד. אם היא מסתובבת אחרי כלב בצד אחד של החצר, היא לא רואה את הצד השני. לכן בנקודה הכי קריטית, כמו השער, כדאי שתהיה גם מצלמה קבועה.</p>
+
+<h3>שתי עדשות עם זום: לראות הכול ולהתקרב</h3>
+<p>Reolink TrackMix LTE משלבת עדשה רחבה שרואה את כל השטח ועדשת טלה עם זום היברידי x6, שמתקרבת למי שנכנס ועוקבת אחריו. רואים את התמונה הכללית ואת התקריב באותה מצלמה, וזה מתאים לדרך גישה ארוכה או לחצר גדולה.</p>
+
+<h3>פנורמית: 180° בלי חלקים זזים</h3>
+<p>Reolink Duo 2 LTE משלבת שתי עדשות לתמונה אחת רציפה של 180°. היא לא זזה, ולכן רואה את כל החזית כל הזמן: שורת חממות, חזית של לול או קצה של חלקה.</p>
+
+<h3>מצלמה בהסוואה למטע ולכרם</h3>
+<p>בין העצים, לפעמים עדיף שהמצלמה לא תבלוט. <a href="/store/reolink-go-ranger-pt">Reolink Go Ranger PT</a> היא מצלמה ממונעת 4K בגוף בצבע הסוואה, עם פאנל סולארי כלול. Reolink Talon Pro היא מצלמת שבילים 4G עם GPS מובנה שמראה איפה המצלמה נמצאת.</p>
+
+<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr style="background: #0f3460; color: #fff;"><th style="padding: 10px; text-align: right;">נקודה במשק</th><th style="padding: 10px; text-align: right;">סוג מצלמה</th><th style="padding: 10px; text-align: right;">דוגמה מהחנות</th></tr></thead><tbody>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">שער ודרך גישה</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">שתי עדשות עם זום, או עדשה קבועה 4K</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">TrackMix LTE, Go Ultra</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">חצר המשק ומגרש הכלים</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">ממונעת עם מעקב אוטומטי</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">Go PT Ultra</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">ראש מערכת השקיה ומשאבה</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">עדשה קבועה סולארית</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">Go Plus, Go Ultra</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">חזית של חממות או של לול</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">פנורמית 180°</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">Duo 2 LTE</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">מטע וכרם</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">ממונעת בהסוואה, או מצלמת שבילים</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">Go Ranger PT, Talon Pro</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">מבנה עם חשמל ובלי אינטרנט</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">4G עם חיבור קבוע לחשמל</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">TrackMix Wired LTE</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd;">בית המשק עם חשמל ואינטרנט</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">מערכת קווית עם מקליט</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">ערכות Reolink עם מקליט</td></tr>
+</tbody></table></div>
+<p>המחיר העדכני של כל דגם מופיע בדף המוצר.</p>
+
+<h2 id="detection">אדם, רכב או חזיר בר: זיהוי והתראות</h2>
+
+<p>בשדה זזים כל הזמן דברים שלא מעניינים אתכם: כלבים, תנים, חזירי בר, ציפורים וענפים ברוח. מצלמה שמתריעה על כל תנועה כזאת תגרום לכם להפסיק לפתוח את ההתראות, וגם תרוקן את הסוללה.</p>
+
+<p>במצלמות סוללה עם זיהוי חכם יש שני שלבים בזיהוי. הראשון הוא חיישן PIR, שמגיב לשינוי בחום ולתנועה, ולכן מתעורר גם בגלל בעל חיים. השני הוא זיהוי חכם בתוך המצלמה, שמסווג את מה שזז: אדם, רכב, ובחלק מהדגמים גם בעל חיים. בהגדרות בוחרים על מה לקבל התראה. בדרך כלל כדאי להגדיר התראה לנייד רק על אדם ורכב, וכך תן שעובר בחלקה לא מעיר אתכם באמצע הלילה.</p>
+
+<p>עוד כמה הגדרות שעושות הבדל גדול:</p>
+<ul>
+<li><strong>אזורי זיהוי:</strong> מסמנים באפליקציה רק את השער, הדרך או דלת המחסן, ומוציאים מהזיהוי עצים וכביש.</li>
+<li><strong>גודל אובייקט:</strong> מגבילים את הגודל המינימלי של מה שנחשב אירוע, כדי שחתול או ציפור קרובים לא יקפיצו התראה.</li>
+<li><strong>רגישות PIR:</strong> מורידים את הרגישות בנקודות שיש בהן הרבה תנועה של בעלי חיים.</li>
+<li><strong>זווית:</strong> לפי Reolink, חיישן ה-PIR רגיש יותר לתנועה מצד לצד מאשר לתנועה ישר לכיוון המצלמה. לכן עדיף למקם את המצלמה כך שמי שנכנס יחצה את התמונה, ולא יגיע ישר מולה.</li>
+</ul>
+<p>הרחבנו על זה במדריך <a href="/blog/prevent-false-alarms-4g-solar-cameras-ai-2026">איך מונעים התראות שווא במצלמות 4G סולאריות</a>.</p>
+
+<h2 id="night">ראיית לילה בשטח פתוח</h2>
+
+<p>בשטח חקלאי אין תאורת רחוב, ורוב האירועים קורים בלילה. יש שתי דרכים לראות בחושך:</p>
+<ul>
+<li><strong>אינפרא אדום:</strong> תמונה בשחור-לבן, בלי להדליק אור לבן. מספיק כדי לראות שמישהו נכנס ולאן הוא הולך.</li>
+<li><strong>זרקור וצבע בלילה:</strong> מצלמות עם זרקור, כמו Go Ultra ו-Go PT Ultra, יכולות לצלם בצבע גם בחושך. רואים את הצבע של הרכב ושל הבגדים, ואור שנדלק פתאום יכול גם להרתיע. המחיר הוא חשמל: Reolink מציינת שהפעלה תכופה של זרקור או סירנה מרוקנת את הסוללה מהר.</li>
+</ul>
+<p>הפשרה שעובדת: משאירים זרקור וסירנה רק בנקודות שבהן הם באמת עוזרים, כמו השער ודלת המחסן, ומצמצמים שם את אזורי הזיהוי. בשאר הנקודות מסתפקים באינפרא.</p>
+
+<h2 id="recording">איפה ההקלטות נשמרות</h2>
+
+<p>מצלמה סולארית 4G מקליטה לכרטיס microSD שבתוך המצלמה: עד 128GB ברוב דגמי Go, ועד 256GB בדגמי TrackMix. הכרטיס לא תמיד כלול באריזה, אז בודקים בדף המוצר. ההקלטה לכרטיס לא צורכת גלישה, כי היא לא עוברת באינטרנט.</p>
+
+<p>לכרטיס יש חולשה אחת: אם מישהו מפרק את המצלמה ולוקח אותה, ההקלטה הולכת איתו. כמה דרכים להתמודד עם זה:</p>
+<ul>
+<li><strong>ענן:</strong> בחלק מהדגמים יש אפשרות לענן של Reolink, שמעלה עותק של האירועים. ההעלאה צורכת גלישה, אבל העותק נשמר גם אם המצלמה נעלמת.</li>
+<li><strong>התראה בזמן אמת:</strong> התראה שמגיעה לנייד ברגע האירוע מאפשרת לפתוח שידור חי ולראות מה קורה.</li>
+<li><strong>מצלמה שרואה מצלמה:</strong> בנקודה חשובה במיוחד, שתי מצלמות שכל אחת מהן רואה גם את השנייה.</li>
+</ul>
+
+<h2 id="mounting">איך מתקינים: גובה, עמוד ושמש לפאנל</h2>
+
+<p>מצלמה מצוינת שמותקנת בצל או בגובה הלא נכון תעבוד גרוע ממצלמה פשוטה שמותקנת נכון.</p>
+<ul>
+<li><strong>גובה:</strong> Reolink ממליצה להתקין מצלמות סוללה עם חיישן PIR בגובה של 2 עד 3 מטרים, ולא יותר, כדי שהחיישן יזהה טוב. מצלמה שמותקנת גבוה מאוד כדי שלא יגנבו אותה מפספסת אירועים ורואה פחות פרטים.</li>
+<li><strong>עמוד:</strong> בחלקה בלי מבנה, מתקינים על עמוד מתכת יציב ומקובע היטב. עמוד שמתנדנד ברוח מטשטש את התמונה ויכול לגרום להתראות מיותרות.</li>
+<li><strong>כיוון הפאנל:</strong> Reolink ממליצה לכוון את הפאנל לדרום (בחצי הכדור הצפוני), בזווית של קו הרוחב המקומי ועוד כ-5 מעלות. בישראל זה יוצא בערך 35 עד 38 מעלות. לא מתקינים את הפאנל שטוח, כי עליו מצטבר לכלוך.</li>
+<li><strong>צל:</strong> לפי Reolink, גם צל על חלק קטן מהפאנל מוריד את הטעינה בצורה חדה. במטע בודקים איפה נופל הצל של העצים, וזוכרים שבחורף השמש נמוכה יותר והטעינה חלשה יותר.</li>
+<li><strong>אבק:</strong> בשטח שעובדים בו עם טרקטור, הפאנל מתכסה באבק. מנקים אותו מדי פעם במטלית רכה ויבשה.</li>
+<li><strong>לא מול השמש:</strong> Reolink ממליצה לא לכוון מצלמה מול אור חזק, כולל השמש. בודקים שהמצלמה לא מסתכלת ישר לזריחה או לשקיעה.</li>
+<li><strong>קליטה:</strong> לפני שקובעים מיקום, בודקים בטלפון עם סים של אותה חברה שיש קליטת 4G טובה בדיוק בנקודה, ולא רק בכניסה לשטח.</li>
+<li><strong>חום:</strong> לפי Reolink, הטעינה מ-Solar Panel 2 עובדת בטמפרטורות של 0 עד 45 מעלות. בימי שרב שווה להציץ באפליקציה ולוודא שהסוללה ממשיכה להיטען.</li>
+</ul>
+<p>מי שמעדיף שמישהו אחר יעלה על הסולם, יכול להזמין <a href="/installation">התקנה</a> כשירות נפרד, בכל הארץ ובתיאום. שולחים בווצאפ כמה תמונות או סרטון קצר של המקום, ומקבלים הצעת מחיר להתקנה.</p>
+
+<h2 id="data">סים וחבילת גלישה</h2>
+
+<p>כל מצלמת 4G צריכה כרטיס סים עם חבילת גלישה. כדאי לדעת מה צורך גלישה ומה לא:</p>
+<ul>
+<li><strong>לא צורך גלישה:</strong> ההקלטה לכרטיס הזיכרון שבתוך המצלמה.</li>
+<li><strong>צורך גלישה:</strong> צפייה חיה, צפייה בהקלטות מרחוק, התראות והעלאה לענן.</li>
+</ul>
+<p>הצרכן הגדול הוא הצפייה החיה. לפי ההערכה של Reolink, בשימוש קל (בעיקר התראות) רוב מצלמות ה-4G שבחנות צריכות בסביבות 2 ג׳יגה בחודש. מי שצופה לעיתים קרובות צריך יותר, ולכן לחבילה אנחנו ממליצים על 10 עד 30 ג׳יגה בחודש למצלמה, או על הסים שלנו עם חבילה שנתית. יש חריגים: ל-Duo 2 LTE בגרסת 6MP Reolink ממליצה על כ-5 ג׳יגה בחודש. לפי הטבלה של Reolink, ב-Go Plus וב-Go Ultra ג׳יגה אחד מספיק לכשעה של צפייה חיה באיכות הגבוהה, ולכשלוש וחצי שעות באיכות הנמוכה. ב-TrackMix LTE, שמשדרת משתי עדשות, ג׳יגה אחד באיכות הגבוהה נגמר אחרי כ-20 דקות.</p>
+<p>טיפ מעשי: לצפייה שוטפת בוחרים באפליקציה את האיכות הנמוכה, ועוברים לאיכות הגבוהה רק כשצריך לזהות פרט. ובוחרים חברה סלולרית לפי הקליטה בנקודה, לא לפי המחיר. אם הגלישה נגמרת או שהקליטה נופלת, אין צפייה מרחוק ואין התראות עד שהחיבור חוזר, אבל ההקלטה לכרטיס הזיכרון ממשיכה.</p>
+
+<h2 id="by-farm">לפי סוג המשק</h2>
+
+<h3>שדה פתוח וראש מערכת השקיה</h3>
+<p>אין חשמל, אין אינטרנט ואין מבנה. מצלמה סולארית 4G על עמוד, מכוונת לראש המערכת או למשאבה ולדרך שמגיעה אליהם. כשיש כמה ראשי מערכת, מתחילים מזה שהכי קרוב לדרך פתוחה, כי אליו הכי קל להגיע עם רכב.</p>
+
+<h3>מטע וכרם</h3>
+<p>שורות העצים מסתירות, ולכן מצלמה בתוך המטע רואה שורה אחת. עדיף לשים את המצלמות בשולי החלקה, על דרכי הגישה ובמקום שבו מעמיסים את הפרי. כדאי לשקול מצלמה בהסוואה, ולבדוק את הצל של העצים על הפאנל בעונה שבה העלווה מלאה. למטע או לכרם בלי שום תשתית יש לנו גם <a href="/blog/cameras-2026">מדריך מצלמות לכרם ולמטע בלי אינטרנט</a>.</p>
+
+<h3>לול ורפת</h3>
+<p>בלול וברפת יש בדרך כלל חשמל, אבל לא תמיד אינטרנט, והם רחוקים מהבית. כשיש שקע חשמל ואין אינטרנט, <a href="/store/reolink-trackmix-wired-lte">Reolink TrackMix Wired LTE</a> מתאימה: היא עובדת על סים 4G, מחוברת לחשמל קבוע ולכן יכולה להקליט 24/7, ויש לה ראיית לילה באינפרא עד 30 מטר וזרקורים לצבע. ספק 12V וכבל מאריך של 4.5 מטר כלולים, אז צריך שקע במרחק סביר מהמצלמה, וטווח טמפרטורת העבודה שלה לפי דף המוצר הוא ממינוס 10 עד 55 מעלות. אם הלול קרוב לבית ואפשר להעביר אליו כבל רשת, מצלמה קווית שמחוברת למקליט בבית היא בדרך כלל הפתרון היציב יותר.</p>
+<p>בתוך המבנה יש אבק, לחות ובעלי חיים שיכולים לפגוע במצלמה או בכבל. מתקינים גבוה, מחוץ להישג יד, ומעבירים את הכבלים בצינור. במשק שקרוב לים כדאי להכיר את <a href="/store/ds-2cd2t87g3-lis2uy-sl-2-8mm">Hikvision DS-2CD2T87G3-LIS2UY/SL</a>: מצלמה קווית 4K עם ציפוי עמיד בקורוזיה (NEMA 4X), ברמת הגנה ש-Hikvision מגדירה כבינונית ומייעדת, למשל, לאזורי חוף במרחק של כ-2 ק״מ מקו המים.</p>
+
+<h3>מחסן ציוד וחצר הכלים</h3>
+<p>במחסן הציוד, המצלמה החשובה היא זו שמכוונת לדלת ולדרך שבה רכב יכול להתקרב. בתוך המחסן מספיקה מצלמה רחבה אחת. בחוץ, בחצר שבה חונים הכלים, מצלמה ממונעת עם מעקב אוטומטי מכסה את כל המגרש. במחסן שאין בו אף אחד בלילה, מגדירים באפליקציה לוח זמנים כך שההתראות יגיעו רק מחוץ לשעות העבודה.</p>
+
+<h3>חממה</h3>
+<p>בתוך החממה החום והלחות בקיץ גבוהים, והיריעות מסתירות את מה שקורה בחוץ. לכן מצלמים בדרך כלל מבחוץ: את הפתחים, את השביל בין החממות ואת הארגזים. מצלמה פנורמית מול שורת חממות רואה את כל החזיתות בבת אחת. מי שמתקין בתוך החממה, בודק קודם בדף המוצר את טווח טמפרטורת העבודה.</p>
+
+<h2 id="hybrid">מקליט בבית המשק, 4G בשטח</h2>
+
+<p>ברוב המשקים הפתרון הנכון משלב שתי שיטות. ליד הבית, שבו יש חשמל ואינטרנט, שמים מערכת קווית: מקליט NVR עם יציאות PoE, וכל מצלמה מקבלת חשמל ותקשורת בכבל רשת אחד ויכולה להקליט 24/7 לדיסק שבמקליט. לכאן נכנסים החצר, החניה, המחסן הקרוב והלול, אם הוא בטווח של כבל רשת.</p>
+
+<p>בשטח הרחוק, שבו אין תשתית, שמים מצלמות סולאריות 4G, וכל אחת מקליטה לכרטיס שלה. כשכל הציוד הוא של Reolink, רואים את המצלמות הקוויות ואת מצלמות ה-4G באותה אפליקציה.</p>
+
+<p>לבית המשק, <a href="/store/c/kits">ערכה מוכנה של Reolink</a> היא נקודת התחלה פשוטה: מקליט עם PoE ודיסק מותקן, ו-4 או 8 מצלמות. ב-NVS8-8MB4, למשל, המקליט הוא של 8 ערוצים, כך שאפשר להוסיף מצלמות בהמשך.</p>
+
+<h2 id="checklist">רשימת בדיקה לפני שקונים</h2>
+
+<ol>
+<li>רשמתם מה בדיוק רוצים לשמור, ומאיפה אפשר להגיע אליו.</li>
+<li>סימנתם לכל נקודה: יש חשמל? יש אינטרנט? כמה היא רחוקה מהבית?</li>
+<li>בדקתם קליטת 4G בנקודה עצמה, עם סים של החברה שתבחרו.</li>
+<li>בדקתם שיש על מקום הפאנל כמה שעות של שמש ישירה ביום, גם בחורף.</li>
+<li>החלטתם אם צריך הקלטה רציפה, או שמספיק קטע וידאו על כל אירוע.</li>
+<li>בדקתם בדף המוצר אם הפאנל וכרטיס הזיכרון כלולים.</li>
+<li>תכננתם על מה תקבלו התראה: אדם ורכב, לא כל תנועה.</li>
+<li>תקציב: המחיר העדכני בדף המוצר. משלוח לא כלול ומתומחר לפי הכתובת, והתקנה היא שירות נפרד בהצעת מחיר.</li>
+</ol>
+
+<p>לא בטוחים מה מתאים למשק שלכם? <a href="https://wa.me/972502256866">שלחו לנו בווצאפ</a> תמונה או סרטון קצר של השטח, ונחזור אליכם עם המלצה.</p>`;
+
 export default function Page() {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: H1,
+    description: DESCRIPTION,
+    image: HERO,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { '@type': 'Organization', name: 'צוות Site-Control', url: 'https://www.site-control-il.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: { '@type': 'ImageObject', url: 'https://www.site-control-il.com/images/site-control-logo.webp' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    url: CANONICAL,
+    inLanguage: 'he-IL',
+    keywords: KEYWORDS.join(', '),
+    isPartOf: { '@type': 'Blog', '@id': 'https://www.site-control-il.com/blog', name: 'בלוג Site-Control' },
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'דף הבית', item: 'https://www.site-control-il.com' },
+      { '@type': 'ListItem', position: 2, name: 'בלוג', item: 'https://www.site-control-il.com/blog' },
+      { '@type': 'ListItem', position: 3, name: H1, item: CANONICAL },
+    ],
+  };
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
-      <article 
-        style={{ lineHeight: '1.8', color: 'var(--text)' }}
-        dangerouslySetInnerHTML={{ __html: `<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--text); margin-top: 2rem;">מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות</h1>
-<picture>
-        <source srcset="/blog-images/cameras-security-agriculture-2027/hero.avif" type="image/avif" />
-        <source srcset="/blog-images/cameras-security-agriculture-2027/hero.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-agriculture-2027/hero.webp" alt="מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל1.2.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">האם שאלת עצמך פעם איך להגן על הנכס שלך בצורה החכמה והמתקדמת ביותר ב-2026? או אולי תהיתה מה ההבדל בין מערכות האבטחה המסורתיות לטכנולוגיות החדשות שמציעות הגנה של דור הבא? במדריך מקיף זה תקבל תשובות לכל השאלות החשובות ותלמד איך לבחור את המערכת המושלמת לצרכים שלך.</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">תוכן העניינים</h2>
-<picture>
-        <source srcset="/blog-images/cameras-security-agriculture-2027/infographic.avif" type="image/avif" />
-        <source srcset="/blog-images/cameras-security-agriculture-2027/infographic.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-agriculture-2027/infographic.webp" alt="אינפוגרפיק - מצלמות אבטחה לחקלאות 2027 - היתרונות, החסרונות ומה כדאי לקנות" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. יתרונות מדהימים שלא ידעת עליהם</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. איך לבחור את המערכת הנכונה לבית או עסק שלך</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">5. מדריך התקנה ותחזוקה מקצועי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">6. עלויות אמיתיות ותשואה על השקעה</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">7. שאלות נפוצות ותשובות מקצועיות</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">ההגדרה המקצועית</h3>
-<strong style="font-weight: bold; color: var(--accent);">מערכות אבטחה חכמות</strong> הן פתרונות אבטחה מתקדמים המשלבים בינה מלאכותית, למידת מכונה וטכנולוגיות IoT (אינטרנט הדברים) כדי לספק הגנה אוטונומית, חכמה ויעילה. בניגוד למערכות מסורתיות שרק מקליטות ומתריעות, המערכות החכמות <strong style="font-weight: bold; color: var(--accent);">מנתחות, מבינות ומגיבות</strong> בזמן אמת.
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">השוואה מפורטת: מסורתי מול חכם</h3>
-
-<table style="width: 100%; border-collapse: collapse; margin: 2rem 0; direction: rtl; background: var(--card);"><tbody><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">תכונה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת מסורתית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת חכמה</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">זיהוי איומים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">גילוי תנועה בסיסי</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">זיהוי אובייקטים ספציפיים, פנים, רכבים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אזעקות שווא</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">90% מהאזעקות שווא</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פחות מ-5% אזעקות שווא</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">תגובה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">התראה בסיסית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פעולות אוטומטיות מותאמות</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">ניטוח מרחוק</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">הקלטה פשוטה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">ניתוח חכם ודוחות מפורטים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אינטגרציה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עצמאית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">משולבת עם כל המערכות החכמות בבית</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">עדכונים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">לא קיימים</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עדכוני תוכנה אוטומטיים</td></tr></tbody></table>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">הטכנולוגיות המהפכניות ב-2026</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">1. בינה מלאכותית מתקדמת (Advanced AI)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">החידוש הגדול ב-2026 הוא <strong style="font-weight: bold; color: var(--accent);">בינה מלאכותית שלומדת את ההרגלים שלך</strong>. המערכת לומדת מי הם בני הבית, מתי הם בדרך כלל נמצאים בבית, ומה הם הדפוסים הרגילים. כך היא יכולה לזהות חריגות אמיתיות ולמנוע אזעקות שווא.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">דוגמאות מעשיות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי הבדל בין חתול שמסתובב בגינה לפורץ אמיתי</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הבחנה בין בן משפחה שחוזר בלילה לגנב</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי רכבים מוכרים מול רכבים חשודים</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">2. ראייה ממוחשבת חכמה (Computer Vision)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">טכנולוגיית הראייה ב-2026 מתקדמת מאוד ומסוגלת לבצע ניתוח מורכב של מה שקורה בזמן אמת:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">יכולות מתקדמות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ספירה אוטומטית של אנשים</strong> - כמה אנשים נכנסו ויצאו</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי התנהגות חשודה</strong> - התנהגות לא טבעית או חשודה</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מעקב אחרי אובייקטים</strong> - מעקב אחרי אנשים או רכבים ברחבי הנכס</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי עישון ואש</strong> - מניעה מוקדמת של שריפות</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">3. אינטגרציה מלאה עם בתים חכמים</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">ב-2026, מערכת האבטחה לא עומדת לבד - היא חלק ממערכת אקולוגית חכמה שמחברת את כל הבית:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תרחישים אוטומטיים:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">כשהמערכת מזהה שיצאת מהבית, היא מפעילה מצב אבטחה מלא</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי פריצה, היא מדליקה את כל האורות ומפעילה צופרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי אש, היא מפעילה מתזים ומתריעה למכבי האש</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזמן שינה, היא מפעילה מצב לילה עם רגישות מתואמת</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">4. אחסון ענן חכם עם חיזוי</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">המערכות החדשות לא רק מאחסנות בענן, אלא גם <strong style="font-weight: bold; color: var(--accent);">מנתחות דפוסים ומחזות התנהגויות עתידיות</strong>:</p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">חיזוי זמני פעילות חשודה לפי דפוסים היסטוריים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי מגמות בפעילות סביב הבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">התראות חכמות על שינויים בדפוסי התנועה השכונתיים</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">יתרונות מדהימים שלא ידעת עליהם</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #1: חיסכון של אלפי שקלים בשנה</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">לא רק שהמערכת מגנה מפני גניבות - <strong style="font-weight: bold; color: var(--accent);">היא גם מחסכת הוצאות בדרכים שלא חשבת עליהן:</strong></p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ביטוח זול יותר</strong>: חברות ביטוח נותנות הנחות של עד 30% לבעלי מערכות חכמות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מניעת נזקים</strong>: זיהוי מוקדם של דליפות מים, אש או פריצות חוסך תיקונים יקרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">חיסכון באנרגיה</strong>: אינטגרציה עם מערכת החימום והמיזוג חוסכת עד 25% בחשמל</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #2: שקט נפשי אמיתי</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">עם מערכת חכמה, <strong style="font-weight: bold; color: var(--accent);">אתה תמיד יודע בדיוק מה קורה בבית</strong>, גם כשאתה בחו"ל:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הודעות בזמן אמת על כל פעילות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיחת וידאו ישירה עם מי שנמצא בבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">יכולת לראות ולדבר עם ילדים שחזרו מבית הספר</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #3: עדכונים וחידושים כל הזמן</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">בניגוד למערכות מסורתיות שמתיישנות, <strong style="font-weight: bold; color: var(--accent);">המערכות החכמות משתפרות כל הזמן</strong>:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">עדכוני תוכנה אוטומטיים עם יכולות חדשות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיפורים באלגוריתמי הזיהוי מבוססי נתונים מכל העולם</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הוספת תכונות חדשות ללא צורך בהחלפת חומרה</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">איך לבחור את המערכת הנכונה לבית או עסק שלך</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 1: הערכת הצרכים שלך</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">שאלות חיוניות שכדאי לשאול עצמך:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">איזה סוג נכס יש לי?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בית פרטי: התמקדות בהגנה על המשפחה ונוחות יומיומית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- דירה: מערכת קומפקטית ודיסקרטית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עסק קטן: הגנה על ציוד ומלאי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- משרד: אבטחת מידע ושליטה בגישות</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">מה רמת האבטחה הנדרשת?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בסיסית: מניעת פריצות והגנה על רכוש</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בינונית: ניטור פעילות והקלטות איכותיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- מתקדמת: ניתוח התנהגות וחיזוי איומים</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">איזה תקציב אני מוכן להשקיע?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- כלל ישראלי: מערכת אבטחה חכמה איכותית עולה כמו חופשה משפחתית אחת, אבל מגנה שנים רבות</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 2: בחירת הרכיבים החיוניים</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">רכיבים חובה במערכת חכמה:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">מצלמות חכמות עם ראיית לילה צבעונית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- רזולוציה: לפחות 4K לזיהוי ברור של פנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- זוויות רחבות: 120 מעלות או יותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עמידות: IP66 לעמידות בגשם וחום</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">יחידת בקרה מרכזית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עיבוד מקומי: לא תלויה באינטרנט לפעולות בסיסיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- חיבורי יות: תמיכה בעשרות מצלמות וחיישנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- גיבוי כפול: אחסון מקומי וענן</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">אפליקציה מתקדמת</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- ממשק עברי פשוט ואינטואיטיבי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- התראות חכמות ומותאמות אישית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- שיתוף גישה עם בני משפחה</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">סיכום והמלצות</h2>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מערכות אבטחה חכמות ב-2026 אינן עוד מותרות - הן הפכו לצורך בסיסי לכל בית ועסק מתקדם. <strong style="font-weight: bold; color: var(--accent);">השילוב של בינה מלאכותית, ראיית מחשב וחיבור לאינטרנט הדברים יוצר פתרון אבטחה שלא היה אפשרי בעבר</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">ההמלצות המקצועיות שלנו:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">אל תדחו את ההחלטה</strong> - כל חודש שעובר בלי מערכת הוא חודש של חשיפת סיכון מיותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">השקיעו במערכת איכותית</strong> - ההבדל במחיר קטן, ההבדל ביכולות עצום</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">התעקשו על התקנה מקצועית</strong> - מערכת טובה עם התקנה גרועה = כשלון מובטח</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. <strong style="font-weight: bold; color: var(--accent);">תכננו להרחבה עתידית</strong> - התחילו קטן אבל עם תשתית שמאפשרת גדילה</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">הצעד הבא - ייעוץ מקצועי חינם</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: var(--accent);">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-225-6866
-<strong style="font-weight: bold; color: var(--accent);">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: var(--link-color); text-decoration: underline;">www.site-control-il.com/contact</a>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">---</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">*מאמר זה נכתב על ידי המומחים של Site-Control, החברה המובילה בישראל להתקנת מערכות אבטחה חכמות. עם מעל 10 שנות ניסיון ומאות לקוחות מרוצים, אנחנו מתמחים בפתרונות מתקדמים המותאמים לשוק הישראלי.*</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תגיות:</strong> מצלמות אבטחה לחקלאות, מצלמות אבטחה לחקלאות 2027, מצלמות אבטחה לחקלאות למכירה, מצלמות אבטחה לחקלאות מחיר, מצלמות אבטחה לחקלאות המלצות, מצלמות אבטחה לחקלאות ביקורות
-` }}
-      />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+        <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>
+          <a href="/" style={{ color: '#007bff', textDecoration: 'none' }}>דף הבית</a>
+          <span> / </span>
+          <a href="/blog" style={{ color: '#007bff', textDecoration: 'none' }}>בלוג</a>
+          <span> / </span>
+          <span>{H1}</span>
+        </nav>
+        <article style={{ lineHeight: '1.8', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text)', marginTop: '2rem' }}>
+            {H1}
+          </h1>
+          <img
+            src="/blog-images/cameras-security-agriculture-2027/hero.webp"
+            alt="מצלמת אבטחה על עמוד מתכת מול חממות ושדה ירקות, ולידה מסך שמציג נתונים מהמערכת"
+            width={1200}
+            height={593}
+            fetchPriority="high"
+            decoding="async"
+            style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px' }}
+          />
+          <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
+            מעודכן ל-17.10.2026 | צוות Site-Control
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: BODY }} />
+          <section style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(15,52,96,0.05)', borderRadius: '12px' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--accent, #e94560)' }}>שאלות נפוצות</h2>
+            {FAQ.map((f) => (
+              <details key={f.q} style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--card, #fff)', borderRadius: '8px', border: '1px solid var(--border, #eee)' }}>
+                <summary style={{ fontWeight: 'bold', cursor: 'pointer', color: 'var(--text, #333)', fontSize: '1.1rem' }}>{f.q}</summary>
+                <p style={{ marginTop: '0.75rem', lineHeight: '1.8', color: 'var(--text, #555)' }}>{f.a}</p>
+              </details>
+            ))}
+          </section>
+          <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים איזו מצלמה מתאימה למשק שלכם?</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>חמש שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת, או שאלו אותנו בווצאפ</p>
+            <a href="/store/finder" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              לשאלון ההתאמה בחנות
+            </a>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }

@@ -1,170 +1,311 @@
 import { Metadata } from 'next';
 
+const SLUG = 'cameras-security-with-detection-face-2026';
+const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const SEO_TITLE = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות | Site-Control';
+const SHARE_TITLE = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות';
+const H1 = 'מצלמות אבטחה עם זיהוי פנים: מה הן באמת עושות, מה צריך כדי שזה יעבוד ומה החוק אומר';
+const DESCRIPTION =
+  'מה ההבדל בין מצלמה שמזהה אדם למערכת שמזהה מי הוא, איפה זיהוי פנים באמת עובד, מה צריך כדי שיעבוד ומה החוק אומר על מידע ביומטרי.';
+const KEYWORDS = [
+  'מצלמות אבטחה עם זיהוי פנים',
+  'זיהוי פנים במצלמות אבטחה',
+  'מסוף זיהוי פנים',
+  'מקליט עם זיהוי פנים',
+  'זיהוי אדם ורכב במצלמה',
+  'בקרת כניסה בזיהוי פנים',
+  'זיהוי פנים ופרטיות',
+];
+const PUBLISHED = '2026-01-27';
+const MODIFIED = '2026-10-17';
+const HERO_ALT = 'מצלמות אבטחה בלובי של בניין משרדים, ומסך שמציג פנים מסומנות בתוכנת ניהול המצלמות';
+
 export const metadata: Metadata = {
-  title: 'מצלמות אבטחה עם זיהוי פנים 2026 - המדריך המלא לרכישה | Site-Control',
-  description: 'מצלמות אבטחה עם זיהוי פנים: השוואת דגמים, יתרונות וחסרונות, מחירים והמלצות לבית ולעסק. גלו איך לבחור את המצלמה הנכונה עם טכנולוגיית AI.',
-  keywords: 'מצלמות אבטחה זיהוי פנים, מצלמות אבטחה עם זיהוי פנים 2026, מצלמות זיהוי פנים מחיר, מצלמות AI',
-  alternates: { canonical: 'https://www.site-control-il.com/blog/cameras-security-with-detection-face-2026' },
+  title: SEO_TITLE,
+  description: DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
+  openGraph: {
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    publishedTime: PUBLISHED,
+    modifiedTime: MODIFIED,
+    locale: 'he_IL',
+    siteName: 'Site-Control',
+    url: CANONICAL,
+    images: [
+      {
+        url: HERO,
+        width: 1200,
+        height: 593,
+        alt: HERO_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SHARE_TITLE,
+    description: DESCRIPTION,
+    images: [HERO],
+  },
+  alternates: {
+    canonical: CANONICAL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 };
 
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: 'מצלמת אבטחה רגילה יודעת לזהות מי האדם שעבר?',
+    a: 'ברוב המקרים לא. רוב מצלמות ה-AI לבית ולעסק מזהות שיש בתמונה אדם או רכב, וכך מסננות התראות שווא, אבל הן לא יודעות מי האדם. השוואה של פנים לרשימה שמורה של אנשים קיימת בחלק מהמקליטים של Hikvision, על ערוץ אחד או על כמה ערוצים בלבד, ובמסופי זיהוי פנים שמותקנים ליד הדלת.',
+  },
+  {
+    q: 'מאיזה מרחק מצלמה יכולה לזהות פנים?',
+    a: 'זה תלוי ברזולוציה ובעדשה. בחישוב גס לפי התקן IEC 62676-4, מצלמת 4MP עם עדשה רחבה של 2.8 מ"מ נותנת מספיק פרטים כדי לזהות אדם בצפייה בהקלטה עד כ-3.6 מטרים, ומצלמת 4K עם אותה עדשה עד כ-5.5 מטרים. עדשה צרה או ממונעת מגיעה רחוק יותר, אבל מכסה רצועה צרה. בלילה, עם כובע או משקפי שמש, או כשהאדם זז מהר, המרחקים האלה קטנים.',
+  },
+  {
+    q: 'מה ההבדל בין מסוף זיהוי פנים למצלמת אבטחה?',
+    a: 'מסוף זיהוי פנים מותקן ליד הדלת בגובה הפנים, מחובר למנעול החשמלי, ומשווה את הפנים של מי שעומד מולו לרשימה של אנשים מורשים. הוא עובד מקרוב: בדגמים שבחנות מ-0.3 עד 1.5 מטרים, ועד 3 מטרים בדגם DS-K1T671M, ולכן הוא מהיר ואמין. מצלמת אבטחה מתעדת שטח גדול ממרחק, ושם זיהוי פנים קשה הרבה יותר.',
+  },
+  {
+    q: 'אפשר להפעיל זיהוי פנים בעסק?',
+    a: 'זו לא רק שאלה טכנית. לפי תיקון 13 לחוק הגנת הפרטיות, מזהה ביומטרי שמשמש לזיהוי אדם באופן ממוחשב הוא מידע בעל רגישות מיוחדת. לכן כדאי לוודא שיש מטרה ברורה שכרטיס או קוד לא פותרים, למסור הודעה לכל מי שנרשם, כפי שהחוק מחייב כשאוספים מידע למאגר, לתת חלופה למי שלא רוצה להירשם, לאבטח את המידע ולמחוק אותו כשאין בו צורך. לפני זיהוי של לקוחות או של הציבור מול רשימה, מתייעצים עם עורך דין שמתמחה בפרטיות.',
+  },
+  {
+    q: 'זיהוי פנים עובד בלילה?',
+    a: 'אפשר לשפר את הסיכוי, אבל לא כדאי לסמוך על זה ממרחק. בלילה מצלמה עם אינפרא אדום נותנת תמונה בשחור-לבן, ופרטי הפנים הולכים לאיבוד ככל שהמרחק גדל. מה שעושה את ההבדל הוא תאורה קבועה בנקודת הכניסה, מצלמה שמצלמת בצבע בלילה, ומיקום שבו האדם עובר קרוב למצלמה. מסופי כניסה עובדים מקרוב, ובמפרט של חלקם מופיעה עדשה כפולה שמיועדת גם לתאורה חלשה.',
+  },
+];
+
+const BODY_HTML = `<nav style="background: rgba(15,52,96,0.05); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 2rem;"><strong>תוכן העניינים</strong><ul style="margin-top: 0.5rem;"><li><a href="#short-answer">התשובה הקצרה</a></li><li><a href="#three-levels">שלוש יכולות שונות שנקראות "זיהוי פנים"</a></li><li><a href="#catalog">מה הציוד בחנות באמת עושה</a></li><li><a href="#where">בית, עסק או בניין: מה מתאים לכל אחד</a></li><li><a href="#requirements">מה צריך כדי שזיהוי פנים יעבוד</a></li><li><a href="#limits">גבולות שכדאי להכיר מראש</a></li><li><a href="#privacy">זיהוי פנים ופרטיות: מה החוק אומר</a></li><li><a href="#checklist">לפני שקונים: חמש שאלות</a></li></ul></nav>
+
+<p>כמעט כל מי שמחפש מצלמות אבטחה נתקל במילים "זיהוי פנים" ו-"AI". לפעמים נדמה שכל מצלמה יודעת להגיד מי עמד ליד השער. בפועל, רוב המצלמות לבית ולעסק קטן יודעות לעשות משהו אחר, ומאוד שימושי: להבחין בין אדם לבין חתול, ענף שזז ברוח או פנסים של רכב. זיהוי פנים אמיתי, כלומר השוואה של פנים לרשימה שמורה של אנשים, הוא יכולת אחרת. הוא דורש ציוד מתאים, התקנה מדויקת ומחשבה רצינית על פרטיות.</p>
+
+<p>המדריך הזה עוסק בבתים, בעסקים ובבניינים, ומה שכתוב בו על הציוד מבוסס על דפי המפרט של היצרנים. מי שמחפש פתרון לאתר מרוחק בלי חשמל ואינטרנט, ימצא אותו ב<a href="/blog/cameras-security-detection-face-2026">מדריך על זיהוי חכם באתרים מרוחקים</a>.</p>
+
+<h2 id="short-answer">התשובה הקצרה</h2>
+
+<ul>
+<li><strong>זיהוי אדם:</strong> המצלמה יודעת שבתמונה יש אדם, ושולחת התראה רק עליו, אבל לא יודעת מי הוא. זה מה שעושות רוב מצלמות ה-AI, כולל Reolink ומצלמות AcuSense של Hikvision.</li>
+<li><strong>לכידת פנים (Face Capture):</strong> המצלמה מוצאת פנים בתמונה ושומרת צילום מקרוב שלהן. זה נוח כשמחפשים אחרי אירוע, אבל עדיין לא אומר מי זה.</li>
+<li><strong>זיהוי פנים מול רשימה (Face Recognition):</strong> המערכת משווה את הפנים לספרייה של אנשים מוכרים ומודיעה אם יש התאמה. היכולת הזו קיימת בחלק מהמקליטים של Hikvision ובמסופי זיהוי פנים לכניסה.</li>
+</ul>
+
+<p>לבית פרטי, זיהוי אדם ורכב נותן כמעט את כל התועלת: פחות התראות שווא וחיפוש מהיר בהקלטות. זיהוי פנים מול רשימה מתאים בעיקר לכניסה למשרד, למפעל או לבניין, ושם הדרך הפשוטה והאמינה היא מסוף זיהוי פנים ליד הדלת, לא מצלמה על עמוד.</p>
+
+<h2 id="three-levels">שלוש יכולות שונות שנקראות "זיהוי פנים"</h2>
+
+<p>בעברית המילה "זיהוי" משמשת לכמה דברים, ומכאן רוב הבלבול.</p>
+
+<h3>גילוי: יש כאן אדם</h3>
+<p>זו היכולת הנפוצה. מעבד בתוך המצלמה או במקליט מנתח את התמונה ומסווג את מה שזז: אדם, רכב, ולפעמים גם חיית מחמד. התועלת העיקרית היא בהתראות. במקום הודעה על כל עלה שזז, מקבלים הודעה רק כשאדם נכנס לחצר או רכב עוצר בחניה. על AI במערכות אבטחה באופן כללי כתבנו ב<a href="/blog/smart-security-ai-2026">מדריך נפרד</a>.</p>
+
+<h3>לכידה: הנה הפנים שלו</h3>
+<p>מצלמה עם לכידת פנים מאתרת את הפנים של האדם שהיא זיהתה, ושומרת תמונה חתוכה שלהן לצד ההקלטה. כשקורה משהו, אפשר לעבור על תמונות הפנים במקום לצפות בשעות של וידאו. המצלמה עדיין לא יודעת מי האדם.</p>
+
+<h3>זיהוי: זה העובד מהמחסן</h3>
+<p>כאן המערכת מחזיקה ספרייה של תמונות פנים של אנשים מוכרים, ומשווה אליה כל פנים חדשות שהיא רואה. כשיש התאמה, היא יכולה לרשום את זה ביומן, לשלוח התראה או לפתוח דלת. זו כבר מערכת ביומטרית, ומבחינת החוק זה מידע שונה לגמרי מסרטון רגיל. נחזור לזה בסעיף על פרטיות.</p>
+
+<h2 id="catalog">מה הציוד בחנות באמת עושה</h2>
+
+<p>עברנו על המפרט של המוצרים ועל דפי המפרט של היצרנים. זו התמונה, בלי הגזמות.</p>
+
+<h3>מצלמות Reolink: זיהוי אדם, רכב וחיית מחמד</h3>
+<p>במצלמות ובערכות של Reolink שבחנות, המפרט מדבר על זיהוי אדם ורכב, ובחלק מהדגמים גם חיית מחמד. לבית זה עובד טוב, כי ההתראות מגיעות על מה שחשוב. השוואת פנים לרשימה של אנשים לא מופיעה במפרט של הדגמים האלה, ולכן אין טעם לקנות אותם בשביל זה.</p>
+
+<h3>מצלמות Hikvision עם AcuSense: סיווג אדם ורכב</h3>
+<p>AcuSense הוא השם ש-Hikvision נותנת לסיווג אדם ורכב שמבוסס על למידה עמוקה. זה מה שמופיע במפרט של רוב מצלמות ה-AcuSense בחנות: סיווג אדם ורכב והפחתה של התראות שווא. בחלק מהדגמים זה מגיע יחד עם הרתעה: אור מהבהב, התראה קולית, ומיקרופון ורמקול לשיחה דו-כיוונית.</p>
+<p>בחלק מהדגמים יש צעד נוסף. במצלמת הטורט <a href="/store/ds-2cd2387g2h-lisu-sl-2-8mm">Hikvision DS-2CD2387G2H-LISU/SL</a> ובמצלמת הצינור DS-2CD2T87G3-LIS2UY/SL, שתיהן 4K, וגם במצלמת ה-4MP DS-2CD2047G2H-LIU/SL, דף המפרט של היצרן מציין לכידת פנים (Face Capture). כלומר, הן שומרות תמונות של פנים, אבל לא משוות אותן לרשימה.</p>
+
+<h3>מקליטים של Hikvision: השוואת פנים על מעט ערוצים</h3>
+<p>כאן נמצא זיהוי הפנים האמיתי בעולם המצלמות. במקליט <a href="/store/ds-7608nxi-k1-8p">Hikvision DS-7608NXI-K1/8P</a>, למשל, דף המפרט מציין זיהוי פנים בערוץ וידאו אחד שהמקליט מנתח בעצמו, או השוואה של תמונות פנים בעד 4 ערוצים, כשהתמונות מגיעות ממצלמות שיודעות ללכוד פנים. המקליט מחזיק עד 16 ספריות פנים ועד 20,000 תמונות פנים בסך הכול.</p>
+<p>שני דברים חשובים מאותו דף מפרט. הראשון: אי אפשר להפעיל במקליט באותו זמן זיהוי פנים, Motion Detection 2.0 והגנה היקפית, וצריך לבחור. השני: מדובר בערוץ אחד או בכמה ערוצים, לא בכל המצלמות במערכת. בפועל בוחרים נקודה אחת, בדרך כלל הכניסה הראשית, ומתכננים אותה במיוחד בשביל זה.</p>
+<p>גם מי שיש לו מערכת ישנה על כבלי קואקס לא בחוץ. במקליטים ההיברידיים של Hikvision שבחנות יש השוואת פנים גם למצלמות אנלוגיות, על מעט ערוצים: ערוץ אחד בדגם של 4 ערוצים, 2 בדגם של 8 ו-4 בדגם של 16. לפי דפי המפרט, גם כאן בוחרים בין זיהוי פנים לבין הגנה היקפית. במקליט Uniview NVR302-32B-IQ, דף המפרט של היצרן מציין גילוי פנים (Face Detection) וחיפוש חכם לפי אדם ורכב. מי שצריך דווקא השוואה מול רשימה, שיבדוק איתנו את הדגם לפני שהוא מזמין.</p>
+
+<h3>מסופי זיהוי פנים לכניסה: המקום שבו זה באמת עובד</h3>
+<p>מסוף זיהוי פנים הוא לא מצלמת אבטחה. זה מכשיר שמותקן ליד הדלת, בגובה הפנים, ומחובר למנעול החשמלי. העובד או הדייר נעמד מולו, המסוף משווה את הפנים לרשימה שלו ופותח. כל התנאים שקשה להשיג במצלמה על קיר נמצאים כאן מראש: האדם קרוב, מסתכל ישר למכשיר, והתאורה ידועה.</p>
+<p>בחנות יש כמה דרגות:</p>
+<ul>
+<li><strong>DS-K1T323MBFWX-E1:</strong> מסוף קומפקטי עם מסך 2.4 אינץ', עד כ-1,000 פנים, וגם טביעת אצבע וכרטיס. לפי המפרט הוא מיועד למשרדים, לבנייני מגורים ולמוסדות חינוך.</li>
+<li><strong><a href="/store/ds-k1t344mbfwx-e1">DS-K1T344MBFWX-E1</a>:</strong> מסך 4.5 אינץ', עד 3,000 פנים, זיהוי ממרחק של 0.3 עד 1.5 מטרים והגנה מפני ניסיון להערים עליו עם תמונה. אפשר להזין אותו בכבל רשת אחד (PoE), שמזין גם את המנעול, והוא שומר יומן אירועים שמשמש לדוחות נוכחות.</li>
+<li><strong>DS-K1T344EBFWX-E1:</strong> דגם דומה עם מסך 4.3 אינץ', עד כ-1,500 פנים וכרטיסי קרבה מסוג EM. מתאים למי שכבר יש לו כרטיסים כאלה.</li>
+<li><strong><a href="/store/ds-k1t671m">DS-K1T671M</a>:</strong> מסך מגע 7 אינץ', עד 6,000 פנים וזיהוי ממרחק של עד 3 מטרים. מיועד לארגונים, לבנייני משרדים ולמפעלים.</li>
+</ul>
+<p>בכל המסופים האלה יש גם דרך להיכנס בלי פנים: כרטיס, ובחלקם גם קוד, טביעת אצבע או קוד QR. זה חשוב למי שלא רוצה לרשום את הפנים שלו. מי שרוצה בקרת כניסה בלי זיהוי פנים בכלל, יכול לבחור מסוף כמו DS-K1T502DBFWX-C, שפותח בכרטיס, בקוד, בקוד QR או בטביעת אצבע. כל הדגמים נמצאים ב<a href="/store/c/intercom">קטגוריית האינטרקום ובקרת הכניסה</a>.</p>
+
+<h2 id="where">בית, עסק או בניין: מה מתאים לכל אחד</h2>
+
+<h3>בית פרטי ודירה</h3>
+<p>בבית, מה שרוב האנשים צריכים זה לדעת שמישהו נכנס לחצר, ולקבל תמונה ברורה שלו. מצלמות עם זיהוי אדם ורכב עושות את זה. כדאי להשקיע במיקום ובתאורה, כדי שהפנים של מי שמגיע לדלת ייראו טוב בהקלטה. זיהוי של בני המשפחה מול רשימה נשמע נחמד, אבל ברוב הבתים הוא מוסיף מורכבות בלי תועלת אמיתית. לדלת הכניסה, פעמון וידאו, או אינטרקום עם פתיחה בקוד או בכרטיס, פותרים כמעט כל צורך. ואם מה שמעניין אתכם הוא דווקא דלת שנפתחת בלי מפתח, יש לנו <a href="/blog/smart-biometric-locks-2026">מדריך על מנעולים חכמים ביומטריים</a>.</p>
+
+<h3>עסק: חנות, משרד או מחסן</h3>
+<p>בעסק הצורך מתחלק לשניים. הראשון הוא תיעוד: מצלמה שתראה את הפנים של מי שנכנס, בדלת ובקופה, כדי שיהיה מה למסור למשטרה או לחברת הביטוח. לזה לא צריך זיהוי פנים. צריך מצלמה במקום הנכון, בגובה הנכון ועם תאורה טובה. השני הוא שליטה בכניסה ונוכחות: מי נכנס למשרד, למחסן או לחדר השרתים, ומתי. לזה מסוף בכניסה, עם פנים או עם כרטיס וקוד, הוא הכלי הנכון.</p>
+<p>זיהוי פנים במצלמה מול רשימה, למשל התראה כשאדם מסוים מתקרב לחנות, הוא כבר צעד שדורש הצדקה טובה. נרחיב בסעיף על פרטיות.</p>
+
+<h3>בניין מגורים או משרדים</h3>
+<p>בבניין, מסוף בכניסה הראשית יכול להחליף את המפתח או את הצ'יפ. היתרון ברור: את הפנים אי אפשר לשכוח בבית או להעביר למישהו אחר. החיסרון הוא שנוצר מאגר ביומטרי של הדיירים או העובדים, ומישהו צריך להיות אחראי עליו: מי מוסיף אנשים, מי מוחק כשמישהו עוזב, ומי רשאי לראות את היומן. בבניין מגורים, הדיון הזה צריך להתקיים בנציגות לפני שקונים.</p>
+
+<h2 id="requirements">מה צריך כדי שזיהוי פנים יעבוד</h2>
+
+<p>כאן נקבע אם זיהוי הפנים יעבוד או יאכזב. לאלגוריתם אין קסם: הוא צריך פנים גדולות מספיק בתמונה, חדות, מוארות ופונות למצלמה.</p>
+
+<h3>רזולוציה ומרחק: כמה פיקסלים יש על הפנים</h3>
+<p>התקן הבינלאומי IEC 62676-4, שעוסק בתכנון מערכות מצלמות אבטחה, מגדיר כמה פיקסלים צריך על כל מטר רוחב בתמונה כדי שמי שצופה בהקלטה יוכל לעשות דברים שונים: 25 פיקסלים למטר כדי לראות שיש שם אדם, 63 כדי לראות פרטים כמו בגדים, 125 כדי לדעת שזה אדם שכבר ראיתם, ו-250 כדי לזהות אותו. המספרים מתייחסים לאדם שצופה בהקלטה. אלגוריתם של זיהוי פנים עובד לפי דרישות של היצרן, אבל העיקרון זהה: יותר פיקסלים על הפנים נותנים תוצאה טובה יותר.</p>
+<p>מה זה אומר בפועל? הנה חישוב גס לשלוש מצלמות מהחנות, ביום ובתנאים טובים:</p>
+
+<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr style="background: #0f3460; color: #fff;"><th style="padding: 10px; text-align: right;">מצלמה</th><th style="padding: 10px; text-align: right;">זווית אופקית</th><th style="padding: 10px; text-align: right;">מרחק מרבי לזיהוי (250 פיקסלים למטר)</th><th style="padding: 10px; text-align: right;">מרחק מרבי להיכרות (125 פיקסלים למטר)</th></tr></thead><tbody>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd; min-width: 150px;">4MP עם עדשה 2.8 מ"מ, כמו Hikvision DS-2CD2047G2H-LIU/SL</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">כ-112°</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-3.6 מטרים</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-7 מטרים</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd; min-width: 150px;">8MP (4K) עם עדשה 2.8 מ"מ, כמו Hikvision DS-2CD2387G2H-LISU/SL</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">כ-109°</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-5.5 מטרים</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-11 מטרים</td></tr>
+<tr><td style="padding: 10px; border-bottom: 1px solid #ddd; min-width: 150px;">4MP עם עדשה ממונעת 2.8-12 מ"מ בזום מלא, Hikvision DS-2CD1643G2-LIZU</td><td style="padding: 10px; border-bottom: 1px solid #ddd;">כ-30°</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-19 מטרים</td><td style="padding: 10px; border-bottom: 1px solid #ddd; white-space: nowrap;">כ-39 מטרים</td></tr>
+</tbody></table></div>
+
+<p>עדשה צרה רואה פנים מרחוק, אבל מכסה רצועה צרה: בזום מלא, במרחק 10 מטרים היא רואה רוחב של כ-5 מטרים בלבד. לכן מצלמה אחת לא יכולה גם לכסות חצר שלמה וגם לזהות פנים בשער. הפתרון המקובל הוא שתי מצלמות: אחת רחבה לתמונה הכללית, ואחת צרה שמכוונת לנקודת מעבר, כמו שער, דלת או שביל צר. מצלמה כמו <a href="/store/ds-2cd1643g2-lizu-2-8-12mm">Hikvision DS-2CD1643G2-LIZU</a>, עם עדשה ממונעת שאפשר לכוון אחרי ההתקנה, נוחה לתפקיד הזה.</p>
+
+<h3>זווית וגובה</h3>
+<p>מצלמה שמותקנת גבוה ומכוונת כמעט ישר למטה רואה קודקודים ומצחיות של כובעים, לא פנים. כדי לזהות פנים, המצלמה צריכה להסתכל על האדם בזווית מתונה, קרוב לגובה העיניים. זה אומר בדרך כלל התקנה נמוכה מהרגיל, ומיקום שבו המצלמה רואה את האדם כשהוא מתקרב אליה, ולא מעל הראש שלו. הכי טוב לבחור נקודה שבה כולם עוברים באותו כיוון ובאותו מקום: מעבר צר, פתח דלת או שער להולכי רגל. מצלמה נמוכה קל יותר להזיז או לכסות, ולכן בנקודה כזו עדיף דגם חסין ונדליזם (IK10) או מיקום מוגן.</p>
+
+<h3>תאורה</h3>
+<p>אור חזק מאחורי האדם, למשל דלת זכוכית או שמש של אחר הצהריים, הופך את הפנים לצללית. WDR עוזר, אבל לא תמיד מספיק. בלילה, מצלמה עם אינפרא אדום נותנת תמונה בשחור-לבן, ופנים שקרובות מאוד למצלמה יכולות לצאת בהירות מדי. תאורה קבועה וטובה בנקודת הכניסה עושה יותר מכל שורה במפרט. מצלמות עם תאורה היברידית, שמשלבות אינפרא אדום ואור לבן, עוזרות לקבל תמונה צבעונית בלילה, אבל גם הן לא מחליפות תאורה קבועה.</p>
+<p>במסופי הכניסה המצב פשוט יותר, כי הם עובדים מקרוב. בחלק מהדגמים, כמו DS-K1T344EBFWX-E1 ו-DS-K1T671M, המפרט מציין עדשה כפולה שמיועדת לזיהוי גם בתאורה חלשה. ועדיין, לא מתקינים מסוף מול חלון שהשמש נכנסת דרכו.</p>
+
+<h2 id="limits">גבולות שכדאי להכיר מראש</h2>
+
+<ul>
+<li><strong>מרחק:</strong> במצלמת 4K עם עדשה רחבה, במרחק 20 מטרים יש פחות מ-70 פיקסלים על כל מטר רוחב. זה מספיק כדי לראות שיש אדם ומה הוא לובש, לא כדי לזהות אותו, ובלילה עוד פחות. מי שמבטיח יותר, כדאי לבקש ממנו הקלטה לדוגמה מאותו מרחק ובאותה שעה.</li>
+<li><strong>כיסוי פנים:</strong> כובע, משקפי שמש, קפוצ'ון או מסכה מורידים מאוד את הסיכוי לזיהוי.</li>
+<li><strong>תנועה:</strong> אדם שרץ או רוכב על אופניים חשמליים עובר את הנקודה בשנייה. מצלמה במקום שבו אנשים מאטים, כמו דלת או שער, תיתן תוצאה טובה יותר.</li>
+<li><strong>טעויות:</strong> כל מערכת ביומטרית טועה לפעמים, גם כשהיא מזהה אדם לא נכון וגם כשהיא מפספסת אדם מוכר. בבקרת כניסה פותרים את זה עם חלופה, כרטיס או קוד, ועם יומן שאפשר לבדוק.</li>
+</ul>
+
+<p>זיהוי פנים הוא כלי לנקודה אחת שתוכננה בשבילו. הוא לא תחליף לכיסוי טוב של כל השטח, לתאורה ולהתראות שאפשר לסמוך עליהן.</p>
+
+<h2 id="privacy">זיהוי פנים ופרטיות: מה החוק אומר</h2>
+
+<p>גם סרטון רגיל ממצלמת אבטחה הוא מידע אישי, ויש לו כללים משלו, שפירטנו ב<a href="/blog/privacy-law-amendment-13-cameras-2026">מדריך על תיקון 13 לחוק הגנת הפרטיות</a>. זיהוי פנים מוסיף על זה שכבה נוספת.</p>
+<p>תיקון 13 לחוק הגנת הפרטיות, שנכנס לתוקף ב-14 באוגוסט 2025, קבע רשימה של סוגי "מידע בעל רגישות מיוחדת". אחד הפריטים ברשימה הוא מזהה ביומטרי שמשמש, או מיועד לשמש, לזיהוי אדם או לאימות זהותו באופן ממוחשב. ספריית פנים במקליט או במסוף כניסה, שמשמשת לזיהוי ממוחשב, מתאימה להגדרה הזו, וכך גם טביעות אצבע שנשמרות במסוף. לפי <a href="https://www.gov.il/BlobFolder/reports/guide_tikon13_professional/he/tikun%2013%20_170825.pdf" target="_blank" rel="noopener noreferrer">המדריך של הרשות להגנת הפרטיות לתיקון 13</a>, בסוגים רבים של הפרות, העיצום הכספי במאגר שיש בו מידע כזה גבוה יותר מאשר במאגר רגיל, ולעיתים כפול.</p>
+<p>מה זה אומר לבעל עסק או לנציגות של בניין, בצורה מעשית:</p>
+<ul>
+<li><strong>לשאול קודם למה.</strong> יש צורך אמיתי שכרטיס או קוד לא פותרים? אם אפשר להשיג את אותה מטרה בלי ביומטריה, זו בדרך כלל הדרך הנכונה.</li>
+<li><strong>להסביר לאנשים.</strong> כשפונים לאדם כדי לאסוף ממנו מידע למאגר, החוק מחייב למסור לו הודעה שכוללת, בין השאר, את המטרה, אם המסירה תלויה בהסכמתו, למי יועבר המידע ואת הזכות לעיין בו ולבקש לתקן אותו.</li>
+<li><strong>לתת חלופה.</strong> עובד או דייר שלא רוצה להירשם בפנים צריך דרך אחרת להיכנס, כמו כרטיס או קוד. במקום עבודה זה חשוב במיוחד, כי עובד לא תמיד מרגיש חופשי לסרב למעסיק.</li>
+<li><strong>לצמצם ולאבטח.</strong> לשמור רק את מי שצריך, למחוק את מי שעזב, להגביל את מי שיכול לגשת להגדרות, ולהחליף את סיסמאות ברירת המחדל במסוף ובמקליט.</li>
+<li><strong>לא לזהות את הציבור בלי בדיקה משפטית.</strong> זיהוי של לקוחות או של עוברים ושבים מול רשימה הוא תחום רגיש במיוחד. לפני שעושים דבר כזה בעסק, מתייעצים עם עורך דין שמתמחה בדיני פרטיות.</li>
+</ul>
+<p>המדריך הזה אינו ייעוץ משפטי. הוא נועד לעזור לכם לשאול את השאלות הנכונות לפני שקונים.</p>
+
+<h2 id="checklist">לפני שקונים: חמש שאלות</h2>
+
+<ol>
+<li>מה המטרה: התראות על אנשים, תיעוד ברור של פנים, או שליטה בכניסה?</li>
+<li>איפה בדיוק הנקודה, ובאיזה מרחק מהמצלמה יעברו האנשים?</li>
+<li>איך התאורה שם ביום ובלילה, והאם יש אור חזק מאחור?</li>
+<li>כמה אנשים צריך לרשום, ומי ינהל את הרשימה?</li>
+<li>יש חלופה בלי ביומטריה, וכל מי שנרשם יודע מה נשמר עליו?</li>
+</ol>
+
+<p>לא בטוחים מה סביר לצפות מהנקודה שלכם? <a href="https://wa.me/972502256866" target="_blank" rel="noopener noreferrer">שלחו לנו בווצאפ</a> תמונות או סרטון קצר שלה, ונגיד לכם מה אפשר להשיג שם ובאיזה ציוד. ההתקנה היא שירות נפרד, בכל הארץ בתיאום, ומתמחרים אותה אחרי שרואים את המקום. הפרטים בדף <a href="/installation">ההתקנה</a>. המחיר העדכני של כל מוצר מופיע בדף המוצר, והמשלוח לא כלול במחיר ומתומחר לפי הכתובת.</p>
+
+<p>רוצים להתחיל מהבסיס? <a href="/store/finder">שאלון ההתאמה בחנות</a> שואל כמה שאלות קצרות ומחזיר המלצה למערכת שמתאימה לבית או לעסק שלכם.</p>`;
+
 export default function Page() {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: H1,
+    description: DESCRIPTION,
+    image: HERO,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    author: { '@type': 'Organization', name: 'צוות Site-Control', url: 'https://www.site-control-il.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: { '@type': 'ImageObject', url: 'https://www.site-control-il.com/images/site-control-logo.webp' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    url: CANONICAL,
+    inLanguage: 'he-IL',
+    keywords: KEYWORDS.join(', '),
+    isPartOf: { '@type': 'Blog', '@id': 'https://www.site-control-il.com/blog', name: 'בלוג Site-Control' },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'דף הבית', item: 'https://www.site-control-il.com' },
+      { '@type': 'ListItem', position: 2, name: 'בלוג', item: 'https://www.site-control-il.com/blog' },
+      { '@type': 'ListItem', position: 3, name: SHARE_TITLE, item: CANONICAL },
+    ],
+  };
+
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
-      <article 
-        style={{ lineHeight: '1.8', color: 'var(--text)' }}
-        dangerouslySetInnerHTML={{ __html: `<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--text); margin-top: 2rem;">מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות</h1>
-<picture>
-        <source srcset="/blog-images/cameras-security-with-detection-face-2026/hero.avif" type="image/avif" />
-        <source srcset="/blog-images/cameras-security-with-detection-face-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-detection-face-2026/hero.webp" alt="מצלמות אבטחה עם זיהוי פנים 2026 - היתרונות, החסרונות ומה כדאי לקנות" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל27.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">האם שאלת עצמך פעם איך להגן על הנכס שלך בצורה החכמה והמתקדמת ביותר ב-2026? או אולי תהיתה מה ההבדל בין מערכות האבטחה המסורתיות לטכנולוגיות החדשות שמציעות הגנה של דור הבא? במדריך מקיף זה תקבל תשובות לכל השאלות החשובות ותלמד איך לבחור את המערכת המושלמת לצרכים שלך.</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">תוכן העניינים</h2>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. יתרונות מדהימים שלא ידעת עליהם</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. איך לבחור את המערכת הנכונה לבית או עסק שלך</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">5. מדריך התקנה ותחזוקה מקצועי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">6. עלויות אמיתיות ותשואה על השקעה</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">7. שאלות נפוצות ותשובות מקצועיות</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">ההגדרה המקצועית</h3>
-<strong style="font-weight: bold; color: var(--accent);">מערכות אבטחה חכמות</strong> הן פתרונות אבטחה מתקדמים המשלבים בינה מלאכותית, למידת מכונה וטכנולוגיות IoT (אינטרנט הדברים) כדי לספק הגנה אוטונומית, חכמה ויעילה. בניגוד למערכות מסורתיות שרק מקליטות ומתריעות, המערכות החכמות <strong style="font-weight: bold; color: var(--accent);">מנתחות, מבינות ומגיבות</strong> בזמן אמת.
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">השוואה מפורטת: מסורתי מול חכם</h3>
-
-<table style="width: 100%; border-collapse: collapse; margin: 2rem 0; direction: rtl; background: var(--card);"><tbody><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">תכונה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת מסורתית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת חכמה</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">זיהוי איומים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">גילוי תנועה בסיסי</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">זיהוי אובייקטים ספציפיים, פנים, רכבים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אזעקות שווא</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">90% מהאזעקות שווא</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פחות מ-5% אזעקות שווא</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">תגובה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">התראה בסיסית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פעולות אוטומטיות מותאמות</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">ניטוח מרחוק</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">הקלטה פשוטה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">ניתוח חכם ודוחות מפורטים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אינטגרציה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עצמאית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">משולבת עם כל המערכות החכמות בבית</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">עדכונים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">לא קיימים</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עדכוני תוכנה אוטומטיים</td></tr></tbody></table>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">הטכנולוגיות המהפכניות ב-2026</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">1. בינה מלאכותית מתקדמת (Advanced AI)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">החידוש הגדול ב-2026 הוא <strong style="font-weight: bold; color: var(--accent);">בינה מלאכותית שלומדת את ההרגלים שלך</strong>. המערכת לומדת מי הם בני הבית, מתי הם בדרך כלל נמצאים בבית, ומה הם הדפוסים הרגילים. כך היא יכולה לזהות חריגות אמיתיות ולמנוע אזעקות שווא.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">דוגמאות מעשיות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי הבדל בין חתול שמסתובב בגינה לפורץ אמיתי</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הבחנה בין בן משפחה שחוזר בלילה לגנב</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי רכבים מוכרים מול רכבים חשודים</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">2. ראייה ממוחשבת חכמה (Computer Vision)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">טכנולוגיית הראייה ב-2026 מתקדמת מאוד ומסוגלת לבצע ניתוח מורכב של מה שקורה בזמן אמת:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">יכולות מתקדמות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ספירה אוטומטית של אנשים</strong> - כמה אנשים נכנסו ויצאו</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי התנהגות חשודה</strong> - התנהגות לא טבעית או חשודה</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מעקב אחרי אובייקטים</strong> - מעקב אחרי אנשים או רכבים ברחבי הנכס</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי עישון ואש</strong> - מניעה מוקדמת של שריפות</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">3. אינטגרציה מלאה עם בתים חכמים</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">ב-2026, מערכת האבטחה לא עומדת לבד - היא חלק ממערכת אקולוגית חכמה שמחברת את כל הבית:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תרחישים אוטומטיים:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">כשהמערכת מזהה שיצאת מהבית, היא מפעילה מצב אבטחה מלא</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי פריצה, היא מדליקה את כל האורות ומפעילה צופרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי אש, היא מפעילה מתזים ומתריעה למכבי האש</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזמן שינה, היא מפעילה מצב לילה עם רגישות מתואמת</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">4. אחסון ענן חכם עם חיזוי</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">המערכות החדשות לא רק מאחסנות בענן, אלא גם <strong style="font-weight: bold; color: var(--accent);">מנתחות דפוסים ומחזות התנהגויות עתידיות</strong>:</p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">חיזוי זמני פעילות חשודה לפי דפוסים היסטוריים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי מגמות בפעילות סביב הבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">התראות חכמות על שינויים בדפוסי התנועה השכונתיים</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">יתרונות מדהימים שלא ידעת עליהם</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #1: חיסכון של אלפי שקלים בשנה</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">לא רק שהמערכת מגנה מפני גניבות - <strong style="font-weight: bold; color: var(--accent);">היא גם מחסכת הוצאות בדרכים שלא חשבת עליהן:</strong></p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ביטוח זול יותר</strong>: חברות ביטוח נותנות הנחות של עד 30% לבעלי מערכות חכמות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מניעת נזקים</strong>: זיהוי מוקדם של דליפות מים, אש או פריצות חוסך תיקונים יקרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">חיסכון באנרגיה</strong>: אינטגרציה עם מערכת החימום והמיזוג חוסכת עד 25% בחשמל</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #2: שקט נפשי אמיתי</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">עם מערכת חכמה, <strong style="font-weight: bold; color: var(--accent);">אתה תמיד יודע בדיוק מה קורה בבית</strong>, גם כשאתה בחו"ל:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הודעות בזמן אמת על כל פעילות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיחת וידאו ישירה עם מי שנמצא בבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">יכולת לראות ולדבר עם ילדים שחזרו מבית הספר</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #3: עדכונים וחידושים כל הזמן</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">בניגוד למערכות מסורתיות שמתיישנות, <strong style="font-weight: bold; color: var(--accent);">המערכות החכמות משתפרות כל הזמן</strong>:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">עדכוני תוכנה אוטומטיים עם יכולות חדשות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיפורים באלגוריתמי הזיהוי מבוססי נתונים מכל העולם</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הוספת תכונות חדשות ללא צורך בהחלפת חומרה</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">איך לבחור את המערכת הנכונה לבית או עסק שלך</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 1: הערכת הצרכים שלך</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">שאלות חיוניות שכדאי לשאול עצמך:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">איזה סוג נכס יש לי?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בית פרטי: התמקדות בהגנה על המשפחה ונוחות יומיומית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- דירה: מערכת קומפקטית ודיסקרטית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עסק קטן: הגנה על ציוד ומלאי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- משרד: אבטחת מידע ושליטה בגישות</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">מה רמת האבטחה הנדרשת?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בסיסית: מניעת פריצות והגנה על רכוש</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בינונית: ניטור פעילות והקלטות איכותיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- מתקדמת: ניתוח התנהגות וחיזוי איומים</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">איזה תקציב אני מוכן להשקיע?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- כלל ישראלי: מערכת אבטחה חכמה איכותית עולה כמו חופשה משפחתית אחת, אבל מגנה שנים רבות</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 2: בחירת הרכיבים החיוניים</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">רכיבים חובה במערכת חכמה:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">מצלמות חכמות עם ראיית לילה צבעונית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- רזולוציה: לפחות 4K לזיהוי ברור של פנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- זוויות רחבות: 120 מעלות או יותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עמידות: IP66 לעמידות בגשם וחום</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">יחידת בקרה מרכזית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עיבוד מקומי: לא תלויה באינטרנט לפעולות בסיסיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- חיבורי יות: תמיכה בעשרות מצלמות וחיישנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- גיבוי כפול: אחסון מקומי וענן</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">אפליקציה מתקדמת</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- ממשק עברי פשוט ואינטואיטיבי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- התראות חכמות ומותאמות אישית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- שיתוף גישה עם בני משפחה</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">סיכום והמלצות</h2>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מערכות אבטחה חכמות ב-2026 אינן עוד מותרות - הן הפכו לצורך בסיסי לכל בית ועסק מתקדם. <strong style="font-weight: bold; color: var(--accent);">השילוב של בינה מלאכותית, ראיית מחשב וחיבור לאינטרנט הדברים יוצר פתרון אבטחה שלא היה אפשרי בעבר</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">ההמלצות המקצועיות שלנו:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">אל תדחו את ההחלטה</strong> - כל חודש שעובר בלי מערכת הוא חודש של חשיפת סיכון מיותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">השקיעו במערכת איכותית</strong> - ההבדל במחיר קטן, ההבדל ביכולות עצום</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">התעקשו על התקנה מקצועית</strong> - מערכת טובה עם התקנה גרועה = כשלון מובטח</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. <strong style="font-weight: bold; color: var(--accent);">תכננו להרחבה עתידית</strong> - התחילו קטן אבל עם תשתית שמאפשרת גדילה</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">הצעד הבא - ייעוץ מקצועי חינם</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: var(--accent);">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-225-6866
-<strong style="font-weight: bold; color: var(--accent);">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: var(--link-color); text-decoration: underline;">www.site-control-il.com/contact</a>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">---</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">*מאמר זה נכתב על ידי המומחים של Site-Control, החברה המובילה בישראל להתקנת מערכות אבטחה חכמות. עם מעל 10 שנות ניסיון ומאות לקוחות מרוצים, אנחנו מתמחים בפתרונות מתקדמים המותאמים לשוק הישראלי.*</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תגיות:</strong> מצלמות אבטחה עם זיהוי פנים, מצלמות אבטחה עם זיהוי פנים 2026, מצלמות אבטחה עם זיהוי פנים למכירה, מצלמות אבטחה עם זיהוי פנים מחיר, מצלמות אבטחה עם זיהוי פנים המלצות, מצלמות אבטחה עם זיהוי פנים ביקורות
-` }}
-      />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+        <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>
+          <a href="/" style={{ color: '#007bff', textDecoration: 'none' }}>דף הבית</a>
+          <span> / </span>
+          <a href="/blog" style={{ color: '#007bff', textDecoration: 'none' }}>בלוג</a>
+          <span> / </span>
+          <span>{SHARE_TITLE}</span>
+        </nav>
+        <article style={{ lineHeight: '1.8', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text)', marginTop: '2rem' }}>
+            {H1}
+          </h1>
+          <img
+            src={`/blog-images/${SLUG}/hero.webp`}
+            alt={HERO_ALT}
+            width={1200}
+            height={593}
+            fetchPriority="high"
+            decoding="async"
+            style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px' }}
+          />
+          <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
+            מעודכן ל-17.10.2026 | צוות Site-Control
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: BODY_HTML }} />
+          <section style={{ marginTop: '3rem', padding: '2rem', background: 'rgba(15,52,96,0.05)', borderRadius: '12px' }}>
+            <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--accent, #e94560)' }}>שאלות נפוצות</h2>
+            {FAQS.map((f) => (
+              <details
+                key={f.q}
+                style={{ marginBottom: '1rem', padding: '1rem', background: 'var(--card, #fff)', borderRadius: '8px', border: '1px solid var(--border, #eee)' }}
+              >
+                <summary style={{ fontWeight: 'bold', cursor: 'pointer', color: 'var(--text, #333)', fontSize: '1.1rem' }}>{f.q}</summary>
+                <p style={{ marginTop: '0.75rem', lineHeight: '1.8', color: 'var(--text, #555)' }}>{f.a}</p>
+              </details>
+            ))}
+          </section>
+          <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים איזו מערכת מתאימה לכם?</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>כמה שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת, או שאלו אותנו בווצאפ</p>
+            <a href="/store/finder" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              לשאלון ההתאמה בחנות
+            </a>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }

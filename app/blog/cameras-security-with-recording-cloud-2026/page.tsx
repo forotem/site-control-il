@@ -1,174 +1,336 @@
 import { Metadata } from 'next';
 
+const SLUG = 'cameras-security-with-recording-cloud-2026';
+const CANONICAL = `https://www.site-control-il.com/blog/${SLUG}`;
+const HERO = `https://www.site-control-il.com/blog-images/${SLUG}/hero.webp`;
+const SEO_TITLE = 'מצלמות אבטחה עם הקלטה בענן: איפה לשמור הקלטות | Site-Control';
+const OG_TITLE = 'מצלמות אבטחה עם הקלטה בענן: איפה לשמור הקלטות';
+const H1 = 'מצלמות אבטחה עם הקלטה בענן: ענן, כרטיס זיכרון או מקליט? מדריך לבחירה לבית ולעסק';
+const DESCRIPTION =
+  'איפה לשמור הקלטות של מצלמות אבטחה: ענן, כרטיס זיכרון, מקליט NVR או שילוב. יתרונות וחסרונות, מה מציעות Reolink ו-Hikvision וכמה נפח צריך.';
+const HERO_ALT = 'שולחן עבודה עם מצלמות אבטחה ביתיות, מחשב נייד עם מסך ניהול הקלטות בענן וטאבלט שמנגן הקלטה';
+const DATE_PUBLISHED = '2026-01-29';
+const DATE_MODIFIED = '2026-10-17';
+const KEYWORDS = [
+  'מצלמות אבטחה עם הקלטה בענן',
+  'הקלטה בענן למצלמות אבטחה',
+  'Reolink Cloud',
+  'Hik-Connect ענן',
+  'מצלמת אבטחה עם כרטיס זיכרון',
+  'מקליט NVR או ענן',
+  'כמה נפח צריך למצלמות אבטחה',
+  'Reolink Home Hub',
+];
+
 export const metadata: Metadata = {
-  title: 'מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026 | מדריך מקצועי 2026',
-  description: 'מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026 - מדריך מקיף ומעודכן. מצלמות אבטחה עם הקלטה ענן, מצלמות אבטחה עם הקלטה ענן 2026, מצלמות אבטחה עם הקלטה ענן למכירה עם ייעוץ מקצועי והתקנה ברמה הגבוהה ביותר בישראל.',
-  keywords: 'מצלמות אבטחה עם הקלטה ענן, מצלמות אבטחה עם הקלטה ענן 2026, מצלמות אבטחה עם הקלטה ענן למכירה, מצלמות אבטחה עם הקלטה ענן מחיר, מצלמות אבטחה עם הקלטה ענן המלצות, מצלמות אבטחה עם הקלטה ענן ביקורות',
+  title: SEO_TITLE,
+  description: DESCRIPTION,
+  keywords: KEYWORDS,
+  authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
+  openGraph: {
+    title: OG_TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    publishedTime: DATE_PUBLISHED,
+    modifiedTime: DATE_MODIFIED,
+    locale: 'he_IL',
+    siteName: 'Site-Control',
+    url: CANONICAL,
+    images: [
+      {
+        url: HERO,
+        width: 1200,
+        height: 593,
+        alt: HERO_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: OG_TITLE,
+    description: DESCRIPTION,
+    images: [HERO],
+  },
+  alternates: {
+    canonical: CANONICAL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 };
 
+const FAQ: { q: string; a: string }[] = [
+  {
+    q: 'האם מצלמות אבטחה חייבות מנוי ענן?',
+    a: 'לא. ההקלטה יכולה להישמר בכרטיס זיכרון במצלמה, ברכזת כמו Reolink Home Hub או במקליט עם דיסק, והצפייה מהנייד באפליקציה לא דורשת מנוי. לפי Reolink, שירות הענן שלה הוא תוספת לבחירה. מנוי ענן שווה בעיקר כשרוצים עותק של האירועים מחוץ לבית או לעסק.',
+  },
+  {
+    q: 'האם הענן מקליט 24 שעות ביממה?',
+    a: 'בשירותים הביתיים בדרך כלל לא. לפי Reolink, שירות Reolink Cloud שומר סרטונים של אירועי תנועה ולא תומך בהקלטה רציפה, וגם שירות הענן של Hikvision מתואר כגיבוי של קטעי וידאו. להקלטה רציפה משתמשים במקליט עם דיסק או בכרטיס זיכרון, ואת הענן משאירים לאירועים.',
+  },
+  {
+    q: 'מה קורה להקלטות אם גונבים את המקליט?',
+    a: 'אם אין גיבוי, ההקלטות הולכות איתו. לכן שמים את המקליט במקום מוסתר ומאוורר, מכוונים אליו מצלמה, ומוסיפים גיבוי ענן למצלמה או שתיים בנקודות החשובות. קטע שכבר הועלה לענן נשאר שם גם אם המקליט נלקח אחר כך.',
+  },
+  {
+    q: 'כמה ימים של הקלטה נותן דיסק של 2TB?',
+    a: 'הערכה גסה: מצלמה צורכת ביום בערך את קצב הווידאו שלה ב-Mbps כפול 10.8 GB. ארבע מצלמות שמקליטות ברציפות ב-4 Mbps ימלאו דיסק של 2TB בערך תוך 10 עד 11 ימים, וב-2 Mbps בערך תוך שלושה שבועות. בהקלטה לפי תנועה הדיסק מחזיק יותר זמן, לפי כמות התנועה.',
+  },
+  {
+    q: 'אפשר להשתמש בענן במצלמה סולארית 4G?',
+    a: 'בדגמים שנתמכים כן, ול-Reolink יש גם תוכנית ענן למצלמת 4G בודדת. אבל כל קטע שעולה לענן יורד מחבילת הגלישה של הסים, ולכן כדאי להגדיר זיהוי אדם ורכב כדי להעלות רק אירועים אמיתיים. ההקלטה הבסיסית נשמרת בכרטיס הזיכרון שבתוך המצלמה. רכזת Reolink Home Hub לא תומכת במצלמות 4G.',
+  },
+  {
+    q: 'אתם מתקינים ומגדירים את ההקלטה והגיבוי?',
+    a: 'כן, כשירות נפרד בכל הארץ, בתיאום. שולחים בווצאפ כמה תמונות או סרטון קצר של המקום ומקבלים הצעת מחיר להתקנה. מחיר הציוד מופיע בדף המוצר, ודמי המשלוח נקבעים בנפרד לפי הכתובת.',
+  },
+];
+
+const TD = 'padding: 10px; border-bottom: 1px solid #ddd;';
+const TH = 'padding: 10px; text-align: right;';
+
+const BODY = `<nav style="background: rgba(15,52,96,0.05); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 2rem;"><strong>תוכן העניינים</strong><ul style="margin-top: 0.5rem;"><li><a href="#short-answer">התשובה הקצרה</a></li><li><a href="#options">ארבע דרכים לשמור הקלטות</a></li><li><a href="#compare">טבלת השוואה</a></li><li><a href="#theft">כשגונבים את המקליט, או כשאין אינטרנט וחשמל</a></li><li><a href="#brands">מה מציעים היצרנים: Reolink, Hikvision ו-Tenda</a></li><li><a href="#upload">למה הענן שומר בדרך כלל רק אירועים</a></li><li><a href="#storage">כמה נפח צריך: הערכה גסה</a></li><li><a href="#privacy">פרטיות ואבטחת החשבון</a></li><li><a href="#choose">מה לבחור, לפי סוג המקום</a></li><li><a href="#mistakes">טעויות נפוצות</a></li></ul></nav>
+
+<p>כשבוחרים מצלמות אבטחה, רוב תשומת הלב הולכת למצלמה עצמה: כמה מגה-פיקסל, מה רואים בלילה, איפה לתלות אותה. אבל מה שקובע אם יהיה לכם סרטון ביום שתצטרכו אותו הוא שאלה אחרת: איפה ההקלטה נשמרת. מצלמה טובה שמקליטה לכרטיס זיכרון שנגנב יחד איתה, או מקליט שעומד ליד הדלת ונלקח בפריצה, משאירים אתכם בלי כלום.</p>
+
+<p>במדריך הזה נעבור על ארבע הדרכים לשמור הקלטות: ענן, כרטיס זיכרון במצלמה, מקליט במקום (NVR או DVR), ורכזת ביתית כמו Reolink Home Hub. נסביר מה כל אחת עושה טוב ואיפה היא נופלת, מה שירותי הענן של Reolink ו-Hikvision מציעים בפועל, וכמה נפח אחסון צריך בערך.</p>
+
+<h2 id="short-answer">התשובה הקצרה</h2>
+
+<p>לרוב הבתים והעסקים, הבסיס הנכון הוא <strong>הקלטה מקומית</strong>: מקליט עם דיסק למערכת בכבלים, או כרטיס זיכרון ורכזת למצלמות Wi-Fi. הקלטה מקומית ממשיכה גם כשהאינטרנט נופל ולא דורשת תשלום חודשי. הענן הוא <strong>שכבת גיבוי</strong>, לא תחליף: הוא שומר עותק של קטעי האירועים מחוץ לנכס, כך שגם אם המקליט נגנב או נשרף, הקטע החשוב כבר נמצא בשרת.</p>
+
+<p>השילוב שמתאים לרוב המקרים: הקלטה רציפה מקומית לכל המצלמות, ומנוי ענן רק למצלמה או שתיים שמכסות את הכניסה, את הקופה או את המקום שבו עומד המקליט עצמו.</p>
+
+<h2 id="options">ארבע דרכים לשמור הקלטות</h2>
+
+<h3>1. ענן</h3>
+<p>המצלמה, או המקליט, מעלה קטעי וידאו דרך האינטרנט לשרתים של היצרן, ואתם צופים בהם באפליקציה. היתרון הגדול: ההקלטה נמצאת מחוץ לבית או לעסק, ומי שפורץ לא יכול לקחת אותה איתו.</p>
+<p>החסרונות: יש תשלום חודשי או שנתי, בדרך כלל לפי מספר המצלמות, הנפח וימי השמירה. בלי אינטרנט אין העלאה. בשירותי הענן הביתיים נשמרים בדרך כלל רק קטעי אירועים ולא הקלטה רציפה, ועל זה נרחיב בהמשך. ובנוסף, הסרטונים יושבים אצל ספק חיצוני, וזו החלטה של פרטיות שכדאי לקבל בעיניים פקוחות.</p>
+
+<h3>2. כרטיס זיכרון במצלמה</h3>
+<p>כמעט כל מצלמות ה-Wi-Fi וה-4G בחנות, וגם רוב מצלמות ה-IP, כוללות חריץ microSD. מצלמת הבית Reolink E1 Pro, למשל, מקבלת כרטיס עד 256GB. זו הדרך הפשוטה להתחיל: מכניסים כרטיס, והמצלמה מקליטה בלי ציוד נוסף ובלי מנוי.</p>
+<p>החיסרון ברור: ההקלטה נמצאת בתוך המצלמה. מי שמוריד את המצלמה מהקיר לוקח איתו גם את ההקלטות. בנוסף, הנפח של כרטיס מוגבל, וכרטיס שכותבים עליו כל הזמן נשחק. לכן עדיף כרטיס שמיועד להקלטה רציפה (מסומן בדרך כלל High Endurance), וכדאי לבדוק מדי פעם שהמצלמה עדיין מקליטה אליו.</p>
+
+<h3>3. מקליט במקום: NVR או DVR</h3>
+<p>מקליט רשת (NVR) מקבל את מצלמות ה-IP בכבל ושומר את כולן על דיסק קשיח. מקליט DVR או XVR עושה את אותו הדבר למצלמות אנלוגיות על כבל קואקס. זו הדרך שמתאימה באמת להקלטה רציפה של הרבה מצלמות לאורך שבועות, בלי תשלום חודשי ובלי שקצב האינטרנט ישפיע על ההקלטה.</p>
+<p>החיסרון: המקליט הוא נקודת כשל אחת. אם הוא נגנב, נשרף או שהדיסק שלו מתקלקל, ההקלטות הולכות איתו. בסעיף הבא נסביר איך מקטינים את הסיכון הזה. את המקליטים שבחנות, מ-4 ועד 36 ערוצים, עם PoE מובנה ובלעדיו, אפשר לראות ב<a href="/store/c/recorders">קטגוריית המקליטים</a>.</p>
+
+<h3>4. רכזת ביתית למצלמות Wi-Fi</h3>
+<p>באמצע, בין כרטיס במצלמה למקליט, יש רכזות למצלמות אלחוטיות. <a href="/store/reolink-home-hub">Reolink Home Hub</a> מרכזת עד 8 מצלמות Reolink ומקליטה אותן על שני כרטיסי microSD שבתוך הרכזת, לפי Reolink עד 1TB כל אחד, בלי מנוי. היתרון על כרטיס במצלמה: ההקלטה לא נמצאת במצלמה, אז גניבת מצלמה לא מוחקת אותה, ואת הרכזת אפשר להחביא בתוך הבית. לפי היצרן, ההקלטות ברכזת מוצפנות (AES-128) והיא ממשיכה להקליט גם כשהחיבור לאינטרנט נופל. חשוב לדעת: לפי Reolink היא לא תומכת במצלמות 4G ובמצלמות סוללה של 2MP.</p>
+<p>למי שיש יותר מצלמות אלחוטיות, או שמעדיף דיסק קשיח, יש את <a href="/store/reolink-nvs12w">Reolink NVS12W</a>: מקליט עם Wi-Fi 6 מובנה ל-12 מצלמות Wi-Fi של Reolink, כולל מצלמות סוללה, עם מפרץ לדיסק אחד (הדיסק לא כלול). את כל המצלמות האלחוטיות והרכזות אפשר לראות ב<a href="/store/c/wifi">קטגוריית מצלמות ה-Wi-Fi</a>.</p>
+
+<h2 id="compare">טבלת השוואה</h2>
+
+<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr style="background: #0f3460; color: #fff;"><th style="${TH}">איפה נשמר</th><th style="${TH}">הקלטה רציפה</th><th style="${TH}">כשגונבים ציוד</th><th style="${TH}">כשאין אינטרנט</th><th style="${TH}">עלות שוטפת</th></tr></thead><tbody>
+<tr><td style="${TD} min-width: 110px;"><strong>ענן</strong></td><td style="${TD}">בשירותים הביתיים בדרך כלל רק אירועים</td><td style="${TD}">מה שכבר הועלה נשאר בענן</td><td style="${TD}">אין העלאה. בחלק מהשירותים הסרטונים נשמרים מקומית ועולים אחר כך</td><td style="${TD}">מנוי חודשי או שנתי</td></tr>
+<tr><td style="${TD} min-width: 110px;"><strong>כרטיס במצלמה</strong></td><td style="${TD}">בהרבה מהמצלמות שמחוברות לחשמל. במצלמות סוללה בדרך כלל רק אירועים</td><td style="${TD}">ההקלטה נלקחת עם המצלמה</td><td style="${TD}">ממשיך להקליט</td><td style="${TD}">בלי מנוי. כרטיס חדש מדי פעם</td></tr>
+<tr><td style="${TD} min-width: 110px;"><strong>מקליט עם דיסק</strong></td><td style="${TD}">כן, לכל המצלמות</td><td style="${TD}">אם המקליט נלקח, הכול נלקח</td><td style="${TD}">ממשיך להקליט</td><td style="${TD}">בלי מנוי. דיסק חדש אחרי כמה שנים</td></tr>
+<tr><td style="${TD} min-width: 110px;"><strong>רכזת Home Hub</strong></td><td style="${TD}">תלוי בסוג המצלמה</td><td style="${TD}">גניבת מצלמה לא מוחקת. ההקלטות מוצפנות</td><td style="${TD}">ממשיכה להקליט</td><td style="${TD}">בלי מנוי</td></tr>
+<tr><td style="${TD} min-width: 110px;"><strong>מקומי + ענן</strong></td><td style="${TD}">כן, במקליט או בכרטיס</td><td style="${TD}">עותק של האירועים נשאר בענן</td><td style="${TD}">ההקלטה המקומית ממשיכה</td><td style="${TD}">מנוי רק למצלמות שבחרתם</td></tr>
+</tbody></table></div>
+
+<h2 id="theft">כשגונבים את המקליט, או כשאין אינטרנט וחשמל</h2>
+
+<p>פורץ שרואה מצלמות מחפש לפעמים את המקליט, וברוב המקומות קל למצוא אותו: ליד הראוטר, בארון התקשורת שבכניסה או על מדף במשרד. כמה צעדים פשוטים מקטינים את הסיכון:</p>
+<ul>
+<li><strong>להרחיק את המקליט מהעין.</strong> ארון סגור, בוידעם או חדר פנימי, ולא ליד הדלת. מקליט צריך אוורור, אז לא סוגרים אותו בקופסה אטומה.</li>
+<li><strong>מצלמה שרואה את המקליט.</strong> מי שניגש אליו מוקלט, ואם המצלמה הזאת מגובה בענן, גם הרגע הזה נשמר מחוץ לבית.</li>
+<li><strong>ענן לנקודות החשובות.</strong> קטע שכבר הועלה לענן נשאר שם גם אם המקליט נלקח דקה אחר כך. מספיק מנוי למצלמה או שתיים: הכניסה, הקופה, הדרך אל המקליט.</li>
+<li><strong>כרטיס במצלמה כגיבוי שני.</strong> בהרבה ממצלמות ה-IP שבחנות יש חריץ microSD, בחלקן עד 512GB. בחלק מהמצלמות יש גם פונקציית ANR (היא מופיעה, למשל, במפרט של Uniview IPC3615LE שבחנות): כשהקשר למקליט נופל המצלמה מקליטה לכרטיס, וכשהקשר חוזר המקליט משלים את החסר. כדי שזה יעבוד, גם המקליט צריך לתמוך בזה, והפונקציה צריכה להיות מוגדרת.</li>
+</ul>
+
+<h3>כשהאינטרנט נופל</h3>
+<p>הקלטה מקומית, במקליט, בכרטיס או ברכזת, ממשיכה כרגיל. רק הצפייה מרחוק וההעלאה לענן נעצרות. לפי Hikvision, בשירות הענן שלה הסרטונים נשמרים מקומית בזמן הניתוק ועולים לענן אוטומטית כשהרשת חוזרת. זו עוד סיבה לא להישען רק על הענן: מצלמה שאין בה כרטיס ואין לה מקליט לא שומרת כלום כשאין אינטרנט.</p>
+
+<h3>כשהחשמל נופל</h3>
+<p>מקליט, ראוטר ומצלמות PoE כבים יחד. מי שרוצה שהמערכת תמשיך להקליט בהפסקת חשמל מחבר את המקליט ואת הראוטר לאל-פסק (UPS). מצלמות סוללה ומצלמות סולאריות ממשיכות לעבוד ולהקליט לכרטיס, אבל כשהראוטר כבוי, מצלמות ה-Wi-Fi לא מעלות כלום לענן.</p>
+
+<h2 id="brands">מה מציעים היצרנים: Reolink, Hikvision ו-Tenda</h2>
+
+<p>שירותי ענן משתנים מהר: חבילות, תנאים ומה זמין בכל מדינה. מה שכתוב כאן נבדק מול האתרים הרשמיים של היצרנים באוקטובר 2026. את מחירי המנויים קובע היצרן והם משתנים, לכן בודקים אותם באפליקציה לפני שמחליטים.</p>
+
+<h3>Reolink</h3>
+<ul>
+<li><strong>הענן לא חובה.</strong> לפי Reolink, שירות Reolink Cloud הוא תוספת לבחירה, והאפליקציה והצפייה מהנייד עובדות בלעדיו.</li>
+<li><strong>רק קטעי תנועה.</strong> השירות שומר סרטונים של אירועי תנועה ולא תומך בהקלטה רציפה. כשהתנועה נמשכת, עולים לענן כמה סרטונים.</li>
+<li><strong>לא כל מצלמה נתמכת.</strong> התמיכה תלויה בדגם ובמדינה. ברשימה של Reolink מופיעות, בין היתר, מצלמות סדרת E1 (כולל E1 Pro), מצלמות Lumus וחלק ממצלמות הסוללה.</li>
+<li><strong>תוכניות לפי מצלמות, נפח וימים.</strong> Reolink מציעה כמה תוכניות, בהן Basic, Standard, Premier ו-Business. למשל, באתר של Reolink מופיעה תוכנית Standard לעד 5 מצלמות, עם 30GB משותפים ועד 30 ימי היסטוריה, ולמצלמות 4G יש גם תוכנית למצלמה בודדת.</li>
+<li><strong>אתם קובעים כמה זמן לשמור.</strong> באפליקציה מגדירים כמה זמן סרטון נשאר בענן, עד המקסימום של התוכנית, וסרטונים ישנים יותר נמחקים אוטומטית.</li>
+</ul>
+<p>מי שלא רוצה מנוי בכלל יכול להסתפק באחסון המקומי של Reolink: כרטיס במצלמה, Home Hub או NVS12W למצלמות Wi-Fi, ומקליט PoE כמו <a href="/store/reolink-rln8-410">Reolink NVS8</a>, שמגיע עם דיסק 2TB מותקן ו-8 יציאות PoE, ותומך בעד 12 מצלמות: 8 בכבל ועוד 4 מצלמות סוללה Wi-Fi של Reolink.</p>
+
+<h3>Hikvision ו-Hik-Connect</h3>
+<ul>
+<li><strong>גיבוי של קטעי וידאו.</strong> לפי Hikvision, שירות הענן שלה מגבה ושומר קטעי וידאו, ואפשר לצפות בהם ולהוריד אותם באפליקציית Hik-Connect גם כשהמצלמה או המקליט לא מחוברים.</li>
+<li><strong>חבילות שמירה.</strong> באתר הבינלאומי של Hikvision מופיעות חבילות של 7 או 30 יום בתשלום חודשי, ובתשלום שנתי גם תקופות שמירה ארוכות יותר.</li>
+<li><strong>התאמה לקצב האינטרנט.</strong> בדיקת רוחב פס עוזרת לבחור באיזו איכות ומכמה ערוצים להעלות לענן.</li>
+<li><strong>גיבוי דרך המקליט.</strong> בפתרון שמבוסס על המקליט, Hikvision מציינת גיבוי של עד 2 ערוצים באיכות HD לכל מקליט, במקליטים תואמים, בהם סדרות K ו-I בקושחה מעודכנת. את ההגדרה עושה בדרך כלל מתקין, דרך Hik-Partner Pro.</li>
+</ul>
+<p>בפועל זה מתאים לעסק שיש לו מקליט Hikvision ורוצה עותק מחוץ לעסק של מצלמת הכניסה ושל מצלמת הקופה. מקליט כמו <a href="/store/ds-7608nxi-k1-8p">Hikvision DS-7608NXI-K1/8P</a> נותן את הבסיס המקומי: 8 ערוצים עם PoE מובנה, דיסק אחד עד 10TB, וזיהוי אדם ורכב (AcuSense) שמאפשר להתמקד בתנועה של אנשים ורכבים. לפני שמתכננים גיבוי ענן, בודקים את הדגם ואת גרסת הקושחה ברשימת התאימות של Hikvision, ומוודאים באפליקציה שהשירות זמין בחשבון שלכם.</p>
+
+<h3>Tenda ו-Uniview</h3>
+<p>במצלמות ה-Wi-Fi של Tenda, לפי המפרט, אפשר להקליט לכרטיס, לענן או למקליט (ב-CH9, CH10 ו-CT3 דרך ONVIF), וב-CH9 וב-CH10 גם ל-NAS. בשני הדגמים האלה כתובה במפרט גם תקופת ניסיון של 90 יום לענן. מקליטי Uniview עובדים עם אפליקציית EZView ומקליטים מקומית לדיסק.</p>
+
+<h2 id="upload">למה הענן שומר בדרך כלל רק אירועים</h2>
+
+<p>סיבה מרכזית אחת היא קצב ההעלאה. מצלמה שמקליטה ברציפות מייצרת כל הזמן כמה מגה-ביט בשנייה. ארבע מצלמות שכל אחת מקליטה ב-4 Mbps צריכות 16 Mbps של העלאה (Upload) קבועה, 24 שעות ביממה, רק בשביל הענן. בהרבה חבילות אינטרנט קצב ההעלאה נמוך בהרבה מקצב ההורדה, ועומס כזה מורגש בכל הבית או העסק. זו אחת הסיבות ששירותי הענן הביתיים מעלים קטעים כשיש אירוע, ולא זרם רציף.</p>
+<ul>
+<li><strong>בדקו את קצב ההעלאה.</strong> בבדיקת מהירות רגילה, המספר של Upload. אם הוא נמוך, עדיף ענן למצלמה אחת או שתיים ולא לכולן.</li>
+<li><strong>זיהוי אדם ורכב במקום כל תנועה.</strong> פחות אירועי שווא אומר פחות קטעים, פחות נפח בענן ופחות התראות לנייד.</li>
+<li><strong>במצלמות 4G, כל קטע עולה בנתונים.</strong> קטע שעולה לענן יורד מחבילת הגלישה של הסים. לפני שמפעילים ענן במצלמה סולארית, כדאי לקרוא את <a href="/blog/4g-solar-camera-data-consumption-cost-management-2026">המדריך על צריכת נתונים במצלמות 4G</a>.</li>
+</ul>
+
+<h2 id="storage">כמה נפח צריך: הערכה גסה</h2>
+
+<p>הנפח תלוי בעיקר בקצב הווידאו (Bitrate). הקצב נקבע לפי הרזולוציה, סוג הדחיסה (H.265 חסכונית יותר מ-H.264) וכמה תנועה יש בתמונה, ואפשר לראות אותו בהגדרות הווידאו של המצלמה או של המקליט. מכאן החשבון פשוט:</p>
+
+<p style="background: rgba(15,52,96,0.05); padding: 1rem 1.25rem; border-radius: 8px;"><strong>נפח ליום למצלמה (GB) ≈ קצב הווידאו (Mbps) × 10.8</strong><br />מגה-ביט אחד בשנייה, כפול 86,400 שניות ביממה, חלקי 8 ביט לבייט, נותן 10,800 מגה-בייט, כלומר כ-10.8GB.</p>
+
+<p>הטבלה הבאה היא <strong>הערכה בלבד</strong>, להקלטה רציפה 24/7, עם קצבים לדוגמה. הנפח שהמקליט מציג בפועל קצת נמוך מהנפח שכתוב על הדיסק, אז עדיף לעגל למטה.</p>
+
+<div style="overflow-x: auto;"><table style="width: 100%; border-collapse: collapse; margin: 1rem 0;"><thead><tr style="background: #0f3460; color: #fff;"><th style="${TH}">קצב לדוגמה למצלמה</th><th style="${TH}">נפח ליום למצלמה</th><th style="${TH}">4 מצלמות על 2TB</th><th style="${TH}">4 מצלמות על 4TB</th></tr></thead><tbody>
+<tr><td style="${TD}">2 Mbps</td><td style="${TD}">כ-22GB</td><td style="${TD}">כשלושה שבועות</td><td style="${TD}">כשישה שבועות</td></tr>
+<tr><td style="${TD}">4 Mbps</td><td style="${TD}">כ-43GB</td><td style="${TD}">כ-10 עד 11 ימים</td><td style="${TD}">כשלושה שבועות</td></tr>
+<tr><td style="${TD}">6 Mbps</td><td style="${TD}">כ-65GB</td><td style="${TD}">כשבוע</td><td style="${TD}">כשבועיים</td></tr>
+</tbody></table></div>
+
+<p>שלושה דברים שמשנים את החשבון:</p>
+<ul>
+<li><strong>הקלטה לפי תנועה.</strong> הדיסק מחזיק הרבה יותר זמן, וכמה יותר תלוי בכמות התנועה. בחצר שקטה זה הבדל גדול, בכניסה לחנות פתוחה הרבה פחות.</li>
+<li><strong>כרטיס זיכרון.</strong> לפי אותה נוסחה, כרטיס של 128GB במצלמה שמקליטה ברציפות ב-2 Mbps מתמלא בערך תוך 6 ימים, וכרטיס של 256GB בערך תוך 12. במצלמת סוללה שמקליטה רק אירועים, אותו כרטיס מחזיק הרבה יותר.</li>
+<li><strong>ענן.</strong> בענן החשבון אחר: התוכנית קובעת כמה ימים נשמרים וכמה נפח יש. בתוכנית עם נפח משותף לכמה מצלמות, מצלמה עם הרבה אירועים מנצלת חלק גדול יותר מהנפח.</li>
+</ul>
+<p>כמה ימים צריך? לבית כדאי לתכנן לפחות שבועיים, כדי שיהיה זמן לגלות אירוע ולשמור אותו. בעסק, תחשבו כמה זמן עובר אצלכם עד שמגלים חוסר במלאי או בקופה. וכשקורה אירוע, מורידים את הקטע לנייד או למחשב מיד. מקליט שמתמלא דורס בדרך כלל את ההקלטות הישנות, והוא לא יחכה לכם.</p>
+
+<h2 id="privacy">פרטיות ואבטחת החשבון</h2>
+
+<ul>
+<li><strong>איפה הסרטונים נמצאים.</strong> בהקלטה מקומית הם אצלכם. בענן הם בשרתים של היצרן. Hikvision, למשל, מציינת שהסרטונים נשמרים מוצפנים בשירות האחסון של Amazon (AWS S3). כדאי לקרוא את תנאי השירות לפני שמעלים לענן מצלמות מתוך הבית.</li>
+<li><strong>מצלמות בתוך הבית.</strong> מצלמה בסלון או בחדר ילדים היא המקום שבו הכי פחות צריך ענן. אם בכל זאת רוצים, הגדירו באפליקציה לוח זמנים, כך שהמצלמה לא מקליטה כשאתם בבית.</li>
+<li><strong>סיסמה וגישה.</strong> סיסמה ייחודית לחשבון האפליקציה, לא אותה סיסמה של המייל. מי שצריך גישה נוספת, עדיף שיקבל משתמש משלו ולא את הסיסמה הראשית.</li>
+<li><strong>עדכונים.</strong> לעדכן קושחה של מקליט ומצלמות כשיוצא עדכון.</li>
+<li><strong>שומרים כמה שצריך, לא יותר.</strong> הקלטות של עובדים, לקוחות ושכנים הן מידע רגיש. מצלמה שמכסה עובדים, לקוחות או שטח משותף מחייבת לחשוב גם על חוק הגנת הפרטיות, ופירטנו את זה ב<a href="/blog/privacy-law-amendment-13-cameras-2026">מדריך על תיקון 13 ומצלמות אבטחה</a>.</li>
+</ul>
+
+<h2 id="choose">מה לבחור, לפי סוג המקום</h2>
+
+<h3>דירה עם מצלמה אחת או שתיים</h3>
+<p>מצלמת Wi-Fi עם כרטיס זיכרון מספיקה. אם המצלמה מכסה את דלת הכניסה ואתם חוששים שיורידו אותה, מנוי ענן למצלמה הזאת בלבד הוא תוספת הגיונית, בתנאי שהדגם נתמך.</p>
+
+<h3>בית פרטי עם 4 עד 8 מצלמות</h3>
+<p>מערכת בכבלים עם מקליט ודיסק, והמקליט במקום מוסתר. ערכה מוכנה או מקליט PoE כמו Reolink NVS8 נותנים הקלטה רציפה לכל המצלמות בלי מנוי. אם יש בבית גם מצלמות Wi-Fi או מצלמות סוללה, אפשר לרכז אותן ב-Home Hub או ב-NVS12W, ולהוסיף ענן רק לכניסה הראשית. מי שרוצה לחשב תקציב לכל המערכת ימצא פירוט ב<a href="/blog/home-cctv-system-cost-breakdown-2026">מדריך כמה עולה מערכת מצלמות לבית</a>.</p>
+
+<h3>חנות, משרד או עסק קטן</h3>
+<p>מקליט עם הקלטה רציפה ודיסק שמספיק לפחות לכמה שבועות, בארון נעול ומאוורר, מחובר לאל-פסק. מעליו, גיבוי ענן למצלמות של הכניסה והקופה, אם המערכת תומכת. כדאי גם לקבוע מי בעסק אחראי להוריד קטע ברגע שקורה משהו, ולא לחכות ליום אחרי.</p>
+
+<h3>מקום בלי אינטרנט או בלי חשמל</h3>
+<p>במחסן מרוחק, בשטח חקלאי או באתר בנייה, מצלמות 4G סולאריות מקליטות לכרטיס בתוך המצלמה ושולחות התראות דרך הסים. ענן אפשרי בדגמים שנתמכים, אבל כל העלאה עולה בנתונים, ו-Home Hub לא תתאים כאן כי היא לא תומכת במצלמות 4G. את השיקולים למקומות כאלה פירטנו ב<a href="/blog/security-solar-cloud-2026">מדריך על מצלמה סולארית עם גיבוי ענן</a>.</p>
+
+<h2 id="mistakes">טעויות נפוצות</h2>
+
+<h3>לסמוך רק על הענן</h3>
+<p>שירות ענן ביתי שומר אירועים, לא יום שלם. אם התנועה לא זוהתה, או שהאינטרנט נפל באותו רגע, אין קטע. ענן בלי הקלטה מקומית משאיר חורים.</p>
+
+<h3>לא לבדוק שההקלטה עובדת</h3>
+<p>כרטיס שהתמלא או התקלקל, דיסק שהפסיק לכתוב, מצלמה שהתנתקה. פעם בחודש כדאי להיכנס לאפליקציה ולנגן הקלטה מאתמול מכל מצלמה. זה לוקח כמה דקות, ומגלה תקלה לפני שצריך את ההקלטה.</p>
+
+<p>רוצים שמישהו יתכנן את זה בשבילכם? <a href="/installation">ההתקנה</a> היא שירות נפרד, בכל הארץ, בתיאום. שולחים לנו <a href="https://wa.me/972502256866" target="_blank" rel="noopener noreferrer">בווצאפ</a> כמה תמונות או סרטון קצר של המקום, ומקבלים הצעת מחיר להתקנה. אפשר לשאול אותנו באותה הזדמנות איפה כדאי להציב את המקליט ואיך להגדיר הקלטה וגיבוי. מחיר הציוד העדכני מופיע בדף המוצר, והמשלוח מתומחר בנפרד לפי הכתובת.</p>`;
+
+const FAQ_HTML = `<section style="margin-top: 3rem; padding: 2rem; background: rgba(15,52,96,0.05); border-radius: 12px;">
+        <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--accent, #e94560);">שאלות נפוצות</h2>
+        ${FAQ.map(
+          (f) => `
+          <details style="margin-bottom: 1rem; padding: 1rem; background: var(--card, #fff); border-radius: 8px; border: 1px solid var(--border, #eee);">
+            <summary style="font-weight: bold; cursor: pointer; color: var(--text, #333); font-size: 1.1rem;">${f.q}</summary>
+            <p style="margin-top: 0.75rem; line-height: 1.8; color: var(--text, #555);">${f.a}</p>
+          </details>`,
+        ).join('')}
+      </section>`;
+
 export default function Page() {
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: H1,
+    description: DESCRIPTION,
+    image: HERO,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+    author: { '@type': 'Organization', name: 'צוות Site-Control', url: 'https://www.site-control-il.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Site-Control',
+      logo: { '@type': 'ImageObject', url: 'https://www.site-control-il.com/images/site-control-logo.webp' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    url: CANONICAL,
+    inLanguage: 'he-IL',
+    keywords: KEYWORDS.join(', '),
+    isPartOf: { '@type': 'Blog', '@id': 'https://www.site-control-il.com/blog', name: 'בלוג Site-Control' },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'דף הבית', item: 'https://www.site-control-il.com' },
+      { '@type': 'ListItem', position: 2, name: 'בלוג', item: 'https://www.site-control-il.com/blog' },
+      { '@type': 'ListItem', position: 3, name: H1, item: CANONICAL },
+    ],
+  };
+
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
-    <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
-      <article 
-        style={{ lineHeight: '1.8', color: 'var(--text)' }}
-        dangerouslySetInnerHTML={{ __html: `<h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: var(--text); margin-top: 2rem;">מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026</h1>
-<picture>
-        <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/hero.avif" type="image/avif" />
-        <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/hero.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-recording-cloud-2026/hero.webp" alt="מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">*מעודכן ל29.1.2026 | זמן קריאה: 12 דקות | מדריך מקצועי*</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">האם שאלת עצמך פעם איך להגן על הנכס שלך בצורה החכמה והמתקדמת ביותר ב-2026? או אולי תהיתה מה ההבדל בין מערכות האבטחה המסורתיות לטכנולוגיות החדשות שמציעות הגנה של דור הבא? במדריך מקיף זה תקבל תשובות לכל השאלות החשובות ותלמד איך לבחור את המערכת המושלמת לצרכים שלך.</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">תוכן העניינים</h2>
-<picture>
-        <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/infographic.avif" type="image/avif" />
-        <source srcset="/blog-images/cameras-security-with-recording-cloud-2026/infographic.webp" type="image/webp" />
-        <img src="/blog-images/cameras-security-with-recording-cloud-2026/infographic.webp" alt="אינפוגרפיק - מצלמות אבטחה עם הקלטה ענן - השוואה מקיפה והמלצות מקצועיות 2026" style="width: 100%; max-width: 1200px; height: auto; margin: 2rem 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" loading="lazy" />
-      </picture>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. הטכנולוגיות המהפכניות ב-2026</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. יתרונות מדהימים שלא ידעת עליהם</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. איך לבחור את המערכת הנכונה לבית או עסק שלך</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">5. מדריך התקנה ותחזוקה מקצועי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">6. עלויות אמיתיות ותשואה על השקעה</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">7. שאלות נפוצות ותשובות מקצועיות</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">מה זה מערכות אבטחה חכמות ומה ההבדל מהמסורתיות?</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">ההגדרה המקצועית</h3>
-<strong style="font-weight: bold; color: var(--accent);">מערכות אבטחה חכמות</strong> הן פתרונות אבטחה מתקדמים המשלבים בינה מלאכותית, למידת מכונה וטכנולוגיות IoT (אינטרנט הדברים) כדי לספק הגנה אוטונומית, חכמה ויעילה. בניגוד למערכות מסורתיות שרק מקליטות ומתריעות, המערכות החכמות <strong style="font-weight: bold; color: var(--accent);">מנתחות, מבינות ומגיבות</strong> בזמן אמת.
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">השוואה מפורטת: מסורתי מול חכם</h3>
-
-<table style="width: 100%; border-collapse: collapse; margin: 2rem 0; direction: rtl; background: var(--card);"><tbody><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">תכונה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת מסורתית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">מערכת חכמה</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">זיהוי איומים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">גילוי תנועה בסיסי</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">זיהוי אובייקטים ספציפיים, פנים, רכבים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אזעקות שווא</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">90% מהאזעקות שווא</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פחות מ-5% אזעקות שווא</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">תגובה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">התראה בסיסית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">פעולות אוטומטיות מותאמות</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">ניטוח מרחוק</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">הקלטה פשוטה</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">ניתוח חכם ודוחות מפורטים</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">אינטגרציה</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עצמאית</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">משולבת עם כל המערכות החכמות בבית</td></tr><tr><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); "><strong style="font-weight: bold; color: var(--accent);">עדכונים</strong></td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">לא קיימים</td><td style="padding: 0.75rem; border: 1px solid var(--border); text-align: right; color: var(--text); ">עדכוני תוכנה אוטומטיים</td></tr></tbody></table>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">הטכנולוגיות המהפכניות ב-2026</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">1. בינה מלאכותית מתקדמת (Advanced AI)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">החידוש הגדול ב-2026 הוא <strong style="font-weight: bold; color: var(--accent);">בינה מלאכותית שלומדת את ההרגלים שלך</strong>. המערכת לומדת מי הם בני הבית, מתי הם בדרך כלל נמצאים בבית, ומה הם הדפוסים הרגילים. כך היא יכולה לזהות חריגות אמיתיות ולמנוע אזעקות שווא.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">דוגמאות מעשיות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי הבדל בין חתול שמסתובב בגינה לפורץ אמיתי</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הבחנה בין בן משפחה שחוזר בלילה לגנב</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי רכבים מוכרים מול רכבים חשודים</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">2. ראייה ממוחשבת חכמה (Computer Vision)</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">טכנולוגיית הראייה ב-2026 מתקדמת מאוד ומסוגלת לבצע ניתוח מורכב של מה שקורה בזמן אמת:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">יכולות מתקדמות:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ספירה אוטומטית של אנשים</strong> - כמה אנשים נכנסו ויצאו</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי התנהגות חשודה</strong> - התנהגות לא טבעית או חשודה</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מעקב אחרי אובייקטים</strong> - מעקב אחרי אנשים או רכבים ברחבי הנכס</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">זיהוי עישון ואש</strong> - מניעה מוקדמת של שריפות</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">3. אינטגרציה מלאה עם בתים חכמים</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">ב-2026, מערכת האבטחה לא עומדת לבד - היא חלק ממערכת אקולוגית חכמה שמחברת את כל הבית:</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תרחישים אוטומטיים:</strong>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">כשהמערכת מזהה שיצאת מהבית, היא מפעילה מצב אבטחה מלא</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי פריצה, היא מדליקה את כל האורות ומפעילה צופרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזיהוי אש, היא מפעילה מתזים ומתריעה למכבי האש</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">בזמן שינה, היא מפעילה מצב לילה עם רגישות מתואמת</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">4. אחסון ענן חכם עם חיזוי</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">המערכות החדשות לא רק מאחסנות בענן, אלא גם <strong style="font-weight: bold; color: var(--accent);">מנתחות דפוסים ומחזות התנהגויות עתידיות</strong>:</p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">חיזוי זמני פעילות חשודה לפי דפוסים היסטוריים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">זיהוי מגמות בפעילות סביב הבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">התראות חכמות על שינויים בדפוסי התנועה השכונתיים</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">יתרונות מדהימים שלא ידעת עליהם</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #1: חיסכון של אלפי שקלים בשנה</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">לא רק שהמערכת מגנה מפני גניבות - <strong style="font-weight: bold; color: var(--accent);">היא גם מחסכת הוצאות בדרכים שלא חשבת עליהן:</strong></p>
-
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">ביטוח זול יותר</strong>: חברות ביטוח נותנות הנחות של עד 30% לבעלי מערכות חכמות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">מניעת נזקים</strong>: זיהוי מוקדם של דליפות מים, אש או פריצות חוסך תיקונים יקרים</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;"><strong style="font-weight: bold; color: var(--accent);">חיסכון באנרגיה</strong>: אינטגרציה עם מערכת החימום והמיזוג חוסכת עד 25% בחשמל</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #2: שקט נפשי אמיתי</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">עם מערכת חכמה, <strong style="font-weight: bold; color: var(--accent);">אתה תמיד יודע בדיוק מה קורה בבית</strong>, גם כשאתה בחו"ל:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הודעות בזמן אמת על כל פעילות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיחת וידאו ישירה עם מי שנמצא בבית</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">יכולת לראות ולדבר עם ילדים שחזרו מבית הספר</li>
-</ul>
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">יתרון #3: עדכונים וחידושים כל הזמן</h3>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">בניגוד למערכות מסורתיות שמתיישנות, <strong style="font-weight: bold; color: var(--accent);">המערכות החכמות משתפרות כל הזמן</strong>:</p>
-<ul style="margin: 1.5rem 0; padding-right: 2rem; list-style: disc;"><li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">עדכוני תוכנה אוטומטיים עם יכולות חדשות</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">שיפורים באלגוריתמי הזיהוי מבוססי נתונים מכל העולם</li>
-<li style="margin-bottom: 0.75rem; padding-right: 0.5rem;">הוספת תכונות חדשות ללא צורך בהחלפת חומרה</li>
-</ul>
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">איך לבחור את המערכת הנכונה לבית או עסק שלך</h2>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 1: הערכת הצרכים שלך</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">שאלות חיוניות שכדאי לשאול עצמך:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">איזה סוג נכס יש לי?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בית פרטי: התמקדות בהגנה על המשפחה ונוחות יומיומית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- דירה: מערכת קומפקטית ודיסקרטית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עסק קטן: הגנה על ציוד ומלאי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- משרד: אבטחת מידע ושליטה בגישות</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">מה רמת האבטחה הנדרשת?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בסיסית: מניעת פריצות והגנה על רכוש</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- בינונית: ניטור פעילות והקלטות איכותיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- מתקדמת: ניתוח התנהגות וחיזוי איומים</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">איזה תקציב אני מוכן להשקיע?</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- כלל ישראלי: מערכת אבטחה חכמה איכותית עולה כמו חופשה משפחתית אחת, אבל מגנה שנים רבות</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">שלב 2: בחירת הרכיבים החיוניים</h3>
-
-<strong style="font-weight: bold; color: var(--accent);">רכיבים חובה במערכת חכמה:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">מצלמות חכמות עם ראיית לילה צבעונית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- רזולוציה: לפחות 4K לזיהוי ברור של פנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- זוויות רחבות: 120 מעלות או יותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עמידות: IP66 לעמידות בגשם וחום</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">יחידת בקרה מרכזית</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- עיבוד מקומי: לא תלויה באינטרנט לפעולות בסיסיות</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- חיבורי יות: תמיכה בעשרות מצלמות וחיישנים</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- גיבוי כפול: אחסון מקומי וענן</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">אפליקציה מתקדמת</strong></p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- ממשק עברי פשוט ואינטואיטיבי</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- התראות חכמות ומותאמות אישית</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">- שיתוף גישה עם בני משפחה</p>
-
-<h2 style="font-size: 2rem; font-weight: bold; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem;">סיכום והמלצות</h2>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מערכות אבטחה חכמות ב-2026 אינן עוד מותרות - הן הפכו לצורך בסיסי לכל בית ועסק מתקדם. <strong style="font-weight: bold; color: var(--accent);">השילוב של בינה מלאכותית, ראיית מחשב וחיבור לאינטרנט הדברים יוצר פתרון אבטחה שלא היה אפשרי בעבר</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">ההמלצות המקצועיות שלנו:</strong>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">1. <strong style="font-weight: bold; color: var(--accent);">אל תדחו את ההחלטה</strong> - כל חודש שעובר בלי מערכת הוא חודש של חשיפת סיכון מיותר</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">2. <strong style="font-weight: bold; color: var(--accent);">השקיעו במערכת איכותית</strong> - ההבדל במחיר קטן, ההבדל ביכולות עצום</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">3. <strong style="font-weight: bold; color: var(--accent);">התעקשו על התקנה מקצועית</strong> - מערכת טובה עם התקנה גרועה = כשלון מובטח</p>
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">4. <strong style="font-weight: bold; color: var(--accent);">תכננו להרחבה עתידית</strong> - התחילו קטן אבל עם תשתית שמאפשרת גדילה</p>
-
-<h3 style="font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: var(--text);">הצעד הבא - ייעוץ מקצועי חינם</h3>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">מוכנים לקבל את ההגנה המתקדמת ביותר לבית או לעסק שלכם? <strong style="font-weight: bold; color: var(--accent);">הצוות המקצועי שלנו ב-Site-Control מזמין אותכם לייעוץ אישי וחינם</strong>.</p>
-
-<strong style="font-weight: bold; color: var(--accent);">📞 צרו קשר עוד היום</strong>: 050-225-6866
-<strong style="font-weight: bold; color: var(--accent);">💻 או השאירו פרטים באתר</strong>: <a href="/contact" style="color: var(--link-color); text-decoration: underline;">www.site-control-il.com/contact</a>
-
-<p style="margin: 1rem 0; font-style: italic; color: var(--muted);">---</p>
-
-<p style="margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.8;">*מאמר זה נכתב על ידי המומחים של Site-Control, החברה המובילה בישראל להתקנת מערכות אבטחה חכמות. עם מעל 10 שנות ניסיון ומאות לקוחות מרוצים, אנחנו מתמחים בפתרונות מתקדמים המותאמים לשוק הישראלי.*</p>
-
-<strong style="font-weight: bold; color: var(--accent);">תגיות:</strong> מצלמות אבטחה עם הקלטה ענן, מצלמות אבטחה עם הקלטה ענן 2026, מצלמות אבטחה עם הקלטה ענן למכירה, מצלמות אבטחה עם הקלטה ענן מחיר, מצלמות אבטחה עם הקלטה ענן המלצות, מצלמות אבטחה עם הקלטה ענן ביקורות
-` }}
-      />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', background: 'var(--card)', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
+        <nav style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>
+          <a href="/" style={{ color: '#007bff', textDecoration: 'none' }}>דף הבית</a>
+          <span> / </span>
+          <a href="/blog" style={{ color: '#007bff', textDecoration: 'none' }}>בלוג</a>
+          <span> / </span>
+          <span>{H1}</span>
+        </nav>
+        <article style={{ lineHeight: '1.8', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text)', marginTop: '2rem' }}>
+            {H1}
+          </h1>
+          <img
+            src={`/blog-images/${SLUG}/hero.webp`}
+            alt={HERO_ALT}
+            width={1200}
+            height={593}
+            fetchPriority="high"
+            decoding="async"
+            style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px' }}
+          />
+          <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>
+            מעודכן ל-17.10.2026 | צוות Site-Control
+          </p>
+          <div dangerouslySetInnerHTML={{ __html: BODY }} />
+          <div dangerouslySetInnerHTML={{ __html: FAQ_HTML }} />
+          <div style={{ marginTop: '3rem', padding: '2rem', background: 'linear-gradient(135deg, #1a1a2e, #16213e)', borderRadius: '12px', color: 'white', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>לא בטוחים איזה פתרון הקלטה מתאים לכם?</h3>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>חמש שאלות קצרות בחנות שלנו ותקבלו המלצה מנומקת עם מחיר משוער, או שאלו אותנו בווצאפ</p>
+            <a href="/store/finder" style={{ display: 'inline-block', padding: '12px 32px', background: '#e94560', color: 'white', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>
+              לשאלון ההתאמה בחנות
+            </a>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }

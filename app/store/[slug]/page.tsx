@@ -28,7 +28,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!p) return {};
   const a = attrsOf(p);
   const shortTitle = `${productName(p)} | ${kindLabel[a.kind]} | Site-Control`;
-  const desc = trim155(`${p.title}. ${p.highlights[0] || ""}. ${WARRANTY_TEXT}. משלוח UPS או התקנה, בתשלום נפרד.`);
+  // 17.10.2026 (בדיקת SEO): המחיר בתיאור (בתוצאות החיפוש), ובלי highlight שכבר כתוב בכותרת ("זום אופטי x5" פעמיים)
+  const hl = p.highlights.find((h) => !p.title.includes(h.slice(0, 12))) || "";
+  const priceTxt = p.price ? `₪${p.price.toLocaleString("he-IL")} כולל מע״מ` : "";
+  const desc = trim155(`${p.title}. ${priceTxt}. ${hl}. ${WARRANTY_TEXT}. משלוח לפי כתובת או התקנה, בתשלום נפרד.`);
   return {
     title: shortTitle.length <= 70 ? shortTitle : `${productName(p)} | Site-Control`,
     description: desc,
@@ -157,7 +160,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   ];
   // גוגל: sku בלי רווחים (עדיף ASCII), אחרת "Invalid value in field sku". כשאין מק"ט מהספק, הסלאג הוא המזהה שלנו.
   // mpn רק כשהדגם הוא מק"ט יצרן נקי (בלי רווחים), לא כשהוא תיאור כמו "Reolink Go Ultra / G340".
-  const cleanModel = /^[A-Za-z0-9][A-Za-z0-9._()/-]*$/.test(p.model) ? p.model : undefined;
+  // 17.10.2026: דגם עם עדשה ("DS-2CD1043G2-LIU 2.8mm") = מק"ט היצרן בפורמט שלו, DS-2CD1043G2-LIU(2.8mm). אחרת mpn חסר ב-81 מוצרים.
+  const lensPart = p.model.match(/^([A-Za-z0-9][A-Za-z0-9._()/-]*)\s+(\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?)\s*mm$/i);
+  const cleanModel = /^[A-Za-z0-9][A-Za-z0-9._()/-]*$/.test(p.model) ? p.model : lensPart ? `${lensPart[1]}(${lensPart[2]}mm)` : undefined;
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -186,7 +191,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           price: p.price,
           itemCondition: "https://schema.org/NewCondition",
           availability: p.oldStock ? "https://schema.org/LimitedAvailability" : "https://schema.org/InStock",
-          seller: { "@type": "Organization", name: "Site-Control" },
+          seller: { "@type": "Organization", "@id": `${BASE_URL}/#org`, name: "Site-Control" },
           // משלוח בתשלום נפרד לפי כתובת (BUSINESS.shipping) — בסכמה כתקרה + ימי אספקה, כמו בדף /shipping
           shippingDetails: offerShippingDetails(p.category, p.slug),
           // 14 יום לפי חוק הגנת הצרכן (BUSINESS.returns), כמו בדף /returns

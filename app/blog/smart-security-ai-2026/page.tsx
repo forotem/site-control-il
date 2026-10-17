@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Article (17.10.2026, בדיקת SEO: לפוסט לא הייתה סכמת Article)
+const ARTICLE_LD = {"@context": "https://schema.org", "@type": "Article", "headline": "מערכות אבטחה חכמות עם AI בישראל 2026", "description": "מערכות אבטחה חכמות עם AI בישראל 2026 - מדריך מקיף ומעודכן. מערכות אבטחה חכמות, מצלמות אבטחה AI, בינה מלאכותית אבטחה עם ייעוץ מקצועי והתקנה ברמה הגבוהה ביותר בישראל.", "image": "https://www.site-control-il.com/blog-images/smart-security-ai-2026/hero.webp", "datePublished": "2026-01-26", "dateModified": "2026-01-26", "author": {"@type": "Organization", "name": "צוות Site-Control", "url": "https://www.site-control-il.com"}, "publisher": {"@type": "Organization", "@id": "https://www.site-control-il.com/#org", "name": "Site-Control", "logo": {"@type": "ImageObject", "url": "https://www.site-control-il.com/images/site-control-logo.webp"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.site-control-il.com/blog/smart-security-ai-2026"}, "url": "https://www.site-control-il.com/blog/smart-security-ai-2026", "inLanguage": "he-IL", "isPartOf": {"@type": "Blog", "@id": "https://www.site-control-il.com/blog", "name": "בלוג Site-Control"}};
+
 export default function SmartSecurityAI2026Page() {
   return (
     <div style={{
@@ -20,6 +23,7 @@ export default function SmartSecurityAI2026Page() {
       lineHeight: '1.6',
       color: '#333'
     }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_LD) }} />
       <article>
         {/* Hero Image */}
         <div style={{

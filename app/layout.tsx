@@ -63,17 +63,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "he_IL",
-    url: BASE_URL,
+    // 17.10.2026 (בדיקת SEO): בלי url/title/description כאן. אחרת כל דף בלי openGraph משלו יורש את כתובת וכותרת דף הבית
+    // (15 דפים, כולל /store/finder שטל שולח בווצאפ). Next ממלא og:title ו-og:description מה-title וה-description של הדף.
     siteName: "Site-Control",
-    title: "מצלמות אבטחה, מקליטים ואינטרקום | חנות והתקנה | Site-Control",
-    description: "חנות מצלמות אבטחה עם שירות התקנה: Hikvision, Uniview, Reolink ו-VisionNet ציוד מיבואן בישראל. אחריות שנה, משלוח או התקנה.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "מצלמות אבטחה, ערכות ואינטרקום ב-Site-Control" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "מצלמות אבטחה, מקליטים ואינטרקום | Site-Control",
-    description: "חנות מצלמות אבטחה עם שירות התקנה. מלאי בישראל, אחריות שנה, משלוח או התקנה.",
-    images: ["/og-default.jpg"],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
@@ -284,6 +280,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
                 <Link href="/jobs" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>דרושים</Link>
+                <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>פייסבוק</a>
+                <a href={BUSINESS.social.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>אינסטגרם</a>
               </p>
               <p style={{ margin: 0, fontSize: '0.8rem', color: 'rgba(139, 163, 191, 0.6)', flexBasis: '100%' }}>Site-Control היא המותג של {BUSINESS.legalName}, עוסק מורשה {BUSINESS.licenseId} · <a href={`tel:${BUSINESS.phoneE164}`} style={{ color: 'rgba(139, 163, 191, 0.8)' }}>{BUSINESS.phoneDisplay}</a> · {BUSINESS.hours} · התקנות {BUSINESS.installAreaIn}, משלוחים לכל הארץ בתשלום נפרד</p>
             </div>

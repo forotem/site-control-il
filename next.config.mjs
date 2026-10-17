@@ -76,10 +76,11 @@ const nextConfig = {
       { source: '/blog/documentation-progress-construction-cameras-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/documentation-projects-construction-2026', destination: 'https://timelapseit.co.il/', permanent: true },
       { source: '/blog/cameras-projects-2026', destination: 'https://timelapseit.co.il/', permanent: true },
-      { source: '/blog/cameras-security-sites-construction-2027', destination: '/blog/cameras-security-construction-2026', permanent: true },
-      { source: '/blog/cameras-monitoring-2026', destination: '/blog/cameras-security-construction-2026', permanent: true },
-      { source: '/blog/photography-sites-construction-2026', destination: '/blog/cameras-security-construction-2026', permanent: true },
-      { source: '/blog/solar-cameras-construction', destination: '/blog/cameras-security-construction-2026', permanent: true },
+      // 17.10.2026: ישר ל-/construction-sites (קודם עברו דרך /blog/cameras-security-construction-2026, שתי קפיצות)
+      { source: '/blog/cameras-security-sites-construction-2027', destination: '/construction-sites', permanent: true },
+      { source: '/blog/cameras-monitoring-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/photography-sites-construction-2026', destination: '/construction-sites', permanent: true },
+      { source: '/blog/solar-cameras-construction', destination: '/construction-sites', permanent: true },
     ];
   },
   headers: async () => {

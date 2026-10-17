@@ -13,7 +13,11 @@ export function LocalBusinessSchema() {
   const json = {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'Store'],
+    '@id': `${BASE_URL}/#store`,
     name: 'Site-Control',
+    parentOrganization: { '@id': `${BASE_URL}/#org` },
+    sameAs: [BUSINESS.social.facebook, BUSINESS.social.instagram],
+    logo: `${BASE_URL}/images/site-control-logo.webp`,
     description:
       'חנות מצלמות אבטחה עם שירות התקנה: מצלמות IP, ערכות, מקליטים, אינטרקום ובקרת כניסה של Hikvision, Uniview, Reolink, VisionNet ו-Tenda ציוד מיבואן בישראל. משלוח, איסוף עצמי, או התקנה בתיאום ולפי הצעת מחיר.',
     legalName: BUSINESS.legalName,
@@ -151,8 +155,11 @@ export function WebSiteSchema() {
   const json = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'Site-Control',
+    alternateName: ['Site Control', 'סייט קונטרול'],
     url: BASE_URL,
+    publisher: { '@id': `${BASE_URL}/#org` },
     description: 'חנות והתקנה של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה בישראל, ומצלמות סולאריות 4G לאתרים בלי חשמל',
     inLanguage: 'he',
   };
@@ -163,9 +170,14 @@ export function OrganizationSchema() {
   const json = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    // 17.10.2026: ישות אחת עם @id. המוצרים (seller), הפוסטים (publisher) והאתר (publisher) מפנים אליה
+    '@id': `${BASE_URL}/#org`,
     name: 'Site-Control',
+    alternateName: ['Site Control', 'סייט קונטרול'],
     url: BASE_URL,
     logo: `${BASE_URL}/images/site-control-logo.webp`,
+    sameAs: [BUSINESS.social.facebook, BUSINESS.social.instagram],
+    email: BUSINESS.email,
     description: 'חברת התקנות וחנות אונליין של מצלמות אבטחה, מקליטים, אינטרקום ובקרת כניסה. Hikvision, Uniview, Reolink, VisionNet ו-Tenda, ומצלמות סולאריות 4G לאתרים בלי חשמל.',
     legalName: BUSINESS.legalName,
     telephone: BUSINESS.phoneE164,

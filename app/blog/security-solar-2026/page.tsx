@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח | Site-Control',
+  title: 'מצלמת אבטחה סולארית לשטח פתוח: המדריך המלא | Site-Control',
   description: 'מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control.',
   keywords: 'מצלמת אבטחה סולארית לשטח פתוח, אבטחה חקלאית, מצלמה סלולרית 4G, אבטחה לשטח מרוחק, פתרון אבטחה עצמאי, אנרגיה סולארית לאבטחה, מצלמות אבטחה ישראל, Site-Control',
   openGraph: {
@@ -10,15 +10,21 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'he_IL',
     siteName: 'Site-Control',
+    url: 'https://www.site-control-il.com/blog/security-solar-2026',
+    images: [{ url: 'https://www.site-control-il.com/blog-images/security-solar-2026/hero.webp', width: 1200, height: 509, alt: 'מצלמת אבטחה סולארית לשטח פתוח' }],
   },
   alternates: {
     canonical: 'https://www.site-control-il.com/blog/security-solar-2026',
   },
 };
 
+// Article (17.10.2026, בדיקת SEO: לפוסט לא הייתה סכמת Article)
+const ARTICLE_LD = {"@context": "https://schema.org", "@type": "Article", "headline": "מצלמת אבטחה סולארית לשטח פתוח: המדריך המלא", "description": "מדריך מקיף למצלמות אבטחה סולאריות לשטח פתוח בישראל. פתרונות 4G/LTE, טיפים להתקנה, המלצות מוצר (Reolink, Hikvision, Dahua) ועוד מ-Site-Control.", "image": "https://www.site-control-il.com/blog-images/security-solar-2026/hero.webp", "datePublished": "2026-03-02", "dateModified": "2026-03-02", "author": {"@type": "Organization", "name": "צוות Site-Control", "url": "https://www.site-control-il.com"}, "publisher": {"@type": "Organization", "@id": "https://www.site-control-il.com/#org", "name": "Site-Control", "logo": {"@type": "ImageObject", "url": "https://www.site-control-il.com/images/site-control-logo.webp"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.site-control-il.com/blog/security-solar-2026"}, "url": "https://www.site-control-il.com/blog/security-solar-2026", "inLanguage": "he-IL", "isPartOf": {"@type": "Blog", "@id": "https://www.site-control-il.com/blog", "name": "בלוג Site-Control"}};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_LD) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"האם מצלמת אבטחה סולארית תעבוד גם בלילה או בימים מעוננים?","acceptedAnswer":{"@type":"Answer","text":"כן, בהחלט. הפאנל הסולארי מטעין סוללה פנימית במהלך היום. הסוללה מספקת חשמל למצלמה בלילה ובימים מעוננים. רוב המצלמות מתוכננות להחזיק מעמד מספר ימים ללא שמש ישירה, הודות לסוללה גדולה ומצבי חיסכון באנרגיה."}},{"@type":"Question","name":"האם צריך חיבור אינטרנט או חשמל קווי?","acceptedAnswer":{"@type":"Answer","text":"לא. זהו היתרון המרכזי. מצלמת אבטחה סולארית לשטח פתוח ניזונה מהפאנל הסולארי (עבור חשמל) ומתחברת לרשת הסלולרית (באמצעות כרטיס סים) לצורך העברת נתונים וצפייה מרחוק. לכן, יש צורך בקליטה סלולרית טובה בלבד."}},{"@type":"Question","name":"כמה זמן הסוללה מחזיקה מעמד ללא שמש?","acceptedAnswer":{"@type":"Answer","text":"זה תלוי מאוד בקיבולת הסוללה, הספק הפאנל, תדירות הצילום/הקלטה וטמפרטורת הסביבה. ברוב המקרים, מצלמה איכותית עם סוללה טובה ופאנל מתאים יכולה לפעול בין 3 ל-7 ימים (ולעיתים אף יותר) ללא טעינה, גם בתנאי עננות מלאה."}},{"@type":"Question","name":"האם ניתן לשלוט במצלמה מרחוק?","acceptedAnswer":{"@type":"Answer","text":"כן. באמצעות אפליקציה ייעודית בטלפון החכם או תוכנה במחשב, ניתן לצפות בשידור חי, לצפות בהקלטות, לקבל התראות, לשנות הגדרות ואף לשלוט במצלמות בעלות יכולת הטיה וצידוד (PTZ)."}},{"@type":"Question","name":"האם המצלמה עמידה בפני ונדליזם או גניבה?","acceptedAnswer":{"@type":"Answer","text":"מצלמות אבטחה סולאריות מיועדות לפעול בתנאי חוץ, ורבות מהן בנויות מחומרים עמידים. עם זאת, אין מצלמה חסינת ונדליזם לחלוטין. מומלץ להתקין את המצלמה בגובה, במקום קשה לגישה, ואף להשתמש במתקני אבטחה או מארזים מוגנים. היכולת לצפות מרחוק ולקבל התראות מסייעת גם היא למנוע נזק."}}]}` }}
@@ -40,7 +46,7 @@ export default function Page() {
               src="/blog-images/security-solar-2026/hero.webp"
               alt="אבטחה עצמאית ללא גבולות: המדריך המקיף למצלמת אבטחה סולארית לשטח פתוח"
               style={{ width: '100%', maxWidth: '1200px', height: 'auto', margin: '2rem 0', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}
-              loading="lazy"
+              width={1200} height={509} fetchPriority="high" decoding="async"
             />
           </picture>
           <p style={{ margin: '1rem 0', fontStyle: 'italic', color: 'var(--muted)' }}>

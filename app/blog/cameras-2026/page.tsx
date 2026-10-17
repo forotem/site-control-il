@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית | Site-Control',
-  description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים, חקלאים ומנהלי אתרים.',
+  title: 'מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית',
+  description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים…',
   keywords: ["מצלמות לכרם ומטע ללא אינטרנט","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה ללא חשמל","מצלמות לחקלאות סולאריות","אבטחה לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","מצלמות אבטחה B2B"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית',
-    description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים, חקלאים ומנהלי אתרים.',
+    description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים…',
     type: 'article',
     publishedTime: '2026-05-28',
     locale: 'he_IL',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית',
-    description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים, חקלאים ומנהלי אתרים.',
+    description: 'הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים…',
     images: ['https://www.site-control-il.com/blog-images/cameras-2026/hero.webp'],
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית","description":"הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים, חקלאים ומנהלי אתרים.","image":"https://www.site-control-il.com/blog-images/cameras-2026/hero.webp","datePublished":"2026-05-28","dateModified":"2026-05-28","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-2026"},"keywords":"מצלמות לכרם ומטע ללא אינטרנט, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה ללא חשמל, מצלמות לחקלאות סולאריות, אבטחה לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, מצלמות אבטחה B2B","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות לכרם ומטע ללא אינטרנט: אבטחה חכמה 4G סולארית","description":"הגן על הכרם, המטע, אתר הבנייה או האתר המרוחק שלך! מצלמות סולאריות 4G מבית Site-Control מספקות אבטחה מלאה ללא חשמל או אינטרנט. פתרון B2B מושלם לקבלנים…","image":"https://www.site-control-il.com/blog-images/cameras-2026/hero.webp","datePublished":"2026-05-28","dateModified":"2026-05-28","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-2026"},"keywords":"מצלמות לכרם ומטע ללא אינטרנט, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה ללא חשמל, מצלמות לחקלאות סולאריות, אבטחה לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, מצלמות אבטחה B2B","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/cameras-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

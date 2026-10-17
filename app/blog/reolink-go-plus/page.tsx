@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B | Site-Control',
-  description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.',
+  title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B',
+  description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו…',
   keywords: ["Reolink GO Plus ביקורת בעברית","מצלמת אבטחה סולארית 4G","Reolink GO Plus לאתרי בנייה","מצלמות אבטחה לחקלאים","אבטחת אתרים מבודדים","מצלמת סים Reolink","Reolink PTZ Solar B2B","פתרונות אבטחה ללא חשמל","מצלמות סולאריות B2B","אבטחה לשטחים מנותקים"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B',
-    description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.',
+    description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו…',
     type: 'article',
     publishedTime: '2026-06-29',
     locale: 'he_IL',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B',
-    description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.',
+    description: 'ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו…',
     images: ['https://www.site-control-il.com/blog-images/reolink-go-plus/hero.webp'],
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B","description":"ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו ייעוץ חינם מ-Site-Control.","image":"https://www.site-control-il.com/blog-images/reolink-go-plus/hero.webp","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/reolink-go-plus"},"keywords":"Reolink GO Plus ביקורת בעברית, מצלמת אבטחה סולארית 4G, Reolink GO Plus לאתרי בנייה, מצלמות אבטחה לחקלאים, אבטחת אתרים מבודדים, מצלמת סים Reolink, Reolink PTZ Solar B2B, פתרונות אבטחה ללא חשמל, מצלמות סולאריות B2B, אבטחה לשטחים מנותקים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/reolink-go-plus","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"Reolink GO Plus ביקורת בעברית: אבטחה סולארית 4G ל-B2B","description":"ביקורת Reolink GO Plus מעמיקה בעברית לסקטור ה-B2B. קבלנים, חקלאים ומנהלי אתרים יגלו איך מצלמת 4G סולארית זו מאבטחת ציוד בשטח ללא חשמל/אינטרנט. קבלו…","image":"https://www.site-control-il.com/blog-images/reolink-go-plus/hero.webp","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/reolink-go-plus"},"keywords":"Reolink GO Plus ביקורת בעברית, מצלמת אבטחה סולארית 4G, Reolink GO Plus לאתרי בנייה, מצלמות אבטחה לחקלאים, אבטחת אתרים מבודדים, מצלמת סים Reolink, Reolink PTZ Solar B2B, פתרונות אבטחה ללא חשמל, מצלמות סולאריות B2B, אבטחה לשטחים מנותקים","articleSection":"מצלמות אבטחה","url":"https://www.site-control-il.com/blog/reolink-go-plus","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

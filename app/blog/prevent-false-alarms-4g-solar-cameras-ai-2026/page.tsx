@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'מניעת התרעות שווא במצלמות סולאריות 4G: AI חוסך זמן וכסף | Site-Control',
+  title: 'מניעת התרעות שווא במצלמות סולאריות 4G: AI חוסך זמן וכסף',
   description: 'נמאס לכם מהתרעות שווא? למדו איך מצלמות 4G סולאריות עם AI מבית Site-Control חוסכות לקבלנים, חקלאים ומנהלי אתרים מבודדים זמן וכסף. ייעוץ חינם.',
   keywords: ["מניעת התרעות שווא במצלמות 4G סולאריות","מצלמות אבטחה לאתרי בנייה","מצלמות אבטחה לחקלאות","אבטחת אתרים מבודדים","מצלמות סולאריות עם AI","Reolink GO Plus 4G","Reolink PTZ Solar","חיסכון בזמן וכסף באבטחה"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],

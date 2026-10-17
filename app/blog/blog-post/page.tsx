@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G | Site-Control',
+  title: 'אבטחת שטחים חקלאיים ואתרים מרוחקים: הפתרון הסולארי 4G',
   description: 'אבטחת שטחים חקלאיים, אתרי בנייה ומתחמים מרוחקים ללא חשמל או אינטרנט. מצלמות אבטחה סולאריות 4G מבית Site-Control, הפתרון המושלם ל-B2B בישראל.',
   keywords: ["אבטחת שטחים חקלאיים","מצלמות אבטחה סולאריות 4G","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","מצלמות לחקלאים","ניהול אתרים מרוחקים","מניעת גניבות ציוד","אבטחה ללא חשמל אינטרנט"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],

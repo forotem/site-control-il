@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים | Site-Control',
+  title: 'התקנה נכונה של מצלמות סולאריות 4G: מדריך לקבלנים וחקלאים',
   description: 'מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים מבודדים על התקנה נכונה של מצלמות אבטחה סולאריות 4G. אבטח את השטח שלך עם Site-Control.',
   keywords: ["מצלמות אבטחה סולאריות 4G","התקנת מצלמות אבטחה B2B","Reolink GO Plus","Reolink PTZ Solar","אבטחת אתרי בנייה","אבטחת משקים חקלאיים","מצלמות לאתרים מבודדים","ניטור מרחוק"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],

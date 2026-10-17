@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום | Site-Control',
+  title: 'מצלמת אבטחה סולארית עם גיבוי ענן: שקט נפשי בכל מקום',
   description: 'אבטח את הנכסים שלך בכל מקום! מצלמת אבטחה סולארית עם גיבוי ענן 4G של Site-Control מציעה פתרון מושלם לקבלנים, חקלאים ואתרים מבודדים. ייעוץ חינם.',
   keywords: ["מצלמת אבטחה סולארית עם גיבוי ענן","מצלמות 4G לאתרי בנייה","אבטחה סולארית לחקלאות","מצלמות לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","אבטחת ציוד בנייה","מניעת גניבות חקלאיות"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],

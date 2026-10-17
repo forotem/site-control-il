@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B | Site-Control',
-  description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים, חקלאים ומנהלי אתרים.',
+  title: 'מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B',
+  description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים…',
   keywords: ["מצלמות אבטחה לשדה חקלאי ללא חשמל","מצלמות אבטחה סולאריות 4G","אבטחת אתרי בנייה ללא חשמל","מצלמות אבטחה לאתרים מרוחקים","Reolink GO Plus 4G","Reolink PTZ Solar","פתרונות אבטחה B2B בישראל","אבטחת משקים חקלאיים"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B',
-    description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים, חקלאים ומנהלי אתרים.',
+    description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים…',
     type: 'article',
     publishedTime: '2026-05-18',
     locale: 'he_IL',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B',
-    description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים, חקלאים ומנהלי אתרים.',
+    description: 'אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים…',
     images: ['https://www.site-control-il.com/blog-images/cameras-security-2026/hero.webp'],
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B","description":"אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים, חקלאים ומנהלי אתרים.","image":"https://www.site-control-il.com/blog-images/cameras-security-2026/hero.webp","datePublished":"2026-05-18","dateModified":"2026-05-18","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-security-2026"},"keywords":"מצלמות אבטחה לשדה חקלאי ללא חשמל, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה ללא חשמל, מצלמות אבטחה לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, פתרונות אבטחה B2B בישראל, אבטחת משקים חקלאיים","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/cameras-security-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מצלמות אבטחה לשדה חקלאי ללא חשמל: פתרון 4G סולארי לאבטחה B2B","description":"אבטח את השדה החקלאי, אתר הבנייה או האתר המרוחק שלך ללא חשמל או אינטרנט קווי. מצלמות אבטחה סולאריות 4G מבית Site-Control הן הפתרון המושלם לקבלנים…","image":"https://www.site-control-il.com/blog-images/cameras-security-2026/hero.webp","datePublished":"2026-05-18","dateModified":"2026-05-18","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/cameras-security-2026"},"keywords":"מצלמות אבטחה לשדה חקלאי ללא חשמל, מצלמות אבטחה סולאריות 4G, אבטחת אתרי בנייה ללא חשמל, מצלמות אבטחה לאתרים מרוחקים, Reolink GO Plus 4G, Reolink PTZ Solar, פתרונות אבטחה B2B בישראל, אבטחת משקים חקלאיים","articleSection":"פתרונות B2B","url":"https://www.site-control-il.com/blog/cameras-security-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

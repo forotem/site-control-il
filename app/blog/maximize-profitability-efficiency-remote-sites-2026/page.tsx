@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'מצלמות סולאריות 4G לאתר מרוחק: רווחיות ויעילות',
-  description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.',
+  description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות…',
   keywords: ["מקסום רווחיות באתרים מרוחקים","מצלמות אבטחה סולאריות 4G","אבטחה סולארית B2B ישראל","מצלמות לאתרי בנייה","מצלמות לחקלאות","Reolink GO Plus","Reolink PTZ Solar","מניעת גניבות באתר מרוחק","פתרונות אבטחה ללא חשמל"],
   authors: [{ name: 'צוות Site-Control', url: 'https://www.site-control-il.com' }],
   openGraph: {
     title: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G',
-    description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.',
+    description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות…',
     type: 'article',
     publishedTime: '2026-09-10',
     locale: 'he_IL',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G',
-    description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.',
+    description: 'שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות…',
     images: ['https://www.site-control-il.com/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp'],
   },
   alternates: {
@@ -43,7 +43,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G","description":"שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות, פיקוח מרחוק וחיסכון בעלויות.","image":"https://www.site-control-il.com/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026"},"keywords":"מקסום רווחיות באתרים מרוחקים, מצלמות אבטחה סולאריות 4G, אבטחה סולארית B2B ישראל, מצלמות לאתרי בנייה, מצלמות לחקלאות, Reolink GO Plus, Reolink PTZ Solar, מניעת גניבות באתר מרוחק, פתרונות אבטחה ללא חשמל","articleSection":"פתרונות אבטחה B2B","url":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
+        dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Article","headline":"מקסום רווחיות ויעילות באתרים מרוחקים: המדריך המלא למצלמות אבטחה סולאריות 4G","description":"שדרגו את אבטחת האתרים המרוחקים שלכם עם מצלמות אבטחה סולאריות 4G מבית Site-Control. מדריך מקיף לקבלנים, חקלאים ומנהלי אתרים B2B בישראל למניעת גניבות…","image":"https://www.site-control-il.com/blog-images/maximize-profitability-efficiency-remote-sites-2026/hero.webp","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Organization","name":"צוות Site-Control","url":"https://www.site-control-il.com"},"publisher":{"@type":"Organization","name":"Site-Control","logo":{"@type":"ImageObject","url":"https://www.site-control-il.com/images/site-control-logo.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026"},"keywords":"מקסום רווחיות באתרים מרוחקים, מצלמות אבטחה סולאריות 4G, אבטחה סולארית B2B ישראל, מצלמות לאתרי בנייה, מצלמות לחקלאות, Reolink GO Plus, Reolink PTZ Solar, מניעת גניבות באתר מרוחק, פתרונות אבטחה ללא חשמל","articleSection":"פתרונות אבטחה B2B","url":"https://www.site-control-il.com/blog/maximize-profitability-efficiency-remote-sites-2026","isPartOf":{"@type":"Blog","@id":"https://www.site-control-il.com/blog","name":"בלוג Site-Control"}}` }}
       />
       <script
         type="application/ld+json"

@@ -80,7 +80,7 @@ export function buildKnowledge(): string {
   ].join("\n");
   const solar = [
     "מצלמות הסוללה של Reolink נמצאות בקטלוג בקטגוריה 'סולארי 4G ובסוללה' עם מחירים אמיתיים. שתי משפחות: 4G עם סים (Go Plus, Go Ultra, Go PT Plus, Go PT Ultra, Duo 2 LTE, TrackMix LTE, Go Ranger) לאתרים בלי אינטרנט, ו-Wi-Fi בסוללה (Argus) לבית.",
-    "חשוב לשאול לפני מחיר: עם פאנל סולארי או בלי? רוב הדגמים בלי פאנל (Solar Panel 2 נמכר בנפרד, 79 ₪); Go PT Ultra, Go Ranger ו-TrackMix LTE Plus מגיעים עם פאנל. וגם: קבועה, ממונעת או פנורמית, וכמה נקודות.",
+    `חשוב לשאול לפני מחיר: עם פאנל סולארי או בלי? רוב הדגמים בלי פאנל (Solar Panel 2, 6W, נמכר בנפרד ב-${storeProducts.find((p) => p.slug === "reolink-solar-panel-2")?.price ?? ""} ₪); Go PT Ultra ו-Go Ranger מגיעים עם Solar Panel 2 (6W, Type-C, כבל 4 מ', IP65, עידן אישר מהאריזה 19.10.2026), ו-TrackMix LTE Plus עם פאנל משלו. וגם: קבועה, ממונעת או פנורמית, וכמה נקודות.`,
     "סים: הלקוח צריך סים עם חבילת גלישה (10 עד 30GB לחודש). אנחנו עוזרים לבחור ולהגדיר. התקנה על עמוד או פיגום באתר: לפי הצעת מחיר, לא כלולה במחיר המצלמה.",
     "טיימלאפס וסרטוני התקדמות בנייה אינם שירות של האתר הזה: מפנים לאתר האחות https://timelapseit.co.il.",
   ].join("\n");

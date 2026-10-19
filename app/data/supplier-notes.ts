@@ -58,6 +58,9 @@ export const SUPPLIER_NOTES: Record<string, SupplierNote> = {
     alternatives: [{ slug: "ds-7608nxi-k1-8p", why: "מי שרוצה התראה על אדם מסוים בשטח (לא פתיחת דלת): מקליט Hikvision AcuSense עם מצלמת Face Capture בכניסה, למשל DS-2CD2387G2H-LISU/SL" }],
     tips: ["צריך מנעול חשמלי בדלת או בשער. המסוף מזין מנעול 12V/1A מאותו כבל רשת, כשהמתג או המזרק הוא PoE+ (802.3at), אז לרוב לא צריך ספק נפרד למנעול: לשאול איזה מנעול יש"],
   },
+  // עידן 19.10.2026 בפרטי (ליד SC-038 שאל מה ההספק): "6Whatt", ותמונה של שתי קופסאות במלאי.
+  "reolink-go-pt-ultra": { history: "19.10.2026 עידן: הפאנל שמגיע עם Go PT Ultra הוא Reolink Solar Panel 2, 6W (צילם את האריזה). על האריזה: מתאים לכל מצלמות הסוללה של Reolink, IP65." },
+  "reolink-solar-panel-2": { history: "19.10.2026 עידן: במלאי (תמונת אריזה). 6W, מתאים לכל מצלמות הסוללה של Reolink, IP65." },
   "reolink-rlk8-820d4-a": { history: "", tips: [DOME_ARM_TIP] },
   "reolink-nvs16-8md8": { history: "", tips: [DOME_ARM_TIP] },
   "reolink-nvs16-12md8": { history: "", tips: [DOME_ARM_TIP] },

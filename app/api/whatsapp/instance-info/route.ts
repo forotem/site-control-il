@@ -3,7 +3,7 @@
 // את מערכת הלידים של TimelapseIT (Apps Script), ואסור לשבור אותה.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { greenApi } from "../../../lib/store-notify";
+import { greenApi as greenApiOf, customerLineReady, type Line } from "../../../lib/store-notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +18,9 @@ function authorized(req: NextRequest): boolean {
 
 export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // ?line=customer: הקו של רלי (20.10.2026), אחרת המספר של רותם
+  const line: Line = req.nextUrl.searchParams.get("line") === "customer" && customerLineReady() ? "customer" : "ops";
+  const greenApi = <T,>(method: string, body?: unknown, query?: Record<string, string | number>) => greenApiOf<T>(method, body, query, line);
   // ?groups=1: רשימת הקבוצות (מזהה ושם בלבד), כדי למצוא את קבוצת Site-Control שרותם פתח (5.10.2026)
   if (req.nextUrl.searchParams.get("groups") === "1") {
     const chats = await greenApi<{ id: string; name?: string }[]>("getChats");

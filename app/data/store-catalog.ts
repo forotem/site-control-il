@@ -9,7 +9,7 @@ export type StoreProduct = {
  *  ה-id של קטגוריה לא משתנה אף פעם (כתובת, קישורים בבלוג, item_category באנליטיקס). */
 export type StoreDept = "offgrid" | "wifi" | "wired" | "entry";
 export type StoreCategory = { id: string; name: string; blurb: string; dept: StoreDept };
-export const WHATSAPP_NUMBER = "972502256866";
+export const WHATSAPP_NUMBER = "972508277907";
 export const WARRANTY_TEXT = "אחריות שנה על כל המוצרים";
 /** שם תצוגה: מותג + דגם, בלי לכפול את המותג כשהדגם כבר מתחיל בו ("Reolink Go PT Ultra"). */
 export const productName = (p: { brand: string; model: string }) =>

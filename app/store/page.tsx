@@ -110,7 +110,7 @@ export default function StorePage() {
       <section className={styles.closing}>
         <h2>לא מצאתם? יש עוד במלאי.</h2>
         <p>הקטלוג באתר הוא מה שצילמנו במחסן היבואן השבוע. מנעולים חשמליים, מתגי PoE, כבלים, דיסקים ודגמים נוספים זמינים לפי בקשה.</p>
-        <a className={`${styles.cta} ${styles.ctaPrimary}`} href={`https://wa.me/972502256866?text=${encodeURIComponent("היי, אני מחפש מוצר שלא מופיע בחנות באתר:")}`} target="_blank" rel="noopener noreferrer">לשאול בווצאפ</a>
+        <a className={`${styles.cta} ${styles.ctaPrimary}`} href={`https://wa.me/972508277907?text=${encodeURIComponent("היי, אני מחפש מוצר שלא מופיע בחנות באתר:")}`} target="_blank" rel="noopener noreferrer">לשאול בווצאפ</a>
       </section>
     </main>
   );

@@ -89,10 +89,10 @@ async function sanitizeLinks(html) {
     const keep = (h) => `<a ${pre}href="${h}"${post}>${text}</a>`;
     if (/YOUR_|example\.com/i.test(href)) {
       fixes.push(`placeholder ${href}`);
-      return /wa\.me/.test(href) ? keep('https://wa.me/972502256866') : text;
+      return /wa\.me/.test(href) ? keep('https://wa.me/972508277907') : text;
     }
     const wa = href.match(/^https?:\/\/(api\.whatsapp\.com|wa\.me)\/(\d*)/i);
-    if (wa && wa[2] !== '972502256866') { fixes.push(`whatsapp number ${href}`); return keep('https://wa.me/972502256866'); }
+    if (wa && wa[2] !== '972508277907') { fixes.push(`whatsapp number ${href}`); return keep('https://wa.me/972508277907'); }
     let h = href;
     const abs = h.match(/^https?:\/\/([^/?#]+)(\/[^"]*)?$/i);
     if (abs && /site-control/i.test(abs[1])) {

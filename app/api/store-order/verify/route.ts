@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   if (phoneHits.length >= 4 || ipHits.length >= 10) return NextResponse.json({ error: "יותר מדי ניסיונות. אפשר לשלוח את ההזמנה בווצאפ במקום." }, { status: 429 });
 
   const { code, token } = issueCode(mobile);
-  const ok = await sendWhatsApp(mobile, `קוד האימות להזמנה ב-Site-Control: ${code}\nמזינים אותו באתר כדי לשלוח את ההזמנה. אם לא ביקשת קוד, אפשר להתעלם מההודעה.`);
+  const ok = await sendWhatsApp(mobile, `קוד האימות להזמנה ב-Site-Control: ${code}\nמזינים אותו באתר כדי לשלוח את ההזמנה. אם לא ביקשת קוד, אפשר להתעלם מההודעה.`, "customer");
   if (!ok) return NextResponse.json({ error: "לא הצלחנו לשלוח קוד בווצאפ כרגע. אפשר לשלוח את ההזמנה בווצאפ במקום." }, { status: 502 });
   byPhone.set(mobile, [...phoneHits, Date.now()]);
   byIp.set(ip, [...ipHits, Date.now()]);

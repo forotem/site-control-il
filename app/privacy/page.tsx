@@ -109,7 +109,7 @@ export default function PrivacyPage() {
         <h2 style={h2}>7. הזכויות שלכם</h2>
         <p style={p}>
           אתם יכולים לבקש לעיין במידע שלכם, לתקן אותו או למחוק אותו, ולבקש שלא נפנה אליכם יותר.
-          כתבו ל-<a href="mailto:info@site-control-il.com">info@site-control-il.com</a> או בוואטסאפ ל-050-2256866, ונטפל בבקשה תוך 30 יום.
+          כתבו ל-<a href="mailto:info@site-control-il.com">info@site-control-il.com</a> או בוואטסאפ ל-050-8277907, ונטפל בבקשה תוך 30 יום.
         </p>
       </section>
 

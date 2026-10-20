@@ -3,9 +3,11 @@
 // פרטי GreenAPI קיימים רק ב-Vercel, אז הכלי המקומי (site-control-tools/lead-agent/lead-send.js) שולח דרך כאן.
 // מוגן במפתח נפרד שנגזר מ-RESEND_API_KEY, ושולח רק למי שפנה לרותם מכפתור באתר (יש בשיחה הודעה נכנסת
 // עם טקסט של האתר), או ללקוח שקיבל מאיתנו הודעת הזמנה עם orderRef. כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת.
+// 20.10.2026: שולח מהקו שבו מתנהלת השיחה, קודם הקו של רלי ואז המספר של רותם (line בבקשה מכריע).
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { ELI_WA, greenApi, IDAN_WA, israeliMobile, sendWhatsAppId } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, israeliMobile, sendWhatsAppId, customerLineReady, type Line } from "../../../lib/store-notify";
+import { OPEN_MARK } from "../../../lib/opening";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -31,23 +33,34 @@ function isShabbat(now = new Date()): boolean {
 export async function POST(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   if (isShabbat()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
-  let body: { phone?: string; texts?: string[]; orderRef?: string; rotemApproved?: boolean };
+  let body: { phone?: string; texts?: string[]; orderRef?: string; rotemApproved?: boolean; line?: string };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const phone = israeliMobile(body.phone || "");
   const texts = (body.texts || []).map((t) => String(t).trim()).filter(Boolean).slice(0, 3);
   // הספק (עידן, ומ-7.10.2026 גם אלי) הוא לא ליד: הודעות אליו רק דרך to-idan
   if (!phone || phone === IDAN_WA || phone === ELI_WA || !texts.length) return NextResponse.json({ error: "bad request" }, { status: 400 });
-  const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 });
-  if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
-  // מותר: מי שפנה מכפתור באתר, או לקוח שקיבל מאיתנו את הודעת ההזמנה עם מספר ההזמנה הזה (למשל בקשה לביקורת אחרי אספקה)
+  // מותר: מי שפנה מכפתור באתר (או שפתחנו איתו שיחה בהודעת פתיחה), או לקוח שקיבל מאיתנו את הודעת ההזמנה עם מספר
+  // ההזמנה הזה (למשל בקשה לביקורת אחרי אספקה)
   const ref = /^[A-Za-z0-9-]{3,40}$/.test(body.orderRef || "") ? String(body.orderRef) : "";
-  const fromSite = history.some((m) => m.type === "incoming" && siteSourceOf(m.textMessage || m.extendedTextMessage?.text || ""));
-  const ourCustomer = Boolean(ref) && history.some((m) => m.type === "outgoing" && (m.textMessage || m.extendedTextMessage?.text || "").includes(ref));
-  // rotemApproved: רותם ביקש בצ'אט לשלוח ללקוח שפנה אליו ישירות (לא מכפתור באתר). מותר רק אם רותם עצמו כבר כתב
-  // בשיחה הזאת מהטלפון (sendByApi=false), כלומר זו שיחה אמיתית שלו ולא מספר זר.
-  const rotemChat = Boolean(body.rotemApproved) && history.some((m) => m.type === "outgoing" && (m as { sendByApi?: boolean }).sendByApi === false);
-  if (!fromSite && !ourCustomer && !rotemChat) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
+  const textOf = (m: Msg) => m.textMessage || m.extendedTextMessage?.text || "";
+  const allowed = (history: Msg[]) =>
+    history.some((m) => (m.type === "incoming" && siteSourceOf(textOf(m))) || (m.type === "outgoing" && textOf(m).includes(OPEN_MARK)))
+    || (Boolean(ref) && history.some((m) => m.type === "outgoing" && textOf(m).includes(ref)))
+    // rotemApproved: רותם ביקש בצ'אט לשלוח ללקוח שפנה ישירות (לא מכפתור באתר). מותר רק אם רותם (או רלי, בקו שלה) כבר
+    // כתב בשיחה הזאת מהטלפון (sendByApi=false), כלומר זו שיחה אמיתית ולא מספר זר.
+    || (Boolean(body.rotemApproved) && history.some((m) => m.type === "outgoing" && (m as { sendByApi?: boolean }).sendByApi === false));
+  const asked: Line | null = body.line === "customer" || body.line === "ops" ? body.line : null;
+  const candidates: Line[] = asked ? [asked] : customerLineReady() ? ["customer", "ops"] : ["ops"];
+  let line: Line | null = null;
+  let reached = false;
+  for (const l of candidates) {
+    const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 }, undefined, l);
+    if (history) reached = true;
+    if (history && allowed(history)) { line = l; break; }
+  }
+  if (!reached) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  if (!line) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
   const ids: (string | null)[] = [];
-  for (const t of texts) ids.push(await sendWhatsAppId(phone, t.slice(0, 4000)));
-  return NextResponse.json({ ok: ids.every(Boolean), phone, ids });
+  for (const t of texts) ids.push(await sendWhatsAppId(phone, t.slice(0, 4000), line));
+  return NextResponse.json({ ok: ids.every(Boolean), phone, line, ids });
 }

@@ -5,8 +5,9 @@ export const BUSINESS = {
   legalName: "סטודיו גולן",
   licenseId: "039513494", // עוסק מורשה
   installer: "רותם",
-  phoneDisplay: "050-2256866",
-  phoneE164: "+972502256866",
+  /** 20.10.2026: הקו של רלי מהצוות (רותם: "צריך שהעובדת החדשה רלי תקבל את השיחות וההודעות"). 050-2256866 נשאר מספר פנימי */
+  phoneDisplay: "050-8277907",
+  phoneE164: "+972508277907",
   email: "info@site-control-il.com",
   /** הרשתות של Site-Control (דף פייסבוק 1316019568263008, אינסטגרם @sitecontrol.il). בסכמה (sameAs) ובפוטר. 17.10.2026 */
   social: { facebook: "https://www.facebook.com/61594917474102", instagram: "https://www.instagram.com/sitecontrol.il/" },

@@ -1,8 +1,11 @@
 // ליד מטופס קצר (דף ההתקנה, דפי קטגוריה, דף המבצעים, יצירת קשר): שם, טלפון ומה צריך. מייל לא חובה.
 // לכל ליד מזהה L-xxxx שמופיע בהתראה לצוות ונשלח ל-GA4, כדי לחבר אחר כך ליד לעסקה בגיליון.
+// 20.10.2026: כל ליד נרשם בטבלה של רלי, וטל שולח לו הודעת פתיחה מהקו של רלי (app/lib/opening.ts).
 import { NextRequest, NextResponse } from "next/server";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
+import { sendOpening } from "../../lib/opening";
+import { sheetUpsert } from "../../lib/leads-sheet";
 
 export const runtime = "nodejs";
 
@@ -37,6 +40,17 @@ export async function POST(req: NextRequest) {
     `מקור: ${attributionLabel(body.attribution)}`,
   ].filter(Boolean).join("\n");
   const sent = await notifyTeam(`${FORMS[form]} ${leadId}: ${name}`, text, email ? { replyTo: email } : undefined);
+  // הודעת פתיחה מטל ושורה בטבלה של רלי. כישלון כאן לא מפיל את הטופס: ההתראה לצוות כבר יצאה
+  const need = [line(body.need, 60), line(body.kind, 40), line(body.category, 30)].filter(Boolean).join(", ");
+  const opening = await sendOpening({ phone, name, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", need, ref: leadId, callback: form === "callback" })
+    .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` }));
+  await sheetUpsert({
+    phone, name, email: email || undefined, ref: leadId,
+    source: `${FORMS[form]}${body.attribution ? ` (${attributionLabel(body.attribution)})` : ""}`,
+    need: [need, body.note ? clean(body.note, 500) : ""].filter(Boolean).join(" | "),
+    city: line(body.city, 60) || undefined, page: line(body.page, 80) || undefined,
+    opening: opening.status, status: opening.sent ? "טל בשיחה" : "חדש: לחזור ללקוח",
+  });
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח כרגע. אפשר לכתוב לנו בווצאפ ונחזור מיד." }, { status: 502 });
   return NextResponse.json({ ok: true, leadId });
 }

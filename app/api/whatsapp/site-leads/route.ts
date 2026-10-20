@@ -2,9 +2,10 @@
 // רותם 2.10.2026: ליד מכפתור "בדיקת זמינות" כמעט פוספס, "צריך לראות שכל הלידים נספרים ונרשמים ועוקבים אחריהם".
 // פרטי GreenAPI קיימים רק ב-Vercel, אז הכלי המקומי (site-control-tools/lead-agent/capture-wa-leads.js) קורא דרך כאן.
 // מוגן במפתח שנגזר מ-RESEND_API_KEY, ומחזיר רק הודעות פרטיות שמתחילות בטקסט של האתר (לא שיחות אחרות בטלפון).
+// מ-20.10.2026 שני קווים: הקו של רלי (לשם מגיעים הכפתורים באתר) והמספר של רותם. לכל ליד line.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { ELI_WA, greenApi, IDAN_WA } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, customerLineReady, type Line } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -26,8 +27,10 @@ function authorized(req: NextRequest): boolean {
 export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   const minutes = Math.min(10080, Math.max(10, Number(req.nextUrl.searchParams.get("minutes")) || 1440));
-  const incoming = await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes });
-  if (!incoming) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  const lines: Line[] = customerLineReady() ? ["customer", "ops"] : ["ops"];
+  const got = await Promise.all(lines.map(async (line) => (await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes }, line))?.map((m) => ({ ...m, line })) ?? null));
+  if (got.every((x) => !x)) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  const incoming = got.flatMap((x) => x || []);
   const leads = incoming
     // הספק (עידן, ומ-7.10.2026 גם אלי) הוא לא ליד
     .filter((m) => m.chatId?.endsWith("@c.us") && m.chatId !== `${IDAN_WA}@c.us` && m.chatId !== `${ELI_WA}@c.us`)
@@ -37,6 +40,7 @@ export async function GET(req: NextRequest) {
     })
     .filter((x) => x.source)
     .map(({ m, text, source }) => ({
+      line: m.line,
       idMessage: m.idMessage,
       timestamp: m.timestamp,
       phone: (m.chatId || "").replace(/@c\.us$/, ""),

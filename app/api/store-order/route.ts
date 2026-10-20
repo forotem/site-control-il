@@ -5,7 +5,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
-import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, SUPPLIER_GROUP } from "../../lib/store-notify";
+import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, SUPPLIER_GROUP, customerLineReady } from "../../lib/store-notify";
+import { sheetUpsert } from "../../lib/leads-sheet";
 import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
@@ -24,20 +25,23 @@ const nis = (n: number) => n.toLocaleString("he-IL");
 // הגנה מהצפה: לא שולחים לאותו מספר יותר מהודעה אחת ב-10 דקות (בזיכרון של המופע)
 const lastSent = new Map<string, number>();
 
-/** ההודעה ללקוח, בקול של רותם: שם, מה הוזמן עם מחיר וקישור, מה קורה עכשיו, ושהוא זמין במספר הזה */
+/** ההודעה ללקוח: שם, מה הוזמן עם מחיר וקישור, מה קורה עכשיו, ושאנחנו זמינים במספר הזה. מ-20.10.2026 מהקו של רלי ובקול שלה
+ *  (כשהקו שלה מחובר), אחרת בקול של רותם מהמספר העסקי */
 function customerMessage(name: string, ref: string, items: OrderItem[], total: number, deliveryId: string | undefined, address: string): string {
   const first = name.trim().split(/\s+/)[0];
+  const rali = customerLineReady();
+  const checking = rali ? "אני בודקת עכשיו את המלאי מול היבואן וחוזרת אליך" : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך";
   const shown = items.slice(0, 3).map(({ p, qty }) =>
     `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}\n  ${SITE}/store/${p.slug}`);
   const more = items.length > 3 ? [`ועוד ${items.length - 3} פריטים`] : [];
   const next =
-    deliveryId === "courier" ? `אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ומחיר משלוח ל${address || "כתובת שלך"}.`
-    : deliveryId === "pickup" ? "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור ותיאום איסוף."
-    : deliveryId === "install" ? `אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור, ונתאם יחד את ההתקנה${address ? ` ב${address}` : ""}.`
-    : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך עם אישור.";
+    deliveryId === "courier" ? `${checking} עם אישור ומחיר משלוח ל${address || "כתובת שלך"}.`
+    : deliveryId === "pickup" ? `${checking} עם אישור ותיאום איסוף.`
+    : deliveryId === "install" ? `${checking} עם אישור, ונתאם יחד את ההתקנה${address ? ` ב${address}` : ""}.`
+    : `${checking} עם אישור.`;
   return [
     `שלום ${first} 👋`,
-    `כאן רותם מ-Site-Control. ראיתי שהזמנת אצלנו באתר (מס׳ הזמנה ${ref}):`,
+    `כאן ${rali ? "רלי" : "רותם"} מ-Site-Control. ראיתי שהזמנת אצלנו באתר (מס׳ הזמנה ${ref}):`,
     "",
     ...shown,
     ...more,
@@ -45,8 +49,8 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
     total ? `סה״כ ${nis(total)} ₪ כולל מע״מ${deliveryId === "courier" ? ", לא כולל משלוח" : ""}.` : null,
     next,
     "",
-    "יש שאלה? אני זמין כאן בווצאפ ובטלפון הזה.",
-    "רותם, Site-Control",
+    rali ? "יש שאלה? אני זמינה כאן בווצאפ ובטלפון הזה." : "יש שאלה? אני זמין כאן בווצאפ ובטלפון הזה.",
+    `${rali ? "רלי" : "רותם"}, Site-Control`,
   ].filter((x) => x !== null).join("\n");
 }
 
@@ -115,11 +119,11 @@ export async function POST(req: NextRequest) {
   const bulk = units >= 5 || total >= 5000 || items.some((l) => l.qty >= 5 && attrsOf(l.p!).kind !== "accessory");
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;
 
-  // הודעה אישית ללקוח מהמספר של רותם. רק לנייד ישראלי, ולא יותר מפעם ב-10 דקות לאותו מספר.
+  // הודעה אישית ללקוח מהקו של רלי (או מהמספר של רותם כשהקו שלה לא מחובר). רק לנייד ישראלי, ולא יותר מפעם ב-10 דקות לאותו מספר.
   const mobile = israeliMobile(phone);
   let customerWa = false;
   if (mobile && Date.now() - (lastSent.get(mobile) || 0) > 10 * 60 * 1000) {
-    customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery, address));
+    customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery, address), "customer");
     if (customerWa) lastSent.set(mobile, Date.now());
   }
 
@@ -162,12 +166,20 @@ export async function POST(req: NextRequest) {
     body.note ? `\nהערה מהלקוח: ${String(body.note).slice(0, 500)}` : null,
     supplier.length ? `\nמהניסיון מול היבואן:\n${supplier.join("\n")}` : null,
     "",
-    customerWa ? "✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ממך (מוצר, מחיר, קישור, ושאתה בודק מלאי)." : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
+    customerWa ? `✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ${customerLineReady() ? "מהקו של רלי" : "ממך"} (מוצר, מחיר, קישור, ושבודקים מלאי).` : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
     idanLine,
     idanStatus ? "לעשות: לוודא שעידן תופר את העסקה מול הלקוח (מלאי, תשלום, משלוח), ולעדכן אותי." : "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");
 
   const sent = await notifyTeam(`הזמנה חדשה מהחנות ${ref}${bulk ? " (קבלן)" : ""}`, text);
+  // הטבלה של רלי (20.10.2026)
+  await sheetUpsert({
+    phone: mobile || phone, name, email: body.email ? String(body.email).slice(0, 120) : undefined, ref,
+    source: `הזמנה מהעגלה (${attributionLabel(body.attribution)})`,
+    need: `${(items as OrderItem[]).map(({ p, qty }) => `${qty} x ${productName(p)}`).join(", ")} | ${total.toLocaleString("he-IL")} ₪ | ${delivery}${address ? `, ${address}` : ""}`.slice(0, 600),
+    status: `🛒 הזמנה ${ref}${verified ? "" : " (טלפון לא אומת)"}`,
+    opening: customerWa ? "נשלחה הודעת הזמנה ללקוח" : undefined,
+  });
   // אם אף ערוץ לא עבד, לא מאשרים ללקוח הזמנה שאף אחד לא יראה: מחזירים שגיאה וה-UI מציע וואטסאפ.
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח את ההזמנה כרגע. אפשר לשלוח אותה בווצאפ ונטפל מיד." }, { status: 502 });
   return NextResponse.json({ ok: true, ref, total, unknown, bulk, delivered: sent.whatsapp || sent.email, customerWa, supplier: idanStatus });

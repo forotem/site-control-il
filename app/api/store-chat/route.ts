@@ -3,7 +3,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productBySlug, productFacts, productsMentioned } from "../../data/store-knowledge";
 import { productName } from "../../data/store-catalog";
-import { notifyTeam } from "../../lib/store-notify";
+import { israeliMobile, notifyTeam } from "../../lib/store-notify";
+import { sendOpening } from "../../lib/opening";
+import { sheetUpsert } from "../../lib/leads-sheet";
 import { attributionLabel } from "../../lib/attribution-label";
 import { ASSISTANT_NAME, SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../lib/tal";
 
@@ -84,6 +86,18 @@ export async function POST(req: NextRequest) {
       tasks.push(notifyTeam("שאלה מהצ'אט בחנות שצריך תשובה מהצוות", `שאלה: ${data.escalate}\n${body.page ? `דף: /store/${body.page}\n` : ""}${leadCaptured ? `לקוח: ${data.lead_name || "-"} ${data.lead_phone}\n` : "הלקוח עדיין לא השאיר טלפון.\n"}\nשיחה:\n${transcript}`));
     }
     if (leadCaptured) {
+      // 20.10.2026: טל ממשיך עם הלקוח בווצאפ מהקו של רלי (הודעת פתיחה), והליד נרשם בטבלה של רלי. הפתיחה יוצאת פעם אחת:
+      // בתור הבא כבר יש שיחה בווצאפ, ו-sendOpening מדלג
+      tasks.push((async () => {
+        const opening = await sendOpening({ phone: data.lead_phone, name: data.lead_name, source: "הצ'אט באתר", need: data.lead_summary });
+        await sheetUpsert({
+          phone: israeliMobile(data.lead_phone) || data.lead_phone, name: data.lead_name || undefined,
+          source: `הצ'אט בחנות (${attributionLabel(body.attribution)})`, need: data.lead_summary || undefined,
+          tal: data.lead_summary || undefined, leadType: `${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}`,
+          page: body.page ? `/store/${body.page}` : undefined, opening: opening.status,
+          status: data.intent === "ready" ? "🟢 מוכן לקנות" : opening.sent ? "טל בשיחה" : "חדש: לחזור ללקוח",
+        });
+      })());
       tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nאפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
     }
     if (tasks.length) await Promise.allSettled(tasks);

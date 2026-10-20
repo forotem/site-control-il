@@ -132,7 +132,7 @@ export function CartDrawer() {
             {step === "done" && (
               <div className={c.drawerBody}>
                 <p className={styles.finderIntro}>תודה! מספר ההזמנה שלך <b>{ref}</b>. אנחנו בודקים זמינות מול היבואן וחוזרים אליך לאישור מחיר סופי ותשלום, בדרך כלל תוך שעות עבודה.</p>
-                {waSent && <p className={styles.finderHint}>שלחנו לך הודעה בווצאפ מרותם (050-2256866) עם פרטי ההזמנה. אפשר לענות שם ישירות.</p>}
+                {waSent && <p className={styles.finderHint}>שלחנו לך הודעה בווצאפ מ-Site-Control (050-8277907) עם פרטי ההזמנה. אפשר לענות שם ישירות.</p>}
                 <p className={styles.finderHint}>לא חויבת בכלום עדיין. רוצה לזרז? <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`היי, שלחתי הזמנה ${ref} מהאתר`)}`} target="_blank" rel="noopener noreferrer">כתבו לנו בווצאפ</a>.</p>
                 <button type="button" className={`${styles.cta} ${styles.ctaSecondary}`} onClick={() => setOpen(false)}>המשך גלישה</button>
               </div>

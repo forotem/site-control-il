@@ -45,7 +45,7 @@ export default function CTASection() {
         {/* Contact Methods */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <motion.a
-            href="tel:+972502256866"
+            href="tel:+972508277907"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0 }}
@@ -59,7 +59,7 @@ export default function CTASection() {
               קראו לנו
             </h3>
             <p className="text-gray-300 text-center text-sm">
-              050-225-6866
+              050-827-7907
             </p>
           </motion.a>
 
@@ -83,7 +83,7 @@ export default function CTASection() {
           </motion.a>
 
           <motion.a
-            href="https://wa.me/972502256866"
+            href="https://wa.me/972508277907"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

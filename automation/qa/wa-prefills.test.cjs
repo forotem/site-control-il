@@ -58,21 +58,21 @@ n++;
 assert.notStrictEqual(makeWaRef(), makeWaRef(), 'שני קודים שונים'); n++;
 
 // קישור עם קוד
-const base = 'https://wa.me/972502256866?text=' + encodeURIComponent('היי, אני מתעניין ב-X. האם יש במלאי?');
+const base = 'https://wa.me/972508277907?text=' + encodeURIComponent('היי, אני מתעניין ב-X. האם יש במלאי?');
 const withRef = hrefWithWaRef(base, 'SCW-ABCDEF');
 const textOf = (href) => new URL(href).searchParams.get('text');
 eq(textOf(withRef), 'היי, אני מתעניין ב-X. האם יש במלאי?\nמס\' פנייה: SCW-ABCDEF', 'הקוד בשורה אחרונה');
 eq(withRef.includes('+'), false, 'רווחים כ-%20 ולא + (ווצאפ מציג + כפלוס)');
-eq(withRef.startsWith('https://wa.me/972502256866?text='), true, 'הכתובת נשמרת');
+eq(withRef.startsWith('https://wa.me/972508277907?text='), true, 'הכתובת נשמרת');
 eq(siteSourceOf(textOf(withRef)), 'התעניינות במוצר מהאתר', 'הטקסט עם הקוד עדיין מזוהה');
 eq(textOf(hrefWithWaRef(withRef, 'SCW-ZZZZZZ')), 'היי, אני מתעניין ב-X. האם יש במלאי?\nמס\' פנייה: SCW-ZZZZZZ', 'לחיצה שנייה מחליפה קוד ולא מוסיפה');
-eq(textOf(hrefWithWaRef('https://wa.me/972502256866', 'SCW-ABCDEF')), 'היי, הגעתי מהאתר\nמס\' פנייה: SCW-ABCDEF', 'קישור בלי טקסט מקבל פתיחה');
-eq(hrefWithWaRef('https://wa.me/972502256866', 'SCW-ABCDEF').startsWith('https://wa.me/972502256866?text='), true, 'קישור בלי טקסט: המבנה');
-eq(textOf(hrefWithWaRef('https://api.whatsapp.com/send?phone=972502256866&text=' + encodeURIComponent('היי'), 'SCW-ABCDEF')), 'היי\nמס\' פנייה: SCW-ABCDEF', 'api.whatsapp.com');
-eq(hrefWithWaRef('https://api.whatsapp.com/send?phone=972502256866&text=x', 'SCW-ABCDEF').includes('phone=972502256866'), true, 'פרמטרים אחרים נשמרים');
-eq(hrefWithWaRef('tel:+972502256866', 'SCW-ABCDEF'), null, 'לא ווצאפ');
+eq(textOf(hrefWithWaRef('https://wa.me/972508277907', 'SCW-ABCDEF')), 'היי, הגעתי מהאתר\nמס\' פנייה: SCW-ABCDEF', 'קישור בלי טקסט מקבל פתיחה');
+eq(hrefWithWaRef('https://wa.me/972508277907', 'SCW-ABCDEF').startsWith('https://wa.me/972508277907?text='), true, 'קישור בלי טקסט: המבנה');
+eq(textOf(hrefWithWaRef('https://api.whatsapp.com/send?phone=972508277907&text=' + encodeURIComponent('היי'), 'SCW-ABCDEF')), 'היי\nמס\' פנייה: SCW-ABCDEF', 'api.whatsapp.com');
+eq(hrefWithWaRef('https://api.whatsapp.com/send?phone=972508277907&text=x', 'SCW-ABCDEF').includes('phone=972508277907'), true, 'פרמטרים אחרים נשמרים');
+eq(hrefWithWaRef('tel:+972508277907', 'SCW-ABCDEF'), null, 'לא ווצאפ');
 eq(hrefWithWaRef('/store', 'SCW-ABCDEF'), null, 'קישור יחסי');
-eq(isWhatsAppHref('https://wa.me/972502256866?text=a'), true, 'wa.me');
+eq(isWhatsAppHref('https://wa.me/972508277907?text=a'), true, 'wa.me');
 eq(isWhatsAppHref('https://example.com/wa.me/'), false, 'לא wa.me');
 
 console.log(`wa-prefills: ${n} בדיקות עברו`);

@@ -73,7 +73,7 @@ export default function AccessibilityPage() {
         <h2 style={h2}>פנייה בנושא נגישות</h2>
         <p style={p}>נתקלתם בבעיה? נשמח לדעת, ונחזור אליכם תוך 7 ימי עבודה. כדאי לציין באיזה דף זה קרה ואיזה דפדפן או טכנולוגיה מסייעת שימשו אתכם.</p>
         <ul style={ul}>
-          <li>טלפון: <a href="tel:+972502256866">050-2256866</a></li>
+          <li>טלפון: <a href="tel:+972508277907">050-8277907</a></li>
           <li>וואטסאפ: <a href={wa} target="_blank" rel="noopener noreferrer">לשליחת הודעה</a></li>
           <li>אימייל: <a href="mailto:info@site-control-il.com">info@site-control-il.com</a></li>
         </ul>

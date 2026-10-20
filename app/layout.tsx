@@ -279,7 +279,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/terms" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>תקנון</Link>
                 <Link href="/privacy" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>מדיניות פרטיות</Link>
                 <Link href="/accessibility" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>הצהרת נגישות</Link>
-                <Link href="/jobs" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>דרושים</Link>
                 <a href={BUSINESS.social.facebook} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>פייסבוק</a>
                 <a href={BUSINESS.social.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>אינסטגרם</a>
               </p>

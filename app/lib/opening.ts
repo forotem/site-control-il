@@ -15,10 +15,14 @@ import { customerLineReady, greenApi, israeliMobile, sendWhatsAppId } from "./st
 import { restDay } from "./il-time";
 import { sheetReady, sheetReserveOpening, sheetReleaseOpening } from "./leads-sheet";
 
-/** מופיע בכל הודעת פתיחה */
-export const OPEN_MARK = "קיבלנו את הפנייה שלך";
-/** אותו סימן הצגה עצמית כמו בבוט (INTRO_MARK שם): טל לא יציג את עצמו שוב כשהלקוח עונה */
-export const INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
+/** מופיע בכל הודעת פתיחה. רותם 20.10.2026 (ערב): הפתיחה בשם רלי, מהטלפון הישיר שלה ("לא צריך לכתוב שהוא העוזר
+ *  האישי של רותם גולן... פשוט שהוא ירשום בתור רלי"). */
+export const OPEN_MARK = "זה הטלפון הישיר שלי";
+/** הצגה עצמית בקו של רלי (גם הבוט משתמש בה כדי לא להציג שוב) */
+export const INTRO_MARK = "אני רלי מ-Site-Control";
+/** הסימנים של הפתיחה הקודמת (עד 20.10.2026 בערב), כדי שגם שיחות שנפתחו בה יזוהו */
+const OLD_OPEN_MARK = "קיבלנו את הפנייה שלך";
+const OLD_INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
 const PER_DAY = () => Math.max(0, Number(process.env.OPENINGS_PER_DAY ?? 10) || 0);
 const PER_IP_HOUR = 3;
 
@@ -28,7 +32,7 @@ const textOf = (m: H) => String(m.textMessage || m.extendedTextMessage?.text || 
 /** הודעת פתיחה שלנו (יוצאת, מה-API, עם שתי השורות הקבועות). "קיבלנו את הפנייה שלך" לבד הוא משפט שגם רלי כותבת */
 export function isOpeningMessage(m: H): boolean {
   const t = textOf(m);
-  return m.type === "outgoing" && m.sendByApi !== false && t.includes(OPEN_MARK) && t.includes(INTRO_MARK);
+  return m.type === "outgoing" && m.sendByApi !== false && ((t.includes(OPEN_MARK) && t.includes(INTRO_MARK)) || (t.includes(OLD_OPEN_MARK) && t.includes(OLD_INTRO_MARK)));
 }
 
 /** מה הלקוח ביקש, רק מתוך הערכים הקבועים של הטפסים באתר (InstallForm, FloatingCTA, OfferCalculator) ושמות הקטגוריות.
@@ -86,33 +90,21 @@ function firstName(name?: string): string {
   return /^[א-ת][א-ת'"׳״]{1,11}$/.test(f) && !/^(לקוח|לקוחה|בדיקה)$/.test(f) ? f : "";
 }
 
-/** שאלת בירור אחת לפי מה שביקש, כדי שקל לענות. הטקסט הגולמי רק בוחר שאלה קבועה, הוא לא נשלח */
-function questionFor(need: string): string {
-  const t = need.toLowerCase();
-  if (/סולאר|4g|בלי חשמל|אתר בני|בנייה|שטח|חקלא|רפת|לול|פרדס/.test(t)) return "איזה מקום צריך לאבטח, ויש שם קליטה סלולרית טובה?";
-  if (/אינטרקום|פנל|דלת|שער|קודן|בקרת כניסה/.test(t)) return "זה לבית פרטי או לבניין, ויש כבר כבל מהדלת?";
-  if (/התקנ/.test(t)) return "באיזה יישוב, וכמה מצלמות בערך?";
-  if (/עסק|חנות|משרד|מחסן|מפעל/.test(t)) return "איזה עסק, ובערך כמה נקודות צריך לכסות?";
-  if (/בית|דירה|וילה|חצר|חניה/.test(t)) return /\d/.test(t) ? "איפה בערך המצלמות אמורות להיות (כניסה, חניה, חצר), ויש Wi-Fi טוב בנקודות?" : "כמה מצלמות בערך, ואיפה (כניסה, חניה, חצר)?";
-  return "כדי שנכוון אותך נכון: זה לבית או לעסק, ובערך כמה מצלמות?";
-}
-
 export function openingText(lead: OpeningLead): string {
   const name = firstName(lead.trustedName);
   const raw = (lead.needs || []).map((x) => String(x || "").trim()).filter(Boolean);
   const shown = [...new Set(raw.map((x) => NEED_LABELS.get(x)).filter((x): x is string => typeof x === "string"))].slice(0, 2).join(", ");
   const source = canonicalSource(lead.source);
-  const ref = /^[A-Za-z0-9-]{3,24}$/.test(lead.ref || "") ? lead.ref : "";
+  // רותם 20.10.2026: "היי, ראיתי שהשארת פרטים לגבי ככה, אני רלי. זה הטלפון הישיר שלי, אני כאן זמינה בוואטסאפ, אני אשמח
+  // לענות לך על שאלות. מתי נוח לך שאני אתקשר?" (בלי מס' פנייה ובלי שאלת בירור: הודעה אנושית וקצרה)
+  const about = shown ? ` לגבי ${shown}` : "";
+  const where = source && !/באתר/.test(source) ? ` ב${source}` : "";
   return [
-    `היי${name ? ` ${name}` : ""}, כאן טל, ${INTRO_MARK} 👋`,
     lead.callback
-      ? `${OPEN_MARK} (בקשה לשיחה חוזרת מהאתר${shown ? `, ${shown}` : ""}).`
-      : `${OPEN_MARK}${source ? ` ב${source}` : ""}${shown ? ` (${shown})` : ""}, ואני ממשיך איתך מכאן.`,
-    ...(lead.callback
-      ? ["רלי מהצוות תתקשר אליך בהקדם מהמספר הזה. אם נוח יותר, אפשר גם לכתוב כאן מה מחפשים."]
-      : [questionFor(raw.join(" ")), "אפשר לענות כאן בהודעה. מי שמעדיף לדבר, רלי מהצוות זמינה בטלפון הזה."]),
-    ref ? `מס' פנייה: ${ref}` : "",
-  ].filter(Boolean).join("\n");
+      ? `היי${name ? ` ${name}` : ""}, ראיתי שביקשת שנחזור אליך${about}. ${INTRO_MARK}, ו${OPEN_MARK}.`
+      : `היי${name ? ` ${name}` : ""}, ראיתי שהשארת פרטים${where}${about}. ${INTRO_MARK}, ו${OPEN_MARK}.`,
+    "אני זמינה כאן בווצאפ ואשמח לענות על כל שאלה. מתי נוח לך שאתקשר?",
+  ].join("\n");
 }
 
 /** מפתח IP למגבלה: IPv6 לפי /64 (כתובת אחת מתחלפת בקלות בתוך הטווח) */

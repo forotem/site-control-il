@@ -39,6 +39,10 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 const BOT_MODE: "live" | "dry" | "off" = "live";
+// הקו של רלי: הבוט לא עונה ללקוחות (רותם 20.10.2026 בלילה: "אין צורך שהבוט יענה... מי שיענה לו בעצם זאת רלי האמיתית
+// שהטלפון אצלה"). מהקו יוצאות רק הודעת הפתיחה (/api/whatsapp/open) והודעת המעקב האחת (rali-followup.js). הודעה נכנסת
+// רק נרשמת בטבלה של רלי, גם בשבת. true מחזיר את טל לקו הזה (בשם רלי, RALI_VOICE).
+const CUSTOMER_LINE_REPLIES = false;
 const SITE = "https://www.site-control-il.com";
 const DEBOUNCE_MS = 12_000;
 const ROTEM_ACTIVE_MINUTES = 10;
@@ -191,7 +195,7 @@ export async function POST(req: NextRequest) {
     // "starting" = הפעלה מחדש של כמה שניות אצל GreenAPI, לא ניתוק (9.10.2026: 10 התראות שווא בלילה אחד)
     if (state && state !== "authorized" && state !== "starting") {
       const lost = hookLine === "customer"
-        ? "עד שמחברים מחדש: טל לא עונה ללקוחות, הודעות פתיחה וקודי אימות להזמנה לא יוצאים. הטלפון של רלי צריך להיות דלוק ומחובר לאינטרנט."
+        ? "עד שמחברים מחדש: הודעות פתיחה, הודעות מעקב וקודי אימות להזמנה לא יוצאים, ופניות חדשות לא נרשמות בטבלה של רלי. הטלפון של רלי צריך להיות דלוק ומחובר לאינטרנט."
         : "עד שמחברים מחדש: התראות לקבוצה, הזמנות לעידן ושיחות ישנות של טל לא עובדים. גם מערכת הלידים של TimelapseIT משתמשת באותו חיבור.";
       await notifyTeam(`⚠️ הווצאפ של Site-Control התנתק (${state}, ${phoneLabel(hookLine || "ops")})`, `החיבור של GreenAPI למספר ${phoneLabel(hookLine || "ops")} התנתק. ${lost}\n\nלחיבור מחדש מהטלפון: לבקש מקלוד קוד חיבור, ואז בווצאפ: הגדרות > מכשירים מקושרים > קישור מכשיר > קישור עם מספר טלפון במקום.`).catch(() => undefined);
     }
@@ -204,7 +208,8 @@ export async function POST(req: NextRequest) {
   // קבוצות (גם קבוצת ההזמנות SUPPLIER_GROUP) נופלות כבר בבדיקת @c.us. אלי נוסף 7.10.2026: הוא עונה במקום עידן, לא ליד
   // רותם ורלי מתכתבים בין שני הקווים: זו לא שיחה עם לקוח
   if (!/^\d{11,13}@c\.us$/.test(chatId) || phone === IDAN_WA || phone === ELI_WA || phone === OPS_WA || phone === CUSTOMER_WA) return NextResponse.json({ ok: true, skip: "chat" });
-  if (restDay(nowDate) && !dry) return NextResponse.json({ ok: true, skip: "shabbat" });
+  const recordOnly = hookLine === "customer" && !CUSTOMER_LINE_REPLIES; // רישום בטבלה הוא לא הודעה ללקוח: גם בשבת
+  if (restDay(nowDate) && !dry && !recordOnly) return NextResponse.json({ ok: true, skip: "shabbat" });
 
   if (!dry && !kick) await new Promise((r) => setTimeout(r, DEBOUNCE_MS));
   // getChatHistory של GreenAPI נכשל לפעמים (502 / רשימה ריקה) לשיחה שבטוח יש בה הודעות: עד 3 ניסיונות
@@ -233,6 +238,26 @@ export async function POST(req: NextRequest) {
   if (!history?.length) return NextResponse.json({ ok: true, skip: "no history" });
   const msgs = [...history].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
   const human = HUMAN[line];
+
+  // הקו של רלי בלי בוט: רלי עונה מהטלפון. כאן רק נרשם בטבלה שלה מי כתב ומה (שורה חדשה לפונה חדש, גם מי שכתב ישירות
+  // למספר שבמודעות), בלי Gemini ובלי תשובה. גם kick (מלאי, פולואפ אחרי הצעה) לא שולח כלום בקו הזה.
+  if (line === "customer" && !CUSTOMER_LINE_REPLIES) {
+    if (dry || kick) return NextResponse.json({ ok: true, skip: "rali line: no bot replies" });
+    const lastMsg = msgs[msgs.length - 1];
+    if (lastMsg.type !== "incoming" || (n.idMessage && lastMsg.idMessage !== n.idMessage)) return NextResponse.json({ ok: true, skip: "rali line: not the latest message" });
+    const first = leadStart(msgs, line);
+    const pre = first?.type === "incoming" ? first : undefined;
+    const said = textOf(lastMsg) || (lastMsg.typeMessage === "audioMessage" ? "[הודעה קולית]" : lastMsg.typeMessage === "imageMessage" ? "[תמונה]" : lastMsg.typeMessage ? `[${lastMsg.typeMessage}]` : "");
+    const ok = await sheetUpsert({
+      phone,
+      name: n.senderData?.senderName,
+      source: first?.type === "outgoing" ? undefined : `ווצאפ: ${pre ? siteSourceOf(textOf(pre)) : "ישירות למספר של רלי"}`,
+      ref: pre ? waRefOf(textOf(pre)) || undefined : undefined,
+      status: "💬 הלקוח כתב: רלי עונה מהטלפון",
+      lastMessage: said.slice(0, 300),
+    }, Math.min(8000, Math.max(1000, maxDuration * 1000 - (Date.now() - t0) - 2000)));
+    return NextResponse.json({ ok: true, skip: "rali line: no bot replies", recorded: ok });
+  }
 
   // 1. רק לידים מהאתר של Site-Control (או שיחה שפתחנו בהודעת פתיחה)
   const start = leadStart(msgs, line);

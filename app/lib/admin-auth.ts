@@ -12,5 +12,8 @@ export function adminAuthorized(req: NextRequest): boolean {
   const keys: string[] = [];
   if (process.env.RESEND_API_KEY) keys.push(sha(`to-rotem:${process.env.RESEND_API_KEY}`));
   if (process.env.SC_ADMIN_KEY) keys.push(sha(`sc-admin:${process.env.SC_ADMIN_KEY}`));
-  return keys.some((want) => got.length === want.length && timingSafeEqual(Buffer.from(got), Buffer.from(want)));
+  // השוואה לפי בתים (לא לפי אורך המחרוזת): כותרת עם תו לא-ASCII הייתה מפילה את timingSafeEqual
+  if (!/^[0-9a-f]{64}$/.test(got)) return false;
+  const g = Buffer.from(got);
+  return keys.some((want) => { const w = Buffer.from(want); return g.length === w.length && timingSafeEqual(g, w); });
 }

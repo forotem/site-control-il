@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { productBySlug, productFacts, productsMentioned } from "../../data/store-knowledge";
 import { productName } from "../../data/store-catalog";
 import { israeliMobile, notifyTeam } from "../../lib/store-notify";
-import { sendOpening, ipAllowsOpening, noteIpOpening } from "../../lib/opening";
+import { sendOpening } from "../../lib/opening";
 import { sheetUpsert } from "../../lib/leads-sheet";
 import { attributionLabel } from "../../lib/attribution-label";
 import { ASSISTANT_NAME, SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../lib/tal";
@@ -86,23 +86,20 @@ export async function POST(req: NextRequest) {
       tasks.push(notifyTeam("שאלה מהצ'אט בחנות שצריך תשובה מהצוות", `שאלה: ${data.escalate}\n${body.page ? `דף: /store/${body.page}\n` : ""}${leadCaptured ? `לקוח: ${data.lead_name || "-"} ${data.lead_phone}\n` : "הלקוח עדיין לא השאיר טלפון.\n"}\nשיחה:\n${transcript}`));
     }
     if (leadCaptured) {
-      // 20.10.2026: טל ממשיך עם הלקוח בווצאפ מהקו של רלי (הודעת פתיחה), והליד נרשם בטבלה של רלי. הפתיחה רק בתור שבו
-      // הטלפון הופיע לראשונה (בתורות הבאים הטלפון כבר בהודעה קודמת של הלקוח): כך גם לא דורסים בטבלה את תוצאת הפתיחה.
+      // 20.10.2026: טל ממשיך עם הלקוח בווצאפ מהקו של רלי (הודעת פתיחה), והליד נרשם בטבלה של רלי. sendOpening רץ בכל
+      // תור עם טלפון ומדלג לבד (duplicate) כשכבר יש שיחה או פתיחה בדרך; אז לא דורסים בטבלה את תוצאת הפתיחה הקודמת.
       // בהודעה עצמה אין טקסט מהשיחה (הצ'אט פתוח לכל אחד); הסיכום רק בוחר את שאלת הבירור.
-      const digits = data.lead_phone.replace(/\D/g, "").slice(-9);
-      const firstTime = !messages.slice(0, -1).some((m) => m.role === "user" && m.content.replace(/\D/g, "").includes(digits));
       tasks.push((async () => {
-        const opening = firstTime && ipAllowsOpening(ip)
-          ? await sendOpening({ phone: data.lead_phone, name: data.lead_name, source: "צ'אט באתר", needs: [data.lead_summary] })
-          : null;
-        if (opening?.sent) noteIpOpening(ip);
+        const opening = await sendOpening({ phone: data.lead_phone, source: "צ'אט באתר", needs: [data.lead_summary] }, { ip, deadlineMs: t0 + maxDuration * 1000 - 4000 })
+          .catch((e) => ({ sent: false, duplicate: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` }));
+        const fresh = !opening.duplicate;
         await sheetUpsert({
           phone: israeliMobile(data.lead_phone) || data.lead_phone, name: data.lead_name || undefined,
           source: `הצ'אט בחנות (${attributionLabel(body.attribution)})`, need: data.lead_summary || undefined,
           tal: data.lead_summary || undefined, leadType: `${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}`,
           page: body.page ? `/store/${body.page}` : undefined,
-          ...(opening ? { opening: opening.status } : firstTime ? { opening: "לא נשלחה: יותר מדי פניות מאותה כתובת" } : {}),
-          status: data.intent === "ready" ? "🟢 מוכן לקנות" : opening?.sent ? "טל בשיחה" : firstTime ? "חדש: לחזור ללקוח" : undefined,
+          ...(fresh ? { opening: opening.status } : {}),
+          status: data.intent === "ready" ? "🟢 מוכן לקנות" : opening.sent ? "טל בשיחה" : fresh ? "חדש: לחזור ללקוח" : undefined,
         }, Math.max(1000, maxDuration * 1000 - (Date.now() - t0) - 2500));
       })());
       tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nאפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));

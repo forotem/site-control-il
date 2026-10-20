@@ -244,10 +244,13 @@ export async function POST(req: NextRequest) {
   const humanMsgs = msgs.filter((m) => m.type === "outgoing" && m.sendByApi === false);
   const humanToday = humanMsgs.some((m) => dayIL(new Date((m.timestamp || 0) * 1000)) === dayIL(nowDate));
   const humanSinceHandBack = looked ? humanMsgs.some((m) => (m.timestamp || 0) * 1000 > looked.at) : false;
-  const humanHolds = line === "customer" && !stockResult && (
+  // "רלי" חוסם הכול (גם תשובת מלאי); חריג המלאי רק לכללי "רלי כתבה היום"
+  const humanHolds = line === "customer" && (
     handler === "רלי"
-    || (handler === "טל" ? humanSinceHandBack && humanToday : humanToday)
-    || (!looked && humanMsgs.length > 0)
+    || (!stockResult && (
+      (handler === "טל" ? humanSinceHandBack && humanToday : humanToday)
+      || (!looked && humanMsgs.length > 0)
+    ))
   );
   if (!dry && humanHolds) return NextResponse.json({ ok: true, skip: handler === "רלי" ? "sheet: rali handles" : !looked ? "sheet unavailable, rali was in this chat" : "rali took the chat today" });
   // 5. תקרה יומית
@@ -266,11 +269,14 @@ export async function POST(req: NextRequest) {
     if (prev && prev.role === role) prev.content = `${prev.content}\n${said}`.slice(-1500);
     else conv.push({ role, content: said.slice(0, 1500) });
   }
+  // שיחה שנפתחה בהודעת פתיחה: מה שכתבנו לפני תשובת הלקוח (הפתיחה, וגם מה שרלי כתבה מהטלפון) נשאר, אחרי תור "לקוח"
+  // סינתטי (Gemini דורש שהשיחה תתחיל בלקוח). בלי זה טל רואה רק "כניסה וחניה, יש" ולא יודע על מה (בדיקה 20.10.2026)
+  const LEFT_DETAILS = "(השאיר פרטים באתר / בצ'אט / ברשת חברתית)";
+  if (opened && conv.length && conv[0].role === "assistant") conv.unshift({ role: "user", content: LEFT_DETAILS });
   while (conv.length && conv[0].role !== "user") conv.shift();
-  // שיחה שנפתחה בהודעת פתיחה: ההודעה הזאת (מה ביקש, מה שאלנו) נשארת לפני תשובת הלקוח, אחרי תור "לקוח" סינתטי
-  // (Gemini דורש שהשיחה תתחיל בלקוח). בלי זה טל רואה רק "כניסה וחניה, יש" ולא יודע על מה (בדיקה 20.10.2026)
+  // הפתיחה ישנה מ-20 ההודעות האחרונות: מחזירים אותה לראש השיחה
   if (opened && !conv.some((m) => m.role === "assistant" && m.content.includes(textOf(opened).slice(0, 40)))) {
-    conv.unshift({ role: "user", content: "(השאיר פרטים באתר / בצ'אט / ברשת חברתית)" }, { role: "assistant", content: textOf(opened).slice(0, 1500) });
+    conv.unshift({ role: "user", content: LEFT_DETAILS }, { role: "assistant", content: textOf(opened).slice(0, 1500) });
   }
   if (proactive && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: stockResult ? "(ממתין לתשובה על המלאי)" : "(הלקוח לא ענה מאז ההודעה האחרונה שלנו)" });
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });

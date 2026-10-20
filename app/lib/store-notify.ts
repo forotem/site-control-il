@@ -52,15 +52,15 @@ export const greenCreds = (line: Line = "ops"): Creds | null => (line === "custo
 export const lineNumber = (line: Line) => (greenCreds(line)?.line === "customer" ? CUSTOMER_WA : OPS_WA);
 
 /** קריאה ל-GreenAPI עם הפרטים שב-Vercel. null אם לא מוגדר או נכשל. query: פרמטרים ל-GET (למשל minutes). line: איזה קו */
-export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown, query?: Record<string, string | number>, line: Line = "ops"): Promise<T | null> {
+export async function greenApi<T = Record<string, unknown>>(method: string, body?: unknown, query?: Record<string, string | number>, line: Line = "ops", timeoutMs = 15_000): Promise<T | null> {
   const c = greenCreds(line);
   if (!c) return null;
   try {
     const qs = query ? `?${new URLSearchParams(Object.entries(query).map(([k, v]) => [k, String(v)]))}` : "";
     // cache: "no-store": בלי זה Next.js שומר תשובות GET (כמו lastIncomingMessages) ומחזיר אותן ישנות.
     // כך נוצר באג ב-2.10: ליד חדש מהאתר לא נקלט לטבלה במשך שעתיים.
-    // 15 שניות לכל קריאה: בלי זה GreenAPI תקוע מחזיק את הנתיב עד maxDuration (והלקוח מאבד את התשובה)
-    const signal = AbortSignal.timeout(15_000);
+    // 15 שניות לכל קריאה (או פחות, לפי התקציב של הנתיב): בלי זה GreenAPI תקוע מחזיק את הנתיב עד maxDuration
+    const signal = AbortSignal.timeout(timeoutMs);
     const res = await fetch(`${c.api}/waInstance${c.id}/${method}/${c.token}${qs}`, body === undefined ? { cache: "no-store", signal } : {
       cache: "no-store",
       signal,

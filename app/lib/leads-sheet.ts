@@ -39,6 +39,16 @@ const cfg = () => {
 export const sheetReady = () => Boolean(cfg());
 
 async function call<T>(payload: Record<string, unknown>, timeoutMs: number): Promise<T | null> {
+  // ניסיון שני אחד כשגוגל מחזיר דף שגיאה במקום JSON (קורה ב-Web App מדי פעם, גם אחרי שהפעולה רצה). בטוח: upsert לפי
+  // טלפון, handler קריאה בלבד, reserve/release עם rid
+  const deadline = Date.now() + timeoutMs;
+  const first = await callOnce<T>(payload, timeoutMs);
+  if (first !== null) return first;
+  const left = deadline - Date.now();
+  return left > 1500 ? callOnce<T>(payload, left) : null;
+}
+
+async function callOnce<T>(payload: Record<string, unknown>, timeoutMs: number): Promise<T | null> {
   const c = cfg();
   if (!c) return null;
   try {
@@ -52,7 +62,9 @@ async function call<T>(payload: Record<string, unknown>, timeoutMs: number): Pro
       signal: AbortSignal.timeout(timeoutMs),
     });
     if (!res.ok) { console.warn("leads-sheet HTTP", res.status); return null; }
-    return (await res.json()) as T;
+    const j = (await res.json().catch(() => null)) as (T & { error?: string }) | null;
+    if (!j || j.error) { console.warn("leads-sheet", payload.action, j?.error || "not json"); return null; }
+    return j;
   } catch (e) {
     console.warn("leads-sheet failed", e instanceof Error ? e.message : e);
     return null;
@@ -66,6 +78,20 @@ const tidy = (row: LeadRow): LeadRow =>
 export async function sheetUpsert(row: LeadRow, timeoutMs = 6000): Promise<boolean> {
   const r = await call<{ ok?: boolean }>({ action: "upsert", row: tidy(row) }, timeoutMs);
   return Boolean(r?.ok);
+}
+
+/** תפיסת מקום בתקרת הודעות הפתיחה, נעולה ב-Apps Script (LockService) ומשותפת לכל המופעים של Vercel.
+ *  ok=false + reason ("day" / "ip") = אין מקום. null = הטבלה לא ענתה */
+export type OpeningReservation = { ok: boolean; reason?: string; day?: string; hour?: string; ip?: string; rid?: string };
+export async function sheetReserveOpening(o: { ip: string; perDay: number; perIpHour: number }, timeoutMs = 6000): Promise<OpeningReservation | null> {
+  // rid: ניסיון חוזר (call) לא סופר פעמיים
+  const rid = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+  const r = await call<OpeningReservation>({ action: "reserve", rid, ...o }, timeoutMs);
+  return r && typeof r.ok === "boolean" ? { ...r, rid } : null;
+}
+/** החזרת המקום כשהפתיחה לא נשלחה בסוף (פעם אחת לפי rid) */
+export async function sheetReleaseOpening(r: OpeningReservation, timeoutMs = 3000): Promise<void> {
+  await call({ action: "release", rid: r.rid, day: r.day, hour: r.hour, ip: r.ip }, timeoutMs);
 }
 
 /** מי מטפל בליד לפי העמודה "מי מטפל" שרלי שולטת בה: "רלי" = טל לא עונה; "טל" = טל עונה גם אחרי שרלי כתבה, עד שהיא

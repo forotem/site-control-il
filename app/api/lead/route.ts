@@ -4,7 +4,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
-import { sendOpening, ipAllowsOpening, noteIpOpening } from "../../lib/opening";
+import { sendOpening } from "../../lib/opening";
 import { sheetUpsert } from "../../lib/leads-sheet";
 
 export const runtime = "nodejs";
@@ -42,18 +42,16 @@ export async function POST(req: NextRequest) {
     `מקור: ${attributionLabel(body.attribution)}`,
   ].filter(Boolean).join("\n");
   const t0 = Date.now();
-  const sent = await notifyTeam(`${FORMS[form]} ${leadId}: ${name}`, text, email ? { replyTo: email } : undefined);
-  // הודעת פתיחה מטל ושורה בטבלה של רלי. כישלון כאן לא מפיל את הטופס: ההתראה לצוות כבר יצאה.
-  // לפתיחה עוברים רק ערכים גולמיים מהטופס; opening.ts מציג רק ערכים מרשימה סגורה
+  // הודעת פתיחה מטל ושורה בטבלה של רלי, במקביל להתראה לצוות. כישלון בפתיחה או בטבלה לא מפיל את הטופס.
+  // לפתיחה עוברים רק ערכים גולמיים מהטופס (opening.ts מציג רק ערכים מרשימה סגורה, בלי השם), עם כתובת ה-IP למגבלת הקצב
   const needs = [line(body.need, 60), line(body.kind, 40), line(body.category, 30)].filter(Boolean);
   const need = needs.join(", ");
   const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
-  // מגבלת קצב (בדיקה 20.10.2026): בלי מגבלה אפשר לגרום לקו של רלי לכתוב למספרים זרים ולגמור את התקרה היומית
-  const opening = !ipAllowsOpening(ip, t0)
-    ? { sent: false, status: "לא נשלחה: יותר מדי פניות מאותה כתובת בשעה האחרונה (לבדוק ולסמן ידנית)" }
-    : await sendOpening({ phone, name, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", needs, ref: leadId, callback: form === "callback" })
-      .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` }));
-  if (opening.sent) noteIpOpening(ip, t0);
+  const [sent, opening] = await Promise.all([
+    notifyTeam(`${FORMS[form]} ${leadId}: ${name}`, text, email ? { replyTo: email } : undefined),
+    sendOpening({ phone, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", needs, ref: leadId, callback: form === "callback" }, { ip, deadlineMs: t0 + maxDuration * 1000 - 10_000 })
+      .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` })),
+  ]);
   await sheetUpsert({
     phone, name, email: email || undefined, ref: leadId,
     source: `${FORMS[form]}${body.attribution ? ` (${attributionLabel(body.attribution)})` : ""}`,

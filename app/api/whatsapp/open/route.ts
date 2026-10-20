@@ -21,13 +21,14 @@ export async function POST(req: NextRequest) {
   let body: Record<string, unknown>;
   try { body = JSON.parse(await req.text()); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   if (!authorized(body.secret)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // שורה שרלי הזינה בטבלה: השם שלה אמין (רק בעברית, ראו firstName). בלי ip: אין מגבלת IP, רק התקרה היומית
   const r = await sendOpening({
     phone: clean(body.phone, 20),
-    name: clean(body.name, 60),
+    trustedName: clean(body.name, 60),
     source: clean(body.source, 200) || undefined,
     needs: [clean(body.need, 200)],
     ref: clean(body.ref, 40),
     callback: /שיחה חוזרת/.test(clean(body.source, 200)),
-  });
+  }, { deadlineMs: Date.now() + maxDuration * 1000 - 5000 });
   return NextResponse.json({ ok: r.sent, status: r.status });
 }

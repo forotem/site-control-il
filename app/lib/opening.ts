@@ -5,23 +5,25 @@
 //
 // מספר חדש ששולח הודעות לאנשים שלא כתבו לו קודם נחסם בקלות בווצאפ. לכן:
 // - רק מהקו של רלי, ורק כשהוא מוגדר בנפרד (לא מהמספר של רותם);
-// - תקרה יומית (OPENINGS_PER_DAY, ברירת מחדל 10) לשבועות הראשונים, נספרת מההודעות היוצאות של היממה האחרונה;
+// - תקרה יומית (OPENINGS_PER_DAY, ברירת מחדל 10) ועד 3 פתיחות בשעה מאותה כתובת IP. הספירה המחייבת משותפת לכל
+//   המופעים של Vercel ונעולה (Apps Script של הטבלה, פעולת reserve), כדי שגל בקשות במקביל לא יעבור אותה;
 // - הודעה אחת, קצרה, בלי קישורים;
 // - לא בשבת ובחג, ולא למי שכבר מדבר איתנו בווצאפ (שיחה עם הודעה ב-3 הימים האחרונים).
-// אבטחה (בדיקה 20.10.2026): הטופס באתר פתוח לכל אחד, אז אף מילה שהלקוח הקליד לא נכנסת להודעה. מה שהוא ביקש ומאיפה
-// הגיע מוצגים רק מתוך רשימות סגורות (NEED_LABELS, SOURCES), אחרת לא מוצגים. אחרת אפשר היה לשלוח מהמספר של רלי כל טקסט
-// לכל מספר.
+// אבטחה (בדיקות 20.10.2026): הטופס והצ'אט פתוחים לכל אחד, אז אף מילה שהלקוח הקליד לא נכנסת להודעה: לא שם, לא בקשה.
+// מה ביקש ומאיפה הגיע מוצגים רק מתוך רשימות סגורות (NEED_LABELS, SOURCES). שם פרטי רק כשרלי הזינה אותו בטבלה.
 import { customerLineReady, greenApi, israeliMobile, sendWhatsAppId } from "./store-notify";
 import { restDay } from "./il-time";
+import { sheetReady, sheetReserveOpening, sheetReleaseOpening } from "./leads-sheet";
 
 /** מופיע בכל הודעת פתיחה */
 export const OPEN_MARK = "קיבלנו את הפנייה שלך";
 /** אותו סימן הצגה עצמית כמו בבוט (INTRO_MARK שם): טל לא יציג את עצמו שוב כשהלקוח עונה */
 export const INTRO_MARK = "העוזר הדיגיטלי של Site-Control";
 const PER_DAY = () => Math.max(0, Number(process.env.OPENINGS_PER_DAY ?? 10) || 0);
+const PER_IP_HOUR = 3;
 
-type H = { timestamp?: number; type?: string; sendByApi?: boolean; textMessage?: string; extendedTextMessage?: { text?: string } };
-const textOf = (m: H) => m.textMessage || m.extendedTextMessage?.text || "";
+type H = { timestamp?: number; type?: string; sendByApi?: unknown; textMessage?: unknown; extendedTextMessage?: { text?: string } };
+const textOf = (m: H) => String(m.textMessage || m.extendedTextMessage?.text || "");
 
 /** הודעת פתיחה שלנו (יוצאת, מה-API, עם שתי השורות הקבועות). "קיבלנו את הפנייה שלך" לבד הוא משפט שגם רלי כותבת */
 export function isOpeningMessage(m: H): boolean {
@@ -29,8 +31,9 @@ export function isOpeningMessage(m: H): boolean {
   return m.type === "outgoing" && m.sendByApi !== false && t.includes(OPEN_MARK) && t.includes(INTRO_MARK);
 }
 
-/** מה הלקוח ביקש, רק מתוך הערכים הקבועים של הטפסים באתר (InstallForm, FloatingCTA, OfferCalculator) ושמות הקטגוריות */
-const NEED_LABELS: Record<string, string> = Object.fromEntries([
+/** מה הלקוח ביקש, רק מתוך הערכים הקבועים של הטפסים באתר (InstallForm, FloatingCTA, OfferCalculator) ושמות הקטגוריות.
+ *  Map ולא אובייקט רגיל: "constructor" / "__proto__" לא מחזירים פנימיות של JavaScript (בדיקה 20.10.2026) */
+const NEED_LABELS = new Map<string, string>([
   // InstallForm: needs, kinds, topics
   "מצלמות אבטחה", "אינטרקום", "בקרת כניסה / קודן", "שדרוג מערכת קיימת", "לא בטוח, צריך ייעוץ",
   "בית פרטי / וילה", "דירה", "בניין משותף", "עסק / משרד / חנות", "מחסן / אתר / שטח",
@@ -39,45 +42,48 @@ const NEED_LABELS: Record<string, string> = Object.fromEntries([
   "מצלמות לבית", "בלי חשמל ואינטרנט (סולארי 4G)", "אינטרקום לבית או לבניין", "התקנה",
   // OfferCalculator
   "סיור באתר בנייה (מצלמות סולאריות)",
-].map((x) => [x, x]).concat([
+].map((x): [string, string] => [x, x]).concat([
   // דפי קטגוריה (category slug)
   ["intercom", "אינטרקום ובקרת כניסה"], ["ip", "מצלמות IP"], ["recorders", "מקליטים"], ["analog", "שדרוג מערכת קיימת"],
   ["kits", "ערכת מצלמות"], ["wifi", "מצלמות Wi-Fi"], ["solar", "מצלמות סולאריות 4G"],
 ]));
 
-/** מאיפה הגיע, רק מרשימה סגורה ("קיבלנו את הפנייה שלך ב...") */
+/** מאיפה הגיע, רק מרשימה סגורה ("קיבלנו את הפנייה שלך ב..."). הטופס באתר מזוהה רק לפי הטקסטים המדויקים שהאתר כותב,
+ *  לא לפי המילה "ליד" (רלי כותבת "ליד מהפייס") */
 const SOURCES: [RegExp, string][] = [
-  [/פייסבוק|facebook|\bfb\b|מטא|meta/i, "פייסבוק"],
-  [/אינסטגרם|instagram|\big\b/i, "אינסטגרם"],
+  [/פייסבוק|פייס|facebook|\bfb\b|\bmeta\b|מטא/i, "פייסבוק"],
+  [/אינסטגרם|אינסטה|instagram|\big\b/i, "אינסטגרם"],
   [/טיקטוק|tiktok/i, "טיקטוק"],
-  [/שיחה חוזרת/, "טופס שיחה חוזרת באתר"],
-  [/צ'?אט|chat/i, "צ'אט באתר"],
-  [/טופס|ליד|form|פנייה מיצירת קשר/i, "טופס באתר"],
+  [/^\s*(📞\s*)?(בקשת שיחה חוזרת|טופס שיחה חוזרת באתר)/, "טופס שיחה חוזרת באתר"],
+  [/^\s*(הצ'אט בחנות|צ'אט באתר)/, "צ'אט באתר"],
+  [/^\s*(ליד התקנה|ליד מדף קטגוריה|ליד מבצע|פנייה מיצירת קשר|טופס באתר)\s*$/, "טופס באתר"],
 ];
 export function canonicalSource(s?: string): string | undefined {
   // בלי הסוגריים: בשורות שהאתר כותב לטבלה הם מקור הפרסום ("ליד התקנה (פייסבוק / ...)"), והלקוח מילא טופס באתר
-  const t = String(s || "").replace(/\(.*$/s, "");
+  const t = String(s || "").replace(/\(.*$/s, "").trim();
   for (const [re, label] of SOURCES) if (re.test(t)) return label;
   return undefined;
 }
 
 export type OpeningLead = {
   phone: string;
-  name?: string;
+  /** שם פרטי: רק כשרלי הזינה אותו בטבלה. מהטופס והצ'אט לא נכנס להודעה */
+  trustedName?: string;
   /** מאיפה (נבדק מול SOURCES) */
   source?: string;
-  /** מה ביקש: ערכים גולמיים מהטופס / מהטבלה. מוצגים רק אם הם ב-NEED_LABELS; שאלת הבירור נבחרת לפי מילות מפתח */
+  /** מה ביקש: ערכים גולמיים. מוצגים רק אם הם ב-NEED_LABELS; שאלת הבירור נבחרת לפי מילות מפתח */
   needs?: string[];
   ref?: string;
   /** ביקש שיחה חוזרת: רלי מתקשרת, וההודעה רק מאשרת ומאפשרת לכתוב */
   callback?: boolean;
 };
-export type OpeningResult = { sent: boolean; status: string; idMessage?: string };
+/** duplicate: כבר בשיחה / פתיחה כבר בדרך. אז לא דורסים בטבלה את תוצאת הפתיחה הקודמת */
+export type OpeningResult = { sent: boolean; status: string; idMessage?: string; duplicate?: boolean };
 
-/** שם פרטי שנראה כמו שם אמיתי (לא "לקוח", לא מספר) */
+/** שם פרטי בעברית בלבד (שרלי הזינה), בלי מקפים ובלי אותיות לטיניות */
 function firstName(name?: string): string {
   const f = String(name || "").trim().split(/\s+/)[0] || "";
-  return /^[\p{L}'"-]{2,15}$/u.test(f) && !/^(לקוח|לקוחה|test|בדיקה)$/i.test(f) ? f : "";
+  return /^[א-ת][א-ת'"׳״]{1,11}$/.test(f) && !/^(לקוח|לקוחה|בדיקה)$/.test(f) ? f : "";
 }
 
 /** שאלת בירור אחת לפי מה שביקש, כדי שקל לענות. הטקסט הגולמי רק בוחר שאלה קבועה, הוא לא נשלח */
@@ -92,9 +98,9 @@ function questionFor(need: string): string {
 }
 
 export function openingText(lead: OpeningLead): string {
-  const name = firstName(lead.name);
+  const name = firstName(lead.trustedName);
   const raw = (lead.needs || []).map((x) => String(x || "").trim()).filter(Boolean);
-  const shown = [...new Set(raw.map((x) => NEED_LABELS[x]).filter(Boolean))].slice(0, 2).join(", ");
+  const shown = [...new Set(raw.map((x) => NEED_LABELS.get(x)).filter((x): x is string => typeof x === "string"))].slice(0, 2).join(", ");
   const source = canonicalSource(lead.source);
   const ref = /^[A-Za-z0-9-]{3,24}$/.test(lead.ref || "") ? lead.ref : "";
   return [
@@ -109,44 +115,73 @@ export function openingText(lead: OpeningLead): string {
   ].filter(Boolean).join("\n");
 }
 
-// מגבלת קצב לפי כתובת IP: הטופס והצ'אט פתוחים לכל אחד. עד 3 פתיחות בשעה מאותה כתובת; הליד עצמו תמיד נקלט.
-// זיכרון של המופע (כמו store-order/verify), מספיק נגד ניסיון פשוט לשלוח הרבה פתיחות ממקום אחד.
-const openingsByIp = new Map<string, number[]>();
-const OPENINGS_PER_IP_HOUR = 3;
-export function ipAllowsOpening(ip: string, now = Date.now()): boolean {
-  return (openingsByIp.get(ip) || []).filter((t) => now - t < 3600_000).length < OPENINGS_PER_IP_HOUR;
-}
-export function noteIpOpening(ip: string, now = Date.now()): void {
-  openingsByIp.set(ip, [...(openingsByIp.get(ip) || []).filter((t) => now - t < 3600_000), now]);
+/** מפתח IP למגבלה: IPv6 לפי /64 (כתובת אחת מתחלפת בקלות בתוך הטווח) */
+export function ipKey(ip: string): string {
+  const t = String(ip || "").trim();
+  return t.includes(":") ? t.split(":").slice(0, 4).join(":") : t;
 }
 
-// פתיחה אחת לטלפון גם כששתי בקשות מגיעות כמעט יחד (שליחה כפולה של טופס, שני תורות בצ'אט). זיכרון של המופע בלבד;
-// הגנה מלאה נותנת בדיקת ההיסטוריה בווצאפ (שכבר כוללת את הפתיחה הקודמת)
+// שכבה מקומית (בתוך מופע אחד), סינכרונית: נתפסת לפני כל await, כך ששתי בקשות באותו מופע לא עוברות יחד
 const inFlight = new Map<string, number>();
+const localByIp = new Map<string, number[]>();
+let pending = 0;
 
-/** שולח הודעת פתיחה מהקו של רלי אם מותר. status בעברית, לטבלה */
-export async function sendOpening(lead: OpeningLead, now = new Date()): Promise<OpeningResult> {
+/** שולח הודעת פתיחה מהקו של רלי אם מותר. status בעברית, לטבלה.
+ *  ip: כתובת הפונה (טופס / צ'אט); בלי ip (שורה שרלי סימנה) אין מגבלת IP, רק התקרה היומית.
+ *  deadlineMs: זמן (Date.now) שאחריו כבר לא מתחילים, כדי לא לעבור את maxDuration של הנתיב */
+export async function sendOpening(lead: OpeningLead, opts: { ip?: string; deadlineMs?: number; now?: Date } = {}): Promise<OpeningResult> {
+  const now = opts.now || new Date();
   const mobile = israeliMobile(lead.phone);
   if (!mobile) return { sent: false, status: "לא נשלחה: לא מספר נייד" };
   if (!customerLineReady()) return { sent: false, status: "לא נשלחה: הקו של רלי עוד לא מחובר" };
   if (restDay(now)) return { sent: false, status: "לא נשלחה: שבת או חג (לסמן שוב אחרי)" };
   const t = now.getTime();
-  if (t - (inFlight.get(mobile) || 0) < 10 * 60 * 1000) return { sent: false, status: "לא נשלחה: כבר נשלחה פתיחה לפני רגע" };
+  const timeLeft = () => (opts.deadlineMs ? opts.deadlineMs - Date.now() : 30_000);
+  const callTimeout = () => Math.max(1000, Math.min(8000, timeLeft() - 1500));
+  if (timeLeft() < 5000) return { sent: false, status: "לא נשלחה: לא נשאר זמן (לסמן שוב)" };
+  if (t - (inFlight.get(mobile) || 0) < 10 * 60 * 1000) return { sent: false, duplicate: true, status: "לא נשלחה: פתיחה למספר הזה כבר יצאה או בדרך (לפני פחות מ-10 דקות)" };
+  const ip = opts.ip ? ipKey(opts.ip) : "";
+  const ipHits = ip ? (localByIp.get(ip) || []).filter((x) => t - x < 3600_000) : [];
+  if (ip && ipHits.length >= PER_IP_HOUR) return { sent: false, status: "לא נשלחה: יותר מדי פניות מאותה כתובת בשעה האחרונה (לבדוק ולסמן ידנית)" };
+  // תפיסה מקומית לפני כל await
   inFlight.set(mobile, t);
+  if (ip) localByIp.set(ip, [...ipHits, t]);
+  pending++;
+  let reservation: Awaited<ReturnType<typeof sheetReserveOpening>> = null;
+  let sent = false;
+  let keepInFlight = false;
   try {
-    const history = await greenApi<H[]>("getChatHistory", { chatId: `${mobile}@c.us`, count: 10 }, undefined, "customer");
+    const history = await greenApi<H[]>("getChatHistory", { chatId: `${mobile}@c.us`, count: 10 }, undefined, "customer", callTimeout());
     // בלי היסטוריה (שגיאה ב-GreenAPI) לא שולחים: עדיף לפספס פתיחה מאשר לכתוב למי שכבר מדבר איתנו
-    if (!history) { inFlight.delete(mobile); return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את השיחה בווצאפ (לסמן שוב)" }; }
-    if (history.some((m) => t / 1000 - (m.timestamp || 0) < 3 * 24 * 3600)) return { sent: false, status: "לא נשלחה: כבר בשיחה בווצאפ" };
-    const out = await greenApi<H[]>("lastOutgoingMessages", undefined, { minutes: 1440 }, "customer");
-    if (!out) { inFlight.delete(mobile); return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את התקרה היומית (לסמן שוב)" }; }
-    const today = out.filter(isOpeningMessage).length;
-    if (today >= PER_DAY()) { inFlight.delete(mobile); return { sent: false, status: `לא נשלחה: הגענו לתקרה של ${PER_DAY()} פתיחות ביממה (לסמן שוב מחר)` }; }
+    if (!history) return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את השיחה בווצאפ (לסמן שוב)" };
+    if (history.some((m) => t / 1000 - (m.timestamp || 0) < 3 * 24 * 3600)) return { sent: false, duplicate: true, status: "לא נשלחה: כבר בשיחה בווצאפ" };
+    // התקרה המשותפת (נעולה ב-Apps Script): יום + IP. כשהטבלה מחוברת ולא ענתה, לא שולחים (עדיף לפספס מאשר לפרוץ את התקרה)
+    if (sheetReady()) {
+      reservation = await sheetReserveOpening({ ip, perDay: PER_DAY(), perIpHour: PER_IP_HOUR }, callTimeout());
+      if (!reservation) return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את התקרה היומית (לסמן שוב)" };
+      if (!reservation.ok) {
+        const why = reservation.reason === "ip" ? "יותר מדי פניות מאותה כתובת בשעה האחרונה (לבדוק ולסמן ידנית)" : `הגענו לתקרה של ${PER_DAY()} פתיחות ביום (לסמן שוב מחר)`;
+        reservation = null;
+        return { sent: false, status: `לא נשלחה: ${why}` };
+      }
+    }
+    // גיבוי: ההודעות היוצאות של היממה האחרונה בקו של רלי, פלוס מה שבדרך במופע הזה
+    const out = await greenApi<H[]>("lastOutgoingMessages", undefined, { minutes: 1440 }, "customer", callTimeout());
+    if (!out) return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את התקרה היומית (לסמן שוב)" };
+    if (out.filter(isOpeningMessage).length + pending - 1 >= PER_DAY()) return { sent: false, status: `לא נשלחה: הגענו לתקרה של ${PER_DAY()} פתיחות ביממה (לסמן שוב מחר)` };
+    if (timeLeft() < 2500) return { sent: false, status: "לא נשלחה: לא נשאר זמן (לסמן שוב)" };
     const id = await sendWhatsAppId(mobile, openingText(lead), "customer");
-    if (!id) inFlight.delete(mobile);
+    sent = Boolean(id);
+    keepInFlight = sent;
     return id ? { sent: true, status: "פתיחה נשלחה, טל בשיחה", idMessage: id } : { sent: false, status: "לא נשלחה: שגיאה בווצאפ" };
   } catch (e) {
-    inFlight.delete(mobile);
     return { sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message.slice(0, 80) : "שגיאה"}` };
+  } finally {
+    pending--;
+    if (!keepInFlight) inFlight.delete(mobile);
+    if (!sent) {
+      if (ip) { const l = localByIp.get(ip) || []; const i = l.lastIndexOf(t); if (i >= 0) l.splice(i, 1); }
+      if (reservation?.ok) await sheetReleaseOpening(reservation, 3000).catch(() => undefined);
+    }
   }
 }

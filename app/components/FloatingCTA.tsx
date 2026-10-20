@@ -87,7 +87,7 @@ export function FloatingCTA() {
               <button type="button" className="cta-callback-btn" onClick={() => setCallback(true)}>📞 מעדיפים שנתקשר אליכם? השאירו מספר</button>
             </>
           ) : state === 'done' ? (
-            <p className="cta-sub">תודה! רותם יחזור אליכם בהקדם, בשעות הפעילות (א&apos;-ה&apos; 08:00-18:00, ו&apos; עד 14:00).</p>
+            <p className="cta-sub">תודה! רלי מהצוות תחזור אליכם בהקדם מ-050-8277907, בשעות הפעילות (א&apos;-ה&apos; 08:00-18:00, ו&apos; עד 14:00).</p>
           ) : (
             <form className="cta-form" onSubmit={sendCallback}>
               <label>שם<input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} autoComplete="name" /></label>

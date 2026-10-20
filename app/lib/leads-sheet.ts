@@ -35,6 +35,8 @@ const cfg = () => {
   const secret = process.env.LEADS_SHEET_SECRET;
   return url && secret ? { url, secret } : null;
 };
+/** הטבלה מחוברת (LEADS_SHEET_URL + LEADS_SHEET_SECRET ב-Vercel) */
+export const sheetReady = () => Boolean(cfg());
 
 async function call<T>(payload: Record<string, unknown>, timeoutMs: number): Promise<T | null> {
   const c = cfg();
@@ -66,9 +68,13 @@ export async function sheetUpsert(row: LeadRow, timeoutMs = 6000): Promise<boole
   return Boolean(r?.ok);
 }
 
-/** מי מטפל בליד לפי העמודה "מי מטפל" שרלי שולטת בה: "רלי" = טל לא עונה, "טל" = טל עונה גם אחרי שרלי כתבה, "" = לפי ברירת המחדל */
-export async function sheetHandler(phone: string): Promise<Handler> {
-  const r = await call<{ handler?: string }>({ action: "handler", phone }, 3500);
-  const h = String(r?.handler || "").trim();
-  return h === "טל" || h === "רלי" ? h : "";
+/** מי מטפל בליד לפי העמודה "מי מטפל" שרלי שולטת בה: "רלי" = טל לא עונה; "טל" = טל עונה גם אחרי שרלי כתבה, עד שהיא
+ *  כותבת שוב בשיחה (at = מתי העמודה שונתה, מילישניות); "" = לפי ברירת המחדל. null = לא הצלחנו לבדוק (הטבלה מחוברת אבל
+ *  לא ענתה בזמן): הבוט נזהר. כשהטבלה לא מחוברת בכלל: { handler: "", at: 0 }. */
+export async function sheetHandler(phone: string): Promise<{ handler: Handler; at: number } | null> {
+  if (!cfg()) return { handler: "", at: 0 };
+  const r = await call<{ handler?: string; at?: number }>({ action: "handler", phone }, 6000);
+  if (!r || typeof r.handler !== "string") return null;
+  const h = r.handler.trim();
+  return { handler: h === "טל" || h === "רלי" ? h : "", at: Number(r.at) || 0 };
 }

@@ -6,7 +6,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { ELI_WA, greenApi, IDAN_WA, israeliMobile, SC_GROUP, OPS_WA, customerLineReady, type Line } from "../../../lib/store-notify";
-import { OPEN_MARK } from "../../../lib/opening";
+import { isOpeningMessage } from "../../../lib/opening";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -35,15 +35,21 @@ export async function GET(req: NextRequest) {
   const count = Math.min(300, Math.max(1, Number(req.nextUrl.searchParams.get("count")) || 200));
   // 20.10.2026: ליד יכול להיות בקו של רלי או במספר של רותם. קודם הקו של רלי; הקבוצה והצ'אט של רותם עם עצמו רק במספר שלו
   const textOf = (m: Msg) => m.textMessage || m.extendedTextMessage?.text || "";
-  const isLead = (h: Msg[]) => h.some((m) => (m.type === "incoming" && siteSourceOf(textOf(m))) || (m.type === "outgoing" && textOf(m).includes(OPEN_MARK)));
-  let line: Line = "ops";
+  const isLead = (h: Msg[]) => h.some((m) => (m.type === "incoming" && siteSourceOf(textOf(m))) || isOpeningMessage(m));
+  // ?line=customer|ops: הקו שבו lead-send שלח (הוא מחזיר line), כדי שבדיקת הסטטוס (?ids=) תיקרא מאותו קו
+  const asked = req.nextUrl.searchParams.get("line");
+  const candidates: Line[] = self || !customerLineReady() ? ["ops"] : asked === "customer" || asked === "ops" ? [asked] : ["customer", "ops"];
+  let line: Line = candidates[0];
   let history: Msg[] | null = null;
-  for (const l of (self || !customerLineReady() ? ["ops"] : ["customer", "ops"]) as Line[]) {
+  let failed = false;
+  for (const l of candidates) {
     const h = await greenApi<Msg[]>("getChatHistory", { chatId: isGroup ? phone : `${phone}@c.us`, count }, undefined, l);
+    if (!h) failed = true;
     if (h && (!history || isLead(h))) { history = h; line = l; }
     if (h && (self || isLead(h))) break;
   }
-  if (!history) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  // קו שלא ענה ואין ליד בקו השני: אולי השיחה בקו שנכשל, אז שגיאה ולא "not a site lead"
+  if (!history || (failed && !self && !isLead(history))) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   const fromSite = self || isLead(history);
   if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
   // ?ids=a,b: סטטוס הודעות שנשלחו (sent / delivered / read), לאימות אחרי שליחה

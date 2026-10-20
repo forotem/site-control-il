@@ -59,8 +59,11 @@ export async function greenApi<T = Record<string, unknown>>(method: string, body
     const qs = query ? `?${new URLSearchParams(Object.entries(query).map(([k, v]) => [k, String(v)]))}` : "";
     // cache: "no-store": בלי זה Next.js שומר תשובות GET (כמו lastIncomingMessages) ומחזיר אותן ישנות.
     // כך נוצר באג ב-2.10: ליד חדש מהאתר לא נקלט לטבלה במשך שעתיים.
-    const res = await fetch(`${c.api}/waInstance${c.id}/${method}/${c.token}${qs}`, body === undefined ? { cache: "no-store" } : {
+    // 15 שניות לכל קריאה: בלי זה GreenAPI תקוע מחזיק את הנתיב עד maxDuration (והלקוח מאבד את התשובה)
+    const signal = AbortSignal.timeout(15_000);
+    const res = await fetch(`${c.api}/waInstance${c.id}/${method}/${c.token}${qs}`, body === undefined ? { cache: "no-store", signal } : {
       cache: "no-store",
+      signal,
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),

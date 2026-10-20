@@ -21,12 +21,13 @@
 // בדיקה ידנית (?dry=1 + מפתח admin): מחזיר את התשובה בלי לשלוח. אפשר גם לדמות שיחה ושעה (simulate, למטה) כדי לבדוק
 // תסריטים בלי לקוח אמיתי.
 import { NextRequest, NextResponse } from "next/server";
-import { createHash, timingSafeEqual } from "crypto";
+import { timingSafeEqual } from "crypto";
+import { adminAuthorized } from "../../../lib/admin-auth";
 import { botToken } from "../../../lib/wa-bot-token";
 import { greenApi, sendWhatsAppId, IDAN_WA, ELI_WA, notifyTeam, SC_GROUP, OPS_WA, CUSTOMER_WA, customerLineReady, lineNumber, type Line } from "../../../lib/store-notify";
 import { CHAG, il, dayIL, hourIL, restDay } from "../../../lib/il-time";
-import { OPEN_MARK } from "../../../lib/opening";
-import { sheetHandler, sheetUpsert, type Handler } from "../../../lib/leads-sheet";
+import { isOpeningMessage } from "../../../lib/opening";
+import { sheetHandler, sheetReady, sheetUpsert } from "../../../lib/leads-sheet";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 import { SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
@@ -60,13 +61,6 @@ const textOf = (m: H) => m.textMessage || m.extendedTextMessage?.text || m.capti
 const localPhone = (p: string) => p.replace(/^972/, "0");
 
 /** בדיקה ידנית (?dry=1) עם מפתח ה-admin של הכלים המקומיים: מחזיר את התשובה בלי לשלוח */
-function adminAuthorized(req: NextRequest): boolean {
-  const base = process.env.RESEND_API_KEY;
-  const got = req.headers.get("x-sc-admin") || "";
-  if (!base || !got) return false;
-  const want = createHash("sha256").update(`to-rotem:${base}`).digest("hex");
-  return got.length === want.length && timingSafeEqual(Buffer.from(got), Buffer.from(want));
-}
 /** ה-webhook מגיע עם הטוקן של הקו ששלח אותו: מחזיר איזה קו, או null */
 function webhookLine(req: NextRequest): Line | null {
   const got = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "");
@@ -209,16 +203,18 @@ export async function POST(req: NextRequest) {
     }
     return h;
   };
-  // ליד של Site-Control: הודעה נכנסת מכפתור באתר, או שיחה שנפתחה בהודעת פתיחה מאיתנו (app/lib/opening.ts)
-  const leadStart = (h: H[]) => h.find((m) => m.type === "incoming" && siteSourceOf(textOf(m))) || h.find((m) => m.type === "outgoing" && textOf(m).includes(OPEN_MARK));
+  // ליד של Site-Control: הודעה נכנסת מכפתור באתר, או (בקו של רלי בלבד) שיחה שנפתחה בהודעת פתיחה מאיתנו (app/lib/opening.ts)
+  const leadStart = (h: H[], l: Line) => h.find((m) => m.type === "incoming" && siteSourceOf(textOf(m))) || (l === "customer" ? h.find(isOpeningMessage) : undefined);
+  // הקו בפועל: בלי הגדרה נפרדת לקו של רלי, "customer" שולח מהמספר של רותם, אז גם הכללים והשמות של רותם
   let line: Line = hookLine || askedLine || "customer";
+  if (line === "customer" && !customerLineReady()) line = "ops";
   let history: H[] | null = sim ? sim.history! : null;
   if (!sim) {
     history = await loadHistory(line);
     // kick/dry בלי line: השיחה לא בקו של רלי (או שהוא לא מחובר)? אולי היא שיחה ישנה במספר של רותם
-    if (!hookLine && !askedLine && customerLineReady() && !(history?.length && leadStart(history))) {
+    if (!hookLine && !askedLine && customerLineReady() && !(history?.length && leadStart(history, "customer"))) {
       const old = await loadHistory("ops");
-      if (old?.length && (leadStart(old) || !history?.length)) { history = old; line = "ops"; }
+      if (old?.length && (leadStart(old, "ops") || !history?.length)) { history = old; line = "ops"; }
     }
   }
   if (!history?.length) return NextResponse.json({ ok: true, skip: "no history" });
@@ -226,7 +222,7 @@ export async function POST(req: NextRequest) {
   const human = HUMAN[line];
 
   // 1. רק לידים מהאתר של Site-Control (או שיחה שפתחנו בהודעת פתיחה)
-  const start = leadStart(msgs);
+  const start = leadStart(msgs, line);
   const prefill = start?.type === "incoming" ? start : undefined;
   const opened = start?.type === "outgoing" ? start : undefined;
   if (!start && !trustedLead) return NextResponse.json({ ok: true, skip: "not a site lead" });
@@ -241,10 +237,19 @@ export async function POST(req: NextRequest) {
   const rotemRecent = rotemWrote(ROTEM_ACTIVE_MINUTES);
   if (rotemRecent && !dry && !proactive) return NextResponse.json({ ok: true, skip: `${line === "customer" ? "rali" : "rotem"} active` });
   // בקו של רלי: העמודה "מי מטפל" בטבלה, ואם היא ריקה, רלי שכתבה היום = השיחה שלה עד מחר (רותם 20.10.2026: "רלי תוכל
-  // להתערב בשיחה במקום טל")
-  const handler: Handler = line === "customer" && !sim ? await sheetHandler(phone) : "";
-  const humanToday = msgs.some((m) => m.type === "outgoing" && m.sendByApi === false && dayIL(new Date((m.timestamp || 0) * 1000)) === dayIL(nowDate));
-  if (!dry && (handler === "רלי" || (line === "customer" && handler !== "טל" && humanToday && !stockResult))) return NextResponse.json({ ok: true, skip: handler === "רלי" ? "sheet: rali handles" : "rali took the chat today" });
+  // להתערב בשיחה במקום טל"). "טל" מחזיר את השיחה לטל עד שרלי כותבת בה שוב אחרי השינוי. כשהטבלה לא ענתה בזמן (null)
+  // נזהרים: אם רלי כתבה אי פעם בשיחה הזאת, טל לא עונה.
+  const looked = line === "customer" && !sim ? await sheetHandler(phone) : { handler: "" as const, at: 0 };
+  const handler = looked?.handler || "";
+  const humanMsgs = msgs.filter((m) => m.type === "outgoing" && m.sendByApi === false);
+  const humanToday = humanMsgs.some((m) => dayIL(new Date((m.timestamp || 0) * 1000)) === dayIL(nowDate));
+  const humanSinceHandBack = looked ? humanMsgs.some((m) => (m.timestamp || 0) * 1000 > looked.at) : false;
+  const humanHolds = line === "customer" && !stockResult && (
+    handler === "רלי"
+    || (handler === "טל" ? humanSinceHandBack && humanToday : humanToday)
+    || (!looked && humanMsgs.length > 0)
+  );
+  if (!dry && humanHolds) return NextResponse.json({ ok: true, skip: handler === "רלי" ? "sheet: rali handles" : !looked ? "sheet unavailable, rali was in this chat" : "rali took the chat today" });
   // 5. תקרה יומית
   const botToday = msgs.filter((m) => m.type === "outgoing" && m.sendByApi && textOf(m) && now - (m.timestamp || 0) < 24 * 3600).length;
   if (botToday >= MAX_BOT_REPLIES_PER_DAY && !dry) return NextResponse.json({ ok: true, skip: "daily cap" });
@@ -262,13 +267,18 @@ export async function POST(req: NextRequest) {
     else conv.push({ role, content: said.slice(0, 1500) });
   }
   while (conv.length && conv[0].role !== "user") conv.shift();
+  // שיחה שנפתחה בהודעת פתיחה: ההודעה הזאת (מה ביקש, מה שאלנו) נשארת לפני תשובת הלקוח, אחרי תור "לקוח" סינתטי
+  // (Gemini דורש שהשיחה תתחיל בלקוח). בלי זה טל רואה רק "כניסה וחניה, יש" ולא יודע על מה (בדיקה 20.10.2026)
+  if (opened && !conv.some((m) => m.role === "assistant" && m.content.includes(textOf(opened).slice(0, 40)))) {
+    conv.unshift({ role: "user", content: "(השאיר פרטים באתר / בצ'אט / ברשת חברתית)" }, { role: "assistant", content: textOf(opened).slice(0, 1500) });
+  }
   if (proactive && conv.length && conv[conv.length - 1].role !== "user") conv.push({ role: "user", content: stockResult ? "(ממתין לתשובה על המלאי)" : "(הלקוח לא ענה מאז ההודעה האחרונה שלנו)" });
   if (!conv.length || conv[conv.length - 1].role !== "user") return NextResponse.json({ ok: true, skip: "no user turn" });
   const lastUserText = conv[conv.length - 1].content;
 
   const nowIL = il(nowDate, { weekday: "long", hour: "2-digit", minute: "2-digit" }, "he-IL");
   const ctx: string[] = [`השעה עכשיו בישראל: ${nowIL}.`, opened
-    ? "הלקוח השאיר פרטים (בטופס באתר, בצ'אט או בפייסבוק), ואתה פתחת את השיחה בהודעת פתיחה. ההודעה הראשונה שלך בשיחה מראה מאיפה הגיע ומה ביקש: ממשיכים משם."
+    ? "הלקוח השאיר פרטים (בטופס באתר, בצ'אט או ברשת חברתית), ואתה פתחת את השיחה בהודעת הפתיחה שבראש השיחה: היא אומרת מאיפה הגיע, מה ביקש ומה שאלת אותו. ממשיכים משם, ולא שואלים שוב מה שכבר נשאל."
     : `הלקוח פנה מהאתר (${prefill ? siteSourceOf(textOf(prefill)) : trustedLead?.source || "כפתור ווצאפ"}).`];
   const fromPage = prefill ? storeProducts.find((p) => textOf(prefill).includes(p.title)) : undefined;
   if (fromPage) ctx.push(`הוא כתב מדף המוצר ${productName(fromPage)} [${fromPage.slug}], מחיר באתר ${fromPage.price ? `${fromPage.price} ₪` : "לפי פנייה"}.`);
@@ -369,7 +379,7 @@ export async function POST(req: NextRequest) {
     await sendWhatsAppId(SC_GROUP, `⚠️ טל ענה ל-${localPhone(phone)} ${VERIFY_FAIL_MARK} (${reason}). התראה אחת בשעה.`).catch(() => undefined);
   }
   const takeOver = line === "customer"
-    ? `כדי לקחת את השיחה: רלי פשוט כותבת לו מהטלפון שלה (${phoneLabel("customer")}). מאותו רגע טל לא עונה בשיחה הזאת עד מחר. להחזיר לטל: בטבלה, "מי מטפל" = טל.`
+    ? `כדי לקחת את השיחה: רלי פשוט כותבת לו מהטלפון שלה (${phoneLabel("customer")}). מאותו רגע טל לא עונה בשיחה הזאת עד מחר.${sheetReady() ? ` להחזיר לטל לפני כן: בטבלה, "מי מטפל" = טל. לקחת לגמרי: "מי מטפל" = רלי.` : ""}`
     : `השיחה במספר של רותם (${phoneLabel("ops")}). כדי לקחת אותה: פשוט לכתוב לו מהטלפון. טל מחכה 10 דקות אחרי כל הודעה שלך ואז ממשיך.`;
   if (wantAlert && !suppressed) {
     recentAlerts.set(`${phone}:${marker}`, nowDate.getTime());

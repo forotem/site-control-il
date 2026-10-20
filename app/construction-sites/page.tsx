@@ -217,7 +217,7 @@ export default function ConstructionSites() {
           <div className={home.ctas}>
             <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח סרטון בווצאפ</a>
           </div>
-          <p><b>רוצים שמישהו יגיע?</b> סיור מקצועי באתר ב-{survey} ₪. בסיור קובעים את הנקודות והמיקום של כל מצלמה, ואחריו מקבלים הצעה סגורה. משאירים פרטים ורותם חוזר לתאם.</p>
+          <p><b>רוצים שמישהו יגיע?</b> סיור מקצועי באתר ב-{survey} ₪. בסיור קובעים את הנקודות והמיקום של כל מצלמה, ואחריו מקבלים הצעה סגורה. משאירים פרטים ואנחנו חוזרים לתאם.</p>
         </div>
         <SiteOfferForm surveyPrice={survey} />
       </section>

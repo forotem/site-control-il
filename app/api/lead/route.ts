@@ -4,10 +4,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { notifyTeam } from "../../lib/store-notify";
 import { attributionLabel } from "../../lib/attribution-label";
-import { sendOpening } from "../../lib/opening";
+import { sendOpening, ipAllowsOpening, noteIpOpening } from "../../lib/opening";
 import { sheetUpsert } from "../../lib/leads-sheet";
 
 export const runtime = "nodejs";
+// התראה + פתיחה בווצאפ (3 קריאות GreenAPI) + שורה בטבלה: יותר מ-10 שניות במקרה הגרוע
+export const maxDuration = 30;
 
 const clean = (v: unknown, n: number) => String(v ?? "").replace(/[<>]/g, "").trim().slice(0, n);
 // שדה של שורה אחת: בלי ירידות שורה, כדי שאי אפשר יהיה לזייף שורות בהתראה או בנושא המייל
@@ -39,18 +41,26 @@ export async function POST(req: NextRequest) {
     `דף: ${line(body.page, 80) || "-"}`,
     `מקור: ${attributionLabel(body.attribution)}`,
   ].filter(Boolean).join("\n");
+  const t0 = Date.now();
   const sent = await notifyTeam(`${FORMS[form]} ${leadId}: ${name}`, text, email ? { replyTo: email } : undefined);
-  // הודעת פתיחה מטל ושורה בטבלה של רלי. כישלון כאן לא מפיל את הטופס: ההתראה לצוות כבר יצאה
-  const need = [line(body.need, 60), line(body.kind, 40), line(body.category, 30)].filter(Boolean).join(", ");
-  const opening = await sendOpening({ phone, name, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", need, ref: leadId, callback: form === "callback" })
-    .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` }));
+  // הודעת פתיחה מטל ושורה בטבלה של רלי. כישלון כאן לא מפיל את הטופס: ההתראה לצוות כבר יצאה.
+  // לפתיחה עוברים רק ערכים גולמיים מהטופס; opening.ts מציג רק ערכים מרשימה סגורה
+  const needs = [line(body.need, 60), line(body.kind, 40), line(body.category, 30)].filter(Boolean);
+  const need = needs.join(", ");
+  const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
+  // מגבלת קצב (בדיקה 20.10.2026): בלי מגבלה אפשר לגרום לקו של רלי לכתוב למספרים זרים ולגמור את התקרה היומית
+  const opening = !ipAllowsOpening(ip, t0)
+    ? { sent: false, status: "לא נשלחה: יותר מדי פניות מאותה כתובת בשעה האחרונה (לבדוק ולסמן ידנית)" }
+    : await sendOpening({ phone, name, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", needs, ref: leadId, callback: form === "callback" })
+      .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` }));
+  if (opening.sent) noteIpOpening(ip, t0);
   await sheetUpsert({
     phone, name, email: email || undefined, ref: leadId,
     source: `${FORMS[form]}${body.attribution ? ` (${attributionLabel(body.attribution)})` : ""}`,
     need: [need, body.note ? clean(body.note, 500) : ""].filter(Boolean).join(" | "),
     city: line(body.city, 60) || undefined, page: line(body.page, 80) || undefined,
     opening: opening.status, status: opening.sent ? "טל בשיחה" : "חדש: לחזור ללקוח",
-  });
+  }, Math.max(1000, Math.min(8000, maxDuration * 1000 - (Date.now() - t0) - 3000)));
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח כרגע. אפשר לכתוב לנו בווצאפ ונחזור מיד." }, { status: 502 });
   return NextResponse.json({ ok: true, leadId });
 }

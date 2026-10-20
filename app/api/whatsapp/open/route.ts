@@ -24,9 +24,10 @@ export async function POST(req: NextRequest) {
   const r = await sendOpening({
     phone: clean(body.phone, 20),
     name: clean(body.name, 60),
-    source: clean(body.source, 40) || undefined,
-    need: clean(body.need, 200),
+    source: clean(body.source, 200) || undefined,
+    needs: [clean(body.need, 200)],
     ref: clean(body.ref, 40),
+    callback: /שיחה חוזרת/.test(clean(body.source, 200)),
   });
   return NextResponse.json({ ok: r.sent, status: r.status });
 }

@@ -5,7 +5,7 @@
 // מ-20.10.2026 שני קווים: הקו של רלי (לשם מגיעים הכפתורים באתר) והמספר של רותם. לכל ליד line.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { ELI_WA, greenApi, IDAN_WA, customerLineReady, type Line } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, OPS_WA, CUSTOMER_WA, customerLineReady, type Line } from "../../../lib/store-notify";
 import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -30,10 +30,12 @@ export async function GET(req: NextRequest) {
   const lines: Line[] = customerLineReady() ? ["customer", "ops"] : ["ops"];
   const got = await Promise.all(lines.map(async (line) => (await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes }, line))?.map((m) => ({ ...m, line })) ?? null));
   if (got.every((x) => !x)) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  // קו שנכשל מדווח (לא נבלע כ"אין לידים"): הכלי המקומי יכול לנסות שוב
+  const failedLines = lines.filter((_, i) => !got[i]);
   const incoming = got.flatMap((x) => x || []);
   const leads = incoming
     // הספק (עידן, ומ-7.10.2026 גם אלי) הוא לא ליד
-    .filter((m) => m.chatId?.endsWith("@c.us") && m.chatId !== `${IDAN_WA}@c.us` && m.chatId !== `${ELI_WA}@c.us`)
+    .filter((m) => m.chatId?.endsWith("@c.us") && ![IDAN_WA, ELI_WA, OPS_WA, CUSTOMER_WA].some((n) => m.chatId === `${n}@c.us`))
     .map((m) => {
       const text = m.textMessage || m.extendedTextMessage?.text || m.caption || "";
       return { m, text, source: siteSourceOf(text) };
@@ -50,5 +52,5 @@ export async function GET(req: NextRequest) {
       ref: waRefOf(text),
       text: text.slice(0, 1500),
     }));
-  return NextResponse.json({ minutes, scanned: incoming.length, leads }, { headers: { "Cache-Control": "no-store" } });
+  return NextResponse.json({ minutes, scanned: incoming.length, failedLines, leads }, { headers: { "Cache-Control": "no-store" } });
 }

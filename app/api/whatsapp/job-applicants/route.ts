@@ -5,7 +5,7 @@
 // מועמד הוא לא ליד: הטקסט הזה לא נמצא ב-site-wa-prefills, אז טל וקליטת הלידים לא נוגעים בו.
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
-import { ELI_WA, greenApi, IDAN_WA } from "../../../lib/store-notify";
+import { ELI_WA, greenApi, IDAN_WA, OPS_WA, CUSTOMER_WA, customerLineReady, type Line } from "../../../lib/store-notify";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,10 +31,14 @@ export async function GET(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
   const minutes = Math.min(10080, Math.max(10, Number(req.nextUrl.searchParams.get("minutes")) || 1440));
   const known = new Set((req.nextUrl.searchParams.get("known") || "").split(",").map((s) => s.replace(/\D/g, "")).filter(Boolean));
-  const incoming = await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes });
-  if (!incoming) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  // 20.10.2026: כפתור הווצאפ בדף המשרות מוביל לקו של רלי, אז סורקים את שני הקווים (כמו site-leads)
+  const lines: Line[] = customerLineReady() ? ["customer", "ops"] : ["ops"];
+  const got = await Promise.all(lines.map(async (line) => ({ line, list: await greenApi<Incoming[]>("lastIncomingMessages", undefined, { minutes }, line) })));
+  if (got.every((g) => !g.list)) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  const failedLines = got.filter((g) => !g.list).map((g) => g.line);
+  const incoming = got.flatMap((g) => (g.list || []).map((m) => ({ ...m, line: g.line })));
   const messages = incoming
-    .filter((m) => m.chatId?.endsWith("@c.us") && m.chatId !== `${IDAN_WA}@c.us` && m.chatId !== `${ELI_WA}@c.us`)
+    .filter((m) => m.chatId?.endsWith("@c.us") && ![IDAN_WA, ELI_WA, OPS_WA, CUSTOMER_WA].some((n) => m.chatId === `${n}@c.us`))
     .map((m) => {
       const text = m.textMessage || m.extendedTextMessage?.text || m.caption || "";
       const phone = (m.chatId || "").replace(/@c\.us$/, "");
@@ -42,6 +46,7 @@ export async function GET(req: NextRequest) {
     })
     .filter((x) => x.applies || x.isKnown)
     .map(({ m, text, phone, applies }) => ({
+      line: m.line,
       idMessage: m.idMessage,
       timestamp: m.timestamp,
       phone,
@@ -52,5 +57,5 @@ export async function GET(req: NextRequest) {
       fileName: m.fileName || "",
       downloadUrl: m.downloadUrl || "",
     }));
-  return NextResponse.json({ minutes, scanned: incoming.length, messages }, { headers: { "Cache-Control": "no-store" } });
+  return NextResponse.json({ minutes, scanned: incoming.length, failedLines, messages }, { headers: { "Cache-Control": "no-store" } });
 }

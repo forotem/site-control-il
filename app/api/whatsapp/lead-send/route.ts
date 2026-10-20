@@ -7,7 +7,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { ELI_WA, greenApi, IDAN_WA, israeliMobile, sendWhatsAppId, customerLineReady, type Line } from "../../../lib/store-notify";
-import { OPEN_MARK } from "../../../lib/opening";
+import { isOpeningMessage } from "../../../lib/opening";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
   const ref = /^[A-Za-z0-9-]{3,40}$/.test(body.orderRef || "") ? String(body.orderRef) : "";
   const textOf = (m: Msg) => m.textMessage || m.extendedTextMessage?.text || "";
   const allowed = (history: Msg[]) =>
-    history.some((m) => (m.type === "incoming" && siteSourceOf(textOf(m))) || (m.type === "outgoing" && textOf(m).includes(OPEN_MARK)))
+    history.some((m) => (m.type === "incoming" && siteSourceOf(textOf(m))) || isOpeningMessage(m))
     || (Boolean(ref) && history.some((m) => m.type === "outgoing" && textOf(m).includes(ref)))
     // rotemApproved: רותם ביקש בצ'אט לשלוח ללקוח שפנה ישירות (לא מכפתור באתר). מותר רק אם רותם (או רלי, בקו שלה) כבר
     // כתב בשיחה הזאת מהטלפון (sendByApi=false), כלומר זו שיחה אמיתית ולא מספר זר.
@@ -52,13 +52,14 @@ export async function POST(req: NextRequest) {
   const asked: Line | null = body.line === "customer" || body.line === "ops" ? body.line : null;
   const candidates: Line[] = asked ? [asked] : customerLineReady() ? ["customer", "ops"] : ["ops"];
   let line: Line | null = null;
-  let reached = false;
+  let failed = false;
   for (const l of candidates) {
     const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 }, undefined, l);
-    if (history) reached = true;
+    if (!history) failed = true;
     if (history && allowed(history)) { line = l; break; }
   }
-  if (!reached) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
+  // קו שלא ענה ואין התאמה בקו השני: אולי השיחה בקו שנכשל, אז שגיאה (לנסות שוב) ולא 403
+  if (!line && failed) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
   if (!line) return NextResponse.json({ error: "not a site lead or customer" }, { status: 403 });
   const ids: (string | null)[] = [];
   for (const t of texts) ids.push(await sendWhatsAppId(phone, t.slice(0, 4000), line));

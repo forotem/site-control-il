@@ -342,7 +342,9 @@ export async function POST(req: NextRequest) {
   console.log("wa bot verify", JSON.stringify({ ok: check.ok, verified: check.verified, changed: check.changed, ms: check.ms, model: check.model, kinds: check.issues.map((i) => i.kind), error: check.error?.slice(0, 120) }));
 
   const links = data.products.map((s) => productBySlug(s.trim().replace(/^\[|\]$/g, ""))).filter(Boolean).slice(0, 3)
-    .map((p) => `${productName(p!)}${p!.price ? `, ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
+    // 20.10.2026 (SC-035): "DS-KV6124-WBE1, 769 ₪" נקרא בווצאפ "1,769" (הספרה בסוף הדגם + פסיק), ועידן שאל "למה 1769?".
+    // מילה בעברית בין הדגם למחיר מפרידה אותם.
+    .map((p) => `${productName(p!)}${p!.price ? ` · מחיר ${p!.price.toLocaleString("he-IL")} ₪` : ""}:\n${SITE}/store/${p!.slug}`);
   const body = data.reply.replace(/\*\*(.+?)\*\*/g, "$1").replace(/^#{1,6}\s+/gm, "").replace(/^\s*[*-]\s+/gm, "• ").trim();
   const text = [body, ...links].filter(Boolean).join("\n\n").slice(0, 3500);
 
@@ -360,7 +362,7 @@ export async function POST(req: NextRequest) {
   if (stockProduct && !proactive) {
     await sendWhatsAppId(SC_GROUP, `${STOCK_MARK} ${phone} ${stockProduct.slug}
 לקוח: ${n.senderData?.senderName || localPhone(phone)}
-מוצר: ${productName(stockProduct)}${stockProduct.sku ? ` (מק"ט ${stockProduct.sku})` : ""}, ${stockProduct.price ? `${stockProduct.price} ₪` : "לפי פנייה"}
+מוצר: ${productName(stockProduct)}${stockProduct.sku ? ` (מק"ט ${stockProduct.sku})` : ""} · מחיר באתר ${stockProduct.price ? `${stockProduct.price} ₪` : "לפי פנייה"}
 (טל שואל את עידן בשעות העבודה שלו, ומחזיר ללקוח)`);
   }
 

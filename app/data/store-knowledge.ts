@@ -152,7 +152,7 @@ export function productsMentioned(text: string, max = 4): Product[] {
  *  שבשיחה, וגם הבודק (verifyReply) בודק מולו. */
 export function productFacts(products: Product[]): string {
   if (!products.length) return "";
-  const lines = products.map((p) => `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""}, ${p.price ? `${p.price} ₪` : "מחיר לפי פנייה"}${p.datasheet ? " (יש דאטהשיט של היצרן בדף המוצר)" : ""}. מפרט: ${p.specs.join("; ")}`);
+  const lines = products.map((p) => `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${p.price ? `מחיר ${p.price} ₪` : "מחיר לפי פנייה"}${p.datasheet ? " (יש דאטהשיט של היצרן בדף המוצר)" : ""}. מפרט: ${p.specs.join("; ")}`);
   return `# עובדות מאומתות על המוצרים שבשיחה (מדף המוצר באתר, לפי היצרן)
 ${lines.join("\n")}
 למוצרים שמופיעים כאן זה המקור, והוא גובר על שורת הקטלוג. יכולת טכנית שלא כתובה כאן ולא בשורת הקטלוג (הקלטה, אחסון, כרטיס זיכרון, Wi-Fi, PoE, הספק, מה כלול, תאימות) לא ממציאים ולא מסיקים מהסוג הכללי של המוצר: אומרים בכנות "אני לא בטוח, אבדוק ואחזור", וכותבים את השאלה בשדה escalate.`;

@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
     const alts = (n.alternatives || []).map((a) => {
       const ap = productBySlug(a.slug);
       const altTips = supplierNoteOf(a.slug)?.tips || [];
-      return `  חלופה: ${ap ? `${ap.brand} ${ap.model}${ap.price ? `, ${ap.price} ₪` : ""}` : a.slug} | /store/${a.slug} | ${a.why}${altTips.length ? ` | ${altTips.join("; ")}` : ""}`;
+      return `  חלופה: ${ap ? `${ap.brand} ${ap.model}${ap.price ? ` · מחיר ${ap.price} ₪` : ""}` : a.slug} | /store/${a.slug} | ${a.why}${altTips.length ? ` | ${altTips.join("; ")}` : ""}`;
     });
     const tips = (n.tips || []).map((t) => `  להציע גם: ${t}`);
     return [`* ${p!.brand} ${p!.model}${n.history ? `: ${n.history}` : ""}`, ...alts, ...tips];

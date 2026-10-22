@@ -2517,7 +2517,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 68,
+    "price": 139,
     "specs": [
       "הספק 6W (Power Output, כך כתוב על האריזה)",
       "חיבור Type-C, כבל 4 מטר",
@@ -2598,7 +2598,7 @@ export const storeProducts: StoreProduct[] = [
     "specs": [
       "5MP (2880×1620), עדשה 2.8 מ\"מ, זווית 105°",
       "Wi-Fi דו-ערוצי 2.4/5GHz, 100% אלחוטית",
-      "סוללה נטענת 6000mAh; טעינה ב-USB-C או מפאנל סולארי Reolink",
+      "סוללה נטענת 6000mAh; טעינה ב-USB-C או מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד)",
       "זרקור וראיית לילה צבעונית, חיישן PIR, שמע דו-כיווני",
       "זיהוי אדם, רכב וחיה בלי מנוי; microSD (לא כלול), אפליקציה בעברית",
       "IP65"
@@ -2606,7 +2606,7 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "5MP עם זרקור וצבע בלילה",
       "Wi-Fi 5GHz יציב",
-      "סוללה + אפשרות לפאנל סולארי"
+      "סוללה + פאנל סולארי (בנפרד)"
     ],
     "image": "/store-images/reolink-argus-b330.webp",
     "datasheet": null,

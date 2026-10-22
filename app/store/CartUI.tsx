@@ -4,20 +4,46 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER } from "../data/store-catalog";
 import { cart, useCart } from "./cart";
+import { SD_ADDON, SIM_ADDON, addonBySlug, addonsFor, isAddon } from "../data/store-addons";
 import { track } from "../lib/analytics";
 import { getAttribution } from "../lib/attribution";
 import styles from "./store.module.css";
 import c from "./commerce.module.css";
 
 const nis = (v: number) => v.toLocaleString("he-IL");
-const bySlug = (slug: string) => storeProducts.find((p) => p.slug === slug);
+const bySlug = (slug: string) => storeProducts.find((p) => p.slug === slug) || addonBySlug(slug);
 
-/** כפתור "הוסף לעגלה" לדף מוצר */
+/** כפתור "הוסף לעגלה" לדף מוצר. במצלמה שמקליטה לבד או עובדת עם סים: תיבות לכרטיס זיכרון ולסים (רותם 22.10.2026:
+ *  "שהם יבינו שהמצלמה הזאת מגיעה בלי דאטה ובלי כרטיס סים"), שנכנסים לעגלה באותה כמות כמו המצלמה */
 export function AddToCart({ slug }: { slug: string }) {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const offer = addonsFor(slug);
+  const [sd, setSd] = useState(false);
+  const [sim, setSim] = useState(false);
+  const missing = [offer.sd ? "כרטיס זיכרון" : "", offer.sim ? "סים" : ""].filter(Boolean).join(" ובלי ");
   return (
     <div className={c.addRow}>
+      {missing && (
+        <fieldset className={c.addons} data-track="product_addons">
+          <legend>המצלמה מגיעה בלי {missing}. להוסיף להזמנה?</legend>
+          {offer.sd && (
+            <label className={c.addonOpt}>
+              <input type="checkbox" id={`addon-sd-${slug}`} checked={sd} onChange={(e) => setSd(e.target.checked)} />
+              <span><b>{SD_ADDON.model}</b><small>ההקלטות נשמרות בתוך המצלמה. בלי כרטיס (או מנוי ענן) רואים שידור חי בנייד, אבל שום דבר לא נשמר.</small></span>
+              <strong>+{nis(SD_ADDON.price!)} ₪</strong>
+            </label>
+          )}
+          {offer.sim && (
+            <label className={c.addonOpt}>
+              <input type="checkbox" id={`addon-sim-${slug}`} checked={sim} onChange={(e) => setSim(e.target.checked)} />
+              <span><b>{SIM_ADDON.model}</b><small>מצלמת 4G צריכה סים עם גלישה כדי להתחבר. יש לכם סים משלכם עם חבילת גלישה? אפשר להשאיר לא מסומן.</small></span>
+              <strong>+{nis(SIM_ADDON.price!)} ₪</strong>
+            </label>
+          )}
+          <p className={c.addonsNote}>לא בטוחים? אפשר להזמין בלי, ורלי תעבור איתכם על זה בטלפון לפני שמאשרים.</p>
+        </fieldset>
+      )}
       <div className={c.qty} aria-label="כמות">
         <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label="פחות">−</button>
         <input id={`qty-${slug}`} type="number" min={1} max={200} value={qty} onChange={(e) => setQty(Math.max(1, Math.min(200, Number(e.target.value) || 1)))} />
@@ -26,7 +52,12 @@ export function AddToCart({ slug }: { slug: string }) {
       <button
         type="button"
         className={`${styles.cta} ${styles.ctaAccent}`}
-        onClick={() => { cart.add(slug, qty); setAdded(true); setTimeout(() => setAdded(false), 1800); }}
+        onClick={() => {
+          cart.add(slug, qty);
+          if (offer.sd && sd) cart.add(SD_ADDON.slug, qty);
+          if (offer.sim && sim) cart.add(SIM_ADDON.slug, qty);
+          setAdded(true); setTimeout(() => setAdded(false), 1800);
+        }}
       >
         {added ? "נוסף לעגלה" : "הוספה לעגלה"}
       </button>
@@ -66,10 +97,14 @@ export function CartDrawer() {
   const units = rows.reduce((s, r) => s + r.qty, 0);
   const total = rows.reduce((s, r) => s + (r.p!.price || 0) * r.qty, 0);
   const unknown = rows.filter((r) => !r.p!.price).length;
-  const bulk = units >= 5 || total >= 5000 || rows.some((r) => r.qty >= 5);
+  const bulk = units >= 5 || total >= 5000 || rows.some((r) => r.qty >= 5 && !isAddon(r.slug));
+  // מצלמות בעגלה שצריכות כרטיס או סים, ובעגלה אין עדיין את התוספת: תזכורת עם הוספה בלחיצה (באותה כמות)
+  const needSd = rows.filter((r) => addonsFor(r.slug).sd).reduce((s, r) => s + r.qty, 0);
+  const needSim = rows.filter((r) => addonsFor(r.slug).sim).reduce((s, r) => s + r.qty, 0);
+  const hasSd = rows.some((r) => r.slug === SD_ADDON.slug), hasSim = rows.some((r) => r.slug === SIM_ADDON.slug);
 
   const waText = encodeURIComponent(
-    ["היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים:", ...rows.map((r) => `- ${r.qty} x ${r.p!.brand} ${r.p!.model}${r.p!.sku ? ` (מק"ט ${r.p!.sku})` : ""}`), `סה"כ משוער: ${nis(total)} ₪`].join("\n")
+    ["היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים:", ...rows.map((r) => `- ${r.qty} x ${r.p!.brand ? `${r.p!.brand} ` : ""}${r.p!.model}${r.p!.sku ? ` (מק"ט ${r.p!.sku})` : ""}`), `סה"כ משוער: ${nis(total)} ₪`].join("\n")
   );
 
   /** שלב 1: שולחים קוד אימות בווצאפ למספר שהוזן. אם האימות לא פעיל בשרת, ממשיכים ישר להזמנה */
@@ -150,11 +185,15 @@ export function CartDrawer() {
                 <ul className={styles.recList}>
                   {rows.map((r) => (
                     <li key={r.slug} className={styles.recItem}>
-                      <Link href={`/store/${r.slug}`} className={styles.recThumb} onClick={() => setOpen(false)}>
-                        {r.p!.image ? <img src={r.p!.image} alt="" /> : <span>{r.p!.brand}</span>}
-                      </Link>
+                      {isAddon(r.slug)
+                        ? <span className={styles.recThumb}><span>תוספת</span></span>
+                        : <Link href={`/store/${r.slug}`} className={styles.recThumb} onClick={() => setOpen(false)}>
+                            {r.p!.image ? <img src={r.p!.image} alt="" /> : <span>{r.p!.brand}</span>}
+                          </Link>}
                       <div className={styles.recBody}>
-                        <Link href={`/store/${r.slug}`} className={styles.recTitle} onClick={() => setOpen(false)}>{r.p!.brand} {r.p!.model}</Link>
+                        {isAddon(r.slug)
+                          ? <span className={styles.recTitle}>{r.p!.model}</span>
+                          : <Link href={`/store/${r.slug}`} className={styles.recTitle} onClick={() => setOpen(false)}>{r.p!.brand} {r.p!.model}</Link>}
                         <p>{r.p!.title}</p>
                         <div className={c.qty}>
                           <button type="button" onClick={() => cart.set(r.slug, r.qty - 1)} aria-label="פחות">−</button>
@@ -174,6 +213,14 @@ export function CartDrawer() {
                   <span>סה"כ כולל מע"מ, לפני משלוח</span>
                   <strong>{nis(total)} ₪{unknown ? ` + ${unknown} לפי פנייה` : ""}</strong>
                 </div>
+                {needSd > 0 && !hasSd && (
+                  <p className={c.cartAddon}>המצלמה מגיעה בלי כרטיס זיכרון, ובלי כרטיס ההקלטות לא נשמרות.
+                    <button type="button" onClick={() => cart.add(SD_ADDON.slug, needSd)}>+ {SD_ADDON.model} ({nis(SD_ADDON.price!)} ₪)</button></p>
+                )}
+                {needSim > 0 && !hasSim && (
+                  <p className={c.cartAddon}>מצלמת 4G מגיעה בלי סים. יש לכם סים עם גלישה? מצוין. אם לא:
+                    <button type="button" onClick={() => cart.add(SIM_ADDON.slug, needSim)}>+ {SIM_ADDON.model} ({nis(SIM_ADDON.price!)} ₪)</button></p>
+                )}
                 {bulk && <p className={c.bulkNote}>כמות של קבלן: נחזור עם הצעת מחיר עם הנחת כמות במקום המחיר באתר.</p>}
                 <p className={styles.finderHint}>לא משלמים עכשיו. המחיר לא כולל משלוח: אנחנו מאשרים זמינות מול היבואן, מתמחרים את המשלוח לפי הכתובת שלך וחוזרים אליך עם המחיר הסופי. <Link href="/shipping" onClick={() => setOpen(false)}>על המשלוחים</Link></p>
                 <div className={styles.finderCtas}>

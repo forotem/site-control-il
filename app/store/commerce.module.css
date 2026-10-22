@@ -103,3 +103,15 @@
 }
 
 .msgBot a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
+
+/* ===== תוספות למצלמה: כרטיס זיכרון וסים (22.10.2026) ===== */
+.addons { flex-basis: 100%; border: 1px solid var(--border-accent); border-radius: 12px; padding: 0.7rem 0.9rem 0.8rem; display: grid; gap: 0.55rem; margin: 0; }
+.addons legend { color: var(--text-bright); font-weight: 700; font-size: 0.95rem; padding: 0 0.3rem; }
+.addonOpt { display: grid; grid-template-columns: auto 1fr auto; gap: 0.6rem; align-items: start; cursor: pointer; font-size: 0.92rem; color: var(--text); }
+.addonOpt input { margin-top: 0.3rem; width: 18px; height: 18px; accent-color: var(--accent); }
+.addonOpt b { color: var(--text-bright); font-weight: 600; }
+.addonOpt small { color: var(--muted); display: block; line-height: 1.45; }
+.addonOpt strong { color: var(--text-bright); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.addonsNote { font-size: 0.82rem; color: var(--muted); margin: 0; }
+.cartAddon { font-size: 0.88rem; color: var(--text); border-inline-start: 3px solid var(--accent); padding: 0.3rem 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem; align-items: center; }
+.cartAddon button { background: none; border: 1px solid var(--border-accent); border-radius: 999px; color: var(--text-bright); font: inherit; font-size: 0.84rem; padding: 0.25rem 0.75rem; cursor: pointer; }

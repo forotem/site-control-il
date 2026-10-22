@@ -11,6 +11,7 @@ import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
 import { otpEnabled, checkCode } from "../../lib/order-otp";
+import { addonBySlug, isAddon } from "../../data/store-addons";
 
 export const runtime = "nodejs";
 // שליחה ללקוח, לעידן ובדיקה שההודעה לעידן נמסרה: עד כמה שניות נוספות
@@ -18,6 +19,9 @@ export const maxDuration = 30;
 
 type Line = { slug: string; qty: number };
 type OrderItem = { p: NonNullable<ReturnType<typeof productBySlug>>; qty: number };
+/** מוצר מהקטלוג, או תוספת (כרטיס זיכרון / סים, app/data/store-addons.ts) שאין לה דף */
+const itemBySlug = (slug: string) => productBySlug(slug) || addonBySlug(slug);
+const itemLink = (slug: string) => (isAddon(slug) ? "" : `${SITE}/store/${slug}`);
 
 const SITE = "https://www.site-control-il.com";
 const nis = (n: number) => n.toLocaleString("he-IL");
@@ -32,7 +36,7 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
   const rali = customerLineReady();
   const checking = rali ? "אני בודקת עכשיו את המלאי מול היבואן וחוזרת אליך" : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך";
   const shown = items.slice(0, 3).map(({ p, qty }) =>
-    `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}\n  ${SITE}/store/${p.slug}`);
+    `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}${itemLink(p.slug) ? `\n  ${itemLink(p.slug)}` : ""}`);
   const more = items.length > 3 ? [`ועוד ${items.length - 3} פריטים`] : [];
   const next =
     deliveryId === "courier" ? `${checking} עם אישור ומחיר משלוח ל${address || "כתובת שלך"}.`
@@ -64,7 +68,7 @@ function supplierMessage(ref: string, name: string, phone: string, delivery: str
     `אספקה: ${delivery}${address ? `, ${address}` : ""}`,
     "",
     "פריטים:",
-    ...items.map(({ p, qty }) => `• ${qty} x ${p.brand} ${p.model}${p.sku ? ` (מק״ט ${p.sku})` : ""}${p.price ? `: ${nis(p.price)} ₪ ליח׳ באתר` : ""}`),
+    ...items.map(({ p, qty }) => `• ${qty} x ${productName(p)}${p.sku ? ` (מק״ט ${p.sku})` : ""}${p.price ? `: ${nis(p.price)} ₪ ליח׳ באתר` : ""}`),
     total ? `סה״כ באתר: ${nis(total)} ₪ כולל מע״מ, לא כולל משלוח` : null,
     note ? `הערה מהלקוח: ${note}` : null,
     "",
@@ -81,7 +85,7 @@ export async function POST(req: NextRequest) {
   const name = String(body.name || "").trim().slice(0, 80);
   const phone = String(body.phone || "").replace(/[^\d+]/g, "").slice(0, 20);
   if (name.length < 2 || phone.replace(/\D/g, "").length < 9) return NextResponse.json({ error: "צריך שם וטלפון תקין כדי שנחזור אליך" }, { status: 400 });
-  const items = (body.items || []).map((l) => ({ p: productBySlug(String(l.slug)), qty: Math.max(1, Math.min(200, Math.floor(Number(l.qty) || 1))) })).filter((l) => l.p);
+  const items = (body.items || []).map((l) => ({ p: itemBySlug(String(l.slug)), qty: Math.max(1, Math.min(200, Math.floor(Number(l.qty) || 1))) })).filter((l) => l.p);
   if (!items.length) return NextResponse.json({ error: "העגלה ריקה" }, { status: 400 });
   const address = String(body.address || "").replace(/[\r\n\t]+/g, " ").trim().slice(0, 160);
   if ((body.delivery === "courier" || body.delivery === "install") && address.length < 6) {
@@ -102,7 +106,7 @@ export async function POST(req: NextRequest) {
     // אביזרים (זרוע, קופסת חיבורים) לא נספרים לכמות של קבלן
     if (attrsOf(p!).kind !== "accessory") units += qty;
     if (p!.price) total += p!.price * qty; else unknown++;
-    return `- ${qty} x ${p!.brand} ${p!.model}${p!.sku ? ` (מק"ט ${p!.sku})` : ""} | ${p!.price ? `${p!.price} ₪ ליח', ${p!.price * qty} ₪` : "לפי פנייה"} | /store/${p!.slug}`;
+    return `- ${qty} x ${productName(p!)}${p!.sku ? ` (מק"ט ${p!.sku})` : ""} | ${p!.price ? `${p!.price} ₪ ליח', ${p!.price * qty} ₪` : "לפי פנייה"}${isAddon(p!.slug) ? "" : ` | /store/${p!.slug}`}`;
   });
   // ניסיון קודם מול היבואן על הפריטים בהזמנה: מה קרה ומה הוצע במקום, כדי לא להתחיל מאפס
   const supplier = items.flatMap(({ p }) => {

@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '65',
+    title: 'איך לבחור מצלמת אבטחה לבית פרטי: מדריך קנייה מקיף',
+    slug: 'how-to-choose-home-security-camera-2026',
+    excerpt: 'מתלבטים איך לבחור מצלמת אבטחה לבית פרטי או לעסק? מדריך קנייה מקיף מבית Site-Control ילווה אתכם צעד אחר צעד לבחירה נכונה של מערכת אבטחה מתקדמת....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-10-22',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/how-to-choose-home-security-camera-2026/hero.webp',
+    seoTitle: 'איך לבחור מצלמת אבטחה לבית פרטי: מדריך קנייה מקיף',
+    seoDescription: 'מתלבטים איך לבחור מצלמת אבטחה לבית פרטי או לעסק? מדריך קנייה מקיף מבית Site-Control ילווה אתכם צעד אחר צעד לבחירה נכונה של מערכת אבטחה מתקדמת.',
+    keywords: ["מצלמת אבטחה לבית פרטי","איך לבחור מצלמת אבטחה","מדריך קנייה מצלמות אבטחה","מצלמות אבטחה Site-Control","מצלמות IP","ערכות אבטחה","Hikvision","Uniview","Reolink"]
+  },
+  {
     id: '64',
     title: 'שדרוג מערכת מצלמות אנלוגית ישנה בלי להחליף כבלים',
     slug: 'upgrade-old-analog-cctv-same-cables-2026',

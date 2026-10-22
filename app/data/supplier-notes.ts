@@ -15,6 +15,9 @@ export type SupplierNote = {
 const DOME_ARM_TIP = "זרוע קיר Dahua PFB203W לכל כיפה, 75 ₪ ליחידה (/store/dahua-pfb203w). עידן: יוצא מאוד יפה, והכבל עובר בתוך ההגבהה";
 
 export const SUPPLIER_NOTES: Record<string, SupplierNote> = {
+  "reolink-go-ultra": {
+    history: "22.10.2026 עידן: \"תרים את המחיר... כל הרשת על 1300\" (גם סיגמא מתקן), למצלמה לבד בלי פאנל. היה באתר 820. עידן מוכר לסוחר מהדרום (יואב, 10 מצלמות) ב-900+ למצלמה, ולא רוצה שהאתר יפיל אותו.",
+  },
   "reolink-rlk8-1200d4-a": {
     history: "1.10.2026 עידן: במלאי בשתי עדשות, 2.8 מ\"מ ו-4 מ\"מ. לשאול את הלקוח איזו עדשה לפני אישור.",
     tips: [DOME_ARM_TIP],

@@ -128,7 +128,7 @@ function fullKitOffer(p: (typeof storeProducts)[number]) {
 // "חשוב לדעת לפני שקונים" (רותם 11.10.2026): הקמפיין מביא אנשים לדף מצלמת ה-Hikvision ב-835 (6 מתוך 10 הלידים האחרונים),
 // והם חושבים שקונים מצלמה שעובדת לבד. מצלמת PoE צריכה כבל רשת ומקליט (או מזין PoE + כרטיס זיכרון). מציגים את זה ליד כפתור הקנייה,
 // עם קישור לערכה/מקליט ועם מצלמות עצמאיות (Wi-Fi/סוללה, מקליטות לכרטיס) כחלופה.
-const STANDALONE_ALTS = ["reolink-argus-3-ultra", "reolink-e1-outdoor-pro-e560", "reolink-trackmix-wifi"];
+const STANDALONE_ALTS = ["reolink-argus-b330", "reolink-e1-outdoor-pro-e560", "reolink-trackmix-wifi"];
 const standaloneAlts = () => STANDALONE_ALTS.map((s) => storeProducts.find((x) => x.slug === s && x.price)).filter((x): x is (typeof storeProducts)[number] => !!x);
 
 export default function ProductPage({ params }: { params: { slug: string } }) {

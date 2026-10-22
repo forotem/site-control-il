@@ -2587,79 +2587,28 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
-    "slug": "reolink-argus-3e",
+    "slug": "reolink-argus-b330",
     "brand": "Reolink",
-    "model": "Argus 3E",
+    "model": "Argus B330",
     "sku": null,
-    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3E, 3MP, Wi-Fi, זרקור, זווית 115°",
+    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus B330, 5MP, Wi-Fi דו-ערוצי, זרקור וצבע בלילה",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 260,
+    "price": 650,
     "specs": [
-      "3MP, עדשה רחבה 115°",
-      "Wi-Fi 2.4GHz, 100% אלחוטית",
-      "סוללה נטענת; טעינה מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד) או USB",
-      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
-      "microSD עד 128GB"
-    ],
-    "highlights": [
-      "זווית רחבה 115°",
-      "זרקור וצבע בלילה",
-      "Wi-Fi + סוללה"
-    ],
-    "image": "/store-images/reolink-argus-3e-v2.webp",
-    "datasheet": null,
-    "oldStock": false
-  },
-  {
-    "slug": "reolink-argus-3-pro",
-    "brand": "Reolink",
-    "model": "Argus 3 Pro",
-    "sku": null,
-    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Pro, 5MP, Wi-Fi דו-ערוצי, זרקור",
-    "category": "wifi",
-    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 334,
-    "specs": [
-      "5MP (2560×1920)",
-      "Wi-Fi 2.4/5GHz",
-      "סוללה נטענת; טעינה מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד) או USB",
-      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
-      "microSD עד 128GB, אפליקציה בעברית",
+      "5MP (2880×1620), עדשה 2.8 מ\"מ, זווית 105°",
+      "Wi-Fi דו-ערוצי 2.4/5GHz, 100% אלחוטית",
+      "סוללה נטענת 6000mAh; טעינה ב-USB-C או מפאנל סולארי Reolink",
+      "זרקור וראיית לילה צבעונית, חיישן PIR, שמע דו-כיווני",
+      "זיהוי אדם, רכב וחיה בלי מנוי; microSD (לא כלול), אפליקציה בעברית",
       "IP65"
     ],
     "highlights": [
-      "5MP עם זרקור",
-      "Wi-Fi 5GHz",
-      "סוללה + פאנל"
+      "5MP עם זרקור וצבע בלילה",
+      "Wi-Fi 5GHz יציב",
+      "סוללה + אפשרות לפאנל סולארי"
     ],
-    "image": "/store-images/reolink-argus-3-pro-v2.webp",
-    "datasheet": null,
-    "oldStock": false
-  },
-  {
-    "slug": "reolink-argus-3-ultra",
-    "brand": "Reolink",
-    "model": "Argus 3 Ultra",
-    "sku": null,
-    "title": "מצלמת אבטחה אלחוטית בסוללה Reolink Argus 3 Ultra, 4K 8MP, Wi-Fi 6, זרקור",
-    "category": "wifi",
-    "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 468,
-    "specs": [
-      "8MP 4K",
-      "Wi-Fi 6 דו-ערוצי",
-      "סוללה נטענת; טעינה מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד) או USB",
-      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
-      "microSD עד 128GB, אפליקציה בעברית",
-      "IP65"
-    ],
-    "highlights": [
-      "4K בסוללה",
-      "Wi-Fi 6",
-      "זרקור וצבע בלילה"
-    ],
-    "image": "/store-images/reolink-argus-3-ultra-v2.webp",
+    "image": "/store-images/reolink-argus-b330.webp",
     "datasheet": null,
     "oldStock": false
   },

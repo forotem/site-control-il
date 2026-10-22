@@ -119,9 +119,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-solar-panel-2": {"kind":"accessory","solar":true,"panelIncluded":true},
   "reolink-argus-eco": {"kind":"bullet","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
   "reolink-argus-eco-pro": {"kind":"bullet","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
-  "reolink-argus-3e": {"kind":"bullet","mp":3,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false,"angle":115},
-  "reolink-argus-3-pro": {"kind":"bullet","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
-  "reolink-argus-3-ultra": {"kind":"bullet","mp":8,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
+  "reolink-argus-b330": {"kind":"bullet","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
   "reolink-argus-track": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false,"varifocal":true},
   "reolink-argus-pt-lite": {"kind":"pt","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
   "reolink-e1-pro": {"kind":"wifi-pt","mp":4,"night":"ir","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true},
@@ -255,8 +253,8 @@ export function complementsOf(p: StoreProduct): { slugs: string[]; only: boolean
   if (p.slug === CAMPAIGN_SLUG) return list([]);
   // Argus: פאנל סולארי ורכזת
   if (a.battery && a.wifi) return list(["reolink-solar-panel-2", "reolink-home-hub"], true); // only: אחרת ההשלמה האוטומטית מ-wifi מוסיפה מצלמות Tenda
-  // Home Hub ו-NVS12W: רק Argus 3E, שההתאמה שלה מאומתת. שאר ה-Argus וה-E1 אחרי אישור עידן
-  if (isRecorder(a) && a.wifi) return list(["reolink-argus-3e"], true);
+  // Home Hub ו-NVS12W: רק Argus B330 (Reolink: "Home Hub Compatibility: YES"). Argus 3E ירדה מהאתר 22.10.2026 (עידן: "לא קיימים"). שאר ה-Argus וה-E1 אחרי אישור עידן
+  if (isRecorder(a) && a.wifi) return list(["reolink-argus-b330"], true);
   // Go ו-TrackMix LTE בלי פאנל בקופסה: Solar Panel 2 (הדגמים ברשימת ההתאמה שלו)
   if (a.lte && a.battery && a.solar && !a.panelIncluded) return list(["reolink-solar-panel-2"]);
   if (B10_FOR.has(p.slug)) return list(["reolink-b10"]);

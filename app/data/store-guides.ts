@@ -108,7 +108,7 @@ export const storeGuides: Record<string, CategoryGuide> = {
     compare: [
       { title: "לפנים הבית: Tenda מול Reolink", slugs: ["cp3-pro", "reolink-e1-pro", "reolink-e330", "reolink-e1-zoom"] },
       { title: "לחצר בלי מקליט", slugs: ["ct3", "ch10", "reolink-e1-outdoor-e540", "reolink-trackmix-wifi", "reolink-duo-2-wifi"] },
-      { title: "Wi-Fi בסוללה לבית", slugs: ["reolink-argus-eco", "reolink-argus-3-pro", "reolink-argus-3-ultra", "reolink-argus-pt-lite"] },
+      { title: "Wi-Fi בסוללה לבית", slugs: ["reolink-argus-eco", "reolink-argus-b330", "reolink-argus-pt-lite"] },
     ],
   },
   solar: {

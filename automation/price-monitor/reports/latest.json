@@ -1,5 +1,5 @@
 {
- "date": "2026-10-21",
+ "date": "2026-10-25",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 729,
+     "price": 538,
      "method": "text-anywhere"
     },
     {
@@ -133,7 +133,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 729,
+     "price": 350,
      "method": "text-anywhere"
     },
     {
@@ -179,7 +179,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 281,
+     "price": 288,
      "method": "text-anywhere"
     },
     {
@@ -503,7 +503,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1769,
+     "price": 1129,
      "method": "near-model-repeated"
     }
    ]
@@ -513,12 +513,12 @@
    "model": "DS-7616NXI-K1(D)",
    "brand": "Hikvision",
    "ours": 708,
-   "low": 508,
+   "low": 535,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
    "target": 708,
    "action": "floor_blocks",
-   "reason": "רצפה 708 לא מאפשרת לרדת ל-503",
+   "reason": "רצפה 708 לא מאפשרת לרדת ל-530",
    "offers": [
     {
      "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
@@ -541,7 +541,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 508,
+     "price": 535,
      "method": "structured+vat"
     }
    ]
@@ -551,10 +551,10 @@
    "model": "DS-7608NXI-K1/8P(D)",
    "brand": "Hikvision",
    "ours": 786,
-   "low": 803,
+   "low": 792,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-   "target": 798,
+   "target": 787,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -567,7 +567,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 803,
+     "price": 792,
      "method": "structured+vat"
     },
     {
@@ -579,7 +579,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 976,
+     "price": 1016,
      "method": "structured+vat"
     }
    ]
@@ -631,7 +631,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 2150,
+     "price": 1769,
      "method": "near-model-repeated"
     }
    ]
@@ -657,7 +657,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
-     "price": 1300,
+     "price": 990,
      "method": "near-model"
     }
    ]
@@ -761,7 +761,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1234,
+     "price": 1239,
      "method": "structured+vat"
     },
     {
@@ -805,10 +805,10 @@
    "model": "IPC2318LE-ADF28KM-WP",
    "brand": "Uniview",
    "ours": 535,
-   "low": 1234,
+   "low": 1239,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-   "target": 1229,
+   "target": 1234,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -829,7 +829,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 1234,
+     "price": 1239,
      "method": "structured+vat"
     }
    ]
@@ -839,10 +839,10 @@
    "model": "IPC3626LE-ADF28K-WP",
    "brand": "Uniview",
    "ours": 813,
-   "low": 820,
+   "low": 823,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-   "target": 815,
+   "target": 818,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -855,7 +855,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 820,
+     "price": 823,
      "method": "structured+vat"
     }
    ]
@@ -1077,7 +1077,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 521,
+     "price": 523,
      "method": "structured+vat"
     }
    ]
@@ -2003,7 +2003,7 @@
    "model": "DS-2CD1743G2-LIZU 2.8-12mm",
    "brand": "Hikvision",
    "ours": 1129,
-   "low": 527,
+   "low": 529,
    "lowSeller": "Senetic (senetic.co.il)",
    "lowUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
    "target": 889,
@@ -2031,7 +2031,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 527,
+     "price": 529,
      "method": "structured+vat"
     }
    ]
@@ -2277,7 +2277,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 862,
+     "price": 859,
      "method": "structured+vat"
     }
    ]
@@ -2311,7 +2311,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1197,
+     "price": 1201,
      "method": "structured+vat"
     }
    ]
@@ -2387,7 +2387,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1223,
+     "price": 1294,
      "method": "structured+vat"
     },
     {
@@ -2437,7 +2437,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://uriel-system.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%98%D7%95%D7%A8%D7%98-5-%D7%9E%D7%92%D7%94-%D7%97%D7%91%D7%A8%D7%AA-hikvision-%D7%93%D7%92%D7%9Dds-2cd1353g0-i/",
-     "price": 762,
+     "price": 452,
      "method": "text-anywhere"
     }
    ]
@@ -2767,7 +2767,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 80,
+     "price": 69,
      "method": "text-anywhere"
     },
     {
@@ -2822,13 +2822,13 @@
    "slug": "reolink-go-ultra",
    "model": "Reolink Go Ultra / G340",
    "brand": "",
-   "ours": 820,
+   "ours": 1300,
    "low": 830,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/?p=23250",
-   "target": null,
-   "action": "ok",
-   "reason": "",
+   "target": 820,
+   "action": "review",
+   "reason": "ירידה של 37% דורשת אישור",
    "offers": [
     {
      "url": "https://www.satsigma.co.il/?p=23250",
@@ -2959,11 +2959,11 @@
    "model": "Reolink TrackMix LTE",
    "brand": "",
    "ours": 1780,
-   "low": 1790,
-   "lowSeller": "vsale.co.il",
-   "lowUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
+   "low": null,
+   "lowSeller": null,
+   "lowUrl": null,
    "target": null,
-   "action": "ok",
+   "action": "fetch_failed",
    "reason": "",
    "offers": [
     {
@@ -2983,8 +2983,8 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
-     "price": 1790,
-     "method": "structured"
+     "price": 1000,
+     "method": "text-anywhere"
     }
    ]
   },
@@ -3017,7 +3017,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 4208,
+     "price": 3998,
      "method": "text-anywhere"
     },
     {
@@ -3200,7 +3200,7 @@
    "slug": "reolink-solar-panel-2",
    "model": "Solar Panel 2-W",
    "brand": "Reolink",
-   "ours": 68,
+   "ours": 139,
    "low": null,
    "lowSeller": null,
    "lowUrl": null,
@@ -3299,112 +3299,6 @@
      "ok": false,
      "status": 403,
      "error": ""
-    }
-   ]
-  },
-  {
-   "slug": "reolink-argus-3e",
-   "model": "Argus 3E",
-   "brand": "Reolink",
-   "ours": 260,
-   "low": 270,
-   "lowSeller": "satsigma.co.il",
-   "lowUrl": "https://www.satsigma.co.il/?p=31629",
-   "target": null,
-   "action": "ok",
-   "reason": "",
-   "offers": [
-    {
-     "url": "https://www.satsigma.co.il/?p=31629",
-     "seller": "satsigma.co.il",
-     "note": "camera alone, 270",
-     "ok": true,
-     "comparable": true,
-     "status": 200,
-     "modelSeen": true,
-     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%91%d7%98%d7%a8%d7%99%d7%99%d7%94-reolink-argus-3e-3mp-wifi/",
-     "price": 270,
-     "method": "structured"
-    },
-    {
-     "url": "https://www.dailysale.co.il/95963",
-     "seller": "dailysale.co.il",
-     "note": "camera alone, 278",
-     "ok": false,
-     "status": 403,
-     "error": ""
-    }
-   ]
-  },
-  {
-   "slug": "reolink-argus-3-pro",
-   "model": "Argus 3 Pro",
-   "brand": "Reolink",
-   "ours": 334,
-   "low": 349,
-   "lowSeller": "satsigma.co.il",
-   "lowUrl": "https://www.satsigma.co.il/?p=28685",
-   "target": 339,
-   "action": "room_to_raise",
-   "reason": "הרצה עם --realign תיישר למעלה",
-   "offers": [
-    {
-     "url": "https://www.dailysale.co.il/103227",
-     "seller": "dailysale.co.il",
-     "note": "camera alone, 344",
-     "ok": false,
-     "status": 403,
-     "error": ""
-    },
-    {
-     "url": "https://www.satsigma.co.il/?p=28685",
-     "seller": "satsigma.co.il",
-     "note": "camera alone, 349",
-     "ok": true,
-     "comparable": true,
-     "status": 200,
-     "modelSeen": true,
-     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%91%d7%98%d7%a8%d7%99%d7%99%d7%94-reolink-argus-3-pro-5mp-wifi/",
-     "price": 349,
-     "method": "structured"
-    }
-   ]
-  },
-  {
-   "slug": "reolink-argus-3-ultra",
-   "model": "Argus 3 Ultra",
-   "brand": "Reolink",
-   "ours": 468,
-   "low": 485,
-   "lowSeller": "satsigma.co.il",
-   "lowUrl": "https://www.satsigma.co.il/?p=22104",
-   "target": 475,
-   "action": "room_to_raise",
-   "reason": "הרצה עם --realign תיישר למעלה",
-   "offers": [
-    {
-     "url": "https://www.satsigma.co.il/?p=22104",
-     "seller": "satsigma.co.il",
-     "note": "camera alone, 485",
-     "ok": true,
-     "comparable": true,
-     "status": 200,
-     "modelSeen": true,
-     "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-reolink-argus-3-ultra-8mp-wifi-%d7%a2%d7%9d-%d7%a4%d7%a0%d7%a1-%d7%90%d7%9c%d7%97%d7%95%d7%98%d7%99%d7%aa-%d7%a0%d7%98%d7%a2%d7%a0%d7%aa/",
-     "price": 485,
-     "method": "structured"
-    },
-    {
-     "url": "https://katom.shop/?p=183406",
-     "seller": "katom.shop",
-     "note": "camera alone, 489",
-     "ok": true,
-     "comparable": true,
-     "status": 200,
-     "modelSeen": true,
-     "finalUrl": "https://katom.shop/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-%d7%90%d7%91%d7%98%d7%97%d7%94-reolink-argus-3-ultra-4k-8mp-2-4-5ghz-wifi/",
-     "price": 689,
-     "method": "near-model-repeated"
     }
    ]
   },
@@ -3643,7 +3537,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 278,
+     "price": 350,
      "method": "text-anywhere"
     },
     {
@@ -3671,7 +3565,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 278,
+     "price": 350,
      "method": "text-anywhere"
     }
    ]
@@ -4181,7 +4075,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 230,
      "method": "text-anywhere"
     },
     {
@@ -4193,7 +4087,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 230,
      "method": "text-anywhere"
     },
     {
@@ -4251,7 +4145,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 729,
+     "price": 538,
      "method": "text-anywhere"
     },
     {
@@ -4503,7 +4397,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 729,
+     "price": 538,
      "method": "text-anywhere"
     },
     {

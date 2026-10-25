@@ -9,6 +9,7 @@ JOBS = [  # (camera image, output name)
     ("reolink-go-ultra-v2.webp", "reolink-go-ultra-solar-kit.webp"),
     ("reolink-trackmix-lte-v2.webp", "reolink-trackmix-lte-solar-kit.webp"),
     ("reolink-go-pt-ultra-v2.webp", "reolink-go-pt-ultra-solar-kit.webp"),
+    ("reolink-go-pt-plus-v2.webp", "reolink-go-pt-plus-solar-kit.webp"),
 ]
 S = 980
 

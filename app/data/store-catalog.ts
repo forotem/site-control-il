@@ -2283,7 +2283,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1300,
+    "price": 825,
     "specs": [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",
@@ -2306,14 +2306,14 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Reolink",
     "model": "Reolink Go PT Plus",
     "sku": null,
-    "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, סוללה וסים",
+    "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Plus, 5MP, סיבוב 355°, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
     "price": 1109,
     "specs": [
       "5MP, מנוע Pan/Tilt: 355° אופקי, 140° אנכי, שליטה מהאפליקציה",
       "חיבור 4G LTE עם כרטיס סים",
-      "סוללה נטענת; טעינה מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד) או מ-USB",
+      "סוללה נטענת + פאנל סולארי Reolink כלול באריזה (קיט Go PT Plus + Solar Panel), טעינה גם מ-USB",
       "זרקור, ראיית לילה אינפרא עד 10 מ', PIR, שמע דו-כיווני",
       "microSD עד 128GB, אפליקציה בעברית",
       "IP64"
@@ -2321,9 +2321,9 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "מסתובבת מרחוק: מצלמה אחת מכסה חצר או מגרש",
       "4G LTE עם סים, בלי תשתית",
-      "סוללה + פאנל סולארי"
+      "פאנל סולארי כלול באריזה: פותחים ומתקינים"
     ],
-    "image": "/store-images/reolink-go-pt-plus-v2.webp",
+    "image": "/store-images/reolink-go-pt-plus-solar-kit.webp",
     "datasheet": null,
     "oldStock": false
   },

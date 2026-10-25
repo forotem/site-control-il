@@ -108,7 +108,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "cp3-pro": {"kind":"wifi-pt","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":360,"ik10":false,"wifi":true},
   "reolink-go-plus": {"kind":"bullet","mp":4,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
   "reolink-go-ultra": {"kind":"bullet","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
-  "reolink-go-pt-plus": {"kind":"pt","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
+  "reolink-go-pt-plus": {"kind":"pt","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-go-pt-ultra": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-duo-2-lte": {"kind":"fisheye","mp":6,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"angle":180},
   "reolink-trackmix-lte": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"varifocal":true},

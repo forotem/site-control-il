@@ -49,6 +49,11 @@ const FIELDS = {
 const RESET_ON_NEW = ["מקור", "בקשת הלקוח", "מה טל הבין", "אפיון", "מצב (אוטומטי)", "מי מטפל", "שלח פתיחה", "הודעת פתיחה", "מס' פנייה", "מייל", "יישוב", "דף", "הודעה אחרונה מהלקוח", "מי מטפל עודכן"];
 const REQUIRED = ["שם", "טלפון", "תאריך", "עודכן", "מי מטפל", "שלח פתיחה", "הודעת פתיחה", "מצב (אוטומטי)", "מי מטפל עודכן"];
 const MY_STATUS = ["חדש", "בטיפול", "הצעה נשלחה", "ממתין ללקוח", "נסגר", "לא רלוונטי"];
+// רותם 26.10.2026: "מה שרלי מעדכנת בטבלה, היא מתקנת את זה, כנראה היא יודעת על מה מדובר". "מצב (אוטומטי)" לא נדרס כש:
+//   - רלי כתבה בו בעצמה (נרשם בטריגר העריכה, לפי טלפון, ב-Script Properties "manual:<טלפון>"; ניקוי התא מחזיר את האוטומציה)
+//   - "איפה זה עומד" = נסגר / לא רלוונטי (הלקוח שכתב שוב עדיין מופיע ב"הודעה אחרונה מהלקוח" וב"עודכן")
+const DONE_STATUS = ["נסגר", "לא רלוונטי"];
+const manualKey = (phone) => "manual:" + norm(phone);
 
 const props = () => PropertiesService.getScriptProperties();
 const siteUrl = () => (props().getProperty("SITE_URL") || "https://www.site-control-il.com").replace(/\/$/, "");
@@ -171,11 +176,18 @@ function upsert(row) {
       const col = C[FIELDS[k].col];
       if (v === undefined || v === null || v === "" || !col) return;
       if (FIELDS[k].keep && sh.getRange(r, col).getValue() !== "") return;
+      if (k === "status" && statusLocked(sh, C, r)) return;
       sh.getRange(r, col).setValue(asText(v));
     });
     sh.getRange(r, C["עודכן"]).setValue(now).setNumberFormat("dd/MM HH:mm");
     return { ok: true, row: r };
   });
+}
+
+/** "מצב (אוטומטי)" של השורה שייך לרלי: היא כתבה בו בעצמה, או סימנה את הליד כנסגר / לא רלוונטי */
+function statusLocked(sh, C, r) {
+  if (C["איפה זה עומד"] && DONE_STATUS.indexOf(String(sh.getRange(r, C["איפה זה עומד"]).getValue()).trim()) >= 0) return true;
+  return Boolean(props().getProperty(manualKey(sh.getRange(r, C["טלפון"]).getValue())));
 }
 
 /** תפיסת מקום בתקרת הודעות הפתיחה: יום (שעון ישראל) וכתובת IP לשעה. נעול, כדי שבקשות במקביל לא יעברו יחד.
@@ -258,6 +270,7 @@ function doPost(e) {
 
 /** טריגר עריכה (מותקן ב-setup):
  *  - "מי מטפל" שונה: נרשם מתי (העמודה הנסתרת "מי מטפל עודכן"), כדי ש"טל" יחזיר את השיחה לטל רק עד שרלי כותבת שוב.
+ *  - "מצב (אוטומטי)" נערך ביד: השורה נרשמת כ"של רלי" והאוטומציה לא דורסת אותה (תא שנוקה חוזר לאוטומציה).
  *  - "שלח פתיחה" סומן: הודעת פתיחה מטל דרך האתר, לכל שורה שסומנה (גם כמה בבת אחת). */
 function onEditSendOpening(e) {
   const range = e && e.range;
@@ -268,6 +281,15 @@ function onEditSendOpening(e) {
   if (missing(C).length) return;
   const c0 = range.getColumn(), c1 = range.getLastColumn(), r0 = Math.max(2, range.getRow()), r1 = range.getLastRow();
   if (r1 < 2) return;
+  if (c0 <= C["מצב (אוטומטי)"] && C["מצב (אוטומטי)"] <= c1) {
+    const p = props();
+    for (let r = r0; r <= r1; r++) {
+      const phone = sh.getRange(r, C["טלפון"]).getValue();
+      if (!norm(phone)) continue;
+      if (String(sh.getRange(r, C["מצב (אוטומטי)"]).getValue()).trim()) p.setProperty(manualKey(phone), new Date().toISOString());
+      else p.deleteProperty(manualKey(phone));
+    }
+  }
   if (c0 <= C["מי מטפל"] && C["מי מטפל"] <= c1) {
     sh.getRange(r0, C["מי מטפל עודכן"], r1 - r0 + 1, 1).setValue(new Date());
   }
@@ -300,7 +322,10 @@ function sendOpeningRow(sh, C, r, box) {
     let body = {};
     try { body = JSON.parse(res.getContentText() || "{}"); } catch (err) { body = {}; }
     out.setValue(body.status || `שגיאה (${res.getResponseCode()})`);
-    if (body.ok) sh.getRange(r, C["מצב (אוטומטי)"]).setValue("פתיחה נשלחה, טל בשיחה");
+    if (body.ok) {
+      props().deleteProperty(manualKey(phone)); // רלי שלחה פתיחה מחדש: השורה חוזרת לאוטומציה
+      sh.getRange(r, C["מצב (אוטומטי)"]).setValue("פתיחה נשלחה, טל בשיחה");
+    }
   } catch (err) {
     out.setValue("לא נשלחה: " + err);
   }

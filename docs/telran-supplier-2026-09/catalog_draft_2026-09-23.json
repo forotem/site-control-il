@@ -3862,16 +3862,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 820,
+    "market_low_ils": 830,
     "market_typical_ils": 1279,
     "price_basis": "exact",
-    "recommended_price_ils": 809,
+    "recommended_price_ils": 820,
     "estimated_cost_ils": 1073,
     "estimated_margin_ils": 206,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1279, מתקין לפני מע\"מ 909; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 820 (com4tech 820 / סיגמה 830 / BConnect 899); מחיר מתקין טלרן+מע\"מ 1073; מתחת לעלות מתקין (1073) ב-264 ₪: עידן צריך להשלים",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 820 (com4tech 820 / סיגמה 830 / BConnect 899); מחיר מתקין טלרן+מע\"מ 1073; מתחת לעלות מתקין (1073) ב-264 ₪: עידן צריך להשלים | סורק מתחרים 2026-10-28: הזול 830 (satsigma.co.il), הוזל ל-820",
     "telran_installer_incl_vat": 1073
   },
   {

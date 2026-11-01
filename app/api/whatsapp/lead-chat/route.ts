@@ -50,7 +50,8 @@ export async function GET(req: NextRequest) {
   }
   // קו שלא ענה ואין ליד בקו השני: אולי השיחה בקו שנכשל, אז שגיאה ולא "not a site lead"
   if (!history || (failed && !self && !isLead(history))) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });
-  const fromSite = self || isLead(history);
+  // 1.11.2026: הקו של רלי הוא קו עבודה בלבד, אז גם מי שכתב ישירות למספר הוא ליד (רק כשמבקשים במפורש את הקו הזה)
+  const fromSite = self || isLead(history) || (asked === "customer" && line === "customer" && history.some((m) => m.type === "incoming"));
   if (!fromSite) return NextResponse.json({ error: "not a site lead" }, { status: 403 });
   // ?ids=a,b: סטטוס הודעות שנשלחו (sent / delivered / read), לאימות אחרי שליחה
   const ids = (req.nextUrl.searchParams.get("ids") || "").split(",").map((s) => s.trim()).filter(Boolean).slice(0, 10);

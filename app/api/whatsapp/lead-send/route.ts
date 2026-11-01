@@ -56,7 +56,8 @@ export async function POST(req: NextRequest) {
   for (const l of candidates) {
     const history = await greenApi<Msg[]>("getChatHistory", { chatId: `${phone}@c.us`, count: 300 }, undefined, l);
     if (!history) failed = true;
-    if (history && allowed(history)) { line = l; break; }
+    // 1.11.2026: הקו של רלי הוא קו עבודה בלבד: מי שכתב ישירות למספר הוא ליד (רק כשמבקשים במפורש את הקו הזה)
+    if (history && (allowed(history) || (l === "customer" && asked === "customer" && history.some((m) => m.type === "incoming")))) { line = l; break; }
   }
   // קו שלא ענה ואין התאמה בקו השני: אולי השיחה בקו שנכשל, אז שגיאה (לנסות שוב) ולא 403
   if (!line && failed) return NextResponse.json({ error: "greenapi unavailable" }, { status: 502 });

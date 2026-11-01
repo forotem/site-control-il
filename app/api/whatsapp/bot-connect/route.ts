@@ -28,8 +28,9 @@ export async function POST(req: NextRequest) {
   if (action === "connect") {
     const token = botToken(line);
     if (!token) return NextResponse.json({ error: "no token" }, { status: 500 });
-    // בקו של רלי גם stateWebhook: התראה כשהטלפון שלה מתנתק
-    const r = await greenApi("setSettings", { webhookUrl: BOT_URL, webhookUrlToken: token, incomingWebhook: "yes", ...(line === "customer" ? { stateWebhook: "yes" } : {}) }, undefined, line);
+    // בקו של רלי גם stateWebhook: התראה כשהטלפון שלה מתנתק.
+    // 1.11.2026: גם היוצאות, כמו במספר של רותם. בלעדיהן ההיסטוריה של הקו כמעט בלי הודעות יוצאות (הבוט מתעלם מהן ב-webhook)
+    const r = await greenApi("setSettings", { webhookUrl: BOT_URL, webhookUrlToken: token, incomingWebhook: "yes", ...(line === "customer" ? { stateWebhook: "yes", outgoingWebhook: "yes", outgoingMessageWebhook: "yes", outgoingAPIMessageWebhook: "yes" } : {}) }, undefined, line);
     return NextResponse.json({ action, line, result: r });
   }
   if (action === "disconnect") {

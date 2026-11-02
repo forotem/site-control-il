@@ -273,7 +273,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gap: '1rem'
             }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: 'rgba(139, 163, 191, 0.6)' }}>© {new Date().getFullYear()} Site-Control - מצלמות אבטחה, התקנה וחנות. כל הזכויות שמורות.</p>
-              <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', gap: '1rem' }}>
+              <p style={{ margin: 0, fontSize: '0.85rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem 1rem', minWidth: 0 }}>
                 <Link href="/shipping" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>משלוחים</Link>
                 <Link href="/returns" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>החזרות</Link>
                 <Link href="/terms" style={{ color: 'rgba(139, 163, 191, 0.8)', textDecoration: 'none' }}>תקנון</Link>

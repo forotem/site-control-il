@@ -7,6 +7,7 @@ import { productBySlug } from "../../data/store-knowledge";
 import { deliveryOptions, productName } from "../../data/store-catalog";
 import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile, SUPPLIER_GROUP, customerLineReady } from "../../lib/store-notify";
 import { sheetUpsert } from "../../lib/leads-sheet";
+import { restDay } from "../../lib/il-time";
 import { attributionLabel } from "../../lib/attribution-label";
 import { attrsOf } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
@@ -124,9 +125,11 @@ export async function POST(req: NextRequest) {
   const ref = `SC-${Date.now().toString(36).toUpperCase()}`;
 
   // הודעה אישית ללקוח מהקו של רלי (או מהמספר של רותם כשהקו שלה לא מחובר). רק לנייד ישראלי, ולא יותר מפעם ב-10 דקות לאותו מספר.
+  // 2.11.2026: בשבת ובחג לא כותבים ללקוח ולא לספק. ההזמנה נשמרת בטבלה של רלי ובהתראה לצוות, והלקוח באתר רואה רק את מספר ההזמנה.
+  const resting = restDay();
   const mobile = israeliMobile(phone);
   let customerWa = false;
-  if (mobile && Date.now() - (lastSent.get(mobile) || 0) > 10 * 60 * 1000) {
+  if (!resting && mobile && Date.now() - (lastSent.get(mobile) || 0) > 10 * 60 * 1000) {
     customerWa = await sendWhatsApp(mobile, customerMessage(name, ref, items as OrderItem[], total, body.delivery, address), "customer");
     if (customerWa) lastSent.set(mobile, Date.now());
   }
@@ -134,7 +137,7 @@ export async function POST(req: NextRequest) {
   // הזמנה מאומתת עוברת לספק, ובודקים כמה שניות אם ההודעה נמסרה. מ-7.10.2026 לקבוצת ההזמנות (עידן ואלי) ולא לצ'אט
   // הפרטי של עידן: רותם פתח את הקבוצה "שיהיה מסודר", ולפעמים עידן לא עונה ואלי כן
   let idanStatus: string | null = null;
-  if (verified) {
+  if (verified && !resting) {
     const idanMsgId = await sendWhatsAppId(SUPPLIER_GROUP, supplierMessage(ref, name, phone, delivery, address, items as OrderItem[], total, String(body.note || "").slice(0, 300)));
     if (idanMsgId) {
       idanStatus = "sent";
@@ -146,7 +149,8 @@ export async function POST(req: NextRequest) {
       }
     }
   }
-  const idanLine = !verified ? null
+  const idanLine = resting ? "⏸ שבת או חג: לא נשלח כלום ללקוח ולספק. אחרי שבת רלי חוזרת ללקוח ומעבירה לעידן ואלי."
+    : !verified ? null
     : idanStatus === "read" ? "✅✅ ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי) וכבר נקראה."
     : idanStatus === "delivered" ? "✅✅ ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי) ונמסרה."
     : idanStatus ? "📤 ההזמנה נשלחה לקבוצת ההזמנות (עידן ואלי), עדיין לא סומנה כנמסרה."
@@ -170,7 +174,7 @@ export async function POST(req: NextRequest) {
     body.note ? `\nהערה מהלקוח: ${String(body.note).slice(0, 500)}` : null,
     supplier.length ? `\nמהניסיון מול היבואן:\n${supplier.join("\n")}` : null,
     "",
-    customerWa ? `✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ${customerLineReady() ? "מהקו של רלי" : "ממך"} (מוצר, מחיר, קישור, ושבודקים מלאי).` : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
+    resting ? null : customerWa ? `✅ ללקוח נשלחה הודעת ווצאפ אוטומטית ${customerLineReady() ? "מהקו של רלי" : "ממך"} (מוצר, מחיר, קישור, ושבודקים מלאי).` : `⚠️ לא נשלחה ללקוח הודעת ווצאפ אוטומטית${mobile ? "" : " (המספר לא נייד ישראלי)"}.`,
     idanLine,
     idanStatus ? "לעשות: לוודא שעידן תופר את העסקה מול הלקוח (מלאי, תשלום, משלוח), ולעדכן אותי." : "לעשות: לבדוק זמינות מול עידן (טלרן), לתמחר משלוח UPS לפי הכתובת (אם נבחר משלוח), ולחזור ללקוח לאישור מחיר סופי ותשלום.",
   ].filter((x) => x !== null).join("\n");
@@ -181,7 +185,7 @@ export async function POST(req: NextRequest) {
     phone: mobile || phone, name, email: body.email ? String(body.email).slice(0, 120) : undefined, ref,
     source: `הזמנה מהעגלה (${attributionLabel(body.attribution)})`,
     need: `${(items as OrderItem[]).map(({ p, qty }) => `${qty} x ${productName(p)}`).join(", ")} | ${total.toLocaleString("he-IL")} ₪ | ${delivery}${address ? `, ${address}` : ""}`.slice(0, 600),
-    status: `🛒 הזמנה ${ref}${verified ? "" : " (טלפון לא אומת)"}`,
+    status: `🛒 הזמנה ${ref}${verified ? "" : " (טלפון לא אומת)"}${resting ? " (הגיעה בשבת: לחזור ללקוח ולספק)" : ""}`,
     opening: customerWa ? "נשלחה הודעת הזמנה ללקוח" : undefined,
   });
   // אם אף ערוץ לא עבד, לא מאשרים ללקוח הזמנה שאף אחד לא יראה: מחזירים שגיאה וה-UI מציע וואטסאפ.

@@ -94,6 +94,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "ds-2cd1353g0-i-2-8mm": {"kind":"turret","mp":5,"night":"ir","range":30,"audio":"none","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"ik10":false},
   "ds-2cd2387g2h-lisu-sl-2-8mm": {"kind":"turret","mp":8,"night":"hybrid","range":60,"audio":"two-way","ai":"acusense","deter":true,"varifocal":false,"sd":true,"wideSensor":true,"angle":109,"ik10":false},
   "ids-2cd7a46g2-p-izhsy-8-32mm": {"kind":"lpr","mp":4,"night":"ir","range":100,"audio":"none","ai":"none","deter":false,"varifocal":true,"sd":true,"wideSensor":true,"ik10":true},
+  "ds-2ce60kf0t-ptlxts-2-8mm": {"kind":"turret","mp":5,"night":"hybrid","range":40,"audio":"two-way","ai":"none","deter":true,"varifocal":false,"sd":false,"wideSensor":false,"angle":105,"ik10":false},
   "ds-2ce10kf0t-lpfs-2-8mm": {"kind":"bullet","mp":5,"night":"hybrid","range":20,"audio":"mic","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":105,"ik10":false},
   "ds-2ce10kf0t-fs-3-6mm": {"kind":"bullet","mp":5,"night":"color","range":20,"audio":"mic","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":80,"ik10":false},
   "ds-2ce12kf0t-lfs-2-8mm": {"kind":"bullet","mp":5,"night":"hybrid","range":40,"audio":"mic","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":105,"ik10":false},

@@ -80,7 +80,7 @@
     "model": "DS-KV6124-WBE1",
     "brand": "Hikvision",
     "policy": "undercut-with-floor",
-    "floor": 606,
+    "floor": 769,
     "urls": [
       {
         "url": "https://www.com4tech.co.il/product/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%95%D7%99%D7%9C%D7%94-ds-kv6124-e1-%D7%9E%D7%91%D7%99%D7%AA-hikvision-%D7%9E%D7%91%D7%99%D7%90-%D7%90%D7%99%D7%AA%D7%95-%D7%93%D7%A8%D7%9A-%D7%A2%D7%91%D7%95%D7%93%D7%94-%D7%A4%D7%A9%D7%95%D7%98%D7%94-%D7%97%D7%9B%D7%9E%D7%94-%D7%95%D7%99%D7%A2%D7%99%D7%9C%D7%94-%D7%99%D7%95%D7%AA%D7%A8/",
@@ -1396,6 +1396,13 @@
       }
     ]
   },
+  "ds-2ce60kf0t-ptlxts-2-8mm": {
+    "model": "DS-2CE60KF0T-PTLXTS 2.8mm",
+    "brand": "Hikvision",
+    "policy": "undercut-with-floor",
+    "floor": 699,
+    "urls": []
+  },
   "ds-2ce70kf0t-lpfs-2-8mm": {
     "model": "DS-2CE70KF0T-LPFS 2.8mm",
     "brand": "Hikvision",
@@ -1538,7 +1545,7 @@
     "model": "Reolink Go Ultra / G340",
     "brand": "Reolink",
     "policy": "undercut",
-    "floor": 0,
+    "floor": 825,
     "urls": [
       {
         "url": "https://www.satsigma.co.il/?p=23250",
@@ -1576,7 +1583,7 @@
     "model": "Reolink Go PT Ultra",
     "brand": "Reolink",
     "policy": "undercut",
-    "floor": 0,
+    "floor": 1134,
     "urls": [
       {
         "url": "https://www.satsigma.co.il/?p=20626",

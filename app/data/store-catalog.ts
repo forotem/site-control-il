@@ -1950,6 +1950,33 @@ export const storeProducts: StoreProduct[] = [
     "oldStock": false
   },
   {
+    "slug": "ds-2ce60kf0t-ptlxts-2-8mm",
+    "brand": "Hikvision",
+    "model": "DS-2CE60KF0T-PTLXTS 2.8mm",
+    "sku": null,
+    "title": "מצלמת PT אנלוגית Hikvision 5MP ColorVu עם שמע דו-כיווני וסירנה 2.8mm DS-2CE60KF0T-PTLXTS",
+    "category": "analog",
+    "categoryName": "מצלמות אנלוגיות",
+    "price": 699,
+    "specs": [
+      "רזולוציה 5MP / 3K (2960×1664) עד 25fps, חיישן CMOS, צמצם F1.0 לצבע 24/7",
+      "מצלמה אנלוגית: מתחברת בכבל קואקס למקליט DVR/XVR, לא ישירות לרשת. המקליט נמכר בנפרד",
+      "Smart Hybrid Light: אור לבן עד 40 מ' + IR עד 40 מ' (מצב חכם/IR/אור לבן)",
+      "שמע דו-כיווני: מיקרופון ורמקול 2W מובנים, טווח עד 5 מ', שמע על גבי הקואקס. לדיבור דרך המצלמה צריך מקליט תואם",
+      "הרתעה: סירנה קולית ואור מהבהב אדום-כחול",
+      "עדשה קבועה 2.8mm (זווית אופקית 105°), טווח כיוון Pan 0°-345°, Tilt 0°-80°",
+      "IP66, עבודה מ-30- עד 60+ מעלות, 3D DNR, DWDR, הזנה 12VDC עד 9.5W (מומלץ ספק נפרד לכל מצלמה)"
+    ],
+    "image": "/store-images/ds-2ce60kf0t-ptlxts-2-8mm.webp",
+    "datasheet": "https://assets.hikvision.com/prd/normal/all/doc/m000177603/DS-2CE60KF0T-PTLXTS_Datasheet_20260115.pdf",
+    "highlights": [
+      "רזולוציה 5MP / 3K (2960×1664) עד 25fps, חיישן CMOS, צמצם F1.0 לצבע 24/7",
+      "Smart Hybrid Light: אור לבן עד 40 מ' + IR עד 40 מ' (מצב חכם/IR/אור לבן)",
+      "שמע דו-כיווני: מיקרופון ורמקול 2W מובנים, טווח עד 5 מ', שמע על גבי הקואקס. לדיבור דרך המצלמה צריך מקליט תואם"
+    ],
+    "oldStock": false
+  },
+  {
     "slug": "ds-2ce10kf0t-lpfs-2-8mm",
     "brand": "Hikvision",
     "model": "DS-2CE10KF0T-LPFS 2.8mm",
@@ -2283,7 +2310,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 820,
+    "price": 825,
     "specs": [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",

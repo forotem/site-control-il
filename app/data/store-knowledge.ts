@@ -1,6 +1,6 @@
 // בסיס הידע של עוזר המכירות: טקסט קומפקטי שנבנה פעם אחת מהקטלוג, מהמאפיינים ומהמדריכים.
 // נטען רק בצד השרת (API route). אין כאן מידע סודי.
-import { storeProducts, storeCategories, deliveryOptions, WARRANTY_TEXT, productName } from "./store-catalog";
+import { storeProducts, storeCategories, deliveryOptions, WARRANTY_RANGE, warrantyOf, productName } from "./store-catalog";
 import { attrsOf, fitLine, kindText, nightLabel, audioLabel, aiLabel, isCamera, isRecorder, mpLabel } from "./store-attrs";
 import { storeGuides } from "./store-guides";
 import { deals, dealProduct, withVat, simLabel } from "./deals";
@@ -37,7 +37,7 @@ function productLine(p: (typeof storeProducts)[number]): string {
   }
   const price = p.price ? `${p.price} ₪` : "מחיר לפי פנייה";
   const hl = p.highlights.slice(0, 2).join("; ");
-  return `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${price} | ${p.title} | ${bits.join(", ")} | מתאים ל: ${fitLine(p)}${p.oldStock ? " | מלאי ישן במבצע חיסול" : ""} | ${hl}`;
+  return `- [${p.slug}] ${productName(p)}${p.sku ? ` (מק"ט ${p.sku})` : ""} | ${price} | ${p.title} | ${bits.join(", ")} | מתאים ל: ${fitLine(p)}${p.oldStock ? " | מלאי ישן במבצע חיסול" : ""} | ${warrantyOf(p.slug)} | ${hl}`;
 }
 
 export function buildKnowledge(): string {
@@ -50,7 +50,7 @@ export function buildKnowledge(): string {
     return `## ${c.name} (${items.length} מוצרים)\n${c.blurb}\n${guide}\nמוצרים:\n${items.map(productLine).join("\n")}`;
   });
   const policies = [
-    `אחריות: ${WARRANTY_TEXT}.`,
+    `אחריות: ${WARRANTY_RANGE}, כתוב בשורה של כל מוצר.`,
     "מדיניות מחיר: המטרה שלנו להיות הזולים בישראל לאותו דגם, בכמה שקלים מתחת לזול ביותר (לא בהנחות של אחוזים). אם לקוח אומר שמצא זול יותר באתר ישראלי, בקש קישור, אמור שנשווה את המחיר, וסמן escalate כדי שרותם יאשר. אל תבטיח בעצמך מחיר נמוך מזה שבקטלוג.",
     `אספקה: ${deliveryOptions.map((d) => `${d.title} (${d.desc})`).join("; ")}.`,
     `משלוח: ${BUSINESS.shipping.rule} אף מחיר באתר לא כולל משלוח, גם לא מחירי מבצע. כשלקוח שואל כמה עולה משלוח: לא נוקבים מחיר מחייב. אומרים שהמחיר נקבע לפי הכתובת והמשקל, מבקשים יישוב או כתובת, ומוסרים שהצוות יחזור עם מחיר מדויק.${BUSINESS.shipping.estimates.length ? ` אפשר לתת הערכה בלבד, ולהדגיש שזו הערכה: ${BUSINESS.shipping.estimates.map((e) => `${e.what} (${e.example}): ${e.price}`).join("; ")}.` : ""} "יישוב מרוחק" הוא רק מה שברשימת הדוגמאות; יישוב אחר לא מסמנים לבד כמרוחק, אומרים שהצוות יבדוק את התוספת. איסוף עצמי ללא עלות, בתיאום מראש. פרטים: /shipping.`,

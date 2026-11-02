@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   openGraph: {
     title: "אודות Site-Control",
-    description: "מתקינים ומוכרים מצלמות אבטחה. מלאי בישראל, אחריות שנה, ייעוץ לפני הקנייה.",
+    description: "מתקינים ומוכרים מצלמות אבטחה. מלאי בישראל, אחריות עד 24 חודשים, ייעוץ לפני הקנייה.",
     type: "website",
     locale: "he_IL", images: ["/og-default.jpg"] },
 };

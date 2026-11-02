@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BASE_URL } from "../../config";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../data/store-catalog";
+import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, warrantyOf, productName } from "../../data/store-catalog";
 import { attrsOf, fitLine, kindLabel, kindText, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel, complementsOf } from "../../data/store-attrs";
 import { FULL_KIT_PREFILL } from "../../lib/site-wa-prefills";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
@@ -31,7 +31,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   // 17.10.2026 (בדיקת SEO): המחיר בתיאור (בתוצאות החיפוש), ובלי highlight שכבר כתוב בכותרת ("זום אופטי x5" פעמיים)
   const hl = p.highlights.find((h) => !p.title.includes(h.slice(0, 12))) || "";
   const priceTxt = p.price ? `₪${p.price.toLocaleString("he-IL")} כולל מע״מ` : "";
-  const desc = trim155(`${p.title}. ${priceTxt}. ${hl}. ${WARRANTY_TEXT}. משלוח לפי כתובת או התקנה, בתשלום נפרד.`);
+  const desc = trim155(`${p.title}. ${priceTxt}. ${hl}. ${warrantyOf(p.slug)}. משלוח לפי כתובת או התקנה, בתשלום נפרד.`);
   return {
     title: shortTitle.length <= 70 ? shortTitle : `${productName(p)} | Site-Control`,
     description: desc,
@@ -77,6 +77,7 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
     if (a.ai && a.ai !== "none") out.push(aiLabel[a.ai]);
     if (a.deter) out.push(analog ? "אור מהבהב וסירנה להרתעה" : "אור מהבהב וסירנה שנדלקים כשאדם נכנס לאזור שהגדרתם");
     if (a.audio && a.audio !== "none") out.push(a.audio === "two-way" ? (analog ? "רמקול ומיקרופון: דיבור דרך המצלמה עם מקליט תואם" : "רמקול ומיקרופון: אפשר לדבר עם מי שמול המצלמה מהנייד") : "מיקרופון: ההקלטה כוללת קול");
+    if (analog && a.kind === "pt") out.push("ראש ממונע: מסובבים אותה דרך מקליט תואם, גם מהאפליקציה שלו");
     if (a.varifocal) out.push("עדשה ממונעת: מכוונים את הזום מהאפליקציה, בלי לטפס לסולם");
     if (a.lte) out.push(a.battery ? "סים 4G וסוללה נטענת: בלי חשמל, בלי אינטרנט ובלי כבלים" : "סים 4G וחיבור קבוע לחשמל: בלי אינטרנט במקום, בלי סוללה לטעון");
     else if (a.battery) out.push("Wi-Fi וסוללה נטענת, בלי כבל חשמל");
@@ -300,7 +301,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 צריך סים? סים וגלישה ב-{nis(deal.sim.price)} ₪ לשנה. מבקשים בווצאפ יחד עם ההזמנה.
               </p>
             )}
-            <p className={styles.note}>{WARRANTY_TEXT}. {isRecorder(a) ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : a.bays === 0 ? "הרכזת שומרת את ההקלטות לכרטיס microSD, בלי דיסק. נאשר בווצאפ לפני חיוב אם יש כרטיס בקופסה." : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>
+            <p className={styles.note}>{warrantyOf(p.slug)}. {isRecorder(a) ? (a.hdd ? `המקליט מגיע עם דיסק ${a.hdd} מותקן.` : a.bays === 0 ? "הרכזת שומרת את ההקלטות לכרטיס microSD, בלי דיסק. נאשר בווצאפ לפני חיוב אם יש כרטיס בקופסה." : "המקליט מסופק ללא דיסק קשיח, מתאים לכל דיסק סטנדרטי.") : "המחיר כולל מע״מ ואינו כולל התקנה."} {BUSINESS.shipping.rule} <Link href="/shipping">על המשלוחים</Link> · <Link href="/returns">החזרות וביטולים</Link> · <Link href="/terms">תקנון</Link></p>
           </div>
 
           {fullKit && (

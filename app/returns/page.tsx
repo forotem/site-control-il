@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, WARRANTY_RANGE } from "../data/store-catalog";
 import { BUSINESS } from "../data/business";
 import styles from "../home.module.css";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const UPDATED = "3.10.2026";
+const UPDATED = "2.11.2026";
 
 const h2 = { fontSize: "1.3rem", color: "var(--text-bright)", marginBottom: "0.6rem" } as const;
 const p = { color: "var(--muted)", lineHeight: 1.8, maxWidth: "75ch" } as const;
@@ -67,7 +67,7 @@ export default function ReturnsPage() {
           <li><b style={{ color: "var(--text)" }}>משלוח ההחזרה:</b> {r.returnShipping}</li>
           <li><b style={{ color: "var(--text)" }}>מצב המוצר:</b> {r.condition}</li>
           <li><b style={{ color: "var(--text)" }}>מוצר פגום:</b> {r.defective}</li>
-          <li><b style={{ color: "var(--text)" }}>אחריות:</b> {WARRANTY_TEXT}. תקלה בתקופת האחריות היא לא ביטול עסקה: פנו אלינו ונטפל בתיקון או בהחלפה.</li>
+          <li><b style={{ color: "var(--text)" }}>אחריות:</b> {WARRANTY_RANGE}, על כל המוצרים. תקלה בתקופת האחריות היא לא ביטול עסקה: פנו אלינו ונטפל בתיקון או בהחלפה.</li>
         </ul>
       </section>
 

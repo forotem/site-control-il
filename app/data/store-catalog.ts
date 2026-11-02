@@ -10,7 +10,16 @@ export type StoreProduct = {
 export type StoreDept = "offgrid" | "wifi" | "wired" | "entry";
 export type StoreCategory = { id: string; name: string; blurb: string; dept: StoreDept };
 export const WHATSAPP_NUMBER = "972508277907";
-export const WARRANTY_TEXT = "אחריות שנה על כל המוצרים";
+export const WARRANTY_RANGE = "12 עד 24 חודשים לפי הדגם";
+export const WARRANTY_TEXT = `אחריות על כל המוצרים, ${WARRANTY_RANGE}`;
+/** עידן 2.11.2026: "מה שכתוב בתומו". המוצרים שבדף שלהם ב-TOMO כתוב 24 חודשים ע"י טלראן (נקרא בכל דף ב-2.11.2026). P330 כתובה שם 12, ומוצר שלא נמצא ב-TOMO נשאר שנה. Argus Eco נקראה מהערכה עם הפאנל, כמו Go PT Plus. */
+const WARRANTY_24 = new Set(["ch10", "cp3-pro", "reolink-rln8-410", "reolink-argus-eco", "reolink-argus-b330", "reolink-argus-track", "reolink-b10", "reolink-cx410", "reolink-d20", "reolink-duo-2-lte", "reolink-duo-2-wifi", "reolink-duo-3-poe", "reolink-e1-outdoor-e540", "reolink-e1-outdoor-pro-e560", "reolink-e1-zoom", "reolink-e330", "reolink-fe-w", "reolink-go-plus", "reolink-go-pt-plus", "reolink-go-pt-ultra", "reolink-go-ranger-pt", "reolink-go-ultra", "reolink-nvs16", "reolink-nvs16-12mb8", "reolink-nvs16-12md8", "reolink-nvs16-8mb8", "reolink-nvs16-8md8", "reolink-nvs36", "reolink-p327", "reolink-p330m", "reolink-p334", "reolink-p337", "reolink-p340", "reolink-p344", "reolink-p430", "reolink-rlk8-1200d4-a", "reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rln16-410", "reolink-solar-panel-2", "reolink-talon-pro", "reolink-trackmix-lte", "reolink-trackmix-lte-plus-solar", "reolink-trackmix-poe", "reolink-trackmix-wifi", "reolink-trackmix-wired-lte", "reolink-video-doorbell-wifi"]);
+export const warrantyOf = (slug: string) => (WARRANTY_24.has(slug) ? "אחריות 24 חודשים" : "אחריות שנה");
+/** לרשימת מוצרים: ניסוח מדויק כשכולם באותה אחריות, אחרת הטווח */
+export const warrantyOfAll = (slugs: string[]) => {
+  const n = slugs.filter((s) => WARRANTY_24.has(s)).length;
+  return n === slugs.length ? "אחריות 24 חודשים" : n === 0 ? "אחריות שנה" : WARRANTY_TEXT;
+};
 /** שם תצוגה: מותג + דגם, בלי לכפול את המותג כשהדגם כבר מתחיל בו ("Reolink Go PT Ultra"). */
 export const productName = (p: { brand: string; model: string }) =>
   p.model.toLowerCase().startsWith(p.brand.toLowerCase()) ? p.model : `${p.brand} ${p.model}`;
@@ -1329,7 +1338,7 @@ export const storeProducts: StoreProduct[] = [
       "IR night vision 30 m (18 LEDs), IP66",
       "Person/vehicle/pet detection, built-in mic",
       "Expandable to 8 cameras; 4 x 18 m cables included",
-      "Hebrew firmware, 1-year Telran warranty"
+      "Hebrew firmware, 24-month Telran warranty"
     ],
     "image": "/store-images/reolink-rlk8-410b4-5mp.webp",
     "datasheet": "https://www.telran.co.il/images/RLK8-410B4-5MP_Reolink_ENG_DS_2023_2.pdf",
@@ -1954,7 +1963,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CE60KF0T-PTLXTS 2.8mm",
     "sku": null,
-    "title": "מצלמת PT אנלוגית Hikvision 5MP ColorVu עם שמע דו-כיווני וסירנה 2.8mm DS-2CE60KF0T-PTLXTS",
+    "title": "מצלמת PT ממונעת אנלוגית Hikvision 5MP ColorVu עם שמע דו-כיווני וסירנה 2.8mm DS-2CE60KF0T-PTLXTS",
     "category": "analog",
     "categoryName": "מצלמות אנלוגיות",
     "price": 699,
@@ -1964,7 +1973,7 @@ export const storeProducts: StoreProduct[] = [
       "Smart Hybrid Light: אור לבן עד 40 מ' + IR עד 40 מ' (מצב חכם/IR/אור לבן)",
       "שמע דו-כיווני: מיקרופון ורמקול 2W מובנים, טווח עד 5 מ', שמע על גבי הקואקס. לדיבור דרך המצלמה צריך מקליט תואם",
       "הרתעה: סירנה קולית ואור מהבהב אדום-כחול",
-      "עדשה קבועה 2.8mm (זווית אופקית 105°), טווח כיוון Pan 0°-345°, Tilt 0°-80°",
+      "עדשה קבועה 2.8mm (זווית אופקית 105°), ראש ממונע Pan 0°-345°, Tilt 0°-80°, סיבוב דרך מקליט תואם ודרך האפליקציה שלו",
       "IP66, עבודה מ-30- עד 60+ מעלות, 3D DNR, DWDR, הזנה 12VDC עד 9.5W (מומלץ ספק נפרד לכל מצלמה)"
     ],
     "image": "/store-images/ds-2ce60kf0t-ptlxts-2-8mm.webp",
@@ -2209,7 +2218,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Tenda CH10 דו-עדשתית 10MP ממונעת Wi-Fi 6 עם ראיית לילה צבעונית",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 399,
+    "price": 344,
     "specs": [
       "10MP סה\"כ: שתי עדשות 5MP (2880x1620) – עדשה קבועה רחבה 4mm (83.2° אופקי) + עדשת PT טלה 6mm (51.4°), צמצם F1.6, חיישן CMOS 1/3\"",
       "Pan/Tilt ממונע 0°–355° אופקי, 0°–90° אנכי (+ כיוון זרוע ידני 260°); קישור חכם דו-עדשתי – העדשה הממונעת ננעלת אוטומטית על אדם/רכב",
@@ -2414,7 +2423,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1780,
+    "price": 1689,
     "specs": [
       "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
       "4MP, חיבור 4G LTE עם כרטיס סים",
@@ -2426,7 +2435,7 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "רואים את כל השטח ומתקרבים למי שנכנס, באותה מצלמה",
       "מעקב אוטומטי אחרי תנועה",
-      "4G LTE עם סים, סוללה ופאנל"
+      "4G LTE עם סים וסוללה, פאנל בנפרד"
     ],
     "image": "/store-images/reolink-trackmix-lte-v2.webp",
     "datasheet": null,
@@ -2544,7 +2553,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "פאנל סולארי Reolink Solar Panel 2, 6W, Type-C, לבן, למצלמות הסוללה של Reolink",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 139,
+    "price": 89,
     "specs": [
       "הספק 6W (Power Output, כך כתוב על האריזה)",
       "חיבור Type-C, כבל 4 מטר",
@@ -2722,7 +2731,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E330, 5MP, ממונעת, Wi-Fi, זיהוי אדם וחיות מחמד",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 289,
+    "price": 274,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2747,7 +2756,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E1 Zoom, 5MP, ממונעת עם זום אופטי x3, Wi-Fi",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 299,
+    "price": 279,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2797,7 +2806,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה חיצונית Wi-Fi ממונעת Reolink TrackMix WiFi, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 1099,
+    "price": 1084,
     "specs": [
       "8MP 4K, שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2972,7 +2981,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE פנורמית Reolink Duo 3 PoE, שתי עדשות 180°, 16MP",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1084,
+    "price": 1054,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 16MP UHD",
       "PoE, זיהוי אדם/רכב/חיה, מעקב תנועה",
@@ -3047,10 +3056,10 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE Reolink P330M, 4K, שתי עדשות: רחבה + תקריב",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 594,
+    "price": 544,
     "specs": [
       "8MP 4K, שתי עדשות: תצוגה רחבה ותקריב באותו זמן",
-      "PoE, זיהוי אדם/רכב/חיה, מעקב אוטומטי",
+      "PoE, זיהוי אדם/רכב/חיה",
       "זרקורים וראיית לילה צבעונית, שמע דו-כיווני",
       "microSD עד 256GB, מתאימה למקליטי Reolink",
       "IP66"
@@ -3149,12 +3158,12 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ממונעת IP PoE Reolink TrackMix PoE, 4K, שתי עדשות עם זום x6 ומעקב אוטומטי אחרי אדם ורכב",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1024,
+    "price": 994,
     "specs": [
       "8MP 4K, שתי עדשות: רחבה 2.8 מ\"מ וטלה 8 מ\"מ, זום היברידי x6",
       "מעקב אוטומטי: מסתובבת לבד אחרי אדם או רכב, 355° אופקי ו-90° אנכי",
       "זרקורים לצבע בלילה ואינפרא עד 15 מ', שמע דו-כיווני",
-      "PoE 802.3af (מזרק PoE בקופסה) או ספק 12V, microSD עד 256GB",
+      "PoE 802.3af או ספק 12V (מזרק או ספק לא כלולים), microSD עד 256GB",
       "מתאימה למקליטי Reolink, עמידה לחוץ, ‎-10 עד 55 מעלות"
     ],
     "highlights": [

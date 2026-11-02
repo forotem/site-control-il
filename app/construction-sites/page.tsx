@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, productName } from "../data/store-catalog";
 import { VAT_RATE } from "../data/deals";
 import { SITE_OFFER, GUIDE, offerProduct, tierEquipment, installDayWithVat } from "../data/site-offer";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
@@ -92,7 +92,7 @@ export default function ConstructionSites() {
             <a className={`${home.cta} ${home.ctaWa}`} href={wa} target="_blank" rel="noopener noreferrer">לשלוח סרטון מהאתר בווצאפ</a>
           </div>
           <div className={home.trust}>
-            <span>{WARRANTY_TEXT}</span>
+            <span>אחריות 24 חודשים</span>
             <span>עוברות איתכם לאתר הבא</span>
             <span>כל האתרים באפליקציה אחת</span>
           </div>
@@ -176,7 +176,7 @@ export default function ConstructionSites() {
         <div className={home.sectionHead}><h2 id="includes">מה כלול כשמתקין מטעמנו מגיע</h2></div>
         <div className={deal.includes}>
           {[
-            { t: "מצלמה ופאנל סולארי", b: "ציוד Reolink חדש באריזה, עם אחריות שנה." },
+            { t: "מצלמה ופאנל סולארי", b: "ציוד Reolink חדש באריזה, עם אחריות 24 חודשים." },
             { t: "התקנה באתר", b: `מתקין מקצועי מקבע את המצלמות והפאנלים על גדר, קונטיינר, עמוד או קיר קיים ומכוון את הפאנלים לשמש. כ-${nis(SITE_OFFER.installDay)} ₪ + מע״מ ליום עבודה.` },
             { t: `כרטיס ${SITE_OFFER.giftCardGb}GB במתנה`, b: "מותקן בכל מצלמה, כך שהיא מקליטה מהרגע הראשון." },
             { t: "סים והגדרה", b: `הסים מותקן ומוגדר. סים וגלישה שלנו ב-${nis(SITE_OFFER.sim.price)} ₪ לשנה, או סים שלכם.` },

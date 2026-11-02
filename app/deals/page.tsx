@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb, BreadcrumbSchema } from "../components/Breadcrumb";
-import { WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../data/store-catalog";
+import { WHATSAPP_NUMBER, warrantyOf, productName } from "../data/store-catalog";
 import { deals, dealProduct, withVat, simLabel } from "../data/deals";
 import { InstallForm } from "../installation/InstallForm";
 import home from "../home.module.css";
@@ -63,7 +63,7 @@ export default function DealsPage() {
                 <div className={home.trust}>
                   <span>התקנה בכל הארץ</span>
                   <span>כרטיס זיכרון {d.giftCardGb}GB במתנה</span>
-                  <span>{WARRANTY_TEXT}</span>
+                  <span>{warrantyOf(p.slug)}</span>
                 </div>
               </div>
               <Link href={`/store/${p.slug}`} className={styles.shot} aria-label={`לדף המוצר ${productName(p)}`}>
@@ -123,7 +123,7 @@ export default function DealsPage() {
                     <li>נסביר בטלפון או בווצאפ איך מחברים ומגדירים</li>
                     <li>{simLabel(d.sim)} בתוספת {nis(d.sim.price)} ₪</li>
                     <li>כרטיס זיכרון קונים בנפרד</li>
-                    <li>{WARRANTY_TEXT}</li>
+                    <li>{warrantyOf(p.slug)}</li>
                   </ul>
                   <Link className={`${home.cta} ${home.ctaGhost}`} href={`/store/${p.slug}`}>לדף המוצר והמפרט</Link>
                 </div>

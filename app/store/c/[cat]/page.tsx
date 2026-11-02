@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { storeCategories, storeProducts, WHATSAPP_NUMBER, WARRANTY_TEXT, productName } from "../../../data/store-catalog";
+import { storeCategories, storeProducts, WHATSAPP_NUMBER, warrantyOfAll, productName } from "../../../data/store-catalog";
 import { categorySeo } from "../../../data/store-category-seo";
 import { Breadcrumb, BreadcrumbSchema } from "../../../components/Breadcrumb";
 import { ProductCard } from "../../ProductCard";
@@ -83,7 +83,7 @@ export default function CategoryPage({ params }: { params: { cat: string } }) {
               : <a className={`${styles.cta} ${styles.ctaSecondary}`} href={wa} target="_blank" rel="noopener noreferrer">המלצה והצעת מחיר בווצאפ</a>}
           </div>
           <div className={styles.trust}>
-            <span>{WARRANTY_TEXT}</span>
+            <span>{warrantyOfAll(items.map((p) => p.slug))}</span>
             <span>ציוד מיבואן בישראל</span>
             <span>משלוח לכל הארץ בתשלום נפרד, לפי הכתובת. התקנה בנפרד, בתיאום ולפי הצעת מחיר</span>
           </div>

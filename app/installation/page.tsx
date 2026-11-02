@@ -11,7 +11,7 @@ import styles from "../home.module.css";
 export const metadata: Metadata = {
   title: "התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה בכל הארץ | Site-Control",
   description:
-    `התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה ${BUSINESS.installAreaIn}: תכנון, חיווט, מקליט, אפליקציה והדרכה. Hikvision, Uniview ו-Reolink, אחריות שנה.`,
+    `התקנת מצלמות אבטחה, אינטרקום ובקרת כניסה ${BUSINESS.installAreaIn}: תכנון, חיווט, מקליט, אפליקציה והדרכה. Hikvision, Uniview ו-Reolink, אחריות עד 24 חודשים.`,
   alternates: { canonical: "/installation" },
   openGraph: {
     title: "התקנת מצלמות אבטחה ואינטרקום | Site-Control",

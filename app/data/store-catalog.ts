@@ -2316,7 +2316,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Reolink",
     "model": "Reolink Go Ultra / G340",
     "sku": null,
-    "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה צבעונית, סוללה וסים",
+    "title": "מצלמת אבטחה סולארית 4G Reolink Go Ultra, 4K 8MP, ראיית לילה עד 10 מטר, סוללה, לסים 4G",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
     "price": 825,
@@ -2324,12 +2324,12 @@ export const storeProducts: StoreProduct[] = [
       "8MP 4K (3840×2160), עדשה קבועה",
       "חיבור 4G LTE עם כרטיס סים",
       "סוללה נטענת; טעינה מפאנל סולארי Solar Panel 2, 6W (נמכר בנפרד) או מ-USB",
-      "זרקור וראיית לילה צבעונית, PIR, שמע דו-כיווני",
+      "ראיית לילה עד 10 מטר, PIR, שמע דו-כיווני",
       "microSD עד 128GB, אפליקציה בעברית, ענן אופציונלי",
       "IP65"
     ],
     "highlights": [
-      "4K עם זרקור: פרטים וצבע גם בלילה",
+      "4K: תמונה חדה, וראיית לילה עד 10 מטר",
       "4G LTE עם סים, בלי תשתית",
       "סוללה + פאנל סולארי"
     ],
@@ -2588,7 +2588,7 @@ export const storeProducts: StoreProduct[] = [
       "IP65"
     ],
     "highlights": [
-      "הכי זולה למצלמה בלי כבל חשמל",
+      "מצלמת סוללה בסיסית בלי כבל חשמל",
       "Wi-Fi + סוללה",
       "התראות PIR לנייד"
     ],
@@ -3192,7 +3192,7 @@ export const storeProducts: StoreProduct[] = [
       "IP66"
     ],
     "highlights": [
-      "12MP: הכי חדה בקטגוריה",
+      "12MP: פרטים חדים גם מרחוק",
       "צבע בלילה",
       "PoE"
     ],
@@ -3460,7 +3460,7 @@ export const storeProducts: StoreProduct[] = [
     "highlights": [
       "8 מצלמות 12MP עם צבע בלילה",
       "מקליט עם דיסק 4TB",
-      "הכי חדה בערכות"
+      "ערכת 12MP"
     ],
     "image": "/store-images/reolink-nvs16-12mb8.webp",
     "datasheet": null,

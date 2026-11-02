@@ -9,7 +9,7 @@ export type Kind =
   | "wifi-pt" | "wifi-bullet";
 export type Night = "ir" | "color" | "hybrid";
 export type Audio = "none" | "mic" | "two-way";
-export type Ai = "none" | "human-vehicle" | "acusense";
+export type Ai = "none" | "human" | "human-vehicle" | "acusense";
 
 export type Attrs = {
   kind: Kind; mp?: number; night?: Night; range?: number; audio?: Audio; ai?: Ai;
@@ -79,7 +79,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "ds-2cd1043g2-liu-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":100,"ik10":false},
   "ds-2cd1643g2-lizu-2-8-12mm": {"kind":"bullet","mp":4,"night":"hybrid","range":50,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":true,"sd":true,"wideSensor":false,"angle":96,"ik10":false},
   "ds-2cd2t43g2-4li2u-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":80,"audio":"two-way","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":103,"ik10":false},
-  "ds-2cd2t47g2h-li-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":60,"audio":"mic","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":true,"ik10":false},
+  "ds-2cd2t47g2h-li-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":60,"audio":"none","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":true,"ik10":false},
   "ds-2cd1743g2-lizu-2-8-12mm": {"kind":"dome","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":true,"sd":true,"wideSensor":false,"ik10":false},
   "ds-2cd1143g2-liu-2-8mm": {"kind":"dome","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":110,"ik10":true},
   "ds-2cd1347g2-luf-2-8mm": {"kind":"turret","mp":4,"night":"color","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"ik10":false},
@@ -106,16 +106,16 @@ export const storeAttrs: Record<string, Attrs> = {
   "ch9": {"kind":"wifi-pt","mp":6,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":79,"ik10":false,"wifi":true},
   "ch10": {"kind":"wifi-pt","mp":10,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":83,"ik10":false,"wifi":true},
   "ct3": {"kind":"wifi-bullet","mp":2,"night":"hybrid","range":30,"audio":"two-way","ai":"none","deter":true,"varifocal":false,"sd":true,"wideSensor":false,"angle":85,"ik10":false,"wifi":true},
-  "cp3-pro": {"kind":"wifi-pt","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":360,"ik10":false,"wifi":true},
+  "cp3-pro": {"kind":"wifi-pt","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":360,"ik10":false,"wifi":true},
   "reolink-go-plus": {"kind":"bullet","mp":4,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
-  "reolink-go-ultra": {"kind":"bullet","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
+  "reolink-go-ultra": {"kind":"bullet","mp":8,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
   "reolink-go-pt-plus": {"kind":"pt","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-go-pt-ultra": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-duo-2-lte": {"kind":"fisheye","mp":6,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"angle":180},
   "reolink-trackmix-lte": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"varifocal":true},
   "reolink-trackmix-wired-lte": {"kind":"pt","mp":4,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"lte":true,"battery":false,"varifocal":true},
   "reolink-trackmix-lte-plus-solar": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true,"varifocal":true},
-  "reolink-go-ranger-pt": {"kind":"pt","mp":8,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
+  "reolink-go-ranger-pt": {"kind":"pt","mp":8,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-talon-pro": {"kind":"bullet","mp":8,"night":"ir","range":20,"audio":"none","ai":"human-vehicle","sd":true,"solar":false,"lte":true,"battery":true,"panelIncluded":false},
   "reolink-solar-panel-2": {"kind":"accessory","solar":true,"panelIncluded":true},
   "reolink-argus-eco": {"kind":"bullet","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
@@ -123,15 +123,15 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-argus-b330": {"kind":"bullet","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
   "reolink-argus-track": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false,"varifocal":true},
   "reolink-argus-pt-lite": {"kind":"pt","mp":3,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"wifi":true,"battery":true,"panelIncluded":false},
-  "reolink-e1-pro": {"kind":"wifi-pt","mp":4,"night":"ir","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true},
-  "reolink-e330": {"kind":"wifi-pt","mp":5,"night":"ir","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true},
-  "reolink-e1-zoom": {"kind":"wifi-pt","mp":5,"night":"ir","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
+  "reolink-e1-pro": {"kind":"wifi-pt","mp":4,"night":"ir","range":12,"audio":"two-way","ai":"human","sd":true,"wifi":true},
+  "reolink-e330": {"kind":"wifi-pt","mp":5,"night":"ir","range":12,"audio":"two-way","ai":"human","sd":true,"wifi":true},
+  "reolink-e1-zoom": {"kind":"wifi-pt","mp":5,"night":"ir","range":12,"audio":"two-way","ai":"human","sd":true,"wifi":true,"varifocal":true},
   "reolink-lumus-e430": {"kind":"wifi-bullet","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"deter":true},
   "reolink-trackmix-wifi": {"kind":"wifi-pt","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-e1-outdoor-e540": {"kind":"wifi-pt","mp":5,"night":"hybrid","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-e1-outdoor-pro-e560": {"kind":"wifi-pt","mp":8,"night":"hybrid","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-duo-2-wifi": {"kind":"fisheye","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":180},
-  "reolink-fe-w": {"kind":"fisheye","mp":6,"night":"ir","range":8,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":360},
+  "reolink-fe-w": {"kind":"fisheye","mp":6,"night":"ir","range":8,"audio":"two-way","ai":"human","sd":true,"wifi":true,"angle":360},
   "reolink-video-doorbell-wifi": {"kind":"door-panel","wiring":"wifi","app":true,"auth":[],"mp":4,"wifi":true,"audio":"two-way"},
   "reolink-cx410": {"kind":"bullet","mp":4,"night":"color","range":20,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-duo-3-poe": {"kind":"fisheye","mp":16,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":180},
@@ -169,7 +169,7 @@ export const kindLabel: Record<Kind, string> = {
 export const nightLabel: Record<Night, string> = { ir: "אינפרא-אדום: שחור-לבן בלילה", color: "צבע מלא 24/7 (אור לבן)", hybrid: "היברידי: צבע או אינפרא לפי בחירה" };
 export const nightShort: Record<Night, string> = { ir: "אינפרא בלילה", color: "צבע בלילה", hybrid: "צבע/אינפרא" };
 export const audioLabel: Record<Audio, string> = { none: "ללא שמע", mic: "מיקרופון", "two-way": "שמע דו-כיווני" };
-export const aiLabel: Record<Ai, string> = { none: "זיהוי תנועה רגיל", "human-vehicle": "מסנן אדם/רכב", acusense: "AcuSense: אדם/רכב בלי התראות שווא" };
+export const aiLabel: Record<Ai, string> = { none: "זיהוי תנועה רגיל", human: "מסנן אדם", "human-vehicle": "מסנן אדם/רכב", acusense: "AcuSense: אדם/רכב בלי התראות שווא" };
 
 export function attrsOf(p: StoreProduct | string): Attrs {
   const slug = typeof p === "string" ? p : p.slug;

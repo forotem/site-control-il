@@ -18,6 +18,7 @@ export function SpecChips({ p, max = 5 }: { p: StoreProduct; max?: number }) {
     if (a.deter) chips.push({ text: "אור + סירנה", cls: styles.chipDeter });
     else if (a.ai === "acusense") chips.push({ text: "AcuSense" });
     else if (a.ai === "human-vehicle") chips.push({ text: "אדם/רכב" });
+    else if (a.ai === "human") chips.push({ text: "זיהוי אדם" });
     if (a.audio === "two-way") chips.push({ text: "דיבור דו-כיווני" });
     else if (a.audio === "mic") chips.push({ text: "מיקרופון" });
     if (a.varifocal) chips.push({ text: "זום אופטי" });

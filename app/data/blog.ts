@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '66',
+    title: 'אינטרקום לבניין משותף: 2 גידים או IP – המדריך המלא ל-2024',
+    slug: 'building-intercom-2-wire-vs-ip-2026',
+    excerpt: 'מתלבטים איזה אינטרקום לבניין משותף לבחור? 2 גידים או IP? המדריך המקיף של Site-Control יסביר את ההבדלים, ימליץ על דגמים וייתן טיפים לרכישה נכונה. כל מה...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-11-02',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/building-intercom-2-wire-vs-ip-2026/hero.webp',
+    seoTitle: 'אינטרקום לבניין משותף: 2 גידים או IP – המדריך המלא ל-2024',
+    seoDescription: 'מתלבטים איזה אינטרקום לבניין משותף לבחור? 2 גידים או IP? המדריך המקיף של Site-Control יסביר את ההבדלים, ימליץ על דגמים וייתן טיפים לרכישה נכונה. כל מה…',
+    keywords: []
+  },
+  {
     id: '65',
     title: 'איך לבחור מצלמת אבטחה לבית פרטי: מדריך קנייה מקיף',
     slug: 'how-to-choose-home-security-camera-2026',

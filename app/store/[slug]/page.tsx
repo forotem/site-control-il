@@ -72,14 +72,16 @@ function plainSummary(p: (typeof storeProducts)[number]): string[] {
   const a = attrsOf(p);
   const out: string[] = [];
   if (isCamera(a)) {
+    const analog = p.category === "analog"; // קואקס: הזיהוי, הדיבור והחיבור תלויים במקליט, ואין PoE
     if (a.night) out.push(nightLabel[a.night] + (a.range ? `, טווח תאורה עד ${a.range} מטר` : ""));
     if (a.ai && a.ai !== "none") out.push(aiLabel[a.ai]);
-    if (a.deter) out.push("אור מהבהב וסירנה שנדלקים כשאדם נכנס לאזור שהגדרתם");
-    if (a.audio && a.audio !== "none") out.push(a.audio === "two-way" ? "רמקול ומיקרופון: אפשר לדבר עם מי שמול המצלמה מהנייד" : "מיקרופון: ההקלטה כוללת קול");
+    if (a.deter) out.push(analog ? "אור מהבהב וסירנה להרתעה" : "אור מהבהב וסירנה שנדלקים כשאדם נכנס לאזור שהגדרתם");
+    if (a.audio && a.audio !== "none") out.push(a.audio === "two-way" ? (analog ? "רמקול ומיקרופון: דיבור דרך המצלמה עם מקליט תואם" : "רמקול ומיקרופון: אפשר לדבר עם מי שמול המצלמה מהנייד") : "מיקרופון: ההקלטה כוללת קול");
     if (a.varifocal) out.push("עדשה ממונעת: מכוונים את הזום מהאפליקציה, בלי לטפס לסולם");
     if (a.lte) out.push(a.battery ? "סים 4G וסוללה נטענת: בלי חשמל, בלי אינטרנט ובלי כבלים" : "סים 4G וחיבור קבוע לחשמל: בלי אינטרנט במקום, בלי סוללה לטעון");
     else if (a.battery) out.push("Wi-Fi וסוללה נטענת, בלי כבל חשמל");
     else if (a.wifi) out.push("חיבור Wi-Fi והקלטה לכרטיס זיכרון, בלי מקליט");
+    else if (analog) out.push("מתחברת בכבל קואקס למקליט DVR/XVR, עם הזנה נפרדת של 12V");
     else if (a.kind !== "kit") out.push("הזנה בכבל רשת אחד (PoE) ממתג או ממקליט עם PoE");
   } else if (isRecorder(a)) {
     // Home Hub ו-NVS12W (a.wifi): בלי "נדרש מתג PoE", וב-Home Hub אין מפרץ דיסק (bays: 0) אלא כרטיס microSD

@@ -3,10 +3,11 @@
 // רותם 7.10.2026 פתח קבוצת הזמנות עם עידן ואלי: "כל מה שקשור לשאלות מלאי, מחירים וכו'", וההחלטה: הכול לקבוצה.
 // לכן ברירת המחדל (גם קריאה בלי to, כמו הכלים הקיימים) היא קבוצת ההזמנות. to: "idan" = הצ'אט הפרטי של עידן.
 // היעד נבחר רק מרשימה סגורה (SUPPLIER_GROUP / IDAN_WA), שום מספר או קבוצה מהבקשה.
-// מוגן במפתח נפרד שנגזר מ-RESEND_API_KEY. לא שולח בשבת.
+// מוגן במפתח נפרד שנגזר מ-RESEND_API_KEY. לא שולח בשבת ובחג (restDay).
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { IDAN_WA, SUPPLIER_GROUP, sendWhatsAppId } from "../../../lib/store-notify";
+import { restDay } from "../../../lib/il-time";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -22,15 +23,9 @@ function authorized(req: NextRequest): boolean {
   return got.length === want.length && timingSafeEqual(Buffer.from(got), Buffer.from(want));
 }
 
-function isShabbat(now = new Date()): boolean {
-  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", weekday: "short", hour: "numeric", hour12: false })
-    .formatToParts(now).map((x) => [x.type, x.value]));
-  return p.weekday === "Sat" || (p.weekday === "Fri" && Number(p.hour) % 24 >= 16);
-}
-
 export async function POST(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  if (isShabbat()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
+  if (restDay()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
   let body: { texts?: string[]; to?: string };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   // בלי to (או ריק) = הקבוצה. ערך לא מוכר = שגיאה, לא נופלים בשקט ליעד אחר

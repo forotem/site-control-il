@@ -243,8 +243,9 @@ export async function POST(req: NextRequest) {
   // למספר שבמודעות), בלי Gemini ובלי תשובה. גם kick (מלאי, פולואפ אחרי הצעה) לא שולח כלום בקו הזה.
   if (line === "customer" && !CUSTOMER_LINE_REPLIES) {
     if (dry || kick) return NextResponse.json({ ok: true, skip: "rali line: no bot replies" });
-    const lastMsg = msgs[msgs.length - 1];
-    if (lastMsg.type !== "incoming" || (n.idMessage && lastMsg.idMessage !== n.idMessage)) return NextResponse.json({ ok: true, skip: "rali line: not the latest message" });
+    // 2.11.2026: ההודעה הנכנסת האחרונה, לא האחרונה בשיחה: מאז 6a314ca גם יוצאות בהיסטוריה, ותשובה של רלי בתוך ה-debounce ביטלה את הרישום
+    const lastMsg = [...msgs].reverse().find((m) => m.type === "incoming");
+    if (!lastMsg || (n.idMessage && lastMsg.idMessage !== n.idMessage)) return NextResponse.json({ ok: true, skip: "rali line: not the latest message" });
     const first = leadStart(msgs, line);
     const pre = first?.type === "incoming" ? first : undefined;
     const said = textOf(lastMsg) || (lastMsg.typeMessage === "audioMessage" ? "[הודעה קולית]" : lastMsg.typeMessage === "imageMessage" ? "[תמונה]" : lastMsg.typeMessage ? `[${lastMsg.typeMessage}]` : "");

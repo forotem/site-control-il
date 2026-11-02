@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (limited(ip)) return NextResponse.json({ error: "יותר מדי הודעות ברצף. נסו שוב בעוד כמה דקות או כתבו לנו בווצאפ." }, { status: 429 });
 
-  let body: { messages?: Msg[]; page?: string; cart?: { slug: string; qty: number }[]; attribution?: unknown };
+  let body: { messages?: Msg[]; page?: string; cart?: { slug: string; qty: number }[]; attribution?: unknown; leadAlerted?: boolean };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const messages = (body.messages || []).filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string").slice(-16);
   if (!messages.length || messages[messages.length - 1].role !== "user") return NextResponse.json({ error: "bad request" }, { status: 400 });
@@ -99,10 +99,14 @@ export async function POST(req: NextRequest) {
           tal: data.lead_summary || undefined, leadType: `${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}`,
           page: body.page ? `/store/${body.page}` : undefined,
           ...(fresh ? { opening: opening.status } : {}),
-          status: data.intent === "ready" ? "🟢 מוכן לקנות" : opening.sent ? "טל בשיחה" : fresh ? "חדש: לחזור ללקוח" : undefined,
+          status: data.intent === "ready" ? "🟢 מוכן לקנות" : opening.sent ? "פתיחה נשלחה: רלי ממשיכה" : fresh ? "חדש: לחזור ללקוח" : undefined,
         }, Math.max(1000, maxDuration * 1000 - (Date.now() - t0) - 2500));
       })());
-      tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nאפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
+      // 2.11.2026: המודל מחזיר את הטלפון שוב בכל תור, אז ההתראה רק פעם אחת לטלפון. שני התנאים נדרשים: הטלפון כבר נכתב בתור קודם,
+      // והצ'אט מעיד שכבר יצאה התראה (leadAlerted). טלפון בתור קודם לבדו לא מספיק: בתור שנכשל (502) או שהמודל פספס בו את הטלפון לא יצאה התראה
+      const digits = data.lead_phone.replace(/\D/g, "").slice(-9);
+      const repeated = body.leadAlerted === true && messages.slice(0, -1).some((m) => m.role === "user" && m.content.replace(/\D/g, "").includes(digits));
+      if (!repeated) tasks.push(notifyTeam("ליד חדש מהצ'אט בחנות", `שם: ${data.lead_name || "-"}\nטלפון: ${data.lead_phone}\nסיכום: ${data.lead_summary || "-"}\nכוונה: ${data.intent}\nאפיון: ${LEAD_TYPE_HE[data.lead_type]} | התקנה: ${INSTALL_HE[data.install]}\nמקור: ${attributionLabel(body.attribution)}\n\nשיחה:\n${transcript}`));
     }
     if (tasks.length) await Promise.allSettled(tasks);
 

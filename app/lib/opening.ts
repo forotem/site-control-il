@@ -165,7 +165,7 @@ export async function sendOpening(lead: OpeningLead, opts: { ip?: string; deadli
     const id = await sendWhatsAppId(mobile, openingText(lead), "customer");
     sent = Boolean(id);
     keepInFlight = sent;
-    return id ? { sent: true, status: "פתיחה נשלחה, טל בשיחה", idMessage: id } : { sent: false, status: "לא נשלחה: שגיאה בווצאפ" };
+    return id ? { sent: true, status: "פתיחה נשלחה, מחכים לתשובה", idMessage: id } : { sent: false, status: "לא נשלחה: שגיאה בווצאפ" };
   } catch (e) {
     return { sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message.slice(0, 80) : "שגיאה"}` };
   } finally {

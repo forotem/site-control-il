@@ -2,12 +2,13 @@
 // רותם 2.10.2026, על טיוטות הפולואפ ללידים מהאתר: "כן תשלח להם מהטלפון שלי".
 // פרטי GreenAPI קיימים רק ב-Vercel, אז הכלי המקומי (site-control-tools/lead-agent/lead-send.js) שולח דרך כאן.
 // מוגן במפתח נפרד שנגזר מ-RESEND_API_KEY, ושולח רק למי שפנה לרותם מכפתור באתר (יש בשיחה הודעה נכנסת
-// עם טקסט של האתר), או ללקוח שקיבל מאיתנו הודעת הזמנה עם orderRef. כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת.
+// עם טקסט של האתר), או ללקוח שקיבל מאיתנו הודעת הזמנה עם orderRef. כך זה לא כלי לשליחה לכל מספר. לא שולח בשבת ובחג (restDay).
 // 20.10.2026: שולח מהקו שבו מתנהלת השיחה, קודם הקו של רלי ואז המספר של רותם (line בבקשה מכריע).
 import { NextRequest, NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import { ELI_WA, greenApi, IDAN_WA, israeliMobile, sendWhatsAppId, customerLineReady, type Line } from "../../../lib/store-notify";
 import { isOpeningMessage } from "../../../lib/opening";
+import { restDay } from "../../../lib/il-time";
 import { siteSourceOf } from "../../../lib/site-wa-prefills";
 
 export const runtime = "nodejs";
@@ -23,16 +24,9 @@ function authorized(req: NextRequest): boolean {
   return got.length === want.length && timingSafeEqual(Buffer.from(got), Buffer.from(want));
 }
 
-function isShabbat(now = new Date()): boolean {
-  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", weekday: "short", hour: "numeric", hour12: false })
-    .formatToParts(now).map((x) => [x.type, x.value]));
-  const hour = Number(p.hour) % 24;
-  return p.weekday === "Sat" || (p.weekday === "Fri" && hour >= 16);
-}
-
 export async function POST(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: "not found" }, { status: 404 });
-  if (isShabbat()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
+  if (restDay()) return NextResponse.json({ error: "shabbat" }, { status: 409 });
   let body: { phone?: string; texts?: string[]; orderRef?: string; rotemApproved?: boolean; line?: string };
   try { body = await req.json(); } catch { return NextResponse.json({ error: "bad request" }, { status: 400 }); }
   const phone = israeliMobile(body.phone || "");

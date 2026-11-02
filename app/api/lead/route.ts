@@ -50,14 +50,15 @@ export async function POST(req: NextRequest) {
   const [sent, opening] = await Promise.all([
     notifyTeam(`${FORMS[form]} ${leadId}: ${name}`, text, email ? { replyTo: email } : undefined),
     sendOpening({ phone, source: form === "callback" ? "טופס שיחה חוזרת באתר" : "טופס באתר", needs, ref: leadId, callback: form === "callback" }, { ip, deadlineMs: t0 + maxDuration * 1000 - 10_000 })
-      .catch((e) => ({ sent: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` })),
+      .catch((e) => ({ sent: false, duplicate: false, status: `לא נשלחה: ${e instanceof Error ? e.message : "שגיאה"}` })),
   ]);
   await sheetUpsert({
     phone, name, email: email || undefined, ref: leadId,
     source: `${FORMS[form]}${body.attribution ? ` (${attributionLabel(body.attribution)})` : ""}`,
     need: [need, body.note ? clean(body.note, 500) : ""].filter(Boolean).join(" | "),
     city: line(body.city, 60) || undefined, page: line(body.page, 80) || undefined,
-    opening: opening.status, status: opening.sent ? "טל בשיחה" : "חדש: לחזור ללקוח",
+    // 2.11.2026: כמו בצ'אט בחנות: כפילות (כבר בשיחה, או פתיחה בדרך) לא דורסת בטבלה את תוצאת הפתיחה הקודמת
+    ...(opening.duplicate ? {} : { opening: opening.status, status: opening.sent ? "פתיחה נשלחה: רלי ממשיכה" : "חדש: לחזור ללקוח" }),
   }, Math.max(1000, Math.min(8000, maxDuration * 1000 - (Date.now() - t0) - 3000)));
   if (!sent.whatsapp && !sent.email) return NextResponse.json({ error: "לא הצלחנו לשלוח כרגע. אפשר לכתוב לנו בווצאפ ונחזור מיד." }, { status: 502 });
   return NextResponse.json({ ok: true, leadId });

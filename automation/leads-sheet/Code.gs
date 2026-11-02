@@ -324,7 +324,7 @@ function sendOpeningRow(sh, C, r, box) {
     out.setValue(body.status || `שגיאה (${res.getResponseCode()})`);
     if (body.ok) {
       props().deleteProperty(manualKey(phone)); // רלי שלחה פתיחה מחדש: השורה חוזרת לאוטומציה
-      sh.getRange(r, C["מצב (אוטומטי)"]).setValue("פתיחה נשלחה, טל בשיחה");
+      sh.getRange(r, C["מצב (אוטומטי)"]).setValue("פתיחה נשלחה: רלי ממשיכה");
     }
   } catch (err) {
     out.setValue("לא נשלחה: " + err);

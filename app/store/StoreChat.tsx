@@ -113,7 +113,7 @@ export function StoreChat() {
       const res = await fetch("/api/store-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next.slice(1).map(({ role, content }) => ({ role, content })), page, cart: cart.get(), attribution: getAttribution() }),
+        body: JSON.stringify({ messages: next.slice(1).map(({ role, content }) => ({ role, content })), page, cart: cart.get(), attribution: getAttribution(), leadAlerted: leadTracked.current }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "שגיאה");

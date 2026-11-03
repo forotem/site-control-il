@@ -71,14 +71,14 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-rlk8-810b4-a-rlk8-800b4": {"kind":"kit","mp":8,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":105,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
   "reolink-rlk8-410b4-5mp": {"kind":"kit","mp":5,"night":"ir","range":30,"audio":"mic","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
   "reolink-rlk8-1200d4-a": {"kind":"kit","mp":12,"night":"color","range":30,"audio":"two-way","ai":"none","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"ik10":false,"channels":8,"poePorts":8,"hdd":"2TB","cams":4},
-  "ds-2cd1343g2-liu-2-8mm": {"kind":"dome","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":100,"ik10":false},
+  "ds-2cd1343g2-liu-2-8mm": {"kind":"turret","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":100,"ik10":false},
   "ds-2cd1t47g2-luf-4mm": {"kind":"bullet","mp":4,"night":"color","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":75,"ik10":false},
   "ds-2cd2043g2-iu-2-8mm": {"kind":"bullet","mp":4,"night":"ir","range":40,"audio":"mic","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":103,"ik10":false},
   "ds-2cd2047g2h-liu-sl-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":40,"audio":"two-way","ai":"acusense","deter":true,"varifocal":false,"sd":true,"wideSensor":true,"angle":111,"ik10":false},
   "ds-2cd1047g2-luf-2-8mm": {"kind":"bullet","mp":4,"night":"color","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":96,"ik10":false},
   "ds-2cd1043g2-liu-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":100,"ik10":false},
   "ds-2cd1643g2-lizu-2-8-12mm": {"kind":"bullet","mp":4,"night":"hybrid","range":50,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":true,"sd":true,"wideSensor":false,"angle":96,"ik10":false},
-  "ds-2cd2t43g2-4li2u-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":80,"audio":"two-way","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":103,"ik10":false},
+  "ds-2cd2t43g2-4li2u-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":80,"audio":"mic","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":false,"angle":103,"ik10":false},
   "ds-2cd2t47g2h-li-2-8mm": {"kind":"bullet","mp":4,"night":"hybrid","range":60,"audio":"none","ai":"acusense","deter":false,"varifocal":false,"sd":true,"wideSensor":true,"ik10":false},
   "ds-2cd1743g2-lizu-2-8-12mm": {"kind":"dome","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":true,"sd":true,"wideSensor":false,"ik10":false},
   "ds-2cd1143g2-liu-2-8mm": {"kind":"dome","mp":4,"night":"hybrid","range":30,"audio":"mic","ai":"human-vehicle","deter":false,"varifocal":false,"sd":false,"wideSensor":false,"angle":110,"ik10":true},
@@ -161,7 +161,7 @@ export const storeAttrs: Record<string, Attrs> = {
 };
 
 export const kindLabel: Record<Kind, string> = {
-  bullet: "צינור (Bullet)", turret: "טורט (Turret)", dome: "כיפה (Dome)", fisheye: "עין דג 180°", pt: "ממונעת PT", lpr: "זיהוי לוחיות (LPR)", camera: "מצלמה",
+  bullet: "צינור (Bullet)", turret: "טורט (Turret)", dome: "כיפה (Dome)", fisheye: "עין דג", pt: "ממונעת PT", lpr: "זיהוי לוחיות (LPR)", camera: "מצלמה",
   nvr: "מקליט NVR למצלמות IP", dvr: "מקליט DVR היברידי", xvr: "מקליט XVR היברידי", kit: "ערכה מוכנה",
   "intercom-kit": "ערכת אינטרקום", "door-panel": "פנל כניסה", monitor: "מסך פנימי", terminal: "מסוף זיהוי", keypad: "קודן", accessory: "אביזר",
   "wifi-pt": "Wi-Fi ממונעת", "wifi-bullet": "Wi-Fi צינור",
@@ -199,7 +199,9 @@ export function fitLine(p: StoreProduct): string {
     case "fisheye": return "חלל שלם במצלמה אחת: חנות, משרד פתוח, אולם";
     case "pt": return "כיוון מרחוק: חצר גדולה, מחסן, מגרש";
     case "lpr": return "חניון, שער ומחסום: קריאת לוחיות רישוי";
-    case "wifi-pt": return a.mp && a.mp <= 3 ? "פנים הבית: סלון, חדר ילדים, חיות מחמד" : "חצר של בית פרטי בלי כבלים, חשמל בלבד";
+    case "wifi-pt":
+      if (/חיצונית/.test(p.title)) return "חצר של בית פרטי בלי כבלים, חשמל בלבד";
+      return a.varifocal ? "חלל פנימי גדול: חנות, משרד, אולם" : "פנים הבית: סלון, חדר ילדים, חיות מחמד";
     case "wifi-bullet": return "נקודה אחת בחוץ בלי מקליט, חשמל בלבד";
     case "nvr":
       // Home Hub ו-NVS12W: מקליטים למצלמות Wi-Fi, בלי כבל רשת למצלמה ובלי מתג
@@ -228,6 +230,7 @@ export function fitLine(p: StoreProduct): string {
  *  Home Hub ו-NVS12W נשארים kind "nvr": kindLabel נכנס ל-<title> של דף המוצר ולא משנים אותו (תוכנית IA, תיקון ביקורת 4). */
 export function kindText(a: Attrs): string {
   if (a.kind === "nvr" && a.wifi) return a.bays === 0 ? "רכזת הקלטה למצלמות Wi-Fi" : "מקליט NVR למצלמות Wi-Fi";
+  if (a.kind === "fisheye" && a.angle) return `עין דג ${a.angle}°`;
   return kindLabel[a.kind];
 }
 

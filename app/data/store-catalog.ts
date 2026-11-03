@@ -1381,7 +1381,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD1343G2-LIU 2.8mm",
     "sku": null,
-    "title": "מצלמת כיפה IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1343G2-LIU",
+    "title": "מצלמת טורט IP Hikvision 4MP Smart Hybrid Light עם מיקרופון DS-2CD1343G2-LIU",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 339,
@@ -1556,7 +1556,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-2CD2T43G2-4LI2U 2.8mm",
     "sku": null,
-    "title": "מצלמת צינור IP Hikvision 4MP AcuSense Smart Hybrid Light IR 80 מ' אודיו דו-כיווני DS-2CD2T43G2-4LI2U",
+    "title": "מצלמת צינור IP Hikvision 4MP AcuSense Smart Hybrid Light IR 80 מ' עם 2 מיקרופונים DS-2CD2T43G2-4LI2U",
     "category": "ip",
     "categoryName": "מצלמות IP",
     "price": 629,
@@ -1564,7 +1564,7 @@ export const storeProducts: StoreProduct[] = [
       "רזולוציה 4MP (2688×1520), חיישן 1/3\" CMOS, H.265+",
       "עדשה קבועה 2.8mm (~103° אופקי)",
       "Smart Hybrid Light: IR עד 80 מ' + אור לבן (4 מצבי תאורה), צבע לפי אירוע",
-      "AcuSense סיווג אדם/רכב, מיקרופון + רמקול מובנים (2U = אודיו דו-כיווני)",
+      "AcuSense סיווג אדם/רכב, 2 מיקרופונים מובנים (2U), בלי רמקול",
       "PoE 802.3af / 12VDC, IP67, WDR 120dB, microSD עד 512GB"
     ],
     "image": "/store-images/ds-2cd2t43g2-4li2u-2-8mm.webp",
@@ -2710,7 +2710,7 @@ export const storeProducts: StoreProduct[] = [
     "specs": [
       "4MP, מנוע Pan/Tilt 355°/50°, מעקב אוטומטי אחרי תנועה",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
-      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "זיהוי אדם וחיות מחמד, ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
       "microSD עד 256GB, אפליקציה בעברית, ענן אופציונלי",
       "לפנים הבית: סלון, חדר ילדים, חנות"
     ],
@@ -2760,7 +2760,7 @@ export const storeProducts: StoreProduct[] = [
     "specs": [
       "5MP, מנוע Pan/Tilt 355°/50°, זום אופטי x3",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
-      "ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
+      "זיהוי אדם וחיות מחמד, ראיית לילה אינפרא עד 12 מ', שמע דו-כיווני",
       "microSD עד 256GB, אפליקציה בעברית",
       "לחלל גדול: חנות, משרד, אולם"
     ],

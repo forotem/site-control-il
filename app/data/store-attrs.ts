@@ -14,6 +14,7 @@ export type Ai = "none" | "human" | "human-vehicle" | "acusense";
 export type Attrs = {
   kind: Kind; mp?: number; night?: Night; range?: number; audio?: Audio; ai?: Ai;
   deter?: boolean; varifocal?: boolean; sd?: boolean; wideSensor?: boolean; angle?: number; ik10?: boolean; wifi?: boolean;
+  /** שתי עדשות לתמונה פנורמית אחת (Reolink Duo): נשמר kind fisheye לסינון, אבל זו מצלמת חוץ ולא עין דג */ dual?: boolean;
   channels?: number; bays?: number; poePorts?: number; maxMp?: number; hdd?: string; cams?: number;
   wiring?: "ip" | "2wire" | "4wire" | "hybrid" | "standalone" | "wifi" | "other"; app?: boolean; buttons?: number; auth?: string[];
   /** לאביזר: למה הוא מתאים. קובע את שורת "מתאים ל" (fitLine) */ accessoryFor?: "keypad" | "reolink-bullet" | "reolink-dome" | "dome-turret";
@@ -111,7 +112,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-go-ultra": {"kind":"bullet","mp":8,"night":"ir","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false},
   "reolink-go-pt-plus": {"kind":"pt","mp":5,"night":"hybrid","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
   "reolink-go-pt-ultra": {"kind":"pt","mp":8,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true},
-  "reolink-duo-2-lte": {"kind":"fisheye","mp":6,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"angle":180},
+  "reolink-duo-2-lte": {"kind":"fisheye","dual":true,"mp":6,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"angle":180},
   "reolink-trackmix-lte": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":false,"varifocal":true},
   "reolink-trackmix-wired-lte": {"kind":"pt","mp":4,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"lte":true,"battery":false,"varifocal":true},
   "reolink-trackmix-lte-plus-solar": {"kind":"pt","mp":4,"night":"color","range":10,"audio":"two-way","ai":"human-vehicle","sd":true,"solar":true,"lte":true,"battery":true,"panelIncluded":true,"varifocal":true},
@@ -130,11 +131,11 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-trackmix-wifi": {"kind":"wifi-pt","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-e1-outdoor-e540": {"kind":"wifi-pt","mp":5,"night":"hybrid","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
   "reolink-e1-outdoor-pro-e560": {"kind":"wifi-pt","mp":8,"night":"hybrid","range":12,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"varifocal":true},
-  "reolink-duo-2-wifi": {"kind":"fisheye","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":180},
+  "reolink-duo-2-wifi": {"kind":"fisheye","dual":true,"mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"wifi":true,"angle":180},
   "reolink-fe-w": {"kind":"fisheye","mp":6,"night":"ir","range":8,"audio":"two-way","ai":"human","sd":true,"wifi":true,"angle":360},
   "reolink-video-doorbell-wifi": {"kind":"door-panel","wiring":"wifi","app":true,"auth":[],"mp":4,"wifi":true,"audio":"two-way"},
   "reolink-cx410": {"kind":"bullet","mp":4,"night":"color","range":20,"audio":"two-way","ai":"human-vehicle","sd":true},
-  "reolink-duo-3-poe": {"kind":"fisheye","mp":16,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":180},
+  "reolink-duo-3-poe": {"kind":"fisheye","dual":true,"mp":16,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"angle":180},
   "reolink-p327": {"kind":"dome","mp":5,"night":"ir","range":30,"audio":"mic","ai":"human-vehicle","sd":true,"ik10":true},
   "reolink-p330p": {"kind":"pt","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-p330m": {"kind":"bullet","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":false},
@@ -196,7 +197,7 @@ export function fitLine(p: StoreProduct): string {
       return "חוץ: חצר, חניה, קו גדר";
     case "turret": return a.ik10 ? "כניסות ומעברים ציבוריים" : "כניסה לבית, חצר קדמית, חלל פנימי";
     case "dome": return a.ik10 ? "תקרה במקום ציבורי: חדר מדרגות, לובי, חנות" : "תקרת פנים: משרד, חנות, מסדרון";
-    case "fisheye": return "חלל שלם במצלמה אחת: חנות, משרד פתוח, אולם";
+    case "fisheye": return a.dual ? "חזית רחבה בחוץ במצלמה אחת: חצר, חניה, מגרש" : "חלל שלם במצלמה אחת: חנות, משרד פתוח, אולם";
     case "pt": return "כיוון מרחוק: חצר גדולה, מחסן, מגרש";
     case "lpr": return "חניון, שער ומחסום: קריאת לוחיות רישוי";
     case "wifi-pt":
@@ -230,6 +231,7 @@ export function fitLine(p: StoreProduct): string {
  *  Home Hub ו-NVS12W נשארים kind "nvr": kindLabel נכנס ל-<title> של דף המוצר ולא משנים אותו (תוכנית IA, תיקון ביקורת 4). */
 export function kindText(a: Attrs): string {
   if (a.kind === "nvr" && a.wifi) return a.bays === 0 ? "רכזת הקלטה למצלמות Wi-Fi" : "מקליט NVR למצלמות Wi-Fi";
+  if (a.kind === "fisheye" && a.dual) return `פנורמית, שתי עדשות ${a.angle || 180}°`;
   if (a.kind === "fisheye" && a.angle) return `עין דג ${a.angle}°`;
   return kindLabel[a.kind];
 }

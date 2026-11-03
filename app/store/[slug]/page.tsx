@@ -10,7 +10,7 @@ import { offerShippingDetails, merchantReturnPolicy } from "../../components/Sch
 import { ProductCard, SpecChips } from "../ProductCard";
 import { CompareTable } from "../CompareTable";
 import { AddToCart } from "../CartUI";
-import { dealForProduct } from "../../data/deals";
+import { dealForProduct, withVat } from "../../data/deals";
 import { BUSINESS } from "../../data/business";
 import { DealStrip } from "../../deals/DealStrip";
 import { reviewsOf, ratingOf } from "../../data/reviews";
@@ -27,7 +27,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const p = storeProducts.find((x) => x.slug === params.slug);
   if (!p) return {};
   const a = attrsOf(p);
-  const shortTitle = `${productName(p)} | ${kindLabel[a.kind]} | Site-Control`;
+  const shortTitle = `${productName(p)} | ${a.kind === "fisheye" ? kindText(a) : kindLabel[a.kind]} | Site-Control`;
   // 17.10.2026 (בדיקת SEO): המחיר בתיאור (בתוצאות החיפוש), ובלי highlight שכבר כתוב בכותרת ("זום אופטי x5" פעמיים)
   const hl = p.highlights.find((h) => !p.title.includes(h.slice(0, 12))) || "";
   const priceTxt = p.price ? `₪${p.price.toLocaleString("he-IL")} כולל מע״מ` : "";
@@ -285,7 +285,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               בדיקת זמינות והזמנה בווצאפ
             </a>
             {deal
-              ? <Link className={`${styles.cta} ${styles.ctaSecondary}`} href={`/deals#${deal.id}`}>רוצה שנתקין? {nis(deal.price)} ₪ + מע״מ כולל התקנה</Link>
+              ? <Link className={`${styles.cta} ${styles.ctaSecondary}`} href={`/deals#${deal.id}`}>רוצה שנתקין? {nis(withVat(deal.price))} ₪ כולל מע״מ והתקנה</Link>
               : <Link className={`${styles.cta} ${styles.ctaSecondary}`} href="/installation#quote">רוצה שנתקין? הצעת מחיר</Link>}
             <div className={styles.delivery}>
               <h3>איך תרצה לקבל את המוצר?</h3>

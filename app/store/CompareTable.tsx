@@ -12,7 +12,7 @@ function rowsFor(a: Attrs): Row[] {
   if (isCamera(a)) {
     return [
       { label: "מחיר", value: (p) => nis(p.price) },
-      { label: "גוף", value: (_, a) => kindLabel[a.kind] },
+      { label: "גוף", value: (_, a) => (a.kind === "fisheye" ? kindText(a) : kindLabel[a.kind]) },
       { label: "רזולוציה", value: (_, a) => mpLabel(a.mp) },
       { label: "בלילה", value: (_, a) => (a.night ? nightShort[a.night] : "") },
       { label: "טווח תאורה", value: (_, a) => (a.range ? `${a.range} מ'` : "") },
@@ -52,7 +52,7 @@ function rowsFor(a: Attrs): Row[] {
   const auth: Record<string, string> = { face: "פנים", finger: "טביעת אצבע", card: "כרטיס/תג", code: "קוד", qr: "QR" };
   return [
     { label: "מחיר", value: (p) => nis(p.price) },
-    { label: "סוג", value: (_, a) => kindLabel[a.kind] },
+    { label: "סוג", value: (_, a) => (a.kind === "fisheye" ? kindText(a) : kindLabel[a.kind]) },
     { label: "חיווט", value: (_, a) => wiring[a.wiring || "other"] },
     { label: "מענה מהנייד", value: (_, a) => yes(a.app) },
     // פעמון Wi-Fi (wiring "wifi", עבר לאינטרקום בשלב 1א) לא פותח דלת, ולכן לא "לחצן"

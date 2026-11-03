@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     title: "מצלמת 4G ממונעת, מותקנת ועובדת | מבצע Site-Control",
-    description: `מצלמה, התקנה והגדרה ב-${nis(first.price)} ₪ + מע״מ. בכל הארץ.`,
+    description: `מצלמה, התקנה והגדרה ב-${nis(first.price)} ₪ + מע״מ (${nis(withVat(first.price))} ₪ כולל מע״מ). בכל הארץ.`,
     url: "/deals",
     type: "website",
     locale: "he_IL",
@@ -106,6 +106,7 @@ export default function DealsPage() {
                   <span className={styles.badge}>המבצע</span>
                   <b>מותקנת ועובדת</b>
                   <strong>{nis(d.price)} ₪ <small>+ מע״מ</small></strong>
+                  <span>{nis(withVat(d.price))} ₪ כולל מע״מ.</span>
                   <ul>
                     <li>מצלמה, התקנה וחיבור לחשמל</li>
                     <li>כרטיס זיכרון {d.giftCardGb}GB במתנה</li>

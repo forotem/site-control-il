@@ -2360,6 +2360,19 @@
       }
     ]
   },
+  "reolink-p850": {
+    "model": "Reolink P850 / RLC-823S2",
+    "brand": "Reolink",
+    "policy": "undercut-with-floor",
+    "floor": 1985,
+    "urls": [
+      {
+        "url": "https://www.tomo.co.il/items/8687185",
+        "seller": "tomo.co.il",
+        "note": ""
+      }
+    ]
+  },
   "reolink-p430": {
     "model": "P430",
     "brand": "Reolink",

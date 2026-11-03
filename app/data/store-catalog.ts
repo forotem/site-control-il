@@ -13,7 +13,7 @@ export const WHATSAPP_NUMBER = "972508277907";
 export const WARRANTY_RANGE = "12 עד 24 חודשים לפי הדגם";
 export const WARRANTY_TEXT = `אחריות על כל המוצרים, ${WARRANTY_RANGE}`;
 /** עידן 2.11.2026: "מה שכתוב בתומו". המוצרים שבדף שלהם ב-TOMO כתוב 24 חודשים ע"י טלראן (נקרא בכל דף ב-2.11.2026). P330 כתובה שם 12, ומוצר שלא נמצא ב-TOMO נשאר שנה. Argus Eco נקראה מהערכה עם הפאנל, כמו Go PT Plus. */
-const WARRANTY_24 = new Set(["ch10", "cp3-pro", "reolink-rln8-410", "reolink-argus-eco", "reolink-argus-b330", "reolink-argus-track", "reolink-b10", "reolink-cx410", "reolink-d20", "reolink-duo-2-lte", "reolink-duo-2-wifi", "reolink-duo-3-poe", "reolink-e1-outdoor-e540", "reolink-e1-outdoor-pro-e560", "reolink-e1-zoom", "reolink-e330", "reolink-fe-w", "reolink-go-plus", "reolink-go-pt-plus", "reolink-go-pt-ultra", "reolink-go-ranger-pt", "reolink-go-ultra", "reolink-nvs16", "reolink-nvs16-12mb8", "reolink-nvs16-12md8", "reolink-nvs16-8mb8", "reolink-nvs16-8md8", "reolink-nvs36", "reolink-p327", "reolink-p330m", "reolink-p334", "reolink-p337", "reolink-p340", "reolink-p344", "reolink-p430", "reolink-rlk8-1200d4-a", "reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rln16-410", "reolink-solar-panel-2", "reolink-talon-pro", "reolink-trackmix-lte", "reolink-trackmix-lte-plus-solar", "reolink-trackmix-poe", "reolink-trackmix-wifi", "reolink-trackmix-wired-lte", "reolink-video-doorbell-wifi"]);
+const WARRANTY_24 = new Set(["reolink-p850", "ch10", "cp3-pro", "reolink-rln8-410", "reolink-argus-eco", "reolink-argus-b330", "reolink-argus-track", "reolink-b10", "reolink-cx410", "reolink-d20", "reolink-duo-2-lte", "reolink-duo-2-wifi", "reolink-duo-3-poe", "reolink-e1-outdoor-e540", "reolink-e1-outdoor-pro-e560", "reolink-e1-zoom", "reolink-e330", "reolink-fe-w", "reolink-go-plus", "reolink-go-pt-plus", "reolink-go-pt-ultra", "reolink-go-ranger-pt", "reolink-go-ultra", "reolink-nvs16", "reolink-nvs16-12mb8", "reolink-nvs16-12md8", "reolink-nvs16-8mb8", "reolink-nvs16-8md8", "reolink-nvs36", "reolink-p327", "reolink-p330m", "reolink-p334", "reolink-p337", "reolink-p340", "reolink-p344", "reolink-p430", "reolink-rlk8-1200d4-a", "reolink-rlk8-410b4-5mp", "reolink-rlk8-810b4-a-rlk8-800b4", "reolink-rlk8-820d4-a", "reolink-rln16-410", "reolink-solar-panel-2", "reolink-talon-pro", "reolink-trackmix-lte", "reolink-trackmix-lte-plus-solar", "reolink-trackmix-poe", "reolink-trackmix-wifi", "reolink-trackmix-wired-lte", "reolink-video-doorbell-wifi"]);
 export const warrantyOf = (slug: string) => (WARRANTY_24.has(slug) ? "אחריות 24 חודשים" : "אחריות שנה");
 /** לרשימת מוצרים: ניסוח מדויק כשכולם באותה אחריות, אחרת הטווח */
 export const warrantyOfAll = (slugs: string[]) => {
@@ -3247,6 +3247,32 @@ export const storeProducts: StoreProduct[] = [
       "PoE"
     ],
     "image": "/store-images/reolink-p430.webp",
+    "datasheet": null,
+    "oldStock": false
+  },
+  {
+    "slug": "reolink-p850",
+    "brand": "Reolink",
+    "model": "P850",
+    "sku": "RLC-823S2",
+    "title": "מצלמת PTZ ‏IP PoE ממונעת Reolink P850, 4K 8MP, זום אופטי x16 ומעקב אוטומטי",
+    "category": "ip",
+    "categoryName": "מצלמות IP",
+    "price": 1985,
+    "specs": [
+      "8MP 4K, זום אופטי x16, סיבוב 360° והטיה 90°",
+      "מעקב אוטומטי אחרי אדם ורכב, זיהוי אדם/רכב/חיה, 64 נקודות שמורות וסיור אוטומטי (Patrol)",
+      "אינפרא עד 80 מ' וזרקור לראיית לילה צבעונית, שמע דו-כיווני",
+      "הזנה PoE+ ‏(802.3at) בכבל רשת אחד: צריך מתג או מקליט עם PoE+",
+      "microSD עד 256GB (לא כלול), עובדת עם מקליטי Reolink, ONVIF ואפליקציה בעברית",
+      "IP66, להתקנה בחוץ"
+    ],
+    "highlights": [
+      "זום אופטי x16 לחניון ולשטח גדול",
+      "מעקב אוטומטי 360°",
+      "4K, ראיית לילה עד 80 מ'"
+    ],
+    "image": "/store-images/reolink-p850.webp",
     "datasheet": null,
     "oldStock": false
   },

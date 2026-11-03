@@ -145,6 +145,7 @@ export const storeAttrs: Record<string, Attrs> = {
   "reolink-trackmix-poe": {"kind":"pt","mp":8,"night":"hybrid","range":15,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},
   "reolink-p340": {"kind":"bullet","mp":12,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true},
   "reolink-p344": {"kind":"dome","mp":12,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true},
+  "reolink-p850": {"kind":"pt","mp":8,"night":"hybrid","range":80,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},
   "reolink-p430": {"kind":"bullet","mp":8,"night":"hybrid","range":30,"audio":"two-way","ai":"human-vehicle","sd":true,"varifocal":true},
   "reolink-rln8-410": {"kind":"nvr","channels":8,"bays":1,"poePorts":8,"maxMp":16,"ai":"none","hdd":"2TB"},
   "reolink-rln16-410": {"kind":"nvr","channels":16,"bays":1,"poePorts":8,"maxMp":12,"ai":"none"},

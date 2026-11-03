@@ -28,7 +28,7 @@ import { greenApi, sendWhatsAppId, IDAN_WA, ELI_WA, notifyTeam, SC_GROUP, OPS_WA
 import { CHAG, il, dayIL, hourIL, restDay } from "../../../lib/il-time";
 import { isOpeningMessage, INTRO_MARK as RALI_INTRO } from "../../../lib/opening";
 import { sheetHandler, sheetReady, sheetUpsert } from "../../../lib/leads-sheet";
-import { siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
+import { isGoogleRef, siteSourceOf, waRefOf } from "../../../lib/site-wa-prefills";
 import { SYSTEM, askGemini, verifyReply, LEAD_TYPE_HE, INSTALL_HE, type Msg } from "../../../lib/tal";
 import { storeProducts, productName } from "../../../data/store-catalog";
 import { productBySlug, productFacts, productsMentioned } from "../../../data/store-knowledge";
@@ -249,14 +249,25 @@ export async function POST(req: NextRequest) {
     const first = leadStart(msgs, line);
     const pre = first?.type === "incoming" ? first : undefined;
     const said = textOf(lastMsg) || (lastMsg.typeMessage === "audioMessage" ? "[הודעה קולית]" : lastMsg.typeMessage === "imageMessage" ? "[תמונה]" : lastMsg.typeMessage ? `[${lastMsg.typeMessage}]` : "");
+    const ref = pre ? waRefOf(textOf(pre)) || undefined : undefined;
+    // 3.11.2026: קוד SCW-G… = מבקר ממודעת Google Ads (app/lib/wa-ref.ts). "מקור" נכתב רק בשורה חדשה (keep ב-Code.gs),
+    // ולכן הסימון גם ב"מצב (אוטומטי)", שמתעדכן בכל הודעה: כך גם לקוח קיים שחזר ממודעה נראה כגוגל
+    const google = isGoogleRef(ref);
     const ok = await sheetUpsert({
       phone,
       name: n.senderData?.senderName,
-      source: first?.type === "outgoing" ? undefined : `ווצאפ: ${pre ? siteSourceOf(textOf(pre)) : "ישירות למספר של רלי"}`,
-      ref: pre ? waRefOf(textOf(pre)) || undefined : undefined,
-      status: "💬 הלקוח כתב: רלי עונה מהטלפון",
+      source: first?.type === "outgoing" ? undefined : `ווצאפ: ${pre ? siteSourceOf(textOf(pre)) : "ישירות למספר של רלי"}${google ? " · Google Ads" : ""}`,
+      ref,
+      status: google ? "💬 הלקוח כתב (Google Ads): רלי עונה מהטלפון" : "💬 הלקוח כתב: רלי עונה מהטלפון",
       lastMessage: said.slice(0, 300),
     }, Math.min(8000, Math.max(1000, maxDuration * 1000 - (Date.now() - t0) - 2000)));
+    // התראה אחת לקבוצה על ליד מגוגל: רק בהודעות של 10 הדקות הראשונות מההודעה עם הקוד (גם כשהלקוח שלח מיד הודעה שנייה,
+    // וה-webhook של הראשונה דולג), עם בדיקת כפילות לפי הקוד בקבוצה, ורק כשנשאר מספיק זמן ריצה
+    const left = maxDuration * 1000 - (Date.now() - t0);
+    if (google && ref && pre && (lastMsg.timestamp || 0) - (pre.timestamp || 0) < 600 && left > 20000 && !(await alertedRecently(phone, ref, Date.now()))) {
+      recentAlerts.set(`${phone}:${ref}`, Date.now());
+      await notifyTeam(`🟢 ליד ווצאפ ממודעת גוגל (${localPhone(phone)})`, `${n.senderData?.senderName || "לקוח"}\n${siteSourceOf(textOf(pre))}\n${ref}\nרלי עונה מהטלפון. בטבלה שלה: "Google Ads" במצב, ובמקור אם זה לקוח חדש.`).catch(() => undefined);
+    }
     return NextResponse.json({ ok: true, skip: "rali line: no bot replies", recorded: ok });
   }
 

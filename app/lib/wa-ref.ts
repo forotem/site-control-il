@@ -5,7 +5,7 @@
 // נקרא מ-components/SiteTracking.tsx (האזנה גלובלית לקליקים בשלב ה-capture), כך שגם קישורים סטטיים (הכפתור הצף,
 // קומפוננטות שרת) מקבלים קוד בלי onClick בכל קישור: ה-href מעודכן לפני שהדפדפן מנווט אליו.
 import { getAttribution } from './attribution';
-import { WA_REF_ALPHABET, WA_REF_LABEL, WA_REF_RE } from './site-wa-prefills';
+import { GOOGLE_REF_MARK, WA_REF_ALPHABET, WA_REF_LABEL, WA_REF_RE } from './site-wa-prefills';
 
 const WA_HOSTS = /^https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i;
 /** פתיחה לקישור ווצאפ בלי טקסט ממולא, כדי שההודעה לא תהיה רק שורת הקוד (מזוהה ב-site-wa-prefills) */
@@ -13,14 +13,17 @@ const DEFAULT_TEXT = 'היי, הגעתי מהאתר';
 
 export const isWhatsAppHref = (href: string) => WA_HOSTS.test(href);
 
-/** קוד פנייה חדש: SCW- + 6 תווים מהאלפבית בלי O/0/I/1 (256 מתחלק ב-32, אז ההגרלה אחידה) */
+/** קוד פנייה חדש: SCW- + 6 תווים מהאלפבית בלי O/0/I/1 (256 מתחלק ב-32, אז ההגרלה אחידה).
+ *  התו הראשון הוא G רק למבקר ממודעת Google Ads (מקור שמור google_ads), ואצל כל השאר הוא נבחר מ-31 התווים האחרים */
 export function makeWaRef(): string {
   const bytes = new Uint8Array(6);
   if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') crypto.getRandomValues(bytes);
   else for (let i = 0; i < bytes.length; i++) bytes[i] = Math.floor(Math.random() * 256);
   let s = '';
   for (const b of bytes) s += WA_REF_ALPHABET[b % WA_REF_ALPHABET.length];
-  return `SCW-${s}`;
+  const rest = WA_REF_ALPHABET.replace(GOOGLE_REF_MARK, '');
+  const first = getAttribution()?.source === 'google_ads' ? GOOGLE_REF_MARK : rest[bytes[0] % rest.length];
+  return `SCW-${first}${s.slice(1)}`;
 }
 
 /** הקישור עם שורת הקוד בסוף הטקסט (קוד קודם, אם היה, מוחלף), או null אם זה לא קישור ווצאפ.

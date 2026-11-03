@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const UPDATED = "2.11.2026";
+const UPDATED = "3.11.2026";
 
 const h2 = { fontSize: "1.25rem", color: "var(--text-bright)", marginBottom: "0.5rem" } as const;
 const p = { color: "var(--muted)", lineHeight: 1.8, maxWidth: "75ch" } as const;
@@ -74,7 +74,7 @@ export default function TermsPage() {
       t: "5. משלוח ואיסוף",
       body: (
         <>
-          <p style={p}>{BUSINESS.shipping.rule} המשלוח בשליחי {BUSINESS.shipping.carrier}. {BUSINESS.shipping.days}</p>
+          <p style={p}>{BUSINESS.shipping.rule} המשלוח בשליח עד הכתובת. {BUSINESS.shipping.days}</p>
           <p style={p}>אפשר גם איסוף עצמי ללא עלות, בתיאום מראש. הפירוט וההערכות: <Link href="/shipping" style={a}>משלוחים ואיסוף</Link>.</p>
         </>
       ),

@@ -23,7 +23,7 @@ const PREFILLS: [RegExp, string][] = [
   [/^היי, אני מתעניין ב-.+האם יש במלאי ומה זמן האספקה\?/s, "כפתור ווצאפ בדף מוצר"],
   [/^היי, מצאתי את .+ זול יותר/s, "דף מוצר: מצאתי זול יותר"],
   [/^היי, אני מתעניין ב.+מצלמות: .+חשמל בנקודה/s, "טופס התקנה (מבצע)"],
-  [/^היי, אני מתעניין ב.+₪ \+ מע"מ/s, "דף מבצעים"],
+  [/^היי, אני מתעניין ב.+₪ (\+|כולל) מע"מ/s, "דף מבצעים"],
   [/^היי, אני מתעניין ב/, "התעניינות במוצר מהאתר"],
   [/^היי, אשמח להצעת מחיר להתקנ/, "דף התקנה / טופס התקנה"],
   [/^היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים/, "עגלת קניות באתר"],
@@ -54,6 +54,10 @@ const PREFILLS: [RegExp, string][] = [
 export const WA_REF_LABEL = "מס' פנייה:";
 export const WA_REF_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 export const WA_REF_RE = /\bSCW-[A-HJ-NP-Z2-9]{6}\b/;
+// 3.11.2026 (קמפייני גוגל): קוד של מבקר שהגיע ממודעת Google Ads מתחיל ב-G (SCW-G…), וכל קוד אחר לא מתחיל ב-G.
+// כך רלי והטבלה שלה רואים שהליד מגוגל מתוך ההודעה עצמה, בלי המייל ובלי המחשב של רותם. הפורמט והביטוי לא השתנו.
+export const GOOGLE_REF_MARK = "G";
+export const isGoogleRef = (code: string | null | undefined) => Boolean(code && code.toUpperCase().startsWith(`SCW-${GOOGLE_REF_MARK}`));
 
 /** קוד הפנייה שבתוך הודעה ("SCW-XXXXXX"), או null אם אין */
 export function waRefOf(text: string): string | null {

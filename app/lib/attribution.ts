@@ -36,6 +36,11 @@ function detect(): Attribution | null {
   }
   const fbclid = (q.get('fbclid') || '').replace(/[^\w-]/g, '').slice(0, 500); // fbclid ארוך יותר מ-gclid
   const fb = fbclid ? { clickId: fbclid, clickIdType: 'fbclid' as const } : {};
+  // 3.11.2026: קליק ממודעה שהגיע בלי gclid (ספארי פרטי, אפליקציה שמורידה פרמטרים) עדיין נושא את הסיומת של הקמפיין
+  // (utm_source=google&utm_medium=cpc), ולכן נרשם כ-Google Ads ולא כחיפוש אורגני
+  if (/^google$/i.test(utm('source') || '') && /^(cpc|ppc|paid)$/i.test(utm('medium') || '')) {
+    return { source: 'google_ads', medium: 'cpc', ...utms, paid: true, landing, at };
+  }
   if (utm('source')) {
     const medium = utm('medium');
     const paid = /^(cpc|ppc|paid|paid_social)$/i.test(medium || '') || undefined;

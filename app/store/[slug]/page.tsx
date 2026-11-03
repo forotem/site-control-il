@@ -292,7 +292,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               {deliveryOptions.map((d, i) => (
                 <div key={d.id} className={styles.deliveryOpt}>
                   <i>{i + 1}</i>
-                  <div><b>{d.title}</b><span>{deal && d.id === "install" ? `בכל הארץ, במבצע: ${nis(deal.price)} ₪ + מע״מ למצלמה מותקנת ועובדת` : d.desc}</span></div>
+                  <div><b>{d.title}</b><span>{deal && d.id === "install" ? `בכל הארץ, במבצע: ${nis(withVat(deal.price))} ₪ כולל מע״מ למצלמה מותקנת ועובדת` : d.desc}</span></div>
                 </div>
               ))}
             </div>

@@ -12,12 +12,12 @@ const first = deals[0];
 
 export const metadata: Metadata = {
   title: "מבצעים: מצלמת 4G עם התקנה במחיר סגור | Site-Control",
-  description: `מבצע Reolink TrackMix Wired LTE: מצלמת 4G ממונעת עם שתי עדשות, זום ומעקב אוטומטי, מותקנת ועובדת ב-${nis(first.price)} ₪ + מע״מ (${nis(withVat(first.price))} ₪ כולל מע״מ). התקנה בכל הארץ.`,
+  description: `מבצע Reolink TrackMix Wired LTE: מצלמת 4G ממונעת עם שתי עדשות, זום ומעקב אוטומטי, מותקנת ועובדת ב-${nis(withVat(first.price))} ₪ כולל מע״מ. התקנה בכל הארץ.`,
   alternates: { canonical: "/deals" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "מצלמת 4G ממונעת, מותקנת ועובדת | מבצע Site-Control",
-    description: `מצלמה, התקנה והגדרה ב-${nis(first.price)} ₪ + מע״מ (${nis(withVat(first.price))} ₪ כולל מע״מ). בכל הארץ.`,
+    description: `מצלמה, התקנה והגדרה ב-${nis(withVat(first.price))} ₪ כולל מע״מ. בכל הארץ.`,
     url: "/deals",
     type: "website",
     locale: "he_IL",
@@ -43,7 +43,7 @@ export default function DealsPage() {
         const p = dealProduct(d);
         if (!p) return null;
         const Title = i === 0 ? "h1" : "h2";
-        const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`היי, אני מתעניין ב${d.name} (${nis(d.price)} ₪ + מע"מ). היישוב שלי: `)}`;
+        const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`היי, אני מתעניין ב${d.name} (${nis(withVat(d.price))} ₪ כולל מע"מ). היישוב שלי: `)}`;
         const formId = `${d.id}-form`;
         return (
           <article key={d.id} id={d.id} className={styles.deal} data-track={`deal_${d.id}`}>
@@ -53,8 +53,8 @@ export default function DealsPage() {
                 <Title className={styles.title}>{d.title}</Title>
                 <p className={styles.lead}>{d.lead}</p>
                 <div className={styles.price}>
-                  <strong>{nis(d.price)} ₪ <small>+ מע״מ</small></strong>
-                  <span>למצלמה, כולל התקנה והגדרה. {nis(withVat(d.price))} ₪ כולל מע״מ.</span>
+                  <strong>{nis(withVat(d.price))} ₪ <small>כולל מע״מ</small></strong>
+                  <span>למצלמה, כולל התקנה והגדרה. {nis(d.price)} ₪ לפני מע״מ.</span>
                 </div>
                 <div className={home.ctas}>
                   <a className={`${home.cta} ${home.ctaAccent}`} href={`#${formId}`}>אני רוצה את המבצע</a>
@@ -105,8 +105,8 @@ export default function DealsPage() {
                 <div className={`${styles.path} ${styles.pathMain}`}>
                   <span className={styles.badge}>המבצע</span>
                   <b>מותקנת ועובדת</b>
-                  <strong>{nis(d.price)} ₪ <small>+ מע״מ</small></strong>
-                  <span>{nis(withVat(d.price))} ₪ כולל מע״מ.</span>
+                  <strong>{nis(withVat(d.price))} ₪ <small>כולל מע״מ</small></strong>
+                  <span>{nis(d.price)} ₪ לפני מע״מ.</span>
                   <ul>
                     <li>מצלמה, התקנה וחיבור לחשמל</li>
                     <li>כרטיס זיכרון {d.giftCardGb}GB במתנה</li>
@@ -120,7 +120,7 @@ export default function DealsPage() {
                   <b>רק המצלמה, מתקינים לבד</b>
                   <strong>{p.price ? <>{nis(p.price)} ₪ <small>כולל מע״מ</small></> : "מחיר לפי פנייה"}</strong>
                   <ul>
-                    <li>משלוח UPS בתשלום נפרד, או איסוף עצמי</li>
+                    <li>משלוח בשליח בתשלום נפרד, או איסוף עצמי</li>
                     <li>נסביר בטלפון או בווצאפ איך מחברים ומגדירים</li>
                     <li>{simLabel(d.sim)} בתוספת {nis(d.sim.price)} ₪</li>
                     <li>כרטיס זיכרון קונים בנפרד</li>
@@ -143,8 +143,8 @@ export default function DealsPage() {
                 <h2 id={`${formId}-title`}>להזמנת המבצע</h2>
                 <p>משאירים פרטים ואנחנו חוזרים לתאם. לא משלמים כלום עד שמוודאים יחד שהמקום מתאים.</p>
                 <div className={styles.price}>
-                  <strong>{nis(d.price)} ₪ <small>+ מע״מ</small></strong>
-                  <span>למצלמה, כולל התקנה והגדרה. {nis(withVat(d.price))} ₪ כולל מע״מ.</span>
+                  <strong>{nis(withVat(d.price))} ₪ <small>כולל מע״מ</small></strong>
+                  <span>למצלמה, כולל התקנה והגדרה. {nis(d.price)} ₪ לפני מע״מ.</span>
                 </div>
               </div>
               <InstallForm variant="deal" deal={d.name} />

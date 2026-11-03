@@ -48,7 +48,7 @@ export default function StorePage() {
           <div className={styles.trust}>
             <span>{WARRANTY_TEXT}</span>
             <span>זמינות מאושרת בווצאפ לפני חיוב</span>
-            <span>משלוח UPS בתשלום נפרד, איסוף עצמי או התקנה</span>
+            <span>משלוח בשליח בתשלום נפרד, איסוף עצמי או התקנה</span>
           </div>
         </div>
         <ul className={styles.quick} aria-label="כניסה מהירה לפי מצב">

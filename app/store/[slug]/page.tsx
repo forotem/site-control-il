@@ -147,8 +147,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const compareSlugs = neighbours(p);
   const summary = plainSummary(p);
   const deal = dealForProduct(p.slug);
+  // 4.11.2026: קישור לדף בסוף ההודעה. רלי מקבלת בווצאפ רק את שם הדגם ולא מצאה את המוצר באתר (P850, הפנל, DS-7616NXI-K1).
+  // הקישור אחרי "?", כך שהזיהוי ב-site-wa-prefills (תחילת ההודעה) לא משתנה. שורת "מס' פנייה" מתווספת אחריו בלחיצה.
   const waText = encodeURIComponent(
-    `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?`
+    `היי, אני מתעניין ב-${p.title} (${productName(p)}${p.sku ? `, מק"ט ${p.sku}` : ""}). האם יש במלאי ומה זמן האספקה?\n${BASE_URL}/store/${p.slug}`
   );
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
   const fullKit = fullKitOffer(p);

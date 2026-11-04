@@ -1987,16 +1987,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 45,
+    "market_low_ils": 40,
     "market_typical_ils": null,
     "price_basis": "comparable",
-    "recommended_price_ils": 40,
+    "recommended_price_ils": 39,
     "estimated_cost_ils": 37,
     "estimated_margin_ils": null,
     "foreign_prices_note": "Generic keypad rain covers USD 5-12 on AliExpress/Amazon.",
     "notes": "No Israeli listing with a visible price was retrievable (belshop page did not render). Suggested retail 59-89 ILS as a low-cost add-on; verify belshop price manually.",
     "batch": 1,
-    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49. | סורק מתחרים 23/09: הזול 45 (Belshop), הוזל ל-39 | סורק מתחרים 2026-10-03: הזול 45 (Belshop), הוזל ל-40"
+    "pricing_note": "גגון גנרי מקביל: Alon Computers 49, Belshop 50. תומחר 49. | סורק מתחרים 23/09: הזול 45 (Belshop), הוזל ל-39 | סורק מתחרים 2026-10-03: הזול 45 (Belshop), הוזל ל-40 | סורק מתחרים 2026-11-04: הזול 40 (Alon Computers), הוזל ל-39"
   },
   {
     "cost_source": "pricelist",
@@ -4958,16 +4958,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 395,
+    "market_low_ils": 393,
     "market_typical_ils": 395,
     "price_basis": "exact",
-    "recommended_price_ils": 390,
+    "recommended_price_ils": 388,
     "estimated_cost_ils": 353,
     "estimated_margin_ils": 42,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 395, מתקין לפני מע\"מ 299",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 395 (kav-isr/satsigma 395); מחיר מתקין טלרן+מע\"מ 353; תחרותי | סורק מתחרים 2026-10-03: הזול 395 (kav-isr.com), הוזל ל-390",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 395 (kav-isr/satsigma 395); מחיר מתקין טלרן+מע\"מ 353; תחרותי | סורק מתחרים 2026-10-03: הזול 395 (kav-isr.com), הוזל ל-390 | סורק מתחרים 2026-11-04: הזול 393 (tomo.co.il), הוזל ל-388",
     "telran_installer_incl_vat": 353
   },
   {
@@ -5288,16 +5288,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1800,
+    "market_low_ils": 1799,
     "market_typical_ils": 1599,
     "price_basis": "exact",
-    "recommended_price_ils": 1599,
+    "recommended_price_ils": 1794,
     "estimated_cost_ils": 1533,
     "estimated_margin_ils": 66,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1599, מתקין לפני מע\"מ 1299",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1800 (satsigma 1800 (עם 4TB)); מחיר מתקין טלרן+מע\"מ 1533; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1800 (satsigma 1800 (עם 4TB)); מחיר מתקין טלרן+מע\"מ 1533; תחרותי | סורק מתחרים 2026-11-04: הזול 1799 (tomo.co.il), הוזל ל-1794",
     "telran_installer_incl_vat": 1533
   },
   {

@@ -1255,7 +1255,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "גגון הגנה מגשם לקודן בקרת כניסה (מתאים לקודנים 560596/560597)",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
-    "price": 40,
+    "price": 39,
     "specs": [
       "ABS plastic rain/sun shield for surface-mounted keypads",
       "Outer 150 x 104 x 90 mm, inner 135 x 89 x 84 mm",
@@ -3006,7 +3006,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE אנטי-ונדלית Reolink P327, 5MP, IK10, IP67",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 390,
+    "price": 388,
     "specs": [
       "5MP, כיפה עמידה למכות IK10",
       "PoE, זיהוי אדם/רכב",
@@ -3332,7 +3332,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מקליט NVR Reolink NVS16, 16 ערוצים, כולל דיסק 4TB",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1795,
+    "price": 1794,
     "specs": [
       "16 ערוצי IP עד 16MP, 8 יציאות PoE מובנות",
       "דיסק 4TB כלול",

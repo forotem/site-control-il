@@ -1,5 +1,5 @@
 {
- "date": "2026-11-01",
+ "date": "2026-11-04",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 909,
+     "price": 469,
      "method": "text-anywhere"
     },
     {
@@ -133,7 +133,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 909,
+     "price": 379,
      "method": "text-anywhere"
     },
     {
@@ -152,7 +152,7 @@
   },
   {
    "slug": "ds-kv6124-wbe1",
-   "model": "DS-KV6124-WBE1",
+   "model": "DS-KV6124-E1",
    "brand": "Hikvision",
    "ours": 769,
    "low": null,
@@ -179,7 +179,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 328,
+     "price": 339,
      "method": "text-anywhere"
     },
     {
@@ -433,12 +433,12 @@
    "model": "DS-7632NXI-K2(D)",
    "brand": "Hikvision",
    "ours": 1063,
-   "low": 752,
+   "low": 765,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
    "target": 1063,
    "action": "floor_blocks",
-   "reason": "רצפה 1063 לא מאפשרת לרדת ל-747",
+   "reason": "רצפה 1063 לא מאפשרת לרדת ל-760",
    "offers": [
     {
      "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
@@ -469,7 +469,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 752,
+     "price": 765,
      "method": "structured+vat"
     }
    ]
@@ -503,7 +503,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1659,
+     "price": 1769,
      "method": "near-model-repeated"
     }
    ]
@@ -513,12 +513,12 @@
    "model": "DS-7616NXI-K1(D)",
    "brand": "Hikvision",
    "ours": 708,
-   "low": 509,
+   "low": 518,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
    "target": 708,
    "action": "floor_blocks",
-   "reason": "רצפה 708 לא מאפשרת לרדת ל-504",
+   "reason": "רצפה 708 לא מאפשרת לרדת ל-513",
    "offers": [
     {
      "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
@@ -541,7 +541,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 509,
+     "price": 518,
      "method": "structured+vat"
     }
    ]
@@ -551,12 +551,12 @@
    "model": "DS-7608NXI-K1/8P(D)",
    "brand": "Hikvision",
    "ours": 786,
-   "low": 788,
+   "low": 799,
    "lowSeller": "Senetic Israel",
    "lowUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-   "target": 786,
-   "action": "floor_blocks",
-   "reason": "רצפה 786 לא מאפשרת לרדת ל-783",
+   "target": 794,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
@@ -567,7 +567,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 788,
+     "price": 799,
      "method": "structured+vat"
     },
     {
@@ -579,7 +579,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 1008,
+     "price": 1025,
      "method": "structured+vat"
     }
    ]
@@ -631,7 +631,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1129,
+     "price": 2149,
      "method": "near-model-repeated"
     }
    ]
@@ -761,7 +761,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1229,
+     "price": 1245,
      "method": "structured+vat"
     },
     {
@@ -805,10 +805,10 @@
    "model": "IPC2318LE-ADF28KM-WP",
    "brand": "Uniview",
    "ours": 535,
-   "low": 1229,
+   "low": 1245,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-   "target": 1224,
+   "target": 1240,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -829,7 +829,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 1229,
+     "price": 1245,
      "method": "structured+vat"
     }
    ]
@@ -839,12 +839,12 @@
    "model": "IPC3626LE-ADF28K-WP",
    "brand": "Uniview",
    "ours": 813,
-   "low": 817,
+   "low": 827,
    "lowSeller": "senetic.co.il",
    "lowUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-   "target": 812,
-   "action": "review",
-   "reason": "ראיה חלשה (מחיר בודד מטקסט)",
+   "target": 822,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
@@ -855,7 +855,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 817,
+     "price": 827,
      "method": "structured+vat"
     }
    ]
@@ -1077,7 +1077,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 519,
+     "price": 526,
      "method": "structured+vat"
     }
    ]
@@ -1183,7 +1183,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://connectvision.co.il/product/uniview-xvr301-g3-series-1tb/",
-     "price": 399,
+     "price": 750,
      "method": "text-anywhere"
     }
    ]
@@ -1221,7 +1221,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://connectvision.co.il/product/uniview-xvr301-g3-series-1tb/",
-     "price": 399,
+     "price": 750,
      "method": "text-anywhere"
     },
     {
@@ -1567,11 +1567,11 @@
    "model": "Rain roof for keypads 560878",
    "brand": "VisionNet",
    "ours": 40,
-   "low": 45,
-   "lowSeller": "Belshop",
-   "lowUrl": "https://www.belshop.co.il/items/5511408",
-   "target": null,
-   "action": "ok",
+   "low": 40,
+   "lowSeller": "Alon Computers",
+   "lowUrl": "https://www.alon-computers.co.il/items/7888026-waterproof-access-control-rfid-cover-black",
+   "target": 39,
+   "action": "applied",
    "reason": "",
    "offers": [
     {
@@ -1583,7 +1583,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.alon-computers.co.il/items/7888026-waterproof-access-control-rfid-cover-black",
-     "price": 49,
+     "price": 40,
      "method": "structured"
     },
     {
@@ -1596,6 +1596,32 @@
      "modelSeen": false,
      "finalUrl": "https://www.belshop.co.il/items/5511408",
      "price": 45,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-rlk8-820d4-a",
+   "model": "Reolink RLK8-820D4-A (NVS8-8MD4)",
+   "brand": "",
+   "ours": 2599,
+   "low": 2699,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8706902",
+   "target": 2694,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8706902",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8706902",
+     "price": 2699,
      "method": "structured"
     }
    ]
@@ -1651,6 +1677,44 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8709970",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8709970",
+     "price": 2699,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-rlk8-410b4-5mp",
+   "model": "Reolink RLK8-410B4-5MP (NVS8-5MB4)",
+   "brand": "",
+   "ours": 1959,
+   "low": 2099,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8974138",
+   "target": 2094,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8974138",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8974138",
+     "price": 2099,
+     "method": "structured"
     }
    ]
   },
@@ -1717,6 +1781,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8709366",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8709366",
+     "price": 3590,
+     "method": "structured"
     }
    ]
   },
@@ -2003,7 +2079,7 @@
    "model": "DS-2CD1743G2-LIZU 2.8-12mm",
    "brand": "Hikvision",
    "ours": 1129,
-   "low": 547,
+   "low": 580,
    "lowSeller": "Senetic (senetic.co.il)",
    "lowUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
    "target": 889,
@@ -2031,7 +2107,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 547,
+     "price": 580,
      "method": "structured+vat"
     }
    ]
@@ -2277,7 +2353,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 786,
+     "price": 799,
      "method": "structured+vat"
     }
    ]
@@ -2311,7 +2387,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1192,
+     "price": 1207,
      "method": "structured+vat"
     }
    ]
@@ -2387,7 +2463,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1288,
+     "price": 1312,
      "method": "structured+vat"
     },
     {
@@ -2735,6 +2811,32 @@
    ]
   },
   {
+   "slug": "ch10",
+   "model": "CH10",
+   "brand": "Tenda",
+   "ours": 344,
+   "low": 349,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/9533870",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/9533870",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9533870",
+     "price": 349,
+     "method": "structured"
+    }
+   ]
+  },
+  {
    "slug": "cp3-pro",
    "model": "CP3 Pro (CP3 Pro V1.1)",
    "brand": "Tenda",
@@ -2767,7 +2869,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 99,
+     "price": 69,
      "method": "text-anywhere"
     },
     {
@@ -2781,6 +2883,18 @@
      "finalUrl": "https://smartimg.co.il/%D7%97%D7%A0%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%95%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94/%D7%A9%D7%9E%D7%A2/%D7%9E%D7%A6%D7%9C%D7%9E%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%AA-tenda-cp3-pro/",
      "price": 240,
      "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/9530449",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9530449",
+     "price": 199,
+     "method": "structured"
     }
    ]
   },
@@ -2815,6 +2929,18 @@
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%97%d7%99%d7%a6%d7%95%d7%a0%d7%99%d7%aa-reolink-go-plus-4mp-4g/",
      "price": 1189,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8687035",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8687035",
+     "price": 1189,
+     "method": "structured"
     }
    ]
   },
@@ -2822,11 +2948,11 @@
    "slug": "reolink-go-ultra",
    "model": "Reolink Go Ultra / G340",
    "brand": "",
-   "ours": 820,
+   "ours": 825,
    "low": 890,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/?p=23250",
-   "target": 880,
+   "target": 885,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -2857,6 +2983,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8438796",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8438796",
+     "price": 1299,
+     "method": "structured"
     }
    ]
   },
@@ -2951,6 +3089,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8348853",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8348853",
+     "price": 1599,
+     "method": "structured"
     }
    ]
   },
@@ -2958,12 +3108,12 @@
    "slug": "reolink-trackmix-lte",
    "model": "Reolink TrackMix LTE",
    "brand": "",
-   "ours": 1780,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
+   "ours": 1689,
+   "low": 1699,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8853720",
    "target": null,
-   "action": "fetch_failed",
+   "action": "ok",
    "reason": "",
    "offers": [
     {
@@ -2985,6 +3135,18 @@
      "finalUrl": "https://vsale.co.il/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%90%D7%9C%D7%97%D7%95%D7%98%D7%99%D7%95%D7%AA/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-trackmix-lte-plus-4mp",
      "price": 1000,
      "method": "text-anywhere"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8853720",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8853720",
+     "price": 1699,
+     "method": "structured"
     }
    ]
   },
@@ -3017,7 +3179,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 4158,
+     "price": 3998,
      "method": "text-anywhere"
     },
     {
@@ -3097,6 +3259,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/9505272",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9505272",
+     "price": 1199,
+     "method": "structured"
     }
    ]
   },
@@ -3200,12 +3374,12 @@
    "slug": "reolink-solar-panel-2",
    "model": "Solar Panel 2-W",
    "brand": "Reolink",
-   "ours": 139,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
+   "ours": 89,
+   "low": 99,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7895077",
    "target": null,
-   "action": "fetch_failed",
+   "action": "ok",
    "reason": "",
    "offers": [
     {
@@ -3235,6 +3409,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7895077",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7895077",
+     "price": 99,
+     "method": "structured"
     }
    ]
   },
@@ -3353,6 +3539,18 @@
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%aa-reolink-argus-track-dual-lens-wifi/",
      "price": 820,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7883514",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7883514",
+     "price": 850,
+     "method": "structured"
     }
    ]
   },
@@ -3394,13 +3592,13 @@
    "slug": "reolink-e330",
    "model": "E330",
    "brand": "Reolink",
-   "ours": 289,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
+   "ours": 274,
+   "low": 279,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8543517",
    "target": null,
-   "action": "no_comparable",
-   "reason": "נמצאו רק דגמים דומים/ערכות, לא אותו דגם",
+   "action": "ok",
+   "reason": "",
    "offers": [
     {
      "url": "https://www.zap.co.il/fs.aspx?pid=1298284837",
@@ -3411,7 +3609,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 215,
+     "price": 99,
      "method": "text-anywhere"
     },
     {
@@ -3423,8 +3621,20 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 215,
+     "price": 99,
      "method": "text-anywhere"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8543517",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8543517",
+     "price": 279,
+     "method": "structured"
     }
    ]
   },
@@ -3432,13 +3642,13 @@
    "slug": "reolink-e1-zoom",
    "model": "E1 Zoom",
    "brand": "Reolink",
-   "ours": 299,
-   "low": 429,
-   "lowSeller": "bug.co.il",
-   "lowUrl": "https://www.bug.co.il/brand/reolink/e1/zoom",
-   "target": 424,
-   "action": "room_to_raise",
-   "reason": "הרצה עם --realign תיישר למעלה",
+   "ours": 279,
+   "low": 284,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7889072",
+   "target": null,
+   "action": "ok",
+   "reason": "",
    "offers": [
     {
      "url": "https://bconnect.co.il/product/reolink-e1-zoom-indoor-camera/",
@@ -3467,6 +3677,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7889072",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7889072",
+     "price": 284,
+     "method": "structured"
     }
    ]
   },
@@ -3517,15 +3739,119 @@
    ]
   },
   {
+   "slug": "reolink-trackmix-wifi",
+   "model": "TrackMix WiFi",
+   "brand": "Reolink",
+   "ours": 1084,
+   "low": 1089,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7893375",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/7893375",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7893375",
+     "price": 1089,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-e1-outdoor-e540",
+   "model": "E1 Outdoor / E540",
+   "brand": "Reolink",
+   "ours": 429,
+   "low": 440,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7894142",
+   "target": 435,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/7894142",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7894142",
+     "price": 440,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-e1-outdoor-pro-e560",
+   "model": "E1 Outdoor Pro / E560",
+   "brand": "Reolink",
+   "ours": 479,
+   "low": 499,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/9508036",
+   "target": 494,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/9508036",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9508036",
+     "price": 499,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-duo-2-wifi",
+   "model": "Duo 2 WiFi",
+   "brand": "Reolink",
+   "ours": 839,
+   "low": 999,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7894195",
+   "target": 994,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/7894195",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7894195",
+     "price": 999,
+     "method": "structured"
+    }
+   ]
+  },
+  {
    "slug": "reolink-fe-w",
    "model": "FE-W",
    "brand": "Reolink",
    "ours": 794,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
+   "low": 799,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8687106",
    "target": null,
-   "action": "fetch_failed",
+   "action": "ok",
    "reason": "",
    "offers": [
     {
@@ -3537,7 +3863,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 308,
+     "price": 279,
      "method": "text-anywhere"
     },
     {
@@ -3565,8 +3891,20 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 308,
+     "price": 279,
      "method": "text-anywhere"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8687106",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8687106",
+     "price": 799,
+     "method": "structured"
     }
    ]
   },
@@ -3637,6 +3975,18 @@
      "finalUrl": "https://www.alltechstore.co.il/items/8772620",
      "price": 539,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7895897",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7895897",
+     "price": 399,
+     "method": "structured"
     }
    ]
   },
@@ -3683,6 +4033,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1209389",
      "price": 299,
      "method": "near-model"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7884796",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7884796",
+     "price": 549,
+     "method": "structured"
     }
    ]
   },
@@ -3690,10 +4052,10 @@
    "slug": "reolink-duo-3-poe",
    "model": "Duo 3 PoE",
    "brand": "Reolink",
-   "ours": 1084,
-   "low": 1089,
-   "lowSeller": "kav-isr.com (via zap)",
-   "lowUrl": "https://www.zap.co.il/model.aspx?modelid=1262569",
+   "ours": 1054,
+   "low": 1059,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8682573",
    "target": null,
    "action": "ok",
    "reason": "",
@@ -3721,6 +4083,18 @@
      "finalUrl": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-duo-3v-poe-16mp/",
      "price": 950,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8682573",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8682573",
+     "price": 1059,
+     "method": "structured"
     }
    ]
   },
@@ -3729,11 +4103,11 @@
    "model": "P327",
    "brand": "Reolink",
    "ours": 390,
-   "low": 395,
-   "lowSeller": "kav-isr.com",
-   "lowUrl": "https://kav-isr.com/cameras/ip-security-cameras/reolink-p327.html",
-   "target": null,
-   "action": "ok",
+   "low": 393,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7876879",
+   "target": 388,
+   "action": "applied",
    "reason": "",
    "offers": [
     {
@@ -3771,6 +4145,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1262316",
      "price": 425,
      "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7876879",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7876879",
+     "price": 393,
+     "method": "structured"
     }
    ]
   },
@@ -3804,10 +4190,10 @@
    "slug": "reolink-p330m",
    "model": "P330M",
    "brand": "Reolink",
-   "ours": 594,
-   "low": 599,
-   "lowSeller": "zbm.co.il (via zap)",
-   "lowUrl": "https://www.zap.co.il/model.aspx?modelid=1262321",
+   "ours": 544,
+   "low": 549,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7877248",
    "target": null,
    "action": "ok",
    "reason": "",
@@ -3823,6 +4209,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1262321",
      "price": 599,
      "method": "near-model"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7877248",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7877248",
+     "price": 549,
+     "method": "structured"
     }
    ]
   },
@@ -3831,12 +4229,12 @@
    "model": "P334",
    "brand": "Reolink",
    "ours": 369,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
-   "target": null,
-   "action": "no_comparable",
-   "reason": "נמצאו רק דגמים דומים/ערכות, לא אותו דגם",
+   "low": 379,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8687140",
+   "target": 374,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://kav-isr.com/cameras/ip-security-cameras/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-8mp-%D7%A2%D7%93%D7%A9%D7%94-4-reolink-rlc-820a.html",
@@ -3847,6 +4245,18 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/ip-security-cameras/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-ip-%D7%9B%D7%99%D7%A4%D7%94-8mp-%D7%A2%D7%93%D7%A9%D7%94-4-reolink-rlc-820a.html",
+     "price": 379,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8687140",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8687140",
      "price": 379,
      "method": "structured"
     }
@@ -3887,6 +4297,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1262317",
      "price": 518,
      "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7877916",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7877916",
+     "price": 499,
+     "method": "structured"
     }
    ]
   },
@@ -3925,6 +4347,18 @@
      "finalUrl": "https://www.wisebuy.co.il/product.aspx?category=g-hiddencam&productid=1262315",
      "price": 379,
      "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8817226",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8817226",
+     "price": 389,
+     "method": "structured"
     }
    ]
   },
@@ -3932,10 +4366,10 @@
    "slug": "reolink-trackmix-poe",
    "model": "TrackMix PoE",
    "brand": "Reolink",
-   "ours": 1024,
-   "low": 1029,
-   "lowSeller": "zap.co.il",
-   "lowUrl": "https://www.zap.co.il/model.aspx?modelid=1190781",
+   "ours": 994,
+   "low": 999,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7894264",
    "target": null,
    "action": "ok",
    "reason": "",
@@ -3963,6 +4397,18 @@
      "finalUrl": "https://www.wisebuy.co.il/products.aspx?category=g-hiddencam&keyword=trackmix%20poe",
      "price": 1029,
      "method": "near-model"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7894264",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7894264",
+     "price": 999,
+     "method": "structured"
     }
    ]
   },
@@ -4001,6 +4447,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1262322",
      "price": 589,
      "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/8687172",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8687172",
+     "price": 589,
+     "method": "structured"
     }
    ]
   },
@@ -4039,6 +4497,18 @@
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1262571",
      "price": 619,
      "method": "near-model-repeated"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7877989",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7877989",
+     "price": 589,
+     "method": "structured"
     }
    ]
   },
@@ -4075,7 +4545,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 230,
      "method": "text-anywhere"
     },
     {
@@ -4087,7 +4557,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 230,
      "method": "text-anywhere"
     },
     {
@@ -4097,6 +4567,44 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7878102",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7878102",
+     "price": 639,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-p850",
+   "model": "P850",
+   "brand": "Reolink",
+   "ours": 1985,
+   "low": 1990,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8687185",
+   "target": null,
+   "action": "ok",
+   "reason": "",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8687185",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8687185",
+     "price": 1990,
+     "method": "structured"
     }
    ]
   },
@@ -4105,12 +4613,12 @@
    "model": "RLN16-410",
    "brand": "Reolink",
    "ours": 1129,
-   "low": null,
-   "lowSeller": null,
-   "lowUrl": null,
-   "target": null,
-   "action": "no_comparable",
-   "reason": "נמצאו רק דגמים דומים/ערכות, לא אותו דגם",
+   "low": 1299,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/7913939",
+   "target": 1294,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
     {
      "url": "https://www.satsigma.co.il/product/%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94-reolink-rln16-410-8ch-poe-2tb/",
@@ -4145,7 +4653,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 909,
+     "price": 399,
      "method": "text-anywhere"
     },
     {
@@ -4155,6 +4663,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7913939",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7913939",
+     "price": 1299,
+     "method": "structured"
     }
    ]
   },
@@ -4163,11 +4683,11 @@
    "model": "NVS16",
    "brand": "Reolink",
    "ours": 1795,
-   "low": 1800,
-   "lowSeller": "zap.co.il (single stores)",
-   "lowUrl": "https://www.zap.co.il/fs.aspx?pid=1258501165",
-   "target": null,
-   "action": "ok",
+   "low": 1799,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/9311645",
+   "target": 1794,
+   "action": "applied",
    "reason": "",
    "offers": [
     {
@@ -4287,7 +4807,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200b8-a2.8mm.html",
-     "price": 2699,
+     "price": 3590,
      "method": "near-model-repeated"
     },
     {
@@ -4299,7 +4819,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200b8-a2.8mm.html?aff=Zap",
-     "price": 2699,
+     "price": 3590,
      "method": "near-model-repeated"
     },
     {
@@ -4319,7 +4839,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200d8-a2.8mm.html",
-     "price": 2699,
+     "price": 3590,
      "method": "near-model-repeated"
     },
     {
@@ -4331,7 +4851,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/kits/reolink-rlk16-1200d8-a2.8mm.html?aff=Zap",
-     "price": 2699,
+     "price": 3590,
      "method": "near-model-repeated"
     },
     {
@@ -4341,6 +4861,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/9311645",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9311645",
+     "price": 1799,
+     "method": "structured"
     }
    ]
   },
@@ -4397,7 +4929,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 909,
+     "price": 498,
      "method": "text-anywhere"
     },
     {
@@ -4407,6 +4939,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/9311656",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/9311656",
+     "price": 1399,
+     "method": "structured"
     }
    ]
   },
@@ -4503,6 +5047,110 @@
    ]
   },
   {
+   "slug": "reolink-nvs16-8mb8",
+   "model": "NVS16-8MB8",
+   "brand": "Reolink",
+   "ours": 4659,
+   "low": 4750,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8709905",
+   "target": 4745,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8709905",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8709905",
+     "price": 4750,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-nvs16-8md8",
+   "model": "NVS16-8MD8",
+   "brand": "Reolink",
+   "ours": 4659,
+   "low": 4750,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8709854",
+   "target": 4745,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8709854",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8709854",
+     "price": 4750,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-nvs16-12mb8",
+   "model": "NVS16-12MB8",
+   "brand": "Reolink",
+   "ours": 5489,
+   "low": 5599,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8709951",
+   "target": 5594,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8709951",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8709951",
+     "price": 5599,
+     "method": "structured"
+    }
+   ]
+  },
+  {
+   "slug": "reolink-nvs16-12md8",
+   "model": "NVS16-12MD8",
+   "brand": "Reolink",
+   "ours": 5489,
+   "low": 5599,
+   "lowSeller": "tomo.co.il",
+   "lowUrl": "https://www.tomo.co.il/items/8974163",
+   "target": 5594,
+   "action": "room_to_raise",
+   "reason": "הרצה עם --realign תיישר למעלה",
+   "offers": [
+    {
+     "url": "https://www.tomo.co.il/items/8974163",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/8974163",
+     "price": 5599,
+     "method": "structured"
+    }
+   ]
+  },
+  {
    "slug": "reolink-b10",
    "model": "B10",
    "brand": "Reolink",
@@ -4545,6 +5193,18 @@
      "ok": false,
      "status": 403,
      "error": ""
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7895323",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7895323",
+     "price": 89,
+     "method": "structured"
     }
    ]
   },
@@ -4581,6 +5241,18 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://kav-isr.com/cameras/ip-security-cameras/%D7%A7%D7%95%D7%A4%D7%A1%D7%AA-%D7%94%D7%92%D7%91%D7%94%D7%94-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%9B%D7%99%D7%A4%D7%94-reolink-d20.html",
+     "price": 89,
+     "method": "structured"
+    },
+    {
+     "url": "https://www.tomo.co.il/items/7895320",
+     "seller": "tomo.co.il",
+     "note": "",
+     "ok": true,
+     "comparable": true,
+     "status": 200,
+     "modelSeen": true,
+     "finalUrl": "https://www.tomo.co.il/items/7895320",
      "price": 89,
      "method": "structured"
     }

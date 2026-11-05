@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '67',
+    title: 'Reolink P430: אבטחה סולארית 4G לאתרי בנייה, חקלאות ושטח',
+    slug: 'reolink-p430',
+    excerpt: 'גלו את מצלמת Reolink P430 הסולארית 4G – פתרון מושלם לקבלנים, חקלאים ומנהלי אתרים מרוחקים בישראל. אבטחה 4K ללא חשמל ואינטרנט....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-11-05',
+    category: 'מצלמות אבטחה',
+    image: '/blog-images/reolink-p430/hero.webp',
+    seoTitle: 'Reolink P430: אבטחה סולארית 4G לאתרי בנייה, חקלאות ושטח',
+    seoDescription: 'גלו את מצלמת Reolink P430 הסולארית 4G – פתרון מושלם לקבלנים, חקלאים ומנהלי אתרים מרוחקים בישראל. אבטחה 4K ללא חשמל ואינטרנט.',
+    keywords: ["reolink p430","מצלמות סולאריות 4G","אבטחה לאתרי בנייה","מצלמות אבטחה לחקלאות","מצלמות שטח ללא חשמל","מצלמת PTZ סולארית","reolink ישראל","אבטחה למחסנים מרוחקים"]
+  },
+  {
     id: '66',
     title: 'אינטרקום לבניין משותף: 2 גידים או IP – המדריך המלא ל-2024',
     slug: 'building-intercom-2-wire-vs-ip-2026',

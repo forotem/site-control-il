@@ -173,10 +173,11 @@
   },
   {
     "cost_source": "estimate",
-    "model": "DS-KV6124-WBE1",
+    "model": "DS-KV6124-E1",
     "brand": "Hikvision",
     "category": "אינטרקום וידאו IP - פנלי דלת לוילה",
-    "title_he": "פנל אינטרקום IP לוילה Hikvision DS-KV6124-WBE1 - מצלמת 4MP 150°, קודן, כרטיס, Bluetooth, Wi-Fi 6/PoE",
+    "title_he": "פנל אינטרקום IP לוילה Hikvision DS-KV6124-E1 - מצלמת 4MP 150°, קודן, כרטיס, רשת קווית PoE (בלי Wi-Fi)",
+    "variant_note": "3.11.2026 עידן: טלרן שולחת E1 בלי Wi-Fi/Bluetooth. 6.11.2026: לקוחה שנייה (SC-MVHYE4G8) קיבלה E1 במקום WBE1.",
     "telran_sku": null,
     "telran_url": null,
     "telran_name": null,

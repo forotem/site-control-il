@@ -3,7 +3,7 @@ import { BASE_URL } from "../../config";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { storeProducts, deliveryOptions, WHATSAPP_NUMBER, warrantyOf, productName } from "../../data/store-catalog";
-import { attrsOf, fitLine, kindLabel, kindText, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel, complementsOf } from "../../data/store-attrs";
+import { attrsOf, fitLine, kindLabel, kindText, nightLabel, aiLabel, audioLabel, isCamera, isRecorder, mpLabel, complementsOf, wifiLabel } from "../../data/store-attrs";
 import { FULL_KIT_PREFILL } from "../../lib/site-wa-prefills";
 import { Breadcrumb, BreadcrumbSchema } from "../../components/Breadcrumb";
 import { offerShippingDetails, merchantReturnPolicy } from "../../components/Schema";
@@ -228,7 +228,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           )}
           <div className={styles.meta}>
             <span>מותג: <b>{p.brand}</b></span>
-            <span>דגם: <code>{p.model}</code></span>
+            <span>דגם: <code>{p.model}</code>{wifiLabel(p) && <b> · {wifiLabel(p)}</b>}</span>
             {p.sku && <span>מק״ט: <code>{p.sku}</code></span>}
           </div>
           <SpecChips p={p} max={6} />

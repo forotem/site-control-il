@@ -9,7 +9,7 @@ import { notifyTeam, sendWhatsApp, sendWhatsAppId, messageStatus, israeliMobile,
 import { sheetUpsert } from "../../lib/leads-sheet";
 import { restDay } from "../../lib/il-time";
 import { attributionLabel } from "../../lib/attribution-label";
-import { attrsOf } from "../../data/store-attrs";
+import { attrsOf, wifiLabel } from "../../data/store-attrs";
 import { supplierNoteOf } from "../../data/supplier-notes";
 import { otpEnabled, checkCode } from "../../lib/order-otp";
 import { addonBySlug, isAddon } from "../../data/store-addons";
@@ -26,6 +26,11 @@ const itemLink = (slug: string) => (isAddon(slug) ? "" : `${SITE}/store/${slug}`
 
 const SITE = "https://www.site-control-il.com";
 const nis = (n: number) => n.toLocaleString("he-IL");
+/** שם המוצר בהזמנה, עם "עם/בלי Wi-Fi" כשיש לו גרסה אחרת (6.11.2026: פנל בלי Wi-Fi נשלח למי שהזמין עם) */
+const orderName = (p: { slug: string; brand: string; model: string }) => {
+  const w = isAddon(p.slug) ? "" : wifiLabel(p.slug);
+  return `${productName(p)}${w ? ` (${w})` : ""}`;
+};
 
 // הגנה מהצפה: לא שולחים לאותו מספר יותר מהודעה אחת ב-10 דקות (בזיכרון של המופע)
 const lastSent = new Map<string, number>();
@@ -37,7 +42,7 @@ function customerMessage(name: string, ref: string, items: OrderItem[], total: n
   const rali = customerLineReady();
   const checking = rali ? "אני בודקת עכשיו את המלאי מול היבואן וחוזרת אליך" : "אני בודק עכשיו את המלאי מול היבואן וחוזר אליך";
   const shown = items.slice(0, 3).map(({ p, qty }) =>
-    `• ${qty > 1 ? `${qty} x ` : ""}${productName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}${itemLink(p.slug) ? `\n  ${itemLink(p.slug)}` : ""}`);
+    `• ${qty > 1 ? `${qty} x ` : ""}${orderName(p)}${p.price ? `: ${nis(p.price * qty)} ₪` : ""}${itemLink(p.slug) ? `\n  ${itemLink(p.slug)}` : ""}`);
   const more = items.length > 3 ? [`ועוד ${items.length - 3} פריטים`] : [];
   const next =
     deliveryId === "courier" ? `${checking} עם אישור ומחיר משלוח ל${address || "כתובת שלך"}.`
@@ -69,10 +74,11 @@ function supplierMessage(ref: string, name: string, phone: string, delivery: str
     `אספקה: ${delivery}${address ? `, ${address}` : ""}`,
     "",
     "פריטים:",
-    ...items.map(({ p, qty }) => `• ${qty} x ${productName(p)}${p.sku ? ` (מק״ט ${p.sku})` : ""}${p.price ? `: ${nis(p.price)} ₪ ליח׳ באתר` : ""}`),
+    ...items.map(({ p, qty }) => `• ${qty} x ${orderName(p)}${p.sku ? ` (מק״ט ${p.sku})` : ""}${p.price ? `: ${nis(p.price)} ₪ ליח׳ באתר` : ""}`),
     total ? `סה״כ באתר: ${nis(total)} ₪ כולל מע״מ, לא כולל משלוח` : null,
     note ? `הערה מהלקוח: ${note}` : null,
     "",
+    ...(items.some(({ p }) => !isAddon(p.slug) && wifiLabel(p.slug)) ? ["לפני ששולחים: לבדוק שהדגם על הקופסה הוא בדיוק הדגם שבהזמנה, כולל עם/בלי Wi-Fi."] : []),
     "תוכלו לבדוק מלאי ולתפור את העסקה מולו? הלקוח כבר קיבל ממני הודעה שאני בודק מלאי וחוזר אליו.",
     "תודה, רותם",
   ].filter((x) => x !== null).join("\n");

@@ -6,6 +6,7 @@ import { storeProducts, deliveryOptions, WHATSAPP_NUMBER } from "../data/store-c
 import { cart, useCart } from "./cart";
 import { SD_ADDON, SIM_ADDON, addonBySlug, addonsFor, isAddon } from "../data/store-addons";
 import { track } from "../lib/analytics";
+import { wifiLabel } from "../data/store-attrs";
 import { getAttribution } from "../lib/attribution";
 import styles from "./store.module.css";
 import c from "./commerce.module.css";
@@ -104,7 +105,7 @@ export function CartDrawer() {
   const hasSd = rows.some((r) => r.slug === SD_ADDON.slug), hasSim = rows.some((r) => r.slug === SIM_ADDON.slug);
 
   const waText = encodeURIComponent(
-    ["היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים:", ...rows.map((r) => `- ${r.qty} x ${r.p!.brand ? `${r.p!.brand} ` : ""}${r.p!.model}${r.p!.sku ? ` (מק"ט ${r.p!.sku})` : ""}`), `סה"כ משוער: ${nis(total)} ₪`].join("\n")
+    ["היי, אשמח לבדיקת זמינות והצעת מחיר לפריטים הבאים:", ...rows.map((r) => `- ${r.qty} x ${r.p!.brand ? `${r.p!.brand} ` : ""}${r.p!.model}${wifiLabel(r.slug) ? `, ${wifiLabel(r.slug)}` : ""}${r.p!.sku ? ` (מק"ט ${r.p!.sku})` : ""}`), `סה"כ משוער: ${nis(total)} ₪`].join("\n")
   );
 
   /** שלב 1: שולחים קוד אימות בווצאפ למספר שהוזן. אם האימות לא פעיל בשרת, ממשיכים ישר להזמנה */
@@ -193,7 +194,7 @@ export function CartDrawer() {
                       <div className={styles.recBody}>
                         {isAddon(r.slug)
                           ? <span className={styles.recTitle}>{r.p!.model}</span>
-                          : <Link href={`/store/${r.slug}`} className={styles.recTitle} onClick={() => setOpen(false)}>{r.p!.brand} {r.p!.model}</Link>}
+                          : <Link href={`/store/${r.slug}`} className={styles.recTitle} onClick={() => setOpen(false)}>{r.p!.brand} {r.p!.model}{wifiLabel(r.slug) ? ` · ${wifiLabel(r.slug)}` : ""}</Link>}
                         <p>{r.p!.title}</p>
                         <div className={c.qty}>
                           <button type="button" onClick={() => cart.set(r.slug, r.qty - 1)} aria-label="פחות">−</button>

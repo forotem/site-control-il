@@ -187,7 +187,7 @@ export const storeProducts: StoreProduct[] = [
     "brand": "Hikvision",
     "model": "DS-KV6124-E1",
     "sku": null,
-    "title": "פנל אינטרקום IP לוילה Hikvision DS-KV6124-E1 - מצלמת 4MP 150°, קודן, כרטיס, רשת קווית PoE",
+    "title": "פנל אינטרקום IP לוילה Hikvision DS-KV6124-E1 - מצלמת 4MP 150°, קודן, כרטיס, רשת קווית PoE (בלי Wi-Fi)",
     "category": "intercom",
     "categoryName": "אינטרקום ובקרת כניסה",
     "price": 769,

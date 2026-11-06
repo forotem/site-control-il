@@ -22,16 +22,16 @@ export type Attrs = {
 };
 
 export const storeAttrs: Record<string, Attrs> = {
-  "ds-kis607-s": {"kind":"intercom-kit","wiring":"ip","app":true,"auth":["card"],"mp":2},
+  "ds-kis607-s": {"kind":"intercom-kit","wiring":"ip","wifi":true,"app":true,"auth":["card"],"mp":2},
   "ds-kis212": {"kind":"intercom-kit","wiring":"4wire","app":false,"auth":[],"mp":2},
-  "ds-kv8213-wme1": {"kind":"door-panel","mp":2,"wiring":"ip","app":true,"buttons":2,"auth":["card"]},
-  "ds-kv8413-wme1": {"kind":"door-panel","mp":2,"wiring":"ip","app":true,"buttons":4,"auth":["card"]},
-  "ds-kv6124-wbe1": {"kind":"door-panel","mp":4,"wiring":"ip","app":true,"auth":["card","code"]},
-  "ds-kh6350-wte1": {"kind":"monitor","wiring":"ip","app":true,"auth":[]},
-  "ds-k1t502dbfwx-c": {"kind":"terminal","wiring":"ip","app":true,"auth":["finger","card","code","qr"]},
-  "ds-k1t344ebfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code"]},
-  "ds-k1t344mbfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code","qr"]},
-  "ds-k1t323mbfwx-e1": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","finger","card","code"]},
+  "ds-kv8213-wme1": {"kind":"door-panel","mp":2,"wiring":"ip","wifi":true,"app":true,"buttons":2,"auth":["card"]},
+  "ds-kv8413-wme1": {"kind":"door-panel","mp":2,"wiring":"ip","wifi":true,"app":true,"buttons":4,"auth":["card"]},
+  "ds-kv6124-wbe1": {"kind":"door-panel","mp":4,"wiring":"ip","wifi":false,"app":true,"auth":["card","code"]},
+  "ds-kh6350-wte1": {"kind":"monitor","wiring":"ip","wifi":true,"app":true,"auth":[]},
+  "ds-k1t502dbfwx-c": {"kind":"terminal","wiring":"ip","wifi":true,"app":true,"auth":["finger","card","code","qr"]},
+  "ds-k1t344ebfwx-e1": {"kind":"terminal","wiring":"ip","wifi":true,"app":true,"auth":["face","finger","card","code"]},
+  "ds-k1t344mbfwx-e1": {"kind":"terminal","wiring":"ip","wifi":true,"app":true,"auth":["face","finger","card","code","qr"]},
+  "ds-k1t323mbfwx-e1": {"kind":"terminal","wiring":"ip","wifi":true,"app":true,"auth":["face","finger","card","code"]},
   "ds-k1t671m": {"kind":"terminal","wiring":"ip","app":true,"auth":["face","card"]},
   "ds-7632nxi-k2": {"kind":"nvr","mp":8,"channels":32,"bays":2,"poePorts":0,"maxMp":12,"ai":"acusense"},
   "ds-7616nxi-k2": {"kind":"nvr","mp":8,"channels":16,"bays":2,"poePorts":0,"maxMp":12,"ai":"acusense"},
@@ -176,6 +176,13 @@ export const aiLabel: Record<Ai, string> = { none: "זיהוי תנועה רגי
 export function attrsOf(p: StoreProduct | string): Attrs {
   const slug = typeof p === "string" ? p : p.slug;
   return storeAttrs[slug] || { kind: "camera" };
+}
+/** עם או בלי Wi-Fi, במילים, למוצרים שיש להם גרסה אחרת שנראית אותו דבר. נכנס להזמנה לעידן, להודעה ללקוח, לעגלה ולדף המוצר.
+ *  6.11.2026: לקוחה שנייה (SC-MVHYE4G8) הזמינה את פנל DS-KV6124 עם Wi-Fi וקיבלה את ה-E1 בלי. wifi:false = כתוב במפורש "בלי". */
+export function wifiLabel(p: StoreProduct | string): string {
+  const a = attrsOf(p);
+  if (a.wifi === false) return "בלי Wi-Fi, רשת קווית בלבד";
+  return a.wifi || a.wiring === "wifi" || a.kind === "wifi-pt" || a.kind === "wifi-bullet" ? "עם Wi-Fi" : "";
 }
 export const CAMERA_KINDS: Kind[] = ["bullet", "turret", "dome", "fisheye", "pt", "lpr", "camera", "wifi-pt", "wifi-bullet"];
 export const isCamera = (a: Attrs) => CAMERA_KINDS.includes(a.kind);

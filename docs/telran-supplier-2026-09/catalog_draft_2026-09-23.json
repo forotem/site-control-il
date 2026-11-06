@@ -494,13 +494,13 @@
     "market_low_ils": 746,
     "market_typical_ils": null,
     "price_basis": "exact",
-    "recommended_price_ils": 1063,
+    "recommended_price_ils": 1490,
     "estimated_cost_ils": 1012,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found. Foreign: HIKD (hikdistribution.com) $266 regular; Senetic UK GBP 176.37 ex-VAT; Amazon US listing (B0DS5V542Q) available.",
     "notes": "Telran: not carried (Telran search returns no Hikvision Pro NVRs; Telran's HikVision brand page (175 items) holds only HiLook-branded NVR-1xx/2xxMH-C units, HiLook DVR-2xxQ/U-F1, 2-4MP cameras and accessories). Closest Telran item: none for 32ch. Image is of sibling DS-7632NI-K2 (same chassis) from zbm.co.il, whose page https://www.zbm.co.il/product/ds-7632ni-k2/ is price-on-request. zap.co.il 32-camera Hikvision filter currently returns no results.",
     "batch": 1,
-    "pricing_note": "ישראל: Com4Tech 1,550, Connect Vision 1,649 (Senetic 809 חריג, מלאי יבוא). חו\"ל: Amazon.de €256 = כ-1,010 ₪ לאחר מע\"מ ויבוא. תומחר 1,349: מעל NVR 16 ערוצים (1,109) ומעל UNV 32 ערוצים (879), מתחת לחנויות בארץ. | סורק מתחרים 23/09: הזול 746 (Senetic Israel), הוזל ל-1063 (נעצר ברצפת העלות המשוערת)"
+    "pricing_note": "ישראל: Com4Tech 1,550, Connect Vision 1,649 (Senetic 809 חריג, מלאי יבוא). חו\"ל: Amazon.de €256 = כ-1,010 ₪ לאחר מע\"מ ויבוא. תומחר 1,349: מעל NVR 16 ערוצים (1,109) ומעל UNV 32 ערוצים (879), מתחת לחנויות בארץ. | סורק מתחרים 23/09: הזול 746 (Senetic Israel), הוזל ל-1063 (נעצר ברצפת העלות המשוערת) | עידן 5.11.2026: מחיר מכירה כולל מע\"מ"
   },
   {
     "cost_source": "estimate",
@@ -599,13 +599,13 @@
     "market_low_ils": 505,
     "market_typical_ils": null,
     "price_basis": "exact",
-    "recommended_price_ils": 708,
+    "recommended_price_ils": 850,
     "estimated_cost_ils": 674,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found. Foreign: HIKD $171 regular; Amazon.in INR 13,999; eBay listings exist.",
     "notes": "Telran: not carried (closest: HiLook NVR-116MH-C 16ch 1-SATA, Telran product 4194). Not found on zbm, technovision, tactech or zap (searched zbm site search and zap 16-camera Hikvision filter). Pricing proxy: the K2 (2-bay) variant sells in Israel for 1,149-1,690 ILS with HDD, so K1 bare should list slightly below. Image shown is the K2 sibling (identical chassis).",
     "batch": 1,
-    "pricing_note": "ישראל: Connect Vision 1,099 (Senetic 550 חריג, דגם בסיום חיים). חו\"ל: eBay €205 = כ-810 ₪ לאחר מע\"מ ויבוא. תומחר 899: מתחת ל-K2 (1,109) ומתחת ל-Connect Vision. | סורק מתחרים 23/09: הזול 505 (Senetic Israel), הוזל ל-708 (נעצר ברצפת העלות המשוערת)"
+    "pricing_note": "ישראל: Connect Vision 1,099 (Senetic 550 חריג, דגם בסיום חיים). חו\"ל: eBay €205 = כ-810 ₪ לאחר מע\"מ ויבוא. תומחר 899: מתחת ל-K2 (1,109) ומתחת ל-Connect Vision. | סורק מתחרים 23/09: הזול 505 (Senetic Israel), הוזל ל-708 (נעצר ברצפת העלות המשוערת) | עידן 5.11.2026: מחיר מכירה כולל מע\"מ"
   },
   {
     "cost_source": "estimate",
@@ -649,13 +649,13 @@
     "market_low_ils": 569,
     "market_typical_ils": null,
     "price_basis": "comparable",
-    "recommended_price_ils": 786,
+    "recommended_price_ils": 1590,
     "estimated_cost_ils": 749,
     "estimated_margin_ils": null,
     "foreign_prices_note": "No Israeli listing found for the K1/8P. Foreign: HIKD $166.50-$221; Dipolnet PL; Amazon US (B0GGZJ16XP) $247.49.",
     "notes": "Telran: not carried (closest: HiLook NVR-108MH-C/8P, Telran product 4043, price-on-request). Israeli proxies for the 2-bay sibling DS-7608NXI-K2/8P: zap.co.il lists DS-7608NXI-K2/8P-2T at 2,050 ILS and DS-7608NXI-K2-2T (no PoE) at 1,361 ILS (https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708); zbm (https://zbm.co.il/product/ds-7608nxi-k2-8p/) and tactech (https://tactech.co.il/product/ds-7608nxi-k2-8p/) are quote-only; technovision sells it only inside camera kits. Datasheet link is the (B) revision; (D) revision not indexed.",
     "batch": 1,
-    "pricing_note": "ישראל: רק Senetic 823 (מלאי יבוא); הדגם בלי PoE 849 ב-Connect Vision, K2/8P 1,695 ב-Com4Tech. חו\"ל: eBay €249 = כ-980 ₪ לאחר מע\"מ ויבוא. תומחר 999. | סורק מתחרים 23/09: הזול 569 (Senetic Israel), הוזל ל-786 (נעצר ברצפת העלות המשוערת)"
+    "pricing_note": "ישראל: רק Senetic 823 (מלאי יבוא); הדגם בלי PoE 849 ב-Connect Vision, K2/8P 1,695 ב-Com4Tech. חו\"ל: eBay €249 = כ-980 ₪ לאחר מע\"מ ויבוא. תומחר 999. | סורק מתחרים 23/09: הזול 569 (Senetic Israel), הוזל ל-786 (נעצר ברצפת העלות המשוערת) | עידן 5.11.2026: מחיר מכירה כולל מע\"מ"
   },
   {
     "cost_source": "estimate",

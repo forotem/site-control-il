@@ -230,8 +230,8 @@
   "ds-7632nxi-k2": {
     "model": "DS-7632NXI-K2(D)",
     "brand": "Hikvision",
-    "policy": "undercut-with-floor",
-    "floor": 1063,
+    "policy": "supplier-fixed",
+    "floor": 1490,
     "urls": [
       {
         "url": "https://www.com4tech.co.il/product/%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa-%d7%94%d7%a7%d7%9c%d7%98%d7%94-nvr-32ch-ds-7632nxi-k2-hikvision-8mp/",
@@ -248,7 +248,8 @@
         "seller": "Senetic Israel",
         "note": ""
       }
-    ]
+    ],
+    "source": "עידן 5.11.2026 (מחיר מכירה כולל מע\"מ)"
   },
   "ds-7616nxi-k2": {
     "model": "DS-7616NXI-K2(D)",
@@ -271,8 +272,8 @@
   "ds-7616nxi-k1": {
     "model": "DS-7616NXI-K1(D)",
     "brand": "Hikvision",
-    "policy": "undercut-with-floor",
-    "floor": 708,
+    "policy": "supplier-fixed",
+    "floor": 850,
     "urls": [
       {
         "url": "https://connectvision.co.il/product/%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA-%D7%94%D7%A7%D7%9C%D7%98%D7%94-hikvision-ds-7616nxi-k1-16-ch-4k/",
@@ -284,13 +285,14 @@
         "seller": "Senetic Israel",
         "note": ""
       }
-    ]
+    ],
+    "source": "עידן 5.11.2026 (מחיר מכירה כולל מע\"מ)"
   },
   "ds-7608nxi-k1-8p": {
     "model": "DS-7608NXI-K1/8P(D)",
     "brand": "Hikvision",
-    "policy": "undercut-with-floor",
-    "floor": 786,
+    "policy": "supplier-fixed",
+    "floor": 1590,
     "urls": [
       {
         "url": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
@@ -302,7 +304,8 @@
         "seller": "Senetic (senetic.co.il)",
         "note": ""
       }
-    ]
+    ],
+    "source": "עידן 5.11.2026 (מחיר מכירה כולל מע\"מ)"
   },
   "ids-7232hqhi-m2-xt": {
     "model": "iDS-7232HQHI-M2/XT",

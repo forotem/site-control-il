@@ -370,7 +370,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-32 ערוצים AcuSense 4K, 2 דיסקים",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 1063,
+    "price": 1490,
     "specs": [
       "32 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 256Mbps / יוצא 160Mbps",
@@ -422,7 +422,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-16 ערוצים AcuSense 4K, דיסק אחד",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 708,
+    "price": 850,
     "specs": [
       "16 ערוצי IP, רזולוציית הקלטה עד 12MP לערוץ",
       "רוחב פס נכנס 80Mbps / יוצא 160Mbps",
@@ -448,7 +448,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מערכת הקלטה Hikvision NVR ל-8 ערוצים עם 8 יציאות PoE, AcuSense 4K",
     "category": "recorders",
     "categoryName": "מקליטים NVR / DVR",
-    "price": 786,
+    "price": 1590,
     "specs": [
       "8 ערוצי IP + מתג PoE מובנה 8 יציאות (Plug & Play)",
       "רזולוציית הקלטה עד 12MP לערוץ",

@@ -21,6 +21,7 @@ const GAP = (_low) => 5; // תמיד 5 ₪ מתחת לזול ביותר ברשת
 const MAX_AUTO_DROP = 0.25;   // הורדה אוטומטית של עד 25% מהמחיר הנוכחי; מעבר לזה: לבדיקה ידנית
 const MAX_AUTO_RAISE = 0.05;  // עם --realign: העלאה של עד 5%, רק כשאנחנו נמוכים ביותר מפי 2 מהפער ויש ראיה חזקה
 const REALIGN = args.includes("--realign");
+const UNTRUSTED = /senetic\.co\.il/; // מוכרים שמופיעים בדוח אבל לא קובעים מחיר
 const FROM_CACHE = args.includes("--from-cache"); // להשתמש במחירים מהסריקה האחרונה (reports/latest.json) בלי לסרוק שוב; להערכה מהירה אחרי שינוי כלל
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36";
 
@@ -141,11 +142,14 @@ for (const p of catalog) {
     if (picked && /senetic\.co\.il/.test(r.finalUrl || u.url)) { picked.price = Math.round(picked.price * 1.18); picked.method += "+vat"; }
     offers.push({ ...u, ok: !!picked, comparable: isComparable(p, u), status: r.status, modelSeen: ex.modelSeen, finalUrl: r.finalUrl, ...(picked || {}) });
   }
-  const good = offers.filter((o) => o.ok && o.comparable && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen));
+  // senetic = משווק אירופי, לא מלאי בארץ ומחירים לא ריאליים (518 ₪ ל-DS-7616NXI-K1 כשהזול בארץ 850, עידן 5.11.2026): מופיע בדוח, לא קובע מחיר
+  for (const o of offers) if (UNTRUSTED.test(o.finalUrl || o.url)) o.untrusted = true;
+  const good = offers.filter((o) => o.ok && o.comparable && !o.untrusted && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen));
   const low = good.length ? Math.min(...good.map((o) => o.price)) : null;
   const lowOffer = good.find((o) => o.price === low);
   let action = "no_data", target = null, reason = "";
-  if (low != null) {
+  if (c.policy === "supplier-fixed") { action = "supplier_fixed"; reason = c.source || "מחיר מהספק, לא משתנה אוטומטית"; }
+  else if (low != null) {
     const strongEvidence = good.some((o) => o.method === "structured" || o.method === "near-model-repeated") || good.length >= 2;
     const want = undercut(low, c.gap);          // היעד: כמה שקלים מתחת לזול ביותר
     target = Math.max(want, c.floor || 0);
@@ -157,7 +161,7 @@ for (const p of catalog) {
     else if (p.price < want) {                  // נמוכים מהיעד (רותם 3.10.2026: כל החנות בדיוק 5 ₪ מתחת לזול): מוותרים על רווח בלי סיבה
       target = want;
       // העלאה רק אם אחרי ההעלאה אנחנו עדיין כמה שקלים מתחת לכל מוכר שמזכיר את הדגם, גם כזה שסומן כווריאנט/ערכה (זהירות כפולה בכיוון למעלה)
-      const anyModelLow = Math.min(...offers.filter((o) => o.ok && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen)).map((o) => o.price));
+      const anyModelLow = Math.min(...offers.filter((o) => o.ok && !o.untrusted && o.method !== "text-anywhere" && (o.method === "structured" || o.modelSeen)).map((o) => o.price));
       const safeRaise = want <= anyModelLow - (c.gap ?? GAP(anyModelLow));
       if (REALIGN && strongEvidence && safeRaise && want <= p.price * (1 + MAX_AUTO_RAISE)) action = APPLY ? "applied" : "raise";
       else { action = "room_to_raise"; reason = !REALIGN ? "הרצה עם --realign תיישר למעלה" : !strongEvidence ? "ראיה חלשה" : !safeRaise ? `מוכר בדגם דומה/ערכה ב-${anyModelLow}, לא מעלים` : `העלאה של ${Math.round((want / p.price - 1) * 100)}% דורשת אישור`; }
@@ -206,6 +210,7 @@ const md = [
   `## לבדיקה ידנית (${groups("review").length})`, ...groups("review").map(line), "",
   `## הרצפה חוסמת (${groups("floor_blocks").length})`, ...groups("floor_blocks").map(line), "",
   `## נמוכים ביותר מכמה שקלים מתחת לזול, יש מרווח להעלות (${groups("room_to_raise").length})`, ...groups("room_to_raise").map(line), "",
+  `## מחיר מהספק, לא משתנה אוטומטית (${groups("supplier_fixed").length})`, ...groups("supplier_fixed").map((r) => `- ${r.brand} ${r.model}: ${nis(r.ours)} (${r.reason})`), "",
   `## תקין, כבר מתחת לשוק (${groups("ok").length})`, ...groups("ok").map((r) => `- ${r.brand} ${r.model}: ${nis(r.ours)} מול ${nis(r.low)} (${r.lowSeller})`), "",
   `## הסריקה נכשלה (${groups("fetch_failed").length})`, ...groups("fetch_failed").map((r) => `- ${r.brand} ${r.model}: ${r.offers.map((o) => `${o.seller} ${o.status || o.error}`).join("; ")}`), "",
 ].join("\n");

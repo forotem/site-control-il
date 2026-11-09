@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '68',
+    title: 'ColorVu מול אינפרא אדום: איזו ראיית לילה מתאימה לכם?',
+    slug: 'colorvu-vs-infrared-night-vision-2026',
+    excerpt: 'מתלבטים בין ColorVu לאינפרא אדום למצלמות אבטחה? מדריך מומחה של Site-Control עוזר לכם להבין איזו ראיית לילה מתאימה לבית, לעסק או לבניין שלכם. השוו דגמי...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-11-09',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/colorvu-vs-infrared-night-vision-2026/hero.webp',
+    seoTitle: 'ColorVu מול אינפרא אדום: איזו ראיית לילה מתאימה לכם?',
+    seoDescription: 'מתלבטים בין ColorVu לאינפרא אדום למצלמות אבטחה? מדריך מומחה של Site-Control עוזר לכם להבין איזו ראיית לילה מתאימה לבית, לעסק או לבניין שלכם. השוו דגמים…',
+    keywords: ["ColorVu","אינפרא אדום","מצלמות אבטחה בלילה","ראיית לילה למצלמות","מצלמות Hikvision","מצלמות Uniview","Site-Control","מצלמות IP","AcuSense","PoE"]
+  },
+  {
     id: '67',
     title: 'Reolink P430: אבטחה סולארית 4G לאתרי בנייה, חקלאות ושטח',
     slug: 'reolink-p430',

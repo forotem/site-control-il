@@ -1279,7 +1279,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "ערכת Reolink 4K 8MP - מקליט NVR 8 ערוצים PoE עם דיסק 2TB + 4 מצלמות כיפה RLC-820A, קושחה בעברית",
     "category": "kits",
     "categoryName": "ערכות מצלמות מוכנות",
-    "price": 2599,
+    "price": 1994,
     "specs": [
       "8-channel PoE NVR (8 x 802.3at ports) with 2TB SATA HDD, max 12TB",
       "4 x RLC-820A 4K 8MP dome cameras, 1/2.49\" CMOS, 4.0 mm lens",
@@ -2681,7 +2681,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה אלחוטית בסוללה ממונעת Reolink Argus PT Lite, 3MP, Wi-Fi, סולארית",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 368,
+    "price": 359,
     "specs": [
       "3MP, מנוע Pan/Tilt 355°/140°",
       "Wi-Fi 2.4GHz",
@@ -2956,7 +2956,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE Reolink CX410, 4MP, ColorX צבע 24/7 בלי זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 444,
+    "price": 414,
     "specs": [
       "4MP 2K, חיישן F1.0 גדול: תמונה צבעונית בלילה גם בלי אור לבן (ColorX)",
       "PoE: חשמל ותקשורת בכבל רשת אחד",

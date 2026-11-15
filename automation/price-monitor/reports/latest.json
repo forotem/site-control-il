@@ -1,5 +1,5 @@
 {
- "date": "2026-11-11",
+ "date": "2026-11-15",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 483,
+     "price": 498,
      "method": "text-anywhere"
     },
     {
@@ -129,7 +129,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 348,
+     "price": 319,
      "method": "text-anywhere"
     },
     {
@@ -173,10 +173,10 @@
      "ok": true,
      "comparable": false,
      "status": 200,
-     "modelSeen": true,
+     "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 769,
-     "method": "near-model"
+     "price": 281,
+     "method": "text-anywhere"
     },
     {
      "url": "https://www.com4tech.co.il/product/%D7%A7%D7%99%D7%98-%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A7%D7%95%D7%9D-%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%9E%D7%A6%D7%9C%D7%9E%D7%A0%D7%94-4-%D7%9E%D7%92%D7%94-hikvision-ds-kis612-p-ip-video/",
@@ -461,7 +461,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 768,
+     "price": 813,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -496,7 +496,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1869,
+     "price": 1100,
      "method": "near-model-repeated"
     }
    ]
@@ -557,7 +557,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 804,
+     "price": 802,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -570,7 +570,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 1111,
+     "price": 1131,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -623,7 +623,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1850,
+     "price": 2150,
      "method": "near-model-repeated"
     }
    ]
@@ -649,8 +649,8 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
-     "price": 990,
-     "method": "near-model"
+     "price": 1300,
+     "method": "near-model-repeated"
     }
    ]
   },
@@ -753,7 +753,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1255,
+     "price": 1251,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -849,7 +849,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 834,
+     "price": 831,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -1072,7 +1072,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 530,
+     "price": 528,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -1592,12 +1592,12 @@
    "slug": "reolink-rlk8-820d4-a",
    "model": "Reolink RLK8-820D4-A (NVS8-8MD4)",
    "brand": "",
-   "ours": 2599,
+   "ours": 1994,
    "low": 1999,
    "lowSeller": "tomo.co.il",
    "lowUrl": "https://www.tomo.co.il/items/8706902",
-   "target": 1994,
-   "action": "applied",
+   "target": null,
+   "action": "ok",
    "reason": "",
    "offers": [
     {
@@ -2095,7 +2095,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 616,
+     "price": 628,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2377,7 +2377,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1217,
+     "price": 1326,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2454,7 +2454,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1305,
+     "price": 1314,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -2861,7 +2861,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 100,
+     "price": 90,
      "method": "text-anywhere"
     },
     {
@@ -3378,13 +3378,11 @@
      "url": "https://www.x-press.co.il/product.asp?Pid=SOLARPANEL2",
      "seller": "x-press.co.il",
      "note": "white panel, 78 (+20 shipping)",
-     "ok": true,
+     "ok": false,
      "comparable": true,
      "status": 200,
      "modelSeen": false,
-     "finalUrl": "https://www.x-press.co.il/product/%D7%A4%D7%90%D7%A0%D7%9C%2D%D7%A1%D7%95%D7%9C%D7%90%D7%A8%D7%99%2D%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA%2D%D7%90%D7%91%D7%98%D7%97%D7%94%2Dreolink%2D%D7%93%D7%92%D7%9D%2Dsolar%2Dpanel%2D2",
-     "price": 83,
-     "method": "text-anywhere"
+     "finalUrl": "https://www.x-press.co.il/product.asp?Pid=SOLARPANEL2"
     },
     {
      "url": "https://ksp.co.il/web/item/384985",
@@ -3550,12 +3548,12 @@
    "slug": "reolink-argus-pt-lite",
    "model": "Argus PT Lite",
    "brand": "Reolink",
-   "ours": 368,
+   "ours": 359,
    "low": 369,
    "lowSeller": "katom.shop",
    "lowUrl": "https://katom.shop/?p=183375",
-   "target": 359,
-   "action": "applied",
+   "target": null,
+   "action": "ok",
    "reason": "",
    "offers": [
     {
@@ -3601,7 +3599,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 120,
+     "price": 99,
      "method": "text-anywhere"
     },
     {
@@ -3613,7 +3611,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 120,
+     "price": 99,
      "method": "text-anywhere"
     },
     {
@@ -3855,7 +3853,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 299,
+     "price": 278,
      "method": "text-anywhere"
     },
     {
@@ -3883,7 +3881,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 299,
+     "price": 278,
      "method": "text-anywhere"
     },
     {
@@ -3986,13 +3984,13 @@
    "slug": "reolink-cx410",
    "model": "CX410",
    "brand": "Reolink",
-   "ours": 444,
-   "low": 419,
+   "ours": 414,
+   "low": 300,
    "lowSeller": "zap.co.il",
    "lowUrl": "https://www.zap.co.il/model.aspx?modelid=1209389",
-   "target": 414,
-   "action": "applied",
-   "reason": "",
+   "target": 295,
+   "action": "review",
+   "reason": "ירידה של 29% דורשת אישור",
    "offers": [
     {
      "url": "https://www.satsigma.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-reolink-cx410-4mp-full-color/",
@@ -4023,7 +4021,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1209389",
-     "price": 419,
+     "price": 300,
      "method": "near-model"
     },
     {
@@ -4537,7 +4535,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 244,
      "method": "text-anywhere"
     },
     {
@@ -4645,7 +4643,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 483,
+     "price": 398,
      "method": "text-anywhere"
     },
     {
@@ -4691,7 +4689,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.satsigma.co.il/product/%D7%9E%D7%9B%D7%A9%D7%99%D7%A8-%D7%94%D7%A7%D7%9C%D7%98%D7%94-reolink-nvs16-16ch-poe-4tb/",
-     "price": 1800,
+     "price": 1900,
      "method": "structured"
     },
     {
@@ -4703,7 +4701,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%9b%d7%a9%d7%99%d7%a8-%d7%94%d7%a7%d7%9c%d7%98%d7%94-reolink-nvs16-16ch-poe-4tb/",
-     "price": 1800,
+     "price": 1900,
      "method": "structured"
     },
     {
@@ -4921,7 +4919,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 483,
+     "price": 650,
      "method": "text-anywhere"
     },
     {

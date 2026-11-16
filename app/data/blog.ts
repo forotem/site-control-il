@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '69',
+    title: 'NVR מול DVR: איזה מקליט מצלמות לקנות? המדריך המלא',
+    slug: 'nvr-vs-dvr-which-recorder-2026',
+    excerpt: 'מתלבטים איזה מקליט מצלמות לקנות, NVR מול DVR? מדריך מקיף מ-Site-Control שיעזור לכם לבחור את המערכת המתאימה ביותר לבית או לעסק, עם המלצות ומוצרים....',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-11-16',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/nvr-vs-dvr-which-recorder-2026/hero.webp',
+    seoTitle: 'NVR מול DVR: איזה מקליט מצלמות לקנות? המדריך המלא',
+    seoDescription: 'מתלבטים איזה מקליט מצלמות לקנות, NVR מול DVR? מדריך מקיף מ-Site-Control שיעזור לכם לבחור את המערכת המתאימה ביותר לבית או לעסק, עם המלצות ומוצרים.',
+    keywords: ["NVR מול DVR","איזה מקליט מצלמות לקנות","מקליט מצלמות","מצלמות אבטחה לבית","מצלמות אבטחה לעסק","Hikvision NVR","Uniview NVR","DVR היברידי"]
+  },
+  {
     id: '68',
     title: 'ColorVu מול אינפרא אדום: איזו ראיית לילה מתאימה לכם?',
     slug: 'colorvu-vs-infrared-night-vision-2026',

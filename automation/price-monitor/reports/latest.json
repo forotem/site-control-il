@@ -1,5 +1,5 @@
 {
- "date": "2026-11-15",
+ "date": "2026-11-18",
  "apply": true,
  "results": [
   {
@@ -129,7 +129,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 319,
+     "price": 350,
      "method": "text-anywhere"
     },
     {
@@ -175,7 +175,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=8983406&pageinfo=2",
-     "price": 281,
+     "price": 334,
      "method": "text-anywhere"
     },
     {
@@ -461,7 +461,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 813,
+     "price": 775,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -496,7 +496,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1100,
+     "price": 1659,
      "method": "near-model-repeated"
     }
    ]
@@ -530,7 +530,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 519,
+     "price": 524,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -557,7 +557,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 802,
+     "price": 811,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -570,7 +570,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 1131,
+     "price": 1141,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -649,8 +649,8 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
-     "price": 1300,
-     "method": "near-model-repeated"
+     "price": 1219,
+     "method": "near-model"
     }
    ]
   },
@@ -753,7 +753,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1251,
+     "price": 1263,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -822,7 +822,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 415,
+     "price": 420,
      "method": "text-anywhere+vat",
      "untrusted": true
     }
@@ -849,7 +849,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 831,
+     "price": 839,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -1072,7 +1072,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 528,
+     "price": 534,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2095,7 +2095,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 628,
+     "price": 633,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2342,7 +2342,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 847,
+     "price": 854,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2377,7 +2377,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1326,
+     "price": 1225,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2454,7 +2454,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1314,
+     "price": 1253,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -2861,7 +2861,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 90,
+     "price": 70,
      "method": "text-anywhere"
     },
     {
@@ -3171,7 +3171,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 4208,
+     "price": 4158,
      "method": "text-anywhere"
     },
     {
@@ -3599,7 +3599,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 99,
+     "price": 149,
      "method": "text-anywhere"
     },
     {
@@ -3611,7 +3611,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 99,
+     "price": 149,
      "method": "text-anywhere"
     },
     {
@@ -3853,7 +3853,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 278,
+     "price": 300,
      "method": "text-anywhere"
     },
     {
@@ -3881,7 +3881,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 278,
+     "price": 300,
      "method": "text-anywhere"
     },
     {
@@ -4535,7 +4535,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 244,
+     "price": 224,
      "method": "text-anywhere"
     },
     {
@@ -4547,7 +4547,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 249,
+     "price": 224,
      "method": "text-anywhere"
     },
     {
@@ -4643,7 +4643,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 398,
+     "price": 790,
      "method": "text-anywhere"
     },
     {
@@ -4919,7 +4919,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 650,
+     "price": 1089,
      "method": "text-anywhere"
     },
     {

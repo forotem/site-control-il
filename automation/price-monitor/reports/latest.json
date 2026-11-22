@@ -1,5 +1,5 @@
 {
- "date": "2026-11-18",
+ "date": "2026-11-22",
  "apply": true,
  "results": [
   {
@@ -23,7 +23,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 498,
+     "price": 979,
      "method": "text-anywhere"
     },
     {
@@ -129,7 +129,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 350,
+     "price": 420,
      "method": "text-anywhere"
     },
     {
@@ -461,7 +461,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7632NXI-K2",
-     "price": 775,
+     "price": 784,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -496,7 +496,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 1659,
+     "price": 999,
      "method": "near-model-repeated"
     }
    ]
@@ -530,7 +530,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7616NXI-K1",
-     "price": 524,
+     "price": 536,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -557,7 +557,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P",
-     "price": 811,
+     "price": 821,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -570,7 +570,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-7608NXI-K1/8P_D_",
-     "price": 1141,
+     "price": 1164,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -623,7 +623,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744700",
-     "price": 2150,
+     "price": 1659,
      "method": "near-model-repeated"
     }
    ]
@@ -649,7 +649,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=g-recordingsystem&db3941265=6406651&db3941272=11744708",
-     "price": 1219,
+     "price": 1300,
      "method": "near-model"
     }
    ]
@@ -753,7 +753,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3628LE-ADF28K-WP",
-     "price": 1263,
+     "price": 1275,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -822,7 +822,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC2318LE-ADF28KM-WP",
-     "price": 420,
+     "price": 476,
      "method": "text-anywhere+vat",
      "untrusted": true
     }
@@ -849,7 +849,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/IPC3626LE-ADF28K-WP",
-     "price": 839,
+     "price": 847,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -1072,7 +1072,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/NVR301-08S3",
-     "price": 534,
+     "price": 539,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -1439,7 +1439,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
-     "price": 399,
+     "price": 465,
      "method": "text-anywhere"
     },
     {
@@ -1473,7 +1473,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/models.aspx?sog=h-intercom&db3488717=9989136&db472705=7305163",
-     "price": 399,
+     "price": 439,
      "method": "text-anywhere"
     },
     {
@@ -2095,7 +2095,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD1743G2-LIZU_28-12MM_",
-     "price": 633,
+     "price": 646,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2342,7 +2342,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2183G2-IU_28MM_",
-     "price": 854,
+     "price": 871,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2377,7 +2377,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2T87G3-LIS2UY/SRB_28MM_",
-     "price": 1225,
+     "price": 1363,
      "method": "structured+vat",
      "untrusted": true
     }
@@ -2454,7 +2454,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.senetic.co.il/product/DS-2CD2955G0-ISU_105MM_",
-     "price": 1253,
+     "price": 1358,
      "method": "structured+vat",
      "untrusted": true
     },
@@ -2505,7 +2505,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://uriel-system.co.il/product/%D7%9E%D7%A6%D7%9C%D7%9E%D7%AA-%D7%90%D7%91%D7%98%D7%97%D7%94-%D7%98%D7%95%D7%A8%D7%98-5-%D7%9E%D7%92%D7%94-%D7%97%D7%91%D7%A8%D7%AA-hikvision-%D7%93%D7%92%D7%9Dds-2cd1353g0-i/",
-     "price": 762,
+     "price": 452,
      "method": "text-anywhere"
     }
    ]
@@ -2861,7 +2861,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 70,
+     "price": 98,
      "method": "text-anywhere"
     },
     {
@@ -2941,10 +2941,10 @@
    "model": "Reolink Go Ultra / G340",
    "brand": "",
    "ours": 825,
-   "low": 890,
+   "low": 840,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/?p=23250",
-   "target": 885,
+   "target": 835,
    "action": "room_to_raise",
    "reason": "הרצה עם --realign תיישר למעלה",
    "offers": [
@@ -2957,7 +2957,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a2%d7%9d-%d7%a4%d7%90%d7%a0%d7%9c-%d7%a1%d7%95%d7%9c%d7%90%d7%a8%d7%99-reolink-go-plus-ultra-8mp/",
-     "price": 890,
+     "price": 840,
      "method": "structured"
     },
     {
@@ -3021,12 +3021,12 @@
    "model": "Reolink Go PT Ultra",
    "brand": "",
    "ours": 1134,
-   "low": 1150,
+   "low": 1020,
    "lowSeller": "satsigma.co.il",
    "lowUrl": "https://www.satsigma.co.il/?p=20626",
-   "target": 1140,
-   "action": "room_to_raise",
-   "reason": "הרצה עם --realign תיישר למעלה",
+   "target": 1010,
+   "action": "applied",
+   "reason": "",
    "offers": [
     {
      "url": "https://www.satsigma.co.il/?p=20626",
@@ -3037,7 +3037,7 @@
      "status": 200,
      "modelSeen": true,
      "finalUrl": "https://www.satsigma.co.il/product/%d7%9e%d7%a6%d7%9c%d7%9e%d7%94-%d7%a2%d7%9d-%d7%a4%d7%90%d7%a0%d7%9c-%d7%a1%d7%95%d7%9c%d7%90%d7%a8%d7%99-reolink-go-pt-ultra-8mp/",
-     "price": 1150,
+     "price": 1020,
      "method": "structured"
     }
    ]
@@ -3171,7 +3171,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/model.aspx?modelid=1208953",
-     "price": 4158,
+     "price": 4208,
      "method": "text-anywhere"
     },
     {
@@ -3599,7 +3599,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 149,
+     "price": 98,
      "method": "text-anywhere"
     },
     {
@@ -3611,7 +3611,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 149,
+     "price": 98,
      "method": "text-anywhere"
     },
     {
@@ -3853,7 +3853,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 300,
+     "price": 299,
      "method": "text-anywhere"
     },
     {
@@ -3881,7 +3881,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 300,
+     "price": 299,
      "method": "text-anywhere"
     },
     {
@@ -4535,7 +4535,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 224,
+     "price": 299,
      "method": "text-anywhere"
     },
     {
@@ -4547,7 +4547,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 224,
+     "price": 299,
      "method": "text-anywhere"
     },
     {
@@ -4643,7 +4643,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 790,
+     "price": 399,
      "method": "text-anywhere"
     },
     {
@@ -4919,7 +4919,7 @@
      "status": 200,
      "modelSeen": false,
      "finalUrl": "https://www.zap.co.il/",
-     "price": 1089,
+     "price": 490,
      "method": "text-anywhere"
     },
     {

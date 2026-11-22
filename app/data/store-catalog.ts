@@ -2371,7 +2371,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G ממונעת Reolink Go PT Ultra, 4K 8MP, כולל פאנל סולארי",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1134,
+    "price": 1010,
     "specs": [
       "8MP 4K, מנוע Pan/Tilt 355°/140°, מעקב אוטומטי אחרי תנועה",
       "חיבור 4G LTE עם כרטיס סים",

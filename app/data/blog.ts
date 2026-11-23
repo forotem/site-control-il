@@ -17,6 +17,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '70',
+    title: 'כמה מצלמות אבטחה צריך לבית פרטי ואיפה לשים אותן?',
+    slug: 'how-many-security-cameras-home-placement-2026',
+    excerpt: 'מתלבטים כמה מצלמות אבטחה צריך לבית פרטי, לעסק או לבניין ואיפה לשים אותן? מדריך מומחים מ-Site-Control שיעשה לכם סדר בראש עם המלצות, הסברים וטיפים מקצוע...',
+    content: '', // Content is rendered in page.tsx
+    author: 'צוות Site-Control',
+    date: '2026-11-23',
+    category: 'מדריכי קנייה',
+    image: '/blog-images/how-many-security-cameras-home-placement-2026/hero.webp',
+    seoTitle: 'כמה מצלמות אבטחה צריך לבית פרטי ואיפה לשים אותן?',
+    seoDescription: 'מתלבטים כמה מצלמות אבטחה צריך לבית פרטי, לעסק או לבניין ואיפה לשים אותן? מדריך מומחים מ-Site-Control שיעשה לכם סדר בראש עם המלצות, הסברים וטיפים מקצועיים.',
+    keywords: []
+  },
+  {
     id: '69',
     title: 'NVR מול DVR: איזה מקליט מצלמות לקנות? המדריך המלא',
     slug: 'nvr-vs-dvr-which-recorder-2026',

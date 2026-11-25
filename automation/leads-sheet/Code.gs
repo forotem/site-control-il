@@ -249,13 +249,28 @@ function release(o) {
  *  - טופס יצירת הקשר באתר המטבחים: האתר שם (api/lead.js) שולח לכאן עם kitchenKey, לא עם הסוד של Site-Control.
  *    בקוד נמצא רק ה-SHA-256 של המפתח; המפתח עצמו ב-Vercel של chinasteel-kitchens (KITCHEN_KEY).
  *  - הודעת ווצאפ בקו של רלי ממספר שאין לו שורה בטבלה שלה, שמזכירה מטבח חוץ / China Steel (או ממספר שכבר רשום בטבלת
- *    המטבחים): ה-upsert נכתב בטבלת המטבחים במקום בטבלה של רלי.
+ *    המטבחים): ה-upsert נכתב בטבלת המטבחים במקום בטבלה של רלי, ורותם מקבל הודעה על פנייה חדשה.
  * לא מנותבים: מספר שכבר יש לו שורה אצל רלי, וכל מה שהגיע מהאתר של Site-Control (טופס, צ'אט, הזמנה, כפתור עם קוד SCW).
- * כל תקלה בניתוב: ממשיכים כרגיל לטבלה של רלי. */
+ * כל תקלה בניתוב: ממשיכים כרגיל לטבלה של רלי.
+ *
+ * רותם 25.11.2026 (ערב): "לפעמים היא רושמת ואחר כך נמחק לה שורה כי דורס אותה משהו אחר... תלמד מהעבר... שיהיה לה
+ * עבודה נוחה". הכללים של טבלת המטבחים, מהלקחים של הטבלה של רלי (26.10: האוטומציה דרסה תא שרלי כתבה בו):
+ *  1. ליד חדש נכנס בשורה חדשה שמוכנסת מתחת לכותרת (insertRowBefore), לא ב"שורה הריקה הבאה": כך הוא אף פעם לא נכתב
+ *     לתוך שורה שרלי מקלידה בה באותו רגע, והחדשים תמיד למעלה.
+ *  2. "איפה זה עומד", "הערות", "לחזור בתאריך" שייכות לרלי: "חדש" נכתב פעם אחת כשהשורה נוצרת, ואחר כך לא נוגעים.
+ *  3. שם, עיר, סוג, מקור: נכתבים רק לתא ריק.
+ *  4. תאים שמתעדכנים (ההודעה מהלקוח, המטבח, הסכום, הקישור, הודעת הפתיחה): מתעדכנים רק אם התא עדיין מכיל את מה
+ *     שהאוטומציה כתבה בו בפעם הקודמת (נשמר בעמודת העזר הנסתרת). תא שרלי שינתה ביד נשאר שלה.
+ *  5. העמודות לפי שם הכותרת: אפשר להזיז, להוסיף ולמיין. עמודה שנמחקה פשוט לא נכתבת. */
 const KITCHEN_SHEET_ID = "1DoAu1XT0NZimVLmgaEIWi0IU08ppDYSYIBxYv1EgDu8";
 const KITCHEN_KEY_SHA256 = "957eff5ba76d16794719675b20dbaff82f3629141b0b2fb409af5b8db9c0d6c5";
 const KITCHEN_TAB = "לידים";
 const KITCHEN_RE = /China ?Steel|chinasteel|מטבח(?:י)? ?ה?חוץ/i;
+const KITCHEN_AUTO = "אוטומטי (לא לגעת)";
+const KITCHEN_SHEET_URL = "https://docs.google.com/spreadsheets/d/" + KITCHEN_SHEET_ID + "/edit";
+// הודעות פתיחה מהקו של רלי ללידים מהטופס: מספר ששולח להרבה אנשים שלא כתבו לו נחסם בווצאפ, והטופס פתוח לכל אחד
+const KITCHEN_OPENINGS_PER_DAY = 8;
+const KITCHEN_OPENINGS_PER_IP_HOUR = 2;
 function kitchenKeyOk(key) {
   if (typeof key !== "string" || key.length < 20 || key.length > 200) return false;
   const hex = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, key, Utilities.Charset.UTF_8)
@@ -270,38 +285,87 @@ function kitchenFind(sh, C, phone) {
   const last = sh.getLastRow();
   if (!n || last < 2) return 0;
   const vals = sh.getRange(2, C["טלפון"], last - 1, 1).getValues();
-  for (let i = vals.length - 1; i >= 0; i--) if (norm(vals[i][0]) === n) return i + 2;
+  for (let i = 0; i < vals.length; i++) if (norm(vals[i][0]) === n) return i + 2;
   return 0;
 }
-/** שורה אחת לכל טלפון בטבלת המטבחים: מספר חדש נוסף למטה, מספר קיים מתעדכן. "איפה זה עומד" ו"הערות" לא נדרסות. */
+/** תפיסת מקום להודעת פתיחה (בתוך הנעילה של kitchenUpsert). מחזיר "" כשמותר, אחרת את הסיבה לטבלה */
+function kitchenReserve(ip) {
+  const p = props();
+  const now = new Date();
+  const day = Utilities.formatDate(now, "Asia/Jerusalem", "yyyy-MM-dd");
+  const hour = Utilities.formatDate(now, "Asia/Jerusalem", "yyyy-MM-dd-HH");
+  p.getKeys().forEach((k) => {
+    if ((k.indexOf("kcap:") === 0 && k !== "kcap:" + day) || (k.indexOf("kip:") === 0 && k.slice(-hour.length - 1) !== ":" + hour)) p.deleteProperty(k);
+  });
+  const cap = Number(p.getProperty("kcap:" + day)) || 0;
+  if (cap >= KITCHEN_OPENINGS_PER_DAY) return "לא נשלחה: הגענו לתקרה של " + KITCHEN_OPENINGS_PER_DAY + " הודעות פתיחה ביום. לכתוב ללקוח ידנית";
+  const ipKey = ip ? "kip:" + String(ip).slice(0, 60) + ":" + hour : "";
+  const hits = ipKey ? Number(p.getProperty(ipKey)) || 0 : 0;
+  if (ipKey && hits >= KITCHEN_OPENINGS_PER_IP_HOUR) return "לא נשלחה: כמה פניות מאותו מחשב בשעה האחרונה. לבדוק ולכתוב ידנית";
+  p.setProperty("kcap:" + day, String(cap + 1));
+  if (ipKey) p.setProperty(ipKey, String(hits + 1));
+  return "";
+}
+/** שורה אחת לכל טלפון בטבלת המטבחים (הכללים בראש הקטע). o.wantOpening: לליד חדש מוחזר open=true אם מותר לשלוח לו
+ *  הודעת פתיחה (התקרות), או openStatus עם הסיבה שלא. */
 function kitchenUpsert(o) {
   if (!/^9725\d{8}$/.test(norm(o.phone))) return { error: "phone" };
   const sh = kitchenSheet();
   if (!sh) return { error: "kitchen sheet missing" };
   const C = colMap(sh);
-  if (!C["תאריך"] || !C["טלפון"]) return { error: "kitchen columns" };
+  if (!C["טלפון"]) return { error: "kitchen columns" };
   return withLock(8000, () => {
     const now = new Date();
     let r = kitchenFind(sh, C, o.phone);
     const isNew = !r;
     if (isNew) {
-      r = sh.getLastRow() + 1;
-      sh.getRange(r, C["תאריך"]).setValue(now).setNumberFormat("dd/MM/yyyy HH:mm");
+      sh.insertRowBefore(2);
+      r = 2;
+      sh.getRange(r, 1, 1, sh.getLastColumn()).setFontWeight("normal").setBackground(null);
       sh.getRange(r, C["טלפון"]).setNumberFormat("@").setValue(pretty(o.phone));
-      if (C["איפה זה עומד"]) sh.getRange(r, C["איפה זה עומד"]).setValue("חדש");
+      if (C["תאריך"]) sh.getRange(r, C["תאריך"]).setValue(now).setNumberFormat("dd/MM/yyyy HH:mm");
+      if (C["איפה זה עומד"]) sh.getRange(r, C["איפה זה עומד"]).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(MY_STATUS, true).setAllowInvalid(true).build()).setValue("חדש");
+      if (C["לחזור בתאריך"]) sh.getRange(r, C["לחזור בתאריך"]).setDataValidation(SpreadsheetApp.newDataValidation().requireDate().setAllowInvalid(true).build()).setNumberFormat("dd/MM/yyyy");
     }
-    const put = (col, v, keep) => {
-      if (!C[col] || v === undefined || v === null || v === "") return;
+    // מה האוטומציה כתבה בשורה הזאת בפעם הקודמת: תא שכבר לא שווה לזה = רלי שינתה אותו, והוא שלה
+    let last = {};
+    if (C[KITCHEN_AUTO] && !isNew) {
+      try { last = JSON.parse(String(sh.getRange(r, C[KITCHEN_AUTO]).getValue() || "{}")) || {}; } catch (e) { last = {}; }
+    }
+    const put = (col, v, updating) => {
+      if (!C[col] || v === undefined || v === null) return;
+      const text = String(v).trim().slice(0, 1500);
+      if (!text) return;
       const cell = sh.getRange(r, C[col]);
-      if (keep && cell.getValue() !== "") return;
-      cell.setValue(asText(String(v).slice(0, 1500)));
+      const cur = String(cell.getValue());
+      if (cur !== "" && (!updating || last[col] === undefined || cur !== last[col] || cur === text)) return;
+      cell.setNumberFormat("@").setValue(asText(text));
+      if (updating) last[col] = text;
     };
-    put("סוג", o.type, true); put("שם", o.name, true); put("עיר", o.city, true); put("מקור", o.source, true);
-    put("הודעה מהלקוח", o.message); put("המטבח שתכנן", o.plan); put('סה"כ לפי מחירון', o.total);
-    put("קיט / התקנה", o.delivery); put("קישור לתכנון", o.link);
+    put("סוג", o.type); put("שם", o.name); put("עיר", o.city); put("מקור", o.source);
+    put("הודעה מהלקוח", o.message, true); put("המטבח שתכנן", o.plan, true); put('סה"כ לפי מחירון', o.total, true);
+    put("קיט / התקנה", o.delivery, true); put("קישור לתכנון", o.link, true); put("הודעת פתיחה", o.opening, true);
+    if (C[KITCHEN_AUTO]) sh.getRange(r, C[KITCHEN_AUTO]).setNumberFormat("@").setValue(JSON.stringify(last));
     if (C["עודכן"]) sh.getRange(r, C["עודכן"]).setValue(now).setNumberFormat("dd/MM HH:mm");
-    return { ok: true, kitchen: true, row: r, isNew: isNew };
+    const out = { ok: true, kitchen: true, row: r, isNew: isNew };
+    if (isNew && o.wantOpening) {
+      const why = kitchenReserve(o.ip);
+      out.open = !why;
+      if (why) out.openStatus = why;
+    }
+    return out;
   });
+}
+/** הודעה לרותם בווצאפ על פנייה חדשה (דרך האתר של Site-Control, שמחזיק את החיבור לקו של רלי). תוספת: הליד כבר רשום */
+function kitchenNotify(text) {
+  try {
+    UrlFetchApp.fetch(siteUrl() + "/api/whatsapp/kitchen", {
+      method: "post",
+      contentType: "text/plain;charset=utf-8",
+      payload: JSON.stringify({ secret: props().getProperty("LEADS_SHEET_SECRET"), action: "notify", text: String(text).slice(0, 1500) }),
+      muteHttpExceptions: true,
+    });
+  } catch (err) { /* לא עוצר כלום */ }
 }
 /** upsert מהאתר של Site-Control: האם זו פנייה על מטבחי חוץ שהגיעה בווצאפ לקו של רלי? אם כן נכתבת בטבלת המטבחים.
  *  מחזיר null כשזה לא המקרה (או כשמשהו נכשל), ואז ה-upsert הרגיל כותב בטבלה של רלי. */
@@ -316,11 +380,13 @@ function kitchenRoute(row) {
     const ks = kitchenSheet();
     if (!ks) return null;
     const KC = colMap(ks);
-    if (!KC["תאריך"] || !KC["טלפון"]) return null;
+    if (!KC["טלפון"]) return null;
     const text = [row.lastMessage, row.need].join(" ");
     if (!KITCHEN_RE.test(text) && !kitchenFind(ks, KC, row.phone)) return null;
     const res = kitchenUpsert({ phone: row.phone, name: row.name, type: "ווצאפ", message: row.lastMessage || row.need, source: "ווצאפ לקו של רלי" });
-    return res && res.ok ? res : null;
+    if (!res || !res.ok) return null;
+    if (res.isNew) kitchenNotify("💬 פנייה חדשה על מטבחי חוץ, בווצאפ של רלי\n" + [row.name, pretty(row.phone)].filter(Boolean).join(", ") + "\n\"" + String(row.lastMessage || row.need || "").slice(0, 300) + "\"\nרלי עונה מהטלפון.\nהטבלה: " + KITCHEN_SHEET_URL);
+    return res;
   } catch (err) {
     return null;
   }
@@ -335,7 +401,7 @@ function doPost(e) {
   try { body = JSON.parse(e.postData.contents); } catch (err) { return json({ error: "bad request" }); }
   if (body.kitchenKey !== undefined) {
     if (!kitchenKeyOk(body.kitchenKey)) return json({ error: "not found" });
-    return json(kitchenUpsert(body.row || {}));
+    try { return json(kitchenUpsert(body.row || {})); } catch (err) { return json({ error: "kitchen: " + String(err).slice(0, 120) }); }
   }
   const secret = props().getProperty("LEADS_SHEET_SECRET");
   if (!secret || body.secret !== secret) return json({ error: "not found" });

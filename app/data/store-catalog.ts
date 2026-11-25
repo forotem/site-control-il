@@ -2423,7 +2423,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה סולארית 4G Reolink TrackMix LTE, שתי עדשות עם זום ומעקב אוטומטי, 4MP",
     "category": "solar",
     "categoryName": "סולארי 4G ובסוללה",
-    "price": 1689,
+    "price": 1540,
     "specs": [
       "שתי עדשות: רחבה קבועה + טלה ממונעת, זום היברידי x6, מעקב אוטומטי אחרי אדם/רכב",
       "4MP, חיבור 4G LTE עם כרטיס סים",
@@ -2731,7 +2731,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה ביתית Reolink E330, 5MP, ממונעת, Wi-Fi, זיהוי אדם וחיות מחמד",
     "category": "wifi",
     "categoryName": "מצלמות Wi-Fi לבית ולעסק",
-    "price": 274,
+    "price": 245,
     "specs": [
       "5MP, מנוע Pan/Tilt 355°",
       "Wi-Fi 2.4/5GHz, חיבור לחשמל",
@@ -2981,7 +2981,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת אבטחה IP PoE פנורמית Reolink Duo 3 PoE, שתי עדשות 180°, 16MP",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 1054,
+    "price": 985,
     "specs": [
       "שתי עדשות עם תמונה אחת רציפה של 180°, 16MP UHD",
       "PoE, זיהוי אדם/רכב/חיה, מעקב תנועה",
@@ -3132,7 +3132,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P330, 4K 8MP, ראיית לילה צבעונית ושמע דו-כיווני (מחליפה את RLC-810A)",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 374,
+    "price": 355,
     "specs": [
       "4K 8MP (3840×2160) ב-25 פריימים, חיישן 1/2.7\"",
       "עדשה 2.8 מ\"מ F1.6, זווית אופקית 105°",
@@ -3208,7 +3208,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת כיפה IP PoE Reolink P344, 12MP, ראיית לילה צבעונית, שמע דו-כיווני",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 535,
+    "price": 525,
     "specs": [
       "12MP (4512×2512), כיפה",
       "PoE, זיהוי אדם/רכב/חיה",
@@ -3233,7 +3233,7 @@ export const storeProducts: StoreProduct[] = [
     "title": "מצלמת צינור IP PoE Reolink P430, 4K 8MP, זום אופטי x5, זרקור",
     "category": "ip",
     "categoryName": "מצלמות IP",
-    "price": 634,
+    "price": 595,
     "specs": [
       "8MP 4K, עדשה ממונעת עם זום אופטי x5",
       "PoE, זיהוי אדם/רכב/חיה",

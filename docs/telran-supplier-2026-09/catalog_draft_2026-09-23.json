@@ -4015,16 +4015,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1330,
+    "market_low_ils": 1550,
     "market_typical_ils": 1799,
     "price_basis": "exact",
-    "recommended_price_ils": 1299,
+    "recommended_price_ils": 1540,
     "estimated_cost_ils": 1528,
     "estimated_margin_ils": 271,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1799, מתקין לפני מע\"מ 1295; פאנל סולארי בנפרד",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1330 (com4tech 1330 / סיגמה 1550 עם פאנל); מחיר מתקין טלרן+מע\"מ 1528; מתחת לעלות מתקין (1528) ב-229 ₪: עידן צריך להשלים",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1330 (com4tech 1330 / סיגמה 1550 עם פאנל); מחיר מתקין טלרן+מע\"מ 1528; מתחת לעלות מתקין (1528) ב-229 ₪: עידן צריך להשלים | סורק מתחרים 2026-11-25: הזול 1550 (tomo.co.il), הוזל ל-1540",
     "telran_installer_incl_vat": 1528
   },
   {
@@ -4552,16 +4552,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 308,
+    "market_low_ils": 250,
     "market_typical_ils": 299,
     "price_basis": "exact",
-    "recommended_price_ils": 289,
+    "recommended_price_ils": 245,
     "estimated_cost_ils": 266,
     "estimated_margin_ils": 33,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 299, מתקין לפני מע\"מ 225",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 308 (LastPrice via zap 308); מחיר מתקין טלרן+מע\"מ 266; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 308 (LastPrice via zap 308); מחיר מתקין טלרן+מע\"מ 266; תחרותי | סורק מתחרים 2026-11-25: הזול 250 (tomo.co.il), הוזל ל-245",
     "telran_installer_incl_vat": 266
   },
   {
@@ -4922,16 +4922,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 1089,
+    "market_low_ils": 990,
     "market_typical_ils": 1059,
     "price_basis": "exact",
-    "recommended_price_ils": 1059,
+    "recommended_price_ils": 985,
     "estimated_cost_ils": 978,
     "estimated_margin_ils": 81,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 1059, מתקין לפני מע\"מ 829",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1089 (kav-isr 1089); מחיר מתקין טלרן+מע\"מ 978; תחרותי",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 1089 (kav-isr 1089); מחיר מתקין טלרן+מע\"מ 978; תחרותי | סורק מתחרים 2026-11-25: הזול 990 (tomo.co.il), הוזל ל-985",
     "telran_installer_incl_vat": 978
   },
   {
@@ -5144,16 +5144,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 540,
+    "market_low_ils": 530,
     "market_typical_ils": 589,
     "price_basis": "exact",
-    "recommended_price_ils": 535,
+    "recommended_price_ils": 525,
     "estimated_cost_ils": 518,
     "estimated_margin_ils": 71,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 589, מתקין לפני מע\"מ 439",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 540 (satsigma 540); מחיר מתקין טלרן+מע\"מ 518; תחרותי | סורק מתחרים 2026-10-03: הזול 540 (satsigma.co.il), הוזל ל-535",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 540 (satsigma 540); מחיר מתקין טלרן+מע\"מ 518; תחרותי | סורק מתחרים 2026-10-03: הזול 540 (satsigma.co.il), הוזל ל-535 | סורק מתחרים 2026-11-25: הזול 530 (tomo.co.il), הוזל ל-525",
     "telran_installer_incl_vat": 518
   },
   {
@@ -5181,16 +5181,16 @@
         "currency": "ILS"
       }
     ],
-    "market_low_ils": 639,
+    "market_low_ils": 600,
     "market_typical_ils": 639,
     "price_basis": "exact",
-    "recommended_price_ils": 634,
+    "recommended_price_ils": 595,
     "estimated_cost_ils": 577,
     "estimated_margin_ils": 62,
     "foreign_prices_note": null,
     "notes": "מחירון Reolink של טלרן: צרכן 639, מתקין לפני מע\"מ 489",
     "batch": "reolink-pricelist-2026-09-23",
-    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 639 (kav-isr 639); מחיר מתקין טלרן+מע\"מ 577; תחרותי | סורק מתחרים 2026-10-03: הזול 639 (kav-isr.com), הוזל ל-634",
+    "pricing_note": "UNDERCUT: שוק ישראלי נמוך 639 (kav-isr 639); מחיר מתקין טלרן+מע\"מ 577; תחרותי | סורק מתחרים 2026-10-03: הזול 639 (kav-isr.com), הוזל ל-634 | סורק מתחרים 2026-11-25: הזול 600 (tomo.co.il), הוזל ל-595",
     "telran_installer_incl_vat": 577
   },
   {

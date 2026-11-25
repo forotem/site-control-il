@@ -41,13 +41,13 @@ async function sendKitchenOpening(phone: string): Promise<{ sent: boolean; statu
   if (!mobile || mobile === IDAN_WA || mobile === ELI_WA || mobile === CUSTOMER_WA) return { sent: false, status: "לא נשלחה: לא מספר נייד של לקוח" };
   if (!customerLineReady()) return { sent: false, status: "לא נשלחה: הקו של רלי לא מחובר. לכתוב ללקוח ידנית" };
   if (restDay()) return { sent: false, status: "לא נשלחה: שבת או חג. לכתוב ללקוח אחרי" };
+  // מספר שאין בו ווצאפ (טעות הקלדה, מספר מומצא): לא שולחים. הודעות למספרים כאלה הן מה שמסכן את הקו
+  const wa = await greenApi<{ existsWhatsapp?: boolean }>("checkWhatsapp", { phoneNumber: Number(mobile) }, undefined, "customer", 7000);
+  if (wa && wa.existsWhatsapp === false) return { sent: false, status: "לא נשלחה: אין ווצאפ במספר הזה. להתקשר ללקוח" };
   const history = await greenApi<H[]>("getChatHistory", { chatId: `${mobile}@c.us`, count: 10 }, undefined, "customer", 7000);
   // בלי היסטוריה (שגיאה ב-GreenAPI) לא שולחים: עדיף לפספס פתיחה מאשר לכתוב למי שכבר מדבר עם רלי
   if (!history) return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את השיחה בווצאפ. לכתוב ללקוח ידנית" };
   if (history.some((m) => Date.now() / 1000 - (m.timestamp || 0) < 3 * 24 * 3600)) return { sent: false, status: "לא נשלחה: כבר יש איתו שיחה בווצאפ" };
-  // מספר שאין בו ווצאפ (טעות הקלדה, מספר מומצא): לא שולחים. הודעות למספרים כאלה הן מה שמסכן את הקו
-  const wa = await greenApi<{ existsWhatsapp?: boolean }>("checkWhatsapp", { phoneNumber: Number(mobile) }, undefined, "customer", 7000);
-  if (wa && wa.existsWhatsapp === false) return { sent: false, status: "לא נשלחה: אין ווצאפ במספר הזה. להתקשר ללקוח" };
   const out = await greenApi<H[]>("lastOutgoingMessages", undefined, { minutes: 1440 }, "customer", 7000);
   if (!out) return { sent: false, status: "לא נשלחה: לא הצלחנו לבדוק את התקרה היומית. לכתוב ללקוח ידנית" };
   if (out.filter((m) => textOf(m).includes(OPEN_MARK)).length >= PER_DAY) return { sent: false, status: `לא נשלחה: הגענו לתקרה של ${PER_DAY} הודעות פתיחה ביממה. לכתוב ללקוח ידנית` };

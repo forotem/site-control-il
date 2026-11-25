@@ -244,6 +244,88 @@ function release(o) {
   });
 }
 
+/* ===== China Steel (מטבחי חוץ): טבלה נפרדת. רותם 25.11.2026: "צריך טבלא נפרדת לציינה סטייל" =====
+ * פניות מדף המטבחים (chinasteel-kitchens.vercel.app) מגיעות לאותו קו ווצאפ של רלי, אבל הן לא לידים של Site-Control:
+ *  - טופס יצירת הקשר באתר המטבחים: האתר שם (api/lead.js) שולח לכאן עם kitchenKey, לא עם הסוד של Site-Control.
+ *    בקוד נמצא רק ה-SHA-256 של המפתח; המפתח עצמו ב-Vercel של chinasteel-kitchens (KITCHEN_KEY).
+ *  - הודעת ווצאפ בקו של רלי ממספר שאין לו שורה בטבלה שלה, שמזכירה מטבח חוץ / China Steel (או ממספר שכבר רשום בטבלת
+ *    המטבחים): ה-upsert נכתב בטבלת המטבחים במקום בטבלה של רלי.
+ * לא מנותבים: מספר שכבר יש לו שורה אצל רלי, וכל מה שהגיע מהאתר של Site-Control (טופס, צ'אט, הזמנה, כפתור עם קוד SCW).
+ * כל תקלה בניתוב: ממשיכים כרגיל לטבלה של רלי. */
+const KITCHEN_SHEET_ID = "1DoAu1XT0NZimVLmgaEIWi0IU08ppDYSYIBxYv1EgDu8";
+const KITCHEN_KEY_SHA256 = "957eff5ba76d16794719675b20dbaff82f3629141b0b2fb409af5b8db9c0d6c5";
+const KITCHEN_TAB = "לידים";
+const KITCHEN_RE = /China ?Steel|chinasteel|מטבח(?:י)? ?ה?חוץ/i;
+function kitchenKeyOk(key) {
+  if (typeof key !== "string" || key.length < 20 || key.length > 200) return false;
+  const hex = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, key, Utilities.Charset.UTF_8)
+    .map((b) => ((b + 256) % 256).toString(16).padStart(2, "0")).join("");
+  return hex === KITCHEN_KEY_SHA256;
+}
+function kitchenSheet() {
+  return SpreadsheetApp.openById(KITCHEN_SHEET_ID).getSheetByName(KITCHEN_TAB);
+}
+function kitchenFind(sh, C, phone) {
+  const n = norm(phone);
+  const last = sh.getLastRow();
+  if (!n || last < 2) return 0;
+  const vals = sh.getRange(2, C["טלפון"], last - 1, 1).getValues();
+  for (let i = vals.length - 1; i >= 0; i--) if (norm(vals[i][0]) === n) return i + 2;
+  return 0;
+}
+/** שורה אחת לכל טלפון בטבלת המטבחים: מספר חדש נוסף למטה, מספר קיים מתעדכן. "איפה זה עומד" ו"הערות" לא נדרסות. */
+function kitchenUpsert(o) {
+  if (!/^9725\d{8}$/.test(norm(o.phone))) return { error: "phone" };
+  const sh = kitchenSheet();
+  if (!sh) return { error: "kitchen sheet missing" };
+  const C = colMap(sh);
+  if (!C["תאריך"] || !C["טלפון"]) return { error: "kitchen columns" };
+  return withLock(8000, () => {
+    const now = new Date();
+    let r = kitchenFind(sh, C, o.phone);
+    const isNew = !r;
+    if (isNew) {
+      r = sh.getLastRow() + 1;
+      sh.getRange(r, C["תאריך"]).setValue(now).setNumberFormat("dd/MM/yyyy HH:mm");
+      sh.getRange(r, C["טלפון"]).setNumberFormat("@").setValue(pretty(o.phone));
+      if (C["איפה זה עומד"]) sh.getRange(r, C["איפה זה עומד"]).setValue("חדש");
+    }
+    const put = (col, v, keep) => {
+      if (!C[col] || v === undefined || v === null || v === "") return;
+      const cell = sh.getRange(r, C[col]);
+      if (keep && cell.getValue() !== "") return;
+      cell.setValue(asText(String(v).slice(0, 1500)));
+    };
+    put("סוג", o.type, true); put("שם", o.name, true); put("עיר", o.city, true); put("מקור", o.source, true);
+    put("הודעה מהלקוח", o.message); put("המטבח שתכנן", o.plan); put('סה"כ לפי מחירון', o.total);
+    put("קיט / התקנה", o.delivery); put("קישור לתכנון", o.link);
+    if (C["עודכן"]) sh.getRange(r, C["עודכן"]).setValue(now).setNumberFormat("dd/MM HH:mm");
+    return { ok: true, kitchen: true, row: r, isNew: isNew };
+  });
+}
+/** upsert מהאתר של Site-Control: האם זו פנייה על מטבחי חוץ שהגיעה בווצאפ לקו של רלי? אם כן נכתבת בטבלת המטבחים.
+ *  מחזיר null כשזה לא המקרה (או כשמשהו נכשל), ואז ה-upsert הרגיל כותב בטבלה של רלי. */
+function kitchenRoute(row) {
+  try {
+    const src = String(row.source || "");
+    if (src && src.indexOf("ווצאפ") !== 0) return null; // טופס, צ'אט, הזמנה: של Site-Control
+    if (row.ref || row.tal || row.leadType || row.email) return null; // כפתור באתר של Site-Control / שיחה עם טל
+    const sh = sheet();
+    const C = colMap(sh);
+    if (missing(C).length || findRow(sh, C, row.phone)) return null; // כבר ליד של רלי
+    const ks = kitchenSheet();
+    if (!ks) return null;
+    const KC = colMap(ks);
+    if (!KC["תאריך"] || !KC["טלפון"]) return null;
+    const text = [row.lastMessage, row.need].join(" ");
+    if (!KITCHEN_RE.test(text) && !kitchenFind(ks, KC, row.phone)) return null;
+    const res = kitchenUpsert({ phone: row.phone, name: row.name, type: "ווצאפ", message: row.lastMessage || row.need, source: "ווצאפ לקו של רלי" });
+    return res && res.ok ? res : null;
+  } catch (err) {
+    return null;
+  }
+}
+
 function json(o) {
   return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
 }
@@ -251,9 +333,13 @@ function json(o) {
 function doPost(e) {
   let body;
   try { body = JSON.parse(e.postData.contents); } catch (err) { return json({ error: "bad request" }); }
+  if (body.kitchenKey !== undefined) {
+    if (!kitchenKeyOk(body.kitchenKey)) return json({ error: "not found" });
+    return json(kitchenUpsert(body.row || {}));
+  }
   const secret = props().getProperty("LEADS_SHEET_SECRET");
   if (!secret || body.secret !== secret) return json({ error: "not found" });
-  if (body.action === "upsert" && body.row && body.row.phone) return json(upsert(body.row));
+  if (body.action === "upsert" && body.row && body.row.phone) return json(kitchenRoute(body.row) || upsert(body.row));
   if (body.action === "reserve") return json(reserve(body));
   if (body.action === "release") return json(release(body));
   if (body.action === "handler") {
